@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<backgroundcolor>grey</backgroundcolor>
+	<controls>
+		<control type="image">
+			<bottom>0</bottom>
+			<left>0</left>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>base.jpg</texture>
+		</control>		
+		<include>DefaultBackground</include>
+		<include>multifanart</include>
+		<control type="image">
+			<bottom>0</bottom>
+			<left>0</left>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>colors/black.png</texture>
+			<colordiffuse>88000000</colordiffuse>
+		</control>
+		<control type="image">
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>1920</width>
+				<height>640</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>shadow_mask_h.png</texture>
+				<colordiffuse>CC000000</colordiffuse>
+				<include>homedown</include>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<bottom>20</bottom>
+				<width>1920</width>
+				<height>45</height>
+				<font>home_time</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[System.Date] - $INFO[System.Time]</label>
+				<textcolor>white</textcolor>
+				<fadetime>450</fadetime>
+				<animation effect="fade" end="50" condition="true">Conditional</animation>
+			</control>
+			
+		<control type="group">
+			<fadetime>450</fadetime>
+			<include>home_fade</include>
+			<control type="textbox">
+				<left>540</left>
+				<top>530</top>
+				<width>830</width>
+				<height>190</height>
+				<font>font_plot</font>
+				<label>$INFO[ListItem.Property(Artist_Description)]</label>
+				<align>justify</align>
+				<autoscroll delay="2000" time="2000" repeat="10000">true</autoscroll>
+			</control>
+			<control type="image">
+				<visible>String.IsEmpty(Control.GetLabel(750))</visible>
+				<top>540</top>
+				<right>130</right>
+				<width>400</width>
+				<height>155</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+			</control>
+			
+			<control type="textbox">
+				<left>540</left>
+				<top>490</top>
+				<width>830</width>
+				<height>160</height>
+				<font>font_plot</font>
+				<label>$VAR[plot]</label>
+				<align>justify</align>
+				<autoscroll delay="2000" time="2000" repeat="10000">true</autoscroll>
+			</control>
+			
+			<control type="image" id="750">
+				<top>490</top>
+				<right>130</right>
+				<width>400</width>
+				<height>155</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$VAR[homelogo]</texture>
+				
+			</control>
+		</control>
+		
+		<!-- WIDGETS -->
+		<control type="group">
+			<include>homedown</include>
+			<control type="wraplist" id="7001">
+				<ondown>7101</ondown>
+				<include>widgetlayout</include>
+				<include>games_widgets</include>
+			</control>
+			<control type="wraplist" id="7002">
+				<ondown>7102</ondown>
+				<include>movies_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7003">
+				<ondown>9000</ondown>
+				<include>tvshows_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7004">
+				<ondown>9000</ondown>
+				<include>music_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7005">
+				<ondown>9000</ondown>
+				<include>pictures_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7007">
+				<ondown>9000</ondown>
+				<include>netflix_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7008">
+				<ondown>9000</ondown>
+				<include>spotify_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="list" id="7014">
+				<ondown>9000</ondown>
+				<include>fav_widgets</include>
+				<include>widgetfavlayout</include>
+			</control>
+		</control>
+		
+		
+		<control type="image">
+			<left>225</left>
+			<top>40</top>
+			<height>40</height>
+			<width>40</width>
+			<aligny>center</aligny>
+			<align>center</align>
+			<texture>arrow_left.png</texture>
+			<include>fademenu</include>
+			<include>top_hidden</include>
+		</control>
+		<control type="image">
+			<right>225</right>
+			<top>40</top>
+			<height>40</height>
+			<width>40</width>
+			<aligny>center</aligny>
+			<align>center</align>
+			<texture>arrow_right.png</texture>
+			<include>fademenu</include>
+			<include>top_hidden</include>
+		</control>
+		
+		<!-- GRUPOS DE MENUS -->
+		<control type="group">
+			<control type="list" id="9000"> <!-- MENU PRINCIPAL -->				
+				<include>homeup</include>
+				<include>top_hidden</include>
+				<left>410</left>
+				<top>20</top>
+				<width>1100</width>
+				<height>70</height>
+				<bottom>0</bottom>
+				<movement>0</movement>
+				<focusposition>0</focusposition>
+				<onright>7000</onright>
+				<ondown condition="Container(9000).HasFocus(701)">7001</ondown>
+				<ondown condition="Container(9000).HasFocus(702)">7002</ondown>
+				<ondown condition="Container(9000).HasFocus(703)">7003</ondown>
+				<ondown condition="Container(9000).HasFocus(704)">7004</ondown>
+				<ondown condition="Container(9000).HasFocus(705)">7005</ondown>
+				<onup condition="Container(9000).HasFocus(701)">701</onup>
+				<onup condition="Container(9000).HasFocus(702)">702</onup>
+				<onup condition="Container(9000).HasFocus(703)">703</onup>
+				<onup condition="Container(9000).HasFocus(704)">704</onup>
+				<onup condition="Container(9000).HasFocus(705)">705</onup>
+				<orientation>horizontal</orientation>
+				<itemlayout height="70" width="220">
+					
+					<control type="label">
+						<left>0</left>
+						<top>5</top>
+						<height>70</height>
+						<width>200</width>
+						<aligny>center</aligny>
+						<align>center</align>
+						<font>home40</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>white</textcolor>
+						<include>fademenu</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="70" width="220">
+					
+					<control type="label">
+						<left>0</left>
+						<top>5</top>
+						<height>70</height>
+						<width>200</width>
+						<aligny>center</aligny>
+						<align>center</align>
+						<font>home40</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>white</textcolor>
+						<include>fademenu</include>
+						<visible>!Control.HasFocus(9000)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>5</top>
+						<height>70</height>
+						<width>200</width>
+						<aligny>center</aligny>
+						<align>center</align>
+						<font>home40</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>white</textcolor>
+						<visible>Control.HasFocus(9000)</visible>
+					</control>
+				</focusedlayout>
+				<content>
+					<include>homemenu</include>
+				</content>
+			</control>
+			
+			<control type="list" id="7000"> <!-- MENU LATERAL -->				
+				<right>-210</right>
+				<top>155</top>
+				<width>300</width>
+				<height>770</height>
+				<bottom>0</bottom>
+				<movement>0</movement>
+				<focusposition>0</focusposition>
+				<onright>9000</onright>
+				<onleft condition="Container(7000).HasFocus(708)">9000</onleft>
+				<onleft condition="Container(7000).HasFocus(709)">9000</onleft>
+				<onleft condition="Container(7000).HasFocus(710)">9000</onleft>
+				<onleft condition="Container(7000).HasFocus(711)">9000</onleft>
+				<onleft condition="Container(7000).HasFocus(712)">9000</onleft>
+				<onleft condition="Container(7000).HasFocus(713)">9000</onleft>
+				<onleft condition="Container(7000).HasFocus(714)">7014</onleft>
+				<onleft condition="Container(7000).HasFocus(715)">9000</onleft>
+				<onleft condition="Container(7000).HasFocus(716)">9000</onleft>
+				<orientation>vertical</orientation>
+				<include>side_hidden</include>
+				<itemlayout height="90" width="220">
+					<control type="label">
+						<left>90</left>
+						<top>10</top>
+						<height>70</height>
+						<width>220</width>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>home30</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>white</textcolor>
+						<include>fademenu</include>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>90</width>
+						<height>90</height>
+						<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+						<include>fademenu</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="90" width="220">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>90</width>
+						<height>90</height>
+						<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+						<include>fademenu</include>
+						<visible>!Control.HasFocus(7000)</visible>
+					</control>
+					<control type="label">
+						<left>90</left>
+						<top>10</top>
+						<height>70</height>
+						<width>220</width>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>home30</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>white</textcolor>
+						<include>fademenu</include>
+						<visible>!Control.HasFocus(7000)</visible>
+					</control>
+					<control type="group">
+						<animation effect="slide" start="0,0" end="-200,0" time="200" easing="inout" tween="cubic">Focus</animation>
+						<animation effect="slide" start="-200,0" end="0,0" time="200" easing="inout" tween="cubic">UnFocus</animation>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>90</width>
+							<height>90</height>
+							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+							<colordiffuse>FFFFFFFF</colordiffuse>
+							<visible>Control.HasFocus(7000)</visible>
+						</control>
+						<control type="label">
+							<left>90</left>
+							<top>10</top>
+							<height>70</height>
+							<width>220</width>
+							<aligny>center</aligny>
+							<align>left</align>
+							<font>home30</font>
+							<label>$INFO[ListItem.Label]</label>
+							<shadowcolor>black</shadowcolor>
+							<textcolor>white</textcolor>
+							<visible>Control.HasFocus(7000)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<include>sidemenu</include>
+				</content>
+			</control>
+			
+			<control type="list" id="7101"> <!-- SELETOR DE WIDGETS GAMES -->				
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(7101)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>7001</onup>
+				<content>					
+					<include>subgames</include>
+				</content>
+			</control>
+			
+			<control type="list" id="7102"> <!-- SELETOR DE WIDGETS FILMES -->				
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(7102)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>7001</onup>
+				<content>					
+					<include>submovies</include>
+				</content>
+			</control>
+						
+			<control type="wraplist" id="701"> <!-- TOPMENU GAMES -->
+				<animation effect="slide" start="0,0" end="0,80" time="100" easing="inout" condition="Control.HasFocus(701)">Conditional</animation>
+				<left>0</left>
+				<top>-40</top>
+				<width>1920</width>
+				<height>70</height>
+				<movement>0</movement>
+				<focusposition>1</focusposition>
+				<onfocus/>
+				<ondown>9000</ondown>
+				<orientation>horizontal</orientation>
+				<onup>ActivateWindow(ShutdownMenu)</onup>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<include>topmenulayout</include>
+				
+				<content>
+					<include>topgames</include>
+				</content>
+			</control>			
+
+			<control type="list" id="702"> <!-- TOPMENU MOVIES -->	
+				<animation effect="slide" start="0,0" end="0,80" time="100" easing="inout" condition="Control.HasFocus(702)">Conditional</animation>
+				<left>0</left>
+				<top>-40</top>
+				<width>1920</width>
+				<height>70</height>
+				<movement>0</movement>
+				<focusposition>0</focusposition>
+				<onfocus/>
+				<ondown>9000</ondown>
+				<orientation>horizontal</orientation>
+				<onup>ActivateWindow(ShutdownMenu)</onup>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<include>topmenulayout</include>
+				<content>
+					<include>topmovies</include>
+				</content>
+			</control>
+
+			<control type="list" id="703"> <!-- TOPMENU TVSHOWS -->
+				<animation effect="slide" start="0,0" end="0,80" time="100" easing="inout" condition="Control.HasFocus(703)">Conditional</animation>
+				<left>0</left>
+				<top>-40</top>
+				<width>1920</width>
+				<height>70</height>
+				<movement>0</movement>
+				<focusposition>0</focusposition>
+				<onfocus/>
+				<ondown>9000</ondown>
+				<orientation>horizontal</orientation>
+				<onup>ActivateWindow(ShutdownMenu)</onup>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<include>topmenulayout</include>
+				<content>
+					<include>toptvshows</include>
+				</content>
+			</control>
+			
+			<control type="list" id="704"> <!-- TOPMENU MUSICAS -->
+				<animation effect="slide" start="0,0" end="0,80" time="100" easing="out" condition="Control.HasFocus(704)">Conditional</animation>		<left>0</left>
+				<top>-40</top>
+				<width>1920</width>
+				<height>70</height>
+				<movement>0</movement>
+				<focusposition>0</focusposition>
+				<onfocus/>
+				<ondown>9000</ondown>
+				<orientation>horizontal</orientation>
+				<onup>ActivateWindow(ShutdownMenu)</onup>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<include>submenulayout</include>
+				<content>
+					<include>topmusic</include>
+				</content>
+			</control>
+
+			<!-- ITENS NA COLEÇÃO -->
+			<!-- <control type="label"> 				
+				<left>0</left>
+				<top>775</top>
+				<width>1920</width>
+				<height>30</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[librarystatus]</label>
+				<font>home30</font>
+				<textcolor>white</textcolor>
+				<visible>Control.HasFocus(9000)</visible>
+				<include>fademenu</include>
+			</control> -->
+		</control>
+	</controls>
+</window>

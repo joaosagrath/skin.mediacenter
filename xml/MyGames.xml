@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>50</defaultcontrol>
+	 
+	<views>50,71,91</views>
+	<controls>
+		<include>DefaultBackground</include>
+		<include>gamebackground</include>
+		<control type="button" id="9009">
+			<include>invisible</include>
+			<onleft>50</onleft>
+			<onright>50</onright>
+			<ondown>50</ondown>
+			<onup>50</onup>
+		</control>
+		<include>myviewslayout</include>
+		<!-- LISTA DE VISTAS -->
+		<control type="group">
+			<top>0</top>
+			<!-- ViewTypes -->
+			<include>ViewBasic</include>
+			<!-- 50 -->
+			<include>ViewSteamGames</include>
+			<!-- 71 -->
+			<include>ViewThumbs</include>
+			<!-- 91 -->
+		</control>
+		<!-- BARRA DA VISTA -->
+		<control type="group">
+			<top>1035</top>
+			<left>20</left>
+			<width>1880</width>
+			<control type="button" id="9000">
+				<description>Barra da vista</description>
+				<onup>71</onup>
+				<ondown>9009</ondown>
+				<onleft>Container.PreviousViewMode</onleft>
+				<onright>Container.NextViewMode</onright>
+				<onclick>Control.SetFocus(2)</onclick>
+			</control>
+			<control type="group">
+				<include>viewbar</include>
+				<visible>Control.HasFocus(9000)</visible>
+			</control>
+		</control>
+		<!-- OPÇÕES DA VISTA -->
+		<control type="group" id="9001">
+			<animation effect="slide" start="0,0" end="0,690" time="450">Focus</animation>
+			<animation effect="slide" start="0,690" end="0,0" time="450">UnFocus</animation>
+			<top>-640</top>
+			<left>640</left>
+			<width>640</width>
+			<height>450</height>
+			<include>viewsoptionsbackground</include>
+			<control type="grouplist">
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<include>viewsoptions</include>
+			</control>
+		</control>
+	</controls>
+</window>

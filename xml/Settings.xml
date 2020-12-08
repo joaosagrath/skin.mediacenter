@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<backgroundcolor>grey</backgroundcolor> 
+	<controls>
+		<control type="group">
+			<control type="image">
+				<left>0</left>
+				<top>90</top>
+				<width>1920</width>
+				<height>1</height>
+				<texture>line_h.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+			</control>
+			<control type="list" id="9000">
+				<animation effect="slide" time="400" start="-510,0" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
+				<animation effect="slide" time="400" start="0,0" end="-510,0" easing="inout" tween="cubic">WindowClose</animation>
+				<left>0</left>
+				<top>90</top>
+				<width>1920</width>
+				<height>990</height>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onleft condition="Window.Previous(Home)">ActivateWindow(Home)</onleft>
+				<onleft condition="Window.Previous(Videos)">ActivateWindow(Videos)</onleft>
+				<onright condition="Container(9000).HasFocus(100)">ActivateWindow(InterfaceSettings)</onright>
+				<onright condition="Container(9000).HasFocus(101)">ActivateWindow(PlayerSettings)</onright>
+				<onright condition="Container(9000).HasFocus(102)">ActivateWindow(MediaSettings)</onright>
+				<onright condition="Container(9000).HasFocus(103)">ActivateWindow(PVRSettings)</onright>
+				<onright condition="Container(9000).HasFocus(104)">ActivateWindow(ServiceSettings)</onright>
+				<onright condition="Container(9000).HasFocus(105)">ActivateWindow(GameSettings)</onright>
+				<onright condition="Container(9000).HasFocus(106)">ActivateWindow(AddonBrowser)</onright>
+				<onright condition="Container(9000).HasFocus(107)">ActivateWindow(SystemSettings)</onright>
+				<onright condition="Container(9000).HasFocus(108)">ActivateWindow(Profiles)</onright>
+				<onright condition="Container(9000).HasFocus(109)">ActivateWindow(filemanager)</onright>
+				<onright condition="Container(9000).HasFocus(110)">RunAddon(service.libreelec.settings)</onright>
+			
+				<viewtype>list</viewtype>
+				<orientation>vertical</orientation>
+				<focusposition>5</focusposition>
+				<scrolltime tween="cubic" easing="out">450</scrolltime>
+				<itemlayout width="448" height="90">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>500</width>
+						<height>1</height>
+						<texture>line_h.png</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>90</width>
+						<height>90</height>
+						<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<left>95</left>
+						<top>0</top>
+						<width>405</width>
+						<height>90</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font_30</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>FFFFFFFF</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout width="448" height="90">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>500</width>
+						<height>90</height>
+						<texture>colors/grey.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>90</width>
+						<height>90</height>
+						<texture>colors/black.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>90</width>
+						<height>90</height>
+						<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>500</width>
+						<height>1</height>
+						<texture>line_h.png</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<left>95</left>
+						<top>0</top>
+						<width>405</width>
+						<height>90</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font_button</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>FF000000</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="100">
+						<label>$LOCALIZE[14206]</label>
+						<onclick>ActivateWindow(InterfaceSettings)</onclick>
+						<thumb>icons/settings/interface.png</thumb>
+					</item>
+					<item id="101">
+						<label>$LOCALIZE[14200]</label>
+						<onclick>ActivateWindow(PlayerSettings)</onclick>
+						<thumb>icons/settings/player.png</thumb>
+					</item>
+					<item id="102">
+						<label>$LOCALIZE[14211]</label>
+						<onclick>ActivateWindow(MediaSettings)</onclick>
+						<thumb>icons/settings/media.png</thumb>
+					</item>
+					<item id="103">
+						<label>$LOCALIZE[14204]</label>
+						<onclick>ActivateWindow(PVRSettings)</onclick>
+						<thumb>icons/settings/livetv.png</thumb>
+					</item>
+					<item id="104">
+						<label>$LOCALIZE[14036]</label>
+						<onclick>ActivateWindow(ServiceSettings)</onclick>
+						<thumb>icons/settings/network.png</thumb>
+					</item>
+					<item id="105">
+						<label>$LOCALIZE[15016]</label>
+						<visible>System.GetBool(gamesgeneral.enable)</visible>
+						<onclick>ActivateWindow(GameSettings)</onclick>
+						<thumb>icons/settings/games.png</thumb>
+					</item>
+					<item id="106">
+						<label>$LOCALIZE[24001]</label>
+						<onclick>ActivateWindow(addonbrowser)</onclick>
+						<thumb>icons/settings/addons.png</thumb>
+					</item>
+					<item id="107">
+						<label>$LOCALIZE[13000]</label>
+						<onclick>ActivateWindow(SystemSettings)</onclick>
+						<thumb>icons/settings/system.png</thumb>
+					</item>
+					<item id="108">
+						<label>$LOCALIZE[13200]</label>
+						<onclick>ActivateWindow(Profiles)</onclick>
+						<thumb>icons/settings/profiles.png</thumb>
+					</item>
+					<item id="109">
+						<label>$LOCALIZE[10003]</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+						<thumb>icons/settings/filemanager.png</thumb>
+					</item>
+					<item id="110">
+						<label>LibreELEC</label>
+						<onclick>RunAddon(service.libreelec.settings)</onclick>
+						<thumb>icons/settings/libreelec.png</thumb>
+						<!-- <visible>System.HasAddon(service.libreelec.settings)</visible> -->
+					</item>
+				</content>
+			</control>
+		</control>
+		<control type="label">
+			<label>$LOCALIZE[13000]</label>
+			<include>TopSytemLabel</include>
+		</control>
+	</controls>
+</window>

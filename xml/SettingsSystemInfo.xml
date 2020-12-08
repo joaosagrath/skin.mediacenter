@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">95</defaultcontrol>
+<!-- 	1.55 SettingsSystemInfo.xml
+ID 	Type 		Description
+2 – 11 	label 	Line 2 – Line 11
+30 	textbox 	privacy-policy text
+40 	label 		System information category label
+52 	label 		Xbmc build label
+94 	button 		Show storage information
+95 	button 		Show summary information
+96 	button 		Show network information
+97 	button 		Show video information
+98 	button 		Show hardware information
+99 	button 		Show PVR information
+99 	button 		Show privacy-policy  
+-->
+</window>

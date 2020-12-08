@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- VISTA STEAM MUSIC - ID 81 -->
+	<include name="ViewSteamMusic">
+		<control type="group">
+			<animation effect="slide" time="400" start="0,0" end="0,-55" easing="inout" tween="cubic" condition="Control.HasFocus(9000)">conditional</animation>
+			<animation effect="slide" time="400" start="0,0" end="0,1080" easing="inout" tween="cubic" condition="Control.HasFocus(9009)">conditional</animation>
+			<!-- PAINEL DA LISTA -->
+			<control type="image">
+				<animation effect="slide" time="400" start="-510,0" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
+				<animation effect="slide" time="400" start="0,0" end="-510,0" easing="inout" tween="cubic">WindowClose</animation>
+				<width>600</width>
+				<height>850</height>
+				<texture flipx="true">shadow_mask_v.png</texture>
+				<colordiffuse>F9000000</colordiffuse>
+				<animation effect="fade" end="75" condition="true">Conditional</animation>
+			</control>
+			<!-- PAINEL DE DETALHES -->
+			<visible>Control.IsVisible(81)</visible>
+			<control type="group">
+				<animation effect="slide" time="400" start="0,500" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
+				<animation effect="slide" time="400" start="0,0" end="0,500" easing="inout" tween="cubic">WindowClose</animation>
+				<control type="image">
+					<left>0</left>
+					<top>850</top>
+					<width>1920</width>
+					<height>1</height>
+					<texture>separator.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>805</top>
+					<width>1920</width>
+					<height>45</height>
+					<texture>shadow_h.png</texture>
+					<colordiffuse>F9000000</colordiffuse>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>850</top>
+					<width>1920</width>
+					<height>200</height>
+					<texture flipy="true" diffuse="shadow_mask.png">shadow_mask_h.png</texture>
+					<colordiffuse>F9000000</colordiffuse>
+					<animation effect="fade" end="75" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>880</top>
+					<width>1920</width>
+					<height>200</height>
+					<texture>shadow_mask_h.png</texture>
+					<colordiffuse>F9000000</colordiffuse>
+					<animation effect="fade" end="75" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<left>1920</left>
+					<top>750</top>
+					<width>30</width>
+					<height>330</height>
+					<texture>shadow.png</texture>
+					<animation effect="fade" end="75" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<left>499</left>
+					<top>865</top>
+					<width>1</width>
+					<height>200</height>
+					<texture>line_h.png</texture>
+				</control>
+				<!-- <control type="image">
+					<animation effect="slide" time="400" start="0,500" end="0,0" easing="inout" tween="cubic">Visible</animation>
+					<animation effect="slide" time="400" start="0,0" end="0,500" easing="inout" tween="cubic">Hidden</animation>
+					<left>1210</left>
+					<top>865</top>
+					<width>1</width>
+					<height>200</height>
+					<texture>line_h.png</texture>
+					<visible>!Control.HasFocus(812)</visible>
+					<visible>!Control.HasFocus(813)</visible>
+				</control> -->
+				<control type="image">
+					<animation effect="slide" time="400" start="0,500" end="0,0" easing="inout" tween="cubic">Visible</animation>
+					<animation effect="slide" time="400" start="0,0" end="0,500" easing="inout" tween="cubic">Hidden</animation>
+					<left>520</left>
+					<top>860</top>
+					<width>200</width>
+					<height>200</height>
+					<texture fallback="defaultartist.png">$VAR[musicposter]</texture>
+					<visible>!Control.HasFocus(812)</visible>
+					<visible>!Control.HasFocus(813)</visible>
+				</control>
+			</control>
+			<!-- LISTA -->
+			<control type="list" id="81">
+				<animation effect="fade" time="600" start="0" end="100" easing="inout" tween="cubic">WindowOpen</animation>
+				<animation effect="fade" time="600" start="0" end="100" easing="inout" tween="cubic">Visible</animation>
+				<animation effect="fade" time="600" start="100" end="0" easing="inout" tween="cubic">WindowClose</animation>
+				<animation effect="fade" time="600" start="100" end="0" easing="inout" tween="cubic">Hidden</animation>
+				<animation effect="slide" start="0,0" end="45,0" time="300" tween="sine" easing="inout" condition="Control.HasFocus(80)">conditional</animation>
+				<viewtype label="SteamMusic">List</viewtype>
+				<left>0</left>
+				<top>10</top>
+				<width>960</width>
+				<height>815</height>
+				<pagecontrol>80</pagecontrol>
+				<onleft condition="Control.IsVisible(80)">80</onleft>
+				<onleft condition="!Control.IsVisible(80)">9000</onleft>
+				<onright condition="Control.IsVisible(812)">812</onright>
+				<onright condition="!Control.IsVisible(812)">9000</onright>
+				<orientation>vertical</orientation>
+				<scrolltime>450</scrolltime>
+				<preloaditems>2</preloaditems>
+				<visible>Container.HasFolders(81)</visible>
+				<itemlayout height="45">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>500</width>
+						<height>1</height>
+						<texture diffuse="shadow_mask_v.png">line_h.png</texture>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<top>0</top>
+						<width>960</width>
+						<height>45</height>
+						<font>font30</font>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<include>labelcolor</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="45">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>500</width>
+						<height>1</height>
+						<texture diffuse="shadow_mask_v.png">line_h.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>600</width>
+						<height>45</height>
+						<texture diffuse="shadow_mask.png">colors/grey.png</texture>
+						<animation effect="fade" end="50" condition="true">Conditional</animation>
+						<visible>!Control.HasFocus(812)</visible>
+						<visible>!Control.HasFocus(813)</visible>
+						<visible>!Control.HasFocus(80)</visible>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<top>0</top>
+						<width>960</width>
+						<height>45</height>
+						<font>font30</font>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>true</scroll>
+						<include>labelcolorfocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<include>musiclogoandbanner</include>
+			<!-- WIDGETS -->
+			<control type="fixedlist" id="812">
+				<animation effect="slide" time="400" start="0,0" end="0,-390" easing="inout" tween="cubic">Focus</animation>
+				<animation effect="slide" time="400" start="0,-390" end="0,0" easing="inout" tween="cubic">UnFocus</animation>
+				<left>515</left>
+				<top>1250</top>
+				<width>1405</width>
+				<height>320</height>
+				<onup>81</onup>
+				<ondown>9000</ondown>
+				<onup>pageup</onup>
+				<ondown>pageup</ondown>
+				<orientation>horizontal</orientation>
+				<viewtype>icon</viewtype>
+				<content target="music">$INFO[Container(81).ListItem.FolderPath]</content>
+				<itemlayout width="200" height="200">
+					<control type="group">
+						<control type="image">
+							<top>4</top>
+							<left>14</left>
+							<width>167</width>
+							<height>200</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<animation effect="fade" end="50" condition="true">Conditional</animation>
+							<texture fallback="default_artist.png" background="true">$VAR[poster]</texture>
+							<bordertexture border="-4">black.png</bordertexture>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="200" height="250">
+					<control type="group">
+						<control type="image">
+							<top>4</top>
+							<left>4</left>
+							<width>200</width>
+							<height>292</height>
+							<aspectratio align="left" aligny="top">keep</aspectratio>
+							<texture fallback="default_artist.png" background="true">$VAR[poster]</texture>
+							<bordertexture border="-4">white.png</bordertexture>
+							<visible>Control.HasFocus(812)</visible>
+						</control>
+						<control type="image">
+							<top>4</top>
+							<left>4</left>
+							<width>167</width>
+							<height>250</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<animation effect="fade" end="50" condition="true">Conditional</animation>
+							<texture fallback="default_artist.png" background="true">$VAR[poster]</texture>
+							<bordertexture border="-4">black.png</bordertexture>
+							<visible>!Control.HasFocus(812)</visible>
+						</control>
+						<control type="label">
+							<top>170</top>
+							<left>215</left>
+							<width>1000</width>
+							<height>250</height>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(812)</visible>
+							<include>labelcolorfocus</include>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- DETALHES E PLOT -->
+			<control type="group" id="817">
+				<animation effect="slide" time="400" start="0,500" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
+				<animation effect="slide" time="400" start="0,500" end="0,0" easing="inout" tween="cubic">Visible</animation>
+				<animation effect="slide" time="400" start="0,0" end="0,500" easing="inout" tween="cubic">WindowClose</animation>
+				<animation effect="slide" time="400" start="0,0" end="0,500" easing="inout" tween="cubic">Hidden</animation>
+				<visible>!Control.HasFocus(813)</visible>
+				<visible>!Control.HasFocus(812)</visible>
+				<control type="textbox">
+					<left>740</left>
+					<top>860</top>
+					<width>1160</width>
+					<height>200</height>
+					<font>font_plot</font>
+					<label>$VAR[plot]</label>
+					<include>labelcolor</include>
+					<align>justify</align>
+				</control>
+			</control>
+			<include>musiclogoandbanner</include>
+			<!-- SCROLLBAR -->
+			<control type="scrollbar" id="80">
+				<include>scrollbar_vertical</include>
+				<animation effect="slide" start="0,0" end="45,0" time="300" tween="sine" easing="inout" condition="Control.HasFocus(80)">conditional</animation>
+				<left>-50</left>
+				<top>40</top>
+				<height>660</height>
+				<onleft>9000</onleft>
+				<onright>81</onright>
+				<visible>true</visible>
+			</control>
+		</control>
+	</include>
+</includes>

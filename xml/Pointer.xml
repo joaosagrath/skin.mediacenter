@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- 1.50 Pointer.xml
+ID 	Type 	Description
+1 	image 	Pointer no focus image
+2 	image 	Pointer focus image
+3 	image 	Pointer drag image
+4 	image 	Pointer click image  -->
+</window>

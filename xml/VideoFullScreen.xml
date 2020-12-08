@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol/>
+	<!-- 	1.58 VideoFullScreen.xml
+ID 	Type 	Description
+1 	label 	Numpad seek label
+10 	label 	Line 1
+11 	label 	Line 2
+12 	label 	Line 3  -->
+	<controls>
+	</controls>
+</window>

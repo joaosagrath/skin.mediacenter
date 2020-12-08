@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">1000</defaultcontrol>
+<!-- 	1.29 DialogTextViewer.xml
+ID 	Type 		Description
+5 	textbox 	Text area for add-on output 
+-->
+</window>

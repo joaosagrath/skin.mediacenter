@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">21</defaultcontrol>
+	<depth>DepthDialog+</depth>
+	<!-- 1.16 DialogNumeric.xml
+	
+ID 			Type 	Description
+
+1 			label 	Heading label
+4 			label 	Label displaying the digits being entered
+10 – 19 	button 	Digits 0 – 9
+20 			button 	Navigate left button
+21 			button 	Enter Button
+22 			button 	Navigate right button
+23 			button 	Backspace button 
+-->
+
+
+
+</window>

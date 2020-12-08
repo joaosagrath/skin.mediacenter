@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<backgroundcolor>grey</backgroundcolor> 
+	<controls>
+		<include>DefaultBackground</include>
+		<include>multifanart</include>
+		<control type="group">	
+			<control type="label">
+				<visible>Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) |Control.HasFocus(7004) |Control.HasFocus(7005) |Control.HasFocus(7006) |Control.HasFocus(7007)</visible>
+				<include>homelabel</include>
+			</control>
+			<control type="image">
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>1920</width>
+				<height>640</height>
+				<aspectratio>stretch</aspectratio>	
+				<texture>shadow_mask_h.png</texture>
+				<colordiffuse>CC000000</colordiffuse>
+				<include>homedown</include>
+			</control>
+			<control type="image">
+				<left>-960</left>
+				<top>765</top>
+				<width>3840</width>
+				<height>216</height>
+				<texture>bar-home.png</texture>				
+				<visible>[Control.HasFocus(9000) | Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(7006) | Control.HasFocus(7007) | Control.HasFocus(8001) | Control.HasFocus(8007)]</visible>
+				<aspectratio>keep</aspectratio>					
+				<animation effect="fade" end="50" condition="true">Conditional</animation>
+				<include>homedown</include>
+				<include>homeleft</include>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>1010</top>
+				<width>1920</width>
+				<height>45</height>
+				<font>home_time</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[System.Date] - $INFO[System.Time]</label>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<textcolor>white</textcolor>
+				<fadetime>450</fadetime>
+				<visible>[Control.HasFocus(9000) | Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(7006) | Control.HasFocus(7007) | Control.HasFocus(8001) | Control.HasFocus(8007)]</visible>
+				<include>homedown</include>
+			</control>
+			<control type="group">
+				<control type="image" id="750">
+					<top>823</top>
+					<left>760</left>
+					<width>400</width>
+					<height>150</height>
+					<aspectratio align="center" aligny="top">keep</aspectratio>	
+					<texture>$VAR[homelogo]</texture>
+					<visible>Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(7006) | Control.HasFocus(7007)</visible>
+					<include>homedown</include>
+					<include>homeleft</include>
+				</control>
+				<control type="textbox">
+					<top>823</top>
+					<left>660</left>
+					<width>600</width>
+					<height>150</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>home_time</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<visible>Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(7006) | Control.HasFocus(7007)</visible>
+					<visible>String.IsEmpty(Control.GetLabel(750))</visible>
+					<textcolor>orange</textcolor>
+					<include>homedown</include>
+					<include>homeleft</include>
+				</control>
+			</control>
+		</control>
+		
+		<!-- WIDGETS -->
+		<control type="group">
+			<control type="wraplist" id="7001">
+				<ondown>9000</ondown>
+				<include>widgetlayout</include>
+				<include>games_widgets</include>				
+			</control>
+			<control type="wraplist" id="7002">
+				<ondown>9000</ondown>
+				<include>movies_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7003">
+				<ondown>9000</ondown>
+				<include>tvshows_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7004">
+				<ondown>9000</ondown>
+				<include>netflix_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7005">
+				<ondown>9000</ondown>
+				<include>music_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7006">
+				<ondown>9000</ondown>
+				<include>spotify_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<control type="wraplist" id="7007">
+				<ondown>9000</ondown>
+				<include>pictures_widgets</include>
+				<include>widgetlayout</include>
+			</control>
+			<include>homedown</include>
+			<include>homeup</include>
+		</control>
+		
+		<!-- GRUPO DE MENU -->	
+		<control type="group">
+			<control type="wraplist" id="9000"> <!-- MENU PRINCIPAL -->
+				<include>homedown</include>
+				<left>0</left>
+				<top>850</top>
+				<width>1920</width>
+				<bottom>0</bottom>
+				<movement>0</movement>
+				<focusposition>1</focusposition>		
+				<onup condition="Container(9000).HasFocus(701)">7001</onup>				
+				<onup condition="Container(9000).HasFocus(702)">7002</onup>
+				<onup condition="Container(9000).HasFocus(703)">7003</onup>
+				<onup condition="Container(9000).HasFocus(704)">7004</onup>
+				<onup condition="Container(9000).HasFocus(705)">7005</onup>					
+				<onup condition="Container(9000).HasFocus(706)">7006</onup>					
+				<onup condition="Container(9000).HasFocus(707)">7007</onup>
+				
+				<ondown condition="Container(9000).HasFocus(701)">701</ondown>
+				<ondown condition="Container(9000).HasFocus(702)">702</ondown>
+				<ondown condition="Container(9000).HasFocus(703)">703</ondown>
+				<ondown condition="Container(9000).HasFocus(704)">704</ondown>
+				<ondown condition="Container(9000).HasFocus(705)">705</ondown>
+				<ondown condition="Container(9000).HasFocus(706)">706</ondown>
+				<ondown condition="Container(9000).HasFocus(707)">707</ondown>
+				<orientation>horizontal</orientation>
+				<visible allowhiddenfocus="true">![Control.HasFocus(700) | Control.HasFocus(701) | Control.HasFocus(702) | Control.HasFocus(703) | Control.HasFocus(704) | Control.HasFocus(705) | Control.HasFocus(706) | Control.HasFocus(707) | Control.HasFocus(72051) | Control.HasFocus(72052) | Control.HasFocus(72053) | Control.HasFocus(72054) | Control.HasFocus(72055)]</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<itemlayout height="95" width="620">
+					<control type="label">
+						<left>0</left>
+						<top>20</top>
+						<height>95</height>
+						<width>640</width>
+						<aligny>center</aligny>
+						<align>center</align>
+						<font>home100</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>orange</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<visible>![Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(7006) | Control.HasFocus(7007)]</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="95" width="660">
+					<control type="label">
+						<left>0</left>
+						<top>20</top>
+						<height>95</height>
+						<width>660</width>
+						<aligny>center</aligny>
+						<align>center</align>
+						<font>home100</font>
+						<label>$INFO[ListItem.Label]</label>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>orange</textcolor>
+						<animation effect="zoom" end="150" center="320,100" time="400">Focus</animation>
+						<animation effect="zoom" end="150" center="320,100" time="400">Control.HasFocus(701)</animation>
+						<visible>![Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(7006) | Control.HasFocus(7007)]</visible>
+					</control>
+				</focusedlayout>					
+				<content>
+					<include>homemenu</include>
+				</content>
+			</control>
+			
+			<control type="group">
+				<!-- ITENS ADDONS TOP MENU -->
+				<control type="grouplist" id="7205">
+					<animation effect="slide" start="0,0" end="0,290" delay="500" time="300" condition="Container(700).HasFocus(7105)">Conditional</animation>
+					<visible>![Control.HasFocus(9000) | Control.HasFocus(7001) | Control.HasFocus(701) | Control.HasFocus(7002) | Control.HasFocus(702) | Control.HasFocus(7003) | Control.HasFocus(703) | Control.HasFocus(7004) | Control.HasFocus(704) | Control.HasFocus(7005) | Control.HasFocus(705) | Control.HasFocus(7006) | Control.HasFocus(706) | Control.HasFocus(7007) | Control.HasFocus(707)]</visible>
+					<visible>Container(700).HasFocus(7105)</visible>
+					<top>-245</top>
+					<width>1920</width>
+					<onup>700</onup>
+					<ondown>7205</ondown>
+					<onleft>700</onleft>
+					<onright>700</onright>
+					<control type="button" id="72051">						
+							<include>simplebuttom</include>
+							<left>500</left>					
+							<label>Addons de Video</label>	
+							
+							<onclick>ActivateWindow(Videos,addons://sources/video/)</onclick>
+							
+					</control>
+					<control type="button" id="72052">						
+							<include>simplebuttom</include>
+					
+							<label>Addons de Músicas</label>
+							
+							<onclick>ActivateWindow(Music,addons://sources/audio/)</onclick>
+							
+					</control>
+					<control type="button" id="72053">						
+							<include>simplebuttom</include>
+				
+							<label>Addons de Programas</label>	
+							
+							<onclick>ActivateWindow(Programs,addons://sources/executable/)</onclick>
+					</control>
+					<control type="button" id="72054">						
+							<include>simplebuttom</include>
+				
+							<label>Addons de Jogos</label>	
+							
+							<onclick>ActivateWindow(Games,addons://sources/games/)</onclick>
+					</control>
+					<control type="button" id="72055">						
+							<include>simplebuttom</include>
+					
+							<label>Addons de Imagens</label>	
+												
+					</control>
+				</control>	
+			</control>	
+			
+			
+			<control type="wraplist" id="700"> <!-- TOPMENU -->
+			<include>top_hidden</include>
+				<centerleft>50%</centerleft>
+				<top>-45</top>
+				<width>1920</width>
+				<bottom>0</bottom>
+				<movement>1</movement>
+				<focusposition>3</focusposition>
+				<onfocus></onfocus>
+				<onleft></onleft>
+				<onright></onright>
+				<onup>9000</onup>
+				
+				<ondown condition="Container(700).HasFocus(7105)">7205</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<include>menulayout</include>				
+				<content>
+					<include>hometopmenu</include>
+				</content>
+			</control>				
+				
+				
+			<control type="group">
+			<animation effect="slide" start="0,0" end="0,-45" time="100" easing="inout" condition="Control.HasFocus(701)">Conditional</animation>
+				<control type="wraplist" id="701"> <!-- SUBMENU GAMES -->				
+					<left>0</left>
+					<top>1080</top>
+					<width>1920</width>
+					<height>1200</height>
+					<movement>1</movement>
+					<focusposition>2</focusposition>
+					<onfocus></onfocus>
+					<onleft></onleft>
+					<onright></onright>
+					<orientation>horizontal</orientation>
+					<onup>9000</onup>
+					<ondown>ActivateWindow(ShutdownMenu)</ondown>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<include>submenulayout</include>				
+					<content>
+						<include>subgames</include>
+					</content>
+				</control>
+			</control>
+			
+			<control type="group">
+			<animation effect="slide" start="0,0" end="0,-45" time="100" easing="out" condition="Control.HasFocus(702)">Conditional</animation>
+				<control type="wraplist" id="702"> <!-- SUBMENU FILMES -->
+					<onfocus></onfocus>
+					<left>0</left>
+					<top>1080</top>
+					<width>1920</width>
+					<height>1200</height>
+					<bottom>0</bottom>
+					<movement>1</movement>
+					<focusposition>2</focusposition>
+					<onfocus></onfocus>
+					<onleft></onleft>
+					<onright></onright>
+					<onup>9000</onup>
+					<orientation>horizontal</orientation>
+					<ondown>ActivateWindow(ShutdownMenu)</ondown>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<include>submenulayout</include>				
+					<content>
+						<include>submovies</include>
+					</content>
+				</control>
+			</control>
+			
+			<control type="group">
+			<animation effect="slide" start="0,0" end="0,-45" time="100" easing="out" condition="Control.HasFocus(703)">Conditional</animation>
+				<control type="label"> <!-- TITULO SERIES -->
+					<visible>Control.HasFocus(703)</visible>
+					<left>20</left>
+					<top>900</top>	
+					<label>SERIADOS</label>
+					<font>home100</font>
+				</control>	
+				<control type="wraplist" id="703"> <!-- SUBMENU TVSHOWS -->
+					<onfocus></onfocus>
+					<left>0</left>
+					<top>1080</top>
+					<width>1920</width>
+					<height>1200</height>
+					<bottom>0</bottom>
+					<movement>1</movement>
+					<focusposition>2</focusposition>
+					<onfocus></onfocus>
+					<onleft></onleft>
+					<onright></onright>
+					<onup>9000</onup>
+					<ondown>ActivateWindow(ShutdownMenu)</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<include>submenulayout</include>				
+					<content>
+						<include>subtvshows</include>
+					</content>
+				</control>
+			</control>
+			
+			<control type="group">
+			<animation effect="slide" start="0,0" end="0,-45" time="100" easing="out" condition="Control.HasFocus(704)">Conditional</animation>
+				<control type="label"> <!-- TITULO NETFLIX -->
+					<visible>Control.HasFocus(704)</visible>
+					<left>20</left>
+					<top>900</top>	
+					<label>NETFLIX</label>
+					<font>home100</font>
+				</control>	
+				<control type="wraplist" id="704"> <!-- SUBMENU NETFLIX -->
+					<onfocus></onfocus>
+					<left>0</left>
+					<top>1080</top>
+					<width>1920</width>
+					<height>1200</height>
+					<bottom>0</bottom>
+					<movement>1</movement>
+					<focusposition>0</focusposition>
+					<onfocus></onfocus>
+					<onleft></onleft>
+					<onright></onright>
+					<onup>9000</onup>
+					<ondown>ActivateWindow(ShutdownMenu)</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<include>submenulayout</include>				
+					<content>
+						<include>subnetflix</include>
+					</content>
+				</control>
+			</control>
+
+			<control type="group">
+			<animation effect="slide" start="0,0" end="0,-45" time="100" easing="out" condition="Control.HasFocus(705)">Conditional</animation>
+				<control type="label"> <!-- TITULO MUSICAS -->
+					<visible>Control.HasFocus(705)</visible>
+					<left>20</left>
+					<top>900</top>	
+					<label>MÚSICAS</label>
+					<font>home100</font>
+				</control>			
+				<control type="wraplist" id="705"> <!-- SUBMENU MUSICAS -->			
+					<onfocus></onfocus>
+					<left>0</left>
+					<top>1080</top>
+					<width>1920</width>
+					<height>1200</height>
+					<bottom>0</bottom>
+					<movement>1</movement>
+					<focusposition>2</focusposition>
+					<onfocus></onfocus>
+					<onleft></onleft>
+					<onright></onright>
+					<onup>9000</onup>
+					<ondown>ActivateWindow(ShutdownMenu)</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<include>submenulayout</include>				
+					<content>
+						<include>submusic</include>
+					</content>
+				</control>
+			</control>
+			
+			<control type="group">
+			<animation effect="slide" start="0,0" end="0,-45" time="100" easing="out" condition="Control.HasFocus(706)">Conditional</animation>
+				<control type="label"> <!-- TITULO SPOTIFY -->
+					<visible>Control.HasFocus(706)</visible>
+					<left>20</left>
+					<top>900</top>	
+					<label>SPOTIFY</label>
+					<font>home100</font>
+				</control>			
+				<control type="wraplist" id="706"> <!-- SUBMENU SPOTIFY -->			
+					<onfocus></onfocus>
+					<left>0</left>
+					<top>1080</top>
+					<width>1920</width>
+					<height>1200</height>
+					<bottom>0</bottom>
+					<movement>1</movement>
+					<focusposition>2</focusposition>
+					<onfocus></onfocus>
+					<onleft></onleft>
+					<onright></onright>
+					<onup>9000</onup>
+					<ondown>ActivateWindow(ShutdownMenu)</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<include>submenulayout</include>				
+					<content>
+						<include>subspotify</include>
+					</content>
+				</control>
+			</control>
+			
+			<control type="group">
+			<animation effect="slide" start="0,0" end="0,-45" time="100" easing="out" condition="Control.HasFocus(707)">Conditional</animation>
+				<control type="label"> <!-- TITULO FOTOS -->
+					<visible>Control.HasFocus(707)</visible>
+					<left>20</left>
+					<top>900</top>
+					<label>IMAGENS</label>
+					<font>home100</font>
+				</control>					
+				<control type="wraplist" id="707"> <!-- SUBMENU FOTOS -->			
+					<onfocus></onfocus>
+					<left>0</left>
+					<top>1080</top>
+					<width>1920</width>
+					<height>1200</height>
+					<bottom>0</bottom>
+					<movement>1</movement>
+					<focusposition>2</focusposition>
+					<onfocus></onfocus>
+					<onleft></onleft>
+					<onright></onright>
+					<onup>9000</onup>
+					<ondown>ActivateWindow(ShutdownMenu)</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<include>submenulayout</include>				
+					<content>
+						<include>subpictures</include>
+					</content>
+				</control>
+			</control>
+			
+			<control type="label"> <!-- ITENS NA COLEÇÃO -->
+				<left>0</left>
+				<top>775</top>
+				<width>1920</width>
+				<height>30</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[librarystatus]</label>
+				<font>home30_title</font>
+				<textcolor>black</textcolor>
+				<visible>Control.HasFocus(9000)</visible>
+			</control>
+		</control>
+	</controls>
+</window>

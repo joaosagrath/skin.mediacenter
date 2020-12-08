@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<controls>
+		<include>DefaultBackground</include>
+		<include>systempanel</include>
+		<control type="image">
+			<left>470</left>
+			<top>160</top>
+			<right>0</right>
+			<height>2</height>
+			<texture>line_h.png</texture>
+		</control>
+		<control type="image">
+			<left>470</left>
+			<top>700</top>
+			<right>0</right>
+			<height>2</height>
+			<texture>line_h.png</texture>
+		</control>
+		<control type="group" id="10000">
+			<left>500</left>
+			<control type="grouplist" id="10001">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<height>540</height>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>700</onup>
+				<ondown>700</ondown>
+				<visible>Container(9000).HasFocus(1)</visible>
+				<control type="radiobutton" id="701">
+					<label>$LOCALIZE[31095]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(no_home_slide_animations)</selected>
+					<onclick>Skin.ToggleSetting(no_home_slide_animations)</onclick>
+				</control>
+				
+				
+				
+				<control type="radiobutton" id="702">
+					<label>$LOCALIZE[31096]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<onclick>Skin.ToggleSetting(clearbackground)</onclick>
+					<onclick>Skin.Reset(darkbackground)</onclick>
+					<selected>Skin.HasSetting(clearbackground)</selected>
+				</control>
+				<control type="radiobutton" id="703">
+					<label>$LOCALIZE[31097]</label>
+					<include>onoffbutton</include>
+					<textoffsetx>40</textoffsetx>
+					<include>button_90</include>
+					<onclick>Skin.ToggleSetting(darkbackground)</onclick>
+					<onclick>Skin.Reset(clearbackground)</onclick>
+					<selected>Skin.HasSetting(darkbackground)</selected>
+				</control>
+				
+				
+				
+				<control type="radiobutton" id="704">
+					<label>$LOCALIZE[31093]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<onclick condition="!String.IsEmpty(Weather.Plugin)">Skin.ToggleSetting(show_weatherinfo)</onclick>
+					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
+					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
+				</control>
+				<control type="radiobutton" id="705">
+					<label>$LOCALIZE[31160]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
+					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
+				</control>
+				<control type="button" id="706">
+					<label>$LOCALIZE[31024]</label>
+					<include>button_90</include>
+					<onclick>Skin.SelectBool(31024, 38018|circle_userrating, 563|circle_rating, 16018|circle_none)</onclick>
+					<label2>$VAR[RatingSettingLabel2Var]</label2>
+				</control>
+				<control type="button" id="707">
+					<label>$LOCALIZE[31164]</label>
+					<include>button_90</include>
+					<onclick>Skin.SelectBool(31164, 31165|show_profilename, 31166|show_profileavatar, 16018|show_none)</onclick>
+					<label2>$VAR[ProfileIdentificationLabel2Var]</label2>
+				</control>
+			</control>
+			<control type="grouplist" id="10002">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<height>810</height>
+				<onleft>9000</onleft>
+				<onright>80</onright>
+				<onup>10002</onup>
+				<pagecontrol>80</pagecontrol>
+				<ondown>10002</ondown>
+				<visible>Container(9000).HasFocus(2)</visible>
+				<control type="radiobutton" id="611">
+					<label>$LOCALIZE[342]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
+				</control>
+				<control type="radiobutton" id="612">
+					<label>$LOCALIZE[20343]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
+				</control>
+				<control type="radiobutton" id="613">
+					<label>$LOCALIZE[2]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMusicButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
+				</control>
+				<control type="radiobutton" id="6131">
+					<label>$LOCALIZE[20389]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMusicVideoButton)</onclick>
+				</control>
+				<control type="radiobutton" id="618">
+					<label>$LOCALIZE[19020]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoTVButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoTVButton)</onclick>
+				</control>
+				<control type="radiobutton" id="619">
+					<label>$LOCALIZE[19021]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoRadioButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoRadioButton)</onclick>
+				</control>
+				<control type="radiobutton" id="614">
+					<label>$LOCALIZE[24001]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoProgramsButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoProgramsButton)</onclick>
+				</control>
+				<control type="radiobutton" id="615">
+					<label>$LOCALIZE[1]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
+				</control>
+				<control type="radiobutton" id="616">
+					<label>$LOCALIZE[3]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoVideosButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoVideosButton)</onclick>
+				</control>
+				<control type="radiobutton" id="620">
+					<label>$LOCALIZE[15016]</label>
+					<visible>System.GetBool(gamesgeneral.enable)</visible>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoGamesButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoGamesButton)</onclick>
+				</control>
+				<control type="radiobutton" id="6160">
+					<label>$LOCALIZE[10134]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoFavButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoFavButton)</onclick>
+				</control>
+				<control type="radiobutton" id="617">
+					<label>$LOCALIZE[8]</label>
+					<include>onoffbutton</include>
+					<include>button_90</include>
+					<selected>!Skin.HasSetting(HomeMenuNoWeatherButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
+				</control>
+			</control>
+			
+			<!-- SELETOR DE WIDGETS -->
+			<control type="label">				
+				<include>widget_preview</include>
+				<label>Pré-visualização dos widgets de Jogos</label>
+				<visible>Container(9000).HasFocus(4)</visible>
+			</control>
+			<control type="label">
+				<include>widget_preview</include>
+				<visible>Container(9000).HasFocus(5)</visible>
+				<label>Pré-visualização dos widgets de Filmes</label>
+			</control>
+			<control type="label">
+				<include>widget_preview</include>
+				<visible>Container(9000).HasFocus(6)</visible>
+				<label>Pré-visualização dos widgets de Seriados</label>
+			</control>
+			<control type="label">
+				<include>widget_preview</include>
+				<visible>Container(9000).HasFocus(7)</visible>
+				<label>Pré-visualização dos widgets Netflix</label>
+			</control>
+			<control type="label">
+				<include>widget_preview</include>
+				<visible>Container(9000).HasFocus(8)</visible>
+				<label>Pré-visualização dos widgets de Músicas</label>
+			</control>
+			<control type="label">
+				<include>widget_preview</include>
+				<visible>Container(9000).HasFocus(9)</visible>
+				<label>Pré-visualização dos widgets Spotify</label>
+			</control>
+			<control type="label">
+				<include>widget_preview</include>
+				<visible>Container(9000).HasFocus(10)</visible>
+				<label>Pré-visualização dos widgets de Fotos</label>
+			</control>
+			<control type="grouplist" id="70001">
+				<include>widgets_buttons_layout</include>
+				<onup>70001</onup>
+				<ondown>70001</ondown>
+				<visible>Container(9000).HasFocus(4)</visible>
+				<include>game_widget_itens</include>
+			</control>
+			<control type="grouplist" id="70002">
+				<include>widgets_buttons_layout</include>
+				<onup>70002</onup>
+				<ondown>70002</ondown>
+				<visible>Container(9000).HasFocus(5)</visible>
+				<include>movies_widget_itens</include>			
+			</control>
+			<control type="grouplist" id="70003">
+				<include>widgets_buttons_layout</include>
+				<onup>70003</onup>
+				<ondown>70003</ondown>
+				<visible>Container(9000).HasFocus(6)</visible>
+				<include>shows_widget_itens</include>			
+			</control>
+			<control type="grouplist" id="70004">
+				<include>widgets_buttons_layout</include>
+				<onup>70004</onup>
+				<ondown>70004</ondown>
+				<visible>Container(9000).HasFocus(7)</visible>
+				<include>netflix_widget_itens</include>			
+			</control>
+			<control type="grouplist" id="70005">
+				<include>widgets_buttons_layout</include>
+				<onup>70005</onup>
+				<ondown>70005</ondown>
+				<visible>Container(9000).HasFocus(8)</visible>
+				<include>music_widget_itens</include>			
+			</control>
+			<control type="grouplist" id="70006">
+				<include>widgets_buttons_layout</include>
+				<onup>70006</onup>
+				<ondown>70006</ondown>
+				<visible>Container(9000).HasFocus(9)</visible>
+				<include>spotify_widget_itens</include>			
+			</control>
+			<control type="grouplist" id="70007">
+				<include>widgets_buttons_layout</include>
+				<visible>Container(9000).HasFocus(10)</visible>
+				<include>pic_widget_itens</include>
+			</control>
+		
+			<!-- PRÉ-VISUALIZAÇÂO DE WIDGETS -->
+			<control type="list" id="8001">
+				<visible>Container(9000).HasFocus(5)</visible>
+				<include>widgetpreview</include>
+				<content target="videos" sortby="random" limit="7">$INFO[Skin.String(moviewidget)]</content>
+			</control>
+			<control type="list" id="8001">
+				<visible>Container(9000).HasFocus(6)</visible>
+				<include>widgetpreview</include>
+				<content target="videos" sortby="random" limit="7">$INFO[Skin.String(showswidget)]</content>
+			</control>
+			<control type="list" id="8001">
+				<visible>Container(9000).HasFocus(7)</visible>
+				<include>widgetpreview</include>
+				<content target="videos" sortby="random" limit="7">$INFO[Skin.String(netflixwidget)]</content>
+			</control>
+			<control type="list" id="8001">
+				<visible>Container(9000).HasFocus(8)</visible>
+				<include>widgetpreview</include>
+				<content target="music" sortby="random" limit="7">$INFO[Skin.String(musicwidget)]</content>
+			</control>
+			<control type="list" id="8001">
+				<visible>Container(9000).HasFocus(9)</visible>
+				<include>widgetpreview</include>
+				<content target="music" sortby="random" limit="7">$INFO[Skin.String(spotifywidget)]</content>
+			</control>
+			<control type="list" id="8001">
+				<visible>Container(9000).HasFocus(10)</visible>
+				<include>widgetpreview</include>
+				<content target="pictures" sortby="random" limit="7">$INFO[Skin.String(picwidget)]</content>
+			</control>
+		</control>
+		
+		
+		<!-- MENU DA ESQUERDA -->
+		<control type="group">
+			<control type="list" id="9000">
+				<description>button area</description>
+				<left>0</left>
+				<top>160</top>
+				<width>500</width>
+				<height>820</height>
+				<onleft>10000</onleft>
+				<onright>10000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<itemlayout height="90" width="470">
+					<control type="image">
+						<width>500</width>
+						<height>1</height>
+						<texture>line_h.png</texture>
+					</control>
+					<control type="label">
+						<textoffsetx>30</textoffsetx>
+						<width>500</width>
+						<height>90</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font37</font>
+						<aligny>center</aligny>
+					</control>
+				</itemlayout>
+				<focusedlayout height="90" width="470">
+					<control type="image">
+						<width>500</width>
+						<height>1</height>
+						<texture>line_h.png</texture>
+					</control>
+					<control type="image">
+						<width>500</width>
+						<height>90</height>
+						<texture>focus.png</texture>
+						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<textoffsetx>30</textoffsetx>
+						<width>500</width>
+						<height>90</height>
+						<font>font37</font>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>black</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$LOCALIZE[128]</label>
+						<onclick>Control.SetFocus(10001)</onclick>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[31061]</label>
+						<onclick>Control.SetFocus(10002)</onclick>
+					</item>
+					<item id="5">
+						<label>Filmes Widgets</label>
+						<onclick>Control.SetFocus(70002)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
+					</item>
+					<item id="6">
+						<label>Series Widgets</label>
+						<onclick>Control.SetFocus(70003)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
+					</item>
+					<item id="7">
+						<label>Netflix Widgets</label>
+						<onclick>Control.SetFocus(70004)</onclick>
+						<visible>System.HasAddon(plugin.video.netflix) + !Skin.HasSetting(HomeMenuNoNetflixButton)</visible>
+					</item>
+					<item id="8">
+						<label>Musicas Widgets</label>
+						<onclick>Control.SetFocus(70005)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+					</item>
+					<item id="9">
+						<label>Spotify Widgets</label>
+						<onclick>Control.SetFocus(70006)</onclick>
+						<visible>!System.HasAddon(plugin.music.spotify) + !Skin.HasSetting(HomeMenuNoSpotifyButton)</visible>
+					</item>
+					<item id="10">
+						<label>Fotos Widgets</label>
+						<onclick>Control.SetFocus(70007)</onclick>
+						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+		
+		<!-- SCROLLBAR -->
+		<control type="scrollbar" id="80">
+			<include>scrollbar_vertical</include>
+			<animation effect="slide" start="0,0" end="-50,0" time="300" tween="sine" easing="inout" condition="Control.HasFocus(80)">conditional</animation>
+			<left>1930</left>
+			<top>160</top>
+			<height>660</height>
+			<onleft>10000</onleft>
+			<onright>10000</onright>
+			<visible>true</visible>
+		</control>
+	</controls>
+</window>

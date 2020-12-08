@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+<!-- 	1.31 EventLog.xml
+ID 		Type 			Description
+4 		togglebutton 	Select sortmode (ascending or descending)
+20 		button 			Clear button
+21 		button 			Level button
+22 		radiobutton 	Only show current level radiobutton
+570 	container 		Container with event loglines  
+-->
+</window>

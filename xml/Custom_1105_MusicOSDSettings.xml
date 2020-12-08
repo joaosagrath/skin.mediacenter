@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1105">
+	<defaultcontrol always="true">5001</defaultcontrol>
+	<controls>
+		<control type="group">
+			<!-- <animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="4000">WindowOpen</animation>
+			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation> -->
+			<bottom>100</bottom>
+			<right>0</right>
+			<width>620</width>
+			<height>700</height>
+			<control type="image">
+				<width>600</width>
+				<height>700</height>
+				<texture>bar-grey.png</texture>
+			</control>
+			<control type="group">
+				<control type="grouplist" id="5001">
+					<width>600</width>
+					<height>700</height>
+					<itemgap>0</itemgap>
+					<onup>5001</onup>
+					<ondown>5001</ondown>
+					<onleft>703</onleft>
+					<orientation>vertical</orientation>
+					<!-- <control type="radiobutton" id="5001">
+						<width>600</width>
+						<include>button_75</include>
+						<label>$LOCALIZE[31163]</label>
+						<onclick>Skin.ToggleSetting(hide_background_fanart)</onclick>
+						<selected>!Skin.HasSetting(hide_background_fanart)</selected>
+					</control>
+					<control type="radiobutton" id="5002">
+						<label>$LOCALIZE[31167]</label>
+						<include>button_75</include>
+						<onclick>Skin.ToggleSetting(animate_background_fanart)</onclick>
+						<selected>Skin.HasSetting(animate_background_fanart)</selected>
+					</control> -->
+					<control type="button" id="5004">
+						<width>600</width>
+						<include>button_75</include>
+						<label>$LOCALIZE[250]</label>
+						<label2>[B]$INFO[Visualisation.Name][/B]</label2>
+						<onclick>Dialog.Close(all)</onclick>
+						<onclick>SendClick(500)</onclick>
+					</control>
+					<control type="button" id="5005">
+						<width>600</width>
+						<include>button_75</include>
+						<label>Ajustes de Visualização</label>
+						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+					</control>
+					<control type="button" id="5006">
+						<width>600</width>
+						<include>button_75</include>
+						<label>Escolher Visualização</label>
+						<onclick>ActivateWindow(visualisationpresetlist)</onclick>
+						<visible>Visualisation.HasPresets</visible>
+					</control>
+					<control type="button" id="5007">
+						<width>600</width>
+						<include>button_75</include>
+						<label>Add-on de Letras</label>
+						<label2>[B]$INFO[Skin.String(LyricScript_Path)][/B]</label2>
+						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+					</control>
+					<control type="button" id="5008">
+						<width>600</width>
+						<include>button_75</include>
+						<label>Ajustes do add-on de letras</label>
+						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
+						<visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

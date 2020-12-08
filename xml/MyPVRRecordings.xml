@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+<!-- 	1.45 MyPVRRecordings.xml
+ID 	Type 			Description
+2 	button 			Select viewtype (list, thumbnail, media info, etc...)
+3 	button 			Select sort method (sort by: name, date size, etc...)
+4 	togglebutton 	Select sortmode (ascending or descending)
+5 	radiobutton 	Group items by folder structure
+7 	radiobutton 	Show deleted recordings
+10 	button 			Show only watched, unwatched or all recordings
+28 	button 			Channelgroups button
+29 	label 			'Deleted' (When show deleted recordings is enabled, otherwise empty)  -->
+</window>

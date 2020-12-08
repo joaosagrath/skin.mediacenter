@@ -1,0 +1,326 @@
+# KODI Media Center language file
+# Addon Name: Media Center
+# Addon id: skin.mediacenter
+# Addon version: 0.0.1
+# Addon Provider: João Girardi
+# Translators: João Grardi
+
+
+msgctxt "Addon Summary"
+msgid "MEDIA CENTER - First Release."
+msgstr "Media Center - Lançamento inicial."
+
+msgctxt "Addon Description"
+msgid "Development started."
+msgstr "Desenvolvimento iniciado."
+
+msgctxt "Addon Disclaimer"
+msgid "0.0.1"
+msgstr "0.0.1"
+
+# SEÇÃO TITULOS GERAIS #
+
+msgctxt "#30000"
+msgid "Titles"
+msgstr "Títulos"
+
+msgctxt "#30001"
+msgid "Genres"
+msgstr "Gêneros"
+
+msgctxt "#30002"
+msgid "Year"
+msgstr "Ano"
+
+msgctxt "#30003"
+msgid "Actors"
+msgstr "Atores"
+
+msgctxt "#30004"
+msgid "Directos"
+msgstr "Diretores"
+
+msgctxt "#30005"
+msgid "Studios"
+msgstr "Estudios"
+
+msgctxt "#30006"
+msgid "Sets"
+msgstr "Coleções"
+
+msgctxt "#30007"
+msgid "Sets"
+msgstr "Mais Recentes"
+
+
+
+
+msgctxt "#30100"
+msgid "Widgets Settings"
+msgstr "Ajustes de Widgets"
+
+msgctxt "#30101"
+msgid "Files"
+msgstr "Arquivos"
+
+# ######### #
+
+
+
+msgctxt "#31012"
+msgid "Quit"
+msgstr "Sair"
+
+msgctxt "#31058"
+msgid "Shutdown"
+msgstr "Desligar"
+
+msgctxt "#31059"
+msgid "Change User"
+msgstr "Trocar Usuário"
+
+
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Escolha a classificação a exibir para itens de mídia"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Ítens Menu Principal"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Mostrar info de clima na barra superior"
+
+msgctxt "#31095"
+msgid "Use Home animations"
+msgstr "Usar animações na Home"
+
+msgctxt "#31096"
+msgid "Clear background"
+msgstr "Fundo claro"
+
+msgctxt "#31097"
+msgid "Dark background"
+msgstr "Fundo Escuro"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Modo touch"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Mostrar etiquetas de mídia"
+
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "Escolher o tipo de identificação do perfil"
+
+msgctxt "#31200"
+msgid "Previous View"
+msgstr "Vista Anterior"
+
+msgctxt "#31201"
+msgid "Next View"
+msgstr "Próxima Vista"
+
+msgctxt "#31202"
+msgid "Back to List"
+msgstr "Voltar a Lista"
+
+msgctxt "#31203"
+msgid "Show Fanart"
+msgstr "Mostrar Fanart"
+
+msgctxt "#31204"
+msgid "Advanced Options"
+msgstr "Opções Avançadas"
+
+# SEÇÃO ADVANCED EMULATOR LAUNCHER #
+
+msgctxt "#70001"
+msgid "AEL - Home"
+msgstr "AEL - Home"
+
+msgctxt "#70002"
+msgid "AEL - Categories"
+msgstr "AEL - Categorias"
+
+msgctxt "#70003"
+msgid "AEL - Launchers"
+msgstr "AEL - Launchers"
+
+msgctxt "#70004"
+msgid "AEL - Colections"
+msgstr "AEL - Coleções"
+
+msgctxt "#70005"
+msgid "AEL - ROMS"
+msgstr "AEL - ROMS"
+
+msgctxt "#70006"
+msgid "AEL - Recently Played"
+msgstr "AEL - Jogadas Recentemente"
+
+msgctxt "#70007"
+msgid "AEL - Most Played"
+msgstr "AEL - Mais Jogadas"
+
+msgctxt "#70008"
+msgid "AEL - Favorites Roms"
+msgstr "AEL - Roms Favoritas"
+
+msgctxt "#70009"
+msgid "Clear Game widgets settings"
+msgstr "Limpar ajustes de widgets de Jogos"
+
+msgctxt "#70010"
+msgid "AEL - Browse By"
+msgstr "AEL - Navegar Por"
+
+# SEÇÃO FILMES #
+
+msgctxt "#71001"
+msgid "Movies by Title"
+msgstr "Filmes por Títulos"
+
+msgctxt "#71002"
+msgid "Movies by Genres"
+msgstr "Filmes por Gêneros"
+
+msgctxt "#71003"
+msgid "Movies by Release Year"
+msgstr "Filmes por Ano de Lançamento"
+
+msgctxt "#71004"
+msgid "Movies by Actors"
+msgstr "Filmes por Atores"
+
+msgctxt "#71005"
+msgid "Movies by Directors"
+msgstr "Filmes por Diretores"
+
+msgctxt "#71006"
+msgid "Movies by Studios"
+msgstr "Filmes por Estúdios"
+
+msgctxt "#71007"
+msgid "Movies by Colections"
+msgstr "Filmes por Coleções"
+
+msgctxt "#71008"
+msgid "Movies by Countries"
+msgstr "Filmes por Países"
+
+msgctxt "#71009"
+msgid "Movies Recently Added"
+msgstr "Filmes Adicionados Recentemente"
+
+msgctxt "#71099"
+msgid "Clear Movies widgets settings"
+msgstr "Limpar ajustes de widgets de Filmes"
+
+# SEÇÃO SERIADOS #
+
+msgctxt "#72001"
+msgid "Tv Shows by Title"
+msgstr "Seriados por Títulos"
+
+msgctxt "#72002"
+msgid "Tv Shows by Genres"
+msgstr "Seriados por Gêneros"
+
+msgctxt "#72003"
+msgid "Tv Shows by Yers"
+msgstr "Seriados por Anos"
+
+msgctxt "#72004"
+msgid "Tv Shows by Actors"
+msgstr "Seriados por Atores"
+
+msgctxt "#72005"
+msgid "Tv Shows by Studios"
+msgstr "Seriados por Estudios"
+
+msgctxt "#72005"
+msgid "Tv Shows by Studios"
+msgstr "Seriados por Estudios"
+
+msgctxt "#72006"
+msgid "Tv Shows in Progress "
+msgstr "Seriados Em Progresso"
+
+msgctxt "#72007"
+msgid "Episodes Recently Added"
+msgstr "Episódios Adicionados Recentemente"
+
+msgctxt "#72099"
+msgid "Clear Tv Shows widgets settings"
+msgstr "Limpar ajustes de widgets de Seriados"
+
+# SEÇÃO NETFLIX #
+
+msgctxt "#74001"
+msgid "My List"
+msgstr "Minha Lista"
+
+msgctxt "#74002"
+msgid "Continue Watching"
+msgstr "Continuar Assistindo"
+
+msgctxt "#74003"
+msgid "Top 10 Today"
+msgstr "Top 10 Hoje"
+
+msgctxt "#74099"
+msgid "Clear Netflix widgets settings"
+msgstr "Limpar ajustes de widgets de Netflix"
+
+# SEÇÃO MUSICAS #
+
+msgctxt "#81001"
+msgid "Artists"
+msgstr "Artistas"
+
+msgctxt "#81002"
+msgid "Albums"
+msgstr "Álbums"
+
+msgctxt "#81003"
+msgid "Songs"
+msgstr "Músicas"
+
+msgctxt "#81004"
+msgid "Genres"
+msgstr "Gêneros"
+
+msgctxt "#81005"
+msgid "Top 100 Songs"
+msgstr "Top 100 Músicas"
+
+msgctxt "#81006"
+msgid "Top 100 Albums"
+msgstr "Top 100 Albums"
+
+msgctxt "#81007"
+msgid "Compilations"
+msgstr "Compilações"
+
+msgctxt "#81008"
+msgid "Singles"
+msgstr "Singles"
+
+msgctxt "#81009"
+msgid "Albums Recently Added"
+msgstr "Albums Adicionados Recentemente"
+
+msgctxt "#81010"
+msgid "Albums Recently Played"
+msgstr "Albums Executados Recentemente"
+
+msgctxt "#81099"
+msgid "Clear Music widgets settings"
+msgstr "Limpar ajustes de widgets de Músicas"
+
+

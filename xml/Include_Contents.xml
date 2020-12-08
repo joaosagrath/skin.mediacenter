@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- LAYOUT PADRÃO HOME TOPMENU -->
+	<include name="topmenulayout">
+		<itemlayout height="45" width="384">
+			<control type="label">
+				<left>0</left>
+				<top>0</top>
+				<height>45</height>
+				<width>384</width>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>home20</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>white</textcolor>
+				<include>fademenu</include>
+			</control>
+		</itemlayout>
+		<focusedlayout height="45" width="384">
+			<control type="label">
+				<left>0</left>
+				<top>0</top>
+				<height>45</height>
+				<width>384</width>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>home20</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>white</textcolor>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<!-- LAYOUT PADRÃO HOME SUBMENU -->
+	<include name="submenulayout">
+		<bottom>-45</bottom>
+		<left>0</left>
+		<width>1920</width>
+		<height>45</height>
+		<orientation>horizontal</orientation>
+		<ondown>9000</ondown>
+		<itemlayout height="45" width="1920">
+			<control type="label">
+				<left>0</left>
+				<top>0</top>
+				<height>45</height>
+				<width>1920</width>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>home20</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>white</textcolor>
+			</control>
+		</itemlayout>
+		<focusedlayout height="45" width="1920">
+			<control type="image">
+				<left>225</left>
+				<top>0</top>
+				<height>40</height>
+				<width>40</width>
+				<aligny>center</aligny>
+				<align>center</align>
+				<texture>arrow_left.png</texture>
+				<include>fademenu</include>
+			</control>
+			<control type="image">
+				<right>225</right>
+				<top>0</top>
+				<height>40</height>
+				<width>40</width>
+				<aligny>center</aligny>
+				<align>center</align>
+				<texture>arrow_right.png</texture>
+				<include>fademenu</include>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>0</top>
+				<height>45</height>
+				<width>1920</width>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>home20</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>white</textcolor>
+				<include>fademenu</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<!-- ITENS PARA SUBMENU DOS ITENS DO MENU PRINCIPAL -->
+	<include name="topgames">
+		<!-- GAMES -->
+		<item>
+			<label>$LOCALIZE[15016]</label>
+			<onclick condition="System.GetBool(gamesgeneral.enable)">ActivateWindow(Games)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[70004]</label>
+			<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS&quot;,return)</onclick>
+			<visible>System.HasAddon(plugin.program.advanced.emulator.launcher)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[70006]</label>
+			<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_RECENT_PLAYED&quot;,return)</onclick>
+			<visible>System.HasAddon(plugin.program.advanced.emulator.launcher)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[70007]</label>
+			<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED&quot;,return)</onclick>
+			<visible>System.HasAddon(plugin.program.advanced.emulator.launcher)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[70010]</label>
+			<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_VCATEGORIES_ROOT&quot;,return)</onclick>
+			<visible>System.HasAddon(plugin.program.advanced.emulator.launcher)</visible>
+		</item>
+		<item>
+			<label>AEL - Ajustes do Addon</label>
+			<onclick>Addon.OpenSettings(plugin.program.advanced.emulator.launcher)</onclick>
+			<visible>System.HasAddon(plugin.program.advanced.emulator.launcher)</visible>
+		</item>
+		<!-- <item>
+			<label>placeholder</label>
+			<onclick/>
+			<visible/>
+		</item>
+		<item>
+			<label>placeholder1</label>
+			<onclick/>
+			<visible/>
+		</item>
+		<item>
+			<label>placeholder2</label>
+			<onclick/>
+			<visible/>
+		</item>
+		<item>
+			<label>placeholder3</label>
+			<onclick/>
+			<visible/>
+		</item> -->
+	</include>
+	<include name="subgames">
+		<item>
+			<label>$LOCALIZE[70001]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70002]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_CATEGORIES)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70003]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_LAUNCHERS)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70004]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70005]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_ROMS)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70006]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_RECENTLY_PLAYED)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70007]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70008]</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>AEL - X-Rated</label>
+			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?catID=root_category&amp;com=SHOW_ROMS&amp;launID=d175a3594a528bfa4eeaa3653ddf5255)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[70009]</label>
+			<onclick>Skin.SetString(gamewidget,-)</onclick>
+			<visible/>
+		</item>
+	</include>
+	
+	<include name="topmovies">
+		<!-- FILMES -->
+		<item>
+			<label>$LOCALIZE[30000]</label>
+			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30001]</label>
+			<onclick>ActivateWindow(Videos,videodb://movies/genres/,return)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30002]</label>
+			<onclick>ActivateWindow(Videos,videodb://movies/years/,return)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30003]</label>
+			<onclick>ActivateWindow(Videos,videodb://movies/actors/,return)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30004]</label>
+			<onclick>ActivateWindow(Videos,videodb://movies/directors/,return)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30005]</label>
+			<onclick>ActivateWindow(Videos,videodb://movies/studios/,return)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30006]</label>
+			<onclick>ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30007]</label>
+			<onclick>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</onclick>
+		</item>
+		<item>
+			<label>Atualizar Coleção</label>
+			<onclick>updatelibrary(video)</onclick>
+		</item>
+		<item>
+			<label>Limpar Coleção</label>
+			<onclick>cleanlibrary(video)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30101]</label>
+			<onclick>ActivateWindow(Videos,sources://video/)</onclick>
+		</item>
+	</include>
+	<include name="submovies">
+		<item>
+			<label>$LOCALIZE[71001]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/titles)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71002]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/genres/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71003]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/years/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71004]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/actors/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71005]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/directors/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71006]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/studios/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71007]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/sets/)</onclick> 
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71008]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://movies/countries/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71009]</label>
+			<onclick>Skin.SetString(moviewidget,videodb://recentlyaddedmovies/)</onclick> 
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[71099]</label>
+			<onclick>Skin.SetString(moviewidget,-)</onclick>
+			<visible/>
+		</item>
+
+		
+	</include>
+	
+	<include name="toptvshows">
+		<!-- TVSHOWS -->
+		<item>
+			<label>$LOCALIZE[20343]</label>
+			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
+			<property name="menu_id">$NUMBER[6000]</property>
+			<thumb>special://skin/backgrounds/tvshows.jpg</thumb>
+			<property name="id">tvshows</property>
+			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[30100]</label>
+			<onclick>ActivateWindowAndFocus(10035, 9000,4)</onclick> 
+			<visible/>
+		</item>
+	</include>
+	<include name="topmusic">
+		<!-- MUSICAS -->
+		<item>
+			<label>$LOCALIZE[2] - Artistas</label>
+			<onclick>UpdateLibrary(music)</onclick>
+			<property name="menu_id">$NUMBER[7000]</property>
+			<thumb>special://skin/backgrounds/music.jpg</thumb>
+			<property name="id">music</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+		</item>		
+		<item>
+			<label>$LOCALIZE[30101]</label>
+			<onclick>ActivateWindow(Music,sources://music/)</onclick>
+		</item>
+		<item>
+			<label>$LOCALIZE[30100]</label>
+			<onclick>ActivateWindowAndFocus(10035, 9000,6)</onclick> 
+			<visible/>
+		</item>
+		<item>
+			<label>Atualizar Coleção de Musicas</label>
+			<onclick>UpdateLibrary(music)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>Limpar Coleção de Musicas</label>
+			<onclick>CleanLibrary(music)</onclick>
+			<visible/>
+		</item>
+	</include>
+	<include name="topspotify">
+		<!-- MUSICAS -->
+		<item>
+			<label>$LOCALIZE[30100]</label>
+			<onclick>ActivateWindowAndFocus(10035, 9000,7)</onclick> 
+			<visible/>
+		</item>
+	</include>	
+	<include name="toppictures">
+		<!-- IMAGENS -->
+		<item>
+			<label>$LOCALIZE[30100]</label>
+			<onclick>ActivateWindowAndFocus(10035, 9000,8)</onclick> 
+			<visible/>
+		</item>
+	</include>
+	
+	<!-- LAYOUT PADRÃO PARA HOME WIDGETS -->
+	<include name="widgetlayout">
+		<visible>![Control.HasFocus(7000) | Control.HasFocus(7014)]</visible>
+		<animation effect="slide" start="0,0" end="0,-45" time="200" easing="inout" condition="[Control.HasFocus(7101) | Control.HasFocus(7102)]">Conditional</animation>
+		<fadetime>450</fadetime>
+		<focusposition>0</focusposition>
+		<left>120</left>
+		<bottom>90</bottom>
+		<width>1670</width>
+		<height>300</height>
+		<onup>9000</onup>
+		<orientation>horizontal</orientation>
+		<viewtype>icon</viewtype>
+		<scrolltime tween="sine" easing="out">500</scrolltime>	
+		<itemlayout width="210" height="300">
+			<control type="image">
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$VAR[gameposter]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="[Control.HasFocus(9000) | Control.HasFocus(7000)]" width="210" height="300">
+			<control type="image">
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$VAR[gameposter]</texture>	
+			</control>
+			<control type="image">
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$VAR[gameposter]</texture>
+				<visible>!Control.HasFocus(9000)</visible>
+				<visible>!Control.HasFocus(7000)</visible>
+				<visible>!Control.HasFocus(700)</visible>
+				<visible>!Control.HasFocus(701)</visible>
+				<visible>!Control.HasFocus(702)</visible>
+				<visible>!Control.HasFocus(7101)</visible>
+				<visible>!Control.HasFocus(7102)</visible>
+			</control>
+		</focusedlayout>
+		<focusedlayout condition="![Control.HasFocus(9000) | Control.HasFocus(7000) | Control.HasFocus(700) | Control.HasFocus(701) | Control.HasFocus(702) | 
+		Control.HasFocus(7101) | Control.HasFocus(7102)]" width="420" height="300">
+			<control type="image"> <!-- Games -->
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$VAR[gameposter]</texture>
+				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="[Control.HasFocus(7001) | Control.HasFocus(7002)]">Conditional</animation>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	
+	<include name="widgetfavlayout">
+		<visible>[Control.HasFocus(7000) | Control.HasFocus(7014)]</visible>
+		<fadetime>450</fadetime>
+		<focusposition>0</focusposition>
+		<left>230</left>
+		<bottom>20</bottom>
+		<width>1460</width>
+		<height>300</height>
+		<onup>9000</onup>
+		<orientation>horizontal</orientation>
+		<viewtype>icon</viewtype>
+		<itemlayout width="210" height="300">
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>210</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$VAR[poster]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="210" height="300">
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>210</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$VAR[poster]</texture>	
+			</control>
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>210</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture>$VAR[poster]</texture>
+			</control>
+		</focusedlayout>
+	</include>
+	
+
+</includes>

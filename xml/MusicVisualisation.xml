@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol>200</defaultcontrol>
+	<!-- 	1.37 MusicVisualisation.xml
+ID 	Type 			Description
+2 	visualisation 	Background Visualization  
+-->
+	<controls>
+		<control type="group">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>1080</height>
+				<texture>$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+				<fadetime>350</fadetime>
+				<colordiffuse/>
+			</control>
+			<control type="multiimage">
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>1080</height>
+				<imagepath>$VAR[musicarts]$INFO[MusicPlayer.Artist]\extrafanart\</imagepath>
+				<fadetime>350</fadetime>
+				<colordiffuse/>
+			</control>
+			
+			
+			
+			<control type="visualisation" id="2">
+				<left>0</left>
+				<bottom>0</bottom>
+				<width>1920</width>
+				<height>100</height>
+				<animation effect="fade" start="100" end="30" time="400">Visible</animation>
+				<animation effect="fade" start="30" end="100" time="200">Hidden</animation>
+				<visible></visible>
+			</control>
+			<include>myviewslayout</include>
+			<include>basicviewpanel</include>
+			<!-- Nome do Artista -->
+			<control type="label">
+				<!-- <visible>String.IsEmpty(Control.GetLabel(98))</visible> -->
+				<left>100</left>
+				<top>100</top>
+				<width>1200</width>
+				<height>45</height>
+				<font>home50</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[MusicPlayer.Artist]</label>
+				<fadetime>450</fadetime>
+			</control>
+			<!-- <control type="image">
+				<left>100</left>
+				<top>660</top>
+				<width>400</width>
+				<height>400</height>
+				<texture fallback="defaultaudio.png">$INFO[MusicPlayer.Cover]</texture>
+				<fadetime>450</fadetime>
+			</control> -->
+			<control type="image" id="98">
+				<right>100</right>
+				<top>0</top>
+				<width>516</width>
+				<height>200</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture>$VAR[musicarts]$INFO[MusicPlayer.Artist]\logo.png</texture>
+				<aspectratio>keep</aspectratio>
+				<fadetime>450</fadetime>
+			</control>
+			<control type="label">
+				<left>100</left>
+				<top>160</top>
+				<width>1200</width>
+				<height>45</height>
+				<font>home_time</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[COLOR=orange]$INFO[MusicPlayer.TrackNumber].[/COLOR] $INFO[MusicPlayer.Title]</label>
+				<fadetime>450</fadetime>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<top>1000</top>
+				<width>1880</width>
+				<height>45</height>
+				<font>home_time</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[MusicPlayer.Year] - $INFO[MusicPlayer.Album] - $INFO[MusicPlayer.Genre]</label>
+				<fadetime>450</fadetime>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- 	1.15 DialogNotification.xml
+ID 		Type 	Description
+400 	image 	Default Icon
+401 	label 	Heading text
+402 	label 	Message text  
+-->
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="0,-150" end="0" time="500" easing="inout" tween="cubic">WindowOpen</animation>
+			<animation effect="slide" start="0,-150" end="0,0" time="500" easing="inout" tween="cubic">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="0,-150" time="300" easing="inout" tween="cubic">Hidden</animation>
+			<control type="image">
+				<height>150</height>
+				<texture flipy="true">shadow_mask_h.png</texture>
+				<colordiffuse>black</colordiffuse>
+			</control>
+			<control type="fadelabel" id="401">
+				<right>20</right>
+				<include>notifylabel</include>
+			</control>
+			<control type="fadelabel" id="402">
+				<right>20</right>
+				<top>40</top>
+				<include>notifylabel</include>
+			</control>
+		</control>
+	</controls>
+</window>

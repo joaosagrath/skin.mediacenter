@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+<!-- 	1.52 SettingsProfile.xml
+ID 	Type 		Description
+2 	container 	List of available profiles
+4 	button 		Enable the loginscreen
+5 	button 		Auto login  
+-->
+	<controls>
+		<control type="image">
+			<texture>special://skin/backgrounds/settings.jpg</texture>
+		</control>
+		<include>systempanel</include>
+		<include content="TopBar">
+			<param name="breadcrumbs_label" value="$LOCALIZE[13000]" />
+		</include>
+	</controls>
+</window>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">52</defaultcontrol>
+<!-- 	1.35 LoginScreen.xml
+ID 	Type 		Description
+2 	label 		Heading label
+3 	label 		Number of the currently selected profile
+52 	container 	List of the available profiles  
+-->
+</window>

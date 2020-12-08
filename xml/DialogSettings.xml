@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>5</defaultcontrol>
+<!-- 	1.26 DialogSettings.xml
+ID 	Type 			Description
+2 	label 			Header label
+5 	grouplist 		Grouplist template
+7 	button 			button template
+8 	radiobutton 	radiobutton template
+9 	spincontrolex 	spincontrolex template
+11 	image 			image template
+12 	edit 			edit template
+13 	sliderex 		sliderex template
+14 	label 			label template
+28 	button 			ok button
+29 	button 			cancel button
+30 	button 			clear/settings button  -->
+</window>
