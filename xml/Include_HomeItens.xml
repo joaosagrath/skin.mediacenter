@@ -45,25 +45,6 @@
 		</item>
 	</include>	
 	
-	<include name="extramenu">
-		<item id="706">
-			<!-- NETFLIX -->
-			<label>NETFLIX</label>
-			<onclick>RunAddon(plugin.video.netflix)</onclick>
-			<property name="menu_id">$NUMBER[6000]</property>
-			<property name="id">netflix</property>
-			<visible>System.HasAddon(plugin.video.netflix)</visible>
-		</item>
-		<item id="707">
-			<!-- SPOTIFY -->
-			<label>SPOTIFY</label>
-			<onclick>ActivateWindow(Music,root,return)</onclick>
-			<property name="menu_id">$NUMBER[7000]</property>
-			<property name="id">spotify</property>
-			<visible>!System.HasAddon(plugin.music.spotify)</visible>
-		</item>
-	</include>
-	
 	<include name="sidemenu">	
 		<item id="708">
 			<label>$LOCALIZE[427]</label>
@@ -139,6 +120,81 @@
 			<thumb>icons/sidemenu/manage.png</thumb>
 		</item>
 
+	</include>
+	
+	<include name="extramenu">
+		<item id="801">
+			<!-- NETFLIX -->
+			<label>NETFLIX</label>
+			<onclick>RunAddon(plugin.video.netflix)</onclick>
+			<property name="menu_id">$NUMBER[6000]</property>
+			<property name="id">netflix</property>
+			<visible>System.HasAddon(plugin.video.netflix)</visible>
+			<thumb>icons/sidemenu/netflix.png</thumb>
+		</item>
+		<item id="802">
+			<!-- SPOTIFY -->
+			<label>SPOTIFY</label>
+			<onclick>ActivateWindow(Music,root,return)</onclick>
+			<property name="menu_id">$NUMBER[7000]</property>
+			<property name="id">spotify</property>
+			<visible>!System.HasAddon(plugin.music.spotify)</visible>
+			<thumb>icons/sidemenu/spotify.png</thumb>
+		</item>
+		<item id="803">
+			<!-- YOUTUBE -->
+			<label>YOUTUBE</label>
+			<onclick>ActivateWindow(Music,root,return)</onclick>
+			<property name="menu_id">$NUMBER[7000]</property>
+			<property name="id">youtube</property>
+			<visible>!System.HasAddon(plugin.video.youtube)</visible>
+			<thumb>icons/sidemenu/youtube.png</thumb>
+		</item>
+	</include>
+
+	<include name="mysystem">
+		<item>
+			<!-- Sistema -->
+			<label>$LOCALIZE[9]</label>
+			<label2>$INFO[System.BuildVersion] | $INFO[System.BuildDate]</label2>
+			<onclick></onclick>
+		</item>
+		<item>
+			<!-- Resolucao da tela -->
+			<label>$LOCALIZE[13287]</label>
+			<label2>$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight] pxl ($INFO[System.FPS] hz)</label2>
+			<onclick></onclick>
+		</item>
+		<item>
+			<!-- Estado de rede -->
+			<label>$LOCALIZE[13295]</label>
+			<label2>$INFO[System.InternetState] ($INFO[Network.IPAddress])</label2>
+			<onclick></onclick>
+		</item>
+		<item>
+			<!-- Tempo em uso -->
+			<label>$LOCALIZE[12390]:</label>
+			<label2>$INFO[System.Uptime]</label2>
+			<onclick></onclick>
+		</item>
+		<item>
+			<!-- Consumo da CPU -->
+			<label>$LOCALIZE[13271] [COLOR=$INFO[skin.string(colortext)]]$INFO[System.CPUUsage] ($INFO[System.CpuFrequency])[/COLOR]</label>
+		</item>
+		<item>
+			<!-- Consumo de memoria -->
+			<label>$LOCALIZE[158]: [COLOR=$INFO[skin.string(colortext)]]$INFO[System.Memory(free.percent)][/COLOR]</label>
+		</item>
+		<item>
+			<!-- Espaco usado -->
+			<label>$LOCALIZE[440]: [COLOR=$INFO[skin.string(colortext)]]$INFO[System.UsedSpacePercent][/COLOR]</label>
+			<visible>![System.Platform.Android | System.Platform.Linux | System.Platform.Linux.RaspberryPi]</visible>
+		</item>
+		<item>
+			<!-- Bateria -->
+			<label>$LOCALIZE[12395]: [COLOR=$INFO[skin.string(colortext)]]$INFO[System.BatteryLevel][/COLOR]</label>
+			<visible>Integer.IsGreater(System.BatteryLevel,0)</visible>
+		</item>
 	</include>
 
 </includes>

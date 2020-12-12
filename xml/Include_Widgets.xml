@@ -13,150 +13,18 @@
 		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(702)]</visible> -->
 		<content target="videos">$INFO[Skin.String(moviewidget)]</content>
 	</include>
-
-		
+	
 	<!-- WIDIGETS SERIADOS -->
 	<include name="tvshows_widgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
-		<visible>![Control.HasFocus(700) | Control.HasFocus(703)]</visible>
+		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(703)]</visible> -->
 		<content target="videos">$INFO[Skin.String(showswidget)]</content>
 	</include>
-	<!-- WIDGETS SERIES CONTEÚDO -->
-	<include name="shows_widget_itens">
-		<control type="radiobutton" id="7301">
-			<label>$LOCALIZE[72001]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,videodb://tvshows/titles/)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72001])</onclick>
-			<onclick>Skin.ToggleSetting(showstitles)</onclick>
-			<onclick>Skin.Reset(showsgenres)</onclick>
-			<onclick>Skin.Reset(showsyears)</onclick>
-			<onclick>Skin.Reset(showsactors)</onclick>
-			<onclick>Skin.Reset(showsstudios)</onclick>
-			<onclick>Skin.Reset(showsrecenteps)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<onclick>Skin.Reset(shows-)</onclick>
-			<selected>Skin.HasSetting(showstitles)</selected>
-		</control>
-		<control type="radiobutton" id="7302">
-			<label>$LOCALIZE[72002]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,videodb://tvshows/genres/)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72002])</onclick>
-			<onclick>Skin.ToggleSetting(showsgenres)</onclick>
-			<onclick>Skin.Reset(showstitles)</onclick>
-			<onclick>Skin.Reset(showsyears)</onclick>
-			<onclick>Skin.Reset(showsactors)</onclick>
-			<onclick>Skin.Reset(showsstudios)</onclick>
-			<onclick>Skin.Reset(showsrecenteps)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<onclick>Skin.Reset(shows-)</onclick>
-			<selected>Skin.HasSetting(showsgenres)</selected>
-		</control>
-		<control type="radiobutton" id="7303">
-			<label>$LOCALIZE[72003]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,videodb://tvshows/years/)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72003])</onclick>
-			<onclick>Skin.ToggleSetting(showsyears)</onclick>
-			<onclick>Skin.Reset(showstitles)</onclick>
-			<onclick>Skin.Reset(showsgenres)</onclick>
-			<onclick>Skin.Reset(showsactors)</onclick>
-			<onclick>Skin.Reset(showsstudios)</onclick>
-			<onclick>Skin.Reset(showsrecenteps)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<onclick>Skin.Reset(shows-)</onclick>
-			<selected>Skin.HasSetting(showsyears)</selected>
-		</control>
-		<control type="radiobutton" id="7304">
-			<label>$LOCALIZE[72004]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,videodb://tvshows/actors/)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72004])</onclick>
-			<onclick>Skin.ToggleSetting(showsactors)</onclick>
-			<onclick>Skin.Reset(showstitles)</onclick>
-			<onclick>Skin.Reset(showsgenres)</onclick>
-			<onclick>Skin.Reset(showsyears)</onclick>
-			<onclick>Skin.Reset(showsstudios)</onclick>
-			<onclick>Skin.Reset(showsrecenteps)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<onclick>Skin.Reset(shows-)</onclick>
-			<selected>Skin.HasSetting(showsactors)</selected>
-		</control>
-		<control type="radiobutton" id="7305">
-			<label>$LOCALIZE[72005]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,videodb://tvshows/studios/)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72005])</onclick>
-			<onclick>Skin.ToggleSetting(showsstudios)</onclick>
-			<onclick>Skin.Reset(showstitles)</onclick>
-			<onclick>Skin.Reset(showsgenres)</onclick>
-			<onclick>Skin.Reset(showsyears)</onclick>
-			<onclick>Skin.Reset(showsactors)</onclick>
-			<onclick>Skin.Reset(showsrecenteps)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<onclick>Skin.Reset(shows-)</onclick>
-			<selected>Skin.HasSetting(showsstudios)</selected>
-		</control>
-		<control type="radiobutton" id="7306">
-			<label>$LOCALIZE[72006]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,videodb://inprogresstvshows)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72006])</onclick>
-			<onclick>Skin.ToggleSetting(showsimprogress)</onclick>
-			<onclick>Skin.Reset(showstitles)</onclick>
-			<onclick>Skin.Reset(showsgenres)</onclick>
-			<onclick>Skin.Reset(showsyears)</onclick>
-			<onclick>Skin.Reset(showsactors)</onclick>
-			<onclick>Skin.Reset(showsstudios)</onclick>
-			<onclick>Skin.Reset(showsrecenteps)</onclick>
-			<onclick>Skin.Reset(shows-)</onclick>
-			<selected>Skin.HasSetting(showsimprogress)</selected>
-		</control>
-		<control type="radiobutton" id="7307">
-			<label>$LOCALIZE[72007]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,videodb://recentlyaddedepisodes/)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72007])</onclick>
-			<onclick>Skin.ToggleSetting(shows-)</onclick>
-			<onclick>Skin.Reset(showstitles)</onclick>
-			<onclick>Skin.Reset(showsgenres)</onclick>
-			<onclick>Skin.Reset(showsyears)</onclick>
-			<onclick>Skin.Reset(showsactors)</onclick>
-			<onclick>Skin.Reset(showsstudios)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<selected>Skin.HasSetting(shows-)</selected>
-		</control>
-		<control type="radiobutton" id="7399">
-			<label>$LOCALIZE[72099]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(showswidget,-)</onclick>
-			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72099])</onclick>
-			<onclick>Skin.ToggleSetting(showsrecenteps)</onclick>
-			<onclick>Skin.Reset(showstitles)</onclick>
-			<onclick>Skin.Reset(showsgenres)</onclick>
-			<onclick>Skin.Reset(showsyears)</onclick>
-			<onclick>Skin.Reset(showsactors)</onclick>
-			<onclick>Skin.Reset(showsstudios)</onclick>
-			<onclick>Skin.Reset(showsimprogress)</onclick>
-			<onclick>Skin.Reset(shows-)</onclick>
-			<selected>Skin.HasSetting(showsrecenteps)</selected>
-		</control>		
-	</include>	
 	
 	<!-- WIDGETS NETFLIX -->
 	<include name="netflix_widgets">
-		<visible>String.IsEqual(Container(9000).ListItem.Property(id),netflix)</visible>
-		<visible>![Control.HasFocus(700) | Control.HasFocus(704)]</visible>
+		<visible>String.IsEqual(Container(8000).ListItem.Property(id),netflix)</visible>
+		<!-- visible>![Control.HasFocus(700) | Control.HasFocus(704)]</visible> -->
 		<content target="videos">$INFO[Skin.String(netflixwidget)]</content>
 	</include>
 	<!-- WIDGETS CONTEÚDO -->
@@ -506,7 +374,56 @@
 	<include name="fav_widgets">
 		<visible>String.IsEqual(Container(7000).ListItem.Property(id),favourites)</visible>
 		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(705)]</visible> -->
-		<content sortby="random">plugin://script.skin.helper.widgets/?mediatype=favourites</content>
+		<content limit="8" sortby="random">plugin://script.skin.helper.widgets/?mediatype=favourites</content>
 	</include>
+	
+	<include name="addon_widgets">
+		<visible>String.IsEqual(Container(7000).ListItem.Property(id),addons)</visible>
+		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(705)]</visible> -->
+		<content>
+			<item>
+				<!-- ADDONS DE JOGOS -->
+				<label>Jogos</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<property name="id">homegamesaddons</property>
+				<thumb>posters/defaultaddongame.png</thumb>
+			</item>
+			<item>
+				<!-- ADDONS DE VIDEOS -->
+				<label>Videos</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<property name="id">homevideosaddons</property>
+				<thumb>posters/defaultaddonvideo.png</thumb>				
+			</item>
+			<item>
+				<!-- ADDONS DE AUDIO -->
+				<label>Áudio</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<property name="id">homeaudioaddons</property>
+				<thumb>posters/defaultaddonmusic.png</thumb>
+			</item>
+			<item>
+				<!-- ADDONS DE IMAGENS -->
+				<label>Imagens</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<property name="id">homepicturesaddons</property>
+				<thumb>posters/defaultaddonimages.png</thumb>
+			</item>
+			<item>
+				<!-- ADDONS DE PROGRAMAS -->
+				<label>Programas</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<property name="id">homeprogramsaddons</property>
+				<thumb>posters/defaultaddonprogram.png</thumb>
+			</item>
+			
+		</content>
+	</include>
+	
 	<!-- By Sagrath -->
 </includes>

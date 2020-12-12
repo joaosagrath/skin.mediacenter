@@ -6,15 +6,28 @@
 	</include>
 	
 	<include name="home_fade">
-		<animation effect="fade" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7001)">Conditional</animation>
+		<animation effect="fade" delay="1000" start="0" end="100" time="500" condition="Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(8001)">True</animation>
+	</include>
+
+	<include name="widget_fade">
+		<animation effect="fade" delay="450" start="0" end="100" time="450" condition="true">Conditional</animation>
 	</include>
 	
-	<include name="side_hidden">
+	<include name="side_right_hidden">
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="!Container(9000).HasFocus(705)">Conditional</animation>
 		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7001)">Conditional</animation>
 		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7002)">Conditional</animation>
 		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7003)">Conditional</animation>
 		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7004)">Conditional</animation>
 		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7005)">Conditional</animation>
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7101)">Conditional</animation>
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7102)">Conditional</animation>
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7103)">Conditional</animation>
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7104)">Conditional</animation>
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7105)">Conditional</animation>
+	</include>
+	<include name="side_left_hidden">
+		<animation effect="slide" start="0" end="-100" time="300" tween="sine" easing="inout" condition="!Container(9000).HasFocus(701)">Conditional</animation>
 	</include>
 	
 	<include name="top_hidden">
@@ -35,6 +48,15 @@
 		<animation effect="slide" delay="500" time="400" start="0,0" end="0,600" easing="inout" tween="cubic" condition="Control.HasFocus(7006) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
 		<animation effect="slide" delay="500" time="400" start="0,0" end="0,600" easing="inout" tween="cubic" condition="Control.HasFocus(7007) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
 		<animation effect="fade" delay="400" start="100" end="0" time="500" tween="cubic" condition="Control.HasFocus(7001) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
+	</include>
+	<include name="homelogoandplotdown"> <!-- Focus on Widgets 3 Seconds -->
+		<animation effect="slide" delay="500" time="400" start="0,0" end="0,325" easing="inout" tween="cubic" condition="Control.HasFocus(7001) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
+		<animation effect="slide" delay="500" time="400" start="0,0" end="0,325" easing="inout" tween="cubic" condition="Control.HasFocus(7002) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
+		<animation effect="slide" delay="500" time="400" start="0,0" end="0,325" easing="inout" tween="cubic" condition="Control.HasFocus(7003) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
+		<animation effect="slide" delay="500" time="400" start="0,0" end="0,325" easing="inout" tween="cubic" condition="Control.HasFocus(7004) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
+		<animation effect="slide" delay="500" time="400" start="0,0" end="0,325" easing="inout" tween="cubic" condition="Control.HasFocus(7005) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
+		<animation effect="slide" delay="500" time="400" start="0,0" end="0,325" easing="inout" tween="cubic" condition="Control.HasFocus(7006) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
+		<animation effect="slide" delay="500" time="400" start="0,0" end="0,6325" easing="inout" tween="cubic" condition="Control.HasFocus(7007) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
 	</include>
 	<include name="homeup"> <!-- Focus on Widgets 8 Seconds -->
 		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7001) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>

@@ -86,6 +86,15 @@
 		<value condition="Control.HasFocus(5000)">$LOCALIZE[10004]</value>
 	</variable>
 	
+	<variable name="widgetslabel">
+		<value condition="Control.HasFocus(7001)">$INFO[skin.string(gamewidgetlabel)]</value>
+		<value condition="Control.HasFocus(7002)">$INFO[skin.string(moviewidgetlabel)]</value>
+		<value condition="Control.HasFocus(7003)">$INFO[skin.string(showswidgetlabel)]</value>
+		<value condition="Control.HasFocus(7004)">$INFO[skin.string(musicwidgetlabel)]</value>
+		<value condition="Control.HasFocus(7005)">$INFO[skin.string(picwidgetlabel)]</value>
+
+	</variable>
+	
 	<!-- ARTES PARA GAMES -->
 	<variable name="gamewidget">
 		<value>$INFO[skin.string(gamewidget)]</value>

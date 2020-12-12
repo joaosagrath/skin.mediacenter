@@ -144,46 +144,55 @@
 	<include name="subgames">
 		<item>
 			<label>$LOCALIZE[70001]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70001])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[70002]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70002])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_CATEGORIES)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[70003]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70003])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_LAUNCHERS)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[70004]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70004])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[70005]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70005])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_ROMS)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[70006]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70006])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_RECENTLY_PLAYED)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[70007]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70007])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[70008]</label>
+			<onclick>Skin.SetString(gamewidgetlabel,$LOCALIZE[70008])</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>AEL - X-Rated</label>
+			<onclick>Skin.SetString(gamewidgetlabel,AEL - X-Rated)</onclick>
 			<onclick>Skin.SetString(gamewidget,plugin://plugin.program.advanced.emulator.launcher/?catID=root_category&amp;com=SHOW_ROMS&amp;launID=d175a3594a528bfa4eeaa3653ddf5255)</onclick>
 			<visible/>
 		</item>
@@ -244,51 +253,61 @@
 	<include name="submovies">
 		<item>
 			<label>$LOCALIZE[71001]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71001])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/titles)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71002]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71002])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/genres/)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71003]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71003])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/years/)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71004]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71004])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/actors/)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71005]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71005])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/directors/)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71006]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71006])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/studios/)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71007]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71007])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/sets/)</onclick> 
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71008]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[7108])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/countries/)</onclick>
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71009]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71009])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://recentlyaddedmovies/)</onclick> 
 			<visible/>
 		</item>
 		<item>
 			<label>$LOCALIZE[71099]</label>
+			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71099])</onclick>
 			<onclick>Skin.SetString(moviewidget,-)</onclick>
 			<visible/>
 		</item>
@@ -308,12 +327,58 @@
 			<property name="id">tvshows</property>
 			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
 		</item>
+	</include>
+	<include name="subtvshows">
 		<item>
-			<label>$LOCALIZE[30100]</label>
-			<onclick>ActivateWindowAndFocus(10035, 9000,4)</onclick> 
+			<label>$LOCALIZE[72001]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72002])</onclick>
+			<onclick>Skin.SetString(showswidget,videodb://tvshows/titles/)</onclick>			
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[72002]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72002])</onclick>
+			<onclick>Skin.SetString(showswidget,videodb://tvshows/genres/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[72003]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72003])</onclick>
+			<onclick>Skin.SetString(showswidget,videodb://tvshows/years/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[72004]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72004])</onclick>
+			<onclick>Skin.SetString(showswidget,videodb://tvshows/actors/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[72005]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72005])</onclick>
+			<onclick>Skin.SetString(showswidget,videodb://tvshows/studios/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[72006]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72006])</onclick>
+			<onclick>Skin.SetString(showswidget,videodb://inprogresstvshows)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[72007]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72007])</onclick>
+			<onclick>Skin.SetString(showswidget,videodb://recentlyaddedepisodes/)</onclick>
+			<visible/>
+		</item>
+		<item>
+			<label>$LOCALIZE[72099]</label>
+			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72099])</onclick>
+			<onclick>Skin.SetString(showswidget,-)</onclick>
 			<visible/>
 		</item>
 	</include>
+	
 	<include name="topmusic">
 		<!-- MUSICAS -->
 		<item>
@@ -360,11 +425,22 @@
 			<visible/>
 		</item>
 	</include>
+	<include name="subpictures">
+		<item>
+			<label>$INFO[skin.string(picwidgetlabel)]</label>
+			<onclick>Skin.SetString(picwidgetlabel)</onclick>
+			<onclick>Skin.SetPath(picwidget)</onclick>	
+			<visible/>			
+		</item>
+		<item>
+			<label>Limpar Ajustes de Widgets de Fotos</label>
+		</item>
+	</include>
 	
 	<!-- LAYOUT PADRÃO PARA HOME WIDGETS -->
 	<include name="widgetlayout">
-		<visible>![Control.HasFocus(7000) | Control.HasFocus(7014)]</visible>
-		<animation effect="slide" start="0,0" end="0,-45" time="200" easing="inout" condition="[Control.HasFocus(7101) | Control.HasFocus(7102)]">Conditional</animation>
+		<visible>![Control.HasFocus(7000) | Control.HasFocus(8000) | Control.HasFocus(7014) | Control.HasFocus(7012) | Control.HasFocus(8001)]</visible>
+		<animation effect="slide" start="0,0" end="0,-45" time="200" easing="inout" condition="[Control.HasFocus(7101) | Control.HasFocus(7102) | Control.HasFocus(7103) | Control.HasFocus(7104) | Control.HasFocus(7105)]">Conditional</animation>
 		<fadetime>450</fadetime>
 		<focusposition>0</focusposition>
 		<left>120</left>
@@ -376,73 +452,198 @@
 		<viewtype>icon</viewtype>
 		<scrolltime tween="sine" easing="out">500</scrolltime>	
 		<itemlayout width="210" height="300">
-			<control type="image">
+			<control type="image"> <!-- Games -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(701)</visible>
 				<bottom>0</bottom>
 				<left>0</left>
 				<width>200</width>
 				<height>300</height>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation effect="fade" end="20" condition="true">Conditional</animation>
-				<texture>$VAR[gameposter]</texture>
+				<texture fallback="posters\default_games.png">$VAR[poster]</texture>
+			</control>
+			<control type="image"> <!-- Filmes -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(702)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_videos.png">$VAR[poster]</texture>
+			</control>
+			<control type="image"> <!-- Seriados -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(703)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_videos.png">$VAR[poster]</texture>
+			</control>
+			<control type="image"> <!-- Musicas -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(704)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_music.png">$VAR[poster]</texture>
+			</control>
+			<control type="image"> <!-- Imagens -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(705)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_pictures.png">$VAR[poster]</texture>
 			</control>
 		</itemlayout>
-		<focusedlayout condition="[Control.HasFocus(9000) | Control.HasFocus(7000)]" width="210" height="300">
-			<control type="image">
+		<focusedlayout condition="[Control.HasFocus(9000) | Control.HasFocus(8000)| Control.HasFocus(7000)]" width="210" height="300">
+			<control type="image"> <!-- Games -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(701)</visible>
 				<bottom>0</bottom>
 				<left>0</left>
 				<width>200</width>
 				<height>300</height>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation effect="fade" end="20" condition="true">Conditional</animation>
-				<texture>$VAR[gameposter]</texture>	
+				<texture fallback="posters\default_games.png">$VAR[poster]</texture>
 			</control>
-			<control type="image">
+			<control type="image"> <!-- Filmes -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(702)</visible>
 				<bottom>0</bottom>
 				<left>0</left>
 				<width>200</width>
 				<height>300</height>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<texture>$VAR[gameposter]</texture>
-				<visible>!Control.HasFocus(9000)</visible>
-				<visible>!Control.HasFocus(7000)</visible>
-				<visible>!Control.HasFocus(700)</visible>
-				<visible>!Control.HasFocus(701)</visible>
-				<visible>!Control.HasFocus(702)</visible>
-				<visible>!Control.HasFocus(7101)</visible>
-				<visible>!Control.HasFocus(7102)</visible>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_videos.png">$VAR[poster]</texture>
+			</control>
+			<control type="image"> <!-- Seriados -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(703)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_videos.png">$VAR[poster]</texture>
+			</control>
+			<control type="image"> <!-- Musicas -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(704)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_music.png">$VAR[poster]</texture>
+			</control>
+			<control type="image"> <!-- Imagens -->
+				<include>homedown</include>
+				<visible>Container(9000).HasFocus(705)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture fallback="posters\default_pictures.png">$VAR[poster]</texture>
 			</control>
 		</focusedlayout>
-		<focusedlayout condition="![Control.HasFocus(9000) | Control.HasFocus(7000) | Control.HasFocus(700) | Control.HasFocus(701) | Control.HasFocus(702) | 
-		Control.HasFocus(7101) | Control.HasFocus(7102)]" width="420" height="300">
+		<focusedlayout condition="![Control.HasFocus(9000) | Control.HasFocus(8000)| Control.HasFocus(7000) | Control.HasFocus(700) | Control.HasFocus(701) | Control.HasFocus(702) | 	Control.HasFocus(7101) | Control.HasFocus(7102) | Control.HasFocus(7103) | Control.HasFocus(7104) | Control.HasFocus(7105) | Control.HasFocus(8001)]" width="420" height="300">
 			<control type="image"> <!-- Games -->
+				<visible>Container(9000).HasFocus(701)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<texture fallback="posters\default_games.png">$VAR[poster]</texture>
+				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="Control.HasFocus(7001)">Conditional</animation>
+			</control>
+			<control type="image"> <!-- Filmes -->
+				<visible>Container(9000).HasFocus(702)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<texture fallback="posters\default_videos.png">$VAR[poster]</texture>
+				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="Control.HasFocus(7002)">Conditional</animation>
+			</control>
+			<control type="image"> <!-- Seriados -->
+				<visible>Container(9000).HasFocus(703)</visible>
 				<bottom>0</bottom>
 				<left>0</left>
 				<width>200</width>
 				<height>300</height>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<texture>$VAR[gameposter]</texture>
-				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="[Control.HasFocus(7001) | Control.HasFocus(7002)]">Conditional</animation>
+				<texture fallback="posters\default_videos.png">$VAR[poster]</texture>
+				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="Control.HasFocus(7003)">Conditional</animation>
+			</control>
+			<control type="image"> <!-- Musicas -->
+				<visible>Container(9000).HasFocus(704)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<texture fallback="posters\default_music.png">$VAR[poster]</texture>
+				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="Control.HasFocus(7004)">Conditional</animation>
+			</control>
+			<control type="image"> <!-- Imagens -->
+				<visible>Container(9000).HasFocus(705)</visible>
+				<bottom>0</bottom>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<texture fallback="posters\default_pictures.png">$VAR[poster]</texture>
+				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="Control.HasFocus(7005)">Conditional</animation>
 			</control>
 		</focusedlayout>
 	</include>
-	
 	
 	<include name="widgetfavlayout">
 		<visible>[Control.HasFocus(7000) | Control.HasFocus(7014)]</visible>
 		<fadetime>450</fadetime>
 		<focusposition>0</focusposition>
-		<left>230</left>
-		<bottom>20</bottom>
-		<width>1460</width>
+		<left>120</left>
+		<bottom>90</bottom>
+		<width>1670</width>
 		<height>300</height>
 		<onup>9000</onup>
 		<orientation>horizontal</orientation>
 		<viewtype>icon</viewtype>
 		<itemlayout width="210" height="300">
+			<control type="label">
+				<top>0</top>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<font>home30</font>
+				<label>$INFO[ListItem.Label]</label>
+				<color>white</color>
+			</control>
 			<control type="image">
 				<top>0</top>
 				<left>0</left>
-				<width>210</width>
+				<width>200</width>
 				<height>300</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<animation effect="fade" end="20" condition="true">Conditional</animation>
@@ -453,7 +654,7 @@
 			<control type="image">
 				<top>0</top>
 				<left>0</left>
-				<width>210</width>
+				<width>200</width>
 				<height>300</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<animation effect="fade" end="20" condition="true">Conditional</animation>
@@ -462,7 +663,7 @@
 			<control type="image">
 				<top>0</top>
 				<left>0</left>
-				<width>210</width>
+				<width>200</width>
 				<height>300</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture>$VAR[poster]</texture>
@@ -470,5 +671,94 @@
 		</focusedlayout>
 	</include>
 	
-
+	<include name="widgetaddonlayout">
+		<visible>[Control.HasFocus(7000) | Control.HasFocus(7012)]</visible>
+		<fadetime>450</fadetime>
+		<focusposition>0</focusposition>
+		<left>120</left>
+		<bottom>90</bottom>
+		<width>1670</width>
+		<height>300</height>
+		<onup>9000</onup>
+		<orientation>horizontal</orientation>
+		<viewtype>icon</viewtype>
+		<itemlayout width="210" height="300">
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$VAR[poster]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="210" height="300">
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$VAR[poster]</texture>	
+			</control>
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture>$VAR[poster]</texture>
+			</control>
+		</focusedlayout>
+		<include>addon_widgets</include>
+	</include>
+	
+	<include name="widgetextraslayout">
+		<visible>[Control.HasFocus(8000) | Control.HasFocus(8001)]</visible>
+		<fadetime>450</fadetime>
+		<focusposition>0</focusposition>
+		<left>120</left>
+		<bottom>90</bottom>
+		<width>1670</width>
+		<height>300</height>
+		<onup>9000</onup>
+		<orientation>horizontal</orientation>
+		<viewtype>icon</viewtype>
+		<itemlayout width="210" height="300">
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$INFO[ListItem.Art(poster)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="Control.HasFocus(8000)" width="210" height="300">
+			<control type="image">
+				<top>0</top>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="fade" end="20" condition="true">Conditional</animation>
+				<texture>$INFO[ListItem.Art(poster)]</texture>	
+			</control>
+		</focusedlayout>
+		<focusedlayout condition="Control.HasFocus(8001)" width="420" height="300">
+			<control type="image">
+				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="Control.HasFocus(8001)">Conditional</animation>
+				<top>0</top>
+				<left>0</left>
+				<width>200</width>
+				<height>300</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture>$INFO[ListItem.Art(poster)]</texture>	
+			</control>
+		</focusedlayout>
+	</include>
+	
 </includes>
