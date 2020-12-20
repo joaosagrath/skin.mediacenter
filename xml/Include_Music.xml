@@ -102,7 +102,6 @@
 		</control>
 	</include>	
 	
-	
 	<include name="musicdetails">
 		<fadetime>450</fadetime>
 		<control type="grouplist">

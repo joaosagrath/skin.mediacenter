@@ -22,7 +22,7 @@
 					<top>100</top>
 					<width>860</width>
 					<height>600</height>
-					<texture fallback="defaultgame.png" background="true">$VAR[gameposter]</texture>
+					<texture fallback="default/games.png" background="true">$VAR[gameposter]</texture>
 					<aspectratio aligny="top">keep</aspectratio>
 					<visible>String.IsEmpty(ListItem.Year)</visible>
 					<fadetime>450</fadetime>
@@ -196,7 +196,7 @@
 					<width>860</width>
 					<height>907</height>
 					<fadetime>450</fadetime>
-					<texture fallback="defaultpicture.png">$VAR[picposter]</texture>
+					<texture fallback="default\pictures.png">$VAR[picposter]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="image">

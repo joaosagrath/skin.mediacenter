@@ -3,423 +3,133 @@
 	<!-- WIDGETS GAMES -->
 	<include name="games_widgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
-		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(701)]</visible> -->
 		<content target="games">$INFO[Skin.String(gamewidget)]</content>
 	</include>
 	
 	<!-- WIDIGETS MOVIES -->
 	<include name="movies_widgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
-		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(702)]</visible> -->
 		<content target="videos">$INFO[Skin.String(moviewidget)]</content>
 	</include>
 	
 	<!-- WIDIGETS SERIADOS -->
 	<include name="tvshows_widgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
-		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(703)]</visible> -->
 		<content target="videos">$INFO[Skin.String(showswidget)]</content>
-	</include>
-	
-	<!-- WIDGETS NETFLIX -->
-	<include name="netflix_widgets">
-		<visible>String.IsEqual(Container(8000).ListItem.Property(id),netflix)</visible>
-		<!-- visible>![Control.HasFocus(700) | Control.HasFocus(704)]</visible> -->
-		<content target="videos">$INFO[Skin.String(netflixwidget)]</content>
-	</include>
-	<!-- WIDGETS CONTEÚDO -->
-	<include name="netflix_widget_itens">
-		<control type="radiobutton" id="7401">
-			<label>$LOCALIZE[74001]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(netflixwidget,plugin://plugin.video.netflix/directory/video_list_sorted/myList/queue/&amp;widget_display=true)</onclick>
-			<onclick>Skin.SetString(netflixwidgetlabel,$LOCALIZE[74001])</onclick>
-			<onclick>Skin.ToggleSetting(netflixmylist)</onclick>
-			<onclick>Skin.Reset(netflixcontinuewatching)</onclick>
-			<onclick>Skin.Reset(netflixtopten)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix-)</onclick>
-			<selected>Skin.HasSetting(netflixmylist)</selected>
-		</control>
-		<control type="radiobutton" id="7402">
-			<label>$LOCALIZE[74002]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(netflixwidget,plugin://plugin.video.netflix/directory/video_list/continueWatching/continueWatching/&amp;widget_display=true)</onclick>
-			<onclick>Skin.SetString(netflixwidgetlabel,$LOCALIZE[74002])</onclick>
-			<onclick>Skin.ToggleSetting(netflixcontinuewatching)</onclick>
-			<onclick>Skin.Reset(netflixmylist)</onclick>
-			<onclick>Skin.Reset(netflixtopten)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix-)</onclick>
-			<selected>Skin.HasSetting(netflixcontinuewatching)</selected>
-		</control>
-		<control type="radiobutton" id="74023">
-			<label>$LOCALIZE[74003]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(netflixwidget,plugin://plugin.video.netflix/directory/video_list/mostWatched/mostWatched/&amp;widget_display=true)</onclick>
-			<onclick>Skin.SetString(netflixwidgetlabel,$LOCALIZE[74003])</onclick>
-			<onclick>Skin.ToggleSetting(netflixtopten)</onclick>
-			<onclick>Skin.Reset(netflixmylist)</onclick>
-			<onclick>Skin.Reset(netflixcontinuewatching)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix-)</onclick>
-			<selected>Skin.HasSetting(netflixtopten)</selected>
-		</control>
-		
-		<control type="radiobutton" id="74099">
-			<label>$LOCALIZE[74099]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(netflixwidget,-)</onclick>
-			<onclick>Skin.SetString(netflixwidgetlabel,$LOCALIZE[74099])</onclick>
-			<onclick>Skin.ToggleSetting(netflix-)</onclick>
-			<onclick>Skin.Reset(netflixmylist)</onclick>
-			<onclick>Skin.Reset(netflixcontinuewatching)</onclick>
-			<onclick>Skin.Reset(netflixtopten)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<onclick>Skin.Reset(netflix)</onclick>
-			<selected>Skin.HasSetting(netflix-)</selected>
-		</control>
 	</include>
 	
 	<!-- WIDGETS MUSIC -->
 	<include name="music_widgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
-		<visible>![Control.HasFocus(700) | Control.HasFocus(705)]</visible>
 		<content target="music">$INFO[Skin.String(musicwidget)]</content>
 	</include>
-	<!-- WIDGETS MUSIC CONTEÚDO -->
-	<include name="music_widget_itens">
-		<control type="radiobutton" id="8201">
-			<label>$LOCALIZE[81001]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://artists/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81001])</onclick>
-			<onclick>Skin.ToggleSetting(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musicartist)</selected>
-		</control>
-		<control type="radiobutton" id="8202">
-			<label>$LOCALIZE[81002]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://albums/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81002])</onclick>
-			<onclick>Skin.ToggleSetting(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musicalbum)</selected>
-		</control>
-		<control type="radiobutton" id="8203">
-			<label>$LOCALIZE[81003]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://songs/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81003])</onclick>
-			<onclick>Skin.ToggleSetting(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musicsongs)</selected>
-		</control>
-		<control type="radiobutton" id="8204">
-			<label>$LOCALIZE[81004]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://genres/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81004])</onclick>
-			<onclick>Skin.ToggleSetting(musicgenres)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musicgenres)</selected>
-		</control>
-		<!-- <control type="radiobutton" id="8205">
-			<label>$LOCALIZE[81005]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://top100/songs/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81005])</onclick>
-			<onclick>Skin.ToggleSetting(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musictop100songs)</selected>
-		</control>
-		<control type="radiobutton" id="8206">
-			<label>$LOCALIZE[81006]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://top100/albums/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81006])</onclick>
-			<onclick>Skin.ToggleSetting(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musictop100albums)</selected>
-		</control> -->
-		<control type="radiobutton" id="8207">
-			<label>$LOCALIZE[81007]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://compilations/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81007])</onclick>
-			<onclick>Skin.ToggleSetting(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musiccompilations)</selected>
-		</control>
-		<control type="radiobutton" id="8208">
-			<label>$LOCALIZE[81008]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://singles/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81008])</onclick>
-			<onclick>Skin.ToggleSetting(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musicsingles)</selected>
-		</control>
-		<control type="radiobutton" id="8209">
-			<label>$LOCALIZE[81009]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://recentlyaddedalbums/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81009])</onclick>
-			<onclick>Skin.ToggleSetting(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musicrecentaddalbums)</selected>
-		</control>
-		<control type="radiobutton" id="8210">
-			<label>$LOCALIZE[81010]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,musicdb://recentlyplayedalbums/)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81010])</onclick>
-			<onclick>Skin.ToggleSetting(musicrecentplayedalbums)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(music-)</onclick>
-			<selected>Skin.HasSetting(musicrecentplayedalbums)</selected>
-		</control>
-		<control type="radiobutton" id="8299">
-			<label>$LOCALIZE[81099]</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(musicwidget,-)</onclick>
-			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81099])</onclick>
-			<onclick>Skin.ToggleSetting(music-)</onclick>
-			<onclick>Skin.Reset(musicartist)</onclick>
-			<onclick>Skin.Reset(musicalbum)</onclick>
-			<onclick>Skin.Reset(musicsongs)</onclick>
-			<onclick>Skin.Reset(musicgenres)</onclick>
-			<onclick>Skin.Reset(musictop100songs)</onclick>
-			<onclick>Skin.Reset(musictop100albums)</onclick>
-			<onclick>Skin.Reset(musiccompilations)</onclick>
-			<onclick>Skin.Reset(musicsingles)</onclick>
-			<onclick>Skin.Reset(musicrecentaddalbums)</onclick>
-			<onclick>Skin.Reset(musicrecentplayedalbums)</onclick>
-			<selected>Skin.HasSetting(music-)</selected>
-		</control>
+	
+	<!-- WIDGETS NETFLIX -->
+	<include name="netflix_widgets">
+		<visible>String.IsEqual(Container(8000).ListItem.Property(id),netflix)</visible>
+		<content target="videos">$INFO[Skin.String(netflixwidget)]</content>
 	</include>
 	
 	<!-- WIDGETS SPOTIFY -->
 	<include name="spotify_widgets">
-		<visible>String.IsEqual(Container(9000).ListItem.Property(id),spotify)</visible>
-		<visible>![Control.HasFocus(700) | Control.HasFocus(706)]</visible>
+		<visible>String.IsEqual(Container(8000).ListItem.Property(id),spotify)</visible>
 		<content target="music">$INFO[Skin.String(spotifywidget)]</content>
 	</include>
-	<!-- WIDGETS SPOTIFY CONTEÚDO -->
-	<include name="spotify_widget_itens">
-		<control type="radiobutton">
-			<label>A DEFINIR</label>
-			<include>onoffbutton</include>
-			<include>button_90</include>
-			<onclick>Skin.SetString(spotifywidget,Y:\Girls)</onclick>
-			<onclick>Skin.SetString(spotifywidgetlabel,$LOCALIZE[81001])</onclick>
-			<onclick>Skin.ToggleSetting(spotifyartist)</onclick>
-			<onclick>Skin.Reset(spotify-)</onclick>
-			<selected>Skin.HasSetting(spotifyartist)</selected>
-		</control>
+	
+	<!-- WIDGETS YOUTUBE -->
+	<include name="youtube_widgets">
+		<visible>String.IsEqual(Container(8000).ListItem.Property(id),youtube)</visible>
+		<content target="videos">$INFO[Skin.String(youtubewidget)]</content>
 	</include>
 	
 	<!-- WIDGETS PICTURES -->
 	<include name="pictures_widgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
-		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(705)]</visible> -->
 		<content target="pictures" sortby="random">$INFO[Skin.String(picwidget)]</content>
-	</include>
-	
-	<!-- WIDGETS PICTURES CONTEÚDO -->
-	<include name="pic_widget_itens">
-		<control type="radiobutton" id="670">
-			<label>$VAR[pic_multifanart]</label>
-			<include>button_90</include>
-			<onclick>Skin.SetPath(picwidget)</onclick>
-			<onclick>Skin.ToggleSetting(pic)</onclick>
-			<onclick>Skin.Reset(nopicwidget)</onclick>
-			<selected>Skin.HasSetting(pic)</selected>
-		</control>
-		<control type="radiobutton" id="671">
-			<label>Limpar Ajustes de Widgets de Fotos</label>			
-			<include>button_90</include>
-			<onclick>Skin.SetString(picwidget,Selecione o Local das Fotos)</onclick>
-			<onclick>Skin.ToggleSetting(nopicwidget)</onclick>
-			<onclick>Skin.Reset(pic)</onclick>
-			<selected>Skin.HasSetting(nopicwidget)</selected>
-		</control>
-	</include>
+		<!-- <content target="pictures" sortby="random">plugin://plugin.image.mypicsdb/?action=%27showcollection%27&amp;collect=%27%27&amp;method=%27show%27&amp;name=%27Cole%c3%a7%c3%b5es%27&amp;viewmode=%27view%27</content> -->
+	</include>	
 	
 	<!-- WIDGETS FAVORITOS -->
 	<include name="fav_widgets">
 		<visible>String.IsEqual(Container(7000).ListItem.Property(id),favourites)</visible>
-		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(705)]</visible> -->
 		<content limit="8" sortby="random">plugin://script.skin.helper.widgets/?mediatype=favourites</content>
 	</include>
 	
+	<!-- WIDGETS de ADONS -->
 	<include name="addon_widgets">
 		<visible>String.IsEqual(Container(7000).ListItem.Property(id),addons)</visible>
-		<!-- <visible>![Control.HasFocus(700) | Control.HasFocus(705)]</visible> -->
 		<content>
-			<item>
-				<!-- ADDONS DE JOGOS -->
-				<label>Jogos</label>
+			<!-- ADDONS DE JOGOS -->
+			<item>				
+				<label>$LOCALIZE[35049]</label>
 				<property name="menu_id">$NUMBER[17001]</property>
 				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
 				<property name="id">homegamesaddons</property>
+				<property name="listaddonsdescriptions">Contém todos os addons de jogos instalados nesse sistema.</property>
 				<thumb>posters/defaultaddongame.png</thumb>
 			</item>
-			<item>
-				<!-- ADDONS DE VIDEOS -->
+			<!-- ADDONS DE VIDEOS -->
+			<item>				
 				<label>Videos</label>
 				<property name="menu_id">$NUMBER[17001]</property>
-				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<onclick>ActivateWindow(10025,&quot;addons://sources/video/&quot;,return)</onclick>
 				<property name="id">homevideosaddons</property>
-				<thumb>posters/defaultaddonvideo.png</thumb>				
+				<thumb>posters/defaultaddonvideo.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de video instalados nesse sistema.</property>
 			</item>
-			<item>
-				<!-- ADDONS DE AUDIO -->
+			<!-- ADDONS DE AUDIO -->
+			<item>				
 				<label>Áudio</label>
 				<property name="menu_id">$NUMBER[17001]</property>
-				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<onclick>ActivateWindow(10502,&quot;addons://sources/audio/&quot;,return)</onclick>
 				<property name="id">homeaudioaddons</property>
 				<thumb>posters/defaultaddonmusic.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de áudio instalados nesse sistema.</property>
 			</item>
-			<item>
-				<!-- ADDONS DE IMAGENS -->
+			<!-- ADDONS DE IMAGENS -->
+			<item>				
 				<label>Imagens</label>
 				<property name="menu_id">$NUMBER[17001]</property>
-				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<onclick>ActivateWindow(10002,&quot;addons://sources/pictures/&quot;,return)</onclick>
 				<property name="id">homepicturesaddons</property>
 				<thumb>posters/defaultaddonimages.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de imagens instalados nesse sistema.</property>
 			</item>
-			<item>
-				<!-- ADDONS DE PROGRAMAS -->
+			<!-- ADDONS DE PROGRAMAS -->
+			<item>				
 				<label>Programas</label>
 				<property name="menu_id">$NUMBER[17001]</property>
-				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<onclick>ActivateWindow(10001,&quot;addons://sources/executable/&quot;,return)</onclick>
 				<property name="id">homeprogramsaddons</property>
 				<thumb>posters/defaultaddonprogram.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de programas instalados nesse sistema.</property>
+			</item>
+			<!-- ANDROID APPS -->
+			<item>				
+				<label>Android Apps</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10001,&quot;androidapp://sources/apps/&quot;,return)</onclick>
+				<property name="id">homeandroidapps</property>
+				<thumb>posters/defaultandroidapp.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os Apps instalados nesse sistema.</property>
+			</item>
+			<!-- PLACEHOLDER 01 -->
+			<item>				
+				<label>PlaceHolder01</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10001,&quot;androidapp://sources/apps/&quot;,return)</onclick>
+				<property name="id">homeandroidapps</property>
+				<thumb>posters/.png</thumb>
+				<property name="listaddonsdescriptions">Placeholder01.</property>
+			</item>
+			<!-- PLACEHOLDER 02 -->
+			<item>				
+				<label>Ajustes da Skin</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10035,return)</onclick>
+				<property name="id">homeskinsettings</property>
+				<thumb>posters/defaultinterface.png</thumb>
+				<property name="listaddonsdescriptions">Ajuste detalhes da skin</property>
 			</item>
 			
 		</content>

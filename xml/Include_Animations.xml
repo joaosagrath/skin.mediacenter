@@ -6,7 +6,7 @@
 	</include>
 	
 	<include name="home_fade">
-		<animation effect="fade" delay="1000" start="0" end="100" time="500" condition="Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(8001)">True</animation>
+		<animation effect="fade" delay="1000" start="0" end="100" time="500" condition="Control.HasFocus(7001) | Control.HasFocus(7002) | Control.HasFocus(7003) | Control.HasFocus(7004) | Control.HasFocus(7005) | Control.HasFocus(8001) | Control.HasFocus(8003)">True</animation>
 	</include>
 
 	<include name="widget_fade">
@@ -14,20 +14,12 @@
 	</include>
 	
 	<include name="side_right_hidden">
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="!Container(9000).HasFocus(705)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7001)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7002)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7003)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7004)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7005)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7101)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7102)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7103)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7104)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7105)">Conditional</animation>
+		<animation effect="slide" start="0" end="-100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7000)">Conditional</animation>
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(7999)">Conditional</animation>
 	</include>
 	<include name="side_left_hidden">
-		<animation effect="slide" start="0" end="-100" time="300" tween="sine" easing="inout" condition="!Container(9000).HasFocus(701)">Conditional</animation>
+		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(8000)">Conditional</animation>
+		<animation effect="slide" start="0" end="-100" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(8999)">Conditional</animation>
 	</include>
 	
 	<include name="top_hidden">

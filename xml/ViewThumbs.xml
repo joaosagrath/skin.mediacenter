@@ -224,7 +224,7 @@
 						<top>0</top>
 						<width>240</width>
 						<height>240</height>
-						<texture fallback="defaultpicture.png">$VAR[picposter]</texture>
+						<texture fallback="default\pictures.png">$VAR[picposter]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 				</itemlayout>
@@ -234,7 +234,7 @@
 						<top>0</top>
 						<width>240</width>
 						<height>240</height>
-						<texture fallback="defaultpicture.png">$VAR[picposter]</texture>
+						<texture fallback="default\pictures.png">$VAR[picposter]</texture>
 						<aspectratio>keep</aspectratio>
 						<bordertexture border="5">colors\black.png</bordertexture>
 						<bordersize>5</bordersize>
@@ -246,7 +246,7 @@
 						<top>0</top>
 						<width>240</width>
 						<height>240</height>
-						<texture fallback="defaultpicture.png">$VAR[gameposter]</texture>
+						<texture fallback="default\games.png">$VAR[gameposter]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 				</itemlayout>

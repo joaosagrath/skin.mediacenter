@@ -3,14 +3,14 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>black</backgroundcolor>
 	<controls>	
-		<!-- <control type="image">
+		<control type="image">
 			<bottom>0</bottom>
 			<left>0</left>
 			<width>1920</width>
 			<height>1080</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>base.jpg</texture>
-		</control> -->
+		</control>
 		<include>DefaultBackground</include>
 		<include>multifanart</include>
 		<control type="image">
@@ -72,7 +72,7 @@
 				<width>400</width>
 				<height>155</height>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+				<texture>$VAR[musiclogo]</texture>
 			</control>
 		</control>
 		<!-- Jogos, Filmes, Series e Imagens -->
@@ -87,6 +87,18 @@
 				<height>165</height>
 				<font>font_plot</font>
 				<label>$VAR[plot]</label>
+				<align>justify</align>
+				<aligny>bottom</aligny>
+				<autoscroll delay="2000" time="2000" repeat="10000">true</autoscroll>
+			</control>
+			<control type="textbox">
+				<visible>Control.HasFocus(7012)</visible>
+				<left>540</left>
+				<top>500</top>
+				<width>830</width>
+				<height>165</height>
+				<font>font_plot</font>
+				<label>$INFO[Container(7012).ListItem.Property(listaddonsdescriptions)]</label>
 				<align>justify</align>
 				<aligny>bottom</aligny>
 				<autoscroll delay="2000" time="2000" repeat="10000">true</autoscroll>
@@ -134,7 +146,7 @@
 			</control>
 			<control type="wraplist" id="7004">
 				<animation effect="fade" start="0" end="100" time="450" condition="Container(9000).HasFocus(704)">Conditional</animation>
-				<ondown>9000</ondown>
+				<ondown>7104</ondown>
 				<include>music_widgets</include>
 				<include>widgetlayout</include>
 			</control>
@@ -144,7 +156,7 @@
 				<include>pictures_widgets</include>
 				<include>widgetlayout</include>
 			</control>
-			<control type="list" id="7012">
+			<control type="wraplist" id="7012">
 				<animation effect="fade" start="0" end="100" time="450" condition="Container(9000).HasFocus(712)">Conditional</animation>
 				<ondown>9000</ondown>
 				<include>widgetaddonlayout</include>
@@ -156,7 +168,7 @@
 				<include>widgetfavlayout</include>
 			</control>
 			<control type="wraplist" id="8001">
-				<ondown>9000</ondown>
+				<ondown>8101</ondown>
 				<include>netflix_widgets</include>
 				<include>widgetextraslayout</include>
 			</control>
@@ -165,12 +177,31 @@
 				<include>spotify_widgets</include>
 				<include>widgetextraslayout</include>
 			</control>
+			<control type="wraplist" id="8003">
+				<ondown>8103</ondown>
+				<include>youtube_widgets</include>
+				<include>widgetextraslayout</include>
+			</control>
 		</control>
 		
-		<!-- Setas no topo 
+		<!-- Setas e Botões no topo -->
+		<!-- Botão a esquerda -->
 		<control type="group">
+			<left>-100</left>
 			<include>homeup</include>
 			<include>top_hidden</include>
+			<include>side_left_hidden</include>
+			<animation effect="slide" start="0,0" end="100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(8999)">conditional</animation>
+			<animation effect="slide" start="0,0" end="100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">conditional</animation>
+			<control type="button" id="8999">
+				<include>defaultbutton</include>
+				<top>25</top>
+				<label>Extras</label>
+				<font>home30</font>
+				<onright>9000</onright>
+				<ondown>8000</ondown>
+				<onup>8000</onup>
+			</control>
 			<control type="image">
 				<left>225</left>
 				<top>40</top>
@@ -181,6 +212,26 @@
 				<texture>arrow_left.png</texture>
 				<include>fademenu</include>				
 			</control>
+		</control>
+		<!-- Botão a direita -->
+		<control type="group">
+			<right>-100</right>
+			<include>homeup</include>
+			<include>top_hidden</include>
+			<include>side_right_hidden</include>
+			<animation effect="slide" start="0,0" end="-100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(7999)">conditional</animation>
+			<animation effect="slide" start="0,0" end="-100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(7000)">conditional</animation>
+			<control type="button" id="7999">
+				<include>defaultbutton</include>
+				<right>0</right>
+				<top>25</top>
+				<label>Sistema</label>
+				<font>home30</font>
+				<onleft>9000</onleft>
+				<ondown>7000</ondown>
+				<onup>7000</onup>
+				<onfocus></onfocus>
+			</control>
 			<control type="image">
 				<right>225</right>
 				<top>40</top>
@@ -189,9 +240,9 @@
 				<aligny>center</aligny>
 				<align>center</align>
 				<texture>arrow_right.png</texture>
-				<include>fademenu</include>
+				<include>fademenu</include>				
 			</control>
-		</control> -->
+		</control>
 		
 		<!-- GRUPOS DE MENUS -->
 		<control type="group">
@@ -199,15 +250,43 @@
 			<control type="list" id="9000">			
 				<include>homeup</include>
 				<include>top_hidden</include>
-				<left>410</left>
 				<top>20</top>
-				<width>1100</width>
+				<include condition="[Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunomusicbutton) + Skin.HasSetting(homemenunopicturesbutton)]">one_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunomusicbutton) + Skin.HasSetting(homemenunopicturesbutton)]">one_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomoviebutton) + SSkin.HasSetting(homemenunomusicbutton) + Skin.HasSetting(homemenunopicturesbutton)]">one_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunopicturesbutton)]">one_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunomusicbutton)]">one_itens</include>				
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunotvshowbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunomusicbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunopicturesbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunomusicbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunopicturesbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomusicbutton) + Skin.HasSetting(homemenunopicturesbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunomusicbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunopicturesbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunomusicbutton) + Skin.HasSetting(homemenunopicturesbutton)]">two_itens</include>
+				<include condition="[Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunomusicbutton) + Skin.HasSetting(homemenunopicturesbutton)]">two_itens</include>				
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomoviebutton)]">three_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunotvshowbutton)]">three_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunomusicbutton]">three_itens</include>
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunopicturesbutton)]">three_itens</include>				
+				<include condition="[Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunotvshowbutton)]">three_itens</include>
+				<include condition="[Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunomusicbutton)]">three_itens</include>
+				<include condition="[Skin.HasSetting(homemenunomoviebutton) + Skin.HasSetting(homemenunopicturesbutton)]">three_itens</include>				
+				<include condition="[Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunomusicbutton]">three_itens</include>
+				<include condition="[Skin.HasSetting(homemenunotvshowbutton) + Skin.HasSetting(homemenunopicturesbutton)]">three_itens</include>				
+				<include condition="[Skin.HasSetting(homemenunomusicbutton) + Skin.HasSetting(homemenunopicturesbutton)]">three_itens</include>				
+				<include condition="[Skin.HasSetting(homemenunogamesbutton) + Skin.HasSetting(homemenunopicturesbutton)]">three_itens</include>				
+				<include condition="Skin.HasSetting(homemenunogamesbutton)">four_itens</include>
+				<include condition="Skin.HasSetting(homemenunomoviebutton)">four_itens</include>
+				<include condition="Skin.HasSetting(homemenunotvshowbutton)">four_itens</include>
+				<include condition="Skin.HasSetting(homemenunomusicbutton)">four_itens</include>
+				<include condition="Skin.HasSetting(homemenunopicturesbutton)">four_itens</include>
+				<left>410</left>				
+				<width>1100</width> 
 				<height>70</height>
-				<bottom>0</bottom>
-				<movement>0</movement>
-				<focusposition>2</focusposition>
-				<onright>7000</onright>
-				<onleft>8000</onleft>
+				<onright>7999</onright>
+				<onleft>8999</onleft>
 				<ondown condition="Container(9000).HasFocus(701)">7001</ondown>
 				<ondown condition="Container(9000).HasFocus(702)">7002</ondown>
 				<ondown condition="Container(9000).HasFocus(703)">7003</ondown>
@@ -276,6 +355,7 @@
 				<movement>0</movement>
 				<focusposition>0</focusposition>
 				<onright>9000</onright>
+				<onup>9000</onup>
 				<onleft condition="Container(7000).HasFocus(708)">9000</onleft>
 				<onleft condition="Container(7000).HasFocus(709)">9000</onleft>
 				<onleft condition="Container(7000).HasFocus(710)">9000</onleft>
@@ -376,9 +456,12 @@
 				<movement>0</movement>
 				<focusposition>0</focusposition>
 				<onup>9000</onup>
-				<onleft>9000</onleft>
+				<onleft>9000</onleft>							
 				<onright condition="Container(8000).HasFocus(801)">8001</onright>
-				<onright condition="Container(8000).HasFocus(802)">8002</onright>
+				<onright condition="[Container(8000).HasFocus(801) + String.IsEmpty(Control.GetLabel(8001))]">SetFocus(8101)</onright>	
+				<!-- <onright condition="Container(8000).HasFocus(802)">8002</onright> -->				
+				<onright condition="Container(8000).HasFocus(803)">8003</onright>
+				<onright condition="[Container(8000).HasFocus(803) + String.IsEmpty(Control.GetLabel(8003))]">SetFocus(8103)</onright>
 				<orientation>vertical</orientation>
 				<include>side_left_hidden</include>
 				<itemlayout height="90" width="220">
@@ -532,7 +615,17 @@
 				</content>
 			</control>
 			
-			<!-- Seletor de Widgets de Séries -->
+			<!-- Seletor de Widgets de Músicas -->
+			<control type="list" id="7104">			
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(7104)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>7004</onup>
+				<content>					
+					<include>submusic</include>
+				</content>
+			</control>
+			
+			<!-- Seletor de Widgets de Imagens -->
 			<control type="list" id="7105">			
 				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(7105)">Conditional</animation>		
 				<include>submenulayout</include>
@@ -542,14 +635,35 @@
 				</content>
 			</control>
 						
-			<control type="wraplist" id="701"> <!-- TOPMENU GAMES -->
+			<!-- Seletor de Widgets de Netflix -->
+			<control type="list" id="8101">			
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(8101)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>8001</onup>
+				<content>					
+					<include>subnetflix</include>
+				</content>
+			</control>
+			
+			<!-- Seletor de Widgets de Youtube -->
+			<control type="list" id="8103">			
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(8103)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>8003</onup>
+				<content>					
+					<include>subyoutube</include>
+				</content>
+			</control>
+			
+			<!-- Seletor de Nodes de Jogos -->
+			<control type="wraplist" id="701">
 				<animation effect="slide" start="0,0" end="0,80" time="100" easing="inout" condition="Control.HasFocus(701)">Conditional</animation>
 				<left>0</left>
 				<top>-40</top>
 				<width>1920</width>
 				<height>70</height>
 				<movement>0</movement>
-				<focusposition>1</focusposition>
+				<focusposition>2</focusposition>
 				<onfocus/>
 				<ondown>9000</ondown>
 				<orientation>horizontal</orientation>
@@ -561,14 +675,15 @@
 				</content>
 			</control>			
 
-			<control type="list" id="702"> <!-- TOPMENU MOVIES -->	
+			<!-- Seletor de Nodes de Filmes -->
+			<control type="wraplist" id="702">
 				<animation effect="slide" start="0,0" end="0,80" time="100" easing="inout" condition="Control.HasFocus(702)">Conditional</animation>
 				<left>0</left>
 				<top>-40</top>
 				<width>1920</width>
 				<height>70</height>
 				<movement>0</movement>
-				<focusposition>0</focusposition>
+				<focusposition>2</focusposition>
 				<onfocus/>
 				<ondown>9000</ondown>
 				<orientation>horizontal</orientation>
@@ -580,14 +695,15 @@
 				</content>
 			</control>
 
-			<control type="list" id="703"> <!-- TOPMENU TVSHOWS -->
+			<!-- Seletor de Nodes de Séries -->
+			<control type="wraplist" id="703">
 				<animation effect="slide" start="0,0" end="0,80" time="100" easing="inout" condition="Control.HasFocus(703)">Conditional</animation>
 				<left>0</left>
 				<top>-40</top>
 				<width>1920</width>
 				<height>70</height>
 				<movement>0</movement>
-				<focusposition>0</focusposition>
+				<focusposition>2</focusposition>
 				<onfocus/>
 				<ondown>9000</ondown>
 				<orientation>horizontal</orientation>
@@ -599,19 +715,20 @@
 				</content>
 			</control>
 			
-			<control type="list" id="704"> <!-- TOPMENU MUSICAS -->
+			<!-- Seletor de Nodes de Musicas -->
+			<control type="wraplist" id="704">
 				<animation effect="slide" start="0,0" end="0,80" time="100" easing="out" condition="Control.HasFocus(704)">Conditional</animation>		<left>0</left>
 				<top>-40</top>
 				<width>1920</width>
 				<height>70</height>
 				<movement>0</movement>
-				<focusposition>0</focusposition>
+				<focusposition>2</focusposition>
 				<onfocus/>
 				<ondown>9000</ondown>
 				<orientation>horizontal</orientation>
 				<onup>ActivateWindow(ShutdownMenu)</onup>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<include>submenulayout</include>
+				<include>topmenulayout</include>
 				<content>
 					<include>topmusic</include>
 				</content>

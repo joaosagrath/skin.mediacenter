@@ -50,14 +50,18 @@
 	
 	<!-- ARTES PARA MUSICAS -->
 	<variable name="musicposter">
-		<value>$INFO[ListItem.Thumb]</value>
+		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+		<value>$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Thumb)]</value>
+		
 	</variable>
 	<variable name="musicarts">
 		<value>$INFO[skin.string(CustomMusicPath)]</value>
 	</variable>
 	<variable name="musiclogo">
+		<value condition="Control.HasFocus(7004)">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(50)">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Artist)">$VAR[musicarts]$INFO[ListItem.Artist]\logo.png</value>
-		<value condition="String.IsEmpty(ListItem.Artist)">$VAR[musicarts]$INFO[Container(812).ListItem.Artist]\logo.png</value>
+		<value condition="String.IsEmpty(ListItem.Artist)">$VAR[musicarts]$INFO[Container(812).ListItem.Artist]\logo.png</value>		
 	</variable>	
 	<variable name="musicbanner">
 		<value>$VAR[musicarts]$INFO[Container(812).ListItem.Artist]\banner.jpg</value>
@@ -92,6 +96,9 @@
 		<value condition="Control.HasFocus(7003)">$INFO[skin.string(showswidgetlabel)]</value>
 		<value condition="Control.HasFocus(7004)">$INFO[skin.string(musicwidgetlabel)]</value>
 		<value condition="Control.HasFocus(7005)">$INFO[skin.string(picwidgetlabel)]</value>
+		<value condition="Control.HasFocus(7012)">$INFO[ListItem.Label]</value>
+		<value condition="Control.HasFocus(8001)">$INFO[skin.string(netflixwidgetlabel)]</value>
+		<value condition="Control.HasFocus(8003)">$INFO[skin.string(youtubewidgetlabel)]</value>
 
 	</variable>
 	

@@ -101,5 +101,30 @@
 			</control>
 		</control>
 	</include>
+	<!-- <include name="picsinfo">
+		<control type="grouplist">
+			<visible>!String.IsEmpty($PARAM[value])</visible>
+			<height>45</height>
+			<orientation>horizontal</orientation>
+			<width>570</width>
+			<itemgap>10</itemgap>
+			<control type="label">
+				<width>auto</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<label>$PARAM[label]:</label>
+				<textcolor>white</textcolor>
+				<font>home30</font>
+			</control>
+			<control type="label">
+				<width>auto</width>
+				<height>40</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[$PARAM[value]]</label>
+				<font>home30</font>
+			</control>
+		</control>
+	</include> -->
 	<!-- By Sagrath -->
 </includes>

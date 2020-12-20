@@ -193,7 +193,7 @@
 			</control>
 		</control>
 	</include>
-	
+		
 	<!-- FILTROS PARA GAMES -->
 	<include name="DefaultDialogSelectLayout">
 		<control type="group">

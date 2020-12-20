@@ -129,7 +129,6 @@
 		</control>
 	</include>
 	<!-- TITULO NA HOME -->
-
 	<include name="widget_preview">
 		<top>730</top>
 		<left>20</left>
@@ -430,6 +429,20 @@
 		<textcolor>FFF8F8F8</textcolor>
 		<focusedcolor>black</focusedcolor>
 	</include>
+	
+	<!-- ####################### CUSTOM HOME WIDTH ####################### -->
+	<include name="four_itens">
+		<left>520</left>
+	</include>
+	<include name="three_itens">
+		<left>630</left>
+	</include>
+	<include name="two_itens">
+		<left>740</left>
+	</include>
+	<include name="one_itens">
+		<left>850</left>
+	</include>	
 	
 	<!-- ####################### Dialogs ####################### -->
 	<include name="Dialogs_Bar">

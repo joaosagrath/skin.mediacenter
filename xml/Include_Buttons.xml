@@ -70,6 +70,22 @@
 		<disabledcolor>FF505050</disabledcolor>
 	</include>
 	<!-- ####################### BOTÃO PADRÃO -->
+	<include name="defaultbutton">
+		<textoffsetx>40</textoffsetx>
+		<height>70</height>
+		<width>200</width>
+		<aligny>center</aligny>
+		<invalidcolor>invalid</invalidcolor>
+		<selectedcolor>black</selectedcolor>
+		<texturefocus></texturefocus>
+		<texturenofocus/>
+		<textcolor>white</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<shadowcolor>black</shadowcolor>
+		<disabledcolor>FF505050</disabledcolor>
+	</include>
+	
+	
 	<include name="widgetbutton">
 		<textoffsetx>40</textoffsetx>
 		<top>0</top>

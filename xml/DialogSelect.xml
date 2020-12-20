@@ -262,7 +262,6 @@ ID 	Type 		Description
 					<onup>3</onup>
 					<ondown>3</ondown>
 				</control>
-				<include>MultiData</include>
 			</control>
 			<!--#######################################################################   FILTROS GAMES   #######################################################################-->
 			<control type="group">

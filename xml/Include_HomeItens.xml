@@ -7,7 +7,7 @@
 			<!-- GAMES -->
 			<label>$LOCALIZE[15016]</label>
 			<property name="menu_id">$NUMBER[17000]</property>
-			<onclick>RunAddon(plugin.program.advanced.emulator.launcher)</onclick>
+			<onclick>$INFO[Skin.String(gameaddondefault)]</onclick>
 			<property name="id">games</property>
 			<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
 		</item>
@@ -54,30 +54,6 @@
 			<visible>System.HasMediaDVD</visible>
 			<thumb>icons/sidemenu/disc.png</thumb>
 		</item>
-		<item id="709">
-			<label>$LOCALIZE[20389]</label>
-			<property name="menu_id">$NUMBER[16000]</property>
-			<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
-			<property name="id">musicvideos</property>
-			<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
-			<thumb>icons/sidemenu/musicvideos.png</thumb>
-		</item>
-		<item id="710">
-			<label>$LOCALIZE[19020]</label>
-			<property name="menu_id">$NUMBER[12000]</property>
-			<onclick>ActivateWindow(TVChannels)</onclick>
-			<property name="id">livetv</property>
-			<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
-			<thumb>icons/sidemenu/tv.png</thumb>
-		</item>
-		<item id="711">
-			<label>$LOCALIZE[19021]</label>
-			<property name="menu_id">$NUMBER[13000]</property>
-			<onclick>ActivateWindow(RadioChannels)</onclick>
-			<property name="id">radio</property>
-			<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
-			<thumb>icons/sidemenu/radio.png</thumb>
-		</item>
 		<item id="712">
 			<label>$LOCALIZE[24001]</label>
 			<property name="menu_id">$NUMBER[8000]</property>
@@ -86,14 +62,14 @@
 			<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
 			<thumb>icons/sidemenu/addons.png</thumb>
 		</item>
-		<item id="713">
+		<!-- <item id="713">
 			<label>$LOCALIZE[3]</label>
 			<onclick>ActivateWindow(Videos,root)</onclick>
 			<property name="menu_id">$NUMBER[11000]</property>
 			<property name="id">video</property>
 			<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
 			<thumb>icons/sidemenu/videos.png</thumb>
-		</item>
+		</item> -->
 		<item id="714">
 			<label>$LOCALIZE[10134]</label>
 			<onclick>ActivateWindow(favourites)</onclick>
@@ -119,10 +95,42 @@
 			<property name="id">settings</property>
 			<thumb>icons/sidemenu/manage.png</thumb>
 		</item>
+		<!-- <item id="716">
+			<label>bio</label>
+			<property name="menu_id">$NUMBER[17000]</property>
+			<onclick>RunScript(script.hello.world)</onclick> 
+			<property name="id">settings</property>
+			<thumb>icons/sidemenu/manage.png</thumb>
+		</item> -->
+
 
 	</include>
 	
 	<include name="extramenu">
+		<item id="709">
+			<label>$LOCALIZE[20389]</label>
+			<property name="menu_id">$NUMBER[16000]</property>
+			<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
+			<property name="id">musicvideos</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
+			<thumb>icons/sidemenu/musicvideos.png</thumb>
+		</item>
+		<item id="710">
+			<label>$LOCALIZE[19020]</label>
+			<property name="menu_id">$NUMBER[12000]</property>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="id">livetv</property>
+			<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
+			<thumb>icons/sidemenu/tv.png</thumb>
+		</item>
+		<item id="711">
+			<label>$LOCALIZE[19021]</label>
+			<property name="menu_id">$NUMBER[13000]</property>
+			<onclick>ActivateWindow(RadioChannels)</onclick>
+			<property name="id">radio</property>
+			<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
+			<thumb>icons/sidemenu/radio.png</thumb>
+		</item>
 		<item id="801">
 			<!-- NETFLIX -->
 			<label>NETFLIX</label>
@@ -138,16 +146,16 @@
 			<onclick>ActivateWindow(Music,root,return)</onclick>
 			<property name="menu_id">$NUMBER[7000]</property>
 			<property name="id">spotify</property>
-			<visible>!System.HasAddon(plugin.music.spotify)</visible>
+			<visible>System.HasAddon(plugin.music.spotify)</visible>
 			<thumb>icons/sidemenu/spotify.png</thumb>
 		</item>
 		<item id="803">
 			<!-- YOUTUBE -->
 			<label>YOUTUBE</label>
-			<onclick>ActivateWindow(Music,root,return)</onclick>
-			<property name="menu_id">$NUMBER[7000]</property>
+			<onclick>RunAddon(plugin.video.youtube)</onclick>
+			<property name="menu_id"></property>
 			<property name="id">youtube</property>
-			<visible>!System.HasAddon(plugin.video.youtube)</visible>
+			<visible>System.HasAddon(plugin.video.youtube)</visible>
 			<thumb>icons/sidemenu/youtube.png</thumb>
 		</item>
 	</include>
