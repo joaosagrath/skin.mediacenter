@@ -46,7 +46,6 @@
 	<include name="pictures_widgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
 		<content target="pictures" sortby="random">$INFO[Skin.String(picwidget)]</content>
-		<!-- <content target="pictures" sortby="random">plugin://plugin.image.mypicsdb/?action=%27showcollection%27&amp;collect=%27%27&amp;method=%27show%27&amp;name=%27Cole%c3%a7%c3%b5es%27&amp;viewmode=%27view%27</content> -->
 	</include>	
 	
 	<!-- WIDGETS FAVORITOS -->

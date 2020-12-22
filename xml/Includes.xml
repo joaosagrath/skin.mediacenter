@@ -12,6 +12,7 @@
 	<include file="Include_Contents.xml"/>
 	<include file="Include_Animations.xml"/>
 	<include file="Include_Pictures.xml"/>
+	<include file="Include_Pictures_Models.xml"/>
 	<include file="Include_Games.xml"/>
 	<include file="ViewBasic.xml"/>
 	<!-- ID 50 -->

@@ -75,7 +75,7 @@
 				<texture>$VAR[musiclogo]</texture>
 			</control>
 		</control>
-		<!-- Jogos, Filmes, Series e Imagens -->
+		<!-- Jogos, Filmes, Series, Images -->
 		<control type="group">
 			<fadetime>450</fadetime>
 			<include>home_fade</include>
@@ -111,6 +111,37 @@
 				<height>155</height>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 				<texture>$VAR[homelogo]</texture>				
+			</control>
+		</control>
+		<!-- Imagens -->
+		<control type="group">
+			<left>540</left>
+			<top>500</top>
+			<fadetime>450</fadetime>
+			<include>home_fade</include>
+			<visible>Control.HasFocus(7005)</visible>
+			<control type="image">
+				<top>10</top>
+				<right>130</right>
+				<width>400</width>
+				<height>155</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$VAR[pichomelogo]</texture>				
+			</control>
+			<control type="label">					
+				<width>auto</width>
+				<height>40</height>
+				<font>home30</font>
+				<label>$INFO[ListItem.Label]</label>
+				<aligny>center</aligny>
+			</control>
+			<control type="textbox">
+				<top>40</top>
+				<width>830</width>
+				<height>120</height>
+				<font>font_plot</font>
+				<label>$VAR[pichomelabel]</label>
+				<aligny>center</aligny>
 			</control>
 		</control>
 		
@@ -183,6 +214,9 @@
 				<include>widgetextraslayout</include>
 			</control>
 		</control>
+		
+		
+		
 		
 		<!-- Setas e Botões no topo -->
 		<!-- Botão a esquerda -->

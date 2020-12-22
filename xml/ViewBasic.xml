@@ -14,6 +14,13 @@
 				<height>45</height>
 				<label>$VAR[viewdisc]</label>
 			</control>
+			<control type="label">
+				<left>50</left>
+				<top>50</top>
+				<width>1800</width>
+				<height>45</height>
+				<label>$INFO[ListItem.Path]</label>
+			</control>
 			<!-- ARTES GAMES -->
 			<control type="group">
 				<visible>Window.IsActive(games) | Window.IsActive(programs)</visible>
@@ -196,7 +203,7 @@
 					<width>860</width>
 					<height>907</height>
 					<fadetime>450</fadetime>
-					<texture fallback="default\pictures.png">$VAR[picposter]</texture>
+					<texture fallback="default\pictures.png">$INFO[ListItem.Thumb]</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="image">

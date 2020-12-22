@@ -72,69 +72,79 @@
 			<height>760</height>
 			<orientation>vertical</orientation>
 			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21820]"/>
-				<param name="value" value="ListItem.PictureDatetime" />
-			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21805]"/>
-				<param name="value" value="ListItem.PictureResolution" />
-			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21826]"/>
-				<param name="value" value="ListItem.PictureAperture" />
-			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21863]"/>
-				<param name="value" value="ListItem.PictureAuthor" />
-			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21867]"/>
-				<param name="value" value="ListItem.PictureByline" />
-			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21868]"/>
-				<param name="value" value="ListItem.PictureBylineTitle" />
-			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[31041]"/>
-				<param name="value" value="ListItem.PictureCamMake" />
-			</include>
-			<include content="picsinfo">
 				<param name="label" value="Modelo"/>
 				<param name="value" value="ListItem.PictureCamModel" />
 			</include>
 			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21862]"/>
+				<param name="label" value="Data do Set"/>
+				<param name="value" value="ListItem.PictureDatetime" />
+			</include>
+			<include content="picsinfo">
+				<param name="label" value="Também Conhecida"/>
+				<param name="value" value="ListItem.PictureByline" />
+			</include>
+			<include content="picsinfo">
+				<param name="label" value="Descrição"/>
 				<param name="value" value="ListItem.PictureCaption" />
 			</include>
 			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21866]"/>
+				<param name="label" value="Categoria"/>
 				<param name="value" value="ListItem.PictureCategory" />
 			</include>
 			<include content="picsinfo">
+				<param name="label" value="Buceta"/>
+				<param name="value" value="ListItem.PictureDesc" />
+			</include>
+			<include content="picsinfo">
+				<param name="label" value="Etnia"/>
+				<param name="value" value="ListItem.PictureCountry" />
+			</include>
+			<include content="picsinfo">
+				<param name="label" value="Busto"/>
+				<param name="value" value="ListItem.PictureKeywords" />
+			</include>
+			<!-- <include content="picsinfo">
+				<param name="label" value="$LOCALIZE[21805]"/>
+				<param name="value" value="ListItem.PictureResolution" />
+			</include> -->
+			<!-- <include content="picsinfo">
+				<param name="label" value="$LOCALIZE[21826]"/>
+				<param name="value" value="ListItem.PictureAperture" />
+			</include> -->
+			<!-- <include content="picsinfo">
+				<param name="label" value="$LOCALIZE[21863]"/>
+				<param name="value" value="ListItem.PictureAuthor" />
+			</include> -->
+			
+			<!-- <include content="picsinfo">
+				<param name="label" value="$LOCALIZE[21868]"/>
+				<param name="value" value="ListItem.PictureBylineTitle" />
+			</include> -->
+			<!-- <include content="picsinfo">
+				<param name="label" value="$LOCALIZE[31041]"/>
+				<param name="value" value="ListItem.PictureCamMake" />
+			</include> -->			
+			<!-- <include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21839]"/>
 				<param name="value" value="ListItem.PictureCCDWidth" />
-			</include>
-			<include content="picsinfo">
+			</include> -->
+			<!-- <include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21873]"/>
 				<param name="value" value="ListItem.PictureCity" />
-			</include>
-			<include content="picsinfo">
+			</include> -->
+			<!-- <include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21807]"/>
 				<param name="value" value="ListItem.PictureColour" />
-			</include>
-			<include content="picsinfo">
+			</include> -->
+			<!-- <include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21839]"/>
 				<param name="value" value="ListItem.PictureComment" />
-			</include>
-			<include content="picsinfo">
+			</include> -->
+			<!-- <include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21871]"/>
 				<param name="value" value="ListItem.PictureCopyrightNotice" />
 			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21875]"/>
-				<param name="value" value="ListItem.PictureCountry" />
-			</include>
+			
 			<include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21879]"/>
 				<param name="value" value="ListItem.PictureCountryCode" />
@@ -143,10 +153,7 @@
 				<param name="label" value="$LOCALIZE[21869]"/>
 				<param name="value" value="ListItem.PictureCredit" />
 			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21821]"/>
-				<param name="value" value="ListItem.PictureDesc" />
-			</include>
+			
 			<include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21838]"/>
 				<param name="value" value="ListItem.PictureDigitalZoom" />
@@ -203,10 +210,7 @@
 				<param name="label" value="$LOCALIZE[21837]"/>
 				<param name="value" value="ListItem.PictureISO" />
 			</include>
-			<include content="picsinfo">
-				<param name="label" value="$LOCALIZE[21861]"/>
-				<param name="value" value="ListItem.PictureKeywords" />
-			</include>
+			
 			<include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21843]"/>
 				<param name="value" value="ListItem.PictureOrientation" />
@@ -214,7 +218,7 @@
 			<include content="picsinfo">
 				<param name="label" value="$LOCALIZE[21808]"/>
 				<param name="value" value="ListItem.PictureProcess" />
-			</include>
+			</include> -->
 		</control>
 		<!-- BARRA DA VISTA -->
 		<control type="group">

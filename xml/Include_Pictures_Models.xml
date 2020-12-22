@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>	
+	<!-- By Sagrath -->
+	<variable name="picposter">
+		<!-- Revistas -->
+		<value condition="String.Contains(ListItem.Label,All Gravure)">Y:\Girls Database\Magazines\All Gravure.jpg</value>
+		<value condition="String.Contains(ListItem.Label,AmourAngels)">Y:\Girls Database\Magazines\AmourAngels.jpg</value>
+		<value condition="String.Contains(ListItem.Label,ATKingom)">Y:\Girls Database\Magazines\ATKingdom.jpg</value>
+		<value condition="String.Contains(ListItem.Label,BigTitsGlamour)">Y:\Girls Database\Magazines\BigTitsGlamour.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Breeyana)">Y:\Girls Database\Magazines\Breeyana's 18 World.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Cosmid)">Y:\Girls Database\Magazines\Cosmid.net.jpg</value>
+		<!-- Modelos -->
+		<value condition="String.Contains(ListItem.Label,Anja)">Y:\Girls Database\Models\Anja Amelia.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Eshe)">Y:\Girls Database\Models\Eshe Ikandi.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Haruka)">Y:\Girls Database\Models\Haruka Nanao.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Ichika)">Y:\Girls Database\Models\Ichika Ayamori.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Lang)">Y:\Girls Database\Models\Lang Yu.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Leah)">Y:\Girls Database\Models\Leah Wilde.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Masako)">Y:\Girls Database\Models\Masako Natsume.jpg</value>
+		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Girls Database\Models\PanPan.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Girls Database\Models\Sanija.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Victoria)">Y:\Girls Database\Models\Victoria Matosa.jpg</value>
+		<value>$INFO[ListItem.Thumb]</value>
+	</variable>
+	<variable name="pichomelogo">
+		<value condition="String.Contains(ListItem.Label,Eshe)">Y:\Girls Database\Models\Eshe Ikandi.png</value>
+		<value condition="String.Contains(ListItem.Label,Masako)">Y:\Girls Database\Models\Masako Natsume.png</value>
+		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Girls Database\Models\PanPan.png</value>
+		<value condition="String.Contains(ListItem.Label,Anja)">Y:\Girls Database\Models\Anja Amelia.png</value>
+		<value condition="String.Contains(ListItem.Label,Haruka)">Y:\Girls Database\Models\Haruka Nanao.png</value>
+		<value condition="String.Contains(ListItem.Label,Ichika)">Y:\Girls Database\Models\Ichika Ayamori.png</value>
+		<value condition="String.Contains(ListItem.Label,Lang)">Y:\Girls Database\Models\Lang Yu.png</value>
+		<value condition="String.Contains(ListItem.Label,Leah)">Y:\Girls Database\Models\Leah Wilde.png</value>
+		<value condition="String.Contains(ListItem.Label,Victoria)">Y:\Girls Database\Models\Victoria Matosa.png</value>
+	</variable>
+	<variable name="pichomelabel">
+		<value condition="String.Contains(ListItem.Label,Eshe)">Eshe is an adult model who has appeared at BigTitsGlamour.
+Performances: Solo And Masturbation</value>
+	</variable>
+</includes>

@@ -101,7 +101,7 @@
 			</control>
 		</control>
 	</include>
-	<!-- <include name="picsinfo">
+	<include name="picsinfo">
 		<control type="grouplist">
 			<visible>!String.IsEmpty($PARAM[value])</visible>
 			<height>45</height>
@@ -125,6 +125,6 @@
 				<font>home30</font>
 			</control>
 		</control>
-	</include> -->
+	</include>
 	<!-- By Sagrath -->
 </includes>

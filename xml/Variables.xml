@@ -38,15 +38,16 @@
 	<variable name="picarts">
 		<value>$INFO[skin.string(CustomPicPath)]</value>
 	</variable>
-	<variable name="picposter">
-		<value>$INFO[ListItem.Thumb]</value>
-	</variable>
 	<variable name="icon">		
 		<value>$INFO[ListItem.FolderPath,,icon.jpg]</value>	
 	</variable>
 	<variable name="piclogo">
 		<value>$INFO[ListItem.FolderPath,,logo.png]</value>		
+	</variable>
+	<variable name="piclabel">
+		<value>$INFO[skin.string(modelname)]</value>		
 	</variable>	
+	
 	
 	<!-- ARTES PARA MUSICAS -->
 	<variable name="musicposter">
