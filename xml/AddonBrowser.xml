@@ -1,318 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">9000</defaultcontrol>	
-	<backgroundcolor>grey</backgroundcolor> 
-	<views>55</views>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<views>50,52,55</views>
+	<menucontrol>9000</menucontrol>
 	<controls>
-	
-<!-- 	
-ID 	Type 				Description
-2 	button 				Select viewtype (list, thumbnail, media info, etc...)
-3 	button 				Select sort method (sort by: name, date size, etc...)
-4 	togglebutton 		Select sortmode (ascending or descending)
-5 	radiobutton 		Enable auto-updating of the installed add-on's
-6 	radiobutton 		Enable add-on notifications
-7 	radiobutton 		Enable language filter
-8 	radiobutton 		Hide broken addons
-9 	button 				Check for repo updates  
--->
-		
-		<include>systempanel</include>
+		<include>DefaultBackground</include>
 		<control type="group">
-			
-			<control type="image">
-				<left>0</left>
-				<top>90</top>
-				<right>0</right>
-				<height>1</height>
-				<width>1920</width>
-				<texture>line_h.png</texture>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<include>View_50_List</include>
+			<include>View_52_IconWall</include>
+			<include>View_55_WideList</include>
+			<include>CommonScrollbars</include>
+			<control type="group">
+				<include>OpenClose_Left</include>
+				<visible>Control.IsVisible(55)</visible>
+				<visible>Container.Content(addons) | Container.Content()</visible>
+				<include>Visible_Left</include>
+				<include content="ListThumbInfoPanel">
+					<param name="fallback_image" value="DefaultAddon.png" />
+				</include>
 			</control>
-			<!-- MENU DA ESQUERDA -->
-			<control type="list" id="9000">
-				<animation effect="slide" time="400" start="-510,0" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
-				<animation effect="slide" time="400" start="0,0" end="-510,0" easing="inout" tween="cubic">WindowClose</animation>
-				<left>0</left>
-				<top>90</top>
-				<width>500</width>
-				<height>990</height>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
-				<onleft condition="Window.Previous(4)">ActivateWindow(4)</onleft>
-				<onleft condition="Window.Previous(Home)">ActivateWindow(Home)</onleft>
-				<onright condition="Container(9000).HasFocus(1)">55</onright>
-				<onright condition="Container(9000).HasFocus(2)">9001</onright>
-				<viewtype>list</viewtype>
-				<orientation>vertical</orientation>
-				<focusposition>0</focusposition>
-				<scrolltime tween="cubic" easing="out">450</scrolltime>
-				<itemlayout width="448" height="90">
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>500</width>
-						<height>1</height>
-						<texture>line_h.png</texture>
-						<colordiffuse>FFFFFFFF</colordiffuse>
+			<include content="TopBar">
+				<param name="breadcrumbs_label" value="$LOCALIZE[24001]" />
+			</include>
+			<include content="BottomBar">
+				<param name="info_visible" value="true" />
+			</include>
+			<include>MediaMenuMouseOverlay</include>
+			<control type="group">
+				<include>MediaMenuCommon</include>
+				<control type="grouplist" id="9000">
+					<top>50</top>
+					<include>MediaMenuListCommon</include>
+					<control type="label" id="201">
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31021]</label>
 					</control>
-					<control type="label">
-						<left>20</left>
-						<top>0</top>
-						<width>405</width>
-						<height>90</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>font30</font>
-						<label>$INFO[ListItem.Label]</label>
-						<textcolor>FFFFFFFF</textcolor>
+					<control type="radiobutton" id="7">
+						<description>Hide foreign</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[25001]</label>
+						<visible>Control.IsEnabled(7)</visible>
 					</control>
-				</itemlayout>
-				<focusedlayout width="448" height="90">
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>500</width>
-						<height>90</height>
-						<texture>colors/grey.png</texture>
+					<control type="radiobutton" id="8">
+						<description>Hide incompatible</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[24999]</label>
+						<visible>Control.IsEnabled(8)</visible>
 					</control>
-					<control type="label">
-						<left>20</left>
-						<top>0</top>
-						<width>405</width>
-						<height>90</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>font_button</font>
-						<label>$INFO[ListItem.Label]</label>
-						<textcolor>FF000000</textcolor>
+					<control type="button" id="9">
+						<description>Check for repository updates</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[24034]</label>
 					</control>
-				</focusedlayout>
-				<content>
-					<!-- lista de addons -->
-					<item id="1">
-						<label>24001</label>
-						<thumb>icons/settings/addons.png</thumb>
-						<onclick>SetFocus(55)</onclick>
-					</item>
-					<!-- ajustes -->
-					<item id="2">
-						<label>Configurar</label>
-						<thumb>icons/settings/system.png</thumb>
-						<onclick>SetFocus(9001)</onclick>
-					</item>
-				</content>
-			</control>
-			<!-- MENU DA DIREITA -->
-			<control type="grouplist" id="9001">
-				<left>500</left>
-				<top>90</top>
-				<width>1420</width>
-				<height>990</height>
-				<visible>Container(9000).HasFocus(2)</visible>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<onup>9001</onup>
-				<ondown>9001</ondown>
-				<scrolltime tween="cubic" easing="out">450</scrolltime>
-				<!-- ocultar desconhecidos -->
-				<control type="radiobutton" id="7">
-					<description>Default Button</description>
-					<textoffsetx>40</textoffsetx>
-					<top>0</top>
-					<height>90</height>
-					<aligny>center</aligny>
-					<invalidcolor>red</invalidcolor>
-					<selectedcolor>black</selectedcolor>
-					<texturefocus>focus.png</texturefocus>
-					<texturenofocus />
-					<textcolor>white</textcolor>
-					<focusedcolor>black</focusedcolor>
-					<visible>Control.IsEnabled(7)</visible>
-				</control>
-				<!-- ocultar quebrados -->
-				<control type="radiobutton" id="8">
-					<description>Default RadioButton</description>
-					<include>onoffbutton</include>
-					<textoffsetx>40</textoffsetx>
-					<top>0</top>
-					<height>90</height>
-					<aligny>center</aligny>
-					<invalidcolor>invalid</invalidcolor>
-					<selectedcolor>black</selectedcolor>
-					<texturefocus>focus.png</texturefocus>
-					<texturenofocus />
-					<textcolor>white</textcolor>
-					<focusedcolor>black</focusedcolor>
-					<visible>Control.IsEnabled(8)</visible>
-				</control>
-				<!-- procurar atualizacoes -->
-				<control type="button" id="9">
-					<description>Default Button</description>
-					<textoffsetx>40</textoffsetx>
-					<top>0</top>
-					<height>90</height>
-					<aligny>center</aligny>
-					<invalidcolor>invalid</invalidcolor>
-					<selectedcolor>black</selectedcolor>
-					<texturefocus>focus.png</texturefocus>
-					<texturenofocus />
-					<textcolor>white</textcolor>
-					<focusedcolor>black</focusedcolor>
-					<label>Check for repo updates </label>
-				</control>
-				<!-- add-on fanart -->
-				<control type="radiobutton" id="500">
-					<label>Exibir Fanart do Addon</label>
-					<description>Default RadioButton</description>
-					<include>onoffbutton</include>
-					<include>button_90</include>
-					<onclick>Skin.ToggleSetting(noaddonfanart)</onclick>
-					<selected>!Skin.HasSetting(noaddonfanart)</selected>
-				</control>
-				<!-- mais opcoes -->
-				<control type="button" id="5">
-					<description>Default Button</description>
-					<textoffsetx>40</textoffsetx>
-					<top>0</top>
-					<height>90</height>
-					<aligny>center</aligny>
-					<invalidcolor>invalid</invalidcolor>
-					<selectedcolor>black</selectedcolor>
-					<texturefocus>focus.png</texturefocus>
-					<texturenofocus />
-					<textcolor>white</textcolor>
-					<focusedcolor>black</focusedcolor>
-					<label>$LOCALIZE[22082]</label>
+					<control type="button" id="5">
+						<description>Addon settings</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[10004]</label>
+					</control>
+					<include>MediaMenuNowPlaying</include>
 				</control>
 			</control>
 			<control type="group">
-				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
-				<visible>![Container(9000).HasFocus(2) | ControlGroup(9001).HasFocus]</visible>
-				<control type="list" id="55">
-					<viewtype>list</viewtype>
-					<left>500</left>
-					<top>90</top>
-					<width>1420</width>
-					<height>990</height>
-					<itemgap>0</itemgap>
-					<onup>55</onup>
-					<ondown>55</ondown>
-					<onleft>9000</onleft>
-					<onright>80</onright>
-					<orientation>vertical</orientation>
-					<pagecontrol>80</pagecontrol>
-					<itemlayout width="1420" height="90">
-						<control type="label">
-							<left>75</left>
-							<top>0</top>
-							<width>900</width>
-							<height>90</height>
-							<align>left</align>
-							<aligny>center</aligny>
-							<font>font_settings</font>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<scrollout>false</scrollout>
-						</control>
-						<control type="label">
-							<left>950</left>
-							<top>0</top>
-							<width>435</width>
-							<height>90</height>
-							<align>right</align>
-							<aligny>center</aligny>
-							<font>font30s</font>
-							<label>$INFO[ListItem.Label2]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout width="1420" height="90">
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1420</width>
-							<height>90</height>
-							<texture>colors/grey.png</texture>
-							<visible>Control.HasFocus(55)</visible>
-						</control>
-						<control type="label">
-							<left>75</left>
-							<top>0</top>
-							<width>900</width>
-							<height>90</height>
-							<align>left</align>
-							<aligny>center</aligny>
-							<font>font30</font>
-							<textcolor>E0101010</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<scrollout>false</scrollout>
-							<visible>Control.HasFocus(55)</visible>
-						</control>
-						<control type="label">
-							<left>950</left>
-							<top>0</top>
-							<width>1420</width>
-							<height>90</height>
-							<align>right</align>
-							<aligny>center</aligny>
-							<font>font_settings</font>
-							<textcolor>E0101010</textcolor>
-							<label>$INFO[ListItem.Label2]</label>
-							<visible>Control.HasFocus(55)</visible>
-						</control>
-						<control type="label">
-							<left>75</left>
-							<top>0</top>
-							<width>900</width>
-							<height>90</height>
-							<align>left</align>
-							<aligny>center</aligny>
-							<font>font_settings</font>
-							<label>$INFO[ListItem.Label]</label>
-							<scroll>true</scroll>
-							<scrollout>false</scrollout>
-							<visible>!Control.HasFocus(55)</visible>
-						</control>
-						<control type="label">
-							<left>950</left>
-							<top>0</top>
-							<width>435</width>
-							<height>60</height>
-							<align>right</align>
-							<aligny>center</aligny>
-							<font>font_settings</font>
-							<label>$INFO[ListItem.Label2]</label>
-							<visible>!Control.HasFocus(55)</visible>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="scrollbar" id="80">
-					<include>scrollbar_vertical</include>
-					<animation effect="slide" start="0,0" end="-50,0" time="300" tween="sine" easing="inout" condition="Control.HasFocus(80)">conditional</animation>
-					<left>1925</left>
-					<top>90</top>
-					<height>990</height>
-					<onleft>55</onleft>
-					<onright>55</onright>
-					<animation effect="fade" time="200">Visible</animation>
-					<animation effect="fade" time="50">Hidden</animation>
-					<visible allowhiddenfocus="true">Control.IsVisible(55)</visible>
-				</control>
-				<!-- Fundo borda -->
-				<control type="image">
-					<left>50</left>
-					<top>668</top>
-					<width>400</width>
-					<height>400</height>
-					<texture fallback="DefaultAddon.png" background="true">$INFO[Container(55).ListItem.Icon]</texture>
-					<fadetime>450</fadetime>
-					<aspectratio>keep</aspectratio>
-				</control>
+				<height>78</height>
+				<bottom>0</bottom>
+				<visible>$EXP[sidebar_visible]</visible>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<include content="LeftAlignedInfo">
+					<param name="main_label" value="$INFO[Window(AddonBrowser).Property(Updated)]" />
+					<param name="sub_label" value="$LOCALIZE[31069]" />
+				</include>
 			</control>
-		</control>
-				<control type="label">
-				<label>Addo-ns</label>
-			<include>TopSytemLabel</include>
 		</control>
 	</controls>
 </window>

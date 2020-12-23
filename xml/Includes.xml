@@ -1,516 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- MediaCenter 2021 -->
+	<!-- Sagrath -->
 	
-	<include file="Include_HomeItens.xml"/>
-	<include file="Include_Lyrics.xml"/>
-	<include file="Include_Videos.xml"/>
-	<include file="Include_Buttons.xml"/>
-	<include file="Include_ViewsOptions.xml"/>
-	<include file="Include_Music.xml"/>
-	<include file="Include_Widgets.xml"/>
-	<include file="Include_Contents.xml"/>
-	<include file="Include_Animations.xml"/>
-	<include file="Include_Pictures.xml"/>
-	<include file="Include_Pictures_Models.xml"/>
-	<include file="Include_Games.xml"/>
-	<include file="ViewBasic.xml"/>
-	<!-- ID 50 -->
-	<include file="ViewSteamVideos.xml"/>
-	<!-- ID 51 -->
-	<include file="ViewSteamPics.xml"/>
-	<!-- ID 61 -->
-	<include file="ViewSteamGames.xml"/>
-	<!-- ID 71 -->
-	<include file="ViewSteamMusic.xml"/>
-	<!-- ID 81 -->
-	<include file="ViewThumbs.xml"/>
-	<!-- ID 91 -->
-	<!-- By Sagrath -->
-	<include file="Includes_Params.xml"/>
-	<include file="Defaults.xml"/>
-	<include file="Includes_Home.xml"/>
-	<include file="Includes_Animations.xml"/>
-	<include file="Includes_MediaMenu.xml"/>
-	<include file="Includes_Buttons.xml"/>
-	<include file="Includes_DialogSelect.xml"/>
-	<include file="Includes_PVR.xml"/>
-	<include file="View_50_List.xml"/>
-	<include file="View_51_Poster.xml"/>
-	<include file="View_52_IconWall.xml"/>
-	<include file="View_53_Shift.xml"/>
-	<include file="View_54_InfoWall.xml"/>
-	<include file="View_55_WideList.xml"/>
-	<include file="View_500_Wall.xml"/>
-	<include file="View_501_Banner.xml"/>
-	<include file="View_502_FanArt.xml"/>
-	<include file="Variables.xml"/>
-	<!-- By Sagrath -->
-	<!-- ####################### BACKGROUND PADRÃO -->
-	<include name="DefaultBackground">
-		<control type="group">
-			<!-- <control type="image">
-				<visible>Skin.HasSetting(clearbackground)</visible>
-				<left>0</left>
-				<top>0</top>
-				<width>1920</width>
-				<height>1080</height>
-				<fadetime>450</fadetime>
-				<texture fallback="base-clear.jpg">$VAR[homefanart]</texture>
-			</control>
-			<control type="image">
-				<visible>Skin.HasSetting(darkbackground)</visible>
-				<left>0</left>
-				<top>0</top>
-				<width>1920</width>
-				<height>1080</height>
-				<fadetime>450</fadetime>
-				<texture fallback="base-dark.jpg">$VAR[homefanart]</texture>
-			</control> -->
-			<control type="image">
-				<top>0</top>
-				<left>0</left>
-				<width>1920</width>
-				<height>1080</height>
-				<texture background="true">$VAR[homefanart]</texture>
-				<aspectratio>stretch</aspectratio>
-				<fadetime>450</fadetime>
-			</control>
-			<control type="image">
-				<top>0</top>
-				<left>0</left>
-				<width>1920</width>
-				<height>1080</height>
-				<texture background="true">fanarts/$INFO[ListItem.Property(id)].jpg</texture>
-				<aspectratio>stretch</aspectratio>
-				<fadetime>450</fadetime>
-			</control>
-		</control>
-	</include>
-	<!-- MULTIIMAGE HOME -->
-	<include name="multifanart">
-		<control type="group">
-			<visible>System.IdleTime(9) + Control.HasFocus(7001)</visible>
-			<include>gameblur</include>
-			<control type="multiimage">
-				<width>1920</width>
-				<height>1080</height>
-				<timeperimage>900</timeperimage>
-				<randomize>false</randomize>
-				<fadetime>850</fadetime>
-				<imagepath>$VAR[gamesarts]$INFO[ListItem.Label]</imagepath>
-				<aspectratio>keep</aspectratio>
-			</control>
-		</control>
-		<control type="group">
-			<visible>System.IdleTime(9) + Control.HasFocus(7005)</visible>
-			<include>musicblur</include>
-			<control type="multiimage">
-				<width>1920</width>
-				<height>1080</height>
-				<timeperimage>900</timeperimage>
-				<randomize>false</randomize>
-				<fadetime>850</fadetime>
-				<imagepath>$VAR[musicarts]$INFO[ListItem.Label]\extrafanart\</imagepath>
-				<aspectratio>keep</aspectratio>
-			</control>
-		</control>
-		<control type="group">
-			<visible>System.IdleTime(9) + Control.HasFocus(7007)</visible>
-			<include>picsblur</include>
-			<control type="multiimage">
-				<width>1920</width>
-				<height>1080</height>
-				<timeperimage>900</timeperimage>
-				<randomize>true</randomize>
-				<fadetime>850</fadetime>
-				<imagepath>$VAR[pic_multifanart]$INFO[ListItem.Label]</imagepath>
-				<aspectratio>keep</aspectratio>
-			</control>
-		</control>
-	</include>
-	<!-- TITULO NA HOME -->
-	<include name="widget_preview">
-		<top>730</top>
-		<left>20</left>
-		<width>1420</width>
-		<height>45</height>
-		<align>center</align>
-		<font>home_time</font>
-		<shadowcolor>black</shadowcolor>
-	</include>
-	<include name="widgets_buttons_layout">
-		<top>160</top>
-		<left>0</left>
-		<pagecontrol>80</pagecontrol>
-		<right>0</right>
-		<height>540</height>
-		<onleft>9000</onleft>
-		<onright>80</onright>
-	</include>
-	<!-- ####################### NOTIFICAÇÕES -->
-	<include name="notifylabel">	
-		<width>1880</width>
-		<height>45</height>
-		<font>home_time</font>
-		<align>right</align>
-		<aligny>center</aligny>
-		<textcolor>white</textcolor>
-		<shadowcolor>black</shadowcolor>
-		<fadetime>450</fadetime>
-	</include>
-	<!-- ####################### RODAPÉ -->
-	<include name="footer">
-		<left>0</left>
-		<top>0</top>
-		<width>450</width>
-		<height>66</height>
-		<font>font30</font>
-		<align>center</align>
-	</include>
-	<!-- ####################### PAINÉIS DO SISTEMA  -->
-	<include name="systempanel">
-		<!-- SOMBRA SUPERIOR -->
-		<control type="group">
-			<animation effect="slide" time="400" start="0,-450" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
-			<animation effect="slide" time="400" start="0,0" end="0,-450" easing="inout" tween="cubic">WindowClose</animation>
-			<control type="image">
-				<left>500</left>
-				<width>1470</width>
-				<height>450</height>
-				<texture flipy="true">shadow_mask_h.png</texture>
-				<colordiffuse>F9000000</colordiffuse>
-				<animation effect="fade" end="75" condition="true">Conditional</animation>
-			</control>
-		</control>
-		<!-- SOMBRA LATERAL -->
-		<control type="group">
-			<animation effect="slide" time="400" start="-510,0" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
-			<animation effect="slide" time="400" start="0,0" end="-510,0" easing="inout" tween="cubic">WindowClose</animation>
-			<control type="image">
-				<width>500</width>
-				<height>1080</height>
-				<texture flipx="true">shadow_mask_v.png</texture>
-				<colordiffuse>F9000000</colordiffuse>
-				<animation effect="fade" end="75" condition="true">Conditional</animation>
-			</control>
-			<control type="image">
-				<left>500</left>
-				<width>30</width>
-				<height>1080</height>
-				<texture>shadow.png</texture>
-				<animation effect="fade" end="75" condition="true">Conditional</animation>
-			</control>
-		</control>
-		<!-- RODAPÉ -->
-		<control type="group">
-			<animation effect="slide" time="400" start="0,100" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
-			<animation effect="slide" time="400" start="0,0" end="0,100" easing="inout" tween="cubic">WindowClose</animation>
-			<control type="image">
-				<left>500</left>
-				<top>980</top>
-				<width>1420</width>
-				<height>100</height>
-				<texture>shadow_mask_h.png</texture>
-				<colordiffuse>F9000000</colordiffuse>
-				<animation effect="fade" end="75" condition="true">Conditional</animation>
-			</control>
-		</control>
-	</include>
-	<!-- ####################### FUNDO VISTA BÁSICA  -->
-	<include name="basicviewpanel">
-		<control type="image">
-			<left>960</left>
-			<top>0</top>
-			<width>960</width>
-			<height>1080</height>
-			<texture colordiffuse="black" diffuse="shadow_mask.png">colors/grey.png</texture>
-			<animation effect="fade" end="65" condition="true">Conditional</animation>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>960</width>
-			<height>1080</height>
-			<texture colordiffuse="black" diffuse="shadow_mask_v.png">colors/grey.png</texture>
-			<animation effect="fade" end="65" condition="true">Conditional</animation>
-		</control>
-	</include>
-	<!-- ####################### BARRA DA VISTA  -->
-	<include name="widgetlabel">
-		<width>318</width>
-		<height>40</height>
-		<font>font30</font>
-		<align>left</align>
-		<animation effect="fade" start="20" end="100" time="600" pulse="true" condition="true">Conditional</animation>
-	</include>
-	<include name="widgetarrow">
-		<width>60</width>
-		<height>40</height>
-		<align>left</align>
-		<aspectratio>keep</aspectratio>
-		<animation effect="fade" start="20" end="100" time="600" pulse="true" condition="true">Conditional</animation>
-	</include>
-	<include name="viewbar">
-		<control type="grouplist">
-			<orientation>horizontal</orientation>
-			<align>center</align>
-			<!-- LEFT -->
-			<control type="image">
-				<include>widgetarrow</include>
-				<texture>arrow_left.png</texture>
-			</control>
-			<control type="label">
-				<include>widgetlabel</include>
-				<label>$LOCALIZE[31200]</label>
-			</control>
-			<!-- UP -->
-			<control type="image">
-				<include>widgetarrow</include>
-				<texture>arrow_up.png</texture>
-			</control>
-			<control type="label">
-				<include>widgetlabel</include>
-				<label>$LOCALIZE[31202]</label>
-			</control>
-			<!-- CLICK -->
-			<control type="image">
-				<include>widgetarrow</include>
-				<texture>arrow_click.png</texture>
-			</control>
-			<control type="label">
-				<include>widgetlabel</include>
-				<label>$LOCALIZE[31204]</label>
-			</control>
-			<!-- DOWN -->
-			<control type="image">
-				<include>widgetarrow</include>
-				<texture>arrow_down.png</texture>
-			</control>
-			<control type="label">
-				<include>widgetlabel</include>
-				<label>$LOCALIZE[31203]</label>
-			</control>
-			<!-- RIGHT -->
-			<control type="image">
-				<include>widgetarrow</include>
-				<texture>arrow_right.png</texture>
-			</control>
-			<control type="label">
-				<include>widgetlabel</include>
-				<label>$LOCALIZE[31201]</label>
-			</control>
-		</control>
-	</include>
-	<include name="viewarch">
-		<control type="image">
-			<bottom>50</bottom>
-			<left>0</left>
-			<width>45</width>
-			<height>1080</height>
-			<texture>shadow_v.png</texture>
-		</control>
-		<control type="image">
-			<bottom>50</bottom>
-			<right>0</right>
-			<width>45</width>
-			<height>11080</height>
-			<texture flipx="true">shadow_v.png</texture>
-		</control>
-		<control type="image">
-			<top>0</top>
-			<left>0</left>
-			<width>1920</width>
-			<height>45</height>
-			<texture flipy="true">shadow_h.png</texture>
-		</control>
-		<control type="image">
-			<bottom>50</bottom>
-			<left>0</left>
-			<width>1920</width>
-			<height>45</height>
-			<texture>shadow_h.png</texture>
-		</control>
-	</include>
-	<!-- ####################### SCROLLBARS  -->
-	<include name="scrollbar_vertical">
-		<width>40</width>
-		<texturesliderbackground border="0,14,0,14">scrollbar_v.png</texturesliderbackground>
-		<texturesliderbar border="0,14,0,14">scrollbar_vbar.png</texturesliderbar>
-		<texturesliderbarfocus border="0,14,0,14">scrollbar_vbar_focus.png</texturesliderbarfocus>
-		<textureslidernib>scrollbar_nib.png</textureslidernib>
-		<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
-		<pulseonselect/>
-		<orientation>vertical</orientation>
-		<showonepage>false</showonepage>
-	</include>
-	<include name="scrollbar_horizontal">
-		<width>40</width>
-		<texturesliderbackground border="0,14,0,14">scrollbar_h.png</texturesliderbackground>
-		<texturesliderbar border="0,14,0,14">scrollbar_hbar.png</texturesliderbar>
-		<texturesliderbarfocus border="0,14,0,14">scrollbar_hbar_focus.png</texturesliderbarfocus>
-		<textureslidernib>scrollbar_nib.png</textureslidernib>
-		<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
-		<pulseonselect/>
-		<orientation>vertical</orientation>
-		<showonepage>false</showonepage>
-	</include>
-	<!-- ####################### BASIC BACK VIEW-->
-	<include name="myviewslayout">
-		<control type="image">
-			<top>0</top>
-			<left>0</left>
-			<width>960</width>
-			<height>1920</height>
-			<texture>shadow_v.png</texture>
-		</control>
-		<control type="image">
-			<top>0</top>
-			<right>0</right>
-			<width>960</width>
-			<height>1920</height>
-			<texture flipx="true">shadow_v.png</texture>
-		</control>
-		<control type="image">
-			<bottom>0</bottom>
-			<left>0</left>
-			<width>1920</width>
-			<height>60</height>
-			<texture>gradient_small.png</texture>
-		</control>
-		<control type="image">
-			<bottom>0</bottom>
-			<left>0</left>
-			<width>1920</width>
-			<height>500</height>
-			<fadetime>450</fadetime>
-			<texture colordiffuse="FF000000">shadow_mask_h.png</texture>
-			<animation effect="fade" end="75" condition="true">Conditional</animation>
-			<aspectratio>stretch</aspectratio>
-		</control>
-	</include>
-	<!-- ####################### COLOR LABEL -->
-	<include name="labelcolor">
-		<textcolor>white</textcolor>
-		<selectedcolor>orange</selectedcolor>
-		<shadowcolor>black</shadowcolor>
-	</include>
-	<include name="labelcolorfocus">
-		<textcolor>orange</textcolor>
-		<selectedcolor>orange</selectedcolor>
-		<shadowcolor>black</shadowcolor>
-	</include>
-	<!-- ####################### TIME LABEL -->
-	<include name="labeltime">
-		<bottom>25</bottom>
-		<width>100</width>
-		<height>50</height>
-		<font>home30</font>				
-		<aligny>center</aligny>
-		<textcolor>white</textcolor>
-		<shadowcolor>black</shadowcolor>				
-		<fadetime>450</fadetime>
-	</include>
-	<!-- ####################### SYSTEM LABEL -->
-	<include name="TopSytemLabel">
-		<font>font45</font>
-		<shadowcolor>text_shadow</shadowcolor>
-		<top>15</top>
-		<left>35</left>
-		<height>100</height>
-		<width>auto</width>
-	</include>
-	<!-- ####################### KEYBOARD LAYOUT -->
-	<include name="keyboardkey">
-		<texturenofocus>darkgrey.png</texturenofocus>
-		<texturefocus>colors/grey.png</texturefocus>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font_plot</font>
-		<textcolor>FFF8F8F8</textcolor>
-		<focusedcolor>black</focusedcolor>
-	</include>
 	
-	<!-- ####################### CUSTOM HOME WIDTH ####################### -->
-	<include name="four_itens">
-		<left>520</left>
-	</include>
-	<include name="three_itens">
-		<left>630</left>
-	</include>
-	<include name="two_itens">
-		<left>740</left>
-	</include>
-	<include name="one_itens">
-		<left>850</left>
-	</include>	
-	
-	<!-- ####################### Dialogs ####################### -->
-	<include name="Dialogs_Bar">
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>1920</width>
-			<height>280</height>
-			<texture flipy="true" diffuse="shadow_mask.png">shadow_mask.png</texture>
-			<colordiffuse>shadow_mask.png</colordiffuse>
-			<animation effect="fade" end="85" condition="true">Conditional</animation>
-		</control>
-	</include>
-	<include name="Dialogs_Bar1">
-		<control type="image">
-			<left>0</left>
-			<top>46</top>
-			<width>1950</width>
-			<height>45</height>
-			<texture flipy="true">shadow_h.png</texture>
-			<colordiffuse>C3FFFFFF</colordiffuse>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>-6</top>
-			<height>50</height>
-			<width>1920</width>
-			<aligny>top</aligny>
-			<texture>$VAR[texture_base]</texture>
-			<colordiffuse>shadow_mask.png</colordiffuse>
-			<include>animation_homeglass</include>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>-6</top>
-			<height>52</height>
-			<width>1920</width>
-			<aligny>top</aligny>
-			<texture>shadow_mask.png</texture>
-			<colordiffuse>shadow_mask.png</colordiffuse>
-			<include>animation_homeglass</include>
-		</control>
-	</include>
-	<include name="Dialogs_Progress">
-		<left>15</left>
-		<top>39</top>
-		<width>1890</width>
-		<height>6</height>
-	</include>
-	<include name="DialogContext_Button">
-		<left>0</left>
-		<top>0</top>
-		<width>681</width>
-		<height>58</height>
-		<onleft>Close</onleft>
-		<onright>Close</onright>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font_button</font>
-		<textoffsety>12</textoffsety>
-		<textcolor>FFF8F8F8</textcolor>
-		<focusedcolor>E0101010</focusedcolor>
-		<texturenofocus>dialogs_context_nofocus.png</texturenofocus>
-		<texturefocus>dialogs_context_focus.png</texturefocus>
-		<pulseonselect>false</pulseonselect>
-		<colordiffuse>F9FFFFFF</colordiffuse>
-	</include>
+	<!-- Sagrath -->
+	<include file="Defaults.xml" />
+	<include file="Includes_Home.xml" />
+	<include file="Includes_Animations.xml" />
+	<include file="Includes_MediaMenu.xml" />
+	<include file="Includes_Buttons.xml" />
+	<include file="Includes_DialogSelect.xml" />
+	<include file="Includes_PVR.xml" />
+	<include file="View_50_List.xml" />
+	<include file="View_51_Poster.xml" />
+	<include file="View_52_IconWall.xml" />
+	<include file="View_53_Shift.xml" />
+	<include file="View_54_InfoWall.xml" />
+	<include file="View_55_WideList.xml" />
+	<include file="View_500_Wall.xml" />
+	<include file="View_501_Banner.xml" />
+	<include file="View_502_FanArt.xml" />
+	<include file="Variables.xml" />
+	<constant name="DepthDialog">0.50</constant>
+	<constant name="DepthDialog+">0.52</constant>
+	<constant name="DepthDialog-">0.48</constant>
+	<constant name="DepthMax">0.54</constant>
+	<constant name="DepthOSD">0.40</constant>
+	<constant name="DepthOSD+">0.44</constant>
+	<constant name="DepthContentPopout">0.10</constant>
+	<constant name="DepthContentPanel">0.05</constant>
+	<constant name="DepthBars">0.12</constant>
+	<constant name="DepthBackground">-0.80</constant>
+	<constant name="DepthSideBlade">0.10</constant>
+	<constant name="bg_alpha">79</constant>
+	<constant name="dialogbuttons_itemgap">-20</constant>
+	<constant name="list_y_offset">0</constant>
+	<constant name="list_item_height">80</constant>
+	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)</expression>
+	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Control.HasFocus(6131) | Window.IsActive(MyPlaylist.xml)</expression>
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -529,12 +56,11 @@
 					<onleft>50</onleft>
 					<onright>50</onright>
 					<orientation>vertical</orientation>
-					<texturesliderbackground/>
+					<texturesliderbackground />
 					<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 					<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
-					<visible>Control.IsVisible(61) | Control.IsVisible(71)</visible>
-					<hitrect x="-20" y="0" w="80" bottom="0r"/>
+					<visible>Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(501) | Control.IsVisible(54)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -548,16 +74,16 @@
 					<bottom>0</bottom>
 					<width>100%</width>
 					<height>12</height>
-					<texturesliderbackground/>
+					<texturesliderbackground />
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<orientation>horizontal</orientation>
-					<visible>Control.IsVisible(61) | Control.IsVisible(71)</visible>
+					<visible>Control.IsVisible(51) | Control.IsVisible(53)</visible>
 					<animation effect="slide" end="0,6" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(5199)">conditional</animation>
 					<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 					<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
-					<hitrect x="0" y="20" w="100%" h="40"/>
+					<hitrect x="0" y="20" w="100%" h="40" />
 				</control>
 			</control>
 		</control>
@@ -567,10 +93,10 @@
 		<top>-3000</top>
 		<width>1</width>
 		<height>1</height>
-		<texturefocus/>
-		<texturenofocus/>
-		<label/>
-		<font>font30</font>
+		<texturefocus />
+		<texturenofocus />
+		<label></label>
+		<font></font>
 	</include>
 	<include name="RatingCircle">
 		<param name="animation">False</param>
@@ -578,10 +104,10 @@
 			<control type="group">
 				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
 				<include content="UserRatingContent" condition="Skin.HasSetting(circle_userrating)">
-					<param name="infolabel" value="ListItem.UserRating"/>
+					<param name="infolabel" value="ListItem.UserRating" />
 				</include>
 				<include content="UserRatingContent" condition="Skin.HasSetting(circle_rating)">
-					<param name="infolabel" value="ListItem.Rating"/>
+					<param name="infolabel" value="ListItem.Rating" />
 				</include>
 			</control>
 		</definition>
@@ -603,7 +129,7 @@
 			<aligny>center</aligny>
 			<width>44</width>
 			<height>44</height>
-			<font>font30</font>
+			<font>font20_title</font>
 			<label>$INFO[$PARAM[infolabel]]</label>
 		</control>
 	</include>
@@ -615,7 +141,7 @@
 		<param name="width">1152</param>
 		<param name="list_id">5000</param>
 		<param name="font">font13</param>
-		<param name="sortby"/>
+		<param name="sortby"></param>
 		<param name="sortorder">ascending</param>
 		<param name="visible">true</param>
 		<definition>
@@ -633,7 +159,7 @@
 						<aligny>center</aligny>
 						<label>$PARAM[item_label]</label>
 						<shadowcolor>text_shadow</shadowcolor>
-						<font>font30</font>
+						<font>$PARAM[font]</font>
 					</control>
 				</focusedlayout>
 				<itemlayout height="$PARAM[item_height]" width="$PARAM[width]">
@@ -644,7 +170,7 @@
 						<aligny>center</aligny>
 						<label>$PARAM[item_label]</label>
 						<shadowcolor>text_shadow</shadowcolor>
-						<font>font30</font>
+						<font>$PARAM[font]</font>
 					</control>
 				</itemlayout>
 				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]">$PARAM[path]</content>
@@ -687,7 +213,7 @@
 					<right>20</right>
 					<bottom>0</bottom>
 					<align>$PARAM[align]</align>
-					<font>font30</font>
+					<font>$PARAM[font]</font>
 					<aligny>center</aligny>
 					<textcolor>$PARAM[fontcolor]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
@@ -708,7 +234,7 @@
 					<right>20</right>
 					<bottom>0</bottom>
 					<align>$PARAM[align]</align>
-					<font>font30</font>
+					<font>$PARAM[font]</font>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 					<scroll>true</scroll>
@@ -753,7 +279,7 @@
 		</definition>
 	</include>
 	<include name="MediaFlags">
-		<param name="infolabel_prefix"/>
+		<param name="infolabel_prefix"></param>
 		<param name="resolution_var">$VAR[ResolutionFlagVar]</param>
 		<definition>
 			<control type="grouplist">
@@ -769,16 +295,16 @@
 					<width>150</width>
 					<visible>System.HasAddon(resource.images.studios.white) + String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow)</visible>
 					<include content="MediaFlag">
-						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
+						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]" />
 					</include>
 				</control>
 				<control type="group">
 					<top>10</top>
 					<width>200</width>
 					<include content="InfoFlag">
-						<param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) | String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)"/>
-						<param name="icon" value="lists/year.png"/>
-						<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]"/>
+						<param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) | String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)" />
+						<param name="icon" value="lists/year.png" />
+						<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]" />
 					</include>
 				</control>
 				<control type="group">
@@ -793,23 +319,23 @@
 						<font>font_flag</font>
 					</control>
 					<include content="MediaFlag">
-						<param name="texture" value="flags/flag.png"/>
+						<param name="texture" value="flags/flag.png" />
 					</include>
 				</control>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioChannels,flags/audiochannel/,.png]"/>
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)"/>
+					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioChannels,flags/audiochannel/,.png]" />
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)" />
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioCodec,flags/audiocodec/,.png]"/>
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec)"/>
+					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioCodec,flags/audiocodec/,.png]" />
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec)" />
 				</include>
-				<!-- <include content="MediaFlag">
-				<param name="texture" value="$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]" />
-				</include> -->
+				<!-- 			<include content="MediaFlag">
+																														<param name="texture" value="$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]" />
+																													</include> -->
 				<include content="MediaFlag">
-					<param name="texture" value="$PARAM[resolution_var]"/>
-					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoResolution)"/>
+					<param name="texture" value="$PARAM[resolution_var]" />
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoResolution)" />
 				</include>
 			</control>
 		</definition>
@@ -836,8 +362,8 @@
 		</control>
 	</include>
 	<include name="FileManagerPanel">
-		<param name="width"/>
-		<param name="right"/>
+		<param name="width"></param>
+		<param name="right"></param>
 		<definition>
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
@@ -952,7 +478,7 @@
 							<control type="group">
 								<top>150</top>
 								<include content="InfoWallMusicLayout">
-									<param name="fallback_image" value="DefaultAddon.png"/>
+									<param name="fallback_image" value="DefaultAddon.png" />
 								</include>
 							</control>
 						</itemlayout>
@@ -962,8 +488,8 @@
 								<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="150,320">Focus</animation>
 								<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="150,320">UnFocus</animation>
 								<include content="InfoWallMusicLayout">
-									<param name="fallback_image" value="DefaultAddon.png"/>
-									<param name="focused" value="true"/>
+									<param name="fallback_image" value="DefaultAddon.png" />
+									<param name="focused" value="true" />
 								</include>
 							</control>
 						</focusedlayout>
@@ -975,7 +501,7 @@
 						<width>12</width>
 						<height>920</height>
 						<orientation>vertical</orientation>
-						<texturesliderbackground/>
+						<texturesliderbackground />
 						<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus($PARAM[group_id]30)">conditional</animation>
 						<onleft>$PARAM[group_id]50</onleft>
 						<onright>noop</onright>
@@ -984,8 +510,8 @@
 				<control type="group">
 					<left>462</left>
 					<include content="ImageWidget">
-						<param name="text_label" value="$LOCALIZE[31153]"/>
-						<param name="button_label" value="$LOCALIZE[31144]"/>
+						<param name="text_label" value="$LOCALIZE[31153]" />
+						<param name="button_label" value="$LOCALIZE[31144]" />
 						<param name="button_onclick" value="$PARAM[imagewidget_onclick]"/>
 						<param name="button_id" value="$PARAM[group_id]333"/>
 						<param name="visible_2" value="false"/>
@@ -1019,7 +545,7 @@
 				</control>
 				<control type="label" id="$PARAM[id]">
 					<label>$PARAM[sub_label]</label>
-					<font>font30</font>
+					<font>font12</font>
 					<left>85</left>
 					<shadowcolor>text_shadow</shadowcolor>
 					<height>100</height>
@@ -1135,8 +661,8 @@
 				<top>$PARAM[posy]</top>
 				<width>28</width>
 				<height>28</height>
-				<texturefocus/>
-				<texturenofocus/>
+				<texturefocus />
+				<texturenofocus />
 				<onclick>Control.Move($PARAM[list_id],-1)</onclick>
 				<visible allowhiddenfocus="true">Container($PARAM[list_id]).HasPrevious + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]500)]</visible>
 			</control>
@@ -1145,8 +671,8 @@
 				<top>$PARAM[posy]</top>
 				<width>28</width>
 				<height>28</height>
-				<texturefocus/>
-				<texturenofocus/>
+				<texturefocus />
+				<texturenofocus />
 				<onclick>Control.Move($PARAM[list_id],1)</onclick>
 				<visible allowhiddenfocus="true">Container($PARAM[list_id]).HasNext + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]501)]</visible>
 			</control>
@@ -1169,8 +695,8 @@
 			<top>-2000</top>
 			<width>6000</width>
 			<height>6000</height>
-			<texturefocus/>
-			<texturenofocus/>
+			<texturefocus />
+			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
 		<control type="group">
@@ -1206,8 +732,8 @@
 				<top>0</top>
 				<right>0</right>
 				<bottom>0</bottom>
-				<texturefocus/>
-				<texturenofocus/>
+				<texturefocus />
+				<texturenofocus />
 				<onclick>noop</onclick>
 			</control>
 			<control type="radiobutton">
@@ -1217,9 +743,9 @@
 				<height>48</height>
 				<radiowidth>48</radiowidth>
 				<radioheight>48</radioheight>
-				<texturefocus/>
-				<texturenofocus/>
-				<label/>
+				<texturefocus />
+				<texturenofocus />
+				<label></label>
 				<textureradioofffocus colordiffuse="EEFFFFFF">dialogs/close.png</textureradioofffocus>
 				<textureradiooffnofocus colordiffuse="EEFFFFFF">icons/logo.png</textureradiooffnofocus>
 				<textureradioonfocus colordiffuse="EEFFFFFF">dialogs/close.png</textureradioonfocus>
@@ -1254,15 +780,59 @@
 					<texture>frame/InfoBar.png</texture>
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 				</control>
+				<control type="grouplist">
+					<left>35</left>
+					<description>Left side of top bar</description>
+					<width>900</width>
+					<top>-7</top>
+					<height>100</height>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+					<animation effect="slide" end="0,16" time="200" reversible="true" condition="String.IsEmpty(Control.GetLabel(18900))">Conditional</animation>
+					<animation effect="slide" end="70,0" time="200" reversible="true" condition="Control.IsVisible(799)">Conditional</animation>
+					<control type="label">
+						<label>$PARAM[breadcrumbs_label]</label>
+						<include>BreadcrumbsLabel</include>
+					</control>
+					<control type="label">
+						<label>$INFO[Container.ShowTitle, / ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>!String.IsEmpty(Container.ShowTitle) + !String.IsEqual(Container.ShowTitle,Container.FolderName)</visible>
+					</control>
+					<control type="label">
+						<label>$INFO[Container.FolderName, / ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>![Container.Content() + Window.IsActive(videos)]</visible>
+						<visible>![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml)]</visible>
+					</control>
+					<control type="label">
+						<label>$INFO[Container.PluginCategory, / ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>!String.isempty(Container.PluginCategory)</visible>
+					</control>
+					<control type="label">
+						<label>$INFO[Control.GetLabel(10),: ]</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<label>($LOCALIZE[31052])</label>
+						<include>BreadcrumbsLabel</include>
+						<visible>Container.Filtered</visible>
+					</control>
+				</control>
 				<control type="button">
 					<top>0</top>
 					<width>200</width>
 					<height>100</height>
-					<label/>
+					<label></label>
 					<onclick>Action(Back)</onclick>
 					<visible>!Window.IsActive(home)</visible>
-					<texturefocus/>
-					<texturenofocus/>
+					<texturefocus />
+					<texturenofocus />
 				</control>
 				<control type="label" id="18900">
 					<top>50</top>
@@ -1431,7 +1001,13 @@
 			<include condition="Skin.HasSetting(touchmode) + !Window.IsActive(home)">TouchBackButton</include>
 		</definition>
 	</include>
-
+	<include name="BreadcrumbsLabel">
+		<font>font45</font>
+		<shadowcolor>text_shadow</shadowcolor>
+		<top>7</top>
+		<height>100</height>
+		<width>auto</width>
+	</include>
 	<include name="ColoredBackgroundImages">
 		<control type="image">
 			<depth>DepthBackground</depth>
@@ -1445,6 +1021,57 @@
 			<aspectratio>scale</aspectratio>
 			<texture colordiffuse="secondary_background" fallback="special://skin/extras/backgrounds/pattern1.jpg">$INFO[Skin.String(background_overlay),special://skin/extras/backgrounds/pattern,.jpg]</texture>
 		</control>
+	</include>
+	<include name="DefaultBackground">
+		<definition>
+			<control type="videowindow">
+				<depth>DepthBackground</depth>
+				<include>FullScreenDimensions</include>
+				<visible>Player.HasVideo</visible>
+				<visible>!Slideshow.IsActive</visible>
+			</control>
+			<control type="visualisation">
+				<include>FullScreenDimensions</include>
+				<visible>!Slideshow.IsActive</visible>
+				<visible>Player.HasAudio + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia)) + Visualisation.Enabled</visible>
+			</control>
+			<control type="group">
+				<include>FullScreenDimensions</include>
+				<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+				<control type="group">
+					<animation effect="fade" start="100" end="bg_alpha" time="0" condition="!Control.IsVisible(31111)">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(FullscreenGame) | Window.Previous(startup)">WindowOpen</animation>
+					<include>ColoredBackgroundImages</include>
+				</control>
+				<control type="group" id="31111">
+					<visible>![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+					<depth>DepthBackground</depth>
+					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+					<animation effect="fade" time="400">VisibleChange</animation>
+					<control type="image" id="32111">
+						<include>FullScreenDimensions</include>
+						<aspectratio>scale</aspectratio>
+						<fadetime>400</fadetime>
+						<animation effect="fade" time="400">VisibleChange</animation>
+						<texture background="true" colordiffuse="37FFFFFF">$VAR[MediaFanartVar]</texture>
+						<visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
+					</control>
+					<control type="image">
+						<left>-3</left>
+						<top>0</top>
+						<right>1193</right>
+						<height>100%</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<fadetime>400</fadetime>
+						<include>OpenClose_Left</include>
+						<animation effect="fade" time="400">VisibleChange</animation>
+						<texture background="true" colordiffuse="37FFFFFF">$VAR[PosterVar]</texture>
+						<visible>!Control.IsVisible(32111)</visible>
+					</control>
+				</control>
+			</control>
+		</definition>
 	</include>
 	<include name="BottomBar">
 		<param name="info_visible">False</param>
@@ -1500,8 +1127,8 @@
 						<shadowcolor>text_shadow</shadowcolor>
 						<label>$LOCALIZE[33063]</label>
 						<onclick>SetFocus(9000)</onclick>
-						<texturefocus/>
-						<texturenofocus/>
+						<texturefocus />
+						<texturenofocus />
 					</control>
 				</control>
 				<include>TouchButtons</include>
@@ -1624,8 +1251,28 @@
 			</control>
 		</definition>
 	</include>
+	<include name="ContentPanel">
+		<param name="width">500</param>
+		<param name="left">-40</param>
+		<param name="right"></param>
+		<param name="top">-10%</param>
+		<param name="height">120%</param>
+		<param name="flipx">false</param>
+		<definition>
+			<control type="image">
+				<texture flipx="$PARAM[flipx]" colordiffuse="EDFFFFFF">lists/panel.png</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<width>$PARAM[width]</width>
+				<left>$PARAM[left]</left>
+				<right>$PARAM[right]</right>
+				<top>$PARAM[top]</top>
+				<height>$PARAM[height]</height>
+			</control>
+		</definition>
+	</include>
 	<include name="TouchButtons">
-		<control type="grouplist" id="799">
+		<control type="grouplist" id="700">
 			<orientation>horizontal</orientation>
 			<visible>Skin.HasSetting(touchmode)</visible>
 			<visible>!Window.IsActive(home) + !Window.IsActive(filemanager)</visible>
@@ -1642,18 +1289,18 @@
 			<align>justify</align>
 			<usecontrolcoords>true</usecontrolcoords>
 			<include content="IconButton">
-				<param name="control_id" value=""/>
-				<param name="onclick" value="SetFocus(9000)"/>
-				<param name="icon" value="icons/settings.png"/>
-				<param name="label" value="$LOCALIZE[10004]"/>
-				<param name="visible" value="Window.IsMedia"/>
+				<param name="control_id" value="" />
+				<param name="onclick" value="SetFocus(9000)" />
+				<param name="icon" value="icons/settings.png" />
+				<param name="label" value="$LOCALIZE[10004]" />
+				<param name="visible" value="Window.IsMedia" />
 			</include>
 			<include content="IconButton">
-				<param name="control_id" value=""/>
-				<param name="onclick" value="ActivateWindow(shutdownmenu)"/>
-				<param name="icon" value="icons/power.png"/>
-				<param name="label" value="$LOCALIZE[33060]"/>
-				<param name="visible" value="!Window.IsMedia"/>
+				<param name="control_id" value="" />
+				<param name="onclick" value="ActivateWindow(shutdownmenu)" />
+				<param name="icon" value="icons/power.png" />
+				<param name="label" value="$LOCALIZE[33060]" />
+				<param name="visible" value="!Window.IsMedia" />
 			</include>
 			<control type="group">
 				<width>120</width>
@@ -1661,10 +1308,10 @@
 					<top>0</top>
 					<width>120</width>
 					<height>120</height>
-					<label/>
+					<label></label>
 					<onclick>ActivateWindow(1103)</onclick>
 					<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-					<texturenofocus/>
+					<texturenofocus />
 				</control>
 				<control type="image">
 					<left>34</left>
@@ -1675,10 +1322,10 @@
 				</control>
 			</control>
 			<include content="IconButton">
-				<param name="control_id" value=""/>
-				<param name="onclick" value="ActivateWindow(favourites)"/>
-				<param name="icon" value="icons/favourites.png"/>
-				<param name="label" value="$LOCALIZE[10134]"/>
+				<param name="control_id" value="" />
+				<param name="onclick" value="ActivateWindow(favourites)" />
+				<param name="icon" value="icons/favourites.png" />
+				<param name="label" value="$LOCALIZE[10134]" />
 			</include>
 		</control>
 	</include>
@@ -1694,7 +1341,7 @@
 			<animation effect="fade" start="0" end="100" time="400" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(home)">WindowClose</animation>
 			<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-			<texturenofocus/>
+			<texturenofocus />
 			<radioposx>30</radioposx>
 			<radiowidth>60</radiowidth>
 			<radioheight>60</radioheight>
@@ -1736,10 +1383,10 @@
 			<control type="group">
 				<depth>DepthContentPopout</depth>
 				<animation type="Focus" reversible="false">
-					<effect type="zoom" center="200,140" start="100" end="110" time="250" tween="sine"/>
+					<effect type="zoom" center="200,140" start="100" end="110" time="250" tween="sine" />
 				</animation>
 				<animation type="UnFocus" reversible="false">
-					<effect type="zoom" center="200,140" start="110" end="100" time="250" tween="sine"/>
+					<effect type="zoom" center="200,140" start="110" end="100" time="250" tween="sine" />
 				</animation>
 				<control type="image">
 					<left>-5</left>
@@ -1777,5 +1424,4 @@
 			</control>
 		</focusedlayout>
 	</include>
-	<!-- By Sagrath -->
 </includes>

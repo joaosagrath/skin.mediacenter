@@ -1,286 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">450</defaultcontrol>
-	<!-- 	1.32 FileBrowser.xml
-ID 		Type 			Description
-450 	container 		Directory list
-451 	container 		List of available thumbnails
-411 	label 			Heading label
-412 	label 			Path of the selected item
-413 	button 			OK button
-414 	button 			Cancel button
-415 	button 			Create folder
-416 	radiobutton 	Flip Image horizontally  
--->
-	<coordinates>
-		<left>0</left>
-		<top>0</top>
-	</coordinates>
+	<include>Animation_DialogPopupOpenClose</include>
 	<controls>
-		<!-- default group -->
 		<control type="group">
-			<!--#######################################################################   MENU DA ESQUERDA   #######################################################################-->
-			<control type="group">
-				<animation effect="slide" start="1900,0" end="0,0" time="1000" tween="cubic" easing="out">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="1900,0" time="1000" tween="cubic" easing="out">WindowClose</animation>
-				<animation effect="slide" start="900,0" end="0,0" time="1000" tween="cubic" easing="out">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
-				<control type="image">
-					<texture>dialog-bg.png</texture>
-				</control>
-				<control type="image">
-					<right>100</right>
-					<top>100</top>
-					<width>540</width>
-					<height>540</height>
-					<fadetime>450</fadetime>
-					<texture fallback="defaultfolder.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio aligny="bottom">keep</aspectratio>
-					<bordertexture border="-2">black.png</bordertexture>
-				</control>
-				<control type="image">
-					<right>100</right>
-					<top>650</top>
-					<width>540</width>
-					<height>540</height>
-					<fadetime>450</fadetime>
-					<texture flipy="true" diffuse="thumb_reflect.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio aligny="top">keep</aspectratio>
-				</control>
-				<control type="image">
-					<left>100</left>
-					<top>100</top>
-					<width>1180</width>
-					<height>90</height>
-					<texture>colors/grey.png</texture>
-					<animation effect="fade" end="20" condition="true">conditional</animation>
-				</control>
-				<control type="label" id="411">
-					<!-- header label -->
-					<left>150</left>
-					<top>125</top>
-					<width>1156</width>
-					<height>90</height>
-					<font>font30</font>
-				</control>
-				<control type="label">
-					<!-- numero de itens -->
-					<left>68</left>
-					<top>975</top>
-					<width>1156</width>
-					<height>34</height>
-					<font>font_plot</font>
-					<label>$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages]</label>
-				</control>
-				<!-- Common List -->
-				<control type="list" id="450">
-					<viewtype label="31801">list</viewtype>
-					<left>100</left>
-					<top>248</top>
-					<width>1282</width>
-					<height>705</height>
-					<pagecontrol>80</pagecontrol>
-					<onleft/>
-					<onright>413</onright>
-					<orientation>vertical</orientation>
-					<scrolltime>450</scrolltime>
-					<preloaditems>2</preloaditems>
-					<itemlayout height="90">
-						<control type="image">
-							<left>50</left>
-							<top>0</top>
-							<width>1100</width>
-							<height>1</height>
-							<texture>line.png</texture>
-						</control>
-						<control type="label">
-							<left>50</left>
-							<top>0</top>
-							<width>1100</width>
-							<height>90</height>
-							<font>font30</font>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout height="90">
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1180</width>
-							<height>90</height>
-							<texture>colors/grey.png</texture>
-							<animation>conditional</animation>
-						</control>
-						<control type="label">
-							<left>50</left>
-							<top>0</top>
-							<width>1120</width>
-							<height>90</height>
-							<font>font30</font>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<include>labelcolorfocus</include>
-						</control>
-						<control type="label">
-							<left>1134</left>
-							<top>0</top>
-							<width>128</width>
-							<height>90</height>
-							<font>font30</font>
-							<align>center</align>
-							<aligny>center</aligny>
-							<include>labelcolorfocus</include>
-							<label fallback="-">[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="list" id="451">
-					<viewtype label="31801">list</viewtype>
-					<left>100</left>
-					<top>248</top>
-					<width>1282</width>
-					<height>705</height>
-					<pagecontrol>80</pagecontrol>
-					<onleft/>
-					<onright>413</onright>
-					<orientation>vertical</orientation>
-					<scrolltime>450</scrolltime>
-					<preloaditems>2</preloaditems>
-					<itemlayout height="90">
-						<control type="image">
-							<left>50</left>
-							<top>0</top>
-							<width>1100</width>
-							<height>1</height>
-							<texture>line.png</texture>
-						</control>
-						<control type="label">
-							<left>50</left>
-							<top>0</top>
-							<width>1100</width>
-							<height>90</height>
-							<font>font30</font>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout height="90">
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>1180</width>
-							<height>90</height>
-							<texture>colors/grey.png</texture>
-							<animation>conditional</animation>
-						</control>
-						<control type="label">
-							<left>50</left>
-							<top>0</top>
-							<width>900</width>
-							<height>90</height>
-							<font>font30</font>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<include>labelcolorfocus</include>
-						</control>
-						<control type="label">
-							<left>950</left>
-							<top>0</top>
-							<width>185</width>
-							<height>90</height>
-							<font>font30</font>
-							<align>center</align>
-							<aligny>center</aligny>
-							<include>labelcolorfocus</include>
-							<label fallback="-">[UPPERCASE]$INFO[ListItem.Size][/UPPERCASE]</label>
-						</control>
-					</focusedlayout>
-				</control>
-				<control type="grouplist" id="9001">
-					<left>900</left>
-					<top>900</top>
-					<itemgap>0</itemgap>
-					<onup>451</onup>
-					<ondown>451</ondown>
-					<orientation>vertical</orientation>
-					<control type="button" id="413">
-						<!-- OK button -->
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+			<width>1300</width>
+			<height>850</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="1300" />
+				<param name="height" value="850" />
+				<param name="header_label" value="" />
+				<param name="header_id" value="411" />
+			</include>
+			<control type="grouplist" id="9000">
+				<left>990</left>
+				<top>85</top>
+				<width>400</width>
+				<height>400</height>
+				<itemgap>dialogbuttons_itemgap</itemgap>
+				<orientation>vertical</orientation>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<include content="DefaultDialogButton">
+					<param name="id" value="413" />
+					<param name="label" value="$LOCALIZE[186]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="414" />
+					<param name="label" value="$LOCALIZE[222]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="415" />
+					<param name="label" value="$LOCALIZE[119]" />
+					<param name="visible" value="Control.IsEnabled(415)" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="416" />
+					<param name="label" value="$LOCALIZE[749]" />
+					<param name="visible" value="Control.IsEnabled(416)" />
+				</include>
+			</control>
+			<control type="image">
+				<left>1010</left>
+				<top>420</top>
+				<width>260</width>
+				<height>380</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+				<bordersize>4</bordersize>
+				<texture border="4" background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>80</top>
+				<width>980</width>
+				<height>740</height>
+				<texture border="40">buttons/dialogbutton-nofo.png</texture>
+			</control>
+			<control type="panel" id="450">
+				<left>20</left>
+				<top>100</top>
+				<width>940</width>
+				<height>700</height>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>450</onup>
+				<ondown>450</ondown>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="70" width="940">
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<width>50</width>
+						<height>50</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>75</left>
+						<top>0</top>
+						<right>20</right>
+						<height>70</height>
+						<aligny>center</aligny>
+						<selectedcolor>green</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="70" width="940">
+					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>488</width>
-						<height>53</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>font30</font>
-						<textcolor>white</textcolor>
-						<focusedcolor>black</focusedcolor>
-						<selectedcolor>FFF8F8F8</selectedcolor>
-						<textoffsety>0</textoffsety>
-						<textoffsetx>30</textoffsetx>
-						<texture/>
-						<texturefocus>colors/grey.png</texturefocus>
-						<texturenofocus/>
-						<pulseonselect>false</pulseonselect>
-						<colordiffuse/>
-						<label>$LOCALIZE[186]</label>
+						<right>0</right>
+						<height>71</height>
+						<visible>Control.HasFocus(450)</visible>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
 					</control>
-					<control type="button" id="414">
-						<!-- Cancel Button -->
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<width>50</width>
+						<height>50</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>75</left>
+						<top>0</top>
+						<right>20</right>
+						<height>70</height>
+						<aligny>center</aligny>
+						<selectedcolor>green</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="panel" id="451">
+				<left>20</left>
+				<top>100</top>
+				<width>940</width>
+				<height>700</height>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>451</onup>
+				<ondown>451</ondown>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="70" width="940">
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<width>50</width>
+						<height>50</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>75</left>
+						<top>0</top>
+						<right>20</right>
+						<height>70</height>
+						<aligny>center</aligny>
+						<selectedcolor>green</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="70" width="940">
+					<control type="image">
 						<left>0</left>
 						<top>0</top>
-						<width>488</width>
-						<height>53</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>font30</font>
-						<textcolor>$INFO[skin.string(colortextlist)]</textcolor>
-						<focusedcolor>E0101010</focusedcolor>
-						<selectedcolor>FFF8F8F8</selectedcolor>
-						<textoffsety>0</textoffsety>
-						<textoffsetx>30</textoffsetx>
-						<texture/>
-						<texturefocus>colors/grey.png</texturefocus>
-						<texturenofocus/>
-						<pulseonselect>false</pulseonselect>
-						<colordiffuse/>
-						<label>$LOCALIZE[222]</label>
+						<right>0</right>
+						<height>71</height>
+						<visible>Control.HasFocus(451)</visible>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
 					</control>
-					<control type="button" id="415">
-						<!-- Create folder -->
-						<left>0</left>
+					<control type="image">
+						<left>10</left>
+						<top>10</top>
+						<width>50</width>
+						<height>50</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>75</left>
 						<top>0</top>
-						<width>488</width>
-						<height>53</height>
-						<align>center</align>
+						<right>20</right>
+						<height>70</height>
 						<aligny>center</aligny>
-						<font>font30</font>
-						<textcolor>white</textcolor>
-						<focusedcolor>black</focusedcolor>
-						<selectedcolor>FFF8F8F8</selectedcolor>
-						<textoffsety>0</textoffsety>
-						<textoffsetx>30</textoffsetx>
-						<texture/>
-						<texturefocus>colors/grey.png</texturefocus>
-						<texturenofocus/>
-						<pulseonselect>false</pulseonselect>
-						<colordiffuse/>
-						<label>119</label>
+						<selectedcolor>green</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
-				</control>
-				<control type="scrollbar" id="80">
-					<include>ScrollBar_Vertical</include>
-					<left>8</left>
-					<top>102</top>
-					<height>870</height>
-					<onleft>9900</onleft>
-					<onright>51</onright>
-					<include>animation_fade</include>
-					<visible allowhiddenfocus="true">Control.HasFocus(80)</visible>
-				</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>965</left>
+				<top>100</top>
+				<width>12</width>
+				<height>698</height>
+				<onleft>450</onleft>
+				<onright>9000</onright>
+				<orientation>vertical</orientation>
+			</control>
+			<control type="label" id="412">
+				<description>Path label</description>
+				<left>25</left>
+				<bottom>10</bottom>
+				<width>595</width>
+				<height>30</height>
+				<haspath>true</haspath>
+				<font>font12</font>
+				<aligny>bottom</aligny>
+				<textcolor>grey</textcolor>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<bottom>10</bottom>
+				<width>1270</width>
+				<height>30</height>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>grey</textcolor>
+				<font>font12</font>
+				<label>$VAR[FileBrowserSelectLabel]</label>
 			</control>
 		</control>
+		<include content="UpDownArrows">
+			<param name="container_id" value="450" />
+			<param name="posx" value="830" />
+			<param name="up_posy" value="50" />
+			<param name="down_posy" value="980" />
+			<param name="visible" value="!System.HasActiveModalDialog" />
+		</include>
 	</controls>
 </window>

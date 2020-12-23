@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1101">
 	<defaultcontrol always="true">11000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
 	<controls>
 		<control type="group">
 			<centerleft>50%</centerleft>
@@ -28,46 +29,46 @@
 					<orientation>vertical</orientation>
 					<control type="button" id="11111">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[13396]</label>
 						<onclick>ActivateWindow(osdaudiosettings)</onclick>
 					</control>
 					<control type="button" id="11106">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[24133]</label>
 						<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 					</control>
 					<control type="button" id="11102">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[13395]</label>
 						<onclick>ActivateWindow(osdvideosettings)</onclick>
 					</control>
 					<control type="button" id="11103">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[36560]</label>
 						<onclick>ActivateWindow(osdcmssettings)</onclick>
 						<visible>System.HasCMS</visible>
 					</control>
 					<control type="button" id="11104">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31112]</label>
 						<label2>[B]$INFO[VideoPlayer.AudioLanguage][/B]</label2>
 						<onclick>AudioNextLanguage</onclick>
 					</control>
 					<control type="button" id="11105">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31132]</label>
 						<onclick>PlayerProgramSelect</onclick>
 						<visible>Player.HasPrograms</visible>
 					</control>
 					<control type="button" id="11107">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31133]</label>
 						<onclick>PlayerResolutionSelect</onclick>
 						<visible>Player.HasResolutions</visible>
@@ -83,7 +84,7 @@
 					<orientation>vertical</orientation>
 					<control type="radiobutton" id="13101">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<radioposx>590</radioposx>
 						<label>$LOCALIZE[24022]</label>
 						<onclick>ToggleStereoMode</onclick>
@@ -91,14 +92,14 @@
 					</control>
 					<control type="button" id="13102">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31004]</label>
 						<label2>[B]$INFO[VideoPlayer.StereoscopicMode][/B]</label2>
 						<onclick>StereoMode</onclick>
 					</control>
 					<control type="radiobutton" id="13103">
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<radioposx>590</radioposx>
 						<label>$LOCALIZE[31005]</label>
 						<onclick>StereoModeToMono</onclick>
@@ -117,28 +118,28 @@
 					<control type="button" id="14101">
 						<description>Video filter button</description>
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[35225]</label>
 						<onclick>ActivateWindow(GameVideoFilter)</onclick>
 					</control>
 					<control type="button" id="14102">
 						<description>Stretch mode button</description>
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[35233]</label>
 						<onclick>ActivateWindow(GameStretchMode)</onclick>
 					</control>
 					<control type="button" id="14106">
 						<description>Video rotation button</description>
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[35227]</label>
 						<onclick>ActivateWindow(GameVideoRotation)</onclick>
 					</control>
 					<control type="button" id="14104">
 						<description>Volume button</description>
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[13376]</label>
 						<label2>[COLOR grey]Select + Right Stick[/COLOR]</label2>
 						<onclick>ActivateWindow(GameVolume)</onclick>
@@ -146,14 +147,14 @@
 					<control type="button" id="14103">
 						<description>Controller settings button</description>
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[35234]</label>
 						<onclick>ActivateWindow(GameControllers)</onclick>
 					</control>
 					<control type="button" id="14105">
 						<description>Advanced settings</description>
 						<width>700</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[35226]</label>
 						<onclick>ActivateWindow(GameAdvancedSettings)</onclick>
 					</control>

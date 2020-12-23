@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1105">
-	<defaultcontrol always="true">5001</defaultcontrol>
+	<defaultcontrol always="true">5000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
 	<controls>
 		<control type="group">
-			<!-- <animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="4000">WindowOpen</animation>
-			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation> -->
-			<bottom>100</bottom>
-			<right>0</right>
-			<width>620</width>
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
 			<height>700</height>
-			<control type="image">
-				<width>600</width>
-				<height>700</height>
-				<texture>bar-grey.png</texture>
-			</control>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600" />
+				<param name="height" value="80" />
+				<param name="header_label" value="$LOCALIZE[5]" />
+				<param name="header_id" value="" />
+			</include>
 			<control type="group">
-				<control type="grouplist" id="5001">
+				<left>0</left>
+				<top>80</top>
+				<control type="grouplist" id="5000">
 					<width>600</width>
 					<height>700</height>
 					<itemgap>0</itemgap>
-					<onup>5001</onup>
-					<ondown>5001</ondown>
-					<onleft>703</onleft>
+					<onup>5000</onup>
+					<ondown>5000</ondown>
 					<orientation>vertical</orientation>
-					<!-- <control type="radiobutton" id="5001">
+					<control type="radiobutton" id="5001">
 						<width>600</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31163]</label>
 						<onclick>Skin.ToggleSetting(hide_background_fanart)</onclick>
 						<selected>!Skin.HasSetting(hide_background_fanart)</selected>
 					</control>
 					<control type="radiobutton" id="5002">
 						<label>$LOCALIZE[31167]</label>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<onclick>Skin.ToggleSetting(animate_background_fanart)</onclick>
 						<selected>Skin.HasSetting(animate_background_fanart)</selected>
-					</control> -->
+					</control>
 					<control type="button" id="5004">
 						<width>600</width>
-						<include>button_75</include>
+						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[250]</label>
 						<label2>[B]$INFO[Visualisation.Name][/B]</label2>
 						<onclick>Dialog.Close(all)</onclick>
@@ -46,28 +47,28 @@
 					</control>
 					<control type="button" id="5005">
 						<width>600</width>
-						<include>button_75</include>
-						<label>Ajustes de Visualização</label>
+						<include>DialogSettingButton</include>
+						<label>$LOCALIZE[31084]</label>
 						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					</control>
 					<control type="button" id="5006">
 						<width>600</width>
-						<include>button_75</include>
-						<label>Escolher Visualização</label>
+						<include>DialogSettingButton</include>
+						<label>$LOCALIZE[31068]</label>
 						<onclick>ActivateWindow(visualisationpresetlist)</onclick>
 						<visible>Visualisation.HasPresets</visible>
 					</control>
 					<control type="button" id="5007">
 						<width>600</width>
-						<include>button_75</include>
-						<label>Add-on de Letras</label>
+						<include>DialogSettingButton</include>
+						<label>$LOCALIZE[31082]</label>
 						<label2>[B]$INFO[Skin.String(LyricScript_Path)][/B]</label2>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
 					</control>
 					<control type="button" id="5008">
 						<width>600</width>
-						<include>button_75</include>
-						<label>Ajustes do add-on de letras</label>
+						<include>DialogSettingButton</include>
+						<label>$LOCALIZE[31083]</label>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 						<visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
 					</control>

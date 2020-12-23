@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol>50</defaultcontrol>
-	 
-	<views>50</views>
+	<defaultcontrol always="true">52</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<views>50,52,55,500</views>
+	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
-		<include>gamebackground</include>
-		<control type="button" id="9009">
-			<include>invisible</include>
-			<onleft>50</onleft>
-			<onright>50</onright>
-			<ondown>50</ondown>
-			<onup>50</onup>
-		</control>
-		<include>myviewslayout</include>
-		<!-- LISTA DE VISTAS -->
 		<control type="group">
-			<top>0</top>
-			<!-- ViewTypes -->
-			<include>ViewBasic</include>
-			<!-- 50 -->
-		</control>
-		<!-- BARRA DA VISTA -->
-		<control type="group">
-			<top>1035</top>
-			<left>20</left>
-			<width>1880</width>
-			<control type="button" id="9000">
-				<description>Barra da vista</description>
-				<onup>50</onup>
-				<ondown>9009</ondown>
-				<onleft>Container.PreviousViewMode</onleft>
-				<onright>Container.NextViewMode</onright>
-				<onclick>Control.SetFocus(2)</onclick>
-			</control>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<include>View_50_List</include>
+			<include>View_52_IconWall</include>
+			<include>View_55_WideList</include>
+			<include>View_500_Wall</include>
 			<control type="group">
-				<include>viewbar</include>
-				<visible>Control.HasFocus(9000)</visible>
+				<include>OpenClose_Left</include>
+				<include>Visible_Left</include>
+				<visible>Control.IsVisible(55)</visible>
+				<include>ListThumbInfoPanel</include>
 			</control>
-		</control>
-		<!-- OPÇÕES DA VISTA -->
-		<control type="group" id="9001">
-			<animation effect="slide" start="0,0" end="0,690" time="450">Focus</animation>
-			<animation effect="slide" start="0,690" end="0,0" time="450">UnFocus</animation>
-			<top>-640</top>
-			<left>640</left>
-			<width>640</width>
-			<height>450</height>
-			<include>viewsoptionsbackground</include>
-			<control type="grouplist">
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<include>viewsoptions</include>
+			<include content="TopBar">
+				<param name="breadcrumbs_label" value="$LOCALIZE[10001]" />
+			</include>
+			<include content="BottomBar">
+				<param name="info_visible" value="true" />
+			</include>
+			<include>CommonScrollbars</include>
+			<include>MediaMenuMouseOverlay</include>
+			<control type="group">
+				<include>MediaMenuCommon</include>
+				<control type="grouplist" id="9000">
+					<top>50</top>
+					<include>MediaMenuListCommon</include>
+					<control type="label" id="203">
+						<description>Actions</description>
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31020]</label>
+						<visible>Control.IsVisible(621)</visible>
+					</control>
+					<control type="button" id="624">
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[10140]</label>
+						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+						<visible>!String.IsEmpty(Container.PluginName)</visible>
+					</control>
+					<control type="button" id="621">
+						<description>Get more</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[21452]</label>
+						<onclick>ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick>
+						<visible>Container.Content(addons)</visible>
+					</control>
+				</control>
+				<include>MediaMenuNowPlaying</include>
 			</control>
 		</control>
 	</controls>

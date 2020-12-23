@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="skin.mediacenter" version="0.0.1" name="Media Center" provider-name="Joao Sagrath">
 	<requires>
-		<import addon="xbmc.gui" version="5.14.0"/> <!-- Leia -->
-		<import addon="script.colorbox" version="2.0.6" />
-		<!-- ... -->
+		<import addon="xbmc.gui" version="5.14.0"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="pt_BR">Uma Skin que valoriza o melhor de cada item.</summary>
-		<description lang="pt_BR">A Media Center vem para trazer o melhor de cada item, valorizando as artes que cada conteúdo pode oferecer.</description>
-		<disclaimer lang="en_GB">disclaimer</disclaimer>
+		<summary lang="pt_BR">Skin MediaCenter (Estuary Mod - Skin Estuary por phil65 e Piers. (Skin padrão do Kodi))</summary>
+		<description lang="pt_BR">MediaCenter vem para trazer opções para Games e Imagens. COntém suporte a conteúdo adulto.</description>
+		<disclaimer lang="pt_BR">Otimizada para coleções de Imagens Adultas</disclaimer>
 		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 2.0</license>
-		<forum>http://forum.kodi.tv/**</forum>
-		<source>https://github.com/**</source>
-		  <news>[B]Changelog[/B]
-				v0.0.1 (01/02/201x)
-				[new] INITIAL RELEASE
-				[fix] some fix
-		</news>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source>https://github.com/xbmc/skin.estuary/</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
-			<screenshot>resources/screenshot-01.jpg</screenshot>
-			<!-- ... -->
 		</assets>
 	</extension>
 </addon>

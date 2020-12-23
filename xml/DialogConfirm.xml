@@ -1,106 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<!-- MEDIACENTER -->
+	<include>Animation_DialogPopupOpenClose</include>
+	<depth>DepthDialog+</depth>
 	<controls>
 		<control type="group">
-			<animation effect="slide" start="1900,0" end="0,0" time="1000" tween="cubic" easing="out">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="1900,0" time="1000" tween="cubic" easing="out">WindowClose</animation>
-			<animation effect="slide" start="900,0" end="0,0" time="1000" tween="cubic" easing="out">Visible</animation>
-			<include>basicviewpanel</include>
-			<control type="image">
-				<top>270</top>
-				<left>480</left>
-				<width>960</width>
-				<height>540</height>
-				<texture>dialog-bg.png</texture>
-				<aspectratio>stretch</aspectratio>
+			<height>390</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<width>915</width>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="915" />
+				<param name="height" value="380" />
+				<param name="header_label" value="" />
+				<param name="header_id" value="1" />
+			</include>
+			<control type="textbox" id="9">
+				<left>30</left>
+				<top>82</top>
+				<width>855</width>
+				<height>165</height>
+				<label></label>
+				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
 			</control>
-			<control type="label">
+			<control type="progress" id="20">
+				<left>45</left>
+				<top>252</top>
+				<width>825</width>
+				<height>24</height>
+				<info>System.Progressbar</info>
+			</control>
+			<control type="grouplist" id="9000">
+				<orientation>horizontal</orientation>
 				<left>0</left>
 				<top>280</top>
-				<width>1920</width>
-				<height>30</height>
+				<width>915</width>
 				<align>center</align>
-				<aligny>top</aligny>
-				<textcolor>orange</textcolor>
-				<font>font30</font>
-				<scroll>true</scroll>
-				<label>$INFO[Control.GetLabel(1)] [COLOR=orange]$INFO[System.Progressbar,- ,%][/COLOR]</label>
+				<include content="DefaultDialogButton">
+					<param name="id" value="11" />
+					<param name="label" value="" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="10" />
+					<param name="label" value="" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="12" />
+					<param name="label" value="" />
+				</include>
 			</control>
-			<control type="label" id="2">
-				<left>0</left>
-				<top>300</top>
-				<width>1920</width>
-				<height>30</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<textcolor>FFFF8000</textcolor>
-				<font>font30</font>
-				<scroll>true</scroll>
-			</control>
-			<control type="label" id="3">
-				<left>0</left>
-				<top>500</top>
-				<width>1920</width>
-				<height>30</height>
-				<align>center</align>
-				<aligny>top</aligny>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<font>font30</font>
-				<scroll>true</scroll>
-			</control>
-			<control type="label" id="4">
-				<left>0</left>
-				<top>680</top>
-				<width>1920</width>
-				<height>30</height>
-				<align>center</align>
-				<aligny>top</aligny>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<font>font30</font>
-				<scroll>true</scroll>
-			</control>
-			<control type="grouplist">
-				<left>623</left>
-				<top>730</top>
-				<width>675</width>
-				<height>44</height>
-				<align>center</align>
-				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
-				<!-- nao -->
-				<control type="button" id="10">
-					<width>225</width>
-					<height>41</height>
-					<align>center</align>
-					<label>-</label>
-					<textcolor>white</textcolor>
-					<focusedcolor>black</focusedcolor>
-					<textoffsetx>5</textoffsetx>
-					<textwidth>215</textwidth>
-					<texturefocus>colors/white.png</texturefocus>
-				</control>
-				<!-- sim -->
-				<control type="button" id="11">
-					<width>225</width>
-					<height>41</height>
-					<align>center</align>
-					<label>-</label>
-					<textcolor>white</textcolor>
-					<focusedcolor>black</focusedcolor>
-					<textoffsetx>5</textoffsetx>
-					<textwidth>215</textwidth>
-					<texturefocus>colors/white.png</texturefocus>
-				</control>
-			</control>
-		</control>
-		<!-- Barra de progresso -->
-		<control type="progress" id="20">
-			<top>84</top>
-			<include>Dialogs_Progress</include>
-			<info>System.Progressbar</info>
 		</control>
 	</controls>
 </window>
+
