@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Sagrath -->
-	
+	<include file="Includes_Widgets.xml" />
+	<include file="Includes_Contents.xml" />
 	
 	<!-- Sagrath -->
+	
 	<include file="Defaults.xml" />
 	<include file="Includes_Home.xml" />
 	<include file="Includes_Animations.xml" />

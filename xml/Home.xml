@@ -5,33 +5,44 @@
 	<controls>
 	<!-- Sagrath -->
 		<control type="image">
-			<bottom>0</bottom>
+			<top>0</top>
 			<left>0</left>
 			<width>1920</width>
 			<height>1080</height>
+			<texture background="true">fanarts/$INFO[ListItem.Property(id)].jpg</texture>
 			<aspectratio>stretch</aspectratio>
-			<texture>base.jpg</texture>
-		</control>
-		
+			<fadetime>450</fadetime>
+		</control>	
 		<control type="image">
-			<bottom>0</bottom>
+			<top>0</top>
 			<left>0</left>
 			<width>1920</width>
-			<height>640</height>
+			<height>1080</height>
+			<texture background="true">$VAR[homefanart]</texture>
 			<aspectratio>stretch</aspectratio>
-			<texture>shadow_mask_h.png</texture>
-			<colordiffuse>CC000000</colordiffuse>
-			<include>homedown</include>
+			<fadetime>450</fadetime>
 		</control>
 		<control type="image">
-			<bottom>0</bottom>
+			<top>0</top>
 			<left>0</left>
 			<width>1920</width>
 			<height>1080</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>colors/black.png</texture>
-			<colordiffuse>88000000</colordiffuse>
+			<animation effect="fade" end="50" condition="true">Conditional</animation>
 		</control>
+		
+		
+		<control type="label">
+			<top>150</top>
+			<left>0</left>
+			<width>1920</width>
+			<height>50</height>
+			<font>home30</font>
+			<label>$INFO[ListItem.FolderPath]fanart.jpg</label>
+			<textcolor>white</textcolor>
+		</control>
+		
 		<!-- Data e Hora -->
 		<control type="label">
 			<include>homedown</include>
@@ -50,10 +61,11 @@
 		<!-- Setas e Botões no topo -->
 		<!-- Botão a esquerda -->
 		<control type="group">
-			<left>-100</left>
+			<left>-200</left>
 			<include>homeup</include>
 			<include>top_hidden</include>
 			<include>side_left_hidden</include>
+			<animation effect="slide" start="0,0" end="100,0" time="200" easing="inout" tween="cubic" condition="Container(9000).HasFocus(9001)">conditional</animation>
 			<animation effect="slide" start="0,0" end="100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(8999)">conditional</animation>
 			<animation effect="slide" start="0,0" end="100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">conditional</animation>
 			<control type="button" id="8999">
@@ -73,15 +85,16 @@
 				<aligny>center</aligny>
 				<align>center</align>
 				<texture>icons\keyboard\arrowleft.png</texture>
-				<include>fademenu</include>				
+				<include>fademenu</include>
 			</control>
 		</control>
 		<!-- Botão a direita -->
 		<control type="group">
-			<right>-100</right>
+			<right>-200</right>
 			<include>homeup</include>
 			<include>top_hidden</include>
 			<include>side_right_hidden</include>
+			<animation effect="slide" start="0,0" end="-100,0" time="200" easing="inout" tween="cubic" condition="Container(9000).HasFocus(9005)">conditional</animation>
 			<animation effect="slide" start="0,0" end="-100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(7999)">conditional</animation>
 			<animation effect="slide" start="0,0" end="-100,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(7000)">conditional</animation>
 			<control type="button" id="7999">
@@ -107,47 +120,46 @@
 			</control>
 		</control>
 		
-			
-			<!-- Controles -->
-			<control type="grouplist" id="700"> 
-				<orientation>horizontal</orientation>
-				<include>top_hidden</include>
-				<top>-80</top>
-				<itemgap>0</itemgap>
-				<left>720</left>
-				<width>480</width>
-				<height>110</height>
-				<onup>SetFocus(9000,99,absolute)</onup>
-				<ondown>SetFocus(9000,0,absolute)</ondown>
-				<onright>2000</onright>
-				<align>justify</align>
-				<include content="IconButton">
-					<param name="control_id" value="804" />
-					<param name="onclick" value="ActivateWindow(shutdownmenu)" />
-					<param name="icon" value="icons/power.png" />
-					<param name="label" value="$LOCALIZE[33060]" />
-				</include>
-				<include content="IconButton">
-					<param name="control_id" value="802" />
-					<param name="onclick" value="ActivateWindow(settings)" />
-					<param name="icon" value="icons/settings.png" />
-					<param name="label" value="$LOCALIZE[21417]" />
-				</include>
-				<include content="IconButton">
-					<param name="control_id" value="801" />
-					<param name="onclick" value="ActivateWindow(1107)" />
-					<param name="icon" value="icons/search.png" />
-					<param name="label" value="$LOCALIZE[137]" />
-				</include>
-				<include content="IconButton">
-					<param name="control_id" value="803" />
-					<param name="onclick" value="Fullscreen" />
-					<param name="icon" value="icons/now-playing/fullscreen.png" />
-					<param name="label" value="$LOCALIZE[31000]" />
-					<param name="visible" value="Player.HasMedia" />
-				</include>
-			</control>			
-			
+		<!-- Listas dos Widgets -->
+		<!-- Menu Superior -->
+		<control type="group">
+			<!-- Jogos -->
+			<control type="wraplist" id="9101">
+				<include>widgetlayout</include>
+				<include>gameshomewidgets</include>
+				<ondown>9011</ondown>
+			</control>
+			<!-- Músicas -->
+			<control type="wraplist" id="9102">
+				<include>widgetlayout</include>
+				<include>movieshomewidgets</include>
+			</control>
+			<!-- Músicas -->
+			<control type="wraplist" id="9103">
+				<include>widgetlayout</include>
+				<include>tvshowshomewidgets</include>
+			</control>
+			<!-- Músicas -->
+			<control type="wraplist" id="9104">
+				<include>widgetlayout</include>
+				<include>musichomewidgets</include>
+			</control>
+			<!-- Imagens -->
+			<control type="wraplist" id="9105">
+				<include>widgetlayout</include>
+				<include>pichomewidgets</include>
+				<ondown>9015</ondown>
+			</control>
+		</control>
+		<!-- Menu Direito -->
+		<control type="group">
+			<!-- Addons -->
+			<control type="wraplist" id="7101">
+				<include>widgetaddonlayout</include>
+				<include>addon_widgets</include>
+			</control>
+		</control>
+			<!-- Grupos de Menu -->
 			<control type="group">
 				<!-- Menu Principal -->
 				<control type="list" id="9000">
@@ -164,6 +176,11 @@
 					<onright>7999</onright>
 					<onleft>8999</onleft>
 					<onup>700</onup>
+					<ondown condition="Container(9000).HasFocus(9001)">9101</ondown>
+					<ondown condition="Container(9000).HasFocus(9002)">9102</ondown>
+					<ondown condition="Container(9000).HasFocus(9003)">9103</ondown>
+					<ondown condition="Container(9000).HasFocus(9004)">9104</ondown>
+					<ondown condition="Container(9000).HasFocus(9005)">9105</ondown>
 					<!-- <ondown>700</ondown> -->
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<itemlayout height="95" width="220">
@@ -180,7 +197,21 @@
 							<animation effect="fade" end="50" condition="true">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout height="95" width="220">
+					<focusedlayout condition="!Control.HasFocus(9000)" height="95" width="220">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>95</height>
+							<width>220</width>
+							<aligny>center</aligny>
+							<align>center</align>
+							<font>home40</font>
+							<label>$INFO[ListItem.Label]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+							<animation effect="fade" end="50" condition="true">Conditional</animation>
+						</control>
+					</focusedlayout>	
+					<focusedlayout condition="Control.HasFocus(9000)" height="95" width="220">
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -194,7 +225,7 @@
 						</control>
 					</focusedlayout>					
 					<content>
-						<item>
+						<item id="9001">
 							<label>$LOCALIZE[15016]</label>
 							<property name="menu_id">$NUMBER[17000]</property>
 							<onclick>ActivateWindow(Games)</onclick>
@@ -202,7 +233,7 @@
 							<property name="id">games</property>
 							<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
 						</item>
-						<item>
+						<item id="9002">
 							<label>$LOCALIZE[342]</label>
 							<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
 							<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
@@ -212,7 +243,7 @@
 							<property name="id">movies</property>
 							<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
 						</item>
-						<item>
+						<item id="9003">
 							<label>$LOCALIZE[20343]</label>
 							<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
 							<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
@@ -222,7 +253,7 @@
 							<property name="id">tvshows</property>
 							<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
 						</item>
-						<item>
+						<item id="9004">
 							<label>$LOCALIZE[2]</label>
 							<onclick>ActivateWindow(Music,root,return)</onclick>
 							<property name="menu_id">$NUMBER[7000]</property>
@@ -230,7 +261,7 @@
 							<property name="id">music</property>
 							<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
 						</item>
-						<item>
+						<item id="9005">
 							<label>$LOCALIZE[1]</label>
 							<onclick>ActivateWindow(Pictures)</onclick>
 							<property name="menu_id">$NUMBER[4000]</property>
@@ -251,7 +282,7 @@
 					<focusposition>0</focusposition>
 					<onright>9000</onright>
 					<onup>9000</onup>
-					<onleft condition="Container(7000).HasFocus(7001)">9000</onleft>
+					<onleft condition="Container(7000).HasFocus(7001)">7101</onleft>
 					<onleft condition="Container(7000).HasFocus(7002)">9000</onleft>
 					<onleft condition="Container(7000).HasFocus(7003)">9000</onleft>
 					<onleft condition="Container(7000).HasFocus(7004)">9000</onleft>
@@ -493,8 +524,66 @@
 						</item>
 					</content>
 				</control>
+				<!-- Menu Desligamento -->
+				<control type="grouplist" id="700"> 
+					<orientation>horizontal</orientation>
+					<include>top_hidden</include>
+					<top>-80</top>
+					<itemgap>0</itemgap>
+					<left>720</left>
+					<width>480</width>
+					<height>110</height>
+					<onup>SetFocus(9000,99,absolute)</onup>
+					<ondown>SetFocus(9000,0,absolute)</ondown>
+					<onright>2000</onright>
+					<align>justify</align>
+					<include content="IconButton">
+						<param name="control_id" value="804" />
+						<param name="onclick" value="ActivateWindow(shutdownmenu)" />
+						<param name="icon" value="icons/power.png" />
+						<param name="label" value="$LOCALIZE[33060]" />
+					</include>
+					<include content="IconButton">
+						<param name="control_id" value="802" />
+						<param name="onclick" value="ActivateWindow(settings)" />
+						<param name="icon" value="icons/settings.png" />
+						<param name="label" value="$LOCALIZE[21417]" />
+					</include>
+					<include content="IconButton">
+						<param name="control_id" value="801" />
+						<param name="onclick" value="ActivateWindow(1107)" />
+						<param name="icon" value="icons/search.png" />
+						<param name="label" value="$LOCALIZE[137]" />
+					</include>
+					<include content="IconButton">
+						<param name="control_id" value="803" />
+						<param name="onclick" value="Fullscreen" />
+						<param name="icon" value="icons/now-playing/fullscreen.png" />
+						<param name="label" value="$LOCALIZE[31000]" />
+						<param name="visible" value="Player.HasMedia" />
+					</include>
+				</control>			
 			</control>
 			
+			<!-- Seletor de Widgets de Jogos -->
+			<control type="list" id="9011">				
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(9011)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>9101</onup>
+				<content>					
+					<include>subgames</include>
+				</content>
+			</control>
+			
+			<!-- Seletor de Widgets de Imagens -->
+			<control type="list" id="9015">				
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(9015)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>9105</onup>
+				<content>					
+					<include>subpictures</include>
+				</content>
+			</control>
 		
 	<!-- Sagrath -->
 		<!-- <control type="button" id="20000">

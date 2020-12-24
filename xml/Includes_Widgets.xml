@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- WIDGETS GAMES -->
+	<include name="gameshomewidgets">
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
+		<content target="games">$INFO[Skin.String(gamewidget)]</content>
+	</include>
+	
+	<!-- WIDIGETS MOVIES -->
+	<include name="movieshomewidgets">
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
+		<!-- <content target="videos">$INFO[Skin.String(moviewidget)]</content> -->
+		<content target="videos">videodb://movies/titles</content>
+	</include>
+	
+	<!-- WIDIGETS SERIADOS -->
+	<include name="tvshowshomewidgets">
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
+		<!-- <content target="videos">$INFO[Skin.String(showswidget)]</content> -->
+		<content target="videos">videodb://tvshows/titles/</content>
+	</include>
+	
+	<!-- WIDGETS MUSIC -->
+	<include name="musichomewidgets">
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
+		<!-- <content target="music">$INFO[Skin.String(musicwidget)]</content> -->
+		<content target="music">musicdb://artists/</content>
+	</include>
+	
+	<!-- WIDGETS PICTURES -->
+	<include name="pichomewidgets">
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
+		<content target="pictures">$INFO[Skin.String(picwidget)]</content>		
+	</include>
+	
+	<!-- WIDGETS NETFLIX -->
+	<include name="netflix_widgets">
+		<visible>String.IsEqual(Container(8000).ListItem.Property(id),netflix)</visible>
+		<content target="videos">$INFO[Skin.String(netflixwidget)]</content>
+	</include>
+	
+	<!-- WIDGETS SPOTIFY -->
+	<include name="spotify_widgets">
+		<visible>String.IsEqual(Container(8000).ListItem.Property(id),spotify)</visible>
+		<content target="music">$INFO[Skin.String(spotifywidget)]</content>
+	</include>
+	
+	<!-- WIDGETS YOUTUBE -->
+	<include name="youtube_widgets">
+		<visible>String.IsEqual(Container(8000).ListItem.Property(id),youtube)</visible>
+		<content target="videos">$INFO[Skin.String(youtubewidget)]</content>
+	</include>
+	
+		
+	
+	<!-- WIDGETS FAVORITOS -->
+	<include name="fav_widgets">
+		<visible>String.IsEqual(Container(7000).ListItem.Property(id),favourites)</visible>
+		<content limit="8" sortby="random">plugin://script.skin.helper.widgets/?mediatype=favourites</content>
+	</include>
+	
+	<!-- WIDGETS de ADONS -->
+	<include name="addon_widgets">
+	<!-- 	<visible>String.IsEqual(Container(7000).ListItem.Property(id),addons)</visible> -->
+		<content>
+			<!-- ADDONS DE JOGOS -->
+			<item>				
+				<label>$LOCALIZE[35049]</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10821,&quot;addons://sources/game/&quot;,return)</onclick>
+				<property name="id">homegamesaddons</property>
+				<property name="listaddonsdescriptions">Contém todos os addons de jogos instalados nesse sistema.</property>
+				<thumb>defaultaddongame.png</thumb>
+			</item>
+			<!-- ADDONS DE VIDEOS -->
+			<item>				
+				<label>Videos</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10025,&quot;addons://sources/video/&quot;,return)</onclick>
+				<property name="id">homevideosaddons</property>
+				<thumb>defaultaddonvideo.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de video instalados nesse sistema.</property>
+			</item>
+			<!-- ADDONS DE AUDIO -->
+			<item>				
+				<label>Áudio</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10502,&quot;addons://sources/audio/&quot;,return)</onclick>
+				<property name="id">homeaudioaddons</property>
+				<thumb>defaultaddonmusic.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de áudio instalados nesse sistema.</property>
+			</item>
+			<!-- ADDONS DE IMAGENS -->
+			<item>				
+				<label>Imagens</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10002,&quot;addons://sources/pictures/&quot;,return)</onclick>
+				<property name="id">homepicturesaddons</property>
+				<thumb>defaultaddonimages.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de imagens instalados nesse sistema.</property>
+			</item>
+			<!-- ADDONS DE PROGRAMAS -->
+			<item>				
+				<label>Programas</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10001,&quot;addons://sources/executable/&quot;,return)</onclick>
+				<property name="id">homeprogramsaddons</property>
+				<thumb>defaultaddonprogram.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os addons de programas instalados nesse sistema.</property>
+			</item>
+			<!-- ANDROID APPS -->
+			<item>				
+				<label>Android Apps</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10001,&quot;androidapp://sources/apps/&quot;,return)</onclick>
+				<property name="id">homeandroidapps</property>
+				<thumb>defaultandroidapp.png</thumb>
+				<property name="listaddonsdescriptions">Contém todos os Apps instalados nesse sistema.</property>
+			</item>
+			<!-- PLACEHOLDER 01 -->
+			<item>				
+				<label>PlaceHolder01</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10001,&quot;androidapp://sources/apps/&quot;,return)</onclick>
+				<property name="id">homeandroidapps</property>
+				<thumb>posters/.png</thumb>
+				<property name="listaddonsdescriptions">Placeholder01.</property>
+			</item>
+			<!-- PLACEHOLDER 02 -->
+			<item>				
+				<label>Ajustes da Skin</label>
+				<property name="menu_id">$NUMBER[17001]</property>
+				<onclick>ActivateWindow(10035,return)</onclick>
+				<property name="id">homeskinsettings</property>
+				<thumb>posters/defaultinterface.png</thumb>
+				<property name="listaddonsdescriptions">Ajuste detalhes da skin</property>
+			</item>			
+		</content>
+	</include>
+	
+	<!-- By Sagrath -->
+</includes>
