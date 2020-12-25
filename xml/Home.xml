@@ -3,46 +3,29 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
-	<!-- Sagrath -->
-		<control type="image">
-			<top>0</top>
-			<left>0</left>
-			<width>1920</width>
-			<height>1080</height>
-			<texture background="true">fanarts/$INFO[ListItem.Property(id)].jpg</texture>
-			<aspectratio>stretch</aspectratio>
-			<fadetime>450</fadetime>
-		</control>	
-		<control type="image">
-			<top>0</top>
-			<left>0</left>
-			<width>1920</width>
-			<height>1080</height>
-			<texture background="true">$VAR[homefanart]</texture>
-			<aspectratio>stretch</aspectratio>
-			<fadetime>450</fadetime>
+		<include>DefaultBackground</include>
+		<control type="multiimage">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>600</fadetime>
+			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath background="true" colordiffuse="bg_overlay">$VAR[HomeFanartVar]</imagepath>
+			<visible>!Player.HasMedia</visible>
 		</control>
-		<control type="image">
-			<top>0</top>
-			<left>0</left>
-			<width>1920</width>
-			<height>1080</height>
-			<aspectratio>stretch</aspectratio>
-			<texture>colors/black.png</texture>
-			<animation effect="fade" end="50" condition="true">Conditional</animation>
-		</control>
-		
-		
-		<control type="label">
+		<!-- <control type="label">
 			<top>150</top>
 			<left>0</left>
 			<width>1920</width>
 			<height>50</height>
 			<font>home30</font>
-			<label>$INFO[ListItem.FolderPath]fanart.jpg</label>
+			<label>$VAR[widgetslabel]</label>
 			<textcolor>white</textcolor>
 		</control>
-		
+		 -->
 		<!-- Data e Hora -->
 		<control type="label">
 			<include>homedown</include>
@@ -120,6 +103,81 @@
 			</control>
 		</control>
 		
+		<!-- Logos & Descrições de Widgets -->
+		<control type="label">
+			<top>610</top>
+			<left>1380</left>
+			<width>410</width>
+			<height>80</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font27</font>
+			<label>$VAR[widgetslabel]</label>
+			<textcolor>white</textcolor>
+		</control>
+		<!-- Filmes $ Seriados -->
+		<control type="image">
+			<top>450</top>
+			<left>1380</left>
+			<width>410</width>
+			<height>159</height>
+			<texture>$VAR[HomeClearLogoVar]</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="textbox">
+			<top>450</top>
+			<left>540</left>
+			<width>825</width>
+			<height>220</height>
+			<font>font27</font>
+			<label>$VAR[ShiftRightTextBoxVar]</label>
+			<align>justify</align>
+			<autoscroll delay="3000" time="1000" repeat="10000">true</autoscroll>
+		</control>		
+		<!-- Musicas -->
+		<control type="image">
+			<top>450</top>
+			<left>1380</left>
+			<width>410</width>
+			<height>159</height>
+			<texture>$INFO[ListItem.FolderPath]logo.png</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="textbox">
+			<top>450</top>
+			<left>540</left>
+			<width>825</width>
+			<height>220</height>
+			<font>font27</font>
+			<label>$VAR[ShiftRightTextBoxVar]</label>
+			<align>justify</align>
+			<autoscroll delay="3000" time="1000" repeat="10000">true</autoscroll>
+		</control>	
+		
+		
+		
+		<!-- Imagens -->
+		<!-- <control type="image">
+			<top>450</top>
+			<left>1380</left>
+			<width>410</width>
+			<height>159</height>
+			<texture>$INFO[ListItem.FolderPath]logo.png</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<control type="textbox">
+			<top>450</top>
+			<left>540</left>
+			<width>825</width>
+			<height>220</height>
+			<font>font27</font>
+			<label>$INFO[ListItem.FolderPath]logo.png</label>
+			<align>justify</align>
+			<autoscroll delay="3000" time="1000" repeat="10000">true</autoscroll>
+		</control> -->	
+		
+		
+		
 		<!-- Listas dos Widgets -->
 		<!-- Menu Superior -->
 		<control type="group">
@@ -129,20 +187,23 @@
 				<include>gameshomewidgets</include>
 				<ondown>9011</ondown>
 			</control>
-			<!-- Músicas -->
+			<!-- Filmes -->
 			<control type="wraplist" id="9102">
 				<include>widgetlayout</include>
 				<include>movieshomewidgets</include>
+				<ondown>9012</ondown>
 			</control>
-			<!-- Músicas -->
+			<!-- Series -->
 			<control type="wraplist" id="9103">
 				<include>widgetlayout</include>
 				<include>tvshowshomewidgets</include>
+				<ondown>9013</ondown>
 			</control>
 			<!-- Músicas -->
 			<control type="wraplist" id="9104">
 				<include>widgetlayout</include>
 				<include>musichomewidgets</include>
+				<ondown>9014</ondown>
 			</control>
 			<!-- Imagens -->
 			<control type="wraplist" id="9105">
@@ -159,6 +220,7 @@
 				<include>addon_widgets</include>
 			</control>
 		</control>
+				
 			<!-- Grupos de Menu -->
 			<control type="group">
 				<!-- Menu Principal -->
@@ -572,6 +634,36 @@
 				<onup>9101</onup>
 				<content>					
 					<include>subgames</include>
+				</content>
+			</control>
+			
+			<!-- Seletor de Widgets de Filmes -->
+			<control type="list" id="9012">				
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(9012)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>9102</onup>
+				<content>					
+					<include>submovies</include>
+				</content>
+			</control>
+			
+			<!-- Seletor de Widgets de Series -->
+			<control type="list" id="9013">				
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(9013)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>9103</onup>
+				<content>					
+					<include>subtvshows</include>
+				</content>
+			</control>
+			
+			<!-- Seletor de Widgets de Músicas -->
+			<control type="list" id="9014">				
+				<animation effect="slide" start="0,0" end="0,-120" time="200" easing="inout" condition="Control.HasFocus(9014)">Conditional</animation>		
+				<include>submenulayout</include>
+				<onup>9104</onup>
+				<content>					
+					<include>submusic</include>
 				</content>
 			</control>
 			

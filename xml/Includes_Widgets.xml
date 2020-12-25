@@ -3,28 +3,26 @@
 	<!-- WIDGETS GAMES -->
 	<include name="gameshomewidgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
-		<content target="games">$INFO[Skin.String(gamewidget)]</content>
+		<!-- <content target="games">$INFO[Skin.String(gamewidget)]</content> -->
+		<content target="games">D:\Advanced Emulator Launcher\Artwork\Emuladores\flyers</content>
 	</include>
 	
 	<!-- WIDIGETS MOVIES -->
 	<include name="movieshomewidgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
-		<!-- <content target="videos">$INFO[Skin.String(moviewidget)]</content> -->
-		<content target="videos">videodb://movies/titles</content>
+		<content target="videos">$INFO[Skin.String(moviewidget)]</content>
 	</include>
 	
 	<!-- WIDIGETS SERIADOS -->
 	<include name="tvshowshomewidgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
-		<!-- <content target="videos">$INFO[Skin.String(showswidget)]</content> -->
-		<content target="videos">videodb://tvshows/titles/</content>
+		<content target="videos">$INFO[Skin.String(showswidget)]</content>
 	</include>
 	
 	<!-- WIDGETS MUSIC -->
 	<include name="musichomewidgets">
 		<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
-		<!-- <content target="music">$INFO[Skin.String(musicwidget)]</content> -->
-		<content target="music">musicdb://artists/</content>
+		<content target="music">$INFO[Skin.String(musicwidget)]</content>
 	</include>
 	
 	<!-- WIDGETS PICTURES -->

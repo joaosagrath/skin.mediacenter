@@ -250,67 +250,66 @@
 	</include>
 	<include name="submovies">
 		<item>
-			<label>$LOCALIZE[71001]</label>
-			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71001])</onclick>
+			<label>Filmes por Títulos</label>
+			<onclick>Skin.SetString(moviewidgetlabel,Filmes por Títulos)</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/titles)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71002]</label>
+			<label>Filmes por Gêneros</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71002])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/genres/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71003]</label>
+			<label>Filmes por Anos</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71003])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/years/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71004]</label>
+			<label>Filmes por Atores</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71004])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/actors/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71005]</label>
+			<label>Filmes por Diretores</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71005])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/directors/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71006]</label>
+			<label>Filmes por Estudios</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71006])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/studios/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71007]</label>
+			<label>Filmes por Coletâneas</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71007])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/sets/)</onclick> 
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71008]</label>
+			<label>Filmes por Países</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[7108])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://movies/countries/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71009]</label>
+			<label>Filmes Recèm Adcionados </label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71009])</onclick>
 			<onclick>Skin.SetString(moviewidget,videodb://recentlyaddedmovies/)</onclick> 
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[71099]</label>
+			<label>Limpar Ajustes de Widgets de Filmes</label>
 			<onclick>Skin.SetString(moviewidgetlabel,$LOCALIZE[71099])</onclick>
 			<onclick>Skin.SetString(moviewidget,-)</onclick>
+			<onclick>SetFocus(9000)</onclick>
 			<visible/>
-		</item>
-
-		
+		</item>		
 	</include>
 	
 	<include name="toptvshows">
@@ -328,51 +327,51 @@
 	</include>
 	<include name="subtvshows">
 		<item>
-			<label>$LOCALIZE[72001]</label>
+			<label>Séries por Títulos</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72002])</onclick>
 			<onclick>Skin.SetString(showswidget,videodb://tvshows/titles/)</onclick>			
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[72002]</label>
+			<label>Séries por Gêneros</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72002])</onclick>
 			<onclick>Skin.SetString(showswidget,videodb://tvshows/genres/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[72003]</label>
+			<label>Séries por Anos</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72003])</onclick>
 			<onclick>Skin.SetString(showswidget,videodb://tvshows/years/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[72004]</label>
+			<label>Séries por Atores</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72004])</onclick>
 			<onclick>Skin.SetString(showswidget,videodb://tvshows/actors/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[72005]</label>
+			<label>Séries por Estúdios</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72005])</onclick>
 			<onclick>Skin.SetString(showswidget,videodb://tvshows/studios/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[72006]</label>
+			<label>Séries em Progresso</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72006])</onclick>
 			<onclick>Skin.SetString(showswidget,videodb://inprogresstvshows)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[72007]</label>
+			<label>Séries Recém Adcionadas</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72007])</onclick>
 			<onclick>Skin.SetString(showswidget,videodb://recentlyaddedepisodes/)</onclick>
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[72099]</label>
+			<label>Limpar Ajuste de Widgets de Séries</label>
 			<onclick>Skin.SetString(showswidgetlabel,$LOCALIZE[72099])</onclick>
-			<onclick>Skin.SetString(showswidget,-)</onclick>
+			<onclick>SetFocus(9000)</onclick>
 			<visible/>
 		</item>
 	</include>
@@ -409,69 +408,70 @@
 	</include>
 	<include name="submusic">
 		<item>
-			<label>$LOCALIZE[81001]</label>
+			<label>Artistas</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81001])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://artists/)</onclick>			
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81002]</label>
+			<label>Albuns</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81002])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://albums/)</onclick>			
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81003]</label>
+			<label>Músicas</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81003])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://songs/)</onclick>			
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81004]</label>
+			<label>Gêneros</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81004])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://genres/)</onclick>		
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81005]</label>
+			<label>TOP 100 Músicas</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81005])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://top100/songs/)</onclick>		
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81006]</label>
+			<label>Top 100 Albuns</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81006])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://top100/albums/)</onclick>		
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81007]</label>
+			<label>Coletâneas</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81007])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://compilations/)</onclick>		
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81008]</label>
+			<label>Singles</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81008])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://singles/)</onclick>	
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81009]</label>
+			<label>Albuns Recém Adcionados</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81009])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://recentlyaddedalbums/)</onclick>	
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81010]</label>
+			<label>Albins Recém Executados</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81010])</onclick>
 			<onclick>Skin.SetString(musicwidget,musicdb://recentlyplayedalbums/)</onclick>	
 			<visible/>
 		</item>
 		<item>
-			<label>$LOCALIZE[81099]</label>
+			<label>Limpar Ajustes de Widgets de Músicas</label>
 			<onclick>Skin.SetString(musicwidgetlabel,$LOCALIZE[81099])</onclick>
-			<onclick>Skin.SetString(musicwidget,-)</onclick>	
+			<onclick>Skin.SetString(musicwidget,-)</onclick>
+			<onclick>SetFocus(9000)</onclick>			
 			<visible/>
 		</item>
 	</include>
@@ -524,6 +524,7 @@
 		<item>
 			<label>Limpar Ajustes de Widgets de Fotos</label>
 			<onclick>Skin.SetString(picwidget,-)</onclick>	
+			<onclick>SetFocus(9000)</onclick>
 			<visible/>
 		</item>
 	</include>
@@ -571,7 +572,7 @@
 	<!-- LAYOUT PADRÃO PARA HOME WIDGETS -->
 	<include name="widgetlayout">
 		<visible>![Control.HasFocus(7000) | Control.HasFocus(7101) | Control.HasFocus(7999) | Control.HasFocus(8000) | Control.HasFocus(8999)]</visible>
-		<animation effect="slide" start="0,0" end="0,-50" time="200" easing="inout" condition="[Control.HasFocus(9011) | Control.HasFocus(9012) | Control.HasFocus(9013) | rol.HasFocus(9014) | Control.HasFocus(9015)]">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-50" time="200" easing="inout" condition="[Control.HasFocus(9011) | Control.HasFocus(9012) | Control.HasFocus(9013) | Control.HasFocus(9014) | Control.HasFocus(9015)]">Conditional</animation>
 		<left>120</left>
 		<bottom>90</bottom>
 		<width>1670</width>
@@ -845,7 +846,7 @@
 				<left>0</left>
 				<width>200</width>
 				<height>300</height>
-				<aspectratio aligny="bottom">keep</aspectratio>>
+				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture>$VAR[ShiftThumbVar]</texture>
 				<animation effect="zoom" center="10,300" start="100" end="180" time="600" tween="cubic" easing="inout" condition="Control.HasFocus(7101)">Conditional</animation>
 			</control>

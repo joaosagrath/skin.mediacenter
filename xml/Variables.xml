@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Sagrath -->
-	<variable name="picposter">
+	<variable name="widgetslabel">
+		<value condition="Control.HasFocus(9101)">$INFO[skin.string(gamewidgetlabel)]</value>
+		<value condition="Control.HasFocus(9102)">$INFO[skin.string(moviewidgetlabel)]</value>
+		<value condition="Control.HasFocus(9103)">$INFO[skin.string(showswidgetlabel)]</value>
+		<value condition="Control.HasFocus(9104)">$INFO[skin.string(musicwidgetlabel)]</value>
+		<value condition="Control.HasFocus(9105)">$INFO[skin.string(picwidgetlabel)]</value>
+		<value condition="Control.HasFocus(7012)">$INFO[ListItem.Label]</value>
+		<value condition="Control.HasFocus(8001)">$INFO[skin.string(netflixwidgetlabel)]</value>
+		<value condition="Control.HasFocus(8003)">$INFO[skin.string(youtubewidgetlabel)]</value>
 	</variable>
-	
-	<variable name="homefanart">
-		<!-- <value condition="Control.HasFocus(9000)">special://skin/backgrounds/$INFO[ListItem.Property(id)].jpg</value> -->
-		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>		
-		<value condition="String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.FolderPath]fanart.jpg</value>				
-	</variable>
-	
 	
 	<!-- Sagrath -->
 	<variable name="PVRStatusImageVar">
@@ -309,6 +310,10 @@
 		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording | PVR.IsPlayingEpgTag">$INFO[VideoPlayer.ChannelNumberLabel,([COLOR button_focus],[/COLOR]) ]$INFO[VideoPlayer.ChannelName] $INFO[VideoPlayer.EpisodeName, - ]</value>
 		<value>$INFO[VideoPlayer.Genre]</value>
 	</variable>
+	<variable name="HomeClearLogoVar">
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+	</variable>
 	<variable name="PlayerClearLogoVar">
 		<value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
 		<value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
@@ -329,6 +334,7 @@
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(803)">$INFO[Skin.String(HomeFanart.path)]favorites$INFO[Skin.String(HomeFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(801)">$INFO[Skin.String(HomeFanart.path)]search$INFO[Skin.String(HomeFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path))">$INFO[Skin.String(HomeFanart.path)]$INFO[Container(9000).ListItem.Property(id)]$INFO[Skin.String(HomeFanart.ext)]</value>
+		<value condition="String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.FolderPath]fanart.jpg</value>
 	</variable>
 	<variable name="MediaFanartVar">
 		<value condition="Skin.HasSetting(no_fanart)"></value>
