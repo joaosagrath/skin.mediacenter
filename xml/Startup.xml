@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+
+	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,7)</onload>
+	<onload condition="String.IsEmpty(Skin.String(Movies_Widgets))">Skin.SetString(Movies_Widgets,library://video/movies/)</onload>
+	<onload condition="String.IsEmpty(Skin.String(Series_Widgets))">Skin.SetString(Series_Widgets,library://video/tvshows/)</onload>
+	<onload condition="String.IsEmpty(Skin.String(Music_Widgets))">Skin.SetString(Music_Widgets,library://music/)</onload>
 	<onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
 	<controls />
 </window>

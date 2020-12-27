@@ -1040,12 +1040,12 @@
 		<width>auto</width>
 	</include>
 	<include name="ColoredBackgroundImages">
-		<control type="image">
+		<!-- <control type="image">
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<texture colordiffuse="primary_background">special://skin/extras/backgrounds/primary.jpg</texture>
-		</control>
+		</control> -->
 		<control type="image">
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>

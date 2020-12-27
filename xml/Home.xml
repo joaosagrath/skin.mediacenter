@@ -35,7 +35,15 @@
 			<top>200</top>
 			<left>20</left>
 			<width>1920</width>
-			<label>D:\Musicas\$INFO[ListItem.Artist]\logo.png</label>
+			<label>$INFO[ListItem.FolderPath]fanart.jpg</label>
+			<textcolor>white</textcolor>
+		</control>
+		<control type="label">
+			<visible>Control.HasFocus(4400)</visible>
+			<top>250</top>
+			<left>20</left>
+			<width>1920</width>
+			<label>$LOCALIZE[31041]:</label>
 			<textcolor>white</textcolor>
 		</control>
 		
@@ -946,6 +954,7 @@
 							<!-- <param name="widget_header" value="$LOCALIZE[31122]"/> -->
 							<param name="widget_target" value="pictures"/>
 							<param name="list_id" value="4400"/>
+							<param name="fallback_icon" value="DefaultMusicArtists.png"/>
 						</include>
 						<!-- <include content="WidgetListCategories" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
 							<param name="content_path" value="sources://pictures/"/>

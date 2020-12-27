@@ -370,7 +370,7 @@
 						</include>
 					</control>
 				</focusedlayout>
-				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="15">$PARAM[content_path]</content>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]">$PARAM[content_path]</content>
 			</control>
 		</definition>
 	</include>
@@ -401,13 +401,25 @@
 					<visible>$PARAM[focused]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
+				<control type="textbox">
+					<left>40</left>
+					<top>244</top>
+					<width>242</width>
+					<height>120</height>
+					<font>font27</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				</control>
 				<control type="image">
 					<left>20</left>
 					<top>-5</top>
 					<width>280</width>
 					<height>390</height>
-					<texture background="true">$INFO[ListItem.Thumb]</texture>
-					<aspectratio align="left" aligny="top">stretch</aspectratio>
+					<texture background="true" fallback="defaultpicture.png">$INFO[ListItem.Thumb]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<bordersize>20</bordersize>
 				</control>
 			</control>
