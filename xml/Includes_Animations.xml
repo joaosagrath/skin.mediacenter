@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- By Sagrath -->
-	<include name="top_hidden">
-		<animation effect="slide" start="0,0" end="0,80" time="100" easing="inout" condition="[ Control.HasFocus(701) | Control.HasFocus(702) | Control.HasFocus(703) | Control.HasFocus(704) | Control.HasFocus(705) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) |Control.HasFocus(804)]">Conditional</animation>
+	<include name="Animation_WidgetSelector">
+		<animation type="Conditional" condition="[Control.HasFocus(15300) | Control.HasFocus(4500001) | Control.HasFocus(4500002) | Control.HasFocus(4500003) | Control.HasFocus(4500004) | Control.HasFocus(4500005) | Control.HasFocus(4500006) | Control.HasFocus(4500007) | Control.HasFocus(5500001) | Control.HasFocus(5500002) | Control.HasFocus(5500003) | Control.HasFocus(5500004) | Control.HasFocus(5500005) | Control.HasFocus(5500006) | Control.HasFocus(5500007) | Control.HasFocus(5500008) | Control.HasFocus(6500001) | Control.HasFocus(6500002) | Control.HasFocus(6500003) | Control.HasFocus(6500004) | Control.HasFocus(6500005) | Control.HasFocus(6500006) | Control.HasFocus(6500007) | Control.HasFocus(7500001) | Control.HasFocus(7500002) | Control.HasFocus(7500003) | Control.HasFocus(7500004) | Control.HasFocus(7500005) | Control.HasFocus(7500006) | Control.HasFocus(7500007)]">
+			<effect type="slide" start="0,0" end="0,-100" time="100" easing="inout" />
+		</animation>
 	</include>
 	
-	<include name="homeup"> <!-- Focus on Widgets 8 Seconds -->
-		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7001) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
-		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7002) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
-		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7003) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
-		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7004) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
-		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7005) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
-		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7006) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
-		<animation effect="slide" delay="500" time="400" start="0,0" end="0,-1000" easing="inout" tween="cubic" condition="Control.HasFocus(7007) + [System.IdleTime(3) + !Skin.HasSetting(no_home_slide_animations)]">Conditional</animation>
-	</include>
-	
-	<include name="side_right_hidden">
-		<animation effect="slide" start="0" end="-100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(7000)">Conditional</animation>
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(7999)">Conditional</animation>
-	</include>
-	<include name="side_left_hidden">
-		<animation effect="slide" start="0" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(8000)">Conditional</animation>
-		<animation effect="slide" start="0" end="-100" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(8999)">Conditional</animation>
-	</include>
-	
-	<!-- SAGRATH -->
+
 
 	<include name="Animation_FocusTextureFade">
 		<animation effect="fade" start="0" end="100" time="200" tween="sine">Focus</animation>

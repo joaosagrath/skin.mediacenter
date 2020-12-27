@@ -575,3 +575,9 @@ msgstr "Imagem do perfil"
 msgctxt "#31167"
 msgid "Animate background"
 msgstr "Pano de Fundo animado"
+
+#----------
+
+msgctxt "#31168"
+msgid ""
+msgstr ""
