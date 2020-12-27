@@ -71,7 +71,7 @@
 				<param name="list_id" value="$PARAM[list_id]"/>
 				<param name="posy" value="250"/>
 			</include>
-			<control type="wraplist" id="$PARAM[list_id]">
+			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
@@ -121,7 +121,7 @@
 				<visible>$PARAM[visible]</visible>
 				<control type="grouplist" id="$PARAM[button_id]577">
 					<orientation>vertical</orientation>
-					<top>850</top>
+					<top>650</top>
 					<height>500</height>
 					<left>50</left>
 					<right>50</right>
@@ -336,7 +336,7 @@
 				<param name="list_id" value="$PARAM[list_id]"/>
 				<param name="posy" value="250"/>
 			</include>
-			<control type="wraplist" id="$PARAM[list_id]">
+			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
 				<right>0</right>
@@ -508,7 +508,7 @@
 				<param name="posy" value="220"/>
 				<param name="visible" value="$PARAM[visible]"/>
 			</include>
-			<control type="wraplist" id="$PARAM[list_id]">
+			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>120</top>
 				<right>0</right>
@@ -551,8 +551,7 @@
 			</control>
 		</definition>
 	</include>
-	<include name="WidgetListCategories">
-		
+	<include name="WidgetListCategories">		
 		<param name="item_limit">20</param>
 		<param name="icon">$INFO[ListItem.Icon]</param>
 		<param name="icon_height">120</param>
