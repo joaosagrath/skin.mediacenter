@@ -88,7 +88,7 @@
 					<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 				</animation>
 				<include>OpenClose_Right</include>
-				<!-- Imagens -->
+				<!-- Imagens ID 4000 -->
 				<control type="group" id="4000">
 					<include>Animation_WidgetSelector</include>
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
@@ -103,35 +103,48 @@
 						<pagecontrol>4010</pagecontrol>
 						<include content="WidgetListPictures">
 							<param name="content_path" value="$INFO[Skin.String(Pictures_Widgets)]"/>
-							<!-- <param name="widget_header" value="$LOCALIZE[31122]"/> -->
 							<param name="widget_target" value="pictures"/>
 							<param name="list_id" value="4400"/>
 							<param name="fallback_icon" value="DefaultMusicArtists.png"/>
+							<param name="visible" value="!String.IsEmpty(Skin.String(Pictures_Widgets))"/>
+
 						</include>
-						<include content="WidgetListCategories" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
+						<!-- <include content="WidgetListCategories" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
 							<param name="content_path" value="sources://pictures/"/>
 							<param name="widget_header" value="$LOCALIZE[20094]"/>
 							<param name="widget_target" value="pictures"/>
 							<param name="list_id" value="4100"/>
 							<param name="icon_height" value="110"/>
-						</include>
+						</include> -->
 					</control>
-					<include content="SelectWidget">
-						<!-- <param name="text_label" value="$INFO[Skin.String(Pictures_Widgets)]" /> -->
+					<include content="SelectWidget" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
 						<param name="onup" value="4400" />
 						<param name="button_id" value="4500"/>
-						<!-- <param name="button_label" value="$LOCALIZE[517]" /> -->
 						<param name="button_label" value="Skin Girls" />
 						<param name="button_onclick" value="Skin.SetPath(Pictures_Widgets)"/>				
-						<!-- <param name="button7_label" value="$LOCALIZE[31116]" /> -->
 						<param name="button2_label" value="Remover Imagens do Menu Inicial" />
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoPicturesButton)"/>
+						<param name="button8_label" value="Limpar Ajustes de Widgets de Imagens" />
+						<param name="button8_onclick" value="Skin.Reset(Pictures_Widgets)"/>						
+						<param name="visible" value="!String.IsEmpty(Skin.String(Pictures_Widgets))"/>
 					</include>
+					
+					<include content="ImageWidget">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
+						<param name="text_label" value="$LOCALIZE[31104]" />
+						<param name="button_label" value="$LOCALIZE[31110]" />
+						<param name="button_onclick" value="Skin.SetPath(Pictures_Widgets)"/>
+						<param name="button_id" value="7600"/>
+						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoPicturesButton)"/>
+						<param name="visible" value="String.IsEmpty(Skin.String(Pictures_Widgets))"/>
+
+					</include>					
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="7010"/>
 					</include>
 				</control>
-				<!-- Filmes -->
+				<!-- Filmes ID 5000 -->
 				<control type="group" id="5000">
 					<include>Animation_WidgetSelector</include>					
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
@@ -230,6 +243,8 @@
 						<param name="button8_onclick" value="Skin.SetString(Movies_Widgets,-)"/>
 					</include>
 					<include content="ImageWidget" condition="!Library.HasContent(movies)">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
@@ -240,7 +255,7 @@
 						<param name="scrollbar_id" value="5010"/>
 					</include>
 				</control>
-				<!-- Seriados -->
+				<!-- Seriados ID 6000 -->
 				<control type="group" id="6000">
 					<include>Animation_WidgetSelector</include>
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
@@ -325,6 +340,8 @@
 						<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoTVShowButton)"/>
 					</include>
 					<include content="ImageWidget" condition="!Library.HasContent(tvshows)">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
@@ -335,7 +352,7 @@
 						<param name="scrollbar_id" value="6010"/>
 					</include>
 				</control>
-				<!-- Musicas -->
+				<!-- Musicas ID 7000 -->
 				<control type="group" id="7000">
 					<include>Animation_WidgetSelector</include>
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
@@ -433,6 +450,8 @@
 						<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoMusicButton)"/>
 					</include>
 					<include content="ImageWidget" condition="!Library.HasContent(music)">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(music,files)"/>
@@ -443,7 +462,7 @@
 						<param name="scrollbar_id" value="7010"/>
 					</include>
 				</control>
-				<!-- Jogos -->
+				<!-- Jogos ID 8000-->
 				<control type="group" id="8000">
 					<include>Animation_WidgetSelector</include>
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
@@ -494,6 +513,10 @@
 						<param name="visible" value="Integer.IsGreater(Container(8001).NumItems,0)"/>
 					</include>
 					<include content="ImageWidget">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31162]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
 						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/category.gameaddons,return)"/>
@@ -505,21 +528,23 @@
 						<param name="scrollbar_id" value="8010"/>
 					</include>
 				</control>				
-				<!-- Addons -->
-				<control type="group" id="8000">
+				<!-- Addons ID 16000 -->
+				<control type="group" id="16000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="addons"/>
 					</include>
-					<control type="grouplist" id="8001">
+					<control type="grouplist" id="16001">
+						<onup>9000</onup>
+						<ondown>16500567</ondown>
 						<include>WidgetGroupListCommon</include>
-						<pagecontrol>8010</pagecontrol>
+						<pagecontrol>16010</pagecontrol>
 						<include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_categories_widget)" >
 							<param name="content_path" value="addons://"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="addonbrowser"/>
-							<param name="list_id" value="8900"/>
-							<param name="visible" value="Integer.IsGreater(Container(8100).NumItems,0) | Integer.IsGreater(Container(8200).NumItems,0) | Integer.IsGreater(Container(8300).NumItems,0) | Integer.IsGreater(Container(8400).NumItems,0) | Integer.IsGreater(Container(8500).NumItems,0) | Integer.IsGreater(Container(8700).NumItems,0)"/>
+							<param name="list_id" value="1600"/>
+							<param name="visible" value="Integer.IsGreater(Container(16100).NumItems,0) | Integer.IsGreater(Container(16200).NumItems,0) | Integer.IsGreater(Container(16300).NumItems,0) | Integer.IsGreater(Container(16400).NumItems,0) | Integer.IsGreater(Container(16500).NumItems,0) | Integer.IsGreater(Container(16700).NumItems,0)"/>
 						</include>
 						<include content="WidgetListSquare">
 							<param name="content_path" value="addons://sources/video/"/>
@@ -527,7 +552,7 @@
 							<param name="widget_target" value="videos"/>
 							<param name="sortby" value="lastused"/>
 							<param name="sortorder" value="descending"/>
-							<param name="list_id" value="8100"/>
+							<param name="list_id" value="16100"/>
 							<param name="fallback_icon" value="DefaultAddon.png"/>
 						</include>
 						<include content="WidgetListSquare">
@@ -536,7 +561,7 @@
 							<param name="widget_target" value="music"/>
 							<param name="sortby" value="lastused"/>
 							<param name="sortorder" value="descending"/>
-							<param name="list_id" value="8200"/>
+							<param name="list_id" value="16200"/>
 							<param name="fallback_icon" value="DefaultAddon.png"/>
 						</include>
 						<include content="WidgetListSquare">
@@ -545,7 +570,7 @@
 							<param name="widget_target" value="games"/>
 							<param name="sortby" value="lastused"/>
 							<param name="sortorder" value="descending"/>
-							<param name="list_id" value="8700"/>
+							<param name="list_id" value="16700"/>
 							<param name="fallback_icon" value="DefaultAddonGame.png"/>
 							<param name="visible" value="System.GetBool(gamesgeneral.enable)"/>
 						</include>
@@ -555,7 +580,7 @@
 							<param name="widget_target" value="programs"/>
 							<param name="sortby" value="lastused"/>
 							<param name="sortorder" value="descending"/>
-							<param name="list_id" value="8300"/>
+							<param name="list_id" value="16300"/>
 							<param name="fallback_icon" value="DefaultAddon.png"/>
 						</include>
 						<include content="WidgetListSquare" condition="System.Platform.Android">
@@ -564,7 +589,7 @@
 							<param name="widget_target" value="programs"/>
 							<param name="sortby" value="lastused"/>
 							<param name="sortorder" value="descending"/>
-							<param name="list_id" value="8400"/>
+							<param name="list_id" value="16400"/>
 							<param name="fallback_icon" value="DefaultAddon.png"/>
 						</include>
 						<include content="WidgetListSquare">
@@ -573,19 +598,21 @@
 							<param name="widget_target" value="pictures"/>
 							<param name="sortby" value="lastused"/>
 							<param name="sortorder" value="descending"/>
-							<param name="list_id" value="8500"/>
+							<param name="list_id" value="16500"/>
 						</include>
 					</control>
 					<include content="ImageWidget">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31119]" />
 						<param name="button_label" value="$LOCALIZE[31118]" />
 						<param name="button_onclick" value="ActivateWindow(addonbrowser)"/>
-						<param name="button_id" value="8600"/>
-						<param name="visible" value="!Integer.IsGreater(Container(8001).NumItems,0)"/>
+						<param name="button_id" value="16600"/>
+						<param name="visible" value="!Integer.IsGreater(Container(16001).NumItems,0)"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoProgramsButton)"/>
 					</include>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="8010"/>
+						<param name="scrollbar_id" value="16010"/>
 					</include>
 				</control>
 				<!-- Videos -->
@@ -618,6 +645,8 @@
 						</include>
 					</control>
 					<include content="ImageWidget">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31105]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,root)"/>
@@ -701,6 +730,8 @@
 						</include>
 					</control>
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31143]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
 						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/kodi.pvrclient,return)"/>
@@ -782,6 +813,8 @@
 						</include>
 					</control>
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31143]" />
 						<param name="button_label" value="$LOCALIZE[31144]" />
 						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/kodi.pvrclient,return)"/>
@@ -836,6 +869,8 @@
 						<content>favourites://</content>
 					</control>
 					<include content="ImageWidget">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31025]" />
 						<param name="button_label" value="$LOCALIZE[31116]" />
 						<param name="button_onclick" value=""/>
@@ -940,6 +975,8 @@
 						</include>
 					</control>
 					<include content="ImageWidget" condition="String.IsEmpty(Weather.plugin)">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31120]" />
 						<param name="button_label" value="$LOCALIZE[31121]" />
 						<param name="button_onclick" value="ActivateWindow(servicesettings,weather)"/>
@@ -1033,6 +1070,8 @@
 						</include>
 					</control>
 					<include content="ImageWidget" condition="!Library.HasContent(musicvideos)">
+						<param name="onup" value="9000" />
+						<param name="ondown" value="20001" />
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
 						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
@@ -1148,14 +1187,16 @@
 						</control>
 					</itemlayout>
 					<content>
+						<!-- Jogos ID 8000-->
 						<item>
-							<label>$LOCALIZE[1]</label>
-							<onclick>ActivateWindow(Pictures)</onclick>
-							<property name="menu_id">$NUMBER[4000]</property>
-							<thumb>icons/sidemenu/pictures.png</thumb>
-							<property name="id">pictures</property>
-							<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+							<label>$LOCALIZE[15016]</label>
+							<property name="menu_id">$NUMBER[8000]</property>
+							<onclick>ActivateWindow(Games)</onclick>
+							<thumb>icons/sidemenu/games.png</thumb>
+							<property name="id">games</property>
+							<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
 						</item>
+						<!-- Filmes ID 5000 -->
 						<item>
 							<label>$LOCALIZE[342]</label>
 							<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
@@ -1166,6 +1207,7 @@
 							<property name="id">movies</property>
 							<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
 						</item>
+						<!-- Seriados ID 6000 -->
 						<item>
 							<label>$LOCALIZE[20343]</label>
 							<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
@@ -1176,6 +1218,7 @@
 							<property name="id">tvshows</property>
 							<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
 						</item>
+						<!-- Musicas ID 7000 -->
 						<item>
 							<label>$LOCALIZE[2]</label>
 							<onclick>ActivateWindow(Music,root,return)</onclick>
@@ -1184,14 +1227,25 @@
 							<property name="id">music</property>
 							<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
 						</item>
+						<!-- Imagens ID 4000 -->
 						<item>
-							<label>$LOCALIZE[15016]</label>
-							<property name="menu_id">$NUMBER[8000]</property>
-							<onclick>ActivateWindow(Games)</onclick>
-							<thumb>icons/sidemenu/games.png</thumb>
-							<property name="id">games</property>
-							<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
+							<label>$LOCALIZE[1]</label>
+							<onclick>ActivateWindow(Pictures)</onclick>
+							<property name="menu_id">$NUMBER[4000]</property>
+							<thumb>icons/sidemenu/pictures.png</thumb>
+							<property name="id">pictures</property>
+							<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
 						</item>
+						<!-- Addons ID 16000 -->
+						<item>
+							<label>$LOCALIZE[24001]</label>
+							<property name="menu_id">$NUMBER[16000]</property>
+							<onclick>ActivateWindow(1100)</onclick>
+							<thumb>icons/sidemenu/addons.png</thumb>
+							<property name="id">addons</property>
+							<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+						</item>	
+						<!-- Disco ID 21000 -->
 						<item>
 							<label>$LOCALIZE[427]</label>
 							<onclick>PlayDisc</onclick>
@@ -1200,6 +1254,7 @@
 							<property name="id">disc</property>
 							<visible>System.HasMediaDVD</visible>
 						</item>
+						<!-- Concertos ID 16000 -->
 						<item>
 							<label>$LOCALIZE[20389]</label>
 							<property name="menu_id">$NUMBER[16000]</property>
@@ -1208,6 +1263,7 @@
 							<property name="id">musicvideos</property>
 							<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
 						</item>
+						<!-- PVR ID 12000 -->
 						<item>
 							<label>$LOCALIZE[19020]</label>
 							<property name="menu_id">$NUMBER[12000]</property>
@@ -1216,6 +1272,7 @@
 							<property name="id">livetv</property>
 							<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
 						</item>
+						<!-- Radio ID 13000 -->
 						<item>
 							<label>$LOCALIZE[19021]</label>
 							<property name="menu_id">$NUMBER[13000]</property>
@@ -1224,15 +1281,7 @@
 							<property name="id">radio</property>
 							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
 						</item>
-						
-						<item>
-							<label>$LOCALIZE[24001]</label>
-							<property name="menu_id">$NUMBER[8000]</property>
-							<onclick>ActivateWindow(1100)</onclick>
-							<thumb>icons/sidemenu/addons.png</thumb>
-							<property name="id">addons</property>
-							<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
-						</item>						
+						<!-- Videos ID 11000 -->											
 						<item>
 							<label>$LOCALIZE[3]</label>
 							<onclick>ActivateWindow(Videos,root)</onclick>
@@ -1241,6 +1290,7 @@
 							<property name="id">video</property>
 							<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
 						</item>
+						<!-- Favoritos ID 14000 -->
 						<item>
 							<label>$LOCALIZE[10134]</label>
 							<onclick>ActivateWindow(favourites)</onclick>
@@ -1249,6 +1299,7 @@
 							<property name="id">favorites</property>
 							<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
 						</item>
+						<!-- Clima ID 15000 -->
 						<item>
 							<label>$LOCALIZE[8]</label>
 							<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
