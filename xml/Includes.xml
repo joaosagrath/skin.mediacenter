@@ -263,6 +263,21 @@
 			</control>
 		</control>
 	</include>
+	<include name="MediaColorFlag">
+		<param name="width">115</param>
+		<param name="height">75</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="image">
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<fadetime>0</fadetime>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>$PARAM[texture]</texture>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
 	<include name="MediaFlag">
 		<param name="width">115</param>
 		<param name="height">60</param>
@@ -291,6 +306,10 @@
 				<itemgap>10</itemgap>
 				<width>1900</width>
 				<usecontrolcoords>true</usecontrolcoords>
+				<include content="MediaColorFlag">
+					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.coloured/,.png]" />
+					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)" />
+				</include>
 				<control type="group">
 					<width>150</width>
 					<visible>System.AddonIsEnabled(resource.images.studios.white) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)</visible>
@@ -341,7 +360,7 @@
 				<include content="MediaFlag">
 					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioChannels,flags/audiochannel/,.png]" />
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)" />
-				</include>
+				</include>				
 			</control>
 		</definition>
 	</include>
@@ -1085,6 +1104,7 @@
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
+						<texture background="true" colordiffuse="37FFFFFF">$VAR[PicturesFanart]</texture>
 						<texture background="true" colordiffuse="37FFFFFF">$VAR[MediaFanartVar]</texture>
 						<visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
 					</control>

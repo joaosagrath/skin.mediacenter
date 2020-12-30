@@ -1,5 +1,382 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<!-- Sagrath -->
+	<include name="ActivateWidget">
+		<param name="visible">true</param>
+		<param name="visible1">true</param>
+		<definition>
+			<control type="group" id="$PARAM[button_id]889">
+				<visible>$PARAM[visible]</visible>
+				<control type="grouplist" id="$PARAM[button_id]577">
+					<orientation>vertical</orientation>
+					<top>650</top>
+					<height>400</height>
+					<left>50</left>
+					<right>50</right>
+					<align>center</align>
+					<control type="textbox">
+						<width>100%</width>
+						<height>150</height>
+						<label>$PARAM[text_label]</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font14</font>
+					</control>
+					<control type="grouplist" id="$PARAM[button_id]567">
+						<width>100%</width>
+						<orientation>horizontal</orientation>
+						<align>center</align>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<control type="button" id="$PARAM[button_id]">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button_onclick]</onclick>
+							<onclick>$PARAM[button_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_1]</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="SelectWidget">
+		<param name="visible">true</param>
+		<param name="visible_1">true</param>
+		<param name="visible_2">true</param>
+		<param name="visible_3">true</param>
+		<param name="visible_4">true</param>
+		<param name="visible_5">true</param>
+		<param name="visible_6">true</param>
+		<param name="visible_7">true</param>
+		<param name="visible_8">true</param>
+		<param name="visible_9">true</param>
+		<param name="visible_10">true</param>
+		<param name="button2_label">$LOCALIZE[31116]</param>
+		<param name="button2_onclick">true</param>		
+		<definition>
+			<control type="group" id="$PARAM[button_id]889">
+				<visible>$PARAM[visible]</visible>
+				<control type="grouplist" id="$PARAM[button_id]577">					
+					<orientation>vertical</orientation>
+					<top>680</top>
+					<height>500</height>
+					<left>50</left>
+					<right>50</right>
+					<align>center</align>					
+					<onup>20000</onup>
+					<ondown>20001</ondown>
+					<control type="textbox">
+						<width>100%</width>
+						<height min="0" max="300">auto</height>
+						<label>$PARAM[text_label]</label>
+						<align>center</align>
+						<font>font14</font>
+					</control>
+					<control type="grouplist" id="$PARAM[button_id]567">
+						<width>100%</width>						
+						<orientation>horizontal</orientation>
+						<align>center</align>
+						<control type="button" id="$PARAM[button_id]001">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button_onclick]</onclick>
+							<onclick>$PARAM[button_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_1]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]002">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button2_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button2_onclick]</onclick>
+							<onclick>$PARAM[button2_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_2]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]003">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button3_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button3_onclick]</onclick>
+							<onclick>$PARAM[button3_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_3]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]004">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button4_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button4_onclick]</onclick>
+							<onclick>$PARAM[button4_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_4]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]005">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button5_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button5_onclick]</onclick>
+							<onclick>$PARAM[button5_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_5]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]006">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button6_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button6_onclick]</onclick>
+							<onclick>$PARAM[button6_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>							
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_6]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]007">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button7_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button7_onclick]</onclick>
+							<onclick>$PARAM[button7_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_7]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]008">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button8_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button8_onclick]</onclick>
+							<onclick>$PARAM[button8_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_8]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]009">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button9_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button9_onclick]</onclick>
+							<onclick>$PARAM[button9_onclick2]</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_9]</visible>
+							<visible>String.IsEmpty(Container($PARAM[button_id]008).ListItem.Label)</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]010">
+							<width>auto</width>
+							<height>110</height>
+							<label>$PARAM[button10_label]</label>
+							<textoffsetx>40</textoffsetx>
+							<onclick>$PARAM[button10_onclick]</onclick>
+							<onclick>$PARAM[button10_onclick2]</onclick>
+							<onclick>SetFocus(9000)</onclick>
+							<onup>$PARAM[onup]</onup>
+							<align>center</align>
+							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+							<visible>$PARAM[visible_10]</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPictures">
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="250"/>
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>115</top>
+				<right>0</right>
+				<height>503</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]"/>
+				</include>
+				<preloaditems>2</preloaditems>
+				<itemlayout width="310" height="486">
+					<control type="group">
+						<left>68</left>
+						<top>10</top>
+						<include content="InfoWallPicturesLayout">
+							<param name="focused" value="false" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="486">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>68</left>
+						<top>10</top>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="230,0" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="230,0" />
+						</animation>
+						<include content="InfoWallPicturesLayout">
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="InfoWallPicturesLayout">
+		<param name="focused">false</param>
+		<definition>
+			<control type="group">				
+				
+				<control type="image">
+					<left>15</left>
+					<top>-14</top>
+					<width>290</width>
+					<height>408</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="textbox">
+					<left>40</left>
+					<top>244</top>
+					<width>242</width>
+					<height>120</height>
+					<font>font27</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>290</width>
+					<height>400</height>
+					<texture background="true" fallback="defaultpicture.png">$VAR[picposter]</texture>
+					<aspectratio>keep</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<!-- Girls Database -->
+	<variable name="picposter">
+		<!-- Revistas -->
+		<value condition="String.Contains(ListItem.Label,ATKingdom)">Y:\Girls Database\Magazines\ATKingdom.jpg</value>
+		<value condition="String.Contains(ListItem.Label,All Gravure)">Y:\Girls Database\Magazines\All Gravure.jpg</value>
+		<value condition="String.Contains(ListItem.Label,AmourAngels)">Y:\Girls Database\Magazines\AmourAngels.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Big Tits Glamour)">Y:\Girls Database\Magazines\Big Tits Glamour.jpg</value>
+
+		<!-- Modelos -->
+		<value condition="String.Contains(ListItem.Label,Aliza Haze)">Y:\Girls Database\Models\Aliza Haze.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Anja Amelia)">Y:\Girls Database\Models\Anja Amelia.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Eshe Ikandi)">Y:\Girls Database\Models\Eshe Ikandi.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Hannah Hays)">Y:\Girls Database\Models\Hannah Hays.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Haruka Nanao)">Y:\Girls Database\Models\Haruka Nanao.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Ichika Ayamori)">Y:\Girls Database\Models\Ichika Ayamori.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Lang Yu)">Y:\Girls Database\Models\Lang Yu.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Leah Wilde)">Y:\Girls Database\Models\Leah Wilde.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Masako Natsume)">Y:\Girls Database\Models\Masako Natsume.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Mi Ha Doan)">Y:\Girls Database\Models\Mi Ha Doan.jpg</value>
+		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Girls Database\Models\PanPan.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Paula Martini)">Y:\Girls Database\Models\Paula Martini.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Natali Fiori)">Y:\Girls Database\Models\Natali Fiori.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Girls Database\Models\Sanija.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Tuna Kimura)">Y:\Girls Database\Models\Tuna Kimura.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Thumbelina)">Y:\Girls Database\Models\Thumbelina.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Victoria Matosa)">Y:\Girls Database\Models\Victoria Matosa.jpg</value>
+		
+		<!-- Boobs Size -->
+		<value condition="String.Contains(ListItem.Label,flat)">Y:\Girls Database\Boobs\flatchest.jpg</value>
+		<value condition="String.Contains(ListItem.Label,big boobs)">Y:\Girls Database\Boobs\bigboobs.jpg</value>
+		<value condition="String.Contains(ListItem.Label,small boobs)">Y:\Girls Database\Boobs\smallboobs.jpg</value>
+		
+		<!-- Pussy Style -->
+		<value condition="String.Contains(ListItem.Label,Shave)">Y:\Girls Database\Pussy\Shaved.jpg</value>
+		
+		<value>$INFO[ListItem.Thumb]</value>
+	</variable>
+	<variable name="pichomelogo">
+		<value condition="String.Contains(ListItem.Label,ATKingdom)">Y:\Girls Database\Magazines\ATKingdom_Logo.png</value>
+		<value condition="String.Contains(ListItem.Label,All Gravure)">Y:\Girls Database\Magazines\All Gravure_Logo.png</value>
+		<value condition="String.Contains(ListItem.Label,AmourAngels)">Y:\Girls Database\Magazines\AmourAngels_Logo.png</value>
+		<value condition="String.Contains(ListItem.Label,Big Tits Glamour)">Y:\Girls Database\Magazines\Big Tits Glamour_Logo.png</value>
+		<value condition="String.Contains(ListItem.Label,Anja)">Y:\Girls Database\Models\Anja Amelia.png</value>
+		<value condition="String.Contains(ListItem.Label,Eshe)">Y:\Girls Database\Models\Eshe Ikandi.png</value>
+		<value condition="String.Contains(ListItem.Label,Haruka)">Y:\Girls Database\Models\Haruka Nanao.png</value>
+		<value condition="String.Contains(ListItem.Label,Ichika)">Y:\Girls Database\Models\Ichika Ayamori.png</value>
+		<value condition="String.Contains(ListItem.Label,Lang)">Y:\Girls Database\Models\Lang Yu.png</value>
+		<value condition="String.Contains(ListItem.Label,Leah)">Y:\Girls Database\Models\Leah Wilde.png</value>
+		<value condition="String.Contains(ListItem.Label,Masako)">Y:\Girls Database\Models\Masako Natsume.png</value>
+		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Girls Database\Models\PanPan.png</value>
+		<value condition="String.Contains(ListItem.Label,Victoria)">Y:\Girls Database\Models\Victoria Matosa.png</value>
+	</variable>
+	
+	<variable name="pichomelabel">
+		<value condition="String.Contains(ListItem.Label,Eshe)">Eshe is an adult model who has appeared at BigTitsGlamour.
+Performances: Solo And Masturbation</value>
+	</variable>
+	<variable name="PicturesFanart">
+		<value condition="String.Contains(ListItem.Label,ATKingdom)">Y:\Girls Database\Magazines\ATKingdom_Wall.jpg</value>
+		<value condition="String.Contains(ListItem.Label,All Gravure)">Y:\Girls Database\Magazines\All Gravure_Wall.jpg</value>
+		<value condition="String.Contains(ListItem.Label,AmourAngels)">Y:\Girls Database\Magazines\AmourAngels_Wall.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Big Tits Glamour)">Y:\Girls Database\Magazines\Big Tits Glamour_Wall.jpg</value>
+	</variable>
+
+
+
+	<!-- Sagrath -->
+
 	<include name="WidgetGroupListCommon">
 		<orientation>vertical</orientation>
 		<height>100%</height>
@@ -74,9 +451,11 @@
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
 				<top>115</top>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<!-- <visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible> -->
 				<right>0</right>
 				<height>503</height>
+				<onleft>$PARAM[list_id]</onleft>
+				<onright>$PARAM[list_id]</onright>
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
@@ -95,17 +474,17 @@
 						<left>68</left>
 						<top>10</top>
 						<animation type="Focus">
-							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="230,130" />
+							<effect type="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="230,0" />
 						</animation>
 						<animation type="Unfocus">
-							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
+							<effect type="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="230,0" />
 						</animation>
 						<include content="InfoWallMovieLayout">
 							<param name="focused" value="true" />
 						</include>
 					</control>
 				</focusedlayout>
-				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="15">$PARAM[content_path]</content>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]">$PARAM[content_path]</content>
 			</control>
 		</definition>
 	</include>
@@ -121,16 +500,17 @@
 				<visible>$PARAM[visible]</visible>
 				<control type="grouplist" id="$PARAM[button_id]577">
 					<orientation>vertical</orientation>
-					<top>650</top>
-					<height>500</height>
+					<top>550</top>
+					<height>400</height>
 					<left>50</left>
 					<right>50</right>
 					<align>center</align>
 					<control type="textbox">
 						<width>100%</width>
-						<height min="0" max="300">auto</height>
+						<height>150</height>
 						<label>$PARAM[text_label]</label>
 						<align>center</align>
+						<aligny>center</aligny>
 						<font>font14</font>
 					</control>
 					<control type="grouplist" id="$PARAM[button_id]567">
@@ -145,8 +525,10 @@
 							<label>$PARAM[button_label]</label>
 							<textoffsetx>40</textoffsetx>
 							<onclick>$PARAM[button_onclick]</onclick>
+							<onclick>$PARAM[button_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
 							<ondown>$PARAM[ondown]</ondown>
+							<ondown>$PARAM[ondown_empty]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -160,6 +542,7 @@
 							<onclick>$PARAM[button2_onclick]</onclick>
 							<onup>$PARAM[onup]</onup>
 							<ondown>$PARAM[ondown]</ondown>
+							<ondown>$PARAM[ondown_empty]</ondown>
 							<onclick>SetFocus(9000)</onclick>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
@@ -172,6 +555,7 @@
 							<label>$PARAM[button3_label]</label>
 							<textoffsetx>40</textoffsetx>
 							<onclick>$PARAM[button3_onclick]</onclick>
+							<onclick>$PARAM[button3_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
 							<ondown>$PARAM[ondown]</ondown>
 							<onclick>SetFocus(9000)</onclick>
@@ -185,254 +569,6 @@
 			</control>
 		</definition>
 	</include>
-	<include name="SelectWidget">
-		<param name="visible">true</param>
-		<param name="visible_1">true</param>
-		<param name="visible_2">true</param>
-		<param name="visible_3">true</param>
-		<param name="visible_4">true</param>
-		<param name="visible_5">true</param>
-		<param name="visible_6">true</param>
-		<param name="visible_7">true</param>
-		<param name="visible_8">true</param>
-		<param name="visible_9">true</param>
-		<param name="visible_10">true</param>
-		<param name="button2_label">$LOCALIZE[31116]</param>
-		<param name="button2_onclick">true</param>		
-		<definition>
-			<control type="group" id="$PARAM[button_id]889">
-				<visible>$PARAM[visible]</visible>
-				<control type="grouplist" id="$PARAM[button_id]577">					
-					<orientation>vertical</orientation>
-					<top>650</top>
-					<height>500</height>
-					<left>50</left>
-					<right>50</right>
-					<align>center</align>					
-					<onup>20000</onup>
-					<ondown>20001</ondown>
-					<control type="textbox">
-						<width>100%</width>
-						<height min="0" max="300">auto</height>
-						<label>$PARAM[text_label]</label>
-						<align>center</align>
-						<font>font14</font>
-					</control>
-					<control type="grouplist" id="$PARAM[button_id]567">
-						<width>100%</width>						
-						<orientation>horizontal</orientation>
-						<align>center</align>
-						<control type="button" id="$PARAM[button_id]001">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_1]</visible>
-						</control>
-						<control type="button" id="$PARAM[button_id]002">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button2_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button2_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<!-- <onclick>SetFocus(9000)</onclick> -->
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_2]</visible>
-						</control>
-						<control type="button" id="$PARAM[button_id]003">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button3_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button3_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<!-- <onclick>SetFocus(9000)</onclick> -->
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_3]</visible>
-						</control>
-						<control type="button" id="$PARAM[button_id]004">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button4_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button4_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<!-- <onclick>SetFocus(9000)</onclick> -->
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_4]</visible>
-						</control>
-						<control type="button" id="$PARAM[button_id]005">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button5_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button5_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<!-- <onclick>SetFocus(9000)</onclick> -->
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_5]</visible>
-						</control>
-						<control type="button" id="$PARAM[button_id]006">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button6_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button6_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<!-- <onclick>SetFocus(9000)</onclick> -->
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_6]</visible>
-						</control>
-						<control type="button" id="$PARAM[button_id]007">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button7_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button7_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<onclick>SetFocus(9000)</onclick>
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_7]</visible>
-						</control>
-						<control type="button" id="$PARAM[button_id]008">
-							<width>auto</width>
-							<height>110</height>
-							<label>$PARAM[button8_label]</label>
-							<textoffsetx>40</textoffsetx>
-							<onclick>$PARAM[button8_onclick]</onclick>
-							<onup>$PARAM[onup]</onup>
-							<onclick>SetFocus(9000)</onclick>
-							<align>center</align>
-							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
-							<visible>$PARAM[visible_8]</visible>
-						</control>
-					</control>
-				</control>
-			</control>
-		</definition>
-	</include>
-	
-	<include name="WidgetListPictures">
-		<definition>
-			<include content="CategoryLabel">
-				<param name="label">$PARAM[widget_header]</param>
-				<param name="list_id" value="$PARAM[list_id]"/>
-			</include>
-			<include content="BusyListSpinner">
-				<param name="list_id" value="$PARAM[list_id]"/>
-				<param name="posy" value="250"/>
-			</include>
-			<control type="fixedlist" id="$PARAM[list_id]">
-				<left>0</left>
-				<top>115</top>
-				<right>0</right>
-				<height>503</height>
-				<include content="WidgetListCommon">
-					<param name="list_id" value="$PARAM[list_id]"/>
-				</include>
-				<preloaditems>2</preloaditems>
-				<itemlayout width="310" height="486">
-					<control type="group">
-						<left>68</left>
-						<top>10</top>
-						<include content="InfoWallPicturesLayout">
-							<param name="focused" value="false" />
-						</include>
-					</control>
-				</itemlayout>
-				<focusedlayout width="310" height="486">
-					<control type="group">
-						<depth>DepthContentPopout</depth>
-						<left>68</left>
-						<top>10</top>
-						<animation type="Focus">
-							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="230,130" />
-						</animation>
-						<animation type="Unfocus">
-							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
-						</animation>
-						<include content="InfoWallPicturesLayout">
-							<param name="focused" value="true" />
-						</include>
-					</control>
-				</focusedlayout>
-				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]">$PARAM[content_path]</content>
-			</control>
-		</definition>
-	</include>
-	
-	
-	
-	<include name="InfoWallPicturesLayout">
-		<param name="focused">false</param>
-		<definition>
-			<control type="group">
-				
-				<control type="image">
-					<left>15</left>
-					<top>-10</top>
-					<width>290</width>
-					<height>400</height>
-					<texture>dialogs/dialog-bg-nobo.png</texture>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
-					<bordersize>20</bordersize>
-				</control>
-				<control type="image">
-					<left>15</left>
-					<top>-10</top>
-					<width>290</width>
-					<height>400</height>
-					<texture colordiffuse="button_focus">colors/grey.png</texture>
-					<bordersize>20</bordersize>
-					<visible>$PARAM[focused]</visible>
-					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-				</control>
-				<control type="textbox">
-					<left>40</left>
-					<top>244</top>
-					<width>242</width>
-					<height>120</height>
-					<font>font27</font>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
-				</control>
-				<control type="image">
-					<left>20</left>
-					<top>-5</top>
-					<width>280</width>
-					<height>390</height>
-					<texture background="true" fallback="defaultpicture.png">$INFO[ListItem.Thumb]</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<bordersize>20</bordersize>
-				</control>
-			</control>
-
-		</definition>
-	</include>
-	
-	
 	<include name="WidgetListEpisodes">
 		<param name="main_label">$INFO[ListItem.Title]</param>
 		<param name="sub_label">$INFO[ListItem.TVShowTitle]</param>
@@ -522,7 +658,7 @@
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
 				<visible>$PARAM[visible]</visible>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<!-- <visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible> -->
 				<itemlayout width="310" height="500">
 					<control type="group">
 						<left>70</left>
@@ -1186,7 +1322,7 @@
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
 		<onleft>9000</onleft>
-		<onright>noop</onright>
+		<!-- <onright>noop</onright> -->
 		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
 		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 		<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>

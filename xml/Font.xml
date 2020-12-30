@@ -60,6 +60,18 @@
 			<style>lighten</style>
 		</font>
 		<font>
+			<name>home30</name>
+			<filename>home.ttf</filename>
+			<size>30</size>
+			<style>uppercase</style>
+		</font>
+		<font>
+			<name>home40</name>
+			<filename>home.ttf</filename>
+			<size>40</size>
+			<style>uppercase</style>
+		</font>
+		<font>
 			<name>font45</name>
 			<filename>NotoSans-Regular.ttf</filename>
 			<size>45</size>

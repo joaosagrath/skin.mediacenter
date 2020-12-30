@@ -271,16 +271,16 @@
 					<width>272</width>
 					<height>270</height>
 					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
-					<aspectratio>scale</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<bordersize>20</bordersize>
 				</control>
 			</control>
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				<control type="image">
-					<left>11</left>
+					<left>15</left>
 					<top>-14</top>
-					<width>298</width>
+					<width>290</width>
 					<height>408</height>
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -294,7 +294,7 @@
 					<width>290</width>
 					<height>400</height>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
-					<aspectratio>scale</aspectratio>
+					<aspectratio>keep</aspectratio>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>

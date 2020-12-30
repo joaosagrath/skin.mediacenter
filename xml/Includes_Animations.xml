@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="Animation_WidgetSelector">
-		<animation type="Conditional" condition="[Control.HasFocus(4500001) | Control.HasFocus(4500002) | Control.HasFocus(4500003) | Control.HasFocus(4500004) | Control.HasFocus(4500005) | Control.HasFocus(4500006) | Control.HasFocus(4500007) | Control.HasFocus(5500001) | Control.HasFocus(5500002) | Control.HasFocus(5500003) | Control.HasFocus(5500004) | Control.HasFocus(5500005) | Control.HasFocus(5500006) | Control.HasFocus(5500007) | Control.HasFocus(5500008) | Control.HasFocus(6500001) | Control.HasFocus(6500002) | Control.HasFocus(6500003) | Control.HasFocus(6500004) | Control.HasFocus(6500005) | Control.HasFocus(6500006) | Control.HasFocus(6500007) | Control.HasFocus(7500001) | Control.HasFocus(7500002) | Control.HasFocus(7500003) | Control.HasFocus(7500004) | Control.HasFocus(7500005) | Control.HasFocus(7500006) | Control.HasFocus(7500007) | Control.HasFocus(8500001) | Control.HasFocus(8500002) | Control.HasFocus(8500003) | Control.HasFocus(8500004) | Control.HasFocus(8500005) | Control.HasFocus(8500006) | Control.HasFocus(8500007)]">
+		<animation type="Conditional" condition="[Control.HasFocus(4500001) | Control.HasFocus(4500002) | Control.HasFocus(4500003) | Control.HasFocus(4500004) | Control.HasFocus(4500005) | Control.HasFocus(4500006) | Control.HasFocus(4500007) | Control.HasFocus(4500008) | Control.HasFocus(4500009) | Control.HasFocus(4500010) | Control.HasFocus(5500001) | Control.HasFocus(5500002) | Control.HasFocus(5500003) | Control.HasFocus(5500004) | Control.HasFocus(5500005) | Control.HasFocus(5500006) | Control.HasFocus(5500007) | Control.HasFocus(5500008) | Control.HasFocus(5500009) | Control.HasFocus(5500010) | Control.HasFocus(6500001) | Control.HasFocus(6500002) | Control.HasFocus(6500003) | Control.HasFocus(6500004) | Control.HasFocus(6500005) | Control.HasFocus(6500006) | Control.HasFocus(6500007) | Control.HasFocus(6500008) | Control.HasFocus(6500009) | Control.HasFocus(6500010) | Control.HasFocus(7500001) | Control.HasFocus(7500002) | Control.HasFocus(7500003) | Control.HasFocus(7500004) | Control.HasFocus(7500005) | Control.HasFocus(7500006) | Control.HasFocus(7500007) | Control.HasFocus(7500008) | Control.HasFocus(7500009) | Control.HasFocus(7500010) | Control.HasFocus(8500001) | Control.HasFocus(8500002) | Control.HasFocus(8500003) | Control.HasFocus(8500004) | Control.HasFocus(8500005) | Control.HasFocus(8500006) | Control.HasFocus(8500007) | Control.HasFocus(8500008) | Control.HasFocus(8500009) | Control.HasFocus(8500010) | Control.HasFocus(11500001) | Control.HasFocus(11500002) | Control.HasFocus(11500003) |  Control.HasFocus(11500004) | Control.HasFocus(11500005) | Control.HasFocus(11500006) | Control.HasFocus(11500007) | Control.HasFocus(11500008) | Control.HasFocus(11500009) | Control.HasFocus(11500010) | Control.HasFocus(12500001) | Control.HasFocus(12500002) | Control.HasFocus(12500003) | Control.HasFocus(12500004) | Control.HasFocus(12500005) | Control.HasFocus(12500006) | Control.HasFocus(12500007) | Control.HasFocus(12500008) | Control.HasFocus(12500009) | Control.HasFocus(12500010) | Control.HasFocus(16500001) | Control.HasFocus(16500002) | Control.HasFocus(16500003) | Control.HasFocus(16500004) | Control.HasFocus(16500005) | Control.HasFocus(16500006) | Control.HasFocus(16500007) | Control.HasFocus(16500008) | Control.HasFocus(16500009) | Control.HasFocus(16500010)]">
 			<effect type="slide" start="0,0" end="0,-100" time="100" easing="inout" />
 		</animation>
 	</include>
-	
+	<include name="Visible_Bottom_Delayed">
+		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
+		<include content="Vis_FadeSlide_Bottom_Delayed" condition="!Skin.HasSetting(no_slide_animations)">
+			<param name="id" value="$PARAM[id]" />
+		</include>
+	</include>
+	<include name="Vis_FadeSlide_Bottom_Delayed">
+		<animation type="Conditional" condition="String.IsEqual(Container(9000).ListItem.Property(id),$PARAM[id])">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out" />
+			<effect type="slide" start="0,320" end="0" time="400" delay="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+			<effect type="slide" start="0" end="0,320" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
 
 
 	<include name="Animation_FocusTextureFade">
