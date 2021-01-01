@@ -40,10 +40,13 @@
 	
 	<!-- Sagrath -->	
 	<include name="Widget_Display_Top">
-		<visible>![Control.HasFocus(9001) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804)  | Control.HasFocus(5400) | Control.HasFocus(5500) | Control.HasFocus(5500568) | Control.HasFocus(5600) | Control.HasFocus(15100) | Control.HasFocus(15200) | Control.HasFocus(15300) | Control.HasFocus(15300568) | Control.HasFocus(5500001) | Control.HasFocus(5500002) | Control.HasFocus(5500003) | Control.HasFocus(5500004) | Control.HasFocus(5500005) | Control.HasFocus(5500006) | Control.HasFocus(5500007) | Control.HasFocus(5500008) | Control.HasFocus(5500009) | Control.HasFocus(5500010)]</visible>
+		<visible>[Control.HasFocus(9000) | ControlGroup(2000).HasFocus]</visible>
 	</include>
-	<include name="WidgetDisplay_Right">
-		<visible>![Control.HasFocus(9000) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(9400) | Control.HasFocus(9500) | Control.HasFocus(9500568) | Control.HasFocus(9600) | Control.HasFocus(9500001) | Control.HasFocus(9500002) | Control.HasFocus(9500003) | Control.HasFocus(9500004) | Control.HasFocus(9500005) | Control.HasFocus(9500006) | Control.HasFocus(9500007) | Control.HasFocus(9500008) | Control.HasFocus(9500009) | Control.HasFocus(9500010) | Control.HasFocus(20001) | Control.HasFocus(20000)]</visible>	
+	<include name="Widget_Display_Right">
+		<visible>[Control.HasFocus(9001) | ControlGroup(2001).HasFocus]</visible>
+	</include>
+	<include name="Widget_Display_Left">
+		<visible>[Control.HasFocus(9002) | ControlGroup(2002).HasFocus]</visible>
 	</include>
 	
 	<include name="CommonScrollbars">
