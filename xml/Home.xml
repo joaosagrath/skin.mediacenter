@@ -135,7 +135,7 @@
 					<include>Widget_Display_Top</include>
 					<!-- Jogos ID 8000 -->
 					<control type="group" id="8000">
-						<include>Animation_WidgetSelector_Top</include>
+						<include>Animation_WidgetSelector</include>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="games"/>
@@ -196,7 +196,7 @@
 							<param name="visible" value="!Skin.HasSetting(Games_Widgets_View)"/>
 						</include>
 						<!-- ID 4600 -->
-						<include content="ActivateWidget" condition="Integer.IsGreater(addons://sources/game/,0)">
+						<include content="ActivateWidget" condition="System.HasAddon(plugin.program.advanced.emulator.launcher) | System.HasAddon(plugin.program.iagl)">
 							<param name="onup" value="9500" />
 							<param name="ondown" value="20001" />
 							<param name="button_id" value="9600"/>
@@ -211,7 +211,7 @@
 					</control>			
 					<!-- Filmes ID 5000 -->
 					<control type="group" id="5000">
-						<include>Animation_WidgetSelector_Top</include>			
+						<include>Animation_WidgetSelector</include>			
 						<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="movies"/>
@@ -281,7 +281,7 @@
 					</control>
 					<!-- Seriados ID 6000 -->
 					<control type="group" id="6000">
-						<include>Animation_WidgetSelector_Top</include>
+						<include>Animation_WidgetSelector</include>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="tvshows"/>
@@ -347,7 +347,7 @@
 					</control>
 					<!-- Musicas ID 7000 -->
 					<control type="group" id="7000">
-						<include>Animation_WidgetSelector_Top</include>
+						<include>Animation_WidgetSelector</include>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="music"/>
@@ -414,7 +414,7 @@
 					</control>				
 					<!-- Imagens ID 4000 -->
 					<control type="group" id="4000">
-						<include>Animation_WidgetSelector_Top</include>
+						<include>Animation_WidgetSelector</include>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
 						<visible>!Control.HasFocus(9001)</visible>
 						<include content="Visible_Bottom_Delayed">
@@ -478,8 +478,7 @@
 				<control type="group"  id="2001">
 					<include>Widget_Display_Right</include>
 					<!-- Clima -->
-					<control type="group" id="15000">						
-						<include>Animation_WidgetSelector</include>						
+					<control type="group" id="15000">												
 						<visible>String.IsEqual(Container(9001).ListItem.Property(id),weather)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="weather"/>
@@ -585,7 +584,7 @@
 					</control>
 					<!-- Addons ID 16000 -->
 					<control type="group" id="16000">
-						<include>Animation_WidgetSelector_Right</include>
+						<include>Animation_WidgetSelector</include>	
 						<visible>String.IsEqual(Container(9001).ListItem.Property(id),addons)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="addons"/>
@@ -602,11 +601,9 @@
 								<param name="widget_target" value="$INFO[Skin.String(Addons_Type)]"/>
 								<param name="list_id" value="5400"/>
 								<param name="fallback_icon" value="DefaultAddon.png"/>
-								<param name="visible" value="Integer.IsGreater(Container(16100).NumItems,0) | Integer.IsGreater(Container(16200).NumItems,0) | Integer.IsGreater(Container(16300).NumItems,0) | Integer.IsGreater(Container(16400).NumItems,0) | Integer.IsGreater(Container(16500).NumItems,0) | Integer.IsGreater(Container(16700).NumItems,0)"/>
 							</include>
 						</control>
 						<include content="SelectWidget">
-							<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
 							<param name="onup" value="5400" />
 							<param name="ondown" value="noop" />
 							<param name="button_id" value="5500"/>
@@ -631,7 +628,6 @@
 							<param name="button7_label" value="$LOCALIZE[20244]" />
 							<param name="button7_onclick" value="Skin.SetString(Addons_Widgets,androidapp://sources/apps/)"/>
 							<param name="button7_onclick2" value="Skin.SetString(Addons_Type,programs)"/>
-							<!-- <param name="button10_label" value="$LOCALIZE[Limpar Widgets de Jogos]" /> -->
 							<param name="button10_label" value="Limpar Widgets de Addons" />
 							<param name="button10_onclick" value="Skin.SetString(Addons_Widgets,-)"/>
 							<param name="button10_onclick2" value="Skin.ToggleSetting(Addons_Widgets_View,off)"/>
@@ -663,7 +659,7 @@
 					</control>
 					<!-- Favoritos -->
 					<control type="group" id="14000">
-						<include>Animation_WidgetSelector_Top</include>
+						<include>Animation_WidgetSelector</include>
 						<visible>String.IsEqual(Container(9001).ListItem.Property(id),favorites)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="favorites"/>
@@ -721,7 +717,7 @@
 					</control>
 					<!-- Videos ID 11000 -->
 					<control type="group" id="11000">
-						<include>Animation_WidgetSelector_Right</include>
+						<include>Animation_WidgetSelector</include>
 						<visible>String.IsEqual(Container(9001).ListItem.Property(id),video)</visible>
 						<include content="Visible_Bottom_Delayed">
 							<param name="id" value="video"/>
@@ -960,23 +956,23 @@
 						<control type="grouplist" id="12001">
 							<top>500</top>
 							<onup>9000</onup>
-							<ondown>12500567</ondown>
+							<ondown>6500567</ondown>
 							<include>WidgetGroupListCommon</include>
-							<pagecontrol>12010</pagecontrol>
+							<pagecontrol>6010</pagecontrol>
 							<!-- <include content="WidgetListCategories" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(home_no_categories_widget)"> -->
 							<include content="WidgetListPoster">
 								<param name="content_path" value="$INFO[Skin.String(MusicVideos_Widgets)]"/>
 								<!-- <param name="widget_header" value="$LOCALIZE[31148]"/> -->
 								<param name="widget_target" value="videos"/>
-								<param name="list_id" value="12400"/>
+								<param name="list_id" value="6400"/>
 							</include>
 							<!-- <include content="WidgetListEpisodes" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(show_musicvideoposter)"> -->
 							<!-- <include content="WidgetListCategories" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(home_no_categories_widget)"> -->
 						</control>
 						<include content="SelectWidget">
 							<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
-							<param name="onup" value="12400" />
-							<param name="button_id" value="12500"/>
+							<param name="onup" value="6400" />
+							<param name="button_id" value="6500"/>
 							<param name="button_label" value="$LOCALIZE[31148]" />
 							<param name="button_onclick" value="Skin.SetString(MusicVideos_Widgets,library://video/musicvideos/)"/>
 
@@ -1004,11 +1000,11 @@
 						<!-- <include content="ImageWidget" condition="!Library.HasContent(musicvideos)"> -->
 						<include content="ImageWidget">
 							<param name="onup" value="9000" />
-							<param name="ondown" value="5510" />
+							<param name="ondown" value="6600" />
 							<param name="text_label" value="$LOCALIZE[31104]" />
 							<param name="button_label" value="$LOCALIZE[31110]" />
 							<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
-							<param name="button_id" value="12800"/>
+							<param name="button_id" value="6500"/>
 							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMusicVideoButton)"/>
 							<param name="button3_label" value="Ativar Widgets de Concertos" />
 							<param name="button3_onclick" value="Skin.SetString(MusicVideos_Widgets,library://video/musicvideos/)"/>
@@ -1016,9 +1012,9 @@
 							<param name="visible" value="!Skin.HasSetting(MusicVideos_Widgets_View)"/>
 						</include>
 						<include content="ActivateWidget">
-							<param name="onup" value="12800" />
+							<param name="onup" value="9002" />
 							<param name="ondown" value="20001" />
-							<param name="button_id" value="5510"/>
+							<param name="button_id" value="6600"/>
 							<param name="button_label" value="Ativar Widgets de Concertos" />
 							<param name="button_onclick" value="Skin.SetString(MusicVideos_Widgets,library://video/musicvideos/)"/>
 							<param name="button_onclick2" value="Skin.ToggleSetting(MusicVideos_Widgets_View,on)"/>
@@ -1047,6 +1043,81 @@
 							<param name="visible_3" value="System.HasMediaAudioCD"/>
 						</include>
 					</control>
+					<!-- Netflix ID 17000 -->
+					<control type="group" id="17000">
+						<include>Animation_WidgetSelector</include>
+						<visible>String.IsEqual(Container(9002).ListItem.Property(id),netflix)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="netflix"/>
+						</include>
+						<control type="grouplist" id="17001">
+							<top>500</top>
+							<onup>9000</onup>
+							<ondown>6500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>9010</pagecontrol>
+							<include content="WidgetListPoster">
+								<param name="content_path" value="$INFO[Skin.String(Netflix_Widgets)]"/>
+								<param name="widget_target" value="videos"/>
+								<param name="sortby" value="lastused"/>
+								<param name="sortorder" value="descending"/>
+								<param name="list_id" value="6400"/>
+								<param name="fallback_icon" value="DefaultAddonGame.png"/>
+							</include>
+						</control>
+						<!-- ID 4500 -->
+						<include content="SelectWidget">
+							<param name="onup" value="6400" />
+							<param name="button_id" value="6500"/>
+							<param name="button_label" value="Netflix" />
+							<param name="button_onclick" value="Skin.SetString(Netflix_Widgets,plugin.video.netflix)"/>
+							<param name="button2_label" value="Minha Lista"/>
+							<param name="button2_onclick" value="Skin.SetString(Netflix_Widgets,Netflix,plugin.video.netflix)"/>
+							<param name="button3_label" value="Top 10" />
+							<param name="button3_onclick" value="Skin.SetString(Netflix_Widgets,Netflix,plugin.video.netflix)"/>
+							<param name="button4_label" value="Netflix 2" />
+							<param name="button4_onclick" value="Skin.SetString(Netflix_Widgets,Netflix,plugin.video.netflix)"/>
+							<param name="button5_label" value="Netflix 3" />
+							<param name="button5_onclick" value="Skin.SetString(Netflix_Widgets,Netflix,plugin.video.netflix)"/>
+							<param name="button6_label" value="Netflix 4" />
+							<param name="button6_onclick" value="Skin.SetString(Netflix_Widgets,Netflix,plugin.video.netflix)"/>
+							<param name="button7_label" value="Netflix 5" />
+							<param name="button7_onclick" value="Skin.SetString(Netflix_Widgets,Netflix,plugin.video.netflix)"/>
+							<param name="button8_label" value="Netflix" />
+							<param name="button8_onclick" value="Skin.SetString(Netflix_Widgets,Netflix,plugin.video.netflix)"/>
+							<param name="button9_label" value="$LOCALIZE[31116]" />
+							<param name="button9_onclick" value="Skin.SetBool(HomeMenuNoNetflixButton)"/>
+							<param name="button10_label" value="Limpar Widgets de Netflix" />
+							<param name="button10_onclick" value="Skin.SetString(Netflix_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Netflix_Widgets_View,off)"/>
+							<param name="visible" value="Skin.HasSetting(Netflix_Widgets_View)"/>
+						</include>
+						<!-- ID 4500 -->
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="6600" />
+							<param name="text_label" value="$LOCALIZE[31162]" />
+							<param name="button_label" value="$LOCALIZE[31144]" />
+							<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/category.gameaddons,return)"/>
+							<param name="button_id" value="6500"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoNetflixButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Netflix_Widgets_View)"/>
+						</include>
+						<!-- ID 4600 -->
+						<include content="ActivateWidget" condition="System.HasAddon(plugin.video.netflix)">
+							<param name="onup" value="6500" />
+							<param name="ondown" value="20001" />
+							<param name="button_id" value="6600"/>
+							<param name="button_label" value="Ativar Widgets de Netflix" />
+							<param name="button_onclick" value="Skin.SetString(Netflix_Widgets,plugin://plugin.video.netflix/)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Netflix_Widgets_View,on)"/>
+							<param name="visible" value="!Skin.HasSetting(Netflix_Widgets_View)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="9010"/>
+						</include>
+					</control>			
+					
 				</control>
 			
 			</control>
@@ -1420,7 +1491,7 @@
 						<item>
 							<label>Netflix</label>
 							<property name="menu_id">$NUMBER[17000]</property>
-							<onclick>ActivateWindow(RadioChannels)</onclick>
+							<onclick>RunAddon(plugin.video.netflix)</onclick>
 							<thumb>icons/sidemenu/radio.png</thumb>
 							<property name="id">netflix</property>
 							<visible>!Skin.HasSetting(HomeMenuNoNetflixButton) + System.HasAddon(plugin.video.netflix)</visible>
