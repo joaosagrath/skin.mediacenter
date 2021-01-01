@@ -129,513 +129,656 @@
 					<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 				</animation>
 				<include>OpenClose_Right</include>
-				<!-- Imagens ID 4000 -->
-				<control type="group" id="4000">
-					<include>Animation_WidgetSelector</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="pictures"/>
-					</include>
-					<control type="grouplist" id="4001">
-						<top>500</top>
-						<onup>9000</onup>
-						<ondown>4500567</ondown>
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>4010</pagecontrol>
-						<include content="WidgetListPictures">
-							<param name="content_path" value="$INFO[Skin.String(Pictures_Widgets)]"/>
-							<param name="widget_target" value="pictures"/>
-							<param name="list_id" value="4400"/>
-							<param name="fallback_icon" value="DefaultMusicArtists.png"/>
-							<param name="visible" value="!String.IsEmpty(Skin.String(Pictures_Widgets))"/>
+				<!-- Widgets do Topo -->
+				<control type="group">
+					<include>Widget_Display_Top</include>
+					<!-- Jogos ID 8000 -->
+					<control type="group" id="8000">
+						<include>Animation_WidgetSelector_Top</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="games"/>
+						</include>
+						<control type="grouplist" id="4001">
+							<top>500</top>
+							<onup>9000</onup>
+							<ondown>9500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>9010</pagecontrol>
+							<include content="WidgetListPoster">
+								<param name="content_path" value="$INFO[Skin.String(Games_Widgets)]"/>
+								<param name="widget_target" value="games"/>
+								<param name="sortby" value="lastused"/>
+								<param name="sortorder" value="descending"/>
+								<param name="list_id" value="4400"/>
+								<param name="fallback_icon" value="DefaultAddonGame.png"/>
+							</include>
+						</control>
+						<!-- ID 4500 -->
+						<include content="SelectWidget">
+							<param name="onup" value="9400" />
+							<param name="button_id" value="9500"/>
+							<param name="button_label" value="$LOCALIZE[35049]" />
+							<param name="button_onclick" value="Skin.SetString(Games_Widgets,addons://sources/game/)"/>
+							<param name="button2_label" value="AEL - Categorias"/>
+							<param name="button2_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_CATEGORIES)"/>
+							<param name="button3_label" value="AEL - Launchers" />
+							<param name="button3_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_LAUNCHERS)"/>
+							<param name="button4_label" value="AEL - Coleções" />
+							<param name="button4_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS)"/>
+							<param name="button5_label" value="AEL - Roms" />
+							<param name="button5_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_ROMS)"/>
+							<param name="button6_label" value="AEL - Mais Jogadas" />
+							<param name="button6_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED)"/>
+							<param name="button_onclick2" value="Skin.SetString(Games_Widgets_View,on)"/>
+							<param name="button7_label" value="AEL - Roms Favoritas" />
+							<param name="button7_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES)"/>
+							<param name="button_onclick2" value="Skin.SetString(Games_Widgets_View,on)"/>
+							<param name="button8_label" value="$LOCALIZE[31116]" />
+							<param name="button8_onclick" value="Skin.SetBool(HomeMenuNoGamesButton)"/>
+							<param name="button9_label" value="X-RATED" />
+							<param name="button9_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?catID=root_category&amp;com=SHOW_ROMS&amp;launID=d175a3594a528bfa4eeaa3653ddf5255)"/>
+							<param name="button10_label" value="Limpar Widgets de Jogos" />
+							<param name="button10_onclick" value="Skin.SetString(Games_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Games_Widgets_View,off)"/>
+							<param name="visible" value="Skin.HasSetting(Games_Widgets_View)"/>
+						</include>
+						<!-- ID 4500 -->
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="9600" />
+							<param name="text_label" value="$LOCALIZE[31162]" />
+							<param name="button_label" value="$LOCALIZE[31144]" />
+							<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/category.gameaddons,return)"/>
+							<param name="button_id" value="9500"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoGamesButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Games_Widgets_View)"/>
+						</include>
+						<!-- ID 4600 -->
+						<include content="ActivateWidget" condition="Integer.IsGreater(addons://sources/game/,0)">
+							<param name="onup" value="9500" />
+							<param name="ondown" value="20001" />
+							<param name="button_id" value="9600"/>
+							<param name="button_label" value="Ativar Widgets de Jogos" />
+							<param name="button_onclick" value="Skin.SetString(Games_Widgets,addons://sources/game/)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Games_Widgets_View,on)"/>
+							<param name="visible" value="!Skin.HasSetting(Games_Widgets_View)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="9010"/>
+						</include>
+					</control>			
+					<!-- Filmes ID 5000 -->
+					<control type="group" id="5000">
+						<include>Animation_WidgetSelector_Top</include>			
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="movies"/>
+						</include>
+						<control type="grouplist" id="5001">
+							<top>500</top>
+							<onup>9000</onup>
+							<ondown>9500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>9010</pagecontrol>
+							<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+								<param name="content_path" value="$INFO[Skin.String(Movies_Widgets)]"/>
+								<param name="widget_target" value="videos"/>
+								<!-- <param name="sortby" value="title"/>
+								<param name="sortorder" value="ascending"/> -->
+								<param name="list_id" value="9400"/>
+							</include>
+						</control>
+						<!-- ID 4500 -->
+						<!-- <include content="SelectWidget" condition="Library.HasContent(movies)"> -->					
+						<include content="SelectWidget">
+							<param name="onup" value="9400" />
+							<param name="button_id" value="9500"/>
+							<param name="button_label" value="Filmes Por Titulos" />
+							<param name="button_onclick" value="Skin.SetString(Movies_Widgets,videodb://movies/titles)"/>				
+							<param name="button2_label" value="Filmes Aleatorios" />
+							<param name="button2_onclick" value="Skin.SetString(Movies_Widgets,special://skin/playlists/random_movies.xsp)"/>
+							<param name="button3_label" value="Filmes Adicionados Recentemente" />
+							<param name="button3_onclick" value="Skin.SetString(Movies_Widgets,special://skin/playlists/recent_unwatched_movies.xsp)"/>
+							<param name="button4_label" value="Filmes por Assistir" />
+							<param name="button4_onclick" value="Skin.SetString(Movies_Widgets,special://skin/playlists/unwatched_movies.xsp)"/>
+							<param name="button5_label" value="Coletanea de Filmes" />
+							<param name="button5_onclick" value="Skin.SetString(Movies_Widgets,videodb://movies/sets/)"/>
+							<param name="button6_label" value="Categoria de Filmes" />
+							<param name="button6_onclick" value="Skin.SetString(Movies_Widgets,library://video/movies/)"/>
+							<param name="button7_label" value="Remover Filmes do Menu Inicial" />
+							<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
+							<param name="button10_label" value="Limpar Widgets de Filmes" />
+							<param name="button10_onclick" value="Skin.SetString(Movies_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Movies_Widgets_View,off)"/>						
+							<param name="visible" value="Skin.HasSetting(Movies_Widgets_View)"/>
+						</include>
+						<!-- ID 4500 -->
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="9600" />
+							<param name="text_label" value="$LOCALIZE[31104]" />
+							<param name="button_label" value="$LOCALIZE[31110]" />
+							<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
+							<param name="button_id" value="9500"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Movies_Widgets_View)"/>
+						</include>
+						<!-- ID 4600 -->
+						<include content="ActivateWidget" condition="Library.HasContent(movies)">
+							<param name="onup" value="9500" />
+							<param name="ondown" value="20001" />
+							<param name="button_id" value="9600"/>
+							<param name="button_label" value="Ativar Widgets de Filmes" />
+							<param name="button_onclick" value="Skin.SetString(Movies_Widgets,library://video/movies/)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Movies_Widgets_View,on)"/>
+							<param name="visible" value="!Skin.HasSetting(Movies_Widgets_View)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="9010"/>
 						</include>
 					</control>
-					<include content="SelectWidget" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
-						<param name="onup" value="4400" />
-						<param name="button_id" value="4500"/>
-						<param name="button_label" value="Skin Girls" />
-						<param name="button_onclick" value="Skin.SetString(Pictures_Widgets,-)"/>
-						<param name="button_onclick2" value="Skin.SetPath(Pictures_Widgets)"/>
-						<!-- <param name="button2_label" value="$LOCALIZE[31006]" /> -->
-						<param name="button2_label" value="Modelos" />
-						<param name="button2_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Modelo&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
-						<param name="button3_label" value="Boobs Size" />
-						<param name="button3_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Bust+Size&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
-						<param name="button4_label" value="Pussy Style" />
-						<param name="button4_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Pussy+Style&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
-						<param name="button5_label" value="Site" />
-						<param name="button5_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Site&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
-						<param name="button6_label" value="Pasta" />
-						<param name="button6_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;folders&apos;&amp;folderid=&apos;1&apos;&amp;onlypics=&apos;non&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showfolder&apos;&amp;)"/>
-						<param name="button9_label" value="Remover Imagens do Menu Inicial" />
-						<param name="button9_onclick" value="Skin.SetBool(HomeMenuNoPicturesButton)"/>
-						<param name="button10_label" value="Limpar Ajustes de Widgets de Imagens" />
-						<param name="button10_onclick" value="Skin.SetString(Pictures_Widgets,-)"/>
-						<param name="button10_onclick2" value="Skin.ToggleSetting(Pictures_Widgets_View,off)"/>						
-						<param name="visible" value="Skin.HasSetting(Pictures_Widgets_View)"/>
-					</include>					
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="5510" />
-						<param name="text_label" value="$LOCALIZE[31104]" />
-						<param name="button_label" value="Ativar Widgets de Imagens" />
-						<param name="button_onclick" value="Skin.SetPath(Pictures_Widgets)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Pictures_Widgets_View,on)"/>
-						<param name="button_id" value="7600"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoPicturesButton)"/>
-						<param name="visible" value="!Skin.HasSetting(Pictures_Widgets_View)"/>
-					</include>	
-					<!-- <include content="ActivateWidget">
-						<param name="onup" value="7600" />
-						<param name="ondown" value="20001" />
-						<param name="button_id" value="5510"/>
-						<param name="button_label" value="Ativar Widgets de Imagens" />
-						<param name="button3_onclick" value="Skin.SetPath(Pictures_Widgets)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Pictures_Widgets_View,on)"/>
-						<param name="visible" value="!Skin.HasSetting(Pictures_Widgets_View)"/>
-					</include>	 -->				
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="7010"/>
-					</include>
+					<!-- Seriados ID 6000 -->
+					<control type="group" id="6000">
+						<include>Animation_WidgetSelector_Top</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="tvshows"/>
+						</include>
+						<control type="grouplist" id="6001">
+							<top>500</top>
+							<onup>9000</onup>
+							<ondown>9500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>9010</pagecontrol>
+							<include content="WidgetListPoster" condition="Library.HasContent(tvshows)">
+								<param name="content_path" value="$INFO[Skin.String(Series_Widgets)]"/>
+								<!-- <param name="widget_header" value="$LOCALIZE[31122]"/> -->
+								<param name="widget_target" value="videos"/>
+								<param name="list_id" value="9400"/>
+							</include>
+						</control>
+						<include content="SelectWidget" condition="Library.HasContent(tvshows)">
+							<param name="onup" value="9400" />
+							<param name="button_id" value="9500"/>
+							<param name="button_label" value="Seriados Não Vistos" />
+							<param name="button_onclick" value="Skin.SetString(Series_Widgets,special://skin/playlists/unwatched_tvshows.xsp)"/>
+							<param name="button2_label" value="Episódios Adicionados Recentemente"/>
+							<param name="button2_onclick" value="Skin.SetString(Series_Widgets,special://skin/playlists/recent_unwatched_episodes.xsp)"/>
+							<param name="button3_label" value="Generos" />
+							<param name="button3_onclick" value="Skin.SetString(Series_Widgets,videodb://tvshows/genres/)"/>
+							<param name="button4_label" value="Seriados em Andamento" />
+							<param name="button4_onclick" value="Skin.SetString(Series_Widgets,special://skin/playlists/unwatched_movies.xsp)"/>
+							<param name="button5_label" value="$LOCALIZE[20388]" />
+							<param name="button5_onclick" value="Skin.SetString(Series_Widgets,videodb://tvshows/studios/)"/>
+							<param name="button6_label" value="Categorias" />
+							<param name="button6_onclick" value="Skin.SetString(Series_Widgets,library://video/tvshows/)"/>
+							<param name="button7_label" value="Remover Seriados do Menu Inicial" />
+							<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoTVShowButton)"/>
+							<param name="visible" value="Skin.HasSetting(Series_Widgets_View)"/>
+							<param name="button10_label" value="Limpar Widgets de Seriados" />
+							<param name="button10_onclick" value="Skin.SetString(Series_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Series_Widgets_View,off)"/>
+						</include>
+						<!-- <include content="ImageWidget" condition="!Library.HasContent(tvshows)"> -->
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="9600" />
+							<param name="text_label" value="$LOCALIZE[31104]" />
+							<param name="button_label" value="$LOCALIZE[31110]" />
+							<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
+							<param name="button_id" value="9500"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoTVShowButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Series_Widgets_View)"/>						
+						</include>
+						<include content="ActivateWidget" condition="Library.HasContent(tvshows)">
+							<param name="onup" value="9500" />
+							<param name="ondown" value="20001" />
+							<param name="button_id" value="9600"/>
+							<param name="button_label" value="Ativar Widgets de Seriados" />
+							<param name="button_onclick" value="Skin.SetString(Series_Widgets,library://video/tvshows/)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Series_Widgets_View,on)"/>
+							<param name="visible" value="!Skin.HasSetting(Series_Widgets_View)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="9010"/>
+						</include>
+					</control>
+					<!-- Musicas ID 7000 -->
+					<control type="group" id="7000">
+						<include>Animation_WidgetSelector_Top</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="music"/>
+						</include>
+						<control type="grouplist" id="7001">
+							<top>500</top>
+							<onup>9000</onup>
+							<ondown>9500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>7010</pagecontrol>
+							<include content="WidgetListPoster" condition="Library.HasContent(music)">
+								<param name="content_path" value="$INFO[Skin.String(Music_Widgets)]"/>
+								<param name="widget_target" value="music"/>
+								<param name="list_id" value="9400"/>
+								<param name="fallback_icon" value="DefaultMusicArtists.png"/>
+							</include>
+						</control>
+						<include content="SelectWidget" condition="Library.HasContent(music)">
+							<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
+							<param name="onup" value="9400" />
+							<param name="button_id" value="9500"/>
+							<param name="button_label" value="$LOCALIZE[517]" />
+							<param name="button_onclick" value="Skin.SetString(Music_Widgets,musicdb://recentlyplayedalbums)"/>
+							<param name="button2_label" value="Albuns Randomicos"/>
+							<param name="button2_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/random_albums.xsp)"/>
+							<param name="button3_label" value="Artistas Randomicos" />
+							<param name="button3_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/random_artists.xsp)"/>
+							<param name="button4_label" value="Albuns por Ouvir" />
+							<param name="button4_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/unplayed_albums.xsp)"/>
+							<param name="button5_label" value="Albums mais Reproduzidos" />
+							<param name="button5_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/mostplayed_albums.xsp)"/>
+							<param name="button6_label" value="$LOCALIZE[31148]" />
+							<param name="button6_onclick" value="Skin.SetString(Music_Widgets,library://music/)"/>
+							<param name="button7_label" value="Remover Musicas do Menu Inicial" />
+							<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoMusicButton)"/>
+							<param name="button10_label" value="Limpar Widgets de Musicas" />
+							<param name="button10_onclick" value="Skin.SetString(Music_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Music_Widgets_View,off)"/>							
+							<param name="visible" value="Skin.HasSetting(Music_Widgets_View)"/>
+						</include>
+						<!-- <include content="ImageWidget" condition="!Library.HasContent(music)"> -->
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="9600" />
+							<param name="text_label" value="$LOCALIZE[31104]" />
+							<param name="button_label" value="$LOCALIZE[31110]" />
+							<param name="button_onclick" value="ActivateWindow(music,files)"/>
+							<param name="button_id" value="9500"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMusicButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Music_Widgets_View)"/>
+						</include>
+						<include content="ActivateWidget" condition="Library.HasContent(music)">
+							<param name="onup" value="9500" />
+							<param name="ondown" value="20001" />
+							<param name="button_id" value="9600"/>
+							<param name="button_label" value="Ativar Widgets de Musicas" />
+							<param name="button_onclick" value="Skin.SetString(Music_Widgets,library://music/)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Music_Widgets_View,on)"/>
+							<param name="visible" value="!Skin.HasSetting(Music_Widgets_View)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="9010"/>
+						</include>
+					</control>				
+					<!-- Imagens ID 4000 -->
+					<control type="group" id="4000">
+						<include>Animation_WidgetSelector_Top</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
+						<visible>!Control.HasFocus(9001)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="pictures"/>
+						</include>
+						<control type="grouplist" id="4001">
+							<top>500</top>
+							<onup>9000</onup>
+							<ondown>9500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>4010</pagecontrol>
+							<include content="WidgetListPictures">
+								<param name="content_path" value="$INFO[Skin.String(Pictures_Widgets)]"/>
+								<param name="widget_target" value="pictures"/>
+								<param name="list_id" value="9400"/>
+								<param name="fallback_icon" value="DefaultMusicArtists.png"/>
+								<param name="visible" value="!String.IsEmpty(Skin.String(Pictures_Widgets))"/>
+							</include>
+						</control>
+						<include content="SelectWidget" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
+							<param name="onup" value="9400" />
+							<param name="button_id" value="9500"/>
+							<param name="button_label" value="Skin Girls" />
+							<param name="button_onclick" value="Skin.SetString(Pictures_Widgets,-)"/>
+							<param name="button_onclick2" value="Skin.SetPath(Pictures_Widgets)"/>
+							<param name="button2_label" value="Modelos" />
+							<param name="button2_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Modelo&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
+							<param name="button3_label" value="Boobs Size" />
+							<param name="button3_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Bust+Size&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
+							<param name="button4_label" value="Pussy Style" />
+							<param name="button4_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Pussy+Style&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
+							<param name="button5_label" value="Site" />
+							<param name="button5_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Site&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
+							<param name="button6_label" value="Pasta" />
+							<param name="button6_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;folders&apos;&amp;folderid=&apos;1&apos;&amp;onlypics=&apos;non&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showfolder&apos;&amp;)"/>
+							<param name="button9_label" value="Remover Imagens do Menu Inicial" />
+							<param name="button9_onclick" value="Skin.SetBool(HomeMenuNoPicturesButton)"/>
+							<param name="button10_label" value="Limpar Ajustes de Widgets de Imagens" />
+							<param name="button10_onclick" value="Skin.SetString(Pictures_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Pictures_Widgets_View,off)"/>						
+							<param name="visible" value="Skin.HasSetting(Pictures_Widgets_View)"/>
+						</include>					
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="20001" />
+							<param name="text_label" value="$LOCALIZE[31104]" />
+							<param name="button_label" value="Ativar Widgets de Imagens" />
+							<param name="button_onclick" value="Skin.SetPath(Pictures_Widgets)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Pictures_Widgets_View,on)"/>
+							<param name="button_id" value="9500"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoPicturesButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Pictures_Widgets_View)"/>
+						</include>				
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="9010"/>
+						</include>
+					</control>
 				</control>
-				<!-- Filmes ID 5000 -->
-				<control type="group" id="5000">
-					<include>Animation_WidgetSelector</include>					
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="movies"/>
-					</include>
-					<control type="grouplist" id="5001">
-						<top>500</top>
-						<onup>9000</onup>
-						<ondown>5500567</ondown>
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>5010</pagecontrol>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="$INFO[Skin.String(Movies_Widgets)]"/>
-							<!-- <param name="widget_header" value="$INFO[ListItem.Label]"/> -->
-							<param name="widget_target" value="videos"/>
-							<!-- <param name="sortby" value="title"/>
-							<param name="sortorder" value="ascending"/> -->
-							<param name="list_id" value="5400"/>
+				
+				<!-- Widgets da Direita -->
+					<control type="group">
+					<include>WidgetDisplay_Right</include>
+					<!-- Clima -->
+					<control type="group" id="15000">						
+						<include>Animation_WidgetSelector</include>						
+						<visible>String.IsEqual(Container(9001).ListItem.Property(id),weather)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="weather"/>
+						</include>
+						<control type="grouplist" id="15001">
+							<include>WidgetGroupListCommon</include>
+							<onup>9001</onup>
+							<ondown>up</ondown>
+							<ondown>9001</ondown>
+							<top>50</top>
+							<pagecontrol>15010</pagecontrol>
+							<control type="group" id="16678">
+								<description>Weather info</description>
+								<left>68</left>
+								<right>70</right>
+								<top>450</top>
+								<height>300</height>
+								<visible>!String.IsEmpty(Weather.plugin)</visible>
+								<control type="image">
+									<bottom>90</bottom>
+									<width>100%</width>
+									<texture border="21">dialogs/dialog-bg.png</texture>
+								</control>
+								<control type="label">
+									<left>840</left>
+									<top>60</top>
+									<aligny>center</aligny>
+									<height>24</height>
+									<right>60</right>
+									<align>right</align>
+									<font>font30_title</font>
+									<label>$INFO[Weather.Location]</label>
+								</control>
+								<control type="label">
+									<left>840</left>
+									<top>120</top>
+									<aligny>center</aligny>
+									<height>24</height>
+									<right>60</right>
+									<align>right</align>
+									<font>font14</font>
+									<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
+								</control>
+								<control type="grouplist">
+									<top>50</top>
+									<left>50</left>
+									<right>20</right>
+									<orientation>horizontal</orientation>
+									<align>left</align>
+									<itemgap>-110</itemgap>
+									<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Current.Wind)" />
+										<param name="texture" value="icons/weather/wind.png" />
+										<param name="header" value="404" />
+									</include>
+									<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Current.Humidity)" />
+										<param name="texture" value="icons/weather/humidity.png" />
+										<param name="header" value="406" />
+									</include>
+									<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Current.Precipitation)" />
+										<param name="texture" value="icons/weather/rain.png" />
+										<param name="header" value="33021" />
+									</include>
+									<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Today.Sunrise)" />
+										<param name="texture" value="icons/weather/sunrise.png" />
+										<param name="header" value="405" />
+									</include>
+									<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Today.Sunset)" />
+										<param name="texture" value="icons/weather/sunset.png" />
+										<param name="header" value="403" />
+									</include>
+								</control>
+							</control>
+							<include content="WeatherWidget" condition="!String.IsEmpty(Weather.Plugin)">
+								<param name="content_include" value="DailyItems" />
+								<param name="list_id" value="15200" />
+								<param name="widget_header" value="$LOCALIZE[31019]"/>
+								<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
+							</include>
+							<include content="WeatherWidget" condition="!String.IsEmpty(Weather.Plugin)">
+								<param name="content_include" value="HourlyItems" />
+								<param name="list_id" value="15100" />
+								<param name="widget_header" value="$LOCALIZE[33036]"/>
+								<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
+							</include>
+						</control>
+						<include content="ImageWidget" condition="String.IsEmpty(Weather.plugin)">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="5600" />
+							<param name="text_label" value="$LOCALIZE[31120]" />
+							<param name="button_label" value="$LOCALIZE[31121]" />
+							<param name="button_onclick" value="ActivateWindow(servicesettings,weather)"/>
+							<param name="button_id" value="15300"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoWeatherButton)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="5610"/>
 						</include>
 					</control>
-					<!-- <include content="SelectWidget" condition="Library.HasContent(movies)"> -->
-					<include content="SelectWidget">
-						<!-- <param name="text_label" value="$LOCALIZE[31010]" /> -->
-						<param name="onup" value="5400" />
-						<param name="button_id" value="5500"/>
-						<!-- <param name="button_label" value="$LOCALIZE[31010]" /> -->
-						<param name="button_label" value="Filmes Por Titulos" />
-						<param name="button_onclick" value="Skin.SetString(Movies_Widgets,videodb://movies/titles)"/>				
-						<!-- <param name="button2_label" value="$LOCALIZE[31006]" /> -->
-						<param name="button2_label" value="Filmes Aleatorios" />
-						<param name="button2_onclick" value="Skin.SetString(Movies_Widgets,special://skin/playlists/random_movies.xsp)"/>
-						<!-- <param name="button3_label" value="$LOCALIZE[20386]" /> -->
-						<param name="button3_label" value="Filmes Adicionados Recentemente" />
-						<param name="button3_onclick" value="Skin.SetString(Movies_Widgets,special://skin/playlists/recent_unwatched_movies.xsp)"/>
-						<!-- <param name="button4_label" value="$LOCALIZE[31007]" /> -->
-						<param name="button4_label" value="Filmes por Assistir" />
-						<param name="button4_onclick" value="Skin.SetString(Movies_Widgets,special://skin/playlists/unwatched_movies.xsp)"/>
-						<!-- <param name="button5_label" value="$LOCALIZE[31075]" /> -->
-						<param name="button5_label" value="Coletanea de Filmes" />
-						<param name="button5_onclick" value="Skin.SetString(Movies_Widgets,videodb://movies/sets/)"/>
-						<!-- <param name="button6_label" value="$LOCALIZE[31148]" /> -->
-						<param name="button6_label" value="Categoria de Filmes" />
-						<param name="button6_onclick" value="Skin.SetString(Movies_Widgets,library://video/movies/)"/>
-						<!-- <param name="button7_label" value="$LOCALIZE[31116]" /> -->
-						<param name="button7_label" value="Remover Filmes do Menu Inicial" />
-						<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
-						<!-- <param name="button7_label" value="$LOCALIZE[Limpar Widgets de Filmes]" /> -->
-						<param name="button10_label" value="Limpar Widgets de Filmes" />
-						<param name="button10_onclick" value="Skin.SetString(Movies_Widgets,-)"/>
-						<param name="button10_onclick2" value="Skin.ToggleSetting(Movies_Widgets_View,off)"/>
-						
-						<param name="visible" value="Skin.HasSetting(Movies_Widgets_View)"/>
-					</include>
-					<!-- <include content="ImageWidget" condition="!Library.HasContent(movies)">  -->
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="5510" />
-						<param name="text_label" value="$LOCALIZE[31104]" />
-						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
-						<param name="button_id" value="5500"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
-						<param name="visible" value="!Skin.HasSetting(Movies_Widgets_View)"/>
-					</include>
-					<include content="ActivateWidget">
-						<param name="onup" value="5500" />
-						<param name="ondown" value="20001" />
-						<param name="button_id" value="5510"/>
-						<param name="button_label" value="Ativar Widgets de Filmes" />
-						<param name="button_onclick" value="Skin.SetString(Movies_Widgets,library://video/movies/)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Movies_Widgets_View,on)"/>
-						<param name="visible" value="!Skin.HasSetting(Movies_Widgets_View)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="5010"/>
-					</include>
+					<!-- Addons ID 16000 -->
+					<control type="group" id="16000">
+						<include>Animation_WidgetSelector_Right</include>
+						<visible>String.IsEqual(Container(9001).ListItem.Property(id),addons)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="addons"/>
+						</include>
+						<control type="grouplist" id="16001">
+							<top>500</top>
+							<onup>9001</onup>
+							<ondown>5500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>5010</pagecontrol>
+							<include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_categories_widget)" >
+								<param name="content_path" value="$INFO[Skin.String(Addons_Widgets)]"/>
+								<param name="widget_header" value="$LOCALIZE[31148]"/>
+								<param name="widget_target" value="$INFO[Skin.String(Addons_Type)]"/>
+								<param name="list_id" value="5400"/>
+								<param name="fallback_icon" value="DefaultAddon.png"/>
+								<param name="visible" value="Integer.IsGreater(Container(16100).NumItems,0) | Integer.IsGreater(Container(16200).NumItems,0) | Integer.IsGreater(Container(16300).NumItems,0) | Integer.IsGreater(Container(16400).NumItems,0) | Integer.IsGreater(Container(16500).NumItems,0) | Integer.IsGreater(Container(16700).NumItems,0)"/>
+							</include>
+						</control>
+						<include content="SelectWidget">
+							<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
+							<param name="onup" value="5400" />
+							<param name="ondown" value="noop" />
+							<param name="button_id" value="5500"/>
+							<param name="button_label" value="$LOCALIZE[31148]" />
+							<param name="button_onclick" value="Skin.SetString(Addons_Widgets,addons://)"/>
+							<param name="button_onclick2" value="Skin.SetString(Addons_Type,addonbrowser)"/>
+							<param name="button2_label" value="$LOCALIZE[1037]"/>
+							<param name="button2_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/video/)"/>
+							<param name="button2_onclick2" value="Skin.SetString(Addons_Type,videos)"/>						
+							<param name="button3_label" value="$LOCALIZE[1038]" />
+							<param name="button3_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/audio/)"/>
+							<param name="button3_onclick2" value="Skin.SetString(Addons_Type,music)"/>
+							<param name="button4_label" value="$LOCALIZE[35049]" />
+							<param name="button4_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/game/)"/>
+							<param name="button4_onclick2" value="Skin.SetString(Addons_Type,games)"/>
+							<param name="button5_label" value="$LOCALIZE[1043]" />
+							<param name="button5_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/executable/)"/>
+							<param name="button5_onclick2" value="Skin.SetString(Addons_Type,programs)"/>
+							<param name="button6_label" value="$LOCALIZE[1039]" />
+							<param name="button6_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/image/)"/>
+							<param name="button6_onclick2" value="Skin.SetString(Addons_Type,pictures)"/>
+							<param name="button7_label" value="$LOCALIZE[20244]" />
+							<param name="button7_onclick" value="Skin.SetString(Addons_Widgets,androidapp://sources/apps/)"/>
+							<param name="button7_onclick2" value="Skin.SetString(Addons_Type,programs)"/>
+							<!-- <param name="button10_label" value="$LOCALIZE[Limpar Widgets de Jogos]" /> -->
+							<param name="button10_label" value="Limpar Widgets de Addons" />
+							<param name="button10_onclick" value="Skin.SetString(Addons_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Addons_Widgets_View,off)"/>
+							<param name="visible" value="Skin.HasSetting(Addons_Widgets_View)"/>
+						</include>
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="5600" />
+							<param name="text_label" value="$LOCALIZE[31119]" />
+							<param name="button_label" value="$LOCALIZE[31118]" />
+							<param name="button_onclick" value="ActivateWindow(addonbrowser)"/>
+							<param name="button_id" value="5500"/>
+							<param name="visible" value="!Integer.IsGreater(Container(16001).NumItems,0)"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoProgramsButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Addons_Widgets_View)"/>
+						</include>
+						<include content="ActivateWidget">
+							<param name="onup" value="5500" />
+							<param name="ondown" value="9001" />
+							<param name="button_id" value="5600"/>
+							<param name="button_label" value="Ativar Widgets de Addons" />
+							<param name="button_onclick" value="Skin.SetString(Addons_Widgets,addons://)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Addons_Widgets_View,on)"/>
+							<param name="visible" value="!Skin.HasSetting(Addons_Widgets_View)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="5010"/>
+						</include>
+					</control>
+					<!-- Favoritos -->
+					<control type="group" id="14000">
+						<include>Animation_WidgetSelector_Top</include>
+						<visible>String.IsEqual(Container(9001).ListItem.Property(id),favorites)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="favorites"/>
+						</include>
+						<control type="panel" id="5400">
+							<top>500</top>
+							<left>65</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<onup>9001</onup>
+							<ondown>9001</ondown>
+							<preloaditems>2</preloaditems>
+							<scrolltime tween="cubic" easing="out">500</scrolltime>
+							<orientation>vertical</orientation>
+							<pagecontrol>14010</pagecontrol>
+							<visible>Integer.IsGreater(Container(5400).NumItems,0) | Container(5400).IsUpdating</visible>
+							<itemlayout width="330" height="401">
+								<control type="group">
+									<top>130</top>
+									<include content="InfoWallMusicLayout">
+										<param name="fallback_image" value="DefaultFavourites.png" />
+										<param name="focused" value="false" />
+									</include>
+								</control>
+							</itemlayout>
+							<focusedlayout width="330" height="401">
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<top>130</top>
+									<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="170,320">Focus</animation>
+									<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="170,320">UnFocus</animation>
+									<include content="InfoWallMusicLayout">
+										<param name="fallback_image" value="DefaultFavourites.png" />
+										<param name="focused" value="true" />
+									</include>
+								</control>
+							</focusedlayout>
+							<content>favourites://</content>
+						</control>
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="9001" />
+							<param name="text_label" value="$LOCALIZE[31025]" />
+							<param name="button_label" value="$LOCALIZE[31116]" />
+							<param name="button_onclick" value=""/>
+							<param name="button_id" value="5500"/>
+							<param name="visible" value="!Integer.IsGreater(Container(5400).NumItems,0) + !Container(5400).IsUpdating"/>
+							<param name="visible_1" value="false"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoFavButton)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="14010"/>
+						</include>
+					</control>
+					<!-- Videos ID 11000 -->
+					<control type="group" id="11000">
+						<include>Animation_WidgetSelector_Right</include>
+						<visible>String.IsEqual(Container(9001).ListItem.Property(id),video)</visible>
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="video"/>
+						</include>
+						<control type="grouplist" id="11001">
+							<top>500</top>
+							<onup>9001</onup>
+							<ondown>5500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>5010</pagecontrol>
+							<include content="WidgetListPoster">
+								<param name="content_path" value="$INFO[Skin.String(Videos_Widgets)]"/>
+								<!-- <param name="widget_header" value="$LOCALIZE[31148]"/> -->
+								<param name="widget_target" value="videos"/>
+								<param name="list_id" value="5400"/>
+							</include>
+						</control>
+						<include content="SelectWidget">
+							<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
+							<param name="onup" value="5400" />
+							<param name="button_id" value="5500"/>
+							<param name="button_label" value="$LOCALIZE[31148]" />
+							<param name="button_onclick" value="Skin.SetString(Videos_Widgets,library://video/)"/>
+							<param name="button2_label" value="$LOCALIZE[20094]"/>
+							<param name="button2_onclick" value="Skin.SetString(Videos_Widgets,sources://video/)"/>					
+							<param name="button3_label" value="$LOCALIZE[136]]" />
+							<param name="button3_onclick" value="Skin.SetString(Addons_Widgets,special://videoplaylists/)"/>
+							<param name="button10_label" value="Limpar Widgets de Videos" />
+							<param name="button10_onclick" value="Skin.SetString(Videos_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Videos_Widgets_View,off)"/>
+							<param name="visible" value="Skin.HasSetting(Videos_Widgets_View)"/>
+						</include>
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="5600" />
+							<param name="text_label" value="$LOCALIZE[31105]" />
+							<param name="button_label" value="$LOCALIZE[31110]" />
+							<param name="button_onclick" value="ActivateWindow(videos,root)"/>
+							<param name="button_id" value="5500"/>
+							<!-- <param name="visible" value="!Integer.IsGreater(Container(11001).NumItems,0)"/> -->
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoVideosButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Videos_Widgets_View)"/>
+						</include>
+						<include content="ActivateWidget">
+							<param name="onup" value="5500" />
+							<param name="ondown" value="9001" />
+							<param name="button_id" value="5600"/>
+							<param name="button_label" value="Ativar Widgets de Videos" />
+							<param name="button_onclick" value="Skin.SetString(Videos_Widgets,library://video/)"/>
+							<param name="button_onclick2" value="Skin.ToggleSetting(Videos_Widgets_View,on)"/>
+							<param name="visible" value="!Skin.HasSetting(Videos_Widgets_View)"/>
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="5010"/>
+						</include>
+					</control>
 				</control>
-				<!-- Seriados ID 6000 -->
-				<control type="group" id="6000">
-					<include>Animation_WidgetSelector</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="tvshows"/>
-					</include>
-					<control type="grouplist" id="6001">
-						<top>500</top>
-						<onup>9000</onup>
-						<ondown>6500567</ondown>
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>6010</pagecontrol>
-						<include content="WidgetListPoster" condition="Library.HasContent(tvshows)">
-							<param name="content_path" value="$INFO[Skin.String(Series_Widgets)]"/>
-							<!-- <param name="widget_header" value="$LOCALIZE[31122]"/> -->
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6400"/>
-						</include>
-					</control>
-					<include content="SelectWidget" condition="Library.HasContent(tvshows)">
-						<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
-						<param name="onup" value="6400" />
-						<param name="button_id" value="6500"/>
-						<!-- <param name="button_label" value="$LOCALIZE[31122]" /> -->
-						<param name="button_label" value="Seriados Não Vistos" />
-						<param name="button_onclick" value="Skin.SetString(Series_Widgets,special://skin/playlists/unwatched_tvshows.xsp)"/>				
-						<!-- <param name="button2_label" value="$LOCALIZE[20387]" /> -->
-						<param name="button2_label" value="Episódios Adicionados Recentemente"/>
-						<param name="button2_onclick" value="Skin.SetString(Series_Widgets,special://skin/playlists/recent_unwatched_episodes.xsp)"/>
-						<!-- <param name="button3_label" value="$LOCALIZE[135]" /> -->
-						<param name="button3_label" value="Generos" />
-						<param name="button3_onclick" value="Skin.SetString(Series_Widgets,videodb://tvshows/genres/)"/>
-						<!-- <param name="button4_label" value="$LOCALIZE[626]" /> -->
-						<param name="button4_label" value="Seriados em Andamento" />
-						<param name="button4_onclick" value="Skin.SetString(Series_Widgets,special://skin/playlists/unwatched_movies.xsp)"/>
-						<!-- <param name="button5_label" value="$LOCALIZE[20388]" /> -->
-						<param name="button5_label" value="$LOCALIZE[20388]" />
-						<param name="button5_onclick" value="Skin.SetString(Series_Widgets,videodb://tvshows/studios/)"/>
-						<!-- <param name="button6_label" value="$LOCALIZE[31148]" /> -->
-						<param name="button6_label" value="Categorias" />
-						<param name="button6_onclick" value="Skin.SetString(Series_Widgets,library://video/tvshows/)"/>
-						<!-- <param name="button7_label" value="$LOCALIZE[31116]" /> -->
-						<param name="button7_label" value="Remover Seriados do Menu Inicial" />
-						<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoTVShowButton)"/>
-						<param name="visible" value="Skin.HasSetting(Series_Widgets_View)"/>
-						
-						<!-- <param name="button10_label" value="$LOCALIZE[Limpar Widgets de Jogos]" /> -->
-						<param name="button10_label" value="Limpar Widgets de Seriados" />
-						<param name="button10_onclick" value="Skin.SetString(Series_Widgets,-)"/>
-						<param name="button10_onclick2" value="Skin.ToggleSetting(Series_Widgets_View,off)"/>
-					</include>
-					<!-- <include content="ImageWidget" condition="!Library.HasContent(tvshows)"> -->
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="6510" />
-						<param name="text_label" value="$LOCALIZE[31104]" />
-						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
-						<param name="button_id" value="6500"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoTVShowButton)"/>
-						<param name="visible" value="!Skin.HasSetting(Series_Widgets_View)"/>						
-					</include>
-					<include content="ActivateWidget" Condition="Library.HasContent(tvshows)">
-						<param name="onup" value="5500" />
-						<param name="ondown" value="20001" />
-						<param name="button_id" value="6510"/>
-						<param name="button_label" value="Ativar Widgets de Seriados" />
-						<param name="button_onclick" value="Skin.SetString(Series_Widgets,library://video/tvshows/)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Series_Widgets_View,on)"/>
-						<param name="visible" value="!Skin.HasSetting(Series_Widgets_View)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="6010"/>
-					</include>
-				</control>
-				<!-- Musicas ID 7000 -->
-				<control type="group" id="7000">
-					<include>Animation_WidgetSelector</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="music"/>
-					</include>
-					<control type="grouplist" id="7001">
-						<top>500</top>
-						<onup>9000</onup>
-						<ondown>7500567</ondown>
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>7010</pagecontrol>
-						<include content="WidgetListPoster" condition="Library.HasContent(music)">
-							<param name="content_path" value="$INFO[Skin.String(Music_Widgets)]"/>
-							<!-- <param name="widget_header" value="$LOCALIZE[31013]"/> -->
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7400"/>
-							<param name="fallback_icon" value="DefaultMusicArtists.png"/>
-						</include>
-						<!-- <include content="WidgetListCategories" condition="Library.HasContent(music) + !Skin.HasSetting(home_no_categories_widget)">
-							<param name="content_path" value="library://music/"/>
-							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7900"/>
-						</include>
-						<include content="WidgetListSquare" condition="Library.HasContent(music)">
-							<param name="content_path" value="musicdb://recentlyplayedalbums"/>
-							<param name="widget_header" value="$LOCALIZE[517]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7100"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-						<include content="WidgetListSquare" condition="Library.HasContent(music)">
-							<param name="content_path" value="musicdb://recentlyaddedalbums/"/>
-							<param name="widget_header" value="$LOCALIZE[359]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7200"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-						<include content="WidgetListSquare" condition="Library.HasContent(music)">
-							<param name="content_path" value="special://skin/playlists/random_albums.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31012]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7300"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-						<include content="WidgetListSquare" condition="Library.HasContent(music)">
-							<param name="content_path" value="special://skin/playlists/random_artists.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31013]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7400"/>
-							<param name="fallback_icon" value="DefaultMusicArtists.png"/>
-						</include>
-						<include content="WidgetListSquare" condition="Library.HasContent(music)">
-							<param name="content_path" value="special://skin/playlists/unplayed_albums.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31014]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7500"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-						</include>
-						<include content="WidgetListSquare" condition="Library.HasContent(music)">
-							<param name="content_path" value="special://skin/playlists/mostplayed_albums.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31011]"/>
-							<param name="widget_target" value="music"/>
-							<param name="list_id" value="7600"/>
-							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
-							<param name="sortby" value="playcount"/>
-							<param name="sortorder" value="descending"/>
-						</include> -->
-					</control>
-					<include content="SelectWidget" condition="Library.HasContent(music)">
-						<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
-						<param name="onup" value="7400" />
-						<param name="button_id" value="7500"/>
-						<!-- <param name="button_label" value="$LOCALIZE[517]" /> -->
-						<param name="button_label" value="$LOCALIZE[517]" />
-						<param name="button_onclick" value="Skin.SetString(Music_Widgets,musicdb://recentlyplayedalbums)"/>				
-						<!-- <param name="button2_label" value="$LOCALIZE[31012]" /> -->
-						<param name="button2_label" value="Albuns Randomicos"/>
-						<param name="button2_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/random_albums.xsp)"/>
-						<!-- <param name="button3_label" value="$LOCALIZE[31013]" /> -->
-						<param name="button3_label" value="Artistas Randomicos" />
-						<param name="button3_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/random_artists.xsp)"/>
-						<!-- <param name="button4_label" value="$LOCALIZE[31014]" /> -->
-						<param name="button4_label" value="Albuns por Ouvir" />
-						<param name="button4_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/unplayed_albums.xsp)"/>
-						<!-- <param name="button5_label" value="$LOCALIZE[31011]" /> -->
-						<param name="button5_label" value="Albums mais Reproduzidos" />
-						<param name="button5_onclick" value="Skin.SetString(Music_Widgets,special://skin/playlists/mostplayed_albums.xsp)"/>
-						<!-- <param name="button6_label" value="$LOCALIZE[31148]" /> -->
-						<param name="button6_label" value="$LOCALIZE[31148]" />
-						<param name="button6_onclick" value="Skin.SetString(Music_Widgets,library://music/)"/>
-						<!-- <param name="button7_label" value="$LOCALIZE[31116]" /> -->
-						<param name="button7_label" value="Remover Musicas do Menu Inicial" />
-						<param name="button7_onclick" value="Skin.SetBool(HomeMenuNoMusicButton)"/>
-
-						
-						<!-- <param name="button10_label" value="$LOCALIZE[Limpar Widgets de Jogos]" /> -->
-						<param name="button10_label" value="Limpar Widgets de Musicas" />
-						<param name="button10_onclick" value="Skin.SetString(Music_Widgets,-)"/>
-						<param name="button10_onclick2" value="Skin.ToggleSetting(Music_Widgets_View,off)"/>
-						
-						<param name="visible" value="Skin.HasSetting(Music_Widgets_View)"/>
-					</include>
-					<!-- <include content="ImageWidget" condition="!Library.HasContent(music)"> -->
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="6510" />
-						<param name="text_label" value="$LOCALIZE[31104]" />
-						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(music,files)"/>
-						<param name="button_id" value="7600"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMusicButton)"/>
-						<param name="visible" value="!Skin.HasSetting(Music_Widgets_View)"/>
-					</include>
-					<include content="ActivateWidget" Condition="Library.HasContent(music)">
-						<param name="onup" value="7600" />
-						<param name="ondown" value="20001" />
-						<param name="button_id" value="6510"/>
-						<param name="button_label" value="Ativar Widgets de Musicas" />
-						<param name="button_onclick" value="Skin.SetString(Music_Widgets,library://music/)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Music_Widgets_View,on)"/>
-						<param name="visible" value="!Skin.HasSetting(Music_Widgets_View)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="7010"/>
-					</include>
-				</control>
-				<!-- Jogos ID 8000 -->
-				<control type="group" id="8000">
-					<include>Animation_WidgetSelector</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="games"/>
-					</include>
-					<control type="grouplist" id="8001">
-						<top>500</top>
-						<onup>9000</onup>
-						<ondown>8500567</ondown>
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>8010</pagecontrol>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="$INFO[Skin.String(Games_Widgets)]"/>
-							<!-- <param name="widget_header" value="$INFO[ListItem.Label]"/> -->
-							<param name="widget_target" value="games"/>
-							<param name="sortby" value="lastused"/>
-							<param name="sortorder" value="descending"/>
-							<param name="list_id" value="8400"/>
-							<param name="fallback_icon" value="DefaultAddonGame.png"/>
-						</include>
-					</control>
-					<include content="SelectWidget">
-						<param name="onup" value="8400" />
-						<param name="button_id" value="8500"/>
-						
-						<!-- <param name="button_label" value="$LOCALIZE[35049]" /> -->
-						<param name="button_label" value="$LOCALIZE[35049]" />
-						<param name="button_onclick" value="Skin.SetString(Games_Widgets,addons://sources/game/)"/>
-						
-						<!-- <param name="button2_label" value="$LOCALIZE[AEL - Categorias]" /> -->
-						<param name="button2_label" value="AEL - Categorias"/>
-						<param name="button2_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_CATEGORIES)"/>
-						
-						<!-- <param name="button3_label" value="$LOCALIZE[AEL - Launchers]" /> -->
-						<param name="button3_label" value="AEL - Launchers" />
-						<param name="button3_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_LAUNCHERS)"/>
-						
-						<!-- <param name="button4_label" value="$LOCALIZE[AEL - Coleções]" /> -->
-						<param name="button4_label" value="AEL - Coleções" />
-						<param name="button4_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS)"/>
-						
-						<!-- <param name="button5_label" value="$LOCALIZE[AEL - Roms]" /> -->
-						<param name="button5_label" value="AEL - Roms" />
-						<param name="button5_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_ROMS)"/>
-						
-						<!-- <param name="button6_label" value="$LOCALIZE[AEL - Mais Jogadas]" /> -->
-						<param name="button6_label" value="AEL - Mais Jogadas" />
-						<param name="button6_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED)"/>
-						<param name="button_onclick2" value="Skin.SetString(Games_Widgets_View,on)"/>
-						
-						<!-- <param name="button7_label" value="$LOCALIZE[AEL - Roms Favoritas]" /> -->
-						<param name="button7_label" value="AEL - Roms Favoritas" />
-						<param name="button7_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES)"/>
-						<param name="button_onclick2" value="Skin.SetString(Games_Widgets_View,on)"/>
-						
-						<!-- <param name="button8_label" value="$LOCALIZE[31116]" /> -->
-						<param name="button8_label" value="$LOCALIZE[31116]" />
-						<param name="button8_onclick" value="Skin.SetBool(HomeMenuNoGamesButton)"/>
-						
-						<!-- <param name="button9_label" value="$LOCALIZE[X-RATED]" /> -->
-						<param name="button9_label" value="X-RATED" />
-						<param name="button9_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?catID=root_category&amp;com=SHOW_ROMS&amp;launID=d175a3594a528bfa4eeaa3653ddf5255)"/>
-						
-						<!-- <param name="button10_label" value="$LOCALIZE[Limpar Widgets de Jogos]" /> -->
-						<param name="button10_label" value="Limpar Widgets de Jogos" />
-						<param name="button10_onclick" value="Skin.SetString(Games_Widgets,-)"/>
-						<param name="button10_onclick2" value="Skin.ToggleSetting(Games_Widgets_View,off)"/>
-						<param name="visible" value="Skin.HasSetting(Games_Widgets_View)"/>
-					</include>
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="5510" />
-						<param name="text_label" value="$LOCALIZE[31162]" />
-						<param name="button_label" value="$LOCALIZE[31144]" />
-						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/category.gameaddons,return)"/>
-						<param name="button_id" value="8100"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoGamesButton)"/>
-						<param name="visible" value="!Skin.HasSetting(Games_Widgets_View)"/>
-					</include>
-					<include content="ActivateWidget">
-						<param name="onup" value="8100" />
-						<param name="ondown" value="20001" />
-						<param name="button_id" value="5510"/>
-						<param name="button_label" value="Ativar Widgets de Jogos" />
-						<param name="button_onclick" value="Skin.SetString(Games_Widgets,addons://sources/game/)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Games_Widgets_View,on)"/>
-						<param name="visible" value="!Skin.HasSetting(Games_Widgets_View)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="8010"/>
-					</include>
-				</control>				
-				<!-- Videos ID 11000 -->
-				<control type="group" id="11000">
-					<include>Animation_WidgetSelector</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),video)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="video"/>
-					</include>
-					<control type="grouplist" id="11001">
-						<top>500</top>
-						<onup>9000</onup>
-						<ondown>11500567</ondown>
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>11010</pagecontrol>
-						<include content="WidgetListPoster">
-							<param name="content_path" value="$INFO[Skin.String(Videos_Widgets)]"/>
-							<!-- <param name="widget_header" value="$LOCALIZE[31148]"/> -->
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="11400"/>
-						</include>
-					</control>
-					<include content="SelectWidget">
-						<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
-						<param name="onup" value="11400" />
-						<param name="button_id" value="11500"/>
-						<param name="button_label" value="$LOCALIZE[31148]" />
-						<param name="button_onclick" value="Skin.SetString(Videos_Widgets,library://video/)"/>
-						<param name="button2_label" value="$LOCALIZE[20094]"/>
-						<param name="button2_onclick" value="Skin.SetString(Videos_Widgets,sources://video/)"/>					
-						<param name="button3_label" value="$LOCALIZE[136]]" />
-						<param name="button3_onclick" value="Skin.SetString(Addons_Widgets,special://videoplaylists/)"/>
-						<!-- <param name="button10_label" value="$LOCALIZE[Limpar Widgets de Jogos]" /> -->
-						<param name="button10_label" value="Limpar Widgets de Videos" />
-						<param name="button10_onclick" value="Skin.SetString(Videos_Widgets,-)"/>
-						<param name="button10_onclick2" value="Skin.ToggleSetting(Videos_Widgets_View,off)"/>
-						<param name="visible" value="Skin.HasSetting(Videos_Widgets_View)"/>
-					</include>
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="5510" />
-						<param name="text_label" value="$LOCALIZE[31105]" />
-						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(videos,root)"/>
-						<param name="button_id" value="11300"/>
-						<!-- <param name="visible" value="!Integer.IsGreater(Container(11001).NumItems,0)"/> -->
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoVideosButton)"/>
-						<param name="visible" value="!Skin.HasSetting(Videos_Widgets_View)"/>
-					</include>
-					<include content="ActivateWidget">
-						<param name="onup" value="11300" />
-						<param name="ondown" value="20001" />
-						<param name="button_id" value="5510"/>
-						<param name="button_label" value="Ativar Widgets de Videos" />
-						<param name="button_onclick" value="Skin.SetString(Videos_Widgets,library://video/)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Videos_Widgets_View,on)"/>
-						<param name="visible" value="!Skin.HasSetting(Videos_Widgets_View)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="11010"/>
-					</include>
-				</control>
+				
 				<!-- PVR -->
 				<!-- <control type="group" id="12000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv)</visible>
@@ -803,245 +946,7 @@
 						<param name="scrollbar_id" value="13010"/>
 					</include>
 				</control> -->
-				<!-- Favoritos -->
-				<control type="group" id="14000">
-					<include>Animation_WidgetSelector</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),favorites)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="favorites"/>
-					</include>
-					<control type="panel" id="14100">
-						<top>500</top>
-						<left>65</left>
-						<top>0</top>
-						<right>0</right>
-						<bottom>0</bottom>
-						<onup>9000</onup>
-						<ondown>20001</ondown>
-						<preloaditems>2</preloaditems>
-						<scrolltime tween="cubic" easing="out">500</scrolltime>
-						<orientation>vertical</orientation>
-						<pagecontrol>14010</pagecontrol>
-						<visible>Integer.IsGreater(Container(14100).NumItems,0) | Container(14100).IsUpdating</visible>
-						<itemlayout width="330" height="401">
-							<control type="group">
-								<top>130</top>
-								<include content="InfoWallMusicLayout">
-									<param name="fallback_image" value="DefaultFavourites.png" />
-									<param name="focused" value="false" />
-								</include>
-							</control>
-						</itemlayout>
-						<focusedlayout width="330" height="401">
-							<control type="group">
-								<depth>DepthContentPopout</depth>
-								<top>130</top>
-								<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="170,320">Focus</animation>
-								<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="170,320">UnFocus</animation>
-								<include content="InfoWallMusicLayout">
-									<param name="fallback_image" value="DefaultFavourites.png" />
-									<param name="focused" value="true" />
-								</include>
-							</control>
-						</focusedlayout>
-						<content>favourites://</content>
-					</control>
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="20001" />
-						<param name="text_label" value="$LOCALIZE[31025]" />
-						<param name="button_label" value="$LOCALIZE[31116]" />
-						<param name="button_onclick" value=""/>
-						<param name="button_id" value="5500"/>
-						<param name="visible" value="!Integer.IsGreater(Container(14100).NumItems,0) + !Container(14100).IsUpdating"/>
-						<param name="visible_1" value="false"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoFavButton)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="14010"/>
-					</include>
-				</control>
-				<!-- Clima -->
-				<control type="group" id="15000">
-					<include>Animation_WidgetSelector2</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="weather"/>
-					</include>
-					<control type="grouplist" id="15001">
-						<include>WidgetGroupListCommon</include>
-						<top>50</top>
-						<onup>9000</onup>
-						<pagecontrol>15010</pagecontrol>
-						<control type="group" id="16678">
-							<description>Weather info</description>
-							<left>68</left>
-							<right>70</right>
-							<top>102</top>
-							<height>300</height>
-							<visible>!String.IsEmpty(Weather.plugin)</visible>
-							<control type="image">
-								<bottom>90</bottom>
-								<width>100%</width>
-								<texture border="21">dialogs/dialog-bg.png</texture>
-							</control>
-							<control type="label">
-								<left>840</left>
-								<top>60</top>
-								<aligny>center</aligny>
-								<height>24</height>
-								<right>60</right>
-								<align>right</align>
-								<font>font30_title</font>
-								<label>$INFO[Weather.Location]</label>
-							</control>
-							<control type="label">
-								<left>840</left>
-								<top>120</top>
-								<aligny>center</aligny>
-								<height>24</height>
-								<right>60</right>
-								<align>right</align>
-								<font>font14</font>
-								<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
-							</control>
-							<control type="grouplist">
-								<top>50</top>
-								<left>50</left>
-								<right>20</right>
-								<orientation>horizontal</orientation>
-								<align>left</align>
-								<itemgap>-110</itemgap>
-								<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-									<param name="label" value="Window(weather).Property(Current.Wind)" />
-									<param name="texture" value="icons/weather/wind.png" />
-									<param name="header" value="404" />
-								</include>
-								<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-									<param name="label" value="Window(weather).Property(Current.Humidity)" />
-									<param name="texture" value="icons/weather/humidity.png" />
-									<param name="header" value="406" />
-								</include>
-								<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-									<param name="label" value="Window(weather).Property(Current.Precipitation)" />
-									<param name="texture" value="icons/weather/rain.png" />
-									<param name="header" value="33021" />
-								</include>
-								<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-									<param name="label" value="Window(weather).Property(Today.Sunrise)" />
-									<param name="texture" value="icons/weather/sunrise.png" />
-									<param name="header" value="405" />
-								</include>
-								<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-									<param name="label" value="Window(weather).Property(Today.Sunset)" />
-									<param name="texture" value="icons/weather/sunset.png" />
-									<param name="header" value="403" />
-								</include>
-							</control>
-						</control>
-						<include content="WeatherWidget" condition="!String.IsEmpty(Weather.Plugin)">
-							<param name="content_include" value="DailyItems" />
-							<param name="list_id" value="15200" />
-							<param name="widget_header" value="$LOCALIZE[31019]"/>
-							<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
-						</include>
-						<include content="WeatherWidget" condition="!String.IsEmpty(Weather.Plugin)">
-							<param name="content_include" value="HourlyItems" />
-							<param name="list_id" value="15100" />
-							<param name="widget_header" value="$LOCALIZE[33036]"/>
-							<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
-						</include>
-					</control>
-					<include content="ImageWidget" condition="String.IsEmpty(Weather.plugin)">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="20001" />
-						<param name="text_label" value="$LOCALIZE[31120]" />
-						<param name="button_label" value="$LOCALIZE[31121]" />
-						<param name="button_onclick" value="ActivateWindow(servicesettings,weather)"/>
-						<param name="button_id" value="15300"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoWeatherButton)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="15010"/>
-					</include>
-				</control>
-				<!-- Addons ID 16000 -->
-				<control type="group" id="16000">
-					<include>Animation_WidgetSelector</include>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
-					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="addons"/>
-					</include>
-					<control type="grouplist" id="16001">
-						<top>500</top>
-						<onup>9000</onup>
-						<ondown>16500567</ondown>
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>16010</pagecontrol>
-						<include content="WidgetListPoster" condition="!Skin.HasSetting(home_no_categories_widget)" >
-							<param name="content_path" value="$INFO[Skin.String(Addons_Widgets)]"/>
-							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="$INFO[Skin.String(Addons_Type)]"/>
-							<param name="list_id" value="16400"/>
-							<param name="fallback_icon" value="DefaultAddon.png"/>
-							<param name="visible" value="Integer.IsGreater(Container(16100).NumItems,0) | Integer.IsGreater(Container(16200).NumItems,0) | Integer.IsGreater(Container(16300).NumItems,0) | Integer.IsGreater(Container(16400).NumItems,0) | Integer.IsGreater(Container(16500).NumItems,0) | Integer.IsGreater(Container(16700).NumItems,0)"/>
-						</include>
-					</control>
-					<include content="SelectWidget">
-						<!-- <param name="text_label" value="$INFO[Skin.String(Series_Widgets)]" /> -->
-						<param name="onup" value="16400" />
-						<param name="button_id" value="16500"/>
-						<param name="button_label" value="$LOCALIZE[31148]" />
-						<param name="button_onclick" value="Skin.SetString(Addons_Widgets,addons://)"/>
-						<param name="button_onclick2" value="Skin.SetString(Addons_Type,addonbrowser)"/>
-						<param name="button2_label" value="$LOCALIZE[1037]"/>
-						<param name="button2_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/video/)"/>
-						<param name="button2_onclick2" value="Skin.SetString(Addons_Type,videos)"/>						
-						<param name="button3_label" value="$LOCALIZE[1038]" />
-						<param name="button3_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/audio/)"/>
-						<param name="button3_onclick2" value="Skin.SetString(Addons_Type,music)"/>
-						<param name="button4_label" value="$LOCALIZE[35049]" />
-						<param name="button4_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/game/)"/>
-						<param name="button4_onclick2" value="Skin.SetString(Addons_Type,games)"/>
-						<param name="button5_label" value="$LOCALIZE[1043]" />
-						<param name="button5_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/executable/)"/>
-						<param name="button5_onclick2" value="Skin.SetString(Addons_Type,programs)"/>
-						<param name="button6_label" value="$LOCALIZE[1039]" />
-						<param name="button6_onclick" value="Skin.SetString(Addons_Widgets,addons://sources/image/)"/>
-						<param name="button6_onclick2" value="Skin.SetString(Addons_Type,pictures)"/>
-						<param name="button7_label" value="$LOCALIZE[20244]" />
-						<param name="button7_onclick" value="Skin.SetString(Addons_Widgets,androidapp://sources/apps/)"/>
-						<param name="button7_onclick2" value="Skin.SetString(Addons_Type,programs)"/>
-						<!-- <param name="button10_label" value="$LOCALIZE[Limpar Widgets de Jogos]" /> -->
-						<param name="button10_label" value="Limpar Widgets de Addons" />
-						<param name="button10_onclick" value="Skin.SetString(Addons_Widgets,-)"/>
-						<param name="button10_onclick2" value="Skin.ToggleSetting(Addons_Widgets_View,off)"/>
-						<param name="visible" value="Skin.HasSetting(Addons_Widgets_View)"/>
-					</include>
-					<include content="ImageWidget">
-						<param name="onup" value="9000" />
-						<param name="ondown" value="5510" />
-						<param name="text_label" value="$LOCALIZE[31119]" />
-						<param name="button_label" value="$LOCALIZE[31118]" />
-						<param name="button_onclick" value="ActivateWindow(addonbrowser)"/>
-						<param name="button_id" value="16600"/>
-						<param name="visible" value="!Integer.IsGreater(Container(16001).NumItems,0)"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoProgramsButton)"/>
-						<param name="visible" value="!Skin.HasSetting(Addons_Widgets_View)"/>
-					</include>
-					<include content="ActivateWidget">
-						<param name="onup" value="16600" />
-						<param name="ondown" value="20001" />
-						<param name="button_id" value="5510"/>
-						<param name="button_label" value="Ativar Widgets de Addons" />
-						<param name="button_onclick" value="Skin.SetString(Addons_Widgets,addons://)"/>
-						<param name="button_onclick2" value="Skin.ToggleSetting(Addons_Widgets_View,on)"/>
-						<param name="visible" value="!Skin.HasSetting(Addons_Widgets_View)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="16010"/>
-					</include>
-				</control>
+				
 				<!-- Concertos ID 12000-->
 				<control type="group" id="12000">
 					<include>Animation_WidgetSelector</include>
@@ -1146,9 +1051,12 @@
 			<!-- Grupo do Menu Principal -->
 			<control type="group">
 				<depth>DepthContentPanel</depth>
-				<include>OpenClose_Left</include>
 				<!-- Menu Principal -->
 				<control type="list" id="9000">
+					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
+					<!-- <animation effect="slide" start="0,0" end="0,-220" time="100" easing="inout">WindowClose</animation>
+					<animation effect="slide" start="0,-220" end="0,0" time="100" easing="inout">WindowOpen</animation> -->
 					<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804)">Conditional</animation>
 					<top>20</top>
 					<left>410</left>
@@ -1156,76 +1064,48 @@
 					<movement>7</movement>
 					<focusposition>2</focusposition>
 					<onfocus>ClearProperty(listposition,home)</onfocus>
-					<onright>9000</onright>
-					<onleft>9000</onleft>
+					<onright>9001</onright>
+					<onleft>9002</onleft>
 					<ondown>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</ondown>
 					<onup>700</onup>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<itemlayout height="95" width="384">
-						<!-- <control type="image">
-							<left>-3</left>
-							<top>1</top>
-							<width>95</width>
-							<height>95</height>
-							<texture colordiffuse="44FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
-						</control> -->
+					<itemlayout height="70" width="220">
 						<control type="label">
-							<left>104</left>
+							<left>0</left>
 							<top>0</top>
-							<height>95</height>
-							<width>384</width>
-							<aligny>center</aligny>
+							<height>70</height>
+							<width>220</width>
+							<align>center</align>
 							<font>Home40</font>
 							<label>$INFO[ListItem.Label]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 							<animation effect="fade" end="50" condition="true">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout height="95" width="384">
-						<!-- <control type="group">
-							<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>384</width>
-								<height>95</height>
-								<texture colordiffuse="button_focus">lists/focus.png</texture>
-								<animation effect="fade" start="100" end="0" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasActiveModalDialog">Conditional</animation>
-							</control>
-							<control type="image">
-								<left>-3</left>
-								<top>1</top>
-								<width>95</width>
-								<height>95</height>
-								<texture colordiffuse="button_focus">$INFO[ListItem.Art(thumb)]</texture>
-								<animation effect="fade" start="0" end="100" time="300" reversible="false">Focus</animation>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>95</width>
-								<height>95</height>
-								<texture colordiffuse="51FFFFFF">colors/black.png</texture>
-								<animation effect="fade" start="100" end="0" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasActiveModalDialog">Conditional</animation>
-							</control>
-						</control>
-						<control type="image">
-							<left>-3</left>
-							<top>1</top>
-							<width>95</width>
-							<height>95</height>
-							<texture>$INFO[ListItem.Art(thumb)]</texture>
-						</control> -->
+					<focusedlayout height="70" width="220">
 						<control type="label">
-							<left>104</left>
+							<left>0</left>
 							<top>0</top>
-							<height>95</height>
-							<width>384</width>
-							<aligny>center</aligny>
-							<font>Home40</font>
+							<height>70</height>
+							<width>220</width>
+							<align>center</align>
+							<font>home40</font>
 							<label>$INFO[ListItem.Label]</label>
 							<shadowcolor>text_shadow</shadowcolor>
+							<animation effect="fade" end="50" condition="true">Conditional</animation>
+							<visible>!Control.HasFocus(9000)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>70</height>
+							<width>220</width>
+							<align>center</align>
+							<font>home40</font>
+							<label>$INFO[ListItem.Label]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+							<visible>Control.HasFocus(9000)</visible>
 						</control>
 					</focusedlayout>
 					<content>
@@ -1277,7 +1157,113 @@
 							<thumb>icons/sidemenu/pictures.png</thumb>
 							<property name="id">pictures</property>
 							<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
-						</item>	
+						</item>
+					</content>
+				</control>
+				<!-- Menu Lateral Direito -->
+				<control type="list" id="9001">
+					<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804)">Conditional</animation>
+					<include>OpenClose_Right</include>
+					<right>-200</right>
+					<top>100</top>
+					<width>300</width>
+					<height>770</height>
+					<bottom>0</bottom>
+					<movement>0</movement>
+					<focusposition>0</focusposition>
+					<onright>9000</onright>
+					<onup>9000</onup>
+					<onleft>SetFocus($INFO[Container(9001).ListItem.Property(menu_id)])</onleft>
+					<orientation>vertical</orientation>
+					<itemlayout height="90" width="220">
+						<control type="label">
+							<left>100</left>
+							<top>10</top>
+							<height>70</height>
+							<width>220</width>
+							<aligny>center</aligny>
+							<align>left</align>
+							<font>home30</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+							<include>fademenu</include>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>90</width>
+							<height>90</height>
+							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+							<colordiffuse>FFFFFFFF</colordiffuse>
+							<include>fademenu</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="90" width="220">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>90</width>
+							<height>90</height>
+							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+							<colordiffuse>FFFFFFFF</colordiffuse>
+							<include>fademenu</include>
+							<visible>!Control.HasFocus(9001)</visible>
+						</control>
+						<control type="label">
+							<left>100</left>
+							<top>10</top>
+							<height>70</height>
+							<width>220</width>
+							<aligny>center</aligny>
+							<align>left</align>
+							<font>home30</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+							<include>fademenu</include>
+							<visible>!Control.HasFocus(9001)</visible>
+						</control>
+						<control type="group">
+							<animation type="Focus">	
+								<effect type="slide" start="0,0" end="-200,0" time="200" easing="inout" tween="cubic"/>
+							</animation>
+							<animation type="Unfocus">
+								<effect type="slide" start="-200,0" end="0,0" time="200" easing="inout" tween="cubic"/>
+							</animation>
+							<control type="image">
+								<left>0</left>
+								<top>0</top>
+								<width>90</width>
+								<height>90</height>
+								<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+								<colordiffuse>FFFFFFFF</colordiffuse>
+								<visible>Control.HasFocus(9001)</visible>
+							</control>
+							<control type="label">
+								<left>90</left>
+								<top>10</top>
+								<height>70</height>
+								<width>220</width>
+								<aligny>center</aligny>
+								<align>left</align>
+								<font>home30</font>
+								<label>$INFO[ListItem.Label]</label>
+								<shadowcolor>black</shadowcolor>
+								<textcolor>white</textcolor>
+								<visible>Control.HasFocus(9001)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<!-- Clima ID 15000 -->
+						<item>
+							<label>$LOCALIZE[8]</label>
+							<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+							<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
+							<property name="menu_id">$NUMBER[15000]</property>
+							<thumb>icons/sidemenu/weather.png</thumb>
+							<property name="id">weather</property>
+							<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
+						</item>
 						<!-- Addons ID 16000 -->
 						<item>
 							<label>$LOCALIZE[24001]</label>
@@ -1286,7 +1272,111 @@
 							<thumb>icons/sidemenu/addons.png</thumb>
 							<property name="id">addons</property>
 							<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
-						</item>	
+						</item>
+						<!-- Favoritos ID 14000 -->
+						<item>
+							<label>$LOCALIZE[10134]</label>
+							<onclick>ActivateWindow(favourites)</onclick>
+							<property name="menu_id">$NUMBER[14000]</property>
+							<thumb>icons/sidemenu/favourites.png</thumb>
+							<property name="id">favorites</property>
+							<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
+						</item>
+						<!-- Videos ID 11000 -->											
+						<item>
+							<label>$LOCALIZE[3]</label>
+							<onclick>ActivateWindow(Videos,root)</onclick>
+							<property name="menu_id">$NUMBER[11000]</property>
+							<thumb>icons/sidemenu/videos.png</thumb>
+							<property name="id">video</property>
+							<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+						</item>
+					</content>
+				</control>
+				<!-- Menu Lateral Esquerdo -->
+				<control type="list" id="9002">
+					<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804)">Conditional</animation>
+					<include>OpenClose_Left</include>
+					<top>100</top>
+					<left>-210</left>
+					<onleft>SetFocus($INFO[Container(9002).ListItem.Property(menu_id)])</onleft>
+					<onup>9000</onup>
+					<orientation>vertical</orientation>
+					<itemlayout height="90" width="220">
+					<control type="label">
+						<left>0</left>
+						<top>10</top>
+						<height>70</height>
+						<width>220</width>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>home30</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>white</textcolor>
+						<include>fademenu</include>
+					</control>
+					<control type="image">
+						<left>210</left>
+						<top>0</top>
+						<width>90</width>
+						<height>90</height>
+						<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+						<include>fademenu</include>
+					</control>
+				</itemlayout>
+					<focusedlayout height="90" width="220">
+						<control type="image">
+							<left>210</left>
+							<top>0</top>
+							<width>90</width>
+							<height>90</height>
+							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+							<colordiffuse>FFFFFFFF</colordiffuse>
+							<include>fademenu</include>
+							<visible>!Control.HasFocus(9002)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>10</top>
+							<height>70</height>
+							<width>220</width>
+							<aligny>center</aligny>
+							<align>left</align>
+							<font>home30</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+							<include>fademenu</include>
+							<visible>!Control.HasFocus(9002)</visible>
+						</control>
+						<control type="group">
+							<animation effect="slide" start="0,0" end="200,0" time="200" easing="inout" tween="cubic">Focus</animation>
+							<animation effect="slide" start="200,0" end="0,0" time="200" easing="inout" tween="cubic">UnFocus</animation>
+							<control type="image">
+								<left>210</left>
+								<top>0</top>
+								<width>90</width>
+								<height>90</height>
+								<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+								<colordiffuse>FFFFFFFF</colordiffuse>
+								<visible>Control.HasFocus(9002)</visible>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<top>10</top>
+								<height>70</height>
+								<width>220</width>
+								<aligny>center</aligny>
+								<align>right</align>
+								<font>home30</font>
+								<label>$INFO[ListItem.Label]</label>
+								<shadowcolor>black</shadowcolor>
+								<textcolor>white</textcolor>
+								<visible>Control.HasFocus(9002)</visible>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
 						<!-- Disco ID 21000 -->
 						<item>
 							<label>$LOCALIZE[427]</label>
@@ -1306,60 +1396,65 @@
 							<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
 						</item>
 						<!-- PVR ID 12000 -->
-						<!-- <item>
+						<item>
 							<label>$LOCALIZE[19020]</label>
 							<property name="menu_id">$NUMBER[12000]</property>
 							<onclick>ActivateWindow(TVChannels)</onclick>
 							<thumb>icons/sidemenu/livetv.png</thumb>
 							<property name="id">livetv</property>
 							<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
-						</item> -->
+						</item>
 						<!-- Radio ID 13000 -->
-						<!-- <item>
+						<item>
 							<label>$LOCALIZE[19021]</label>
 							<property name="menu_id">$NUMBER[13000]</property>
 							<onclick>ActivateWindow(RadioChannels)</onclick>
 							<thumb>icons/sidemenu/radio.png</thumb>
 							<property name="id">radio</property>
 							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
-						</item> -->
-						<!-- Videos ID 11000 -->											
-						<item>
-							<label>$LOCALIZE[3]</label>
-							<onclick>ActivateWindow(Videos,root)</onclick>
-							<property name="menu_id">$NUMBER[11000]</property>
-							<thumb>icons/sidemenu/videos.png</thumb>
-							<property name="id">video</property>
-							<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
 						</item>
-						<!-- Favoritos ID 14000 -->
+						<!-- Radio ID 13000 -->
 						<item>
-							<label>$LOCALIZE[10134]</label>
-							<onclick>ActivateWindow(favourites)</onclick>
-							<property name="menu_id">$NUMBER[14000]</property>
-							<thumb>icons/sidemenu/favourites.png</thumb>
-							<property name="id">favorites</property>
-							<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
+							<label>$LOCALIZE[19021]</label>
+							<property name="menu_id">$NUMBER[13000]</property>
+							<onclick>ActivateWindow(RadioChannels)</onclick>
+							<thumb>icons/sidemenu/radio.png</thumb>
+							<property name="id">radio</property>
+							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
 						</item>
-						<!-- Clima ID 15000 -->
+						<!-- Radio ID 13000 -->
 						<item>
-							<label>$LOCALIZE[8]</label>
-							<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
-							<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
-							<property name="menu_id">$NUMBER[15000]</property>
-							<thumb>icons/sidemenu/weather.png</thumb>
-							<property name="id">weather</property>
-							<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
+							<label>$LOCALIZE[19021]</label>
+							<property name="menu_id">$NUMBER[13000]</property>
+							<onclick>ActivateWindow(RadioChannels)</onclick>
+							<thumb>icons/sidemenu/radio.png</thumb>
+							<property name="id">radio</property>
+							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
+						</item>
+						<!-- Radio ID 13000 -->
+						<item>
+							<label>$LOCALIZE[19021]</label>
+							<property name="menu_id">$NUMBER[13000]</property>
+							<onclick>ActivateWindow(RadioChannels)</onclick>
+							<thumb>icons/sidemenu/radio.png</thumb>
+							<property name="id">radio</property>
+							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
 						</item>
 					</content>
 				</control>
+				
+				
+				
+				
 				<!-- Menu Desligamento/Sistema/Busca/Visualização -->
 				<control type="grouplist" id="700">
-					<animation effect="slide" start="0,0" end="0,100" time="100" easing="inout" condition="True">Focus</animation>
+					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
+					<animation effect="slide" start="0,0" end="0,100" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804)]">Conditional</animation>
 					<orientation>horizontal</orientation>
 					<itemgap>0</itemgap>
-					<left>-8</left>
-					<width>480</width>
+					<left>410</left>
+					<width>1100</width>
 					<height>110</height>
 					<top>-100</top>
 					<onup>SetFocus(9000)</onup>
@@ -1392,9 +1487,152 @@
 						<param name="visible" value="Player.HasMedia" />
 					</include>
 				</control>
-			</control>
+			</control>			
 			<include>BottomBar</include>
+			
+			<!-- System Info -->			
 			<control type="group">
+				<visible>[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804)]</visible>
+				<control type="group">
+				<top>800</top>
+				<left>40</left>
+				<height>370</height>
+				<animation effect="slide" start="0,0" end="0,250" time="100" easing="inout">WindowClose</animation>
+				<animation effect="slide" start="0,250" end="0,0" time="100" easing="inout">WindowOpen</animation>
+				<control type="image">
+					<left>150</left>
+					<top>30</top>
+					<right>150</right>
+					<height>3</height>
+					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+				</control>
+				<control type="grouplist">
+					<left>150</left>
+					<orientation>vertical</orientation>
+					<control type="label">
+						<description>Memory Text</description>
+						<width>auto</width>
+						<height>80</height>
+						<label>$LOCALIZE[31030]: $INFO[system.memory(used)] [B]/[/B] $INFO[system.memory(total)] [B]-[/B] $INFO[system.memory(used.percent)]</label>
+						<aligny>top</aligny>
+						<textoffsety>40</textoffsety>
+						<shadowcolor>black</shadowcolor>
+						<font>font12</font>
+					</control>
+					<control type="progress">
+						<description>Memory BAR</description>
+						<width>730</width>
+						<height>16</height>
+						<info>system.memory(used)</info>
+					</control>
+					<control type="label">
+						<description>CPU Text</description>
+						<width>auto</width>
+						<height>40</height>
+						<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+						<aligny>center</aligny>
+						<shadowcolor>black</shadowcolor>
+						<font>font12</font>
+						<visible>System.SupportsCPUUsage</visible>
+					</control>
+					<control type="progress">
+						<description>CPU BAR</description>
+						<width>730</width>
+						<height>16</height>
+						<info>System.CPUUsage</info>
+						<visible>System.SupportsCPUUsage</visible>
+					</control>
+				</control>
+				<control type="group">
+					<animation effect="slide" end="0,-55" time="0" condition="!System.SupportsCPUUsage">Conditional</animation>
+					<control type="label">
+						<top>30</top>
+						<left>960</left>
+						<width>auto</width>
+						<height>50</height>
+						<aligny>bottom</aligny>
+						<textoffsety>10</textoffsety>
+						<label>$LOCALIZE[31031]:</label>
+						<shadowcolor>black</shadowcolor>
+						<font>font25_title</font>
+					</control>
+					<control type="grouplist">
+						<description>Kodi build version</description>
+						<itemgap>10</itemgap>
+						<top>80</top>
+						<left>960</left>
+						<width>820</width>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<description>Build label</description>
+							<width>auto</width>
+							<height>40</height>
+							<font>font12</font>
+							<label>$LOCALIZE[144]</label>
+							<shadowcolor>black</shadowcolor>
+						</control>
+						<control type="label">
+							<description>Kodi Build Version</description>
+							<width>auto</width>
+							<height>40</height>
+							<font>font12</font>
+							<label>$INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode, (,)]</label>
+							<textcolor>button_focus</textcolor>
+							<shadowcolor>black</shadowcolor>
+						</control>
+					</control>
+					<control type="grouplist">
+						<description>Git version</description>
+						<itemgap>10</itemgap>
+						<top>120</top>
+						<left>960</left>
+						<width>820</width>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<description>Git label</description>
+							<width>auto</width>
+							<height>40</height>
+							<font>font12</font>
+							<label>Git:</label>
+							<shadowcolor>black</shadowcolor>
+						</control>
+						<control type="label">
+							<description>Git version</description>
+							<width>auto</width>
+							<height>40</height>
+							<font>font12</font>
+							<label>$INFO[System.BuildVersionGit]</label>
+							<textcolor>button_focus</textcolor>
+							<shadowcolor>black</shadowcolor>
+						</control>
+					</control>
+					<control type="grouplist">
+						<description>Build date</description>
+						<itemgap>10</itemgap>
+						<top>160</top>
+						<left>960</left>
+						<width>820</width>
+						<orientation>horizontal</orientation>
+						<control type="label">
+							<description>kodi Compiled Text</description>
+							<width>auto</width>
+							<height>40</height>
+							<font>font12</font>
+							<label>$LOCALIZE[174]</label>
+							<shadowcolor>black</shadowcolor>
+						</control>
+						<control type="label" id="53">
+							<description>Kodi Build Date</description>
+							<width>auto</width>
+							<height>40</height>
+							<font>font12</font>
+							<textcolor>button_focus</textcolor>
+							<shadowcolor>black</shadowcolor>
+						</control>
+					</control>
+				</control>
+			</control>
+				<control type="group">
 				<depth>DepthBars</depth>
 				<bottom>0</bottom>
 				<height>70</height>
@@ -1421,6 +1659,8 @@
 					<animation effect="fade" time="300">VisibleChange</animation>
 				</control>
 			</control>
+			</control>
+			
 			<!-- <control type="group">
 				<depth>DepthBars</depth>
 				<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>

@@ -7,6 +7,7 @@
 	<include file="Includes_Buttons.xml" />
 	<include file="Includes_DialogSelect.xml" />
 	<include file="Includes_MusicInfo.xml" />
+	<include file="Includes_Models.xml" />
 	<include file="Includes_PVR.xml" />
 	<include file="View_50_List.xml" />
 	<include file="View_51_Poster.xml" />
@@ -36,6 +37,15 @@
 	<constant name="list_item_height">80</constant>
 	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-embuary-video.xml) | Window.IsVisible(script-embuary-person.xml) | Window.IsVisible(script-embuary-image.xml)</expression>
 	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
+	
+	<!-- Sagrath -->	
+	<include name="Widget_Display_Top">
+		<visible>![Control.HasFocus(9001) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804)  | Control.HasFocus(5400) | Control.HasFocus(5500) | Control.HasFocus(5500568) | Control.HasFocus(5600) | Control.HasFocus(15100) | Control.HasFocus(15200) | Control.HasFocus(15300) | Control.HasFocus(15300568) | Control.HasFocus(5500001) | Control.HasFocus(5500002) | Control.HasFocus(5500003) | Control.HasFocus(5500004) | Control.HasFocus(5500005) | Control.HasFocus(5500006) | Control.HasFocus(5500007) | Control.HasFocus(5500008) | Control.HasFocus(5500009) | Control.HasFocus(5500010)]</visible>
+	</include>
+	<include name="WidgetDisplay_Right">
+		<visible>![Control.HasFocus(9000) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(9400) | Control.HasFocus(9500) | Control.HasFocus(9500568) | Control.HasFocus(9600) | Control.HasFocus(9500001) | Control.HasFocus(9500002) | Control.HasFocus(9500003) | Control.HasFocus(9500004) | Control.HasFocus(9500005) | Control.HasFocus(9500006) | Control.HasFocus(9500007) | Control.HasFocus(9500008) | Control.HasFocus(9500009) | Control.HasFocus(9500010) | Control.HasFocus(20001) | Control.HasFocus(20000)]</visible>	
+	</include>
+	
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>

@@ -2,9 +2,13 @@
 <window>
 	<onload>Skin.Reset(firstload)</onload>
 	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,7)</onload>
-	<!-- <onload condition="String.IsEmpty(Skin.String(Movies_Widgets))">Skin.SetString(Movies_Widgets,library://video/movies/)</onload>
-	<onload condition="String.IsEmpty(Skin.String(Series_Widgets))">Skin.SetString(Series_Widgets,library://video/tvshows/)</onload>
-	<onload condition="String.IsEmpty(Skin.String(Music_Widgets))">Skin.SetString(Music_Widgets,library://music/)</onload> -->
+	<onload condition="String.IsEmpty(Games_Widgets_View))">Skin.ToggleSetting(Games_Widgets_View,off)</onload>
+	<onload condition="String.IsEmpty(Movies_Widgets_View))">Skin.ToggleSetting(Movies_Widgets_View,off)</onload>
+	<onload condition="String.IsEmpty(Series_Widgets_View))">Skin.ToggleSetting(Series_Widgets_View,off)</onload>
+	<onload condition="String.IsEmpty(Music_Widgets_View))">Skin.ToggleSetting(Music_Widgets_View,off)</onload>
+	<onload condition="String.IsEmpty(Pictures_Widgets_View))">Skin.ToggleSetting(Pictures_Widgets_View,off)</onload>
+	<onload condition="String.IsEmpty(Addons_Widgets_View))">Skin.ToggleSetting(Addons_Widgets_View,off)</onload>
+	<onload condition="String.IsEmpty(Videos_Widgets_View))">Skin.ToggleSetting(Videos_Widgets_View,off)</onload>
 	<onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
 	<controls />
 </window>

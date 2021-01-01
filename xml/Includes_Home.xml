@@ -8,7 +8,7 @@
 			<control type="group" id="$PARAM[button_id]889">
 				<visible>$PARAM[visible]</visible>
 				<control type="grouplist" id="$PARAM[button_id]577">
-					<orientation>vertical</orientation>
+					<orientation>vertical</orientation>					
 					<top>650</top>
 					<height>400</height>
 					<left>50</left>
@@ -92,6 +92,7 @@
 							<onclick>$PARAM[button_onclick]</onclick>
 							<onclick>$PARAM[button_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -105,6 +106,7 @@
 							<onclick>$PARAM[button2_onclick]</onclick>
 							<onclick>$PARAM[button2_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -118,6 +120,7 @@
 							<onclick>$PARAM[button3_onclick]</onclick>
 							<onclick>$PARAM[button3_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -131,6 +134,7 @@
 							<onclick>$PARAM[button4_onclick]</onclick>
 							<onclick>$PARAM[button4_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -144,6 +148,7 @@
 							<onclick>$PARAM[button5_onclick]</onclick>
 							<onclick>$PARAM[button5_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -156,7 +161,8 @@
 							<textoffsetx>40</textoffsetx>
 							<onclick>$PARAM[button6_onclick]</onclick>
 							<onclick>$PARAM[button6_onclick2]</onclick>
-							<onup>$PARAM[onup]</onup>							
+							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -170,6 +176,7 @@
 							<onclick>$PARAM[button7_onclick]</onclick>
 							<onclick>$PARAM[button7_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -183,6 +190,7 @@
 							<onclick>$PARAM[button8_onclick]</onclick>
 							<onclick>$PARAM[button8_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -196,6 +204,7 @@
 							<onclick>$PARAM[button9_onclick]</onclick>
 							<onclick>$PARAM[button9_onclick2]</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -211,6 +220,7 @@
 							<onclick>$PARAM[button10_onclick2]</onclick>
 							<onclick>SetFocus(9000)</onclick>
 							<onup>$PARAM[onup]</onup>
+							<ondown>$PARAM[ondown]</ondown>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
@@ -309,6 +319,7 @@
 			</control>
 		</definition>
 	</include>
+	
 	<!-- Girls Database -->
 	<variable name="picposter">
 		<!-- Revistas -->
@@ -382,8 +393,8 @@ Performances: Solo And Masturbation</value>
 		<height>100%</height>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<itemgap>-160</itemgap>
-		<onup>20000</onup>
-		<ondown>20001</ondown>
+		<!-- <onup>20000</onup>
+		<ondown>20001</ondown> -->
 		<usecontrolcoords>true</usecontrolcoords>
 	</include>
 	<include name="CategoryLabel">
@@ -1321,8 +1332,10 @@ Performances: Solo And Masturbation</value>
 	<include name="WidgetListCommon">
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
-		<onleft>9000</onleft>
-		<!-- <onright>noop</onright> -->
+		<onleft>up</onleft>
+		<onleft>9001</onleft>
+		<onright>up</onright>
+		<onright>9001</onright>		
 		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
 		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 		<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
