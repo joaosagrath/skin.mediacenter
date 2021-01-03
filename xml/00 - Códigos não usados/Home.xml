@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+<!-- Linha 184 -->
+							<param name="button4_label" value="AEL - Coleções" />
+							<param name="button4_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_COLLECTIONS)"/>
+							<param name="button5_label" value="AEL - Roms" />
+							<param name="button5_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_ROMS)"/>
+							<param name="button6_label" value="AEL - Mais Jogadas" />
+							<param name="button6_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED)"/>
+							<param name="button_onclick2" value="Skin.SetString(Games_Widgets_View,on)"/>
+							<param name="button7_label" value="AEL - Roms Favoritas" />
+							<param name="button7_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES)"/>
+							<param name="button_onclick2" value="Skin.SetString(Games_Widgets_View,on)"/>
+							<param name="button8_label" value="$LOCALIZE[31116]" />
+							<param name="button8_onclick" value="Skin.SetBool(HomeMenuNoGamesButton)"/>
+							<param name="button9_label" value="X-RATED" />
+							<param name="button9_onclick" value="Skin.SetString(Games_Widgets,plugin://plugin.program.advanced.emulator.launcher/?catID=root_category&amp;com=SHOW_ROMS&amp;launID=d175a3594a528bfa4eeaa3653ddf5255)"/>
+							<param name="button10_label" value="Limpar Widgets de Jogos" />
+							<param name="button10_onclick" value="Skin.SetString(Games_Widgets,-)"/>
+							<param name="button10_onclick2" value="Skin.ToggleSetting(Games_Widgets_View,off)"/>
+							<param name="visible" value="Skin.HasSetting(Games_Widgets_View)"/>
+<!-- Linha 186 -->
+						<!-- ID 4500 -->
+						<include content="ImageWidget">
+							<param name="onup" value="9000" />
+							<param name="ondown" value="9600" />
+							<param name="text_label" value="$LOCALIZE[31162]" />
+							<param name="button_label" value="$LOCALIZE[31144]" />
+							<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/category.gameaddons,return)"/>
+							<param name="button_id" value="9500"/>
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoGamesButton)"/>
+							<param name="visible" value="!Skin.HasSetting(Games_Widgets_View)"/>
+						</include>
+<!-- Linha 524 -->
+<!-- Imagens -->
+				<control type="group" id="2000">
+					<visible>Skin.HasSetting(Skin_Shortcuts_Setting)</visible>
+					<include>Widget_Display_Top</include>
+					<control type="group" id="1">
+						<include>Animation_WidgetSelector</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(defaultID),pictures)</visible>
+						
+						<include content="Visible_Bottom_Delayed">
+							<param name="id" value="pictures"/>
+						</include>
+						<control type="grouplist" id="11">
+							<top>500</top>
+							<onup>9000</onup>
+							<ondown>9500567</ondown>
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>4010</pagecontrol>
+							<include content="WidgetListPictures">
+								<param name="content_path" value="$INFO[ListItem.Property(widgetPath)]"/>
+								<param name="widget_target" value="pictures"/>
+								<param name="list_id" value="9400"/>
+								<param name="fallback_icon" value="DefaultMusicArtists.png"/>
+								<param name="visible" value="!String.IsEmpty(ListItem.Property(widgetPath))"/>
+							</include>
+						</control>
+						<include content="SelectWidget">
+							<param name="onup" value="9400" />
+							<param name="button_id" value="9500"/>
+							<param name="button_label" value="Editar Widgets" />
+							<param name="button_onclick" value="RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)"/>
+							<param name="button_onclick2" value=""/>
+							<param name="button2_label" value="Menu Padrão" />
+							<param name="button2_onclick" value="Skin.ToggleSetting(Skin_Menu_Setting)"/>
+
+							<param name="button3_label" value="Limpar Widgets de Imagens" />
+							<param name="button3_onclick" value="Skin.SetString(Games_Widgets,-)"/>
+							<param name="button3_onclick2" value="Skin.ToggleSetting(Games_Widgets_View,off)"/>
+							<param name="button3_onclick3" value="SetFocus(9000)"/>
+						</include>
+						<!-- ID 4600 -->
+						<include content="ActivateWidget">
+							<param name="onup" value="9500" />
+							<param name="ondown" value="20001" />
+							<param name="button_id" value="9600"/>
+							<param name="button_label" value="Editar Widgets" />
+							<param name="button_onclick" value="RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)"/>
+							<param name="button_onclick3" value="SetFocus(9000)"/>
+
+						</include>
+					</control>
+				</control>						
+</includes>

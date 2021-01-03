@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<include file="script-skinshortcuts-includes.xml"/>
+	<include file="script-skinshortcuts.xml"/>
 	<include file="Defaults.xml" />
 	<include file="Includes_Home.xml" />
+	<include file="Includes_HomeItens.xml" />
 	<include file="Includes_Animations.xml" />
 	<include file="Includes_MediaMenu.xml" />
 	<include file="Includes_Buttons.xml" />
@@ -48,6 +51,8 @@
 	<include name="Widget_Display_Left">
 		<visible>[Control.HasFocus(9002) | ControlGroup(2002).HasFocus]</visible>
 	</include>
+	
+	<!-- Sagrath -->
 	
 	<include name="CommonScrollbars">
 		<control type="group">
@@ -1117,8 +1122,16 @@
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="37FFFFFF">$VAR[PicturesFanart]</texture>
-						<texture background="true" colordiffuse="37FFFFFF">$VAR[MediaFanartVar]</texture>
+						<texture background="true" colordiffuse="60FFFFFF">$VAR[HomeFanartVar]</texture>
+						<texture background="true" colordiffuse="60FFFFFF">$VAR[MediaFanartVar]</texture>
+						<visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
+					</control>
+					<control type="image" id="32112">
+						<include>FullScreenDimensions</include>
+						<aspectratio>scale</aspectratio>
+						<fadetime>400</fadetime>
+						<animation effect="fade" time="400">VisibleChange</animation>						
+						<texture background="true" colordiffuse="60FFFFFF">$VAR[PicturesFanart]</texture>
 						<visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
 					</control>
 					<control type="image">

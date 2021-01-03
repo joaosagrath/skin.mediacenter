@@ -576,8 +576,95 @@ msgctxt "#31167"
 msgid "Animate background"
 msgstr "Pano de Fundo animado"
 
-#----------
-
+#. Label of a setting
+#: /xml/SkinSettings.xml
 msgctxt "#31168"
-msgid ""
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "Mostrar poster ao invez de icones para Concertos"
+
+#. Description label for skin settings area
+#: /xml/Variables.xml
+msgctxt "#31169"
+msgid "Artwork related settings."
 msgstr ""
+
+msgctxt "#31170"
+msgid "Choose which items to display on the Main Menu"
+msgstr "Escolha quais itens mostrar no Menu Principal"
+
+msgctxt "#31171"
+msgid "Skin Shortcuts menu settings."
+msgstr "Ajustes de menu Skin Shortcus"
+
+msgctxt "#31172"
+msgid "Define Skin Shortcuts menu items"
+msgstr "Defina itens do menu Skin Shortcuts"
+
+msgctxt "#31173"
+msgid "Change Roms Folder (Retroplayer)"
+msgstr "Alterar Pasta de Roms (Retroplayer)"
+
+msgctxt "#31174"
+msgid "Add Roms folder (Retroplayer)"
+msgstr "Adicionar pasta de Roms (Retroplayer)"
+
+msgctxt "#31175"
+msgid "Clear Games widget settings"
+msgstr "Limpar ajustes de widgets de Jogos"
+
+msgctxt "#31176"
+msgid "Videos Add-ons"
+msgstr "Add-ons de Video"
+
+msgctxt "#31176"
+msgid "Games Add-ons"
+msgstr "Add-ons de Jogos"
+
+msgctxt "#31177"
+msgid "Images Add-ons"
+msgstr "Add-ons de Imagens"
+
+msgctxt "#31178"
+msgid "Programs Add-ons"
+msgstr "Add-ons de Programas"
+
+msgctxt "#31179"
+msgid "Clear Movies widget settings"
+msgstr "Limpar ajustes de widgets de Filmes"
+
+msgctxt "#31180"
+msgid "Enable Movie widgets"
+msgstr "Ativar widgets de Filmes"
+
+msgctxt "#31181"
+msgid "Enable TV Shows widgets"
+msgstr "Ativar widgets de Seriados"
+
+msgctxt "#31182"
+msgid "Clear TV Shows widget settings"
+msgstr "Limpar ajustes de widgets de Seriados"
+
+msgctxt "#31183"
+msgid "Audio Add-ons"
+msgstr "Add-ons de Audio"
+
+msgctxt "#31184"
+msgid "Enable Audio widgets"
+msgstr "Ativar widgets de Audio"
+
+msgctxt "#31185"
+msgid "Clear Audio widget settings"
+msgstr "Limpar ajustes de widgets de Audio"
+
+msgctxt "#31186"
+msgid "Add Folder for Image widgets"
+msgstr "Adicionar pasta para widgets de Imagens"
+
+msgctxt "#31187"
+msgid "Change for Image widgets"
+msgstr "Alterar pasta para widgets de Imagens"
+
+msgctxt "#31188"
+msgid "Clear Pictures widget settings"
+msgstr "Limpar ajustes de widgets de Imagens"
+

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<backgroundcolor>white</backgroundcolor>	
+	<!-- <onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload> -->
+	
+	<controls>
+		<!--Controles escondidos -->
+		<!-- Adicionar Item -->
+		<control type="button" id="301">
+			<left>-500</left>
+			<top>-500</top>
+			<width>1</width>
+			<height>1</height>
+			<font>-</font>
+			<onleft>noop</onleft>
+			<onright>302</onright>
+			<onup>Control.Move(211,-1)</onup>
+			<ondown>Control.Move(211,1)</ondown>
+		</control>
+		<!-- Remover Item -->
+		<control type="button" id="302">
+			<left>-500</left>
+			<top>-500</top>
+			<width>1</width>
+			<height>1</height>
+			<font>-</font>
+			<onleft>301</onleft>
+			<onright>304</onright>
+			<onup>Control.Move(211,-1)</onup>
+			<ondown>Control.Move(211,1)</ondown>
+		</control>
+		<!-- Mover Item para Baixo -->
+		<control type="button" id="304">
+			<left>-500</left>
+			<top>-500</top>
+			<width>1</width>
+			<height>1</height>
+			<font>-</font>
+			<onleft>302</onleft>
+			<onright>303</onright>
+			<onup>Control.Move(211,-1)</onup>
+			<ondown>Control.Move(211,1)</ondown>
+		</control>
+		<!-- Mover Item para Cima -->
+		<control type="button" id="303">
+			<left>500</left>
+			<top>-500</top>
+			<width>1</width>
+			<height>1</height>
+			<font>-</font>
+			<onleft>304</onleft>
+			<onright>9000</onright>
+			<onup>Control.Move(211,-1)</onup>
+			<ondown>Control.Move(211,1)</ondown>
+		</control>
+
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<!-- <texture aspectratio="stretch">Y:\Girls Tags\Girls Delta\Tomie Fukazawa\fanart.jpg</texture> -->
+			<texture colordiffuse="background">colors/white.png</texture>
+		</control>
+		
+		<include>DefaultB ackground</include>
+		<control type="multiimage">
+			<depth>DepthBackground</depth>
+			<include>FullScreen Dimensions</include>
+			<aspectratio>stretch</aspectratio>
+			<fadetime>600</fadetime>
+			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath background="true" colordiffuse="bg_overlay">$INFO[Skin.String(background_overlay),special://skin/extras/backgrounds/pattern,.jpg]</imagepath>
+		</control>
+		<!-- Lista da Direita-->
+		<control type="group">
+			<left>470</left>
+			<include>OpenClose_Right</include>
+			<control type="grouplist" id="9000">
+				<top>133</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>303</onleft>
+				<onright>9001</onright>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<!-- Heading -->
+				<control type="label" id="500">
+					<left>0</left>
+					<top>0</top>
+					<width>1448</width>
+					<height>70</height>
+					<font>font37</font>
+					<align>center</align>
+				</control>
+				<!-- Trocar Nome do Item -->
+				<control type="button" id="305">
+					<include>DefaultSettingButton</include>
+					<label>$ADDON[script.skinshortcuts 32025]</label>
+					<label2>$INFO[Container(211).ListItem.Label]</label2>
+				</control>
+				<!-- Mudar Atalho -->
+				<control type="button" id="401">
+					<include>DefaultSettingButton</include>
+					<label>$ADDON[script.skinshortcuts 32048]</label>
+					<label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+				</control>
+				<!-- Mudar Icone -->
+				<control type="button" id="306">
+					<include>DefaultSettingButton</include>
+					<label>$ADDON[script.skinshortcuts 32026]</label>
+					<label2>$INFO[Container(211).ListItem.icon]</label2>
+				</control>
+				<!-- Mudar Ação -->
+				<control type="button" id="307">
+					<include>DefaultSettingButton</include>
+					<label>$ADDON[script.skinshortcuts 32027]</label>
+					<label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+				</control>
+
+				<!-- Editar Sub Menu -->
+				<control type="button" id="405">
+					<include>DefaultSettingButton</include>
+					<label>$ADDON[script.skinshortcuts 32072]</label>
+					<visible>String.Contains(Window.Property(groupname),mainmenu)</visible>
+				</control>
+
+				<!-- Edit Widgets -->
+				<control type="button" id="312">
+					<include>DefaultSettingButton</include>
+					<label>$ADDON[script.skinshortcuts 32044]</label>
+					<label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
+					<visible>String.Contains(Window.Property(groupname),mainmenu)</visible>
+				</control>
+
+				<!-- Edit Views -->
+				<control type="button" id="411">
+					<include>DefaultSettingButton</include>
+					<label>Widget View</label>
+					<label2>$VAR[WidgetView]</label2>
+					<visible>String.Contains(Window.Property(groupname),mainmenu)</visible>
+				</control>
+
+				<!-- Edit Art -->
+				<control type="button" id="412">
+					<include>DefaultSettingButton</include>
+					<label>Widget Art</label>
+					<label2>$VAR[WidgetArt]</label2>
+					<visible>String.Contains(Window.Property(groupname),mainmenu)</visible>
+				</control>				
+			</control>
+			<control type="image">
+				<description>Dialog Header image</description>
+				<left>0</left>
+				<top>130</top>
+				<right>0</right>
+				<height>3</height>
+				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+			</control>
+			<control type="image">
+				<description>Dialog Header image</description>
+				<left>0</left>
+				<bottom>134</bottom>
+				<right>0</right>
+				<height>3</height>
+				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+			</control>
+		</control>
+		
+		
+		<!-- Lista da Esquerda -->
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<left>0</left>
+			<include>OpenClose_Left</include>
+			<include content="ContentPanel">
+				<param name="width" value="530" />
+			</include>		
+			<control type="list" id="211">
+				<left>0</left>
+				<top>130</top>
+				<width>470</width>
+				<height>700</height>
+				<onleft>noop</onleft>
+				<onright>304</onright>
+				<onup>211</onup>
+				<ondown>211</ondown>
+				<itemlayout height="85" width="470">
+					<control type="label">
+						<textoffsetx>30</textoffsetx>
+						<width>470</width>
+						<height>85</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font37</font>
+						<aligny>center</aligny>
+					</control>
+				</itemlayout>
+				<focusedlayout height="85" width="470">
+					<control type="image">
+						<width>470</width>
+						<height>85</height>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<textoffsetx>30</textoffsetx>
+						<width>470</width>
+						<height>85</height>
+						<font>font37</font>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>					
+					<!-- Adicionar -->
+					<control type="image">
+						<top>20</top>
+						<left>220</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/plus.png</texture>
+						<animation effect="fade" end="50" condition="true">Conditional</animation>
+						<visible>!Control.HasFocus(301)</visible>
+					</control>
+					<control type="image">
+						<top>20</top>
+						<left>220</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/plus.png</texture>
+						<visible>Control.HasFocus(301)</visible>
+					</control>
+					<!-- Remover -->
+					<control type="image">
+						<top>20</top>
+						<left>265</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/minus.png</texture>
+						<animation effect="fade" end="50" condition="true">Conditional</animation>
+						<visible>!Control.HasFocus(302)</visible>
+					</control>
+					<control type="image">
+						<top>20</top>
+						<left>265</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/minus.png</texture>
+						<visible>Control.HasFocus(302)</visible>
+					</control>
+					<!-- Para Baixo -->
+					<control type="image">
+						<top>20</top>
+						<left>310</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/down.png</texture>
+						<visible>!Control.HasFocus(304)</visible>
+						<animation effect="fade" end="50" condition="true">Conditional</animation>
+					</control>
+					<control type="image">
+						<top>20</top>
+						<left>310</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/down.png</texture>
+						<visible>Control.HasFocus(304)</visible>
+					</control>
+					<!-- Para Cima -->
+					<control type="image">
+						<top>20</top>
+						<left>355</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/up.png</texture>
+						<animation effect="fade" end="50" condition="true">Conditional</animation>
+						<visible>!Control.HasFocus(303)</visible>
+					</control>
+					<control type="image">
+						<top>20</top>
+						<left>355</left>
+						<width>45</width>
+						<height>45</height>
+						<texture>dialogs/up.png</texture>
+						<visible>Control.HasFocus(303)</visible>
+					</control>
+					
+					
+				</focusedlayout>
+			</control>
+
+		
+		
+		</control>
+	
+		<!-- Button grouplist -->
+		<control type="grouplist" id="9001">
+			<left>600</left>
+			<top>800</top>
+			<width>1620</width>
+			<itemgap>0</itemgap>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<orientation>horizontal</orientation>
+
+			<!-- OK Button -->
+			<control type="button" id="10">
+				<width>400</width>
+				<height>80</height>
+				<label>186</label>
+				<include>DefaultSettingButton</include>
+				<align>center</align>
+				<onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|horizontal)</onclick>
+				<onclick>Close</onclick>
+			</control>
+
+			<!-- Reset -->
+			<control type="button" id="308">
+				<width>400</width>
+				<height>80</height>
+				<include>DefaultSettingButton</include>
+				<align>center</align>
+				<label>$ADDON[script.skinshortcuts 32028]</label>
+			</control>
+
+			<!-- Reset all -->
+			<control type="button" id="999">
+				<width>400</width>
+				<height>80</height>
+				<include>DefaultSettingButton</include>
+				<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+				<label>$ADDON[script.skinshortcuts 32037]</label>
+				<align>center</align>
+			</control>
+		</control>
+	
+	</controls>
+
+</window>

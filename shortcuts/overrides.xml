@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overrides>
+
+	<!-- Don't share additional submenu levels
+	<doNotShareLevels /> -->
+	<!-- Save any shortcut with a widgetPath property -->
+	<saveWithProperty>widgetName</saveWithProperty>
+	<saveWithProperty>widgetPath</saveWithProperty>
+	<saveWithProperty>widgetTarget</saveWithProperty>
+	<widgetRename>False</widgetRename>
+
+	<!-- Default Widgets -->
+	<propertyfallback property="path" attribute="path" value="">noop</propertyfallback>
+
+    <!-- Movies -->
+    <!-- <widgetdefaultnode labelID="movies" label="342" path="videodb://movies/titles/" target="videos">Movies</widgetdefaultnode>
+    <propertydefault labelID="movies" property="widgetLayout">Landscape</propertydefault>
+    <propertydefault labelID="movies" property="widgetArt">fanart</propertydefault> -->
+
+    <!-- TvShows -->
+    <!-- <widgetdefaultnode labelID="tvshows" label="20343" path="videodb://tvshows/titles" target="videos">TV Shows</widgetdefaultnode>
+    <propertydefault labelID="tvshows" property="widgetLayout">Poster</propertydefault> -->
+    	
+    <!-- Music -->
+    <!-- <widgetdefaultnode labelID="music" label="132" path="library://music/albums.xml/" target="music">Albums</widgetdefaultnode>
+    <propertydefault labelID="music" property="widgetLayout">Square</propertydefault> -->
+
+	<!-- Widget Layout -->
+	<propertySettings property="widgetLayout" buttonID="411" title="Widget Layout" showNone="False"/>
+	<propertyfallback property="widgetLayout" label="Landscape">Landscape</propertyfallback>
+	<property property="widgetLayout" label="Landscape" condition="!String.IsEqual(Container(211).ListItem.Property(widgetTarget),addons)">Landscape</property>
+	<property property="widgetLayout" label="Banner" condition="!String.IsEqual(Container(211).ListItem.Property(widgetTarget),addons)">Banner</property>
+	<property property="widgetLayout" label="Poster" condition="String.IsEqual(Container(211).ListItem.Property(widgetTarget),videos)">Poster</property>
+	<property property="widgetLayout" label="Square">Square</property>
+
+	<!-- Widget Art -->
+	<propertySettings property="widgetArt" buttonID="412" title="Widget Art" showNone="False"/>
+	<propertyfallback property="widgetArt" label="Thumb">thumb</propertyfallback>	
+	<property property="widgetArt" label="Fanart">fanart</property>
+	<property property="widgetArt" label="Thumb">thumb</property>
+</overrides>
