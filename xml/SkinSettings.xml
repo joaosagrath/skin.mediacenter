@@ -286,6 +286,7 @@
 					<onclick>Skin.ToggleSetting(Skin_Shortcuts_Setting)</onclick>
 					<onclick>Skin.Reset(Skin_Menu_Setting)</onclick>
 					<selected>Skin.HasSetting(Skin_Shortcuts_Setting</selected>
+					<enable>System.HasAddon(script.skinshortcuts)</enable>
 				</control>
 				<control type="image" id="37">
 					<height>3</height>
@@ -303,6 +304,7 @@
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+					<enable>System.HasAddon(script.skinshortcuts)</enable>
 				</control>
 				<control type="button" id="634">
 					<label>$LOCALIZE[10041]</label>
@@ -310,6 +312,7 @@
 					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 					<onclick>Skin.ToggleSetting(Skin_Menu_Setting)</onclick>
 					<onclick>Skin.Reset(Skin_Shortcuts_Setting)</onclick>
+					<enable>System.HasAddon(script.skinshortcuts)</enable>
 				</control>
 			</control>
 			<control type="image">
@@ -386,7 +389,6 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="4">
-						<visible>System.HasAddon(script.skinshortcuts)</visible>
 						<label>Editar Menu Principal</label>
 						<onclick>noop</onclick>
 					</item>

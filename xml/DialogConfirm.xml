@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<onunload condition="String.IsEmpty(Window(Home).Property(SkinStartup))">ActivateWindow(Startup.xml)</onunload>
 	<include>Animation_DialogPopupOpenClose</include>
 	<depth>DepthDialog+</depth>
 	<controls>
