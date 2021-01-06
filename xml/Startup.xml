@@ -2,8 +2,8 @@
 <window>
 	<onload>Skin.Reset(firstload)</onload>
 	<onload>SetProperty(SkinStartup,1,Home)</onload>
-	<onload condition="String.IsEmpty(Skin.String(background_overlay)">Skin.SetString(background_overlay,7)</onload>
-	<onload condition="String.IsEmpty(skin_menu_setting)">Skin.ToggleSetting(Skin_Menu_Setting,on)</onload>
+	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,7)</onload>
+	<onload condition="String.IsEmpty(Skin.String(HomeMenuItens))">Skin.SetString(HomeMenuItens,Top_Menu)</onload>
 	<!-- <onload condition="String.IsEmpty(Games_Widgets_View)">Skin.ToggleSetting(Games_Widgets_View,off)</onload>
 	<onload condition="String.IsEmpty(Movies_Widgets_View)">Skin.ToggleSetting(Movies_Widgets_View,off)</onload>
 	<onload condition="String.IsEmpty(Series_Widgets_View)">Skin.ToggleSetting(Series_Widgets_View,off)</onload>

@@ -6,6 +6,7 @@
 	<include file="Includes_Home.xml" />
 	<include file="Includes_HomeItens.xml" />
 	<include file="Includes_Animations.xml" />
+	<include file="Includes_Models.xml" />
 	<include file="Includes_MediaMenu.xml" />
 	<include file="Includes_Buttons.xml" />
 	<include file="Includes_DialogSelect.xml" />

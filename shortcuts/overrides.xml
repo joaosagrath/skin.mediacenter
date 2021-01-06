@@ -12,18 +12,25 @@
 	<!-- Default Widgets -->
 	<propertyfallback property="path" attribute="path" value="">noop</propertyfallback>
 
+	<!-- Movies -->
+    <widgetdefaultnode labelID="games" label="$LOCALIZE[15016]" path="-" target="videos">Movies</widgetdefaultnode>
+    <propertydefault labelID="movies" property="widgetLayout">Poster</propertydefault>
+	
     <!-- Movies -->
-    <!-- <widgetdefaultnode labelID="movies" label="342" path="videodb://movies/titles/" target="videos">Movies</widgetdefaultnode>
-    <propertydefault labelID="movies" property="widgetLayout">Landscape</propertydefault>
-    <propertydefault labelID="movies" property="widgetArt">fanart</propertydefault> -->
+    <widgetdefaultnode labelID="movies" label="$LOCALIZE[342]" path="-" target="videos">Movies</widgetdefaultnode>
+    <propertydefault labelID="movies" property="widgetLayout">Poster</propertydefault>
 
     <!-- TvShows -->
-    <!-- <widgetdefaultnode labelID="tvshows" label="20343" path="videodb://tvshows/titles" target="videos">TV Shows</widgetdefaultnode>
-    <propertydefault labelID="tvshows" property="widgetLayout">Poster</propertydefault> -->
+    <widgetdefaultnode labelID="tvshows" label="$LOCALIZE[20343]" path="-" target="videos">TV Shows</widgetdefaultnode>
+    <propertydefault labelID="tvshows" property="widgetLayout">Poster</propertydefault>
     	
     <!-- Music -->
-    <!-- <widgetdefaultnode labelID="music" label="132" path="library://music/albums.xml/" target="music">Albums</widgetdefaultnode>
-    <propertydefault labelID="music" property="widgetLayout">Square</propertydefault> -->
+    <widgetdefaultnode labelID="music" label="$LOCALIZE[2]" path="-" target="music">Albums</widgetdefaultnode>
+    <propertydefault labelID="music" property="widgetLayout">Poster</propertydefault>
+	
+	<!-- Music -->
+    <widgetdefaultnode labelID="pictures" label="$LOCALIZE[1]" path="-" target="pictures">Fotos</widgetdefaultnode>
+    <propertydefault labelID="music" property="widgetLayout">Poster</propertydefault>
 
 	<!-- Widget Layout -->
 	<propertySettings property="widgetLayout" buttonID="411" title="Widget Layout" showNone="False"/>

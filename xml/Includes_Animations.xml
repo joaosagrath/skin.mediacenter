@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="Animation_WidgetSelector">
-		<animation type="Conditional" condition="Control.HasFocus(9500001) | Control.HasFocus(9500002) | Control.HasFocus(9500003) | Control.HasFocus(9500004) | Control.HasFocus(9500005) | Control.HasFocus(9500006) | Control.HasFocus(9500007) | Control.HasFocus(9500008) | Control.HasFocus(9500009) | Control.HasFocus(9500010) | Control.HasFocus(5500001) | Control.HasFocus(5500002) | Control.HasFocus(5500003) | Control.HasFocus(5500004) | Control.HasFocus(5500005) | Control.HasFocus(5500006) | Control.HasFocus(5500007) | Control.HasFocus(5500008) | Control.HasFocus(5500009) | Control.HasFocus(5500010) | Control.HasFocus(6500001) | Control.HasFocus(6500002) | Control.HasFocus(6500003) | Control.HasFocus(6500004) | Control.HasFocus(6500005) | Control.HasFocus(6500006) | Control.HasFocus(6500007) | Control.HasFocus(6500008) | Control.HasFocus(6500009) | Control.HasFocus(6500010)">
+		<animation type="Conditional" condition="Control.HasFocus(21) | Control.HasFocus(22) | Control.HasFocus(23) | Control.HasFocus(24) | Control.HasFocus(25)">
 			<effect type="slide" start="0,0" end="0,-100" time="100" easing="inout" />
 		</animation>
 	</include>
@@ -21,7 +21,18 @@
 			<effect type="slide" start="0" end="0,320" time="300" tween="cubic" easing="out" />
 		</animation>
 	</include>
+	
+	<include name="Right_Menu_Hidden">
+		<animation type="Conditional" condition="Control.HasFocus() | [Integer.IsEqual(Container(9000).NumItems,5) + Container(9000).Position(4) |  Integer.IsEqual(Container(9000).NumItems,4) + Container(9000).Position(3) |  Integer.IsEqual(Container(9000).NumItems,3) + Container(9000).Position(2) |  Integer.IsEqual(Container(9000).NumItems,2) + Container(9000).Position(1) |  Integer.IsEqual(Container(9000).NumItems,1) + Container(9000).Position(0)]">
+			<effect type="slide" start="0,0" end="-100,0" time="400" delay="300" tween="cubic" easing="inout" />
+		</animation>	
+	</include>
 
+	<include name="Left_Menu_Hidden">
+		<animation type="Conditional" condition="Integer.IsEqual(Container(9000).Position(pos),0)">
+			<effect type="slide" start="0,0" end="100,0" time="400" delay="300" tween="cubic" easing="inout" />
+		</animation>	
+	</include>
 
 	<include name="Animation_FocusTextureFade">
 		<animation effect="fade" start="0" end="100" time="200" tween="sine">Focus</animation>
@@ -118,6 +129,20 @@
 		<animation type="Hidden" reversible="False">
 			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 			<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	<include name="OpenClose_Down">
+		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+		<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Down</include>
+	</include>
+	<include name="OpenClose_FadeSlide_Down">
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
+			<effect type="slide" start="0,320" end="0" time="400" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+			<effect type="slide" start="0" end="0,320" time="300" tween="cubic" easing="out" />
 		</animation>
 	</include>
 	<include name="OpenClose_Left">

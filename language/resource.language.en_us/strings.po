@@ -575,3 +575,107 @@ msgstr "Profile avatar"
 msgctxt "#31167"
 msgid "Animate background"
 msgstr "Animate background"
+
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "Mostrar poster ao invez de icones para Concertos"
+
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr ""
+
+msgctxt "#31170"
+msgid "Choose which items to display on the Main Menu"
+msgstr "Escolha quais itens mostrar no Menu Principal"
+
+msgctxt "#31171"
+msgid "Skin Shortcuts menu settings."
+msgstr "Ajustes de menu Skin Shortcus"
+
+msgctxt "#31172"
+msgid "Define Skin Shortcuts menu items"
+msgstr "Defina itens do menu Skin Shortcuts"
+
+msgctxt "#31173"
+msgid "Change Roms Folder (Retroplayer)"
+msgstr "Alterar Pasta de Roms (Retroplayer)"
+
+msgctxt "#31174"
+msgid "Add Roms folder (Retroplayer)"
+msgstr "Adicionar pasta de Roms (Retroplayer)"
+
+msgctxt "#31175"
+msgid "Clear Games widget settings"
+msgstr "Clear Games widget settings"
+
+msgctxt "#31176"
+msgid "Videos Add-ons"
+msgstr "Videos Add-ons"
+
+msgctxt "#31176"
+msgid "Games Add-ons"
+msgstr "Games Add-ons"
+
+msgctxt "#31177"
+msgid "Images Add-ons"
+msgstr "Images Add-ons"
+
+msgctxt "#31178"
+msgid "Programs Add-ons"
+msgstr "Programs Add-ons"
+
+msgctxt "#31179"
+msgid "Clear Movies widget settings"
+msgstr "Clear Movies widget settings"
+
+msgctxt "#31180"
+msgid "Enable Movie widgets"
+msgstr "Enable Movie widgets"
+
+msgctxt "#31181"
+msgid "Enable TV Shows widgets"
+msgstr "Enable TV Shows widgets"
+
+msgctxt "#31182"
+msgid "Clear TV Shows widget settings"
+msgstr "Clear TV Shows widget settings"
+
+msgctxt "#31183"
+msgid "Audio Add-ons"
+msgstr "Audio Add-ons"
+
+msgctxt "#31184"
+msgid "Enable Audio widgets"
+msgstr "Enable Audio widgets"
+
+msgctxt "#31185"
+msgid "Clear Audio widget settings"
+msgstr "Clear Audio widget settings"
+
+msgctxt "#31186"
+msgid "Add Folder for Image widgets"
+msgstr "Add Folder for Image widgets"
+
+msgctxt "#31187"
+msgid "Change for Image widgets"
+msgstr "Change for Image widgets"
+
+msgctxt "#31188"
+msgid "Clear Pictures widget settings"
+msgstr "Clear Pictures widget settings"
+
+msgctxt "#31189"
+msgid "Skin's Default"
+msgstr "Skin's Default"
+
+msgctxt "#31190"
+msgid "Skin Shortcuts"
+msgstr "Skin Shortcuts"
+
+msgctxt "#31191"
+msgid "Movies by titles"
+msgid "Movies by titles"
+
+msgctxt "#31192"
+msgid "TV Shows by titles"
+msgstr "TV Shows by titles"

@@ -273,21 +273,23 @@
 					<align>center</align>
 					<label>$LOCALIZE[31170]</label>
 				</control>
+				<!-- Menu Padrão -->
 				<control type="radiobutton" id="631">
-					<label>Skin Default</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(Skin_Menu_Setting)</onclick>
-					<onclick>Skin.Reset(Skin_Shortcuts_Setting)</onclick>
-					<selected>Skin.HasSetting(Skin_Menu_Setting)</selected>
+					<label>$LOCALIZE[31189]</label>
+					<include>DefaultSettingButton</include>					
+					<onclick>Skin.SetString(HomeMenuItens,Top_Menu)</onclick>					
+					<selected>Skin.String(HomeMenuItens,Top_Menu)</selected>					
+					<onclick>Skin.Reset(Skin_Shortcuts_Setting)</onclick>					
 				</control>
+				<!-- Menu Skin-Shortcuts -->
 				<control type="radiobutton" id="632">
-					<label>Skin Shortcuts</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(Skin_Shortcuts_Setting)</onclick>
-					<onclick>Skin.Reset(Skin_Menu_Setting)</onclick>
-					<selected>Skin.HasSetting(Skin_Shortcuts_Setting</selected>
+					<label>$LOCALIZE[31190]</label>
+					<include>DefaultSettingButton</include>					
+					<onclick>Skin.SetString(HomeMenuItens,skinshortcuts-mainmenu)</onclick>
+					<selected>Skin.String(HomeMenuItens,skinshortcuts-mainmenu)</selected>					
+					<onclick>Skin.Reset(Skin_Menu_Setting)</onclick>					
 					<enable>System.HasAddon(script.skinshortcuts)</enable>
-				</control>
+				</control>				
 				<control type="image" id="37">
 					<height>3</height>
 					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
@@ -304,13 +306,12 @@
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
-					<enable>System.HasAddon(script.skinshortcuts)</enable>
 				</control>
 				<control type="button" id="634">
 					<label>$LOCALIZE[10041]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-					<onclick>Skin.ToggleSetting(Skin_Menu_Setting)</onclick>
+					<onclick>Skin.SetString(HomeMenuItens,Top_Menu)</onclick>
 					<onclick>Skin.Reset(Skin_Shortcuts_Setting)</onclick>
 					<enable>System.HasAddon(script.skinshortcuts)</enable>
 				</control>
