@@ -253,6 +253,27 @@
 					<selected>!Skin.HasSetting(HomeMenuNoRadioButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoRadioButton)</onclick>
 				</control>
+				<control type="radiobutton" id="623">
+					<label>$LOCALIZE[31193]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoNetflixButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoNetflixButton)</onclick>
+					<enable>System.HasAddon(plugin.video.netflix)</enable>
+				</control>
+				<control type="radiobutton" id="624">
+					<label>$LOCALIZE[31194]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoSpotifyButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoSpotifyButton)</onclick>
+					<enable>System.HasAddon(plugin.audio.spotify)</enable>
+				</control>
+				<control type="radiobutton" id="625">
+					<label>$LOCALIZE[31195]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoYoutubeButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoYoutubeButton)</onclick>
+					<enable>System.HasAddon(plugin.video.youtube)</enable>
+				</control>
 			</control>
 			<control type="grouplist" id="630">
 				<top>133</top>

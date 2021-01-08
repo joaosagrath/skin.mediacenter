@@ -52,6 +52,15 @@
 		</item>
 	</include>
 	<include name="Right_Menu">
+		<!-- Disco ID 21000 -->
+		<item>
+			<label>$LOCALIZE[427]</label>
+			<onclick>PlayDisc</onclick>
+			<property name="menu_id">$NUMBER[21000]</property>
+			<thumb>icons/sidemenu/disc.png</thumb>
+			<property name="id">disc</property>
+			<visible>System.HasMediaDVD</visible>
+		</item>
 		<!-- Clima ID 15000 -->
 		<item>
 			<label>$LOCALIZE[8]</label>
@@ -91,15 +100,6 @@
 		</item>
 	</include>
 	<include name="Left_Menu">
-		<!-- Disco ID 21000 -->
-		<item>
-			<label>$LOCALIZE[427]</label>
-			<onclick>PlayDisc</onclick>
-			<property name="menu_id">$NUMBER[21000]</property>
-			<thumb>icons/sidemenu/disc.png</thumb>
-			<property name="id">disc</property>
-			<visible>System.HasMediaDVD</visible>
-		</item>
 		<!-- Concertos ID 12000 -->
 		<item>
 			<label>$LOCALIZE[20389]</label>
@@ -110,7 +110,7 @@
 			<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
 		</item>
 		<!-- PVR ID 12000 -->
-		<item>
+						<item>
 							<label>$LOCALIZE[19020]</label>
 							<property name="menu_id">$NUMBER[12000]</property>
 							<onclick>ActivateWindow(TVChannels)</onclick>
@@ -119,7 +119,7 @@
 							<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
 						</item>
 		<!-- Radio ID 13000 -->
-		<item>
+						<item>
 							<label>$LOCALIZE[19021]</label>
 							<property name="menu_id">$NUMBER[13000]</property>
 							<onclick>ActivateWindow(RadioChannels)</onclick>
@@ -132,7 +132,7 @@
 			<label>Netflix</label>
 			<property name="menu_id">$NUMBER[17000]</property>
 			<onclick>RunAddon(plugin.video.netflix)</onclick>
-			<thumb>icons/sidemenu/radio.png</thumb>
+			<thumb>icons/sidemenu/netflix.png</thumb>
 			<property name="id">netflix</property>
 			<visible>!Skin.HasSetting(HomeMenuNoNetflixButton) + System.HasAddon(plugin.video.netflix)</visible>
 		</item>
@@ -140,8 +140,8 @@
 		<item>
 			<label>Spotify</label>
 			<property name="menu_id">$NUMBER[18000]</property>
-			<onclick>ActivateWindow(RadioChannels)</onclick>
-			<thumb>icons/sidemenu/radio.png</thumb>
+			<onclick>RunAddon(plugin.audio.spotify)</onclick>
+			<thumb>icons/sidemenu/spotify.png</thumb>
 			<property name="id">spotify</property>
 			<visible>!Skin.HasSetting(HomeMenuNoSpotifyButton) + System.HasAddon(plugin.audio.spotify)</visible>
 		</item>
@@ -149,8 +149,8 @@
 		<item>
 			<label>Youtube</label>
 			<property name="menu_id">$NUMBER[19000]</property>
-			<onclick>ActivateWindow(RadioChannels)</onclick>
-			<thumb>icons/sidemenu/radio.png</thumb>
+			<onclick>RunAddon(plugin.video.youtube)</onclick>
+			<thumb>icons/sidemenu/youtube.png</thumb>
 			<property name="id">youtube</property>
 			<visible>!Skin.HasSetting(HomeMenuNoYoutubeButton) + System.HasAddon(plugin.video.youtube)</visible>
 		</item>

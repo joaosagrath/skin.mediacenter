@@ -1136,9 +1136,9 @@
 						<visible>!Control.IsVisible(502) | $EXP[infodialog_active]</visible>
 					</control>
 					<control type="image">
-						<left>-3</left>
+						<left>0</left>
 						<top>0</top>
-						<right>1193</right>
+						<right>0</right>
 						<height>100%</height>
 						<aspectratio aligny="center">scale</aspectratio>
 						<fadetime>400</fadetime>

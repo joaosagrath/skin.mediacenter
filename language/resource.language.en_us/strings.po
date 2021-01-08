@@ -679,3 +679,19 @@ msgid "Movies by titles"
 msgctxt "#31192"
 msgid "TV Shows by titles"
 msgstr "TV Shows by titles"
+
+msgctxt "#31192"
+msgid "TV Shows by titles"
+msgstr "TV Shows by titles"
+
+msgctxt "#31193"
+msgid "Netflix"
+msgstr "Netflix"
+
+msgctxt "#31194"
+msgid "Spotify"
+msgstr "Spotify"
+
+msgctxt "#31195"
+msgid "Youtube"
+msgstr "Youtube"
