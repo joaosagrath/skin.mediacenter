@@ -398,8 +398,8 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<item id="1">
-						<label>$LOCALIZE[128]</label>
+					<item id="4">
+						<label>Editar Menu Principal</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
@@ -410,10 +410,12 @@
 						<label>$LOCALIZE[31159]</label>
 						<onclick>noop</onclick>
 					</item>
-					<item id="4">
-						<label>Editar Menu Principal</label>
+					<item id="1">
+						<label>$LOCALIZE[128]</label>
 						<onclick>noop</onclick>
 					</item>
+					
+					
 				</content>
 			</control>
 		</control>

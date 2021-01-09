@@ -7,27 +7,34 @@
 		<value condition="String.Contains(ListItem.Label,All Gravure)">Y:\Girls Database\Magazines\All Gravure.jpg</value>
 		<value condition="String.Contains(ListItem.Label,AmourAngels)">Y:\Girls Database\Magazines\AmourAngels.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Big Tits Glamour)">Y:\Girls Database\Magazines\Big Tits Glamour.jpg</value>
+		<value condition="String.Contains(ListItem.Label,XL Girls)">Y:\Girls Database\Magazines\XL Girls.jpg</value>
 
 		<!-- Modelos -->
 		<value condition="String.Contains(ListItem.Label,Aliza Haze)">Y:\Girls Database\Models\Aliza Haze.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Anja Amelia)">Y:\Girls Database\Models\Anja Amelia.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Azumi Takayama)">Y:\Girls Database\Models\Azumi Takayama.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Diana Eisley)">Y:\Girls Database\Models\Diana Eisley.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Eshe Ikandi)">Y:\Girls Database\Models\Eshe Ikandi.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Hannah Hays)">Y:\Girls Database\Models\Hannah Hays.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Haruka Nanao)">Y:\Girls Database\Models\Haruka Nanao.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Ichika Ayamori)">Y:\Girls Database\Models\Ichika Ayamori.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Jasmine Vega)">Y:\Girls Database\Models\Jasmine Vega.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Jelena Jasper)">Y:\Girls Database\Models\Jelena Jasper.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Lang Yu)">Y:\Girls Database\Models\Lang Yu.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Leah Wilde)">Y:\Girls Database\Models\Leah Wilde.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Layla Rose)">Y:\Girls Database\Models\Layla Rose.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Lyra Lockhart)">Y:\Girls Database\Models\Lyra Lockhart.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Kacey Parker)">Y:\Girls Database\Models\Kacey Parker.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Kacy Lane)">Y:\Girls Database\Models\Sanija-Kacy Lane.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Masako Natsume)">Y:\Girls Database\Models\Masako Natsume.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Meow 34JJ)">Y:\Girls Database\Models\Meow 34JJ.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Mi Ha Doan)">Y:\Girls Database\Models\Mi Ha Doan.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Natali Fiori)">Y:\Girls Database\Models\Natali Fiori.jpg</value>
 		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Girls Database\Models\PanPan.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Paula Martini)">Y:\Girls Database\Models\Paula Martini.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Natali Fiori)">Y:\Girls Database\Models\Natali Fiori.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Girls Database\Models\Sanija.jpg</value>
+		
+		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Girls Database\Models\Sanija-Kacy Lane.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Sarah Jane)">Y:\Girls Database\Models\Sarah Jane.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Tuna Kimura)">Y:\Girls Database\Models\Tuna Kimura.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Thumbelina)">Y:\Girls Database\Models\Thumbelina.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Victoria Matosa)">Y:\Girls Database\Models\Victoria Matosa.jpg</value>
@@ -43,19 +50,30 @@
 		<value>$INFO[ListItem.Thumb]</value>
 	</variable>
 	<variable name="pichomelogo">
+		<!-- Site Logo -->
 		<value condition="String.Contains(ListItem.Label,ATKingdom)">Y:\Girls Database\Logos\ATKingdom.png</value>
 		<value condition="String.Contains(ListItem.Label,All Gravure)">Y:\Girls Database\Logos\All Gravure.png</value>
 		<value condition="String.Contains(ListItem.Label,AmourAngels)">Y:\Girls Database\Logos\AmourAngels.png</value>
 		<value condition="String.Contains(ListItem.Label,Big Tits Glamour)">Y:\Girls Database\Logos\Big Tits Glamour.png</value>
+		<value condition="String.Contains(ListItem.Label,XL Girls)">Y:\Girls Database\Logos\XL Girls.png</value>
+		<!-- Models Logo -->
 		<value condition="String.Contains(ListItem.Label,Anja Amelia)">Y:\Girls Database\Logos\Anja Amelia.png</value>
+		<value condition="String.Contains(ListItem.Label,Diana Eisley)">Y:\Girls Database\Logos\Diana Eisley.png</value>
 		<value condition="String.Contains(ListItem.Label,Eshe Ikandi)">Y:\Girls Database\Logos\Eshe Ikandi.png</value>
+		<value condition="String.Contains(ListItem.Label,Hannah Hays)">Y:\Girls Database\Logos\Hannah Hays.png</value>
 		<value condition="String.Contains(ListItem.Label,Haruka Nanao)">Y:\Girls Database\Logos\Haruka Nanao.png</value>
+		<value condition="String.Contains(ListItem.Label,Kacy Lane)">Y:\Girls Database\Logos\Kacy Lane.png</value>
 		<value condition="String.Contains(ListItem.Label,Ichika Ayamori)">Y:\Girls Database\Logos\Ichika Ayamori.png</value>
+		<value condition="String.Contains(ListItem.Label,Jasmine Vega)">Y:\Girls Database\Logos\Jasmine Vega.png</value>
+		<value condition="String.Contains(ListItem.Label,Jelena Jasper)">Y:\Girls Database\Logos\Jelena Jasper.png</value>
 		<value condition="String.Contains(ListItem.Label,Lang yu)">Y:\Girls Database\Logos\Lang Yu.png</value>
 		<value condition="String.Contains(ListItem.Label,Leah Wilde)">Y:\Girls Database\Logos\Leah Wilde.png</value>
+		<value condition="String.Contains(ListItem.Label,Lyra Lockhart)">Y:\Girls Database\Logos\Lyra Lockhart.png</value>
 		<value condition="String.Contains(ListItem.Label,Masako Natsume)">Y:\Girls Database\Logos\Masako Natsume.png</value>
 		<value condition="String.Contains(ListItem.Label,Meow 34JJ)">Y:\Girls Database\Logos\Meow 34JJ.png</value>
 		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Girls Database\Logos\PanPan.png</value>
+		<value condition="String.Contains(ListItem.Label,Sarah Jane)">Y:\Girls Database\Logos\Sarah Jane.png</value>
+		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Girls Database\Logos\Sanija.png</value>
 		<value condition="String.Contains(ListItem.Label,Victoria)">Y:\Girls Database\Logos\Victoria Matosa.png</value>
 		<value>$INFO[ListItem.FolderPath,,logo.png]</value>
 
@@ -66,16 +84,29 @@
 	<variable name="pichomelabel">
 		<value condition="String.Contains(ListItem.Label,Eshe)">Eshe is an adult model who has appeared at BigTitsGlamour.
 Performances: Solo And Masturbation</value>
-	<value condition="String.Contains(ListItem.Label,All Gravure)">The most beautiful gravure models are all found here in one site. These sexy Japanese idols have a certain allure to them that makes them intoxicating.</value>
+		<value condition="String.Contains(ListItem.Label,Hannah Hays)">Skinny, Flat Chest, Big Tight Pussy.</value>
+		<value condition="String.Contains(ListItem.Label,Lyra Lockhart)">Lyra Lockhart talks about herself as she undresses to show off her sexy body. She exposes her tight little pussy for all. Brought to you by Flowers.</value>
+		<value condition="String.Contains(ListItem.Label,All Gravure)">The most beautiful gravure models are all found here in one site. These sexy Japanese idols have a certain allure to them that makes them intoxicating.</value>
 	</variable>
+	
 	<variable name="PicturesFanart">
 		<value condition="String.Contains(ListItem.Label,ATKingdom)">Y:\Girls Database\Fanarts\ATKingdom.jpg</value>
 		<value condition="String.Contains(ListItem.Label,All Gravure)">Y:\Girls Database\Fanarts\All Gravure.jpg</value>
 		<value condition="String.Contains(ListItem.Label,AmourAngels)">Y:\Girls Database\Fanarts\AmourAngels.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Diana Eisley)">Y:\Girls Database\Fanarts\Diana Eisley.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Big Tits Glamour)">Y:\Girls Database\Fanarts\Big Tits Glamour.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Eshe Ikandi)">Y:\Girls Database\Fanarts\Eshe Ikandi.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Jasmine Vega)">Y:\Girls Database\Fanarts\Jasmine Vega.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Jelena Jasper)">Y:\Girls Database\Fanarts\Jelena Jasper.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Hannah Hays)">Y:\Girls Database\Fanarts\Hannah Hays.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Girls Database\Fanarts\Sanija-Kacy Lane.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Kacy Lane)">Y:\Girls Database\Fanarts\Sanija-Kacy Lane.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Lyra Lockhart)">Y:\Girls Database\Fanarts\Lyra Lockhart.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Meow34JJ)">Y:\Girls Database\Fanarts\Meow 34JJ.jpg</value>
 		<value condition="String.Contains(ListItem.Label,Minimum-av)">Y:\Girls Database\Fanarts\Minimum-av.jpg</value>
-		<value condition="String.Contains(ListItem.Path,Little Asians)">Y:\Girls Database\Fanarts\Little Asians.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Little Asians)">Y:\Girls Database\Fanarts\Little Asians.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Sarah Jane)">Y:\Girls Database\Fanarts\Sarah Jane.jpg</value>
+		<value condition="String.Contains(ListItem.Label,XL Girls)">Y:\Girls Database\Fanarts\XL Girls.jpg</value>
 		<value>$INFO[ListItem.FolderPath]fanart.jpg</value>
 	</variable>
 </includes>

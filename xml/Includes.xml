@@ -52,6 +52,18 @@
 	<include name="Widget_Display_Left">
 		<visible>[Control.HasFocus(9002) | ControlGroup(2002).HasFocus]</visible>
 	</include>
+	<include name="Top_20">
+		<top>20</top>
+	</include>
+	<include name="Top_950">
+		<top>950</top>
+	</include>
+	<include name="Width_1100">
+		<width>1100</width>
+	</include>
+	<include name="Width_1920">
+		<width>1920</width>
+	</include>
 	
 	<!-- Sagrath -->
 	

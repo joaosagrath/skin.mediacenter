@@ -3,7 +3,8 @@
 	<defaultcontrol>802</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
-	<controls>		
+	
+	<controls>	
 		<!-- Botões -->
 			<control type="button" id="20000">
 				<include>HiddenObject</include>
@@ -39,7 +40,7 @@
 			<top>350</top>
 			<left>20</left>
 			<width>1920</width>
-			<!-- <label>$INFO[ListItem.Label]</label> -->
+			<label>$INFO[ListItem.Label]</label>
 			<align>center</align>
 			<!-- $INFO[ListItem.Path,,logo.png] -->
 			<!-- <label>$INFO[ListItem.NumItems]</label> -->
@@ -448,7 +449,7 @@
 							<ondown>120</ondown>
 							<include>WidgetGroupListCommon</include>
 							<pagecontrol>4010</pagecontrol>
-							<include content="WidgetListHomePoster">
+							<include content="WidgetListHomePictures">
 								<param name="widget_header" value=""/>
 								<param name="content_path" value="$INFO[Skin.String(Pictures_Widgets)]"/>
 								<param name="widget_target" value="pictures"/>
@@ -469,7 +470,7 @@
 							<param name="button_onclick3" value=""/>
 							
 							<param name="button2_label" value="Modelos" />
-							<param name="button2_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Modelos&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
+							<param name="button2_onclick" value="Skin.SetString(Pictures_Widgets,plugin://plugin.image.mypicsdb/?method=&apos;tagtype&apos;&amp;tagtype=&apos;Modelo&apos;&amp;page=&apos;1&apos;&amp;viewmode=&apos;view&apos;&amp;action=&apos;showtags&apos;&amp;)"/>
 							<param name="button2_onclick2" value=""/>
 							<param name="button2_onclick3" value=""/>
 							
@@ -519,9 +520,9 @@
 								<param name="id" value="games"/>
 							</include>
 							<control type="grouplist" id="2">
-								<top>500</top>
-								<onup>9000</onup>
-								<ondown>9500</ondown>
+								<top>350</top>
+								<onup>700</onup>
+								<ondown>9000</ondown>
 								<include>WidgetGroupListCommon</include>
 								<pagecontrol>4010</pagecontrol>
 								<include content="WidgetListHomePoster">
@@ -530,14 +531,7 @@
 									<param name="list_id" value="9400"/>
 									<param name="fallback_icon" value="DefaultGames.png"/>
 									<param name="visible" value="!String.IsEmpty(ListItem.Property(widgetPath))"/>
-								</include>
-								<control type="button" id="20001">
-									<include>HiddenObject</include>
-									<animation effect="fade" time="300" start="100" end="0">Focus</animation>
-									<onfocus>SetFocus(9400)</onfocus>
-									<onclick>noop</onclick>
-									<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
-								</control>					
+								</include>				
 							</control>
 						</control>
 					</control>	
@@ -550,9 +544,9 @@
 								<param name="id" value="movies"/>
 							</include>
 							<control type="grouplist" id="2">
-								<top>500</top>
-								<onup>9000</onup>
-								<ondown>9500567</ondown>
+								<top>350</top>
+								<onup>700</onup>
+								<ondown>9000</ondown>
 								<include>WidgetGroupListCommon</include>
 								<pagecontrol>4010</pagecontrol>
 								<include content="WidgetListHomePoster">
@@ -563,20 +557,6 @@
 									<param name="visible" value="!String.IsEmpty(ListItem.Property(widgetPath))"/>
 								</include>
 							</control>
-							<include content="SelectWidget">
-								<param name="onup" value="9400" />
-								<param name="button_id" value="9500"/>
-								<param name="button_label" value="Editar Widgets" />
-								<param name="button_onclick" value="ActivateWindow(10035)"/>
-								<param name="button_onclick2" value=""/>
-								<param name="button2_label" value="" />
-								<param name="button2_onclick" value=""/>
-
-								<param name="button3_label" value="" />
-								<param name="button3_onclick" value=""/>
-								<param name="button3_onclick2" value=""/>
-								<param name="button3_onclick3" value=""/>
-							</include>
 						</control>
 					</control>
 					<!-- Seriados -->
@@ -588,9 +568,9 @@
 								<param name="id" value="tvshows"/>
 							</include>
 							<control type="grouplist" id="2">
-								<top>500</top>
-								<onup>9000</onup>
-								<ondown>9500567</ondown>
+								<top>350</top>
+								<onup>700</onup>
+								<ondown>9000</ondown>
 								<include>WidgetGroupListCommon</include>
 								<pagecontrol>4010</pagecontrol>
 								<include content="WidgetListHomePoster">
@@ -601,20 +581,6 @@
 									<param name="visible" value="!String.IsEmpty(ListItem.Property(widgetPath))"/>
 								</include>
 							</control>
-							<include content="SelectWidget">
-								<param name="onup" value="9400" />
-								<param name="button_id" value="9500"/>
-								<param name="button_label" value="Editar Widgets" />
-								<param name="button_onclick" value="ActivateWindow(10035)"/>
-								<param name="button_onclick2" value=""/>
-								<param name="button2_label" value="" />
-								<param name="button2_onclick" value=""/>
-
-								<param name="button3_label" value="" />
-								<param name="button3_onclick" value=""/>
-								<param name="button3_onclick2" value=""/>
-								<param name="button3_onclick3" value=""/>
-							</include>
 						</control>
 					</control>	
 					<!-- Musicas -->
@@ -626,9 +592,9 @@
 								<param name="id" value="music"/>
 							</include>
 							<control type="grouplist" id="2">
-								<top>500</top>
-								<onup>9000</onup>
-								<ondown>9500567</ondown>
+								<top>350</top>
+								<onup>700</onup>
+								<ondown>9000</ondown>
 								<include>WidgetGroupListCommon</include>
 								<pagecontrol>4010</pagecontrol>
 								<include content="WidgetListHomePoster">
@@ -639,35 +605,20 @@
 									<param name="visible" value="!String.IsEmpty(ListItem.Property(widgetPath))"/>
 								</include>
 							</control>
-							<include content="SelectWidget">
-								<param name="onup" value="9400" />
-								<param name="button_id" value="9500"/>
-								<param name="button_label" value="Editar Widgets" />
-								<param name="button_onclick" value="ActivateWindow(10035)"/>
-								<param name="button_onclick2" value=""/>
-								<param name="button2_label" value="" />
-								<param name="button2_onclick" value=""/>
-
-								<param name="button3_label" value="" />
-								<param name="button3_onclick" value=""/>
-								<param name="button3_onclick2" value=""/>
-								<param name="button3_onclick3" value=""/>
-							</include>
 						</control>
 					</control>				
 					<!-- Imagens -->
 					<control type="group">					
 						<control type="group" id="1">
 							<include>Animation_WidgetSelector</include>
-							<visible>String.IsEqual(Container(9000).ListItem.Property(defaultID),pictures)</visible>
-							
+							<visible>String.IsEqual(Container(9000).ListItem.Property(defaultID),pictures)</visible>							
 							<include content="Visible_Bottom_Delayed">
 								<param name="id" value="pictures"/>
 							</include>
 							<control type="grouplist" id="2">
-								<top>500</top>
-								<onup>9000</onup>
-								<ondown>9500567</ondown>
+								<top>350</top>
+								<onup>700</onup>
+								<ondown>9000</ondown>
 								<include>WidgetGroupListCommon</include>
 								<pagecontrol>4010</pagecontrol>
 								<include content="WidgetListHomePictures">
@@ -678,21 +629,30 @@
 									<param name="visible" value="!String.IsEmpty(ListItem.Property(widgetPath))"/>
 								</include>
 							</control>
-							<include content="SelectWidget">
-								<param name="onup" value="9400" />
-								<param name="button_id" value="9500"/>
-								<param name="button_label" value="Editar Widgets" />
-								<param name="button_onclick" value="ActivateWindow(10035)"/>
-								<param name="button_onclick2" value=""/>
-								<param name="button2_label" value="Menu Padrão" />
-								<param name="button2_onclick" value="Skin.ToggleSetting(Skin_Menu_Setting)"/>
-
-								<param name="button3_label" value="Limpar Widgets de Imagens" />
-								<param name="button3_onclick" value="Skin.SetString(Games_Widgets,-)"/>
-								<param name="button3_onclick2" value="Skin.ToggleSetting(Games_Widgets_View,off)"/>
-								<param name="button3_onclick3" value="SetFocus(9001)"/>
+						</control>
+					</control>
+					<!-- Netflix -->
+					<control type="group">					
+						<control type="group" id="1">
+							<include>Animation_WidgetSelector</include>
+							<visible>String.IsEqual(Container(9000).ListItem.Property(labelID),netflix)</visible>							
+							<include content="Visible_Bottom_Delayed">
+								<param name="id" value="netflix"/>
 							</include>
-						
+							<control type="grouplist" id="2">
+								<top>350</top>
+								<onup>700</onup>
+								<ondown>9000</ondown>
+								<include>WidgetGroupListCommon</include>
+								<pagecontrol>4010</pagecontrol>
+								<include content="WidgetListHomePictures">
+									<param name="content_path" value="$INFO[ListItem.Property(widgetPath)]"/>
+									<param name="widget_target" value="video"/>
+									<param name="list_id" value="9400"/>
+									<param name="fallback_icon" value="defaultpicture.png"/>
+									<param name="visible" value="!String.IsEmpty(ListItem.Property(widgetPath))"/>
+								</include>
+							</control>
 						</control>
 					</control>
 				</control>
@@ -882,64 +842,6 @@
 						</include>
 					</control>
 					<!-- Favoritos -->
-					<!-- <control type="group" id="14000">
-						<include>Animation_WidgetSelector</include>
-						<visible>String.IsEqual(Container(9001).ListItem.Property(id),favorites)</visible>
-						<include content="Visible_Bottom_Delayed">
-							<param name="id" value="favorites"/>
-						</include>
-						<control type="panel" id="5400">
-							<top>500</top>
-							<left>65</left>
-							<top>0</top>
-							<right>0</right>
-							<bottom>0</bottom>
-							<onup>9001</onup>
-							<ondown>9001</ondown>
-							<preloaditems>2</preloaditems>
-							<scrolltime tween="cubic" easing="out">500</scrolltime>
-							<orientation>vertical</orientation>
-							<pagecontrol>14010</pagecontrol>
-							<visible>Integer.IsGreater(Container(5400).NumItems,0) | Container(5400).IsUpdating</visible>
-							<itemlayout width="330" height="401">
-								<control type="group">
-									<top>130</top>
-									<include content="InfoWallMusicLayout">
-										<param name="fallback_image" value="DefaultFavourites.png" />
-										<param name="focused" value="false" />
-									</include>
-								</control>
-							</itemlayout>
-							<focusedlayout width="330" height="401">
-								<control type="group">
-									<depth>DepthContentPopout</depth>
-									<top>130</top>
-									<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="170,320">Focus</animation>
-									<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="170,320">UnFocus</animation>
-									<include content="InfoWallMusicLayout">
-										<param name="fallback_image" value="DefaultFavourites.png" />
-										<param name="focused" value="true" />
-									</include>
-								</control>
-							</focusedlayout>
-							<content>favourites://</content>
-						</control>
-						<include content="ImageWidget">
-							<param name="onup" value="9000" />
-							<param name="ondown" value="9001" />
-							<param name="text_label" value="$LOCALIZE[31025]" />
-							<param name="button_label" value="$LOCALIZE[31116]" />
-							<param name="button_onclick" value=""/>
-							<param name="button_id" value="5500"/>
-							<param name="visible" value="!Integer.IsGreater(Container(5400).NumItems,0) + !Container(5400).IsUpdating"/>
-							<param name="visible_1" value="false"/>
-							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoFavButton)"/>
-						</include>
-						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-							<param name="scrollbar_id" value="14010"/>
-						</include>
-					</control>
-					 -->
 					<control type="group">
 						<include>Animation_WidgetSelector</include>	
 						<visible>String.IsEqual(Container(9001).ListItem.Property(id),favorites)</visible>
@@ -1702,28 +1604,36 @@
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<!-- Menu Do Topo -->
-				<control type="list" id="9000">
-					<visible>String.IsEqual(Skin.String(homemenuitens),Top_Menu)</visible>
+				<control type="list" id="9000">	
+					<onfocus>ClearProperty(listposition,home)</onfocus>	
 					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
-					<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)">Conditional</animation>
-					<top>20</top>
-					<animation effect="slide" start="0" end="850" condition="Integer.IsEqual(Container(9000).NumItems,1)">Conditional</animation>
-					<animation effect="slide" start="0" end="740" condition="Integer.IsEqual(Container(9000).NumItems,2)">Conditional</animation>
-					<animation effect="slide" start="0" end="630" condition="Integer.IsEqual(Container(9000).NumItems,3)">Conditional</animation>
-					<animation effect="slide" start="0" end="520" condition="Integer.IsEqual(Container(9000).NumItems,4)">Conditional</animation>
-					<animation effect="slide" start="0" end="410" condition="Integer.IsGreaterOrEqual(Container(9000).NumItems,5)">Conditional</animation>
-					<width>1100</width>
-					<movement>7</movement>
-					<focusposition>2</focusposition>
-					<onfocus>ClearProperty(listposition,home)</onfocus>				
-					<onright>9001</onright>	
-					<onleft>9002</onleft>					
-					<ondown>SetFocus(2000)</ondown>
-					<onup>700</onup>
+					
+					
+					<include>Center_Menu</include>
+					
+					<include condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)">Top_20</include>
+					<include condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)">Top_950</include>
+					<include condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)">Width_1100</include>
+					<include condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)">Width_1920</include>
+								
+					
+					<onright condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)">9001</onright>	
+					<onright condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)">9000</onright>	
+					
+					<onleft condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)">9002</onleft>					
+					<onleft condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)">9000</onleft>					
+					
+					<ondown condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)">SetFocus(2000)</ondown>
+					<ondown condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)"></ondown>
+					
+					<onup condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)">700</onup>
+					<onup condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)">SetFocus(2000)</onup>
+					
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<itemlayout height="70" width="220">
+					<!-- Default Mneu -->
+					<itemlayout condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)" height="70" width="220">
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -1736,7 +1646,7 @@
 							<animation effect="fade" end="50" condition="true">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout height="70" width="220">
+					<focusedlayout condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)" height="70" width="220">
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
@@ -1761,6 +1671,52 @@
 							<visible>Control.HasFocus(9000)</visible>
 						</control>
 					</focusedlayout>
+					<!-- Skin Shortcuts -->
+					<itemlayout condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)" height="70" width="384">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>70</height>
+							<width>384</width>
+							<align>center</align>
+							<font>font60</font>
+							<label>$INFO[ListItem.Label]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+							<animation effect="fade" end="50" condition="true">Conditional</animation>
+						</control>
+					</itemlayout>
+					<focusedlayout condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)" height="70" width="384">
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<height>70</height>
+							<width>384</width>
+							<align>center</align>
+							<font>font60</font>
+							<label>$INFO[ListItem.Label]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+							<animation effect="fade" end="50" condition="true">Conditional</animation>
+							<visible>!Control.HasFocus(9000)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<top>0</top>
+							<animation type="Focus">
+							<effect type="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="230,0" />
+							</animation>
+							<animation type="Unfocus">
+								<effect type="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="230,0" />
+							</animation>
+							<height>70</height>
+							<width>384</width>
+							<align>center</align>
+							<font>font60</font>
+							<label>$INFO[ListItem.Label]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+							<visible>Control.HasFocus(9000)</visible>
+						</control>
+					</focusedlayout>
+					
 					<content>
 						<include condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu)">Top_Menu</include>
 						<include condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)">skinshortcuts-mainmenu</include>
@@ -1967,6 +1923,7 @@
 					<top>-100</top>
 					<onup>SetFocus(20000)</onup>
 					<ondown>SetFocus(9000)</ondown>
+					<onback>9000</onback>
 					<onleft condition="!String.IsEmpty(9000)">9000</onleft>
 					<onleft condition="String.IsEmpty(9000)">9002</onleft>
 					<onright condition="!String.IsEmpty(9000)">9000</onright>
