@@ -5,22 +5,21 @@
 			<effect type="slide" start="0,0" end="0,-100" time="100" easing="inout" />
 		</animation>
 	</include>
-	<include name="Center_Menu">
-	
-		<animation effect="fade" start="100" end="0" time="100" easing="inout" condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + [Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)]">Conditional</animation>
-		
-		<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)">Conditional</animation>
-		
+	<include name="Center_Menu">	
+		<animation effect="fade" start="100" end="0" time="100" easing="inout" condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + [Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)]">Conditional</animation>		
+		<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)">Conditional</animation>		
 		<animation effect="slide" start="0" end="850" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,1)]">Conditional</animation>
 		<animation effect="slide" start="0" end="740" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,2)]">Conditional</animation>
 		<animation effect="slide" start="0" end="630" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,3)]">Conditional</animation>
 		<animation effect="slide" start="0" end="520" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,4)]">Conditional</animation>
-		<animation effect="slide" start="0" end="410" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsGreaterOrEqual(Container(9000).NumItems,5)]">Conditional</animation>	
+		<animation effect="slide" start="0" end="410" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsGreaterOrEqual(Container(9000).NumItems,5)]">Conditional</animation>		
+		<animation effect="slide" start="0" end="850" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,1)]">Conditional</animation>
+		<animation effect="slide" start="0" end="740" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,2)]">Conditional</animation>
+		<animation effect="slide" start="0" end="630" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,3)]">Conditional</animation>
+		<animation effect="slide" start="0" end="520" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,4)]">Conditional</animation>
+		<animation effect="slide" start="0" end="410" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsGreaterOrEqual(Container(9001).NumItems,5)]">Conditional</animation>		
 	</include>
-	
-	
-	
-	<include name="Visible_Bottom_Delayed">
+		<include name="Visible_Bottom_Delayed">
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
 		<include content="Vis_FadeSlide_Bottom_Delayed" condition="!Skin.HasSetting(no_slide_animations)">
 			<param name="id" value="$PARAM[id]" />

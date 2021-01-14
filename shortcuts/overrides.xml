@@ -12,24 +12,24 @@
 	<!-- Default Widgets -->
 	<propertyfallback property="path" attribute="path" value="">noop</propertyfallback>
 
-	<!-- Movies -->
-    <widgetdefaultnode labelID="games" label="$LOCALIZE[15016]" path="-" target="videos">Movies</widgetdefaultnode>
+	<!-- Games -->
+    <widgetdefaultnode labelID="games" label="$LOCALIZE[15016]" path="addons://sources/game/" target="videos">Movies</widgetdefaultnode>
     <propertydefault labelID="movies" property="widgetLayout">Poster</propertydefault>
 	
     <!-- Movies -->
-    <widgetdefaultnode labelID="movies" label="$LOCALIZE[342]" path="-" target="videos">Movies</widgetdefaultnode>
+    <widgetdefaultnode labelID="movies" label="$LOCALIZE[342]" path="library://video/movies/" target="videos">Movies</widgetdefaultnode>
     <propertydefault labelID="movies" property="widgetLayout">Poster</propertydefault>
 
     <!-- TvShows -->
-    <widgetdefaultnode labelID="tvshows" label="$LOCALIZE[20343]" path="-" target="videos">TV Shows</widgetdefaultnode>
+    <widgetdefaultnode labelID="tvshows" label="$LOCALIZE[20343]" path="library://video/tvshows/" target="videos">TV Shows</widgetdefaultnode>
     <propertydefault labelID="tvshows" property="widgetLayout">Poster</propertydefault>
     	
     <!-- Music -->
-    <widgetdefaultnode labelID="music" label="$LOCALIZE[2]" path="-" target="music">Albums</widgetdefaultnode>
+    <widgetdefaultnode labelID="music" label="$LOCALIZE[2]" path="library://music/" target="music">Albums</widgetdefaultnode>
     <propertydefault labelID="music" property="widgetLayout">Poster</propertydefault>
 	
 	<!-- Music -->
-    <widgetdefaultnode labelID="pictures" label="$LOCALIZE[1]" path="-" target="pictures">Fotos</widgetdefaultnode>
+    <widgetdefaultnode labelID="pictures" label="$LOCALIZE[1]" path="addons://sources/image/" target="pictures">Fotos</widgetdefaultnode>
     <propertydefault labelID="music" property="widgetLayout">Poster</propertydefault>
 
 	<!-- Widget Layout -->

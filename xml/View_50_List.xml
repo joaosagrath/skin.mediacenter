@@ -126,6 +126,7 @@
 				<right>$PARAM[right]</right>
 				<top>list_y_offset</top>
 				<bottom>list_y_offset</bottom>
+				<height>980</height>
 				<movement>5</movement>
 				<focusposition>6</focusposition>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -136,7 +137,7 @@
 				<onup>$PARAM[list_id]</onup>
 				<ondown>$PARAM[list_id]</ondown>
 				<viewtype label="$PARAM[viewtype_label]">list</viewtype>
-				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)</visible>
+				<!-- <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(games) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)</visible> -->
 				<focusedlayout height="list_item_height">
 					<control type="image">
 						<left>0</left>

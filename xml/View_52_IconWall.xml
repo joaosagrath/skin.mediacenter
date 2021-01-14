@@ -7,7 +7,8 @@
 			<include>Visible_Right</include>
 			<control type="panel" id="52">
 				<centerleft>51%</centerleft>
-				<top>0</top>
+				<top>list_y_offset</top>
+				<bottom>list_y_offset</bottom>
 				<width>92%</width>
 				<height>100%</height>
 				<onleft>9000</onleft>
@@ -21,7 +22,7 @@
 				<viewtype label="31099">icon</viewtype>
 				<itemlayout height="280" width="440" condition="Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.AddonIsEnabled(resource.images.studios.white)]">
 					<control type="group">
-						<top>150</top>
+						<top>0</top>
 						<control type="image">
 							<width>396</width>
 							<height>245</height>
@@ -66,7 +67,7 @@
 						<animation type="Unfocus">
 							<effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="auto" />
 						</animation>
-						<top>150</top>
+						<top>0</top>
 						<control type="image">
 							<width>396</width>
 							<height>245</height>

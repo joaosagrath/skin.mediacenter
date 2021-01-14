@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Sagrath -->
-	<include name="ActivateWidget">
+	<!-- <include name="ActivateWidget">
 		<param name="visible">true</param>
 		<param name="visible1">true</param>
 		<definition>
@@ -158,6 +158,7 @@
 			</control>
 		</definition>
 	</include>
+	 -->
 	<!-- Para Fotos -->
 	<include name="WidgetListHomePictures">
 		<definition>
@@ -266,6 +267,102 @@
 		</definition>
 	</include>
 	<!-- -->
+	<include name="WidgetListHomePosterNew">
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>420</top>
+				<right>0</right>
+				<height>800</height>
+				<onleft>$PARAM[list_id]</onleft>
+				<onright>$PARAM[list_id]</onright>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[onup]</ondown>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]"/>
+				</include>
+				<itemlayout width="212" height="312">
+					<control type="image">
+						<left>0</left>
+						<top>280</top>
+						<width>230</width>
+						<height>315</height>
+						<texture>dialogs/dialog-bg-nobo.png</texture>
+						<bordertexture border="21">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image" id="20">
+						<left>10</left>
+						<top>285</top>
+						<width>210</width>
+						<height>305</height>
+						<texture fallback="$PARAM[fallback_icon]" diffuse="posterdiffuse.png">$VAR[PosterThumbVar]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<bordersize>20</bordersize>
+					</control>
+				</itemlayout>
+				<focusedlayout condition="!Control.HasFocus($PARAM[list_id])" width="212" height="312">
+					<control type="image">
+						<left>0</left>
+						<top>280</top>
+						<width>230</width>
+						<height>315</height>
+						<texture>dialogs/dialog-bg-nobo.png</texture>
+						<bordertexture border="21">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>285</top>
+						<width>210</width>
+						<height>305</height>
+						<texture fallback="$PARAM[fallback_icon]" diffuse="posterdiffuse.png">$VAR[PosterThumbVar]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<bordersize>20</bordersize>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="Control.HasFocus($PARAM[list_id])" width="424" height="624">
+					<control type="image">
+						<left>0</left>
+						<top>-15</top>
+						<width>440</width>
+						<height>620</height>
+						<texture>dialogs/dialog-bg-nobo.png</texture>
+						<bordertexture border="21">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="textbox">
+						<left>30</left>
+						<top>30</top>
+						<width>360</width>
+						<height>120</height>
+						<font>font27</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label] Lorem ipsum dolor sit amet consectetuer</label>
+						<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+						<visible>!ListItem.IsParentFolder</visible>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>0</top>
+						<width>420</width>
+						<height>590</height>
+						<texture fallback="$PARAM[fallback_icon]" diffuse="posterdiffuse.png">$VAR[PosterThumbVar]</texture>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						<bordersize>20</bordersize>
+					</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	
 	<include name="WidgetListHomePoster">
 		<definition>
 			<include content="CategoryLabel">
@@ -280,6 +377,7 @@
 				<onleft>$PARAM[list_id]</onleft>
 				<onright>$PARAM[list_id]</onright>
 				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[onup]</ondown>
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
@@ -335,27 +433,27 @@
 		<definition>
 			<control type="group">				
 				<control type="image">
-					<left>15</left>
+					<left>0</left>
 					<top>-10</top>
-					<width>290</width>
-					<height>405</height>
+					<width>230</width>
+					<height>315</height>
 					<texture>dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
-					<left>15</left>
+					<left>0</left>
 					<top>-10</top>
-					<width>290</width>
-					<height>405</height>
+					<width>230</width>
+					<height>315</height>
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordersize>20</bordersize>
 					<visible>$PARAM[focused]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 					<visible>![COntrol.HasFocus(9000) | Control.HasFocus(9001) | Control.HasFocus(9002)]</visible>
 				</control>
-				<control type="textbox">
-					<left>50</left>
+				<!-- <control type="textbox">
+					<left>0</left>
 					<top>230</top>
 					<width>230</width>
 					<height>120</height>
@@ -365,7 +463,7 @@
 					<label>$INFO[ListItem.Label]</label>
 					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
 					<visible>!ListItem.IsParentFolder</visible>
-				</control>
+				</control> -->
 				
 				
 			</control>
