@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1111">
+	<defaultcontrol>9000</defaultcontrol>
+	
+	<onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
+	
+	
+	<controls>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="background">colors/black.png</texture>
+		</control>
+		<include>DefaultBackground</include>
+		<!-- Lista da Esquerda -->
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<left>0</left>
+			<include>OpenClose_Left</include>
+			<include content="ContentPanel">
+				<param name="width" value="530"/>
+			</include>
+			<!-- Itens do Menu principal -->
+			<control type="grouplist" id="9000">
+				<top>133</top>
+				<left>0</left>
+				<width>470</width>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<!-- Menu do Topo -->
+				<control type="label" id="31">
+					<left>0</left>
+					<width>470</width>
+					<height>70</height>
+					<align>center</align>
+					<label>$LOCALIZE[31180]</label>
+				</control>
+				<!-- Jogos -->
+				<control type="radiobutton" id="611">
+					<label>$LOCALIZE[15016]</label>
+					<visible>System.GetBool(gamesgeneral.enable)</visible>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoGamesButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoGamesButton)</onclick>
+					<visible>String.IsEmpty(Skin.String(HomeGames.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<control type="radiobutton" id="612">
+					<label>$INFO[Skin.String(HomeGames.Title)]</label>
+					<visible>System.GetBool(gamesgeneral.enable)</visible>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoGamesButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoGamesButton)</onclick>
+					<visible>!String.IsEmpty(Skin.String(HomeGames.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<!-- Filmes -->
+				<control type="radiobutton" id="613">
+					<label>$LOCALIZE[342]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
+					<visible>String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<control type="radiobutton" id="614">
+					<label>$INFO[Skin.String(HomeMovies.Title)]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
+					<visible>!String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<!-- Seriados -->
+				<control type="radiobutton" id="615">
+					<label>$LOCALIZE[20343]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
+					<visible>String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<control type="radiobutton" id="616">
+					<label>$INFO[Skin.String(HomeTvShows.Title)]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
+					<visible>!String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<!-- Musicas -->
+				<control type="radiobutton" id="617">
+					<label>$LOCALIZE[2]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMusicButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
+					<visible>String.IsEmpty(Skin.String(HomeMusic.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<control type="radiobutton" id="618">
+					<label>$INFO[Skin.String(HomeMusic.Title)]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMusicButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
+					<visible>!String.IsEmpty(Skin.String(HomeMusic.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<!-- Imagens -->
+				<control type="radiobutton" id="619">
+					<label>$LOCALIZE[1]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
+					<visible>String.IsEmpty(Skin.String(HomePictures.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<control type="radiobutton" id="620">
+					<label>$INFO[Skin.String(HomePictures.Title)]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
+					<visible>!String.IsEmpty(Skin.String(HomePictures.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				
+				<!-- Menu da Esquerda -->
+				<control type="image" id="32">
+					<height>3</height>
+					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+				</control>
+				<control type="label" id="33">
+					<left>0</left>
+					<width>470</width>
+					<height>70</height>
+					<align>center</align>
+					<label>$LOCALIZE[31181]</label>
+				</control>
+				<!-- Meu Menu 1 -->
+				<control type="radiobutton" id="621">
+					<label>$VAR[MyMenu1Label]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMyMenu1Button)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu1Button)</onclick>
+					<onright>10000</onright>
+				</control>
+				<!-- Meu Menu 2 -->
+				<control type="radiobutton" id="622">
+					<label>$VAR[MyMenu2Label]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMyMenu2Button)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu2Button)</onclick>
+					<onright>10000</onright>
+				</control>
+				<!-- Meu Menu 3 -->
+				<control type="radiobutton" id="623">
+					<label>$VAR[MyMenu3Label]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMyMenu3Button)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu3Button)</onclick>
+					<onright>10000</onright>
+				</control>
+				<!-- Meu Menu 4 -->
+				<control type="radiobutton" id="624">
+					<label>$VAR[MyMenu4Label]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMyMenu4Button)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu4Button)</onclick>
+					<onright>10000</onright>
+				</control>
+				<!-- Meu Menu 5 -->
+				<control type="radiobutton" id="625">
+					<label>$VAR[MyMenu5Label]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMyMenu5Button)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu5Button)</onclick>
+					<onright>10000</onright>
+				</control>
+				
+				<!-- Menu da Direita -->
+				<control type="image" id="34">
+					<left>0</left>
+					<height>3</height>
+					<width>470</width>
+					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+				</control>
+				<control type="label" id="35">
+					<left>0</left>
+					<width>470</width>
+					<height>70</height>
+					<align>center</align>
+					<label>$LOCALIZE[31182]</label>
+				</control>
+				
+				<!-- Clima -->
+				<control type="radiobutton" id="626">
+					<label>$LOCALIZE[8]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoWeatherButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
+					<onright>10000</onright>
+				</control>
+				<!-- Addons -->
+				<control type="radiobutton" id="627">
+					<label>$LOCALIZE[24001]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoProgramsButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoProgramsButton)</onclick>
+					<visible>String.IsEmpty(Skin.String(HomeAddons.Title))</visible>
+					<onright>10000</onright>
+				</control>
+				<!-- PVR -->
+				<control type="radiobutton" id="628">
+					<label>$LOCALIZE[19020]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoTVButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoTVButton)</onclick>
+					<onright>10000</onright>
+				</control>
+				<!-- Radio -->
+				<control type="radiobutton" id="629">
+					<label>$LOCALIZE[19021]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoRadioButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoRadioButton)</onclick>
+				</control>
+				<!-- Favoritos -->
+				<control type="radiobutton" id="630">
+					<label>$LOCALIZE[10134]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoFavButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoFavButton)</onclick>
+				</control>
+			</control>
+		</control>
+		<!-- Lista Central -->
+		<control type="group">
+			<include>OpenClose_Right</include>
+			<depth>DepthContentPanel</depth>
+			<left>0</left>
+			<include>OpenClose_Right</include>
+			<include content="ContentPanel">
+				<param name="left" value="1902"/>
+				<param name="width" value="508"/>
+				<param name="top" value="115"/>
+				<param name="height" value="848"/>
+			</include>
+			<control type="image">
+				<description>Dialog Header image</description>
+				<left>0</left>
+				<top>130</top>
+				<right>0</right>
+				<height>3</height>
+				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+			</control>
+			<!-- Jogos -->
+			<control type="group">
+				<visible>Control.HasFocus(611) | Control.HasFocus(612) | Control.HasFocus(10001) | Control.HasFocus(10002) | Control.HasFocus(10003) | Control.HasFocus(10004) | Control.HasFocus(10005) | Control.HasFocus(10006) | Control.HasFocus(10007) | Control.HasFocus(10008) | Control.HasFocus(10009) | Control.HasFocus(10010)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeGames.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31184]</label>
+					</control>
+					<control type="button" id="10001">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(HomeGames.Title)]</label2>
+						<onclick>Skin.SetString(HomeGames.Title)</onclick>
+					</control>
+					<control type="button" id="10002">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(HomeGames.Action)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeGames.Title&amp;skinAction=HomeGames.Action)</onclick>
+					</control>
+					<control type="button" id="10003">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(GamesWidgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=GamesWidgets.Source&amp;skinWidgetType=games&amp;skinWidgetName=GamesWidgets.Name&amp;skinWidgetTarget=GamesWidgets.Target&amp;skinWidgetPath=GamesWidgets.Path)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Id,games)</onclick>
+					</control>
+					<control type="button" id="10004">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(HomeGames.Fanart)]</label2>
+						<onclick>Skin.SetImage(HomeGames.Fanart)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(GamesWidgets.Path)]</content>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10008">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(HomeGames.Fanart)</onclick>
+						<align>center</align>
+						<visible>!String.IsEmpty(Skin.String(HomeGames.Fanart))</visible>
+					</control>
+					<control type="button" id="10010">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomeGames.Title)</onclick>
+						<onclick>Skin.Reset(HomeGames.Action)</onclick>
+						<onclick>Skin.Reset(HomeGames.ActionTitle)</onclick>
+						<onclick>Skin.Reset(HomeGames.Fanart)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Name,Addons de Jogos)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Source,addon)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Path,addons://sources/game)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Target,games)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Id,games)</onclick>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			<!-- Filmes -->
+			<control type="group">
+				<visible>Control.HasFocus(613) | Control.HasFocus(614) | Control.HasFocus(10011) | Control.HasFocus(10012) | Control.HasFocus(10013) | Control.HasFocus(10014) | Control.HasFocus(10015) | Control.HasFocus(10016) | Control.HasFocus(10017) | Control.HasFocus(10018) | Control.HasFocus(10019) | Control.HasFocus(10020)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeMovies.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31191]</label>
+					</control>
+					<control type="button" id="10011">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(HomeMovies.Title]</label2>
+						<onclick>Skin.SetString(HomeMovies.Title)</onclick>
+					</control>
+					<control type="button" id="10012">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(HomeMovies.ActionTitle]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeMovies.ActionTitle&amp;skinAction=HomeMovies.Action)</onclick>
+					</control>
+					<control type="button" id="10013">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(MoviesWidgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MoviesWidgets.Source&amp;skinWidgetName=MoviesWidgets.Name&amp;skinWidgetTarget=MoviesWidgets.Target&amp;skinWidgetPath=MoviesWidgets.Path)</onclick>
+					</control>
+					<control type="button" id="10014">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(HomeMovies.Fanart)]</label2>
+						<onclick>Skin.SetImage(HomeMovies.Fanart)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(MoviesWidgets.Path)]</content>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10018">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomeMovies.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10019">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31202]</label>
+						<onclick>Skin.Reset(HomeMovies.icon)</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomeMovies.icon))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10020">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomeMovies.Title)</onclick>
+						<onclick>Skin.Reset(HomeMovies.Action)</onclick>
+						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
+						<onclick>Skin.SetString(MoviesWidgets.Name,Biblioteca de Filmes)</onclick>
+						<onclick>Skin.SetString(MoviesWidgets.Source,Library)</onclick>
+						<onclick>Skin.SetString(MoviesWidgets.Path,library://video/movies/)</onclick>
+						<onclick>Skin.SetString(MoviesWidgets.Target,videos)</onclick>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			<!-- Seriados -->
+			<control type="group">
+				<visible>Control.HasFocus(615) | Control.HasFocus(616) | Control.HasFocus(10021) | Control.HasFocus(10022) | Control.HasFocus(10023) | Control.HasFocus(10024) | Control.HasFocus(10025) | Control.HasFocus(10026) | Control.HasFocus(10027) | Control.HasFocus(10028) | Control.HasFocus(10029) | Control.HasFocus(10030)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeTvShows.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31192]</label>
+					</control>
+					<control type="button" id="10021">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(HomeTvShows.Title)]</label2>
+						<onclick>Skin.SetString(HomeTvShows.Title)</onclick>
+					</control>
+					<control type="button" id="10022">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(HomeTvShows.ActionTitle)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeTvShows.ActionTitle&amp;skinAction=HomeTvShows.Action)</onclick>
+					</control>
+					<control type="button" id="10023">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(TvShowsWidgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=TvShowsWidgets.Source&amp;skinWidgetName=TvShowsWidgets.Name&amp;skinWidgetTarget=TvShowsWidgets.Target&amp;skinWidgetPath=TvShowsWidgets.Path)</onclick>
+					</control>
+					<control type="button" id="10024">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(HomeTvShows.Fanart)]</label2>
+						<onclick>Skin.SetImage(HomeTvShows.Fanart)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(TvShowsWidgets.Path)]</content>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10028">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomeTvShows.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10029">
+						<include>DefaultSettingButton</include>
+						<label>Remover Icone</label>
+						<onclick>Skin.Reset(HomeTvShows.Icon)</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomeTvShows.Icon))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10030">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomeTvShows.Title)</onclick>
+						<onclick>Skin.Reset(HomeTvShows.Action)</onclick>
+						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Name,Biblioteca de Seriados)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Source,Library)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Target,videos)</onclick>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			<!-- Musicas -->
+			<control type="group">
+				<visible>Control.HasFocus(616) | Control.HasFocus(617) | Control.HasFocus(10031) | Control.HasFocus(10032) | Control.HasFocus(10033) | Control.HasFocus(10034) | Control.HasFocus(10035) | Control.HasFocus(10036) | Control.HasFocus(10037) | Control.HasFocus(10038) | Control.HasFocus(10039) | Control.HasFocus(10040)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeMusic.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31193]</label>
+					</control>
+					<control type="button" id="10031">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(HomeMusic.Title)]</label2>
+						<onclick>Skin.SetString(HomeMusic.Title)</onclick>
+					</control>
+					<control type="button" id="10032">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(HomeMusic.ActionTitle)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeMusic.ActionTitle&amp;skinAction=HomeMusic.Action)</onclick>
+					</control>
+					<control type="button" id="10033">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(MusicWidgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MusicWidgets.Source&amp;skinWidgetName=MusicWidgets.Name&amp;skinWidgetTarget=MusicWidgets.Target&amp;skinWidgetPath=MusicWidgets.Path)</onclick>
+					</control>
+					<control type="button" id="10034">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(HomeMusic.Fanart)]</label2>
+						<onclick>Skin.SetImage(HomeMusic.Fanart)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(MusicWidgets.Path)]</content>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10038">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomeMusic.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10040">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomeMusic.Title)</onclick>
+						<onclick>Skin.Reset(HomeMusic.Action)</onclick>
+						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
+						<onclick>Skin.SetString(MusicWidgets.Name,Biblioteca de Musicas)</onclick>
+						<onclick>Skin.SetString(MusicWidgets.Source,Library)</onclick>
+						<onclick>Skin.SetString(MusicWidgets.Path,library://music/)</onclick>
+						<onclick>Skin.SetString(MusicWidgets.Target,Music)</onclick>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			<!-- Imagens -->
+			<control type="group">
+				<visible>Control.HasFocus(618) | Control.HasFocus(619) | Control.HasFocus(10041) | Control.HasFocus(10042) | Control.HasFocus(10043) | Control.HasFocus(10044) | Control.HasFocus(10045) | Control.HasFocus(10046) | Control.HasFocus(10047) | Control.HasFocus(10048) | Control.HasFocus(10049) | Control.HasFocus(10050)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomePictures.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31194]</label>
+					</control>
+					<control type="button" id="10041">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(HomePictures.Title)]</label2>
+						<onclick>Skin.SetString(HomePictures.Title)</onclick>
+					</control>
+					<control type="button" id="10042">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(HomePictures.ActionTitle)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomePictures.ActionTitle&amp;skinAction=HomePictures.Action)</onclick>
+					</control>
+					<control type="button" id="10043">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(PicturesWidgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=PicturesWidgets.Source&amp;skinWidgetName=PicturesWidgets.Name&amp;skinWidgetTarget=PicturesWidgets.Target&amp;skinWidgetPath=PicturesWidgets.Path)</onclick>
+					</control>
+					<control type="button" id="10044">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(HomePictures.Fanart)]</label2>
+						<onclick>Skin.SetImage(HomePictures.Fanart)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(PicturesWidgets.Path)]</content>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10048">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(HomePictures.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomePictures.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10050">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomePictures.Title)</onclick>
+						<onclick>Skin.Reset(HomePictures.Action)</onclick>
+						<onclick>Skin.Reset(HomePictures.Fanart)</onclick>
+						<onclick>Skin.SetString(PicturesWidgets.Name,Addons de Imagens)</onclick>
+						<onclick>Skin.SetString(PicturesWidgets.Source,addon)</onclick>
+						<onclick>Skin.SetString(PicturesWidgets.Path,addons://sources/image)</onclick>
+						<onclick>Skin.SetString(PicturesWidgets.Target,pictures)</onclick>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			
+			<!-- Meu Menu 1 -->
+			<control type="group">
+				<visible>Control.HasFocus(621) | Control.HasFocus(10051) | Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10055) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058) | Control.HasFocus(10059) | Control.HasFocus(10060)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu1.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31195]</label>
+					</control>
+					<control type="button" id="10051">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(MyMenu1.Title)]</label2>
+						<onclick>Skin.SetString(MyMenu1.Title)</onclick>
+					</control>
+					<control type="button" id="10052">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(MyMenu1.Action)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=MyMenu1.Title&amp;skinAction=MyMenu1.Action)</onclick>
+					</control>
+					<control type="button" id="10053">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(MyMenu1Widgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu1Widgets.Source&amp;skinWidgetName=MyMenu1Widgets.Name&amp;skinWidgetTarget=MyMenu1Widgets.Target&amp;skinWidgetPath=MyMenu1Widgets.Path)</onclick>
+					</control>
+					<control type="button" id="10054">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(MyMenu1.Fanart)]</label2>
+						<onclick>Skin.SetImage(MyMenu1.Fanart)</onclick>
+					</control>
+					<control type="button" id="10055">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31201]</label>
+						<label2>$INFO[Skin.String(HomeMyMenu1.icon)]</label2>
+						<onclick>Skin.SetImage(HomeMyMenu1.icon)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(MyMenu1Widgets.Path)]</content>
+				</control>
+				<!-- Custom Icon -->
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeMyMenu1CustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10058">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(MyMenu1.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(MyMenu1.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10059">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31202]</label>
+						<onclick>Skin.Reset(HomeMyMenu1.icon)</onclick>
+						<align>center</align>
+					</control>
+					<control type="button" id="10060">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(MyMenu1.Title)</onclick>
+						<onclick>Skin.Reset(MyMenu1.Action)</onclick>
+						<onclick>Skin.Reset(MyMenu1.Fanart)</onclick>
+						<onclick>Skin.Reset(MyMenu1Widgets.Name)</onclick>
+						<onclick>Skin.Reset(MyMenu1.Source)</onclick>
+						<onclick>Skin.SetString(MyMenu1Widgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MyMenu1Widgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMyMenu1.icon)</onclick>
+						<align>center</align>					
+					</control>
+				</control>
+			</control>
+			<!-- Meu Menu 2 -->
+			<control type="group">
+				<visible>Control.HasFocus(622) | Control.HasFocus(10061) | Control.HasFocus(10062) | Control.HasFocus(10063) | Control.HasFocus(10064) | Control.HasFocus(10065) | Control.HasFocus(10066) | Control.HasFocus(10067) | Control.HasFocus(10068) | Control.HasFocus(10069) | Control.HasFocus(10070)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu2.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31196]</label>
+					</control>
+					<control type="button" id="10061">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(MyMenu2.Title)]</label2>
+						<onclick>Skin.SetString(MyMenu2.Title)</onclick>
+					</control>
+					<control type="button" id="10062">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(MyMenu2.Action)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=MyMenu2.Title&amp;skinAction=MyMenu2.Action)</onclick>
+					</control>
+					<control type="button" id="10063">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(MyMenu2Widgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu2Widgets.Source&amp;skinWidgetName=MyMenu2Widgets.Name&amp;skinWidgetTarget=MyMenu2Widgets.Target&amp;skinWidgetPath=MyMenu2Widgets.Path)</onclick>
+					</control>
+					<control type="button" id="10064">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(MyMenu2.Fanart)]</label2>
+						<onclick>Skin.SetImage(MyMenu2.Fanart)</onclick>
+					</control>
+					<control type="button" id="10065">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31201]</label>
+						<label2>$INFO[Skin.String(HomeMyMenu2.icon)]</label2>
+						<onclick>Skin.SetImage(HomeMyMenu2.icon)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(MyMenu2Widgets.Path)]</content>
+				</control>
+				<!-- Custom Icon -->
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeMyMenu2CustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10068">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(MyMenu2.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(MyMenu2.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10069">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31202]</label>
+						<onclick>Skin.Reset(HomeMyMenu2.icon)</onclick>
+						<align>center</align>
+					</control>
+					<control type="button" id="10070">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(MyMenu2.Title)</onclick>
+						<onclick>Skin.Reset(MyMenu2.Action)</onclick>
+						<onclick>Skin.Reset(MyMenu2.Fanart)</onclick>
+						<onclick>Skin.Reset(MyMenu2Widgets.Name)</onclick>
+						<onclick>Skin.Reset(MyMenu2.Source)</onclick>
+						<onclick>Skin.SetString(MyMenu2Widgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MyMenu2Widgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMyMenu2.icon)</onclick>
+						<align>center</align>					
+					</control>
+				</control>
+			</control>
+			<!-- Meu Menu 3 -->
+			<control type="group">
+				<visible>Control.HasFocus(623) | Control.HasFocus(10071) | Control.HasFocus(10072) | Control.HasFocus(10073) | Control.HasFocus(10074) | Control.HasFocus(10075) | Control.HasFocus(10076) | Control.HasFocus(10077) | Control.HasFocus(10078) | Control.HasFocus(10079) | Control.HasFocus(10080)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu3.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31198]</label>
+					</control>
+					<control type="button" id="10071">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(MyMenu3.Title)]</label2>
+						<onclick>Skin.SetString(MyMenu3.Title)</onclick>
+					</control>
+					<control type="button" id="10072">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(MyMenu3.Action)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=MyMenu3.Title&amp;skinAction=MyMenu3.Action)</onclick>
+					</control>
+					<control type="button" id="10073">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(MyMenu3Widgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu3Widgets.Source&amp;skinWidgetName=MyMenu3Widgets.Name&amp;skinWidgetTarget=MyMenu3Widgets.Target&amp;skinWidgetPath=MyMenu3Widgets.Path)</onclick>
+					</control>
+					<control type="button" id="10074">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(MyMenu3.Fanart)]</label2>
+						<onclick>Skin.SetImage(MyMenu3.Fanart)</onclick>
+					</control>
+					<control type="button" id="10075">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31201]</label>
+						<label2>$INFO[Skin.String(HomeMyMenu3.icon)]</label2>
+						<onclick>Skin.SetImage(HomeMyMenu3.icon)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(MyMenu3Widgets.Path)]</content>
+				</control>
+				<!-- Custom Icon -->
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeMyMenu3CustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10078">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(MyMenu3.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(MyMenu3.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10079">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31202]</label>
+						<onclick>Skin.Reset(HomeMyMenu3.icon)</onclick>
+						<align>center</align>
+					</control>
+					<control type="button" id="10080">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(MyMenu3.Title)</onclick>
+						<onclick>Skin.Reset(MyMenu3.Action)</onclick>
+						<onclick>Skin.Reset(MyMenu3.Fanart)</onclick>
+						<onclick>Skin.Reset(MyMenu3Widgets.Name)</onclick>
+						<onclick>Skin.Reset(MyMenu3.Source)</onclick>
+						<onclick>Skin.SetString(MyMenu3Widgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MyMenu3Widgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMyMenu3.icon)</onclick>
+						<align>center</align>					
+					</control>
+				</control>
+			</control>
+			<!-- Meu Menu 4 -->
+			<control type="group">
+				<visible>Control.HasFocus(624) | Control.HasFocus(10081) | Control.HasFocus(10082) | Control.HasFocus(10083) | Control.HasFocus(10084) | Control.HasFocus(10085) | Control.HasFocus(10086) | Control.HasFocus(10087) | Control.HasFocus(10088) | Control.HasFocus(10089) | Control.HasFocus(10090)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu4.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31199]</label>
+					</control>
+					<control type="button" id="10081">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(MyMenu4.Title)]</label2>
+						<onclick>Skin.SetString(MyMenu4.Title)</onclick>
+					</control>
+					<control type="button" id="10082">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(MyMenu4.Action)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=MyMenu4.Title&amp;skinAction=MyMenu4.Action)</onclick>
+					</control>
+					<control type="button" id="10083">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(MyMenu4Widgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu4Widgets.Source&amp;skinWidgetName=MyMenu4Widgets.Name&amp;skinWidgetTarget=MyMenu4Widgets.Target&amp;skinWidgetPath=MyMenu4Widgets.Path)</onclick>
+					</control>
+					<control type="button" id="10084">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(MyMenu4.Fanart)]</label2>
+						<onclick>Skin.SetImage(MyMenu4.Fanart)</onclick>
+					</control>
+					<control type="button" id="10085">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31201]</label>
+						<label2>$INFO[Skin.String(HomeMyMenu4.icon)]</label2>
+						<onclick>Skin.SetImage(HomeMyMenu4.icon)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(MyMenu4Widgets.Path)]</content>
+				</control>
+				<!-- Custom Icon -->
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeMyMenu4CustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10088">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(MyMenu4.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(MyMenu4.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10089">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31202]</label>
+						<onclick>Skin.Reset(HomeMyMenu4.icon)</onclick>
+						<align>center</align>
+					</control>
+					<control type="button" id="10090">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(MyMenu4.Title)</onclick>
+						<onclick>Skin.Reset(MyMenu4.Action)</onclick>
+						<onclick>Skin.Reset(MyMenu4.Fanart)</onclick>
+						<onclick>Skin.Reset(MyMenu4Widgets.Name)</onclick>
+						<onclick>Skin.Reset(MyMenu4.Source)</onclick>
+						<onclick>Skin.SetString(MyMenu4Widgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MyMenu4Widgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMyMenu4.icon)</onclick>
+						<align>center</align>					
+					</control>
+				</control>
+			</control>
+			<!-- Meu Menu 5 -->
+			<control type="group">
+				<visible>Control.HasFocus(625) | Control.HasFocus(10091) | Control.HasFocus(10092) | Control.HasFocus(10093) | Control.HasFocus(10094) | Control.HasFocus(10095) | Control.HasFocus(10096) | Control.HasFocus(10097) | Control.HasFocus(10098) | Control.HasFocus(10099) | Control.HasFocus(10100)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu5.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31200]</label>
+					</control>
+					<control type="button" id="10091">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31185]</label>
+						<label2>$INFO[Skin.String(MyMenu5.Title)]</label2>
+						<onclick>Skin.SetString(MyMenu5.Title)</onclick>
+					</control>
+					<control type="button" id="10092">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(MyMenu5.Action)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=MyMenu5.Title&amp;skinAction=MyMenu5.Action)</onclick>
+					</control>
+					<control type="button" id="10093">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(MyMenu5Widgets.Name)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu5Widgets.Source&amp;skinWidgetName=MyMenu5Widgets.Name&amp;skinWidgetTarget=MyMenu5Widgets.Target&amp;skinWidgetPath=MyMenu5Widgets.Path)</onclick>
+					</control>
+					<control type="button" id="10094">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(MyMenu5.Fanart)]</label2>
+						<onclick>Skin.SetImage(MyMenu5.Fanart)</onclick>
+					</control>
+					<control type="button" id="10095">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31201]</label>
+						<label2>$INFO[Skin.String(HomeMyMenu5.icon)]</label2>
+						<onclick>Skin.SetImage(HomeMyMenu5.icon)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(MyMenu5Widgets.Path)]</content>
+				</control>
+				<!-- Custom Icon -->
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeMyMenu5CustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10098">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(MyMenu5.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(MyMenu5.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10099">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31202]</label>
+						<onclick>Skin.Reset(HomeMyMenu5.icon)</onclick>
+						<align>center</align>
+					</control>
+					<control type="button" id="10100">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(MyMenu5.Title)</onclick>
+						<onclick>Skin.Reset(MyMenu5.Action)</onclick>
+						<onclick>Skin.Reset(MyMenu5.Fanart)</onclick>
+						<onclick>Skin.Reset(MyMenu5Widgets.Name)</onclick>
+						<onclick>Skin.Reset(MyMenu5.Source)</onclick>
+						<onclick>Skin.SetString(MyMenu5Widgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MyMenu5Widgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMyMenu5.icon)</onclick>
+						<align>center</align>					
+					</control>
+				</control>
+			</control>
+						
+			<!-- Clima -->
+			<control type="group">
+				<visible>Control.HasFocus(626) | Control.HasFocus(10101) | Control.HasFocus(10102) | Control.HasFocus(10103) | Control.HasFocus(10104) | Control.HasFocus(10105) | Control.HasFocus(10106) | Control.HasFocus(10107) | Control.HasFocus(10108) | Control.HasFocus(10109) | Control.HasFocus(10110)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeWeather.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31203]</label>
+					</control>
+					<control type="radiobutton" id="10101">
+						<label>$LOCALIZE[31208]</label>
+						<include>DefaultSettingButton</include>
+						<onclick>Skin.SetString(HomeWeather.ConditionFanart,true)</onclick>
+						<onclick>Skin.Reset(HomeWeather.Fanart)</onclick>
+						<selected>String.IsEmpty(Skin.String(HomeWeather.Fanart))</selected>
+					</control>
+					<control type="radiobutton" id="10102">
+						<label>$LOCALIZE[31209]</label>
+						<include>DefaultSettingButton</include>
+						<selected>!Skin.HasSetting(NoShowWeatherDaily)</selected>
+						<onclick>Skin.ToggleSetting(NoShowWeatherDaily)</onclick>
+						<enable>Weather.IsFetched</enable>
+					</control>
+					<control type="radiobutton" id="10103">
+						<label>$LOCALIZE[31210]</label>
+						<include>DefaultSettingButton</include>
+						<selected>!Skin.HasSetting(NoShowWeatherHourly)</selected>
+						<onclick>Skin.ToggleSetting(NoShowWeatherHourly)</onclick>
+						<onclick>Container.Refresh</onclick>
+						<enable>!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))</enable>
+					</control>
+					<control type="button" id="10104">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(HomeWeather.Fanart)]</label2>
+						<onclick>Skin.SetImage(HomeWeather.Fanart)</onclick>
+					</control>
+				</control>
+				
+				<control type="list">
+					<animation effect="slide" end="0,190" condition="Skin.HasSetting(NoShowWeatherHourly)">Conditional</animation>
+					<visible>!Skin.HasSetting(NoShowWeatherDaily)</visible>
+					<top>450</top>
+					<include>WeatherWidgetPreview</include>
+					<include>DailyItems</include>
+				</control>
+				<control type="list">
+					<visible>!Skin.HasSetting(NoShowWeatherHourly)</visible>
+					<include>WeatherWidgetPreview</include>
+					<include>HourlyItems</include>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10108">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<onclick>Skin.Reset(HomeWeather.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomeWeather.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10109">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomeWeather.Fanart)</onclick>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			<!-- Addons -->
+			<control type="group">
+				<visible>Control.HasFocus(627) | Control.HasFocus(10111) | Control.HasFocus(10112) | Control.HasFocus(10113) | Control.HasFocus(10114) | Control.HasFocus(10115) | Control.HasFocus(10116) | Control.HasFocus(10117) | Control.HasFocus(10118) | Control.HasFocus(10119) | Control.HasFocus(10120)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeAddons.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<height>490</height>
+					<onup>10109</onup>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31204]</label>
+					</control>
+					<control type="radiobutton" id="10111">
+						<include>DefaultSettingButton</include>
+						<label>Addons</label>
+						<onclick>Skin.ToggleSetting(WidgetListHomeAddons)</onclick>
+						<selected>Skin.HasSetting(WidgetListHomeAddons)</selected>
+						<onclick>Skin.Reset(WidgetListHomeVideoAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
+					</control>	
+					<control type="radiobutton" id="10112">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31211]</label>
+						<onclick>Skin.ToggleSetting(WidgetListHomeVideoAddons)</onclick>
+						<selected>Skin.HasSetting(WidgetListHomeVideoAddons)</selected>
+						<onclick>Skin.Reset(WidgetListHomeAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
+					</control>
+					<control type="radiobutton" id="10113">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31212]</label>
+						<onclick>Skin.ToggleSetting(WidgetListHomeAudioAddons)</onclick>
+						<selected>Skin.HasSetting(WidgetListHomeAudioAddons)</selected>
+						<onclick>Skin.Reset(WidgetListHomeAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeVideoAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
+					</control>
+					<control type="radiobutton" id="10114">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31213]</label>
+						<onclick>Skin.ToggleSetting(WidgetListHomeGamesAddons)</onclick>
+						<selected>Skin.HasSetting(WidgetListHomeGamesAddons)</selected>
+						<onclick>Skin.Reset(WidgetListHomeAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeVideoAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
+					</control>
+					<control type="radiobutton" id="10115">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31214]</label>
+						<onclick>Skin.ToggleSetting(WidgetListHomeImageAddons)</onclick>
+						<selected>Skin.HasSetting(WidgetListHomeImageAddons)</selected>
+						<onclick>Skin.Reset(WidgetListHomeAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeVideoAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
+					</control>
+					<control type="radiobutton" id="10116">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31215]</label>
+						<onclick>Skin.ToggleSetting(WidgetListHomeProgramsAddons)</onclick>
+						<selected>Skin.HasSetting(WidgetListHomeProgramsAddons)</selected>
+						<onclick>Skin.Reset(WidgetListHomeAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeVideoAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
+					</control>
+					<control type="radiobutton" id="10117">
+						<enable>System.Platform.Android</enable>
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31216]</label>
+						<onclick>Skin.ToggleSetting(WidgetListHomeAndroidApps)</onclick>
+						<selected>Skin.HasSetting(WidgetListHomeAndroidApps)</selected>
+						<onclick>Skin.Reset(WidgetListHomeAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeVideoAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
+						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
+					</control>
+					<control type="button" id="10118">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(HomeAddons.Fanart)]</label2>
+						<onclick>Skin.SetImage(HomeAddons.Fanart)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<visible>Skin.HasSetting(WidgetListHomeAddons)</visible>
+					<include>WidgetListHomePosterPreview</include>
+					<include>WidgetListHomeAddons</include>
+				</control>
+				<control type="list">
+					<visible>Skin.HasSetting(WidgetListHomeVideoAddons)</visible>
+					<include>WidgetListHomePosterPreview</include>
+					<include>WidgetListHomeVideoAddons</include>
+				</control>
+				<control type="list">
+					<visible>Skin.HasSetting(WidgetListHomeAudioAddons)</visible>
+					<include>WidgetListHomePosterPreview</include>
+					<include>WidgetListHomeAudioAddons</include>
+				</control>
+				<control type="list">
+					<visible>Skin.HasSetting(WidgetListHomeGamesAddons)</visible>
+					<include>WidgetListHomePosterPreview</include>
+					<include>WidgetListHomeGamesAddons</include>
+				</control>
+				<control type="list">
+					<visible>Skin.HasSetting(WidgetListHomeImageAddons)</visible>
+					<include>WidgetListHomePosterPreview</include>
+					<include>WidgetListHomeImageAddons</include>
+				</control>
+				<control type="list">
+					<visible>Skin.HasSetting(WidgetListHomeProgramsAddons)</visible>
+					<include>WidgetListHomePosterPreview</include>
+					<include>WidgetListHomeProgramsAddons</include>
+				</control>
+				<control type="list">
+					<visible>Skin.HasSetting(WidgetListHomeAndroidApps)</visible>
+					<include>WidgetListHomePosterPreview</include>
+					<include>WidgetListHomeAndroidApps</include>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<ondown>10101</ondown>
+					<onup>10108</onup>
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10119">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<onclick>Skin.Reset(HomeAddons.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(HomeAddons.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<control type="button" id="10120">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomeAddons.Title)</onclick>
+						<onclick>Skin.Reset(HomeAddons.Action)</onclick>
+						<onclick>Skin.Reset(HomeAddons.Fanart)</onclick>
+						<onclick>Skin.Reset(AddonsWidgets.Name)</onclick>
+						<onclick>Skin.SetString(AddonsWidgets.Source,addon)</onclick>
+						<onclick>Skin.SetString(AddonsWidgets.Path,WidgetListHomeAddons)</onclick>
+						<onclick>Skin.SetString(AddonsWidgets.Target,pictures)</onclick>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			<!-- TV -->
+			<control type="group">
+				<visible>Control.HasFocus(628) | Control.HasFocus(10121) | Control.HasFocus(10122) | Control.HasFocus(10123) | Control.HasFocus(10124) | Control.HasFocus(10125) | Control.HasFocus(10126) | Control.HasFocus(10127) | Control.HasFocus(10128) | Control.HasFocus(10129) | Control.HasFocus(10130)</visible>
+				<control type="image">
+					<left>470</left>
+					<top>135</top>
+					<bottom>134</bottom>
+					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(PVR.Fanart)]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="grouplist" id="10000">
+					<include>CustomSkinSettingsPosition</include>
+					<control type="label" id="0">
+						<left>0</left>
+						<width>1450</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31205]</label>
+					</control>
+					<control type="button" id="10121">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$VAR[PVRSettingsLabel]</label2>
+						<onclick condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVGuide))">Skin.SetString(PVR.Action,ActivateWindow(TVChannels))</onclick>
+						<onclick condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVRecordings))">Skin.SetString(PVR.Action,ActivateWindow(TVGuide))</onclick>
+						<onclick condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVTimers))">Skin.SetString(PVR.Action,ActivateWindow(TVRecordings))</onclick>
+						<onclick condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVTimerRules))">Skin.SetString(PVR.Action,ActivateWindow(TVTimers))</onclick>
+						<onclick condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVChannels)">Skin.SetString(PVR.Action,ActivateWindow(TVTimerRules))</onclick>					
+					</control>				
+					<!-- <control type="button" id="10122">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31186]</label>
+						<label2>$INFO[Skin.String(MyMenu1.Action)]</label2>
+						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=MyMenu1.Title&amp;skinAction=MyMenu1.Action)</onclick>
+					</control> -->
+					<control type="button" id="10123">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31187]</label>
+						<label2>$INFO[Skin.String(PVRWidgets.Path)]</label2>
+						<onclick condition="String.IsEqual(Skin.String(PVRWidgets.Path),pvr://channels/tv/*?view=lastplayed)">Skin.SetString(PVRWidgets.Path,pvr://channels/tv/*?)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(PVRWidgets.Path),pvr://channels/tv/*?)">Skin.SetString(PVRWidgets.Path,pvr://channels/tv/*?view=lastplayed)</onclick>
+					</control>
+					<control type="button" id="10124">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<label2>$INFO[Skin.String(PVR.Fanart)]</label2>
+						<onclick>Skin.SetImage(PVR.Fanart)</onclick>
+					</control>
+				</control>
+				<!-- Widget Preview -->
+				<control type="list">
+					<include>WidgetListHomePosterPreview</include>
+					<content>$INFO[Skin.String(PVRWidgets.Path]</content>
+				</control>
+				<!-- Botões de Redefinição -->
+				<control type="grouplist" id="11000">
+					<include>CustomSkinSettingsPositionBottom</include>
+					<control type="button" id="10128">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31188]</label>
+						<onclick>Skin.Reset(PVR.Fanart)</onclick>
+						<onclick>up</onclick>
+						<visible>!String.IsEmpty(Skin.String(PVR.Fanart))</visible>
+						<align>center</align>
+					</control>
+					<!-- <control type="button" id="10130">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(MyMenu1.Title)</onclick>
+						<onclick>Skin.Reset(MyMenu1.Action)</onclick>
+						<onclick>Skin.Reset(PVR.Fanart.Fanart)</onclick>
+						<onclick>Skin.Reset(MyMenu1Widgets.Name)</onclick>
+						<onclick>Skin.Reset(MyMenu1.Source)</onclick>
+						<onclick>Skin.SetString(MyMenu1Widgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MyMenu1Widgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMyMenu1.icon)</onclick>
+						<align>center</align>					
+					</control> -->
+				</control>
+			</control>
+			
+			
+			<control type="image">
+				<description>Dialog Header image</description>
+				<left>0</left>
+				<bottom>134</bottom>
+				<right>0</right>
+				<height>3</height>
+				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+			</control>
+		</control>
+		<include content="TopBar">
+			<param name="breadcrumbs_label" value="$LOCALIZE[5] / $LOCALIZE[20077]"/>
+		</include>
+		<include>BottomBar</include>
+	</controls>
+</window>

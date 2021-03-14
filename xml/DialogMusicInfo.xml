@@ -4,6 +4,11 @@
 	<onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
 	<onunload>ClearProperty(infobackground,home)</onunload>
 	<controls>
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture background="true" colordiffuse="FF878787">$VAR[HomeFanartVar]</texture>
+		</control>
 		<control type="group">
 			<centertop>50%</centertop>
 			<height>1080</height>

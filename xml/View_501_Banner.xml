@@ -55,10 +55,10 @@
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<animation type="Focus">
-							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="450,180" />
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="450,180"/>
 						</animation>
 						<animation type="Unfocus">
-							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="450,180" />
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="450,180"/>
 						</animation>
 						<top>100</top>
 						<control type="image">
@@ -163,5 +163,5 @@
 				</focusedlayout>
 			</control>
 		</control>
-	</include>
+</include>
 </includes>

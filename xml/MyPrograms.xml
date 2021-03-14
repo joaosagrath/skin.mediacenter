@@ -2,18 +2,16 @@
 <window>
 	<defaultcontrol always="true">52</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<views>50,51,52,55,500,502</views>
+	<views>50,52,55,500</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<include>View_50_List</include>
-			<include>View_51_Poster</include>
 			<include>View_52_IconWall</include>
 			<include>View_55_WideList</include>
 			<include>View_500_Wall</include>
-			<include>View_502_FanArt</include>
 			<control type="group">
 				<include>OpenClose_Left</include>
 				<include>Visible_Left</include>

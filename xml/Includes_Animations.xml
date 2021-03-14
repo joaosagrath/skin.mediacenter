@@ -1,82 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="Animation_WidgetSelector">
-		<animation type="Conditional" condition="Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125)">
-			<effect type="slide" start="0,0" end="0,-100" time="100" easing="inout" />
+	<include name="CustomWidgetsAnimation">
+		<animation type="Conditional" condition="[Control.HasFocus(611) | Control.HasFocus(612) | Control.HasFocus(11001)] + !Skin.HasSetting(HomeMenuNoGamesButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(613) | Control.HasFocus(614) | Control.HasFocus(11002)]  + !Skin.HasSetting(HomeMenuNoMovieButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(615) | Control.HasFocus(616) | Control.HasFocus(11003)]  + !Skin.HasSetting(HomeMenuNoTvShowButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(617) | Control.HasFocus(618) | Control.HasFocus(11004)] +  !Skin.HasSetting(HomeMenuNoMusicButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(619) | Control.HasFocus(620) | Control.HasFocus(11005)] +  !Skin.HasSetting(HomeMenuNoPicturesButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(641) | Control.HasFocus(642) | Control.HasFocus(11009)] +  !Skin.HasSetting(HomeMenuNoMusicVideoButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(643) | Control.HasFocus(644) | Control.HasFocus(11010)] +  !Skin.HasSetting(HomeMenuNoNetflixButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(644) | Control.HasFocus(645) | Control.HasFocus(11011)] +  !Skin.HasSetting(HomeMenuNoSpotifyButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
+		</animation>
+		<animation type="Conditional" condition="[Control.HasFocus(646) | Control.HasFocus(647) | Control.HasFocus(11012)] +  !Skin.HasSetting(HomeMenuNoYoutubeButton)">
+			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
 		</animation>
 	</include>
-	<include name="Center_Menu">	
-		<animation effect="fade" start="100" end="0" time="100" easing="inout" condition="String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + [Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)]">Conditional</animation>		
-		<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)">Conditional</animation>		
-		<animation effect="slide" start="0" end="850" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,1)]">Conditional</animation>
-		<animation effect="slide" start="0" end="740" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,2)]">Conditional</animation>
-		<animation effect="slide" start="0" end="630" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,3)]">Conditional</animation>
-		<animation effect="slide" start="0" end="520" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsEqual(Container(9000).NumItems,4)]">Conditional</animation>
-		<animation effect="slide" start="0" end="410" condition="[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Integer.IsGreaterOrEqual(Container(9000).NumItems,5)]">Conditional</animation>		
-		<animation effect="slide" start="0" end="850" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,1)]">Conditional</animation>
-		<animation effect="slide" start="0" end="740" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,2)]">Conditional</animation>
-		<animation effect="slide" start="0" end="630" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,3)]">Conditional</animation>
-		<animation effect="slide" start="0" end="520" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsEqual(Container(9001).NumItems,4)]">Conditional</animation>
-		<animation effect="slide" start="0" end="410" condition="[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Integer.IsGreaterOrEqual(Container(9001).NumItems,5)]">Conditional</animation>		
+	<include name="ResumeWeatherAnimations">
+		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+		<include condition="!Skin.HasSetting(no_slide_animations)">Animation_BottomSlide</include>
+		<animation effect="fade" start="100" end="00" time="400" easing="inout" condition="Control.HasFocus(10) | Control.HasFocus(13) | Control.HasFocus(9400)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-180" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation>
 	</include>
-		<include name="Visible_Bottom_Delayed">
+	<include name="animation_cdart">
+		<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+	</include>
+	<include name="Center_Menu">
+		<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">Conditional</animation>
+		<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) + Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
+		<animation effect="slide" start="0" end="850" condition="Integer.IsEqual(Container(9000).NumItems,1)">Conditional</animation>
+		<animation effect="slide" start="0" end="740" condition="Integer.IsEqual(Container(9000).NumItems,2)">Conditional</animation>
+		<animation effect="slide" start="0" end="630" condition="Integer.IsEqual(Container(9000).NumItems,3)">Conditional</animation>
+		<animation effect="slide" start="0" end="520" condition="Integer.IsEqual(Container(9000).NumItems,4)">Conditional</animation>
+		<animation effect="slide" start="0" end="410" condition="Integer.IsGreaterOrEqual(Container(9000).NumItems,5)">Conditional</animation>
+	</include>
+	<include name="Visible_Fade_Reverse">
+		<animation type="Conditional" condition="Control.HasFocus(12)">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out"/>
+		</animation>
+		<animation type="Conditional" condition="!Control.HasFocus(12)">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+		</animation>
+	</include>
+	<include name="Visible_WidgetHomeSources">
+		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade_Reverse</include>
+		<include content="Vis_FadeSlide_WidgetHomeSources" condition="!Skin.HasSetting(no_slide_animations)"/>
+	</include>
+	<include name="Vis_FadeSlide_WidgetHomeSources">
+		<animation type="Conditional" condition="Control.HasFocus(12)">
+			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out"/>
+			<effect type="slide" start="0,320" end="0" time="400" delay="300" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="Conditional" condition="!Control.HasFocus(12)">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="0,320" time="300" delay="300" tween="cubic" easing="out"/>
+		</animation>
+	</include>
+	<include name="Visible_Bottom_Delayed">
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
 		<include content="Vis_FadeSlide_Bottom_Delayed" condition="!Skin.HasSetting(no_slide_animations)">
-			<param name="id" value="$PARAM[id]" />
+			<param name="id" value="$PARAM[id]"/>
 		</include>
 	</include>
 	<include name="Vis_FadeSlide_Bottom_Delayed">
 		<animation type="Conditional" condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),$PARAM[id]) |  String.IsEqual(Container(9000).ListItem.Property(labelID),$PARAM[id]) |  String.IsEqual(Container(9000).ListItem.Property(id),$PARAM[id]) | String.IsEqual(Container(9001).ListItem.Property(id),$PARAM[id]) | String.IsEqual(Container(9002).ListItem.Property(id),$PARAM[id])">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out" />
-			<effect type="slide" start="0,320" end="0" time="400" delay="300" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out"/>
+			<effect type="slide" start="0,320" end="0" time="400" delay="300" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="Hidden">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0" end="0,320" time="300" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="0,320" time="300" delay="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
-	
 	<include name="Right_Menu_Hidden">
 		<animation type="Conditional" condition="Control.HasFocus() | [Integer.IsEqual(Container(9000).NumItems,5) + Container(9000).Position(4) |  Integer.IsEqual(Container(9000).NumItems,4) + Container(9000).Position(3) |  Integer.IsEqual(Container(9000).NumItems,3) + Container(9000).Position(2) |  Integer.IsEqual(Container(9000).NumItems,2) + Container(9000).Position(1) |  Integer.IsEqual(Container(9000).NumItems,1) + Container(9000).Position(0)]">
-			<effect type="slide" start="0,0" end="-100,0" time="400" delay="300" tween="cubic" easing="inout" />
+			<effect type="slide" start="0,0" end="-100,0" time="400" delay="300" tween="cubic" easing="inout"/>
 		</animation>
-		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)">
-			<effect type="slide" start="0,0" end="100,0" time="400" delay="300" tween="cubic" easing="inout" />
+		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">
+			<effect type="slide" start="0,0" end="100,0" time="400" delay="300" tween="cubic" easing="inout"/>
 		</animation>
 	</include>
-
 	<include name="Left_Menu_Hidden">
 		<animation type="Conditional" condition="Integer.IsEqual(Container(9000).Position(pos),0)">
-			<effect type="slide" start="0,0" end="100,0" time="400" delay="300" tween="cubic" easing="inout" />
+			<effect type="slide" start="0,0" end="100,0" time="400" delay="300" tween="cubic" easing="inout"/>
 		</animation>
-		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)">
-			<effect type="slide" start="0,0" end="-100,0" time="400" delay="300" tween="cubic" easing="inout" />
+		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">
+			<effect type="slide" start="0,0" end="-100,0" time="400" delay="300" tween="cubic" easing="inout"/>
 		</animation>
 	</include>
-
 	<include name="Animation_FocusTextureFade">
 		<animation effect="fade" start="0" end="100" time="200" tween="sine">Focus</animation>
 		<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
 	</include>
 	<include name="Animation_DialogPopupOpenClose">
 		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240" />
-			<effect type="fade" delay="160" end="100" time="240" />
+			<effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240"/>
+			<effect type="fade" delay="160" end="100" time="240"/>
 		</animation>
 		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240" />
-			<effect type="fade" start="100" end="0" time="240" />
+			<effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240"/>
+			<effect type="fade" start="100" end="0" time="240"/>
 		</animation>
 		<depth>DepthDialog</depth>
 	</include>
 	<include name="Animation_DialogPopupVisible">
 		<animation type="Visible" reversible="false">
-			<effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240" />
-			<effect type="fade" delay="160" end="100" time="240" />
+			<effect type="zoom" start="80" end="100" center="50%,50%" delay="160" tween="back" time="240"/>
+			<effect type="fade" delay="160" end="100" time="240"/>
 		</animation>
 		<animation type="Hidden" reversible="false">
-			<effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240" />
-			<effect type="fade" start="100" end="0" time="240" />
+			<effect type="zoom" start="100" end="80" center="50%,50%" easing="in" tween="back" time="240"/>
+			<effect type="fade" start="100" end="0" time="240"/>
 		</animation>
 	</include>
 	<include name="Visible_Fade">
@@ -90,117 +137,117 @@
 	<include name="Visible_Right_Delayed">
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
 		<include content="Vis_FadeSlide_Right_Delayed" condition="!Skin.HasSetting(no_slide_animations)">
-			<param name="id" value="$PARAM[id]" />
+			<param name="id" value="$PARAM[id]"/>
 		</include>
 	</include>
 	<include name="Vis_FadeSlide_Right_Delayed">
 		<animation type="Conditional" condition="String.IsEqual(Container(9000).ListItem.Property(id),$PARAM[id])">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out" />
-			<effect type="slide" start="320" end="0" time="400" delay="300" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="out"/>
+			<effect type="slide" start="320" end="0" time="400" delay="300" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="Hidden">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="Visible_Right">
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">Vis_FadeSlide_Right</include>
-	</include>
+</include>
 	<include name="Animation_TopSlide">
 		<animation type="WindowOpen" reversible="False">
 			<effect type="fade" start="0" end="100" time="300"/>
-			<effect type="slide" start="0,-200" end="0,0" time="300" tween="cubic" easing="out" />
+			<effect type="slide" start="0,-200" end="0,0" time="300" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="WindowClose" reversible="False">
 			<effect type="fade" start="100" end="0" time="300"/>
-			<effect type="slide" start="0,0" end="0,-200" time="300" tween="cubic" easing="out" />
+			<effect type="slide" start="0,0" end="0,-200" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="Animation_BottomSlide">
 		<animation type="WindowOpen" reversible="False">
 			<effect type="fade" start="0" end="100" time="300"/>
-			<effect type="slide" start="0,200" end="0,0" time="300" tween="cubic" easing="out" />
+			<effect type="slide" start="0,200" end="0,0" time="300" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="WindowClose" reversible="False">
 			<effect type="fade" start="100" end="0" time="300"/>
-			<effect type="slide" start="0,0" end="0,200" time="300" tween="cubic" easing="out" />
+			<effect type="slide" start="0,0" end="0,200" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="Vis_FadeSlide_Right">
 		<animation type="Visible" reversible="False">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
-			<effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
+			<effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="Hidden" reversible="False">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="Visible_Left">
 		<include condition="Skin.HasSetting(no_slide_animations)">Visible_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">Vis_FadeSlide_Left</include>
-	</include>
+</include>
 	<include name="Vis_FadeSlide_Left">
 		<animation type="Visible" reversible="False">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="Hidden" reversible="False">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="OpenClose_Down">
 		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Down</include>
-	</include>
+</include>
 	<include name="OpenClose_FadeSlide_Down">
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0,320" end="0" time="400" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0,320" end="0" time="400" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="WindowClose">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0" end="0,320" time="300" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="0,320" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="OpenClose_Left">
 		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Left</include>
-	</include>
+</include>
 	<include name="OpenClose_FadeSlide_Left">
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="-320" end="0" time="400" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="WindowClose">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="-320" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="OpenClose_Right">
 		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">OpenClose_FadeSlide_Right</include>
-	</include>
+</include>
 	<include name="OpenClose_FadeSlide_Right">
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="WindowClose">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 	<include name="Keyboard_Slide_Up">
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0,1080" end="0,0" time="400" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0,1080" end="0,0" time="400" tween="cubic" easing="out"/>
 		</animation>
 		<animation type="WindowClose">
-			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-			<effect type="slide" start="0,0" end="0,1080" time="400" tween="cubic" easing="out" />
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+			<effect type="slide" start="0,0" end="0,1080" time="400" tween="cubic" easing="out"/>
 		</animation>
 	</include>
 </includes>

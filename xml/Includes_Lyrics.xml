@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="LyricsDefault">
+		<control type="group">
+			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="3000">WindowOpen</animation>
+			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation>
+			<!-- <animation type="Conditional" condition="[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)">
+				<effect type="slide" start="0,150" end="0,0" time="200" easing="inout"/>
+			</animation> -->
+			
+			<!-- Scraper -->
+				<control type="label" id="200">
+					<visible>false</visible>
+				</control>
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="list" id="110">
+				<right>30</right>
+				<top>0</top>
+				<width>1920</width>
+				<height>680</height>
+				<onleft condition="![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(1158)</onleft>
+				<onright>ActivateWindow(120)</onright>
+				<onleft>ActivateWindow(120)</onleft>
+				<onup>999</onup>
+				<ondown>110</ondown>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>111</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="52">
+					<control type="label">
+						<left>2</left>
+						<top>0</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font32_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<left>-1</left>
+						<top>0</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font32_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<left>1</left>
+						<top>2</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font32_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>-1</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font32_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font32_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>FFE9F2F3</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="52">
+					<control type="label">
+						<left>2</left>
+						<top>-6</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font45_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<left>-1</left>
+						<top>-6</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font45_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<left>1</left>
+						<top>-4</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font45_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>-7</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font45_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>-7</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font45_title</font>
+						<align>right</align>
+						<aligny>top</aligny>
+						<textcolor>button_focus</textcolor>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="spincontrol" id="111">
+				<visible>false</visible>
+			</control>
+			
+			
+			<!-- ** Required ** Do not change <id> or <type> -->
+			<control type="list" id="120">
+				<left>150</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>405</height>
+				<onleft condition="![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(1158)</onleft>
+				<onright>ActivateWindow(120)</onright>
+				<onup>120</onup>
+				<ondown>120</ondown>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>121</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="52">
+					<control type="label">
+						<left>0</left>
+						<top>4</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font_list</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>80FFFAF0</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="52">
+					<control type="image">
+						<left>0</left>
+						<top>4</top>
+						<width>1920</width>
+						<height>52</height>
+						<texture>gradient_focus.png</texture>
+						<colordiffuse>$INFO[skin.string(colorheader)]</colordiffuse>
+						<visible>Control.HasFocus(120)</visible>
+					</control>
+					<control type="label">
+						<left>-82</left>
+						<top>4</top>
+						<width>1920</width>
+						<height>33</height>
+						<info>ListItem.Label</info>
+						<font>font_title</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>$INFO[skin.string(colorheader)]</textcolor>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="spincontrol" id="121">
+				<visible>false</visible>
+			</control>
+		</control>
+	</include>
+</includes>

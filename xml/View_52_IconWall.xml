@@ -7,8 +7,7 @@
 			<include>Visible_Right</include>
 			<control type="panel" id="52">
 				<centerleft>51%</centerleft>
-				<top>list_y_offset</top>
-				<bottom>list_y_offset</bottom>
+				<top>0</top>
 				<width>92%</width>
 				<height>100%</height>
 				<onleft>9000</onleft>
@@ -20,9 +19,9 @@
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<visible>Container.Content() | Container.Content(tags) | Container.Content(years) | Container.Content(roles) | Container.Content(sources) | Container.Content(genres) | Container.Content(countries) | Container.Content(studios) | Container.Content(playlists) | Container.Content(unknown)</visible>
 				<viewtype label="31099">icon</viewtype>
-				<itemlayout height="280" width="440" condition="Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.AddonIsEnabled(resource.images.studios.white)]">
+				<itemlayout height="280" width="440" condition="Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
-						<top>0</top>
+						<top>150</top>
 						<control type="image">
 							<width>396</width>
 							<height>245</height>
@@ -30,12 +29,21 @@
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
-						<control type="image">
+						<!-- <control type="image">
 							<left>120</left>
 							<top>20</top>
 							<width>160</width>
 							<height>130</height>
 							<texture fallback="DefaultStudios.png">$VAR[IconWallThumbVar]</texture>
+							<aspectratio>keep</aspectratio>
+							<align>center</align>
+						</control> -->
+						<control type="image">
+							<left>22</left>
+							<top>22</top>
+							<width>390</width>
+							<height>126</height>
+							<texture fallback="DefaultStudios.png">$INFO[ListItem.Art(banner)]</texture>
 							<aspectratio>keep</aspectratio>
 							<align>center</align>
 						</control>
@@ -56,9 +64,18 @@
 							<align>center</align>
 							<aligny>center</aligny>
 						</control>
+						<control type="image">
+							<left>-20</left>
+							<top>-10</top>
+							<width>440</width>
+							<height>280</height>
+							<texture>$INFO[ListItem.Label,resource://resource.images.xratedmodels/icons/,.jpg]</texture>
+							<aspectratio>keep</aspectratio>
+							<align>center</align>
+						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="280" width="440" condition="Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.AddonIsEnabled(resource.images.studios.white)]">
+				<focusedlayout height="280" width="440" condition="Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<animation type="Focus">
@@ -67,7 +84,7 @@
 						<animation type="Unfocus">
 							<effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="auto" />
 						</animation>
-						<top>0</top>
+						<top>150</top>
 						<control type="image">
 							<width>396</width>
 							<height>245</height>
@@ -108,9 +125,18 @@
 							<align>center</align>
 							<aligny>center</aligny>
 						</control>
+						<control type="image">
+							<left>-20</left>
+							<top>-10</top>
+							<width>440</width>
+							<height>280</height>
+							<texture>$INFO[ListItem.Label,resource://resource.images.xratedmodels/icons/,.jpg]</texture>
+							<aspectratio>keep</aspectratio>
+							<align>center</align>
+						</control>
 					</control>
 				</focusedlayout>
-				<itemlayout height="181" width="348" condition="Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.AddonIsEnabled(resource.images.studios.white)]">
+				<itemlayout height="181" width="348" condition="Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
 						<top>120</top>
 						<control type="image">
@@ -131,7 +157,7 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="181" width="348" condition="Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.AddonIsEnabled(resource.images.studios.white)]">
+				<focusedlayout height="181" width="348" condition="Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<top>120</top>

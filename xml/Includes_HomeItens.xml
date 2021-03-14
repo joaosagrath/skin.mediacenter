@@ -73,8 +73,18 @@
 			<property name="menu_id">$NUMBER[7000]</property>
 			<thumb>icons/sidemenu/music.png</thumb>
 			<property name="id">music</property>
-			<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+			<visible>!Skin.HasSetting(HomeMenuNoMusicButton) + String.IsEmpty(Skin.String(HomeMusic.Title))</visible>
 		</item>
+		<item>
+			<label>$INFO[Skin.String(HomeMusic.Title)]</label>
+			<onclick condition="String.IsEmpty(Skin.String(HomeMusic.Title))">ActivateWindow(Music,root,return)</onclick>
+			<onclick condition="!String.IsEmpty(Skin.String(HomeMusic.Title))">$INFO[Skin.String(HomeMusic.Action)]</onclick>
+			<property name="menu_id">$NUMBER[7000]</property>
+			<thumb>icons/sidemenu/music.png</thumb>
+			<property name="id">music</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMusicButton) + !String.IsEmpty(Skin.String(HomeMusic.Title))</visible>
+		</item>
+		
 		<!-- Imagens ID 4000 -->
 		<item>
 			<label>$LOCALIZE[1]</label>
@@ -82,19 +92,20 @@
 			<property name="menu_id">$NUMBER[4000]</property>
 			<thumb>icons/sidemenu/pictures.png</thumb>
 			<property name="id">pictures</property>
-			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton) + String.IsEmpty(Skin.String(HomePictures.Title))</visible>>
 		</item>
-	</include>
-	<include name="Right_Menu">
-		<!-- Disco ID 21000 -->
 		<item>
-			<label>$LOCALIZE[427]</label>
-			<onclick>PlayDisc</onclick>
-			<property name="menu_id">$NUMBER[21000]</property>
-			<thumb>icons/sidemenu/disc.png</thumb>
-			<property name="id">disc</property>
-			<visible>System.HasMediaDVD</visible>
-		</item>
+			<label>$INFO[Skin.String(HomePictures.Title)]</label>
+			<onclick condition="String.IsEmpty(Skin.String(HomePictures.Title))">ActivateWindow(Pictures)</onclick>
+			<onclick condition="!String.IsEmpty(Skin.String(HomePictures.Title))">$INFO[Skin.String(HomePictures.Action)]</onclick>
+			<property name="menu_id">$NUMBER[4000]</property>
+			<thumb>icons/sidemenu/pictures.png</thumb>
+			<property name="id">pictures</property>
+			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton) + !String.IsEmpty(Skin.String(HomePictures.Title))</visible>
+		</item>	
+	</include>
+	
+	<include name="Right_Menu">
 		<!-- Clima ID 15000 -->
 		<item>
 			<label>$LOCALIZE[8]</label>
@@ -114,40 +125,11 @@
 			<property name="id">addons</property>
 			<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
 		</item>
-		<!-- Favoritos ID 14000 -->
-		<item>
-			<label>$LOCALIZE[10134]</label>
-			<onclick>ActivateWindow(favourites)</onclick>
-			<property name="menu_id">$NUMBER[14000]</property>
-			<thumb>icons/sidemenu/favourites.png</thumb>
-			<property name="id">favorites</property>
-			<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
-		</item>
-		<!-- Videos ID 11000 -->
-		<item>
-			<label>$LOCALIZE[3]</label>
-			<onclick>ActivateWindow(Videos,root)</onclick>
-			<property name="menu_id">$NUMBER[11000]</property>
-			<thumb>icons/sidemenu/videos.png</thumb>
-			<property name="id">video</property>
-			<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
-		</item>
-	</include>
-	<include name="Left_Menu">
-		<!-- Concertos ID 12000 -->
-		<item>
-			<label>$LOCALIZE[20389]</label>
-			<property name="menu_id">$NUMBER[12000]</property>
-			<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
-			<thumb>icons/sidemenu/musicvideos.png</thumb>
-			<property name="id">musicvideos</property>
-			<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
-		</item>
 		<!-- PVR ID 12000 -->
 		<item>
 			<label>$LOCALIZE[19020]</label>
 			<property name="menu_id">$NUMBER[12000]</property>
-			<onclick>ActivateWindow(TVChannels)</onclick>
+			<onclick>$INFO[Skin.String(PVR.Action)]</onclick>
 			<thumb>icons/sidemenu/livetv.png</thumb>
 			<property name="id">livetv</property>
 			<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
@@ -161,32 +143,71 @@
 			<property name="id">radio</property>
 			<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
 		</item>
-		<!-- Netflix ID 17000 -->
+		<!-- Favoritos ID 14000 -->
 		<item>
-			<label>Netflix</label>
-			<property name="menu_id">$NUMBER[17000]</property>
-			<onclick>RunAddon(plugin.video.netflix)</onclick>
-			<thumb>icons/sidemenu/netflix.png</thumb>
-			<property name="id">netflix</property>
-			<visible>!Skin.HasSetting(HomeMenuNoNetflixButton) + System.HasAddon(plugin.video.netflix)</visible>
+			<label>$LOCALIZE[10134]</label>
+			<onclick>ActivateWindow(favourites)</onclick>
+			<property name="menu_id">$NUMBER[14000]</property>
+			<thumb>icons/sidemenu/favourites.png</thumb>
+			<property name="id">favorites</property>
+			<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
 		</item>
-		<!-- Spotify ID 18000 -->
+		<!-- Videos ID 11000 -->
+		<!-- <item>
+			<label>$LOCALIZE[3]</label>
+			<onclick>ActivateWindow(Videos,root)</onclick>
+			<property name="menu_id">$NUMBER[11000]</property>
+			<thumb>icons/sidemenu/videos.png</thumb>
+			<property name="id">video</property>
+			<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+		</item> -->
+	</include>
+	
+	<include name="Left_Menu">		
+		<!-- Meu Menu 1 -->
 		<item>
-			<label>Spotify</label>
-			<property name="menu_id">$NUMBER[18000]</property>
-			<onclick>RunAddon(plugin.audio.spotify)</onclick>
-			<thumb>icons/sidemenu/spotify.png</thumb>
-			<property name="id">spotify</property>
-			<visible>!Skin.HasSetting(HomeMenuNoSpotifyButton) + System.HasAddon(plugin.audio.spotify)</visible>
+			<label>$INFO[Skin.String(MyMenu1.Title)]</label>
+			<onclick>$INFO[Skin.String(MyMenu1.Action)]</onclick>
+			<property name="menu_id">$NUMBER[4000]</property>
+			<thumb>$VAR[HomeMyMenu1CustomIcon]</thumb>
+			<property name="id">MyMenu1</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMyMenu1Button) + !String.IsEmpty(Skin.String(MyMenu1.Title))</visible>
 		</item>
-		<!-- Youtube ID 19000 -->
+		<!-- Meu Menu 2 -->
 		<item>
-			<label>Youtube</label>
-			<property name="menu_id">$NUMBER[19000]</property>
-			<onclick>RunAddon(plugin.video.youtube)</onclick>
-			<thumb>icons/sidemenu/youtube.png</thumb>
-			<property name="id">youtube</property>
-			<visible>!Skin.HasSetting(HomeMenuNoYoutubeButton) + System.HasAddon(plugin.video.youtube)</visible>
+			<label>$INFO[Skin.String(MyMenu2.Title)]</label>
+			<onclick>$INFO[Skin.String(MyMenu2.Action)]</onclick>
+			<property name="menu_id">$NUMBER[4000]</property>
+			<thumb>$VAR[HomeMyMenu2CustomIcon]</thumb>
+			<property name="id">MyMenu2</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMyMenu2Button) + !String.IsEmpty(Skin.String(MyMenu2.Title))</visible>
+		</item>
+		<!-- Meu Menu 3 -->
+		<item>
+			<label>$INFO[Skin.String(MyMenu3.Title)]</label>
+			<onclick>$INFO[Skin.String(MyMenu3.Action)]</onclick>
+			<property name="menu_id">$NUMBER[4000]</property>
+			<thumb>$VAR[HomeMyMenu3CustomIcon]</thumb>
+			<property name="id">MyMenu3</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMyMenu3Button) + !String.IsEmpty(Skin.String(MyMenu3.Title))</visible>
+		</item>
+		<!-- Meu Menu 4 -->
+		<item>
+			<label>$INFO[Skin.String(MyMenu4.Title)]</label>
+			<onclick>$INFO[Skin.String(MyMenu4.Action)]</onclick>
+			<property name="menu_id">$NUMBER[4000]</property>
+			<thumb>$VAR[HomeMyMenu4CustomIcon]</thumb>
+			<property name="id">MyMenu4</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMyMenu4Button) + !String.IsEmpty(Skin.String(MyMenu4.Title))</visible>
+		</item>
+		<!-- Meu Menu 5 -->
+		<item>
+			<label>$INFO[Skin.String(MyMenu5.Title)]</label>
+			<onclick>$INFO[Skin.String(MyMenu5.Action)]</onclick>
+			<property name="menu_id">$NUMBER[4000]</property>
+			<thumb>$VAR[HomeMyMenu5CustomIcon]</thumb>
+			<property name="id">MyMenu5</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMyMenu5Button) + !String.IsEmpty(Skin.String(MyMenu5.Title))</visible>
 		</item>
 	</include>
 </includes>

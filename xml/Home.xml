@@ -2,39 +2,44 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2)</onload>
-	
-	<controls>	
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|rightmenu|leftmenu)</onload>
+	<onload condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onload>
+	<onload condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onload>
+	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
+	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
+	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
+	<onload>Control.SetFocus(9000,2)</onload>
+	<controls>
 		<!-- Botões -->
-			<control type="button" id="20001">
-				<include>HiddenObject</include>
-				<animation effect="fade" time="300" start="100" end="0">Focus</animation>
-				<onfocus>Control.SetFocus(2000)</onfocus>
-				<onclick>noop</onclick>
-				<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
-			</control>
-			<control type="button" id="20002">
-				<include>HiddenObject</include>
-				<animation effect="fade" time="300" start="100" end="0">Focus</animation>
-				<onfocus>SetFocus(700)</onfocus>
-				<onclick>noop</onclick>
-				<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
-			</control>
-			<control type="button" id="20003">
-				<include>HiddenObject</include>
-				<animation effect="fade" time="300" start="100" end="0">Focus</animation>
-				<onfocus>SetFocus(700)</onfocus>
-				<onclick>noop</onclick>
-				<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
-			</control>
-			<control type="button" id="20004">
-				<include>HiddenObject</include>
-				<animation effect="fade" time="300" start="100" end="0">Focus</animation>
-				<onfocus>SetFocus(9000)</onfocus>
-				<onclick>noop</onclick>
-				<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
-			</control>
-		<!-- Fanart -->		
+		<control type="button" id="20001">
+			<include>HiddenObject</include>
+			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+			<onfocus>Control.SetFocus(10)</onfocus>
+			<onclick>noop</onclick>
+			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+		</control>
+		<control type="button" id="20002">
+			<include>HiddenObject</include>
+			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+			<onfocus>SetFocus(700)</onfocus>
+			<onclick>noop</onclick>
+			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+		</control>
+		<control type="button" id="20003">
+			<include>HiddenObject</include>
+			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+			<onfocus>SetFocus(700)</onfocus>
+			<onclick>noop</onclick>
+			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+		</control>
+		<control type="button" id="20004">
+			<include>HiddenObject</include>
+			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+			<onfocus>SetFocus(9000)</onfocus>
+			<onclick>noop</onclick>
+			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+		</control>
+		<!-- Fanart -->
 		<include>DefaultBackground</include>
 		<control type="multiimage">
 			<depth>DepthBackground</depth>
@@ -44,68 +49,125 @@
 			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-			<animation effect="fade" time="400">VisibleChange</animation>			
+			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>!Player.HasMedia</visible>
 		</control>
-		<!-- Custom Fanart -->
-		<include>DefaultBackground</include>
-		<control type="multiimage">
-			<depth>DepthBackground</depth>
-			<include>FullScreenDimensions</include>
-			<aspectratio>scale</aspectratio>
-			<fadetime>600</fadetime>
-			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
-			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-			<animation effect="fade" time="400">VisibleChange</animation>			
-			<visible>!Player.HasMedia</visible>
-		</control>
-		
 		<!-- TESTE LABELS -->
 		<control type="label">
-			<top>350</top>
+			<top>801</top>
 			<left>20</left>
-			<label>$INFO[ListItem.Property(id)]</label>
-			<align>center</align>
+			<!-- <label>$VAR[viewdisc]</label> -->
+			<!-- <label>$INFO[ListItem.FolderPath]logo.png</label> -->			
 			<!-- $INFO[ListItem.Path,,logo.png] -->
-			<!-- <label>$INFO[ListItem.NumItems]</label> -->
+			<!-- <label>$INFO[ListItem.Label]</label> -->
 			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
 			<textcolor>white</textcolor>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
+			<align>center</align>
+			<!-- <visible>Control.HasFocus(10)</visible> -->
 		</control>
-		<control type="grouplist">
+		<control type="image">
+			<bottom>20</bottom>
 			<left>20</left>
-			<top>152</top>
-			<width>570</width>
-			<height>760</height>
-			<orientation>vertical</orientation>
-			<include content="PicsInfoLine">
-				<param name="label" value="$LOCALIZE[21823]"/>
-				<param name="value" value="ListItem.PictureCamModel" />
-			</include>
-		</control>	
-		<control type="label">
-			<visible>Control.HasFocus(4400)</visible>
-			<top>250</top>
-			<left>20</left>
-			<width>1920</width>
-			<label>$LOCALIZE[31041]:</label>
-			<textcolor>white</textcolor>
+			<width>512</width>
+			<height>512</height>
+			<!-- <texture>Y:\Girls\Scoreland\icon.jpg</texture> -->
+			<texture>$INFO[ListItem.Art(discart)]</texture>
 		</control>
-		
+		<!-- Resumo de Clima -->
+			<control type="group">
+				<visible/>
+				<visible>Skin.HasSetting(weatherresume) + !Player.HasMedia</visible>
+				<include>ResumeWeatherAnimations</include>
+				<description>Weather info</description>
+				<left>10</left>
+				<right>10</right>
+				<bottom>-60</bottom>
+				<height>300</height>
+				<visible>!String.IsEmpty(Weather.plugin)</visible>
+				<control type="image">
+					<bottom>90</bottom>
+					<width>100%</width>
+					<texture border="21">dialogs/dialog-bg.png</texture>
+				</control>
+				<control type="label">
+					<left>840</left>
+					<top>40</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<right>60</right>
+					<align>right</align>
+					<font>font30_title</font>
+					<label>$INFO[Weather.Location]</label>
+				</control>
+				<control type="label">
+					<left>840</left>
+					<top>90</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<right>60</right>
+					<align>right</align>
+					<font>font14</font>
+					<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
+				</control>
+				<control type="label">
+					<left>840</left>
+					<top>140</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<right>60</right>
+					<align>right</align>
+					<font>font14</font>
+					<label>$INFO[System.date] - $INFO[System.time]</label>
+				</control>
+				<control type="grouplist">
+					<top>50</top>
+					<left>50</left>
+					<right>20</right>
+					<orientation>horizontal</orientation>
+					<align>left</align>
+					<itemgap>-110</itemgap>
+					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+						<param name="label" value="Window(weather).Property(Current.Wind)"/>
+						<param name="texture" value="icons/weather/wind.png"/>
+						<param name="header" value="404"/>
+					</include>
+					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+						<param name="label" value="Window(weather).Property(Current.Humidity)"/>
+						<param name="texture" value="icons/weather/humidity.png"/>
+						<param name="header" value="406"/>
+					</include>
+					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+						<param name="label" value="Window(weather).Property(Current.Precipitation)"/>
+						<param name="texture" value="icons/weather/rain.png"/>
+						<param name="header" value="33021"/>
+					</include>
+					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+						<param name="label" value="Window(weather).Property(Today.Sunrise)"/>
+						<param name="texture" value="icons/weather/sunrise.png"/>
+						<param name="header" value="405"/>
+					</include>
+					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
+						<param name="label" value="Window(weather).Property(Today.Sunset)"/>
+						<param name="texture" value="icons/weather/sunset.png"/>
+						<param name="header" value="403"/>
+					</include>
+				</control>
+			</control>
+			
 		<!-- Artes da Home Menu Default -->
 		<control type="group">
-			<!-- <visible>[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Control.HasFocus(10) + System.IdleTime(5)]</visible> -->
-			<visible>[String.IsEqual(Skin.String(homemenuitens),Top_Menu) + Control.HasFocus(10)]</visible>
-			<!-- <animation effect="fade" delay="5500" start="0" end="100" time="500" condition="!Control.HasFocus(9000)">True</animation> -->
-			<animation effect="fade" start="0" end="100" time="500" condition="!Control.HasFocus(9000)">True</animation>
-			<top>450</top>
+			<visible>Control.HasFocus(10) | Control.HasFocus(13)</visible>
+			<animation effect="fade" start="0" end="100" delay="1000" reversible="false" time="300">VisibleChange</animation>
+			<bottom>90</bottom>
+			<height>230</height>
 			<control type="image">
+				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Artist_Description)) | !String.IsEmpty(ListItem.Property(album_description))</visible>
 				<top>50</top>
 				<left>0</left>
 				<width>1920</width>
 				<height>230</height>
-				<texture colordiffuse="black">shadow.png</texture>			
+				<texture colordiffuse="black">shadow.png</texture>
+				<visible/>
 			</control>
 			<!-- Logo -->
 			<control type="image">
@@ -113,7 +175,16 @@
 				<right>17</right>
 				<width>400</width>
 				<height>155</height>
-				<texture>$VAR[pichomelogo]</texture>
+				<texture>$INFO[ListItem.Label,resource://resource.images.xratedmodels/logos/,.png]</texture>
+				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
+				<fadetime>450</fadetime>
+			</control>
+			<control type="image" id="2816">
+				<top>100</top>
+				<right>17</right>
+				<width>400</width>
+				<height>155</height>
+				<texture>$INFO[ListItem.FolderPath]logo.png</texture>
 				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
 				<fadetime>450</fadetime>
 			</control>
@@ -123,6 +194,19 @@
 				<width>400</width>
 				<height>155</height>
 				<texture>$VAR[ClearLogoVar]</texture>
+				<fadetime>450</fadetime>
+			</control>
+			<control type="textbox">
+				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
+				<visible>String.IsEmpty(Control.GetLabel(2816))</visible>
+				<top>100</top>
+				<right>17</right>
+				<width>400</width>
+				<height>155</height>
+				<label>$INFO[ListItem.Label]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font37</font>
 				<fadetime>450</fadetime>
 			</control>
 			<!-- Detalhes de Mídia -->
@@ -141,83 +225,8 @@
 			<control type="textbox">
 				<top>100</top>
 				<left>870</left>
-				<width>630</width>
-				<height>155</height>
-				<label>$VAR[ShiftRightTextBoxVar]</label>
-				<align>justify</align>
-				<font>font27</font>
-				<fadetime>450</fadetime>
-				<autoscroll time="3000" repeat="3000">True</autoscroll>
-			</control>
-			<control type="textbox">
-				<top>0</top>
-				<left>720</left>
-				<width>720</width>
-				<height>155</height>
-				<label>$VAR[pichomelabel]</label>
-				<align>justify</align>
-				<font>font27</font>
-				<fadetime>450</fadetime>
-				<autoscroll time="3000" repeat="3000">True</autoscroll>
-			</control>
-		</control>
-		<!-- Artes da Home Menu Skin-Shortcuts -->
-		<control type="group">
-			<top>350</top>
-			<visible>[String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu) + Control.HasFocus(9400)]</visible>
-			<animation effect="fade" delay="1000" start="0" end="100" time="500" condition="!Control.HasFocus(9000)">True</animation>
-			<control type="image">
-				<top>-50</top>
-				<left>0</left>
-				<width>1920</width>
-				<height>230</height>
-				<texture colordiffuse="black">shadow.png</texture>			
-			</control>
-			<!-- Logo -->
-			<control type="image">
-				<top>0</top>
-				<right>17</right>
-				<width>400</width>
-				<height>155</height>
-				<texture>$INFO[Container(4400).ListItem.Label,resource://resource.images.actorart/Models/,.jpg]</texture>
-				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
-				<fadetime>450</fadetime>
-			</control>
-			<control type="image">
-				<top>0</top>
-				<right>17</right>
-				<width>400</width>
-				<height>155</height>
-				<texture>$VAR[pichomelogo]</texture>
-				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
-				<fadetime>450</fadetime>
-			</control>
-			<control type="image" id="2815">
-				<top>0</top>
-				<right>17</right>
-				<width>400</width>
-				<height>155</height>
-				<texture>$VAR[ClearLogoVar]</texture>
-				<fadetime>450</fadetime>
-			</control>
-			<!-- Detalhes de Mídia -->
-			<control type="textbox">
-				<top>0</top>
-				<left>90</left>
 				<width>600</width>
 				<height>155</height>
-				<label>$VAR[ShiftLeftTextBoxVar]</label>
-				<align>justify</align>
-				<font>font27</font>
-				<fadetime>450</fadetime>
-				<autoscroll time="3000" repeat="3000">True</autoscroll>
-			</control>
-			<!-- Descrição de Mídia -->
-			<control type="textbox">
-				<top>0</top>
-				<left>720</left>
-				<width>720</width>
-				<height>155</height>
 				<label>$VAR[ShiftRightTextBoxVar]</label>
 				<align>justify</align>
 				<font>font27</font>
@@ -236,103 +245,247 @@
 				<autoscroll time="3000" repeat="3000">True</autoscroll>
 			</control>
 		</control>
-		
-		<!-- Resumo de Clima -->
+		<!-- Home Player -->
 		<control type="group">
-			<visible>Skin.HasSetting(weatherresume)</visible>
-			<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
-			<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
-			<animation effect="fade" start="100" end="00" time="400" easing="inout" condition="Control.HasFocus(10) | Control.HasFocus(9400)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="String.IsEqual(Skin.String(homemenuitens),Top_Menu) + [Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)]">Conditional</animation>
-			<description>Weather info</description>
-			<left>300</left>
-			<right>300</right>
-			<top>100</top>
-			<height>300</height>
-			<visible>!String.IsEmpty(Weather.plugin)</visible>
+			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
+				<effect type="slide" delay="1000" end="0,-555" time="500" tween="sine"/>
+			</animation>
+			<include/>
+			<bottom>-500</bottom>
+			<height>450</height>
 			<control type="image">
-				<bottom>90</bottom>
-				<width>100%</width>
-				<texture border="21">dialogs/dialog-bg.png</texture>
+				<top>150</top>
+				<left>0</left>
+				<width>120%</width>
+				<height>310</height>
+				<texture colordiffuse="AA000000">dialogs/dialog-bg-nobo.png</texture>
 			</control>
-			<control type="label">
-				<left>840</left>
-				<top>60</top>
-				<aligny>center</aligny>
-				<height>24</height>
-				<right>60</right>
-				<align>right</align>
-				<font>font30_title</font>
-				<label>$INFO[Weather.Location]</label>
+			<control type="image">
+				<top>15</top>
+				<left>115</left>
+				<width>420</width>
+				<height>420</height>
+				<texture>$INFO[MusicPlayer.Cover]</texture>
 			</control>
-			<control type="label">
-				<left>840</left>
-				<top>120</top>
-				<aligny>center</aligny>
-				<height>24</height>
-				<right>60</right>
-				<align>right</align>
-				<font>font14</font>
-				<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
+			<control type="image" id="49953">
+				<visible/>
+				<top>-5</top>
+				<right>115</right>
+				<width>400</width>
+				<height>155</height>
+				<texture>$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist]\logo.png</texture>
 			</control>
 			<control type="grouplist">
-				<top>50</top>
-				<left>50</left>
-				<right>20</right>
 				<orientation>horizontal</orientation>
-				<align>left</align>
-				<itemgap>-110</itemgap>
-				<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-					<param name="label" value="Window(weather).Property(Current.Wind)" />
-					<param name="texture" value="icons/weather/wind.png" />
-					<param name="header" value="404" />
+				<itemgap>0</itemgap>
+				<left>600</left>
+				<width>530</width>
+				<height>110</height>
+				<top>376</top>
+				<align>justify</align>
+				<include>musicfullscreencontrols</include>
+				<onup>9000</onup>
+			</control>
+			<control type="group">
+				<left>440</left>
+				<top>100</top>
+				<control type="label">
+					<visible>String.IsEmpty(Control.GetLabel(49953)</visible>
+					<top>-30</top>
+					<right>130</right>
+					<width>1450</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<font>font45</font>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<right>130</right>
+					<top>65</top>
+					<width>1230</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<label>[B]$INFO[MusicPlayer.TrackNumber,,. ]$INFO[Player.Title][/B]</label>
+					<font>font45</font>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="grouplist">
+					<right>130</right>
+					<top>120</top>
+					<width>1230</width>
+					<height>40</height>
+					<align>right</align>
+					<orientation>horizontal</orientation>
+					<itemgap>20</itemgap>
+					<control type="label">
+						<width>100</width>
+						<height>40</height>
+						<label>$INFO[MusicPlayer.Year]</label>
+						<font>font37</font>
+						<shadowcolor>black</shadowcolor>
+						<aligny>center</aligny>
+						<align>left</align>
+						<visible>!String.IsEmpty(MusicPlayer.Year)</visible>
+					</control>
+					<control type="label">
+						<width min="0" max="1130">auto</width>
+						<height>40</height>
+						<label>$INFO[MusicPlayer.Album]$VAR[MultiDiscVar]</label>
+						<font>font37</font>
+						<shadowcolor>black</shadowcolor>
+						<aligny>center</aligny>
+						<align>left</align>
+						<scroll>true</scroll>
+						<visible>!String.IsEmpty(MusicPlayer.Album)</visible>
+					</control>
+					<control type="image">
+						<width>190</width>
+						<height>40</height>
+						<texture fallback="flags/starrating/0.png">$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
+						<aspectratio>keep</aspectratio>
+						<aligny>center</aligny>
+						<align>left</align>
+					</control>
+				</control>
+				<control type="label">
+					<right>130</right>
+					<top>165</top>
+					<width>1450</width>
+					<height>40</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<label>$INFO[MusicPlayer.Genre]</label>
+					<font>font37</font>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<right>130</right>
+					<top>210</top>
+					<width>1230</width>
+					<height>40</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<label>$VAR[OSDNextLabelVar]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+			</control>
+			<control type="grouplist">
+				<right>120</right>
+				<bottom>15</bottom>
+				<width>800</width>
+				<height>50</height>
+				<align>right</align>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+				<include content="MediaFlag">
+					<param name="texture" value="flags/rds/rds.png"/>
+					<param name="visible" value="RDS.HasRDS"/>
 				</include>
-				<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-					<param name="label" value="Window(weather).Property(Current.Humidity)" />
-					<param name="texture" value="icons/weather/humidity.png" />
-					<param name="header" value="406" />
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[MusicPlayer.Codec,flags/audiocodec/,.png]"/>
 				</include>
-				<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-					<param name="label" value="Window(weather).Property(Current.Precipitation)" />
-					<param name="texture" value="icons/weather/rain.png" />
-					<param name="header" value="33021" />
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[MusicPlayer.Channels,flags/audiochannel/,.png]"/>
 				</include>
-				<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-					<param name="label" value="Window(weather).Property(Today.Sunrise)" />
-					<param name="texture" value="icons/weather/sunrise.png" />
-					<param name="header" value="405" />
-				</include>
-				<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-					<param name="label" value="Window(weather).Property(Today.Sunset)" />
-					<param name="texture" value="icons/weather/sunset.png" />
-					<param name="header" value="403" />
-				</include>
+				<control type="group">
+					<visible>!String.IsEmpty(MusicPlayer.SampleRate)</visible>
+					<width>115</width>
+					<control type="label">
+						<width>115</width>
+						<height>60</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[MusicPlayer.SampleRate, ,kHz]</label>
+						<font>font_flag</font>
+					</control>
+					<include content="MediaFlag">
+						<param name="texture" value="flags/flag.png"/>
+					</include>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(MusicPlayer.BitRate)</visible>
+					<width>115</width>
+					<control type="label">
+						<width>115</width>
+						<height>60</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[MusicPlayer.BitRate, ,kbps ]</label>
+						<font>font_flag</font>
+					</control>
+					<include content="MediaFlag">
+						<param name="texture" value="flags/flag.png"/>
+					</include>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(MusicPlayer.BitsPerSample)</visible>
+					<width>115</width>
+					<control type="label">
+						<width>115</width>
+						<height>60</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[MusicPlayer.BitsPerSample, ,bit]</label>
+						<font>font_flag</font>
+					</control>
+					<include content="MediaFlag">
+						<param name="texture" value="flags/flag.png"/>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<control type="progress">
+					<left>0</left>
+					<top>475</top>
+					<width>100%</width>
+					<height>16</height>
+					<info>Player.ProgressCache</info>
+					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
+					<midtexture>colors/white50.png</midtexture>
+				</control>
+				<control type="progress">
+					<left>0</left>
+					<top>475</top>
+					<width>100%</width>
+					<height>16</height>
+					<info>Player.Progress</info>
+					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
+					<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
+				</control>
 			</control>
 		</control>
-				
+		<!-- Barra -->
+		<include>BottomBar</include>
+		<!-- Menus Principais -->
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
-			<include>Home_Widgets</include>	
-			<include content="TopBar">
-				<param name="breadcrumbs_label" value="" />
-			</include>
+			<include>Home_Widgets</include>
 			<!-- Grupo do Menu Principal -->
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<!-- Menu Do Topo -->
 				<control type="list" id="9000">
-					<visible>String.IsEqual(Skin.String(homemenuitens),Top_Menu)</visible>
-					<onfocus>ClearProperty(listposition,home)</onfocus>	
+					<onfocus>ClearProperty(listposition,home)</onfocus>
 					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
-					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>					
+					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
 					<include>Center_Menu</include>
 					<top>20</top>
-					<width>1100</width>					
-					<onright>9001</onright>					
-					<onleft>9002</onleft>					
-					<ondown>2000</ondown>					
-					<ondown condition="String.IsEmpty(2000)">20001</ondown>					
-					<onup>700</onup>					
+					<width>1100</width>
+					<onright>9001</onright>
+					<onleft>9002</onleft>
+					<ondown condition="Player.HasMedia">600</ondown>
+					<ondown>2000</ondown>
+					<ondown condition="String.IsEmpty(2000)">20001</ondown>
+					<onup>700</onup>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<itemlayout height="70" width="220">
@@ -374,146 +527,14 @@
 						</control>
 					</focusedlayout>
 					<content>
-						<include>Top_Menu</include>
-					</content>	
-				</control>
-				<!-- Menu Skin-Shortcuts -->
-				
-				<control type="wraplist" id="9000">	
-					<visible>String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)</visible>
-					<onfocus>ClearProperty(listposition,home)</onfocus>
-					<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="0,-50" time="100" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
-					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
-					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_BottomSlide</include>
-					<top>950</top>
-					<width>1920</width>						
-					<onright>9000</onright>			
-					<onleft>9000</onleft>					
-					<ondown>9001</ondown>					
-					<onup condition="!String.IsEmpty(2000)">SetFocus(2000)</onup>					
-					<onup condition="String.IsEmpty(2000)">SetFocus(700)</onup>					
-					<onup>SetFocus(2000)</onup>					
-					<focusposition>2</focusposition>
-					<orientation>horizontal</orientation>
-					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<itemlayout height="70" width="384">
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<height>70</height>
-							<width>384</width>
-							<align>center</align>
-							<font>font60</font>
-							<label>$INFO[ListItem.Label]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-							<animation effect="fade" end="50" condition="true">Conditional</animation>
-						</control>
-					</itemlayout>
-					<focusedlayout height="70" width="384">
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<animation type="Focus">
-							<effect type="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="230,0" />
-							</animation>
-							<animation type="Unfocus">
-								<effect type="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="230,0" />
-							</animation>
-							<height>70</height>
-							<width>384</width>
-							<align>center</align>
-							<font>font60</font>
-							<label>$INFO[ListItem.Label]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-							<animation effect="fade" end="50" condition="true">Conditional</animation>
-							<visible>!Control.HasFocus(9000)</visible>
-						</control>
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<animation type="Focus">
-							<effect type="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="230,0" />
-							</animation>
-							<animation type="Unfocus">
-								<effect type="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="230,0" />
-							</animation>
-							<height>70</height>
-							<width>384</width>
-							<align>center</align>
-							<font>font60</font>
-							<label>$INFO[ListItem.Label]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-							<visible>Control.HasFocus(9000)</visible>
-						</control>
-					</focusedlayout>
-					<content>
-						<include>skinshortcuts-mainmenu</include>
-					</content>	
-				</control>
-				<!-- Sub-Menu Skin-Shortcuts -->
-				<control type="list" id="9001">	
-					<visible>String.IsEqual(Skin.String(homemenuitens),skinshortcuts-mainmenu)</visible>
-					<onfocus>ClearProperty(listposition,home)</onfocus>	
-					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
-					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_BottomSlide</include>
-					<animation effect="slide" start="0,0" end="0,-80" time="100" easing="inout" condition="Control.HasFocus(9001)">Conditional</animation>
-					<include>Center_Menu</include>
-					<top>1100</top>
-					<height>50</height>
-					<width>1100</width>					
-					<onright>9001</onright>					
-					<onleft>9001</onleft>
-					<ondown></ondown>				
-					<onup>9000</onup>					
-					<orientation>horizontal</orientation>
-					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<!-- Default Mneu -->
-					<itemlayout height="70" width="220">
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<height>70</height>
-							<width>220</width>
-							<align>center</align>
-							<font>font27</font>
-							<label>$INFO[ListItem.Label]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-							<animation effect="fade" end="50" condition="true">Conditional</animation>
-						</control>
-					</itemlayout>
-					<focusedlayout height="70" width="220">
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<height>70</height>
-							<width>220</width>
-							<align>center</align>
-							<font>font27</font>
-							<label>$INFO[ListItem.Label]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-							<animation effect="fade" end="50" condition="true">Conditional</animation>
-							<visible>!Control.HasFocus(9001)</visible>
-						</control>
-						<control type="label">
-							<left>0</left>
-							<top>0</top>
-							<height>70</height>
-							<width>220</width>
-							<align>center</align>
-							<font>font27</font>
-							<label>$INFO[ListItem.Label]</label>
-							<shadowcolor>text_shadow</shadowcolor>
-							<visible>Control.HasFocus(9001)</visible>
-						</control>
-					</focusedlayout>
-					<content>
-						<include>skinshortcuts-submenu</include>
-					</content>	
+						<include condition="Skin.HasSetting(Default_Menu)">Top_Menu</include>
+						<include condition="Skin.HasSetting(SkinShortcuts_Menu)">skinshortcuts-mainmenu</include>
+						<include condition="!Skin.HasSetting(Default_Menu) + !Skin.HasSetting(SkinShortcuts_Menu)">Top_Menu</include>
+					</content>
 				</control>
 				<!-- Menu Lateral Direito -->
 				<control type="list" id="9001">
-					<visible>String.IsEqual(Skin.String(homemenuitens),Top_Menu)</visible>
+					<visible>!Skin.HasSetting(SkinShortcuts_Menu)</visible>
 					<include>OpenClose_Right</include>
 					<include>Right_Menu_Hidden</include>
 					<right>-300</right>
@@ -525,7 +546,8 @@
 					<focusposition>0</focusposition>
 					<onright>9000</onright>
 					<onup>9000</onup>
-					<onleft>SetFocus(2001)</onleft>
+					<onleft condition="Player.HasMedia">600</onleft>
+					<onleft condition="!Player.HasMedia">SetFocus(2001)</onleft>
 					<orientation>vertical</orientation>
 					<itemlayout height="90" width="220">
 						<control type="label">
@@ -575,7 +597,7 @@
 							<visible>!Control.HasFocus(9001)</visible>
 						</control>
 						<control type="group">
-							<animation type="Focus">	
+							<animation type="Focus">
 								<effect type="slide" start="0,0" end="-200,0" time="200" easing="inout" tween="cubic"/>
 							</animation>
 							<animation type="Unfocus">
@@ -611,39 +633,41 @@
 				</control>
 				<!-- Menu Lateral Esquerdo -->
 				<control type="list" id="9002">
-					<visible>String.IsEqual(Skin.String(homemenuitens),Top_Menu)</visible>
+					<visible>!Skin.HasSetting(SkinShortcuts_Menu)</visible>
 					<include>Left_Menu_Hidden</include>
 					<include>OpenClose_Left</include>
 					<top>100</top>
 					<left>-300</left>
 					<height>540</height>
-					<onright>SetFocus(2002)</onright>
+					<onright condition="Player.HasMedia">600</onright>
+					<onright condition="!Player.HasMedia">SetFocus(2002)</onright>
 					<onup>9000</onup>
 					<orientation>vertical</orientation>
 					<focusposition>1</focusposition>
 					<itemlayout height="90" width="220">
-					<control type="label">
-						<left>0</left>
-						<top>10</top>
-						<height>70</height>
-						<width>220</width>
-						<aligny>center</aligny>
-						<align>left</align>
-						<font>home30</font>
-						<label>$INFO[ListItem.Label]</label>
-						<textcolor>white</textcolor>
-						<include>fademenu</include>
-					</control>
-					<control type="image">
-						<left>210</left>
-						<top>0</top>
-						<width>90</width>
-						<height>90</height>
-						<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
-						<colordiffuse>FFFFFFFF</colordiffuse>
-						<include>fademenu</include>
-					</control>
-				</itemlayout>
+						<control type="label">
+							<left>0</left>
+							<top>10</top>
+							<height>70</height>
+							<width>220</width>
+							<aligny>center</aligny>
+							<align>left</align>
+							<font>home30</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+							<include>fademenu</include>
+						</control>
+						<control type="image">
+							<left>210</left>
+							<top>0</top>
+							<width>90</width>
+							<height>90</height>
+							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
+							<colordiffuse>FFFFFFFF</colordiffuse>
+							<include>fademenu</include>
+							<aspectratio>scale</aspectratio>
+						</control>
+					</itemlayout>
 					<focusedlayout height="90" width="220">
 						<control type="image">
 							<left>210</left>
@@ -654,6 +678,7 @@
 							<colordiffuse>FFFFFFFF</colordiffuse>
 							<include>fademenu</include>
 							<visible>!Control.HasFocus(9002)</visible>
+							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="label">
 							<left>0</left>
@@ -679,6 +704,7 @@
 								<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
 								<colordiffuse>FFFFFFFF</colordiffuse>
 								<visible>Control.HasFocus(9002)</visible>
+								<aspectratio>scale</aspectratio>
 							</control>
 							<control type="label">
 								<left>-10</left>
@@ -703,7 +729,7 @@
 				<control type="grouplist" id="700">
 					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
-					<animation effect="slide" start="0,0" end="0,100" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)]">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,100" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation>
 					<orientation>horizontal</orientation>
 					<itemgap>0</itemgap>
 					<left>410</left>
@@ -711,220 +737,222 @@
 					<height>110</height>
 					<top>-100</top>
 					<onup>SetFocus(20000)</onup>
-					<ondown>SetFocus(9000,2)</ondown>
+					<ondown>SetFocus(9000)</ondown>
 					<onback>9000</onback>
-					<onleft condition="!String.IsEmpty(9000)">9000</onleft>
-					<onleft condition="String.IsEmpty(9000)">9002</onleft>
-					<onright condition="!String.IsEmpty(9000)">9000</onright>
-					<onright condition="String.IsEmpty(9000)">9001</onright>					
+					<onleft>700</onleft>
+					<onright>700</onright>
 					<!-- <onright>2000</onright> -->
 					<align>justify</align>
 					<include content="IconButton">
-						<param name="control_id" value="801" />
-						<param name="onclick" value="ActivateWindow(shutdownmenu)" />
-						<param name="icon" value="icons/power.png" />
-						<param name="label" value="$LOCALIZE[33060]" />
+						<param name="control_id" value="801"/>
+						<param name="onclick" value="ActivateWindow(shutdownmenu)"/>
+						<param name="icon" value="icons/power.png"/>
+						<param name="label" value="$LOCALIZE[33060]"/>
 					</include>
 					<include content="IconButton">
-						<param name="control_id" value="802" />
-						<param name="onclick" value="ActivateWindow(settings)" />
-						<param name="icon" value="icons/settings.png" />
-						<param name="label" value="$LOCALIZE[21417]" />
+						<param name="control_id" value="802"/>
+						<param name="onclick" value="ActivateWindow(settings)"/>
+						<param name="icon" value="icons/settings.png"/>
+						<param name="label" value="$LOCALIZE[21417]"/>
 					</include>
 					<include content="IconButton">
-						<param name="control_id" value="803" />
-						<param name="onclick" value="Fullscreen" />
-						<param name="icon" value="icons/now-playing/fullscreen.png" />
-						<param name="label" value="$LOCALIZE[31000]" />
-						<param name="visible" value="Player.HasMedia" />
+						<param name="control_id" value="803"/>
+						<param name="onclick" value="Fullscreen"/>
+						<param name="icon" value="icons/now-playing/fullscreen.png"/>
+						<param name="label" value="$LOCALIZE[31000]"/>
+						<param name="visible" value="Player.HasMedia"/>
 					</include>
 					<include content="IconButton">
-						<param name="control_id" value="804" />
-						<param name="onclick" value="ActivateWindow(1107)" />
-						<param name="icon" value="icons/search.png" />
-						<param name="label" value="$LOCALIZE[137]" />
+						<param name="control_id" value="804"/>
+						<param name="onclick" value="PlayDisc"/>
+						<param name="icon" value="icons/disc.png"/>
+						<param name="label" value="$LOCALIZE[427]"/>
+						<param name="visible" value="System.HasMediaDVD"/>
 					</include>
 					<include content="IconButton">
-						<param name="control_id" value="805" />
-						<param name="onclick" value="ActivateWindow(10035)" />
-						<param name="icon" value="icons/infodialogs/image.png" />
-						<param name="label" value="$LOCALIZE[14206]" />
+						<param name="control_id" value="805"/>
+						<param name="onclick" value="ActivateWindow(1107)"/>
+						<param name="icon" value="icons/search.png"/>
+						<param name="label" value="$LOCALIZE[137]"/>
+					</include>
+					<include content="IconButton">
+						<param name="control_id" value="806"/>
+						<param name="onclick" value="ActivateWindow(10035)"/>
+						<param name="icon" value="icons/infodialogs/image.png"/>
+						<param name="label" value="$LOCALIZE[14206]"/>
 					</include>
 				</control>
 			</control>
-			
-			<!-- Barra -->
-			<include>BottomBar</include>
-			
-			<!-- System Info -->			
-			<control type="group">			
-				<animation effect="slide" start="0,0" end="0,-250" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805)]">Conditional</animation>
+			<!-- System Info -->
+			<control type="group">
+				<visible>!Player.HasMedia</visible>
+				<animation effect="slide" start="0,0" end="0,-250" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation>
 				<control type="group">
-				<bottom>-250</bottom>
-				<left>40</left>
-				<height>250</height>
-				<animation effect="slide" start="0,0" end="0,250" time="100" easing="inout">WindowClose</animation>
-				<animation effect="slide" start="0,250" end="0,0" time="100" easing="inout">WindowOpen</animation>
-				<control type="image">
-					<left>150</left>
-					<top>30</top>
-					<right>150</right>
-					<height>3</height>
-					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
-				</control>
-				<control type="grouplist">
-					<left>150</left>
-					<orientation>vertical</orientation>
-					<control type="label">
-						<description>Memory Text</description>
-						<width>auto</width>
-						<height>80</height>
-						<label>$LOCALIZE[31030]: $INFO[system.memory(used)] [B]/[/B] $INFO[system.memory(total)] [B]-[/B] $INFO[system.memory(used.percent)]</label>
-						<aligny>top</aligny>
-						<textoffsety>40</textoffsety>
-						<shadowcolor>black</shadowcolor>
-						<font>font12</font>
-					</control>
-					<control type="progress">
-						<description>Memory BAR</description>
-						<width>730</width>
-						<height>16</height>
-						<info>system.memory(used)</info>
-					</control>
-					<control type="label">
-						<description>CPU Text</description>
-						<width>auto</width>
-						<height>40</height>
-						<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
-						<aligny>center</aligny>
-						<shadowcolor>black</shadowcolor>
-						<font>font12</font>
-						<visible>System.SupportsCPUUsage</visible>
-					</control>
-					<control type="progress">
-						<description>CPU BAR</description>
-						<width>730</width>
-						<height>16</height>
-						<info>System.CPUUsage</info>
-						<visible>System.SupportsCPUUsage</visible>
-					</control>
-				</control>
-				<control type="group">
-					<animation effect="slide" end="0,-55" time="0" condition="!System.SupportsCPUUsage">Conditional</animation>
-					<control type="label">
+					<bottom>-250</bottom>
+					<left>40</left>
+					<height>250</height>
+					<animation effect="slide" start="0,0" end="0,250" time="100" easing="inout">WindowClose</animation>
+					<animation effect="slide" start="0,250" end="0,0" time="100" easing="inout">WindowOpen</animation>
+					<control type="image">
+						<left>150</left>
 						<top>30</top>
-						<left>960</left>
-						<width>auto</width>
-						<height>50</height>
-						<aligny>bottom</aligny>
-						<textoffsety>10</textoffsety>
-						<label>$LOCALIZE[31031]:</label>
-						<shadowcolor>black</shadowcolor>
-						<font>font25_title</font>
+						<right>150</right>
+						<height>3</height>
+						<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
 					</control>
 					<control type="grouplist">
-						<description>Kodi build version</description>
-						<itemgap>10</itemgap>
-						<top>80</top>
-						<left>960</left>
-						<width>820</width>
-						<orientation>horizontal</orientation>
+						<left>150</left>
+						<orientation>vertical</orientation>
 						<control type="label">
-							<description>Build label</description>
+							<description>Memory Text</description>
 							<width>auto</width>
-							<height>40</height>
-							<font>font12</font>
-							<label>$LOCALIZE[144]</label>
+							<height>80</height>
+							<label>$LOCALIZE[31030]: $INFO[system.memory(used)] [B]/[/B] $INFO[system.memory(total)] [B]-[/B] $INFO[system.memory(used.percent)]</label>
+							<aligny>top</aligny>
+							<textoffsety>40</textoffsety>
 							<shadowcolor>black</shadowcolor>
+							<font>font12</font>
+						</control>
+						<control type="progress">
+							<description>Memory BAR</description>
+							<width>730</width>
+							<height>16</height>
+							<info>system.memory(used)</info>
 						</control>
 						<control type="label">
-							<description>Kodi Build Version</description>
+							<description>CPU Text</description>
 							<width>auto</width>
 							<height>40</height>
-							<font>font12</font>
-							<label>$INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode, (,)]</label>
-							<textcolor>button_focus</textcolor>
+							<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+							<aligny>center</aligny>
 							<shadowcolor>black</shadowcolor>
+							<font>font12</font>
+							<visible>System.SupportsCPUUsage</visible>
+						</control>
+						<control type="progress">
+							<description>CPU BAR</description>
+							<width>730</width>
+							<height>16</height>
+							<info>System.CPUUsage</info>
+							<visible>System.SupportsCPUUsage</visible>
 						</control>
 					</control>
-					<control type="grouplist">
-						<description>Git version</description>
-						<itemgap>10</itemgap>
-						<top>120</top>
-						<left>960</left>
-						<width>820</width>
-						<orientation>horizontal</orientation>
+					<control type="group">
+						<animation effect="slide" end="0,-55" time="0" condition="!System.SupportsCPUUsage">Conditional</animation>
 						<control type="label">
-							<description>Git label</description>
+							<top>30</top>
+							<left>960</left>
 							<width>auto</width>
-							<height>40</height>
-							<font>font12</font>
-							<label>Git:</label>
+							<height>50</height>
+							<aligny>bottom</aligny>
+							<textoffsety>10</textoffsety>
+							<label>$LOCALIZE[31031]:</label>
 							<shadowcolor>black</shadowcolor>
+							<font>font25_title</font>
 						</control>
-						<control type="label">
+						<control type="grouplist">
+							<description>Kodi build version</description>
+							<itemgap>10</itemgap>
+							<top>80</top>
+							<left>960</left>
+							<width>820</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<description>Build label</description>
+								<width>auto</width>
+								<height>40</height>
+								<font>font12</font>
+								<label>$LOCALIZE[144]</label>
+								<shadowcolor>black</shadowcolor>
+							</control>
+							<control type="label">
+								<description>Kodi Build Version</description>
+								<width>auto</width>
+								<height>40</height>
+								<font>font12</font>
+								<label>$INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode, (,)]</label>
+								<textcolor>button_focus</textcolor>
+								<shadowcolor>black</shadowcolor>
+							</control>
+						</control>
+						<control type="grouplist">
 							<description>Git version</description>
-							<width>auto</width>
-							<height>40</height>
-							<font>font12</font>
-							<label>$INFO[System.BuildVersionGit]</label>
-							<textcolor>button_focus</textcolor>
-							<shadowcolor>black</shadowcolor>
+							<itemgap>10</itemgap>
+							<top>120</top>
+							<left>960</left>
+							<width>820</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<description>Git label</description>
+								<width>auto</width>
+								<height>40</height>
+								<font>font12</font>
+								<label>Git:</label>
+								<shadowcolor>black</shadowcolor>
+							</control>
+							<control type="label">
+								<description>Git version</description>
+								<width>auto</width>
+								<height>40</height>
+								<font>font12</font>
+								<label>$INFO[System.BuildVersionGit]</label>
+								<textcolor>button_focus</textcolor>
+								<shadowcolor>black</shadowcolor>
+							</control>
 						</control>
-					</control>
-					<control type="grouplist">
-						<description>Build date</description>
-						<itemgap>10</itemgap>
-						<top>160</top>
-						<left>960</left>
-						<width>820</width>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<description>kodi Compiled Text</description>
-							<width>auto</width>
-							<height>40</height>
-							<font>font12</font>
-							<label>$LOCALIZE[174]</label>
-							<shadowcolor>black</shadowcolor>
-						</control>
-						<control type="label" id="53">
-							<description>Kodi Build Date</description>
-							<width>auto</width>
-							<height>40</height>
-							<font>font12</font>
-							<textcolor>button_focus</textcolor>
-							<shadowcolor>black</shadowcolor>
+						<control type="grouplist">
+							<description>Build date</description>
+							<itemgap>10</itemgap>
+							<top>160</top>
+							<left>960</left>
+							<width>820</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<description>kodi Compiled Text</description>
+								<width>auto</width>
+								<height>40</height>
+								<font>font12</font>
+								<label>$LOCALIZE[174]</label>
+								<shadowcolor>black</shadowcolor>
+							</control>
+							<control type="label" id="53">
+								<description>Kodi Build Date</description>
+								<width>auto</width>
+								<height>40</height>
+								<font>font12</font>
+								<textcolor>button_focus</textcolor>
+								<shadowcolor>black</shadowcolor>
+							</control>
 						</control>
 					</control>
 				</control>
-			</control>
 				<control type="group">
-				<depth>DepthBars</depth>
-				<bottom>0</bottom>
-				<height>70</height>
-				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-				<include condition="!Skin.HasSetting(hide_mediaflags)" content="MediaFlags">
-					<param name="infolabel_prefix" value="Container." />
-					<param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]" />
-				</include>
-				<control type="rss">
-					<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
-					<left>0</left>
+					<depth>DepthBars</depth>
 					<bottom>0</bottom>
-					<height>39</height>
-					<width>100%</width>
-					<font>font12</font>
-					<urlset>1</urlset>
-					<hitrect x="-100" y="0" w="1" h="1" />
-					<titlecolor>button_focus</titlecolor>
-					<textcolor>button_focus</textcolor>
-					<shadowcolor>text_shadow</shadowcolor>
-					<headlinecolor>FFC0C0C0</headlinecolor>
-					<visible>Skin.HasSetting(hide_mediaflags) | !ControlGroup(2000).HasFocus</visible>
-					<animation effect="fade" time="300">VisibleChange</animation>
+					<height>70</height>
+					<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+					<include condition="!Skin.HasSetting(hide_mediaflags)" content="MediaFlags">
+						<param name="infolabel_prefix" value="Container."/>
+						<param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]"/>
+					</include>
+					<control type="rss">
+						<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+						<left>0</left>
+						<bottom>0</bottom>
+						<height>39</height>
+						<width>100%</width>
+						<font>font12</font>
+						<urlset>1</urlset>
+						<hitrect x="-100" y="0" w="1" h="1"/>
+						<titlecolor>button_focus</titlecolor>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<headlinecolor>FFC0C0C0</headlinecolor>
+						<visible>Skin.HasSetting(hide_mediaflags) | !ControlGroup(2000).HasFocus</visible>
+						<animation effect="fade" time="300">VisibleChange</animation>
+					</control>
 				</control>
-			</control>
 			</control>
 			
 			<control type="group">
@@ -934,14 +962,14 @@
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				<top>30</top>
 				<left>90</left>
-				<!-- <control type="image">
+				<control type="image">
 					<left>4</left>
 					<top>0</top>
 					<aspectratio>keep</aspectratio>
 					<width>192</width>
 					<height>56</height>
 					<texture>special://xbmc/media/vendor_logo.png</texture>
-				</control> -->
+				</control>
 			</control>
 		</control>
 	</controls>

@@ -54,7 +54,7 @@
 					<pagecontrol>5199</pagecontrol>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>horizontal</orientation>
-					<!-- <visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(mixed) | Container.Content(images) | Container.Content(videos) | Container.Content(games) | Container.Content(addons)</visible> -->
+					<visible>Container.Content() | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(mixed) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible>
 					<onleft>53</onleft>
 					<onup>9000</onup>
 					<ondown>5199</ondown>
@@ -89,11 +89,6 @@
 							<height>32</height>
 							<texture>$VAR[WallWatchedIconVar]</texture>
 						</control>
-						<control type="group">
-							<left>158</left>
-							<top>92</top>
-							<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-						</control>
 					</itemlayout>
 					<focusedlayout width="370">
 						<control type="image">
@@ -124,11 +119,6 @@
 							<height>32</height>
 							<texture>$VAR[WallWatchedIconVar]</texture>
 						</control>
-						<control type="group">
-							<left>158</left>
-							<top>92</top>
-							<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
-						</control>
 					</focusedlayout>
 				</control>
 			</control>
@@ -136,13 +126,21 @@
 				<visible>Control.IsVisible(53)</visible>
 				<include>Visible_Right</include>
 				<include>OpenClose_Right</include>
+				<control type="image">
+					<left>30</left>
+					<top>50</top>
+					<width>400</width>
+					<height>155</height>
+					<texture>$VAR[ClearLogoVar]</texture>
+				</control>
 				<control type="group">
-					<width>50%</width>
+					<left>440</left>
+					<width>30%</width>
 					<include content="ShiftTextbox">
 						<param name="textbox_id" value="53200" />
 						<param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]" />
 					</include>
-				</control>
+				</control>				
 				<control type="group">
 					<left>50%</left>
 					<width>50%</width>
@@ -192,9 +190,12 @@
 				<left>30</left>
 				<top>45</top>
 				<right>30</right>
-				<height>163</height>
+				<height>170</height>
 				<label>$PARAM[textbox_content]</label>
 				<shadowcolor>text_shadow</shadowcolor>
+				<align>justify</align>
+				<aligny>center</aligny>
+				<autoscroll time="3000" repeat="3000">Skin.HasSetting(AutoScroll)</autoscroll>
 			</control>
 		</control>
 	</include>

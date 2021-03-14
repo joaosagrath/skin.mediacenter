@@ -158,14 +158,14 @@
 					</include>
 				</control>
 			</control>
-			<include content="WeatherWidget">
+			<include content="WeatherWindow">
 				<param name="content_include" value="DailyItems" />
 				<param name="list_id" value="15100" />
 				<param name="widget_header" value="$LOCALIZE[31019]"/>
 				<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
 				<param name="width" value="258" />
 			</include>
-			<include content="WeatherWidget">
+			<include content="WeatherWindow">
 				<param name="content_include" value="HourlyItems" />
 				<param name="list_id" value="15200" />
 				<param name="widget_header" value="$LOCALIZE[33036]"/>

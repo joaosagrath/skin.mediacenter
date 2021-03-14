@@ -2,10 +2,10 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|rightmenu|leftmenu)</onload>
 	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2)</onload>
 	<controls>
-		<include>DefaultBackground</include>		
+		<include>DefaultBackground</include>
 		<control type="multiimage">
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
@@ -20,9 +20,7 @@
 		</control>
 		<!-- Menu Central -->
 		<control type="group" id="10000">
-		<animation type="Conditional" condition="Control.HasFocus(11001) | Control.HasFocus(11002) | Control.HasFocus(11003)">
-			<effect type="slide" start="0,0" end="-470,0" time="100" easing="inout" />
-		</animation>
+			<include>CustomWidgetsAnimation</include>
 			<left>470</left>
 			<include>OpenClose_Right</include>
 			<!-- Geral -->
@@ -61,32 +59,30 @@
 					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
 					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
 				</control>
-				<control type="radiobutton" id="705">
-					<label>Exibir resumo de clima na tela inicial</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(WeatherResume)</onclick>
-					<selected>Skin.HasSetting(WeatherResume)</selected>
-					<enable>!String.IsEmpty(Weather.Plugin)</enable>
-				</control>
-				<control type="radiobutton" id="706">
+				<control type="radiobutton" id="707">
 					<label>$LOCALIZE[31160]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
 				</control>
-				<control type="button" id="707">
+				<control type="button" id="708">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool(31024, 38018|circle_userrating, 563|circle_rating, 16018|circle_none)</onclick>
 					<label2>$VAR[RatingSettingLabel2Var]</label2>
 				</control>
-				<control type="button" id="708">
+				<control type="button" id="709">
 					<label>$LOCALIZE[31164]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool(31164, 31165|show_profilename, 31166|show_profileavatar, 16018|show_none)</onclick>
 					<label2>$VAR[ProfileIdentificationLabel2Var]</label2>
 				</control>
-				
+				<control type="button" id="710">
+					<label>$LOCALIZE[31179]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.SetPath(MusicArtsPath)</onclick>
+					<label2>$INFO[Skin.String(MusicArtsPath)]</label2>
+				</control>
 			</control>
 			<!-- Artwork -->
 			<control type="grouplist" id="600">
@@ -103,7 +99,6 @@
 					<label>$LOCALIZE[31002]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(no_fanart)</onclick>
-					<onclick>Skin.Reset(CustomHomeFanart)</onclick>
 					<selected>!Skin.HasSetting(no_fanart)</selected>
 				</control>
 				<control type="button" id="602">
@@ -120,15 +115,14 @@
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),0)">Skin.SetString(background_overlay,1)</onclick>
 				</control>
 				<control type="button" id="603">
-					<label>Selecione uma imagem para plano de fundo</label>
+					<label>$LOCALIZE[31177]</label>
 					<label2>$INFO[Skin.String(CustomHomeFanart)]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick>Skin.Reset(CustomHomeFanart)</onclick>
 					<onclick>Skin.SetImage(CustomHomeFanart)</onclick>
 					<enable>!Skin.HasSetting(no_fanart)</enable>
 				</control>
 				<control type="button" id="604">
-					<label>Limpar Ajuste de plano de fundo customizado</label>
+					<label>$LOCALIZE[31178]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.Reset(CustomHomeFanart)</onclick>
 					<enable>!Skin.HasSetting(no_fanart)</enable>
@@ -166,196 +160,6 @@
 					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
 				</control>
 			</control>
-			<!-- Itens do Menu principal -->
-			<control type="grouplist" id="610">
-				<top>133</top>
-				<left>0</left>
-				<right>0</right>
-				<bottom>140</bottom>
-				<onleft>9000</onleft>
-				<onright>60</onright>
-				<onup>610</onup>
-				<pagecontrol>60</pagecontrol>
-				<ondown>610</ondown>
-				<visible>Container(9000).HasFocus(2)</visible>
-				<!-- Menu do Topo -->
-				<control type="label" id="31">
-					<left>0</left>
-					<width>1448</width>
-					<height>70</height>
-					<align>center</align>
-					<label>Menu do Topo</label>
-				</control>
-				<!-- Jogos -->
-				<control type="radiobutton" id="611">
-					<label>$LOCALIZE[15016]</label>
-					<visible>System.GetBool(gamesgeneral.enable)</visible>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoGamesButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoGamesButton)</onclick>
-					<visible>String.IsEmpty(Skin.String(HomeGames.Title))</visible>
-				</control>
-				<control type="radiobutton" id="612">
-					<label>$INFO[Skin.String(HomeGames.Title)]</label>
-					<visible>System.GetBool(gamesgeneral.enable)</visible>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoGamesButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoGamesButton)</onclick>
-					<visible>!String.IsEmpty(Skin.String(HomeGames.Title))</visible>
-				</control>
-				<control type="button" id="613">
-					<label>Editar Menu $LOCALIZE[15016]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Control.SetFocus(11000)</onclick>
-					<enable>!Skin.HasSetting(HomeMenuNoGamesButton)</enable>
-				</control>
-				
-				<!-- Filmes -->
-				<control type="radiobutton" id="614">
-					<label>$LOCALIZE[342]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
-					<visible>String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
-				</control>
-				<control type="radiobutton" id="615">
-					<label>$INFO[Skin.String(HomeMovies.Title)]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
-					<visible>!String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
-				</control>
-				<control type="button" id="616">
-					<label>Editar Menu $LOCALIZE[342]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Control.SetFocus(11000)</onclick>
-					<enable>!Skin.HasSetting(HomeMenuNoMovieButton)</enable>
-				</control>
-				
-				<!-- Seriados -->				
-				<control type="radiobutton" id="617">
-					<label>$LOCALIZE[20343]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
-					<visible>String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
-				</control>
-				<control type="radiobutton" id="618">
-					<label>$INFO[Skin.String(HomeTvShows.Title)]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
-					<visible>!String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
-				</control>
-				<control type="button" id="619">
-					<label>Editar Menu $LOCALIZE[20343]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Control.SetFocus(11000)</onclick>
-					<enable>!Skin.HasSetting(HomeMenuNoTVShowButton)</enable>
-				</control>
-				
-				
-				
-				<control type="radiobutton" id="620">
-					<label>$LOCALIZE[2]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoMusicButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
-				</control>
-				<control type="radiobutton" id="621">
-					<label>$LOCALIZE[1]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
-				</control>
-				<!-- Menu da Direita -->
-				<control type="image" id="32">
-					<height>3</height>
-					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
-				</control>
-				<control type="label" id="33">
-					<left>0</left>
-					<width>1448</width>
-					<height>70</height>
-					<align>center</align>
-					<label>Menu da Direita</label>
-				</control>
-				<control type="radiobutton" id="622">
-					<label>$LOCALIZE[8]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoWeatherButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
-				</control>
-				<control type="radiobutton" id="623">
-					<label>$LOCALIZE[24001]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoProgramsButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoProgramsButton)</onclick>
-				</control>
-				<control type="radiobutton" id="624">
-					<label>$LOCALIZE[10134]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoFavButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoFavButton)</onclick>
-				</control>
-				<control type="radiobutton" id="625">
-					<label>$LOCALIZE[3]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoVideosButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoVideosButton)</onclick>
-				</control>
-				<!-- Menu da Esquerda -->
-				<control type="image" id="34">
-					<height>3</height>
-					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
-				</control>
-				<control type="label" id="35">
-					<left>0</left>
-					<width>1448</width>
-					<height>70</height>
-					<align>center</align>
-					<label>Menu da Esquerda</label>
-				</control>
-				<control type="radiobutton" id="626">
-					<label>$LOCALIZE[20389]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoMusicVideoButton)</onclick>
-				</control>
-				<control type="radiobutton" id="627">
-					<label>$LOCALIZE[19020]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoTVButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoTVButton)</onclick>
-				</control>
-				<control type="radiobutton" id="628">
-					<label>$LOCALIZE[19021]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoRadioButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoRadioButton)</onclick>
-				</control>
-				<control type="radiobutton" id="629">
-					<label>$LOCALIZE[31193]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoNetflixButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoNetflixButton)</onclick>
-					<enable>System.HasAddon(plugin.video.netflix)</enable>
-				</control>
-				<control type="radiobutton" id="630">
-					<label>$LOCALIZE[31194]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoSpotifyButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoSpotifyButton)</onclick>
-					<enable>System.HasAddon(plugin.audio.spotify)</enable>
-				</control>
-				<control type="radiobutton" id="631">
-					<label>$LOCALIZE[31195]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoYoutubeButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoYoutubeButton)</onclick>
-					<enable>System.HasAddon(plugin.video.youtube)</enable>
-				</control>
-			</control>
 			<!-- Editar Menu Principal -->
 			<control type="grouplist" id="630">
 				<top>133</top>
@@ -368,58 +172,56 @@
 				<pagecontrol>60</pagecontrol>
 				<ondown>630</ondown>
 				<visible>Container(9000).HasFocus(4)</visible>
-				<!-- Menu do Topo -->
-				<control type="label" id="36">
-					<left>0</left>
-					<width>1448</width>
-					<height>70</height>
-					<align>center</align>
-					<label>$LOCALIZE[31170]</label>
-				</control>
-				<!-- Menu Padrão -->
+				<!-- Ajustes do Menu Padrão -->
 				<control type="radiobutton" id="631">
-					<label>$LOCALIZE[31189]</label>
-					<include>DefaultSettingButton</include>					
-					<onclick>Skin.SetString(HomeMenuItens,Top_Menu)</onclick>					
-					<selected>Skin.String(HomeMenuItens,Top_Menu)</selected>					
-					<onclick>Skin.Reset(Skin_Shortcuts_Setting)</onclick>					
+					<label>$LOCALIZE[31169]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(Default_Menu)</onclick>
+					<selected>Skin.HasSetting(Default_Menu)</selected>
+					<onclick>Skin.Reset(SkinShortcuts_Menu)</onclick>
 				</control>
 				<!-- Menu Skin-Shortcuts -->
 				<control type="radiobutton" id="632">
-					<label>$LOCALIZE[31190]</label>
-					<include>DefaultSettingButton</include>					
-					<onclick>Skin.SetString(HomeMenuItens,skinshortcuts-mainmenu)</onclick>
-					<selected>Skin.String(HomeMenuItens,skinshortcuts-mainmenu)</selected>					
-					<onclick>Skin.Reset(Skin_Menu_Setting)</onclick>					
-					<enable>System.HasAddon(script.skinshortcuts)</enable>
-				</control>				
-				<control type="image" id="37">
-					<height>3</height>
-					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
-				</control>
-				<control type="label" id="38">
-					<left>0</left>
-					<width>1448</width>
-					<height>70</height>
-					<align>center</align>
-					<label>$LOCALIZE[31171]</label>
-				</control>
-				<control type="button" id="633">
-					<label>$LOCALIZE[31172]</label>
+					<label>$LOCALIZE[31170]</label>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-					<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+					<onclick>Skin.ToggleSetting(SkinShortcuts_Menu)</onclick>
+					<selected>Skin.HasSetting(SkinShortcuts_Menu)</selected>
+					<onclick>Skin.Reset(Default_Menu)</onclick>
+					<enable>System.HasAddon(script.skinshortcuts)</enable>
+				</control>
+				<!-- Defina itens do menu Padrão -->
+				<control type="button" id="633">
+					<label>$LOCALIZE[31171]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>ActivateWindow(1111)</onclick>
 				</control>
 				<control type="button" id="634">
-					<label>$LOCALIZE[10041]</label>
+					<label>$LOCALIZE[31172]</label>
 					<include>DefaultSettingButton</include>
-					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-					<onclick>Skin.SetString(HomeMenuItens,Top_Menu)</onclick>
-					<onclick>Skin.Reset(Skin_Shortcuts_Setting)</onclick>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<enable>System.HasAddon(script.skinshortcuts)</enable>
 				</control>
+				<control type="radiobutton" id="705">
+					<label>$LOCALIZE[31173]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(WeatherResume)</onclick>
+					<selected>Skin.HasSetting(WeatherResume)</selected>
+					<enable>!String.IsEmpty(Weather.Plugin)</enable>
+				</control>
+				<control type="radiobutton" id="706">
+					<label>$LOCALIZE[31174]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(FadeWidgetIdle)</onclick>
+					<selected>Skin.HasSetting(FadeWidgetIdle)</selected>
+				</control>
+				<control type="radiobutton" id="707">
+					<label>$LOCALIZE[31175]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(showhomenowplaying)</onclick>
+					<selected>Skin.HasSetting(showhomenowplaying)</selected>
+				</control>
 			</control>
-			
+			<!-- Barras -->
 			<control type="image">
 				<description>Dialog Header image</description>
 				<left>0</left>
@@ -438,10 +240,8 @@
 			</control>
 		</control>
 		<!-- Menu da Esquerda -->
-		<control type="group">		
-		<animation type="Conditional" condition="Control.HasFocus(11001) | Control.HasFocus(11002) | Control.HasFocus(11003)">
-			<effect type="slide" start="0,0" end="-470,0" time="100" easing="inout" />
-		</animation>
+		<control type="group">
+			<include>CustomWidgetsAnimation</include>
 			<depth>DepthContentPanel</depth>
 			<left>0</left>
 			<include>OpenClose_Left</include>
@@ -486,11 +286,7 @@
 				</focusedlayout>
 				<content>
 					<item id="4">
-						<label>Editar Menu Principal</label>
-						<onclick>noop</onclick>
-					</item>
-					<item id="2">
-						<label>$LOCALIZE[31061]</label>
+						<label>$LOCALIZE[31168]</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
@@ -500,228 +296,11 @@
 					<item id="1">
 						<label>$LOCALIZE[128]</label>
 						<onclick>noop</onclick>
-					</item>					
+					</item>
 				</content>
 			</control>
 		</control>
-		<!-- Menu da Direita Escondido -->
-		<control type="group" id="11000">
-			<depth>DepthContentPanel</depth>			
-			<!-- Jogos -->
-			<control type="list" id="11001">
-				<visible>Control.HasFocus(613) | Control.HasFocus(11001)</visible>
-				<animation type="Conditional" condition="Control.HasFocus(11001)">
-					<effect type="slide" start="0,0" end="-470,0" time="100" easing="inout" />
-				</animation>
-				<description>button area</description>
-				<left>1920</left>
-				<top>130</top>
-				<width>470</width>
-				<height>700</height>
-				<onleft>10000</onleft>
-				<onright>10000</onright>
-				<onup>11000</onup>
-				<ondown>11000</ondown>
-				<itemlayout height="85" width="470">
-					<control type="label">
-						<textoffsetx>30</textoffsetx>
-						<width>470</width>
-						<height>85</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font37</font>
-						<aligny>center</aligny>
-					</control>
-				</itemlayout>
-				<focusedlayout height="85" width="470">
-					<control type="image">
-						<width>470</width>
-						<height>85</height>
-						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
-					</control>
-					<control type="label">
-						<textoffsetx>30</textoffsetx>
-						<width>470</width>
-						<height>85</height>
-						<font>font37</font>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="1">
-						<label>Editar Título</label>
-						<onclick>Skin.SetString(HomeGames.Title)</onclick>
-					</item>
-					<item id="2">
-						<label>Conteúdo</label>
-						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeGames.Title&amp;skinAction=HomeGames.Action)</onclick>
-					</item>
-					<item id="3">
-						<label>Widget</label>
-						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=GamesWidgets.Source&amp;skinWidgetName=GamesWidgets.Name&amp;skinWidgetTarget=GamesWidgets.Target&amp;skinWidgetPath=GamesWidgets.Path)</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Id,games)</onclick>
-					</item>
-					<item id="4">
-						<label>Plano de Fundo</label>
-						<onclick>Skin.SetImage(HomeGames.Fanart)</onclick>
-					</item>
-					<item id="10">
-						<label>Limpar Ajustes</label>
-						<onclick>Skin.Reset(HomeGames.Title)</onclick>
-						<onclick>Skin.Reset(HomeGames.Action)</onclick>
-						<onclick>Skin.Reset(HomeGames.Fanart)</onclick>
-						<onclick>Skin.Reset(GamesWidgets.Name)</onclick>
-						<onclick>Skin.Reset(GamesWidgets.Source)</onclick>
-						<onclick>Skin.Reset(GamesWidgets.Path)</onclick>
-						<onclick>Skin.Reset(GamesWidgets.Target)</onclick>
-						<onclick>Skin.Reset(GamesWidgets.Id)</onclick>
-					</item>
-			
-				</content>
-			</control>
-			<!-- Filmes -->
-			<control type="list" id="11002">
-				<visible>Control.HasFocus(616) | Control.HasFocus(11002)</visible>
-				<animation type="Conditional" condition="Control.HasFocus(11002)">
-					<effect type="slide" start="0,0" end="-470,0" time="100" easing="inout" />
-				</animation>
-				<description>button area</description>
-				<left>1920</left>
-				<top>130</top>
-				<width>470</width>
-				<height>700</height>
-				<onleft>10000</onleft>
-				<onright>10000</onright>
-				<onup>11000</onup>
-				<ondown>11000</ondown>
-				<itemlayout height="85" width="470">
-					<control type="label">
-						<textoffsetx>30</textoffsetx>
-						<width>470</width>
-						<height>85</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font37</font>
-						<aligny>center</aligny>
-					</control>
-				</itemlayout>
-				<focusedlayout height="85" width="470">
-					<control type="image">
-						<width>470</width>
-						<height>85</height>
-						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
-					</control>
-					<control type="label">
-						<textoffsetx>30</textoffsetx>
-						<width>470</width>
-						<height>85</height>
-						<font>font37</font>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="1">
-						<label>Editar Título</label>
-						<onclick>Skin.SetString(HomeMovies.Title)</onclick>
-					</item>
-					<item id="2">
-						<label>Conteúdo</label>
-						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeMovies.Title&amp;skinAction=HomeMovies.Action)</onclick>
-					</item>
-					<item id="3">
-						<label>Widget</label>
-						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MoviesWidgets.Source&amp;skinWidgetName=MoviesWidgets.Name&amp;skinWidgetTarget=MoviesWidgets.Target&amp;skinWidgetPath=MoviesWidgets.Path)</onclick>
-					</item>
-					<item id="4">
-						<label>Plano de Fundo</label>
-						<onclick>Skin.SetImage(HomeMovies.Fanart)</onclick>
-					</item>
-					<item id="10">
-						<label>Limpar Ajustes</label>
-						<onclick>Skin.Reset(HomeMovies.Title)</onclick>
-						<onclick>Skin.Reset(HomeMovies.Action)</onclick>
-						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
-						<onclick>Skin.Reset(MoviesWidgets.Name)</onclick>
-						<onclick>Skin.Reset(MoviesWidgets.Source)</onclick>
-						<onclick>Skin.Reset(MoviesWidgets.Path)</onclick>
-						<onclick>Skin.Reset(MoviesWidgets.Target)</onclick>
-					</item>			
-				</content>
-			</control>
-			<!-- Seriados -->
-			<control type="list" id="11003">
-				<visible>Control.HasFocus(619) | Control.HasFocus(11003)</visible>
-				<animation type="Conditional" condition="Control.HasFocus(11003)">
-					<effect type="slide" start="0,0" end="-470,0" time="100" easing="inout" />
-				</animation>
-				<description>button area</description>
-				<left>1920</left>
-				<top>130</top>
-				<width>470</width>
-				<height>700</height>
-				<onleft>10000</onleft>
-				<onright>10000</onright>
-				<onup>11000</onup>
-				<ondown>11000</ondown>
-				<itemlayout height="85" width="470">
-					<control type="label">
-						<textoffsetx>30</textoffsetx>
-						<width>470</width>
-						<height>85</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font37</font>
-						<aligny>center</aligny>
-					</control>
-				</itemlayout>
-				<focusedlayout height="85" width="470">
-					<control type="image">
-						<width>470</width>
-						<height>85</height>
-						<texture colordiffuse="button_focus">lists/focus.png</texture>
-						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
-					</control>
-					<control type="label">
-						<textoffsetx>30</textoffsetx>
-						<width>470</width>
-						<height>85</height>
-						<font>font37</font>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</focusedlayout>
-				<content>
-					<item id="1">
-						<label>Editar Título</label>
-						<onclick>Skin.SetString(HomeTvShows.Title)</onclick>
-					</item>
-					<item id="2">
-						<label>Conteúdo</label>
-						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeTvShows.Title&amp;skinAction=HomeTvShows.Action)</onclick>
-					</item>
-					<item id="3">
-						<label>Widget</label>
-						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=TvShowsWidgets.Source&amp;skinWidgetName=TvShowsWidgets.Name&amp;skinWidgetTarget=TvShowsWidgets.Target&amp;skinWidgetPath=TvShowsWidgets.Path)</onclick>
-					</item>
-					<item id="4">
-						<label>Plano de Fundo</label>
-						<onclick>Skin.SetImage(HomeTvShows.Fanart)</onclick>
-					</item>
-					<item id="10">
-						<label>Limpar Ajustes</label>
-						<onclick>Skin.Reset(HomeTvShows.Title)</onclick>
-						<onclick>Skin.Reset(HomeTvShows.Action)</onclick>
-						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
-						<onclick>Skin.Reset(TvShowsWidgets.Name)</onclick>
-						<onclick>Skin.Reset(TvShowsWidgets.Source)</onclick>
-						<onclick>Skin.Reset(TvShowsWidgets.Path)</onclick>
-						<onclick>Skin.Reset(TvShowsWidgets.Target)</onclick>
-					</item>			
-				</content>
-			</control>
-		</control>
-		<!-- Barra de Scrool -->
+		<!-- Barra de Scroll -->
 		<control type="group">
 			<right>0</right>
 			<top>133</top>

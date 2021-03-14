@@ -2,15 +2,61 @@
 <window>
 	<onload>Skin.Reset(firstload)</onload>
 	<onload>SetProperty(SkinStartup,1,Home)</onload>
-	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,7)</onload>
-	<onload condition="String.IsEmpty(Skin.String(HomeMenuItens))">Skin.SetString(HomeMenuItens,Top_Menu)</onload>
-	<!-- <onload condition="String.IsEmpty(Games_Widgets_View)">Skin.ToggleSetting(Games_Widgets_View,off)</onload>
-	<onload condition="String.IsEmpty(Movies_Widgets_View)">Skin.ToggleSetting(Movies_Widgets_View,off)</onload>
-	<onload condition="String.IsEmpty(Series_Widgets_View)">Skin.ToggleSetting(Series_Widgets_View,off)</onload>
-	<onload condition="String.IsEmpty(Music_Widgets_View)">Skin.ToggleSetting(Music_Widgets_View,off)</onload>
-	<onload condition="String.IsEmpty(Pictures_Widgets_View)">Skin.ToggleSetting(Pictures_Widgets_View,off)</onload>
-	<onload condition="String.IsEmpty(Addons_Widgets_View)">Skin.ToggleSetting(Addons_Widgets_View,off)</onload>
-	<onload condition="String.IsEmpty(Videos_Widgets_View)">Skin.ToggleSetting(Videos_Widgets_View,off)</onload> -->
+	
+	<!-- Blur Effect -->
+	<!-- <onload>Skin.SetString(colorbox_effect,blur)</onload>
+	<onload>Skin.SetString(colorbox_quality,4)</onload>
+	<onload>Skin.SetString(colorbox_blursize,15)</onload>
+	<onload>Skin.SetString(colorbox_blend,100)</onload>
+	<onload>Skin.SetString(colorbox_bitsize,1)</onload>
+	<onload>Skin.SetString(colorbox_pixelsize,12)</onload>
+	<onload>Skin.SetString(colorbox_desat,0.3)</onload>
+	<onload>Skin.SetString(colorbox_black,000000)</onload>
+	<onload>Skin.SetString(colorbox_white,ffffff)</onload>
+	<onload>Skin.SetString(colorbox_main,main:fhls*-;0.45;0.9)</onload>
+	<onload>Skin.SetString(colorbox_comp,main:hls*0.75;0;0@fhls*-;0.45;0.9)</onload>
+	<onload condition="System.HasAddon(script.colorbox)">RunScript(script.colorbox,daemon=True)</onload>
+	<onload condition="System.HasAddon(script.colorbox)">SetProperty(FIVE_daemon_set,$INFO[Skin.String(colorbox_effect)],home)</onload>
+	<onload condition="System.HasAddon(script.colorbox)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]|var=blend,set=$INFO[Skin.String(colorbox_blend)]|var=desat,set=$INFO[Skin.String(colorbox_desat)]",home),00:05,true)</onload> -->
+	<!-- Definições padrão da Home -->
+	<onload condition="!Skin.HasSetting(Default_Menu)">Skin.ToggleSetting(Default_Menu)</onload>
+	<onload condition="!Skin.HasSetting(WeatherResume)">Skin.ToggleSetting(WeatherResume)</onload>
+	<onload condition="!Skin.HasSetting(autoscroll)">Skin.ToggleSetting(autoscroll)</onload>
+	
+	<!-- Fanart Padrão -->
+	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,0)</onload>
+	<onload condition="String.IsEmpty(Skin.String(CustomHomeFanart))">Skin.SetString(CustomHomeFanart,special://skin/extras/backgrounds/)</onload>
+	<!-- Jogos -->
+	<onload condition="String.IsEmpty(Skin.String(GamesWidgets.Path)) + System.HasAddon(plugin.program.advanced.emulator.launcher)">Skin.SetString(GamesWidgets.Path,plugin://plugin.program.advanced.emulator.launcher)</onload>
+	<onload condition="String.IsEmpty(Skin.String(GamesWidgets.Name)) + System.HasAddon(plugin.program.advanced.emulator.launcher)">Skin.SetString(GamesWidgets.Name,Advanced Emulator Launcher)</onload>
+	
+	<onload condition="String.IsEmpty(Skin.String(GamesWidgets.Path)) + !System.HasAddon(plugin.program.xfl)">Skin.SetString(GamesWidgets.Path,addons://sources/game)</onload>
+	<onload condition="String.IsEmpty(Skin.String(GamesWidgets.Name)) + !System.HasAddon(plugin.program.xfl)">Skin.SetString(GamesWidgets.Name,Addons de Jogos)</onload>
+	<onload condition="String.IsEmpty(Skin.String(GamesWidgets.Target))">Skin.SetString(GamesWidgets.Target,games)</onload>	
+	<!-- Filmes -->
+	<onload condition="String.IsEmpty(Skin.String(MoviesWidgets.Path))">Skin.SetString(MoviesWidgets.Path,library://video/movies/)</onload>
+	<onload condition="String.IsEmpty(Skin.String(MoviesWidgets.Name))">Skin.SetString(MoviesWidgets.Name,Biblioteca de Filmes)</onload>
+	<onload condition="String.IsEmpty(Skin.String(MoviesWidgets.Target))">Skin.SetString(MoviesWidgets.Target,videos)</onload>
+	<!-- Musicas -->
+	<onload condition="String.IsEmpty(Skin.String(MusicWidgets.Path))">Skin.SetString(MusicWidgets.Path,library://music/)</onload>
+	<onload condition="String.IsEmpty(Skin.String(MusicWidgets.Name))">Skin.SetString(MusicWidgets.Name,Biblioteca de Músicas)</onload>
+	<onload condition="String.IsEmpty(Skin.String(MusicWidgets.Target))">Skin.SetString(MusicWidgets.Target,music)</onload>
+	<!-- Imagens -->
+	<onload condition="String.IsEmpty(Skin.String(PicturesWidgets.Path)) + System.HasAddon(plugin.program.xfl)">Skin.SetString(PicturesWidgets.Path,plugin://plugin.program.xfl)</onload>
+	<onload condition="String.IsEmpty(Skin.String(PicturesWidgets.Name)) + System.HasAddon(plugin.program.xfl)">Skin.SetString(PicturesWidgets.Name,X-Rated FullSets Launcher)</onload>
+	<!-- Imagens Sem XFL -->
+	<onload condition="String.IsEmpty(Skin.String(PicturesWidgets.Path)) + !System.HasAddon(plugin.program.xfl)">Skin.SetString(PicturesWidgets.Path,addons://sources/image)</onload>
+	<onload condition="String.IsEmpty(Skin.String(PicturesWidgets.Name)) + !System.HasAddon(plugin.program.xfl)">Skin.SetString(PicturesWidgets.Name,Addons de Imagens)</onload>
+	<onload condition="String.IsEmpty(Skin.String(PicturesWidgets.Target))">Skin.SetString(PicturesWidgets.Target,pictures)</onload>
+	<!-- Seriados-->
+	<onload condition="String.IsEmpty(Skin.String(TvShowsWidgets.Path))">Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onload>
+	<onload condition="String.IsEmpty(Skin.String(TvShowsWidgets.Name))">Skin.SetString(TvShowsWidgets.Name,Biblioteca de Seriados)</onload>
+	<onload condition="String.IsEmpty(Skin.String(TvShowsWidgets.Target))">Skin.SetString(TvShowsWidgets.Target,videos)</onload>
+	<!-- Addons -->
+	<onload condition="String.IsEmpty(Skin.String(WidgetListHomeAddons))">Skin.ToggleSetting(WidgetListHomeAddons)</onload>
+	<!-- PVR -->
+	<onload condition="String.IsEmpty(Skin.String(PVRWidgets.Path))">Skin.SetString(PVRWidgets.Path,pvr://channels/tv/*?)</onload>
+	<onload condition="String.IsEmpty(Skin.String(PVR.Action))">Skin.SetString(PVR.Action,ActivateWindow(TVChannels))</onload>
 	<onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
 	<controls />
 </window>

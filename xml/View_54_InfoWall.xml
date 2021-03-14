@@ -233,7 +233,7 @@
 		<param name="focused">false</param>
 		<definition>
 			<control type="group">
-				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+				
 				<control type="image">
 					<left>15</left>
 					<top>-10</top>
@@ -265,24 +265,33 @@
 					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
 					<visible>!ListItem.IsParentFolder</visible>
 				</control>
-				
 				<control type="image">
 					<left>24</left>
 					<top>-1</top>
 					<width>272</width>
 					<height>270</height>
-					<texture fallback="DefaultMovies.png" background="true">$VAR[picposter]</texture>
-					<aspectratio>keep</aspectratio>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
 					<bordersize>20</bordersize>
 				</control>
-				
 			</control>
 			<control type="group">
 				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
 				<control type="image">
+					<visible>Skin.HasSetting(show_picicon)</visible>
 					<left>15</left>
-					<top>-14</top>
+					<top>-10</top>
 					<width>290</width>
+					<height>400</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<visible>Skin.HasSetting(show_picicon)</visible>
+					<left>11</left>
+					<top>-14</top>
+					<width>298</width>
 					<height>408</height>
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -291,12 +300,13 @@
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="image">
+					<visible>Skin.HasSetting(show_picicon)</visible>
 					<left>15</left>
 					<top>-10</top>
 					<width>290</width>
 					<height>400</height>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
-					<aspectratio>keep</aspectratio>
+					<aspectratio>Keep</aspectratio>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
@@ -382,15 +392,15 @@
 				<preloaditems>2</preloaditems>
 				<pagecontrol>531</pagecontrol>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<!-- <visible>Container.Content(artists) | Container.Content(albums) | Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible -->
-				<itemlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+				<visible>Container.Content() | Container.Content(artists) | Container.Content(albums) | Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(images) | Container.Content(videos) | Container.Content(games)</visible>
+				<itemlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
 					<control type="group">
 						<left>30</left>
 						<top>120</top>
 						<include>InfoWallMovieLayout</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(musicvideos) + Skin.HasSetting(show_musicvideoposter)]">
+				<focusedlayout height="445" width="320" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<left>30</left>
@@ -402,7 +412,7 @@
 						</include>
 					</control>
 				</focusedlayout>
-				<itemlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
+				<itemlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
 					<control type="group">
 						<left>64</left>
 						<top>110</top>
@@ -412,7 +422,7 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | [Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">
+				<focusedlayout height="301" width="300" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="220,250">Focus</animation>
