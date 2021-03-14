@@ -1253,29 +1253,20 @@
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31204]</label>
 					</control>
-					<control type="radiobutton" id="10111">
-						<include>DefaultSettingButton</include>
-						<label>Addons</label>
-						<onclick>Skin.ToggleSetting(WidgetListHomeAddons)</onclick>
-						<selected>Skin.HasSetting(WidgetListHomeAddons)</selected>
-						<onclick>Skin.Reset(WidgetListHomeVideoAddons)</onclick>
-						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
-						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
-						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
-						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
-						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
-					</control>	
 					<control type="radiobutton" id="10112">
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31211]</label>
+						
 						<onclick>Skin.ToggleSetting(WidgetListHomeVideoAddons)</onclick>
 						<selected>Skin.HasSetting(WidgetListHomeVideoAddons)</selected>
+						
 						<onclick>Skin.Reset(WidgetListHomeAddons)</onclick>
 						<onclick>Skin.Reset(WidgetListHomeAudioAddons)</onclick>
 						<onclick>Skin.Reset(WidgetListHomeGamesAddons)</onclick>
 						<onclick>Skin.Reset(WidgetListHomeImageAddons)</onclick>
 						<onclick>Skin.Reset(WidgetListHomeProgramsAddons)</onclick>
 						<onclick>Skin.Reset(WidgetListHomeAndroidApps)</onclick>
+						
 					</control>
 					<control type="radiobutton" id="10113">
 						<include>DefaultSettingButton</include>

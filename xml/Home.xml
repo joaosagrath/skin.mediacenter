@@ -4,7 +4,6 @@
 	<backgroundcolor>background</backgroundcolor>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|rightmenu|leftmenu)</onload>
 	<onload condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onload>
-	<onload condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
@@ -482,7 +481,7 @@
 					<width>1100</width>
 					<onright>9001</onright>
 					<onleft>9002</onleft>
-					<ondown condition="Player.HasMedia">600</ondown>
+					<ondown condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)">600</ondown>
 					<ondown>2000</ondown>
 					<ondown condition="String.IsEmpty(2000)">20001</ondown>
 					<onup>700</onup>

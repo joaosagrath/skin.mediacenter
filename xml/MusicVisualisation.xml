@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol/>
 	<backgroundcolor>background</backgroundcolor>
-	
+	<onload condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onload>
 	<controls>
 		<!-- Fanart -->
 		<include>DefaultBackground</include>

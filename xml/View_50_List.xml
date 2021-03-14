@@ -182,15 +182,6 @@
 					<left>30</left>
 					<top>140</top>
 					<width>530</width>
-					<height>795</height>
-					<aspectratio aligny="bottom">keep</aspectratio>
-					<fadetime>300</fadetime>
-					<texture fallback="$PARAM[fallback_image]" background="true">$INFO[ListItem.Label,resource://resource.images.xratedmodels/models/,.jpg]</texture>
-				</control>
-				<control type="image">
-					<left>30</left>
-					<top>140</top>
-					<width>530</width>
 					<height>330</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<fadetime>300</fadetime>

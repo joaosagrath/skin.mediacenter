@@ -81,7 +81,7 @@
 						<top>0</top>
 						<onup>9000</onup>
 						<ondown>12</ondown>
-						<include content="WidgetListHomePoster" condition="Library.HasContent(tvshows)">
+						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(TvShowsWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(TvShowsWidgets.Target)]"/>
 							<param name="sortby" value="title"/>
@@ -107,7 +107,7 @@
 						<top>0</top>
 						<onup>9000</onup>
 						<ondown>12</ondown>
-						<include content="WidgetListHomePoster" condition="Library.HasContent(music)">
+						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MusicWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MusicWidgets.Target)]"/>
 							<param name="sortby" value="title"/>
@@ -632,9 +632,13 @@
 		</control>
 		<!-- Widgets de Fontes de Mídia -->
 		<control type="group">
-			<animation type="Conditional" condition="Control.HasFocus(12)">
+			<animation type="Conditional" condition="!Skin.HasSetting(WeatherResume) + !Player.HasMedia + !Control.HasFocus(10)">
 				<effect type="slide" start="0,0" end="0,-320" time="400" delay="300" tween="cubic" easing="out"/>
 			</animation>
+			<animation type="Conditional" condition="Skin.HasSetting(WeatherResume) + Control.HasFocus(12)">
+				<effect type="slide" start="0,0" end="0,-320" time="400" delay="300" tween="cubic" easing="out"/>
+			</animation>
+			<include>HomeMediaSourcesAnimations</include>
 			<control type="image">
 				<bottom>-320</bottom>
 				<width>100%</width>

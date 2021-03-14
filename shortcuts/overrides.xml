@@ -186,10 +186,6 @@
 	</groupings>
 
 	<widget-groupings>
-        <!-- script.skin.helper.service default widgets -->
-        <shortcut label="32119" type="32010" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=skinplaylists,librarydataprovider,scriptwidgets,extendedinfo,smartshortcuts,pvr</shortcut>
-
-        <shortcut label="32107" type="32010" condition="!System.HasAddon(script.skin.helper.service)">::INSTALL::script.skin.helper.service</shortcut>
 	
         <content>widgets</content>
 		<node label="32030">
@@ -219,8 +215,12 @@
 		<node label="32020">
 			<content>picturesources</content>
 		</node>
-		<node label="Games">
-			<content>gamesources</content>
+		<node label="10821">
+			
+			<shortcut label="$INFO[System.AddonTitle(plugin.program.iagl)]" type="32123" icon="DefaultAddonGame.png" condition="System.HasAddon(plugin.program.iagl)">||BROWSE||plugin.program.iagl</shortcut>
+			
+			<shortcut label="$INFO[System.AddonTitle(plugin.program.advanced.emulator.launcher)]" type="32009" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">||BROWSE||plugin.program.advanced.emulator.launcher</shortcut>
+			
 		</node>
 		<node label="32007">
 			<node label="32009">
@@ -235,9 +235,7 @@
 			<node label="32012">
 				<content>addon-image</content>
 			</node>
-			<!-- <node label="31176">
-				<shortcut label="$INFO[System.AddonTitle(plugin.program.advanced.emulator.launcher)]" type="32021" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">||BROWSE||plugin.program.advanced.emulator.launcher</shortcut>
-			</node> -->
+
 			<shortcut label="10001" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable</shortcut>
 			<shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs" condition="System.Platform.Android">androidapp://sources/apps</shortcut>
 			<shortcut label="1037" type="32014" icon="DefaultAddonVideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video</shortcut>

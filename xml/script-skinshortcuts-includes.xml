@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<include name="skinshortcuts-mainmenu">
 		<item id="1">
@@ -9,11 +8,6 @@
 			<thumb />
 			<property name="labelID">15016</property>
 			<property name="defaultID">games</property>
-			<property name="widget">Addon</property>
-			<property name="widgetName">Advanced Emulator Launcher - [COLOR thistle]Recently played ROMs[/COLOR]</property>
-			<property name="widgetType">program</property>
-			<property name="widgetTarget">programs</property>
-			<property name="widgetPath">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_RECENTLY_PLAYED&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
 			<onclick>ActivateWindow(Games)</onclick>
 			<property name="path">ActivateWindow(Games)</property>
 			<property name="list">Games</property>
@@ -62,13 +56,13 @@
 			<label2 />
 			<icon>icons/sidemenu/music.png</icon>
 			<thumb />
-			<property name="labelID">2</property>
+			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
 			<onclick>ActivateWindow(Music,root,return)</onclick>
 			<property name="path">ActivateWindow(Music,root,return)</property>
 			<property name="list">root</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">num-2</property>
+			<property name="submenuVisibility">music</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
 		</item>
@@ -87,6 +81,39 @@
 			<property name="submenuVisibility">num-1</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<label>$LOCALIZE[20389]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">musicvideos</property>
+			<property name="defaultID">musicvideos</property>
+			<visible>Library.HasContent(MusicVideos)</visible>
+			<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
+			<property name="path">ActivateWindow(Videos,musicvideos,return)</property>
+			<property name="list">musicvideos</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">musicvideos</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<label>Empty</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">empty</property>
+			<property name="defaultID">empty</property>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<property name="list">noop</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">empty</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 	</include>
 	<include />
@@ -288,8 +315,8 @@
 			<onclick>ActivateWindow(Music,Files,Return)</onclick>
 			<property name="path">ActivateWindow(Music,Files,Return)</property>
 			<property name="list">Files</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-2)</visible>
-			<property name="group">2</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -304,8 +331,8 @@
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-2)</visible>
-			<property name="group">2</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -320,8 +347,8 @@
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-2)</visible>
-			<property name="group">2</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -342,7 +369,7 @@
 		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[15016]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/games.png</icon>
@@ -358,7 +385,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[342]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/movies.png</icon>
@@ -375,7 +402,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/tv.png</icon>
@@ -392,12 +419,12 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[2]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/music.png</icon>
 			<thumb />
-			<property name="labelID">2</property>
+			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
 			<onclick>ActivateWindow(Music,root,return)</onclick>
 			<property name="path">ActivateWindow(Music,root,return)</property>
@@ -408,7 +435,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[1]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/pictures.png</icon>
@@ -424,7 +451,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -441,7 +468,7 @@
 		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>Empty</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -840,7 +867,7 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-num-2">
+	<include name="skinshortcuts-group-music">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">4</property>
@@ -854,7 +881,7 @@
 			<property name="path">ActivateWindow(Music,Files,Return)</property>
 			<property name="list">Files</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">2</property>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -870,7 +897,7 @@
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">2</property>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -886,11 +913,11 @@
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">2</property>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-alt-num-2">
+	<include name="skinshortcuts-group-alt-music">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">4</property>
@@ -903,8 +930,8 @@
 			<onclick>ActivateWindow(Music,Files,Return)</onclick>
 			<property name="path">ActivateWindow(Music,Files,Return)</property>
 			<property name="list">Files</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-2)</visible>
-			<property name="group">2</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -919,8 +946,8 @@
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-2)</visible>
-			<property name="group">2</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -935,8 +962,8 @@
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-2)</visible>
-			<property name="group">2</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
+			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
@@ -976,10 +1003,22 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-musicvideos">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-musicvideos">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-empty">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-empty">
+		<description>No items</description>
+	</include>
 	<include name="skinshortcuts-group-rightmenu">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[15016]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/games.png</icon>
@@ -995,7 +1034,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[342]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/movies.png</icon>
@@ -1012,7 +1051,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/tv.png</icon>
@@ -1029,12 +1068,12 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[2]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/music.png</icon>
 			<thumb />
-			<property name="labelID">2</property>
+			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
 			<onclick>ActivateWindow(Music,root,return)</onclick>
 			<property name="path">ActivateWindow(Music,root,return)</property>
@@ -1045,7 +1084,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[1]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/pictures.png</icon>
@@ -1061,7 +1100,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -1078,7 +1117,7 @@
 		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>Empty</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -1096,7 +1135,7 @@
 	<include name="skinshortcuts-group-alt-rightmenu">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[15016]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/games.png</icon>
@@ -1112,7 +1151,7 @@
 		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[342]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/movies.png</icon>
@@ -1129,7 +1168,7 @@
 		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/tv.png</icon>
@@ -1146,12 +1185,12 @@
 		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[2]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/music.png</icon>
 			<thumb />
-			<property name="labelID">2</property>
+			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
 			<onclick>ActivateWindow(Music,root,return)</onclick>
 			<property name="path">ActivateWindow(Music,root,return)</property>
@@ -1162,7 +1201,7 @@
 		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[1]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/pictures.png</icon>
@@ -1178,7 +1217,7 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -1195,7 +1234,7 @@
 		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">6</property>
+			<property name="mainmenuid">8</property>
 			<label>Empty</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
