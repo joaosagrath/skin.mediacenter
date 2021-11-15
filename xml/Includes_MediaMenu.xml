@@ -352,7 +352,7 @@
 			<onright condition="![Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]">50</onright>
 			<onright condition="Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)">55</onright>
 			<ondown>9000</ondown>
-			<onback>50</onback>
+			<onback>50</onback>			
 			<control type="label" id="200">
 				<include>MediaMenuLabelCommon</include>
 				<label>$LOCALIZE[14018]</label>
@@ -363,7 +363,7 @@
 				<label2>[B]$INFO[Container.Viewmode][/B]</label2>
 				<visible>Integer.IsGreater(Container.ViewCount,1)</visible>
 				<onclick>Container.NextViewMode</onclick>
-			</control>
+				</control>
 			<control type="button" id="6053">
 				<include>MediaMenuItemsCommon</include>
 				<label>$LOCALIZE[31022]</label>
@@ -392,13 +392,12 @@
 				<onclick>right</onclick>
 				<onclick>Filter</onclick>
 			</control>
-			<control type="radiobutton" id="201">
-				<visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(54)</visible>
+			<!-- <control type="button" id="155">
+				<visible>String.IsEmpty(Container.Content(Pictures))</visible>
 				<include>MediaMenuItemsCommon</include>
-				<label>View Poster</label>
-				<onclick>Skin.ToggleSetting(show_picicon)</onclick>
-				<selected>Skin.HasSetting(show_picicon)</selected>
-			</control>
+				<label>$LOCALIZE[31037]</label>
+				<onclick>ActivateWindow(1115)</onclick>
+			</control> -->
 		</definition>
 	</include>
 	<include name="MediaMenuSearchButton">

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="1115">
+	<defaultcontrol>9000</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<controls>
+		<include>DefaultBackground</include>
+		<control type="multiimage">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>600</fadetime>
+			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath background="true" colordiffuse="bg_overlay">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</imagepath>
+			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
+		</control>
+		<!-- Menu da Esquerda -->
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<left>0</left>
+			<include>OpenClose_Left</include>
+			<include content="ContentPanel">
+				<param name="width" value="530"/>
+			</include>
+			<control type="list" id="9000">
+				<description>button area</description>
+				<left>0</left>
+				<top>130</top>
+				<width>470</width>
+				<height>700</height>
+				<onleft>10000</onleft>
+				<onright>10000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<itemlayout height="85" width="470">
+					<control type="label">
+						<textoffsetx>30</textoffsetx>
+						<width>470</width>
+						<height>85</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font37</font>
+						<aligny>center</aligny>
+					</control>
+				</itemlayout>
+				<focusedlayout height="85" width="470">
+					<control type="image">
+						<width>470</width>
+						<height>85</height>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<textoffsetx>30</textoffsetx>
+						<width>470</width>
+						<height>85</height>
+						<font>font37</font>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>Video Section</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="2">
+						<label>Music Section</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="3">
+						<label>Game Section</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<label>Image Section</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="5">
+						<label>Addon Section</label>
+						<onclick>noop</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+		<!-- Menu Central -->
+		<control type="group" id="10000">
+			<left>470</left>
+			<include>OpenClose_Right</include>
+			<!-- Vistas de Videos -->
+			<control type="grouplist" id="700">
+				<top>133</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>700</onup>
+				<ondown>700</ondown>
+				<visible>Container(9000).HasFocus(1)</visible>
+				<!-- Poster -->
+				<control type="radiobutton" id="612">
+					<label>$LOCALIZE[31099]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMovieView51)</onclick>
+					<selected>Skin.HasSetting(MyMovieView51)</selected>
+				</control>
+				<!-- Shift -->
+				<control type="radiobutton" id="613">
+					<label>$LOCALIZE[31100]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMovieView53)</onclick>
+					<selected>Skin.HasSetting(MyMovieView53)</selected>
+				</control>
+				<!-- Banner -->
+				<control type="radiobutton" id="617">
+					<label>$LOCALIZE[20020]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMovieView501)</onclick>
+					<selected>Skin.HasSetting(MyMovieView501)</selected>
+				</control>
+			</control>
+			<!-- Vistas de Musicas -->
+			<control type="grouplist" id="600">
+				<top>133</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>600</onup>
+				<ondown>600</ondown>
+				<visible>Container(9000).HasFocus(2)</visible>
+				<!-- Shift -->
+				<control type="radiobutton" id="613">
+					<label>$LOCALIZE[31100]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMusicView53)</onclick>
+					<selected>Skin.HasSetting(MyMusicView53)</selected>
+				</control>
+				<!-- InfoWall -->
+				<control type="radiobutton" id="614">
+					<label>$LOCALIZE[31101]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMusicView54)</onclick>
+					<selected>Skin.HasSetting(MyMusicView54)</selected>
+				</control>
+				<!-- Widelist -->
+				<control type="radiobutton" id="615">
+					<label>$LOCALIZE[31107]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMusicView55)</onclick>
+					<selected>Skin.HasSetting(MyMusicView55)</selected>
+				</control>
+				<!-- Wall -->
+				<control type="radiobutton" id="616">
+					<label>$LOCALIZE[31102]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMusicView500)</onclick>
+					<selected>Skin.HasSetting(MyMusicView500)</selected>
+				</control>
+				<!-- Banner -->
+				<control type="radiobutton" id="617">
+					<label>$LOCALIZE[20020]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMusicView501)</onclick>
+					<selected>Skin.HasSetting(MyMusicView501)</selected>
+				</control>
+				<!-- Fanart -->
+				<control type="radiobutton" id="618">
+					<label>$LOCALIZE[20445]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyMusicView502)</onclick>
+					<selected>Skin.HasSetting(MyMusicView502)</selected>
+				</control>
+			</control>
+			<!-- Vistas de Jogos -->
+			<control type="grouplist" id="630">
+				<top>133</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>630</onup>
+				<pagecontrol>60</pagecontrol>
+				<ondown>630</ondown>
+				<visible>Container(9000).HasFocus(3)</visible>
+				<!-- Poster -->
+				<control type="radiobutton" id="612">
+					<label>$LOCALIZE[20021]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyGamesView51)</onclick>
+					<selected>Skin.HasSetting(MyGamesView51)</selected>
+				</control>
+				<!-- Shift -->
+				<control type="radiobutton" id="613">
+					<label>$LOCALIZE[31100]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyGamesView53)</onclick>
+					<selected>Skin.HasSetting(MyGamesView53)</selected>
+				</control>
+				<!-- InfoWall -->
+				<control type="radiobutton" id="614">
+					<label>$LOCALIZE[31101]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyGamesView54)</onclick>
+					<selected>Skin.HasSetting(MyGamesView54)</selected>
+				</control>
+				<!-- SteamBanner -->
+				<control type="radiobutton" id="617">
+					<label>SteamBanner</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyGamesView504)</onclick>
+					<selected>Skin.HasSetting(MyGamesView504)</selected>
+				</control>
+			</control>
+			<!-- Vista de Imagens -->
+			<control type="grouplist" id="640">
+				<top>133</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>1112</onup>
+				<pagecontrol>60</pagecontrol>
+				<ondown>1112</ondown>
+				<visible>Container(9000).HasFocus(4)</visible>
+				<!-- IconWall -->
+				<control type="radiobutton" id="612">
+					<label>$LOCALIZE[31099]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyPicsView52)</onclick>
+					<selected>Skin.HasSetting(MyPicsView52)</selected>
+				</control>
+				<!-- Shift -->
+				<control type="radiobutton" id="613">
+					<label>$LOCALIZE[31100]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyPicsView53)</onclick>
+					<selected>Skin.HasSetting(MyPicsView53)</selected>
+				</control>
+				<!-- InfoWall -->
+				<control type="radiobutton" id="614">
+					<label>$LOCALIZE[31101]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyPicsView54)</onclick>
+					<selected>Skin.HasSetting(MyPicsView54)</selected>
+				</control>
+				<!-- Widelist -->
+				<control type="radiobutton" id="615">
+					<label>$LOCALIZE[31107]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyPicsView55)</onclick>
+					<selected>Skin.HasSetting(MyPicsView55)</selected>
+				</control>
+				<!-- Wall -->
+				<control type="radiobutton" id="616">
+					<label>$LOCALIZE[31102]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyPicsView500)</onclick>
+					<selected>Skin.HasSetting(MyPicsView500)</selected>
+				</control>
+				<!-- SteamBanner -->
+				<control type="radiobutton" id="617">
+					<label>SteamBanner</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(MyPicsView504)</onclick>
+					<selected>Skin.HasSetting(MyPicsView504)</selected>
+				</control>
+			</control>
+			<!-- Barras -->
+			<control type="image">
+				<description>Dialog Header image</description>
+				<left>0</left>
+				<top>130</top>
+				<right>0</right>
+				<height>3</height>
+				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+			</control>
+			<control type="image">
+				<description>Dialog Header image</description>
+				<left>0</left>
+				<bottom>134</bottom>
+				<right>0</right>
+				<height>3</height>
+				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+			</control>
+		</control>
+		<include content="TopBar">
+			<param name="breadcrumbs_label" value=""/>
+		</include>
+	</controls>
+</window>

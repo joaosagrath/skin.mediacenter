@@ -41,10 +41,10 @@
 				<focusedlayout width="212" height="295">
 					<control type="group">
 						<animation type="Focus">
-							<effect type="zoom" start="100" end="200" time="300" tween="sine" easing="inout" center="0,100"/>
+							<effect type="zoom" start="100" end="200" time="300" tween="sine" easing="inout" center="0,105"/>
 						</animation>
 						<animation type="Unfocus">
-							<effect type="zoom" start="200" end="100" time="100" tween="sine" easing="inout" center="0,100"/>
+							<effect type="zoom" start="200" end="100" time="100" tween="sine" easing="inout" center="0,105"/>
 						</animation>
 						<control type="image">
 							<left>10</left>
@@ -55,7 +55,7 @@
 							<aspectratio align="center" aligny="$PARAM[aligny]">$PARAM[aspect]</aspectratio>
 							<bordersize>20</bordersize>
 							<bordertexture border="50">overlays/shadow.png</bordertexture>
-						</control>
+						</control>						
 					</control>
 				</focusedlayout>
 				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]">$PARAM[content_path]</content>
@@ -65,7 +65,8 @@
 	<include name="WidgetListHomePosterPreview">
 		<left>470</left>
 		<width>1450</width>
-		<top>555</top>
+		<!-- <top>555</top> -->
+		<bottom>210</bottom>
 		<right>0</right>
 		<height>312</height>
 		<scrolltime>300</scrolltime>
@@ -152,7 +153,7 @@
 						</control>
 					</control>
 				</focusedlayout>
-				<include condition="Skin.HasSetting(WidgetListHomeAddons)">WidgetListHomeAddons</include>
+				<include condition="Skin.HasSetting(WidgetListAddons)">WidgetListAddons</include>
 				<include condition="Skin.HasSetting(WidgetListHomeVideoAddons)">WidgetListHomeVideoAddons</include>
 				<include condition="Skin.HasSetting(WidgetListHomeAudioAddons)">WidgetListHomeAudioAddons</include>
 				<include condition="Skin.HasSetting(WidgetListHomeImageAddons)">WidgetListHomeImageAddons</include>
@@ -163,7 +164,7 @@
 			</control>
 		</definition>
 	</include>
-	<include name="WidgetListHomeAddons">
+	<include name="WidgetListAddons">
 		<content>
 			<item>
 				<label>Addons de Video</label>
@@ -305,7 +306,7 @@
 				<label>$PARAM[label]</label>
 				<shadowcolor>text_shadow</shadowcolor>
 				<visible>$PARAM[visible]</visible>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+				<!-- <visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible> -->
 			</control>
 		</definition>
 	</include>

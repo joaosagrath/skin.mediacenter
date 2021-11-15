@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_505_ListPics">
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,1100" time="500" tween="sine" easing="inout" condition="Control.HasFocus(901)">Conditional</animation>
+			<include>OpenClose_Right</include>
+			<left>0</left>
+			<visible>Control.IsVisible(505)</visible>
+			<include>Visible_Right</include>
+			<include content="ListContainer505">
+				<param name="list_id" value="505"/>
+				<param name="right" value="594"/>
+				<param name="viewtype_label" value="$LOCALIZE[535]Pics"/>
+			</include>
+		</control>
+	</include>
+	<include name="ListContainer505">
+		<control type="panel" id="505">
+			<left>50</left>
+			<right>50</right>
+			<width>100%</width>
+			<height>100%</height>
+			<top>100</top>
+			<bottom>100</bottom>
+			<movement>5</movement>
+			<focusposition>6</focusposition>
+			<scrolltime tween="cubic" easing="out">500</scrolltime>
+			<orientation>vertical</orientation>
+			<pagecontrol>50600</pagecontrol>
+			<onleft>9000</onleft>
+			<onright>50600</onright>
+			<onup>$PARAM[list_id]</onup>
+			<ondown>$PARAM[list_id]</ondown>
+			<viewtype label="$PARAM[viewtype_label]">list</viewtype>
+			<itemlayout height="375" width="270">
+				<control type="image">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>190</width>
+					<height>285</height>
+					<texture>$VAR[PosterVar]</texture>
+					<bordertexture border="5"></bordertexture>
+					<bordersize>5</bordersize>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout height="375" width="270">
+				<control type="image">
+					<centertop>50%</centertop>
+					<width>190</width>
+					<height>285</height>
+					<texture>$VAR[PosterVar]</texture>
+					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
+					<bordersize>5</bordersize>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
+					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+				</control>
+			</focusedlayout>
+		</control>
+	</include>
+</includes>

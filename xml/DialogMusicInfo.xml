@@ -8,6 +8,7 @@
 			<width>100%</width>
 			<height>100%</height>
 			<texture background="true" colordiffuse="FF878787">$VAR[HomeFanartVar]</texture>
+			<aspectratio>scale</aspectratio>
 		</control>
 		<control type="group">
 			<centertop>50%</centertop>

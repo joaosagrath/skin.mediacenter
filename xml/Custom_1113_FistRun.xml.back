@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="11 13">
+	<defaultcontrol always="true">11000</defaultcontrol>
+	<controls>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<!-- <texture colordiffuse="60FFFFFF">colors/black.png</texture> -->
+			<texture colordiffuse="60FFFFFF">Y:\Girls\Girls Delta\GirlsDelta (1186) - Tomie Fukazawa\fanart.jpg</texture>
+			<aspectratio>scale</aspectratio>
+		</control>
+		<include>DefaultBackground</include>
+		
+		<!-- -->
+		<control type="group">
+			
+		</control>
+	
+		<!-- Aplicar Ajustes -->
+			<control type="grouplist" id="11000">
+				<include>CustomSkinSettingsPositionBottom</include>
+				<control type="button" id="11001">
+					<include>DefaultSettingButton</include>
+					<label>Aplicar Ajustes</label>
+					<onclick>Skin.ToggleSetting(FistRunWindow)</onclick>
+					<onclick>ReplaceWindow(Home)</onclick>
+					<align>center</align>
+					
+				</control>
+			</control>
+	</controls>
+	
+</window>

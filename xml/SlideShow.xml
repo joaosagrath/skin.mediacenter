@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<backgroundcolor>white</backgroundcolor>
 	<controls>
+		
 		<include condition="Skin.HasSetting(touchmode)">TouchBackSlideshowButton</include>
 		<control type="image">
 			<centerleft>50%</centerleft>
@@ -10,6 +12,56 @@
 			<texture>icons/settings/player.png</texture>
 			<visible>SlideShow.IsVideo</visible>
 			<visible>![Player.Playing + Player.HasVideo] | SlideShow.IsPaused</visible>
+		</control>
+		<control type="label">
+			<posx>50</posx>
+			<posy>50</posy>
+			<width>100%</width>
+			<height>500</height>
+			<!-- <label>$INFO[ListItem.Label,[COLOR button_focus]Nome: [/COLOR],[CR]]$INFO[ListItem.Property(name),[COLOR button_focus]Model Name: [/COLOR],[CR]]$INFO[ListItem.Studio,[COLOR button_focus]Magazine: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR]]</label> -->
+			<label>$INFO[Slideshow.Filesize,[COLOR button_focus]Tamanho: [/COLOR],[CR]]$INFO[Slideshow.Resolution,[COLOR button_focus]Resolução: [/COLOR],[CR]]</label>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>font25</font>
+			<textcolor>yellow</textcolor>
+			<shadowcolor>black</shadowcolor>
+		</control>
+		<!-- <control type="label">
+			<left>50</left>
+			<bottom>50</bottom>
+			<width>100%</width>
+			<height>500</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>font25</font>
+			<label>Pause</label>
+			<textcolor>yellow</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<scroll>true</scroll>
+			<visible>SlideShow.IsPaused</visible>
+		</control>
+		<control type="label">
+			<left>50</left>
+			<bottom>50</bottom>
+			<width>100%</width>
+			<height>500</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>font25</font>
+			<label>Play</label>
+			<textcolor>yellow</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<scroll>true</scroll>
+			<visible>!SlideShow.IsPaused</visible>
+		</control> -->
+		<control type="image">
+			<right>50</right>
+			<bottom>50</bottom>
+			<bottom>95</bottom>
+			<width>477</width>
+			<texture>$VAR[ClearLogoVar]</texture>
+			<aspectratio aligny="bottom">keep</aspectratio>
+			<fadetime>450</fadetime>
 		</control>
 	</controls>
 </window>

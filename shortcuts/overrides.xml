@@ -185,43 +185,47 @@
 		</node>
 	</groupings>
 
-	<widget-groupings>
-	
+	<widget-groupings>	
         <content>widgets</content>
-		<node label="32030">
-			<content>video</content>
-			<node label="32040">
-				<content>playlist-video</content>
-			</node>
-			<node label="32010">
-				<content>addon-video</content>
-			</node>
-			<node label="32075">
-				<content>videosources</content>
-			</node>
-		</node>
-		<node label="32031">
-			<content>music</content>
-			<node label="32040">
-				<content>playlist-audio</content>
-			</node>
-			<node label="32011">
-				<content>addon-audio</content>
-			</node>
-			<node label="32075">
-				<content>musicsources</content>
-			</node>
-		</node>
-		<node label="32020">
-			<content>picturesources</content>
-		</node>
+		
 		<node label="10821">
 			
 			<shortcut label="$INFO[System.AddonTitle(plugin.program.iagl)]" type="32123" icon="DefaultAddonGame.png" condition="System.HasAddon(plugin.program.iagl)">||BROWSE||plugin.program.iagl</shortcut>
 			
-			<shortcut label="$INFO[System.AddonTitle(plugin.program.advanced.emulator.launcher)]" type="32009" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">||BROWSE||plugin.program.advanced.emulator.launcher</shortcut>
+			<shortcut label="$INFO[System.AddonTitle(plugin.program.advanced.emulator.launcher)]" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">||BROWSE||plugin.program.advanced.emulator.launcher</shortcut>
+			
+			<shortcut label="Show All Categories" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_CATEGORIES</shortcut>
+				
+			<shortcut label="Show All Launchers" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_LAUNCHERS</shortcut>
+				
+			<shortcut label="Show All Roms" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_ALL_ROMS</shortcut>
+				
+			<shortcut label="Show Recently Played" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_RECENTLY_PLAYED</shortcut>
+				
+			<shortcut label="Show Most Played" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_MOST_PLAYED</shortcut>
+				
+			<shortcut label="Show Favourites" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES</shortcut>
 			
 		</node>
+		
+		<node label="Magazines" condition="System.HasAddon(plugin.program.newsstand)">
+			
+				<shortcut label="Collections" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_COLLECTIONS</shortcut>
+				
+				<shortcut label="All Categories" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_ALL_CATEGORIES</shortcut>
+				
+				<shortcut label="All Magazines" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_ALL_MAGAZINES</shortcut>
+				
+				<shortcut label="All Issues" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_ALL_ISSUES</shortcut>
+				
+				<shortcut label="Last Viewed" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_LAST_VIEWED</shortcut>
+				
+				<shortcut label="Most Viewed" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_MOST_VIEWED</shortcut>
+				
+				<shortcut label="Favourites" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_FAVOURITES</shortcut>
+			
+			</node>
+		
 		<node label="32007">
 			<node label="32009">
 				<content>addon-program-plugin</content>
@@ -243,5 +247,39 @@
 			<shortcut label="1039" type="32020" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
 			<shortcut label="31176" type="10821" icon="DefaultAddonGame.png" widget="addon" widgetType="game" widgetTarget="games">addons://sources/game</shortcut>
 		</node>
+		
+		<node label="32030">
+			<content>video</content>
+			<node label="32040">
+				<content>playlist-video</content>
+			</node>
+			<node label="32010">
+				<content>addon-video</content>
+			</node>
+			<node label="32075">
+				<content>videosources</content>
+			</node>
+		</node>
+		
+		<node label="32031">
+			<content>music</content>
+			<node label="32040">
+				<content>playlist-audio</content>
+			</node>
+			<node label="32011">
+				<content>addon-audio</content>
+			</node>
+			<node label="32075">
+				<content>musicsources</content>
+			</node>
+		</node>
+
+		<node label="32020">
+			<content>picturesources</content>		
+		</node>
+		
+		
+		
+	
 	</widget-groupings>
 </overrides>

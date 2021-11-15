@@ -9,10 +9,10 @@
 			<centertop>50%</centertop>
 			<height>700</height>
 			<include content="DialogBackgroundCommons">
-				<param name="width" value="600" />
-				<param name="height" value="80" />
-				<param name="header_label" value="$LOCALIZE[5]" />
-				<param name="header_id" value="" />
+				<param name="width" value="600"/>
+				<param name="height" value="80"/>
+				<param name="header_label" value="$LOCALIZE[5]"/>
+				<param name="header_id" value=""/>
 			</include>
 			<control type="group">
 				<left>0</left>
@@ -24,7 +24,7 @@
 					<onup>5000</onup>
 					<ondown>5000</ondown>
 					<orientation>vertical</orientation>
-					<control type="radiobutton" id="5001">
+					<!-- <control type="radiobutton" id="5001">
 						<width>600</width>
 						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31163]</label>
@@ -36,6 +36,13 @@
 						<include>DialogSettingButton</include>
 						<onclick>Skin.ToggleSetting(animate_background_fanart)</onclick>
 						<selected>Skin.HasSetting(animate_background_fanart)</selected>
+					</control> -->
+					<control type="radiobutton" id="601">
+						<!-- <label>$LOCALIZE[31002]</label> -->
+						<label>$LOCALIZE[31163]</label>
+						<include>DefaultSettingButton</include>
+						<onclick>Skin.ToggleSetting(no_fanart)</onclick>
+						<selected>!Skin.HasSetting(no_fanart)</selected>
 					</control>
 					<control type="button" id="5004">
 						<width>600</width>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1114">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<width>1540</width>
+			<height>858</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="1540"/>
+				<param name="height" value="858"/>
+				<param name="header_label" value="Icônes"/>
+				<param name="header_id" value="2"/>
+			</include>
+			<include content="UpDownArrows">
+				<param name="container_id" value="450"/>
+				<param name="posx" value="746"/>
+				<param name="up_posy" value="-40"/>
+				<param name="down_posy" value="876"/>
+			</include>
+			<include name="HomeIconsItens">
+				<definition>
+					<item>
+						<label></label>
+						<icon>$VAR[CustomHomeIcons]$PARAM[icon].png</icon>
+						<!-- <onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].customicon,$VAR[mainmenu_icons_path]$PARAM[icon].png)</onclick>				 -->
+					</item>
+				</definition>
+			</include>
+			
+			
+			
+			<control type="scrollbar" id="60">
+				<right>0</right>
+				<top>70</top>
+				<width>12</width>
+				<bottom>0</bottom>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<orientation>vertical</orientation>
+			</control>
+			<control type="panel" id="9000">
+				<left>10</left>
+				<top>70</top>
+				<width>1600</width>
+				<bottom>0</bottom>
+				<onleft>60</onleft>
+				<onright>60</onright>
+				<onup>450</onup>
+				<ondown>450</ondown>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="sine">200</scrolltime>
+				<orientation>vertical</orientation>
+					<itemlayout width="111" height="111">							
+							<control type="image">
+								<left>20</left>
+								<top>17</top>
+								<width>70%</width>
+								<height>70%</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[ListItem.Icon]</texture>
+							</control>
+						</itemlayout>
+						<focusedlayout width="111" height="111">
+							<control type="image">
+								<left>20</left>
+								<top>17</top>
+								<width>100%</width>
+								<height>100%</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>$INFO[ListItem.Icon]</texture>
+							</control>						
+						</focusedlayout>
+						<content>
+							<item>
+								<label></label>
+								<icon>$VAR[CustomHomeIcons]addons.png</icon>
+								<onclick>Skin.SetString($VAR[CustomHomeIcons]addons.png)</onclick>
+							</item>
+							<item>
+								<label></label>
+								<icon>$VAR[CustomHomeIcons]android.png</icon>
+								<!-- <onclick>Skin.SetString($INFO[Container(9000).ListItem.Property(name)].customicon,$VAR[mainmenu_icons_path]$PARAM[icon].png)</onclick>				 -->
+							</item>
+							<include content="HomeIconsItens">
+								<param name="icon" value="addon" />
+							</include>
+						</content>
+					
+			</control>
+			<!-- <control type="textbox">
+				<left>300</left>
+				<top>90</top>
+				<width>900</width>
+				<bottom>0</bottom>
+				<aligny>center</aligny>
+				<align>center</align>
+				<label>$LOCALIZE[31025]</label>
+				<font>font45_title</font>
+				<visible>Integer.IsEqual(Container(450).NumItems,0)</visible>
+			</control> -->
+		</control>
+	</controls>
+</window>

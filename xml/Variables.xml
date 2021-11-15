@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<variable name="PVRSettingsLabel">
-		<value condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVChannels))">$LOCALIZE[19019]</value>
-		<value condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVGuide))">$LOCALIZE[19069]</value>
-		<value condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVRecordings))">$LOCALIZE[19017]</value>
-		<value condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVTimers))">$LOCALIZE[19040]</value>
-		<value condition="String.IsEqual(Skin.String(PVR.Action),ActivateWindow(TVTimerRules))">$LOCALIZE[19138]</value>
+
+	<variable name="CustomHomeIcons">		
+		<!-- <value condition="Skin.HasSetting(mainmenu_custom_icons)">$INFO[skin.string(mainmenu.icons.path)]</value> -->
+		<value>icons/sidemenu/</value>
+	</variable>
+
+	
+
+	<variable name="settingsstep">
+		<value condition="String.IsEqual(skin.string(autosetting),10)">Restaurando Menus da Home</value>
+		<value condition="String.IsEqual(skin.string(autosetting),20)">Restaurando Artworks</value>
+		<value condition="String.IsEqual(skin.string(autosetting),30)">Restaurando Itens Gerais</value>
+		<value condition="String.IsEqual(skin.string(autosetting),40)">$LOCALIZE[31656][CR]$LOCALIZE[31833]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),50)">$LOCALIZE[31656][CR]$LOCALIZE[31834]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),60)">$LOCALIZE[31656][CR]$LOCALIZE[31836]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),70)">$LOCALIZE[31656][CR]$LOCALIZE[31835]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),80)">$LOCALIZE[31656][CR]$LOCALIZE[31837]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),90)">$LOCALIZE[31656][CR]$LOCALIZE[31838]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),100)">$LOCALIZE[31656][CR]$LOCALIZE[31839]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),110)">$LOCALIZE[31657]</value>
+	</variable>
+
+	<variable name="PVRTVSettingsLabel">
+		<value condition="String.IsEqual(Skin.String(PVRTV.Action),ActivateWindow(TVChannels))">$LOCALIZE[19019]</value>
+		<value condition="String.IsEqual(Skin.String(PVRTV.Action),ActivateWindow(TVGuide))">$LOCALIZE[19069]</value>
+		<value condition="String.IsEqual(Skin.String(PVRTV.Action),ActivateWindow(TVRecordings))">$LOCALIZE[19017]</value>
+		<value condition="String.IsEqual(Skin.String(PVRTV.Action),ActivateWindow(TVTimers))">$LOCALIZE[19040]</value>
+		<value condition="String.IsEqual(Skin.String(PVRTV.Action),ActivateWindow(TVTimerRules))">$LOCALIZE[19138]</value>
+	</variable>
+	<variable name="PVRRadioSettingsLabel">
+		<value condition="String.IsEqual(Skin.String(PVRRadio.Action),ActivateWindow(RadioChannels))">$LOCALIZE[19019]</value>
+		<value condition="String.IsEqual(Skin.String(PVRRadio.Action),ActivateWindow(RadioGuide))">$LOCALIZE[19069]</value>
+		<value condition="String.IsEqual(Skin.String(PVRRadio.Action),ActivateWindow(RadioRecordings))">$LOCALIZE[19017]</value>
+		<value condition="String.IsEqual(Skin.String(PVRRadio.Action),ActivateWindow(RadioTimers))">$LOCALIZE[19040]</value>
+		<value condition="String.IsEqual(Skin.String(PVRRadio.Action),ActivateWindow(RadioTimerRules))">$LOCALIZE[19138]</value>
 	</variable>
 	<variable name="MyMenu1Label">
 		<value condition="String.IsEmpty(Skin.String(MyMenu1.Title))">$LOCALIZE[31183]</value>
@@ -92,7 +121,8 @@
 		<value>$INFO[Player.Icon]</value>
 	</variable>
 	<variable name="ShiftThumbVar">
-		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(poster)) + Skin.HasSetting(NoPoster)">$INFO[Listitem.Icon]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>		
 		<value condition="ListItem.IsParentFolder">DefaultFolderBackSquare.png</value>
 		<value condition="String.IsEmpty(Listitem.Thumb) + [String.IsEqual(listitem.dbtype,album) | String.IsEqual(listitem.dbtype,artist)]">DefaultAudio.png</value>
 		<value condition="ListItem.IsFolder + String.IsEmpty(ListItem.Thumb)">DefaultFolderSquare.png</value>
@@ -113,13 +143,25 @@
 		<value condition="ListItem.IsParentFolder">DefaultFolderBackPoster.png</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
+	<variable name="IconWallPosterIcon">
+		<value condition="Window.IsActive(Games) + String.IsEmpty(ListItem.Icon)">defaultgames.png</value>
+		<value condition="Window.IsActive(Games) + !String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value condition="Window.IsActive(Pictures) + String.IsEmpty(ListItem.Icon)">defaultpicture.png</value>
+		<!-- <value condition="Window.IsActive(Pictures) + !String.IsEmpty(ListItem.Icon) + Skin.HasSetting(ShowThumb)">$INFO[ListItem.Art(controller)]</value> -->
+		<value condition="Window.IsActive(Pictures) + !String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		
+	
+	
+	
+		
+	</variable>
 	<variable name="IconWallThumbVar">
-		<!-- <value condition="String.IsEqual(listitem.dbtype,genre) + System.AddonIsEnabled(resource.images.moviegenreicons.transparent)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
+		<value condition="String.IsEqual(listitem.dbtype,genre) + System.AddonIsEnabled(resource.images.moviegenreicons.transparent)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
 		<value condition="String.IsEqual(listitem.dbtype,studio) + System.AddonIsEnabled(resource.images.studios.white)">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(poster)) + ![Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">$INFO[Listitem.Art(poster)]</value>
 		<value condition="!String.isempty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
-		<value>$INFO[ListItem.Icon]</value> -->
 		<value>$INFO[ListItem.Icon]</value>
+		
 	</variable>
 	<variable name="ListLabelVar">
 		<value condition="String.IsEqual(ListItem.DbType,episode) + Window.IsActive(videoplaylist)">$INFO[ListItem.TVShowtitle,,: ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
@@ -140,8 +182,9 @@
 	</variable>
 	<variable name="ShiftLeftTextBoxVar">
 		<!-- <value condition="Window.IsActive(pictures)">$INFO[ListItem.Property(description),,[CR]]$INFO[ListItem.PictureDatetime,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]$INFO[ListItem.PictureResolution,[COLOR button_focus]$LOCALIZE[169]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamMake,[COLOR button_focus]$LOCALIZE[31041]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamModel,[COLOR button_focus]$LOCALIZE[21823]:  [/COLOR],[CR]]</value> -->
-		<!-- -->
-		<value condition="Window.IsActive(pictures)">$INFO[ListItem.Property(nplayers),[COLOR button_focus]Model Name: [/COLOR],[CR]]$INFO[ListItem.Studio,[COLOR button_focus]Magazine: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR]]</value>
+		<!-- Imagens -->
+		<value condition="Window.IsActive(programs)">$INFO[ListItem.Property(name),[COLOR button_focus]Model Name: [/COLOR],[CR]]$INFO[ListItem.Property(Style),[COLOR button_focus]Style: [/COLOR],[CR]]$INFO[ListItem.Studio,[COLOR button_focus]Magazine: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR],[CR]]$INFO[ListItem.Rating,[COLOR button_focus]Rating: [/COLOR],[CR]]$INFO[ListItem.Property(desc),[COLOR button_focus]Rating: [/COLOR]]</value>
+		
 		<value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Property(Artist_YearsActive),[COLOR button_focus]$LOCALIZE[21898]: [/COLOR],[CR]]$INFO[ListItem.Property(Artist_Style),[COLOR button_focus]$LOCALIZE[736]: [/COLOR],[CR]]</value>
 		<value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Year,[COLOR button_focus]$LOCALIZE[345]: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Property(album_label),[COLOR button_focus]$LOCALIZE[21899]: [/COLOR],[CR]]$INFO[ListItem.Property(album_style),[COLOR button_focus]$LOCALIZE[736]: [/COLOR],[CR]]</value>
 		<value condition="String.IsEqual(Listitem.DBType,season) | String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Premiered,[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]]</value>
@@ -149,11 +192,20 @@
 		<value condition="">$INFO[ListItem.Studio,[COLOR button_focus]Studio: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Property(nplayers),[COLOR button_focus]N. of Players: [/COLOR],[CR]]$INFO[ListItem.Property(platform),[COLOR button_focus]Plataforma: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR],[CR]]$INFO[ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR],[CR]]$INFO[ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR],[CR]]$INFO[ListItem.Premiered,[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]]</value>
 	</variable>
 	<variable name="ShiftRightTextBoxVar">
-		<!-- <value condition="Window.IsActive(pictures)">$INFO[ListItem.Size,[COLOR button_focus]$LOCALIZE[289]:  [/COLOR],[CR]]$INFO[ListItem.PictureAperture,[COLOR button_focus]$LOCALIZE[21826]:  [/COLOR],[CR]]$INFO[ListItem.PictureFocalLen,[COLOR button_focus]$LOCALIZE[21827]:  [/COLOR],[CR]]$INFO[ListItem.PictureExpTime,[COLOR button_focus]$LOCALIZE[21830]:  [/COLOR],[CR]]$INFO[ListItem.Date,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]</value -->>
+		<!-- <value condition="Window.IsActive(pictures)">$INFO[ListItem.Size,[COLOR button_focus]$LOCALIZE[289]:  [/COLOR],[CR]]$INFO[ListItem.PictureAperture,[COLOR button_focus]$LOCALIZE[21826]:  [/COLOR],[CR]]$INFO[ListItem.PictureFocalLen,[COLOR button_focus]$LOCALIZE[21827]:  [/COLOR],[CR]]$INFO[ListItem.PictureExpTime,[COLOR button_focus]$LOCALIZE[21830]:  [/COLOR],[CR]]$INFO[ListItem.Date,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]</value -->
 		<value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Property(artist_description)]</value>
 		<value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Property(album_description)]</value>
 		<value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-		<value>$INFO[ListItem.Plot]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.AddonDescription]</value>
+		<value>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</value>
+	</variable>
+	<variable name="CollectionTextBoxVar">
+		<!-- <value condition="Window.IsActive(pictures)">$INFO[ListItem.Size,[COLOR button_focus]$LOCALIZE[289]:  [/COLOR],[CR]]$INFO[ListItem.PictureAperture,[COLOR button_focus]$LOCALIZE[21826]:  [/COLOR],[CR]]$INFO[ListItem.PictureFocalLen,[COLOR button_focus]$LOCALIZE[21827]:  [/COLOR],[CR]]$INFO[ListItem.PictureExpTime,[COLOR button_focus]$LOCALIZE[21830]:  [/COLOR],[CR]]$INFO[ListItem.Date,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]</value -->
+		<value condition="String.IsEqual(listitem.dbtype,artist)">$INFO[ListItem.Property(artist_description)]</value>
+		<value condition="String.IsEqual(listitem.dbtype,album)">$INFO[ListItem.Property(album_description)]</value>
+		<value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+		<value condition="Container.Content(addons)">$INFO[ListItem.AddonDescription]</value>
+		<value>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</value>
 	</variable>
 	<variable name="SelectLabel">
 		<value condition="Control.IsVisible(3)">[COLOR=button_focus]$INFO[Container(3).NumItems][/COLOR] $LOCALIZE[31036] - [COLOR=button_focus]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages][/COLOR]</value>
@@ -167,7 +219,9 @@
 		<value condition="ListItem.IsParentFolder">DefaultBackBanner.png</value>
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 		<value condition="!String.isempty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.FolderPath,,banner.jpg]</value>
 		<value>dialogs/dialog-bg-nobo.png</value>
+		<value></value>
 	</variable>
 	<variable name="FanartImageVar">
 		<value condition="ListItem.IsParentFolder">special://skin/extras/home-images/movie.jpg</value>
@@ -266,17 +320,13 @@
 		<value condition="!String.IsEmpty(Container.Art(tvshow.poster)) + Container.Content(seasons) + Window.IsActive(movieinformation)">$INFO[Container.Art(tvshow.poster)]</value>
 		<value condition="Container.Content(actors) | Container.Content(directors)">$INFO[Container.ListItem.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster)) + !String.IsEqual(listitem.dbtype,season)">$INFO[ListItem.Art(tvshow.poster)]</value>
-		<value>$INFO[ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="InfoDialogPosterVar">
 		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-	</variable>
-	<variable name="BannerLabel2Var">
-		<value condition="String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
-		<!-- <value>$INFO[ListItem.Year]</value>
-		 -->
 	</variable>
 	<variable name="VideoPlayerForwardRewindVar">
 		<value condition="Player.Forwarding2x | Player.Rewinding2x">2x</value>
@@ -338,7 +388,7 @@
 	</variable>
 	<variable name="SkinSettingsHelpTextVar">
 		<value condition="Container(9000).HasFocus(1)">$LOCALIZE[31129]</value>
-		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31130]</value>
+		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31040]</value>
 		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31176]</value>
 		<value condition="Container(9000).HasFocus(4)">$LOCALIZE[31130]</value>
 	</variable>
@@ -406,7 +456,7 @@
 		<value>$INFO[VideoPlayer.offset(1).Title,[COLOR button_focus]$LOCALIZE[19031]: [/COLOR]]$INFO[VideoPlayer.offset(1).Year, (,)]</value>
 	</variable>
 	<variable name="ClearLogoVar">
-		<value condition="Control.HasFocus(4400)">$INFO[ListItem.FolderPath]logo.png</value>
+		<value condition="Window.IsActive(Pictures) + String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.FolderPath]logo.png</value>
 		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="String.IsEmpty(ListItem.Art(clearlogo))">D:\Musicas\$INFO[ListItem.Artist]\logo.png</value>
 	</variable>
@@ -415,24 +465,21 @@
 		<value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
 	</variable>
 	<variable name="AddonsFanartVar">
-		<value condition="Skin.HasSetting(no_fanart)"/>
 		<value condition="Window.IsActive(musicinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo)">$INFO[Window(home).Property(infobackground)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart))">$INFO[Container.ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path))">$INFO[Skin.String(HomeFanart.path)]$INFO[Container(9000).ListItem.Property(id)]$INFO[Skin.String(HomeFanart.ext)]</value>
 	</variable>
 	<variable name="HomeFanartVar">
-		<value condition="Skin.HasSetting(no_fanart)"/>
 		<value condition="Window.IsActive(musicinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo)">$INFO[Window(home).Property(infobackground)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart))">$INFO[Container.ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Property(FanartCode))">$INFO[Skin.String(WeatherFanart.path)]$INFO[Container.ListItem.Property(FanartCode)]$INFO[Skin.String(WeatherFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(804)">$INFO[Skin.String(HomeFanart.path)]power$INFO[Skin.String(HomeFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(802)">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</value>
-		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(803)">$INFO[Skin.String(HomeFanart.path)]favorites$INFO[Skin.String(HomeFanart.ext)]</value>
+		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(803)">$INFO[Skin.String(HomeFanart.path)]favourites$INFO[Skin.String(HomeFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path)) + Control.HasFocus(801)">$INFO[Skin.String(HomeFanart.path)]search$INFO[Skin.String(HomeFanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path))">$INFO[Skin.String(HomeFanart.path)]$INFO[Container(9000).ListItem.Property(id)]$INFO[Skin.String(HomeFanart.ext)]</value>
 	</variable>
 	<variable name="MediaFanartVar">
-		<value condition="Skin.HasSetting(no_fanart)"/>
 		<value condition="Window.IsActive(musicinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo)">$INFO[Window(home).Property(infobackground)]</value>
 		<value condition="Container.Content(genres) + Window.IsActive(videos)">$INFO[Skin.String(MovieGenreFanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(MovieGenreFanart.ext)]</value>
 		<value condition="Window.IsActive(pictures) + String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.FolderPath]</value>
@@ -446,7 +493,17 @@
 		<value condition="!String.IsEmpty(Window(weather).Property(current.fanartcode)) + !String.IsEmpty(Skin.String(weatherfanart.path))">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path))">$INFO[Skin.String(HomeFanart.path)]weather$INFO[Skin.String(HomeFanart.ext)]</value>
 	</variable>
-	<variable name="ListWatchedIconVar">
+	
+	<variable name="BasicListWatchedIconVar">	
+		
+		<value condition="String.IsEmpty(ListItem.Icon) + ListItem.IsCollection">overlays/set.png</value>
+		<value condition="String.IsEmpty(ListItem.Icon) + ListItem.IsFolder + !ListItem.IsParentFolder">overlays/folder.png</value>
+		<value condition="String.IsEmpty(ListItem.Icon) + !ListItem.IsParentFolder">OverlayUnwatched.png</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	
+	
+	<variable name="ListWatchedIconVar">	
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
 		<value condition="ListItem.IsPlaying">overlays/watched/OverlayPlaying-List.png</value>
 		<value condition="ListItem.IsResumable">overlays/watched/resume.png</value>
@@ -463,6 +520,7 @@
 		<value condition="ListItem.HasArchive">windows/pvr/archive.png</value>
 		<value condition="Integer.IsGreater(ListItem.Playcount,0)">$INFO[ListItem.Overlay]</value>
 	</variable>
+
 	<!-- Breadcrumbs -->
 	<variable name="BreadcrumbsVideoVar">
 		<value condition="Container.Content(movies) | String.StartsWith(container.folderpath,library://video/movies/) | String.StartsWith(container.folderpath,videodb://movies)">$LOCALIZE[20342]</value>

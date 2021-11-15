@@ -4,9 +4,6 @@
 		<control type="group">
 			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="3000">WindowOpen</animation>
 			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation>
-			<!-- <animation type="Conditional" condition="[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)">
-				<effect type="slide" start="0,150" end="0,0" time="200" easing="inout"/>
-			</animation> -->
 			
 			<!-- Scraper -->
 				<control type="label" id="200">

@@ -100,12 +100,12 @@
 					<visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
 				</control>
 				<!-- Mudar Icone -->
-				<control type="button" id="306">
+				<!-- <control type="button" id="306">
 					<include>DefaultSettingButton</include>
 					<label>$ADDON[script.skinshortcuts 32026]</label>
 					<label2>$INFO[Container(211).ListItem.icon]</label2>
 					<visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-				</control>
+				</control> -->
 				<!-- Mudar Ação -->
 				<control type="button" id="307">
 					<include>DefaultSettingButton</include>
@@ -114,12 +114,12 @@
 					<visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
 				</control>
 				<!-- Editar Sub Menu -->
-				<control type="button" id="405">
+				<!-- <control type="button" id="405">
 					<include>DefaultSettingButton</include>
 					<label>$ADDON[script.skinshortcuts 32072]</label>
 					<visible>String.Contains(Window.Property(groupname),mainmenu)</visible>
 					<visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-				</control>
+				</control> -->
 				<!-- Edit Widgets -->
 				<control type="button" id="312">
 					<include>DefaultSettingButton</include>

@@ -8,17 +8,18 @@
 			<depth>DepthBars</depth>
 			<right>20</right>
 			<width>80</width>
-			<top>0</top>
+			<top>0</top>			
 			<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 			<animation effect="slide" end="0,-80" time="150" condition="Window.IsVisible(FullscreenVideo) | Window.IsVisible(FullscreenGame)">conditional</animation>
-			<control type="image">
+			<control type="image">				
 				<left>20</left>
 				<top>10</top>
 				<width>60</width>
 				<height>60</height>
 				<texture>dialogs/extendedprogress/loading-back.png</texture>
 			</control>
-			<control type="group">
+			
+			<control type="group">				
 				<visible>!Window.IsActive(volumebar)</visible>
 				<animation effect="fade" time="200">VisibleChange</animation>
 				<control type="image">
@@ -38,7 +39,8 @@
 					<animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="true">Conditional</animation>
 				</control>
 			</control>
-			<control type="grouplist">
+			
+			<control type="grouplist">				
 				<left>-800</left>
 				<top>7</top>
 				<width>800</width>
@@ -57,7 +59,8 @@
 					<label>$INFO[Control.GetLabel(32),: ,%]</label>
 				</control>
 			</control>
-			<control type="label" id="31">
+			
+			<control type="label" id="31">				
 				<description>Title label</description>
 				<left>-750</left>
 				<top>33</top>
@@ -67,7 +70,7 @@
 				<textcolor>80FFFFFF</textcolor>
 				<align>right</align>
 			</control>
-			<control type="progress" id="32">
+			<control type="progress" id="32">\				
 				<left>3000</left>
 				<height>15</height>
 			</control>

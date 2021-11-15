@@ -1,44 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="CustomWidgetsAnimation">
-		<animation type="Conditional" condition="[Control.HasFocus(611) | Control.HasFocus(612) | Control.HasFocus(11001)] + !Skin.HasSetting(HomeMenuNoGamesButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(613) | Control.HasFocus(614) | Control.HasFocus(11002)]  + !Skin.HasSetting(HomeMenuNoMovieButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(615) | Control.HasFocus(616) | Control.HasFocus(11003)]  + !Skin.HasSetting(HomeMenuNoTvShowButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(617) | Control.HasFocus(618) | Control.HasFocus(11004)] +  !Skin.HasSetting(HomeMenuNoMusicButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(619) | Control.HasFocus(620) | Control.HasFocus(11005)] +  !Skin.HasSetting(HomeMenuNoPicturesButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(641) | Control.HasFocus(642) | Control.HasFocus(11009)] +  !Skin.HasSetting(HomeMenuNoMusicVideoButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(643) | Control.HasFocus(644) | Control.HasFocus(11010)] +  !Skin.HasSetting(HomeMenuNoNetflixButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(644) | Control.HasFocus(645) | Control.HasFocus(11011)] +  !Skin.HasSetting(HomeMenuNoSpotifyButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
-		<animation type="Conditional" condition="[Control.HasFocus(646) | Control.HasFocus(647) | Control.HasFocus(11012)] +  !Skin.HasSetting(HomeMenuNoYoutubeButton)">
-			<effect type="slide" start="0,0" end="-470,0" time="200" delay="1000" easing="inout"/>
-		</animation>
+	<include name="AnimationHiddenViewDown">
+		<animation effect="slide" start="0,0" end="0,1200" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920)">Conditional</animation>
 	</include>
-	<include name="HomeMediaSourcesAnimations">
+	
+	
+	<include name="SourceWidgetsAnimations">
 		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 		<include condition="!Skin.HasSetting(no_slide_animations)">Animation_BottomSlide</include>
 		<animation effect="fade" start="100" end="00" time="400" easing="inout" condition="Control.HasFocus(10) | Control.HasFocus(13) | Control.HasFocus(9400)">Conditional</animation>
-	</include>
-	<include name="ResumeWeatherAnimations">
-		<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
-		<include condition="!Skin.HasSetting(no_slide_animations)">Animation_BottomSlide</include>
-		<animation effect="fade" start="100" end="00" time="400" easing="inout" condition="Control.HasFocus(10) | Control.HasFocus(13) | Control.HasFocus(9400)">Conditional</animation>
-		<animation effect="slide" start="0,0" end="0,-220" time="100" easing="inout" condition="!Player.HasMedia + [Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation>
 	</include>
 	<include name="animation_cdart">
 		<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>

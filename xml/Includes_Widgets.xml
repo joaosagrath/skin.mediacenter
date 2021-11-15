@@ -18,6 +18,7 @@
 				<effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
 			</animation>
 			<include>OpenClose_Down</include>
+			
 			<!-- Widgets do Topo Default -->
 			<control type="group" id="2000">
 				<include>Widget_Display_Top</include>
@@ -138,7 +139,7 @@
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(PicturesWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(PicturesWidgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="ascending"/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultpicture.png"/>
 							<param name="aligny" value="bottom"/>
@@ -188,8 +189,8 @@
 						<onup>9001</onup>
 						<ondown>12</ondown>
 						<include content="WidgetListHomeAddonsList">
-							<param name="content_path" value="$INFO[Skin.String(AddonsWidgets.Path)]"/>
-							<param name="widget_target" value="$INFO[Skin.String(AddonsWidgets.Target)]"/>
+							<!-- <param name="content_path" value="$INFO[Skin.String(AddonsWidgets.Pat h)]"/>
+							<param name="widget_target" value="$INFO[Skin.String(AddonsWidgets.Target)]"/> -->
 							<param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="10"/>
@@ -214,7 +215,7 @@
 						<onup>9001</onup>
 						<ondown>13</ondown>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
-							<param name="content_path" value="$INFO[Skin.String(PVRWidgets.Path]"/>
+							<param name="content_path" value="$INFO[Skin.String(PVRTVWidgets.Path]"/>
 							<param name="widget_target" value="pvr"/>
 							<param name="sortby" value="name"/>
 							<param name="sortorder" value="Ascending"/>											
@@ -225,98 +226,45 @@
 					</control>				
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(PVRWidgets.Name)]</label>
+						<label>$INFO[Skin.String(PVRTVWidgets.Name)]</label>
 					</control>
 				</control>
 				
 				
 				<!-- Radio -->
 				<control type="group">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),radio)</visible>
+					<visible>String.IsEqual(Container(9001).ListItem.Property(id),radio)</visible>
 					<include content="Visible_Bottom_Delayed">
 						<param name="id" value="radio"/>
 					</include>
-					<control type="grouplist" id="13001">
-						<pagecontrol>13010</pagecontrol>
-						<control type="grouplist" id="13855">
-							<height>390</height>
-							<left>25</left>
-							<top>36</top>
-							<orientation>horizontal</orientation>
-							<align>right</align>
-							<width>1360</width>
-							<visible>PVR.IsRecordingRadio | PVR.HasNonRecordingRadioTimer</visible>
-							<control type="group">
-								<width>680</width>
-								<visible>PVR.IsRecordingRadio</visible>
-								<include content="PVRWidget">
-									<param name="icon" value="$INFO[PVR.RadioNowRecordingChannelIcon]"/>
-									<param name="header" value="$LOCALIZE[19158]"/>
-									<param name="label1" value="$INFO[PVR.RadioNowRecordingDateTime]"/>
-									<param name="label2" value="$INFO[PVR.RadioNowRecordingTitle][CR][COLOR=grey]$INFO[PVR.RadioNowRecordingChannel][/COLOR]"/>
-								</include>
-							</control>
-							<control type="group">
-								<visible>PVR.HasNonRecordingRadioTimer</visible>
-								<width>680</width>
-								<include content="PVRWidget">
-									<param name="icon" value="$INFO[PVR.RadioNextRecordingChannelIcon]"/>
-									<param name="header" value="$LOCALIZE[19157]"/>
-									<param name="label1" value="$INFO[PVR.RadioNextRecordingDateTime]"/>
-									<param name="label2" value="$INFO[PVR.RadioNextRecordingTitle][CR][COLOR=grey]$INFO[PVR.RadioNextRecordingChannel][/COLOR]"/>
-								</include>
-							</control>
-						</control>
-						<include content="WidgetListCategories" condition="System.HasPVRAddon">
-							<param name="content_path" value="pvr://radio/"/>
-							<param name="widget_header" value="$LOCALIZE[31148]"/>
+					<control type="grouplist" id="12001">
+						<top>0</top>
+						<onup>Set.Focus(9001)</onup>
+						<ondown>13</ondown>
+						<include content="WidgetListChannels" condition="System.HasPVRAddon">
+							<!-- <param name="content_path" value="$INFO[Skin.String(PVRRadioWidgets.Path]"/> -->
+							<param name="content_path" value="$INFO[Skin.String(PVRRadioWidgets.Path]"/>
 							<param name="widget_target" value="pvr"/>
-							<param name="list_id" value="13900"/>
+							<param name="sortby" value="name"/>
+							<param name="sortorder" value="Ascending"/>											
+							<param name="list_id" value="10"/>
+							<param name="aligny" value="bottom"/>
+							<param name="aspect" value="keep"/>
 						</include>
-						<include content="WidgetListChannels" condition="System.HasPVRAddon">
-							<param name="content_path" value="pvr://channels/radio/*?view=lastplayed"/>
-							<param name="sortby" value="lastplayed"/>
-							<param name="sortorder" value="descending"/>
-							<param name="widget_header" value="$LOCALIZE[31018]"/>
-							<param name="widget_target" value="files"/>
-							<param name="list_id" value="13200"/>
-						</include>
-						<include content="WidgetListChannels" condition="System.HasPVRAddon">
-							<param name="content_path" value="pvr://recordings/radio/active?view=flat"/>
-							<param name="sortby" value="date"/>
-							<param name="sortorder" value="descending"/>
-							<param name="widget_header" value="$LOCALIZE[31015]"/>
-							<param name="widget_target" value="pvr"/>
-							<param name="list_id" value="13300"/>
-							<param name="label" value="$INFO[ListItem.ChannelName]"/>
-							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
-						</include>
-						<include content="WidgetListChannels" condition="System.HasPVRAddon">
-							<param name="content_path" value="pvr://channels/radio"/>
-							<param name="widget_header" value="$LOCALIZE[19174]"/>
-							<param name="widget_target" value="radioguide"/>
-							<param name="list_id" value="13400"/>
-							<param name="item_treshold" value="1"/>
-						</include>
+					</control>				
+					<control type="label">
+						<include>WidgetLabel</include>
+						<label>$INFO[Skin.String(PVRRadioWidgets.Path)]</label>
 					</control>
-					<include content="ImageWidget" condition="!System.HasPVRAddon">
-						<param name="onup" value="9000"/>
-						<param name="ondown" value="20001"/>
-						<param name="text_label" value="$LOCALIZE[31143]"/>
-						<param name="button_label" value="$LOCALIZE[31144]"/>
-						<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://all/kodi.pvrclient,return)"/>
-						<param name="button_id" value="13400"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoRadioButton)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="13010"/>
-					</include>
 				</control>
+				
+				
+
 				<!-- Favoritos -->
 				<control type="group">
-					<visible>String.IsEqual(Container(9001).ListItem.Property(id),favorites)</visible>
+					<visible>String.IsEqual(Container(9001).ListItem.Property(id),favourites)</visible>
 					<include content="Visible_Bottom_Delayed">
-						<param name="id" value="favorites"/>
+						<param name="id" value="favourites"/>
 					</include>
 					<control type="grouplist">
 						<ondown>SetFocus(9001)</ondown>
@@ -370,7 +318,7 @@
 						<ondown>12</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu1Widgets.Path)]"/>
-							<param name="widget_target" value="$INFO[Skin.String(MyMenu1.Target)]"/>
+							<param name="widget_target" value="$INFO[Skin.String(MyMenu1Widgets.Target)]"/>
 							<param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="10"/>
@@ -395,7 +343,7 @@
 						<ondown>12</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu2Widgets.Path)]"/>
-							<param name="widget_target" value="$INFO[Skin.String(MyMenu2.Target)]"/>
+							<param name="widget_target" value="$INFO[Skin.String(MyMenu2Widgets.Target)]"/>
 							<param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="10"/>
@@ -420,7 +368,7 @@
 						<ondown>12</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu3Widgets.Path)]"/>
-							<param name="widget_target" value="$INFO[Skin.String(MyMenu3.Target)]"/>
+							<param name="widget_target" value="$INFO[Skin.String(MyMenu3Widgets.Target)]"/>
 							<param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="10"/>
@@ -445,7 +393,7 @@
 						<ondown>12</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu4Widgets.Path)]"/>
-							<param name="widget_target" value="$INFO[Skin.String(MyMenu4.Target)]"/>
+							<param name="widget_target" value="$INFO[Skin.String(MyMenu4Widgets.Target)]"/>
 							<param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="10"/>
@@ -470,7 +418,7 @@
 						<ondown>12</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu5Widgets.Path)]"/>
-							<param name="widget_target" value="$INFO[Skin.String(MyMenu5.Target)]"/>
+							<param name="widget_target" value="$INFO[Skin.String(MyMenu5.Widgets.Target)]"/>
 							<param name="sortby" value="title"/>
 							<param name="sortorder" value="ascending"/>
 							<param name="list_id" value="10"/>
@@ -630,15 +578,13 @@
 				</control>
 			</control>
 		</control>
+		
 		<!-- Widgets de Fontes de Mídia -->
 		<control type="group">
-			<animation type="Conditional" condition="!Skin.HasSetting(WeatherResume) + !Player.HasMedia + !Control.HasFocus(10)">
+			<animation type="Conditional" condition="Control.HasFocus(12)" reversible="true">
 				<effect type="slide" start="0,0" end="0,-320" time="400" delay="300" tween="cubic" easing="out"/>
 			</animation>
-			<animation type="Conditional" condition="Skin.HasSetting(WeatherResume) + Control.HasFocus(12)">
-				<effect type="slide" start="0,0" end="0,-320" time="400" delay="300" tween="cubic" easing="out"/>
-			</animation>
-			<include>HomeMediaSourcesAnimations</include>
+			<include>SourceWidgetsAnimations</include>			
 			<control type="image">
 				<bottom>-320</bottom>
 				<width>100%</width>

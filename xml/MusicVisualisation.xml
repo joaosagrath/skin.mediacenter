@@ -6,6 +6,14 @@
 	<controls>
 		<!-- Fanart -->
 		<include>DefaultBackground</include>
+		<control type="multiimage">
+			<visible>!Skin.HasSetting(no_fanart)</visible>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>400</fadetime>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath colordiffuse="FF878787">$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+		</control>
 		<include>LyricsDefault</include>
 		<control type="group">
 			<animation type="Conditional" condition="[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)">
@@ -21,6 +29,19 @@
 				<height>280</height>
 				<texture colordiffuse="AA000000">dialogs/dialog-bg-nobo.png</texture>
 			</control>
+			
+			<control type="image">
+				<left>220</left>
+				<top>-340</top>
+				<include>Visible_Left</include>
+				<width>400</width>
+				<height>400</height>
+				<fadetime>400</fadetime>
+				<texture>$INFO[Player.Folderpath]discart.png</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+			</control>
+			
 			<control type="image">
 				<left>20</left>
 				<top>-140</top>
@@ -68,7 +89,6 @@
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
-				
 				<control type="grouplist">
 					<top>120</top>
 					<width>1450</width>
@@ -117,7 +137,7 @@
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
-					<visible>Control.HasFocus(87)</visible>
+					<visible>!Window.IsActive(musicosd)</visible>
 					<top>210</top>
 					<width>1450</width>
 					<height>40</height>
@@ -125,7 +145,6 @@
 					<label>$VAR[OSDNextLabelVar]</label>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
-					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
 				</control>
 			</control>
 		</control>

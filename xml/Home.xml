@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|rightmenu|leftmenu)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
@@ -51,15 +51,24 @@
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>!Player.HasMedia</visible>
 		</control>
+		<control type="multiimage">
+			<visible>!Skin.HasSetting(no_fanart)</visible>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>400</fadetime>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath colordiffuse="FF878787">$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+		</control>
 		<!-- TESTE LABELS -->
 		<control type="label">
-			<top>801</top>
+			<top>401</top>
 			<left>20</left>
 			<!-- <label>$VAR[viewdisc]</label> -->
-			<!-- <label>$INFO[ListItem.FolderPath]logo.png</label> -->			
+			<!-- <label>$INFO[ListItem.FolderPath,.banner.jpg]</label> -->
 			<!-- $INFO[ListItem.Path,,logo.png] -->
 			<!-- <label>$INFO[ListItem.Label]</label> -->
 			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
+			<!-- <label>$INFO[Player.Folderpath]discart.png</label> -->
 			<textcolor>white</textcolor>
 			<align>center</align>
 			<!-- <visible>Control.HasFocus(10)</visible> -->
@@ -70,24 +79,25 @@
 			<width>512</width>
 			<height>512</height>
 			<!-- <texture>Y:\Girls\Scoreland\icon.jpg</texture> -->
-			<texture>$INFO[ListItem.Art(discart)]</texture>
+			<!-- <texture>$INFO[ListItem.Art(discart)]</texture> -->
 		</control>
-		<!-- Resumo de Clima -->
+		<!-- Status Home -->
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,-220" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,220" time="100" easing="inout" condition="Control.HasFocus(10)">Conditional</animation>
+			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
+				<effect type="slide" end="0,540" time="500" tween="sine"/>
+			</animation>
+			<left>10</left>
+			<right>10</right>
+			<bottom>-60</bottom>
+			<height>300</height>
+			<control type="image">
+				<bottom>90</bottom>
+				<width>100%</width>
+				<texture border="21">dialogs/dialog-bg.png</texture>
+			</control>
 			<control type="group">
-				<visible/>
-				<visible>Skin.HasSetting(weatherresume) + !Player.HasMedia</visible>
-				<include>ResumeWeatherAnimations</include>
-				<description>Weather info</description>
-				<left>10</left>
-				<right>10</right>
-				<bottom>-60</bottom>
-				<height>300</height>
-				<visible>!String.IsEmpty(Weather.plugin)</visible>
-				<control type="image">
-					<bottom>90</bottom>
-					<width>100%</width>
-					<texture border="21">dialogs/dialog-bg.png</texture>
-				</control>
 				<control type="label">
 					<left>840</left>
 					<top>40</top>
@@ -118,46 +128,75 @@
 					<font>font14</font>
 					<label>$INFO[System.date] - $INFO[System.time]</label>
 				</control>
-				<control type="grouplist">
-					<top>50</top>
-					<left>50</left>
-					<right>20</right>
-					<orientation>horizontal</orientation>
+			</control>
+			<control type="image">
+				<left>60</left>
+				<top>75</top>
+				<aspectratio>keep</aspectratio>
+				<width>192</width>
+				<height>56</height>
+				<texture>special://xbmc/media/vendor_logo.png</texture>
+				<visible>!Player.HasMedia</visible>
+			</control>
+			<control type="group">
+				<!-- <animation effect="slide" start="0,0" end="0,200" time="200" tween="sine" condition="Integer.IsGreater(MusicPlayer.Time,20)">Conditional</animation> -->
+				<visible>Player.HasMedia</visible>
+				<control type="image">
+					<top>40</top>
+					<left>40</left>
+					<width>130</width>
+					<height>130</height>
+					<texture>$INFO[MusicPlayer.Cover]</texture>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<top>40</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<right>60</right>
 					<align>left</align>
-					<itemgap>-110</itemgap>
-					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-						<param name="label" value="Window(weather).Property(Current.Wind)"/>
-						<param name="texture" value="icons/weather/wind.png"/>
-						<param name="header" value="404"/>
-					</include>
-					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-						<param name="label" value="Window(weather).Property(Current.Humidity)"/>
-						<param name="texture" value="icons/weather/humidity.png"/>
-						<param name="header" value="406"/>
-					</include>
-					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-						<param name="label" value="Window(weather).Property(Current.Precipitation)"/>
-						<param name="texture" value="icons/weather/rain.png"/>
-						<param name="header" value="33021"/>
-					</include>
-					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-						<param name="label" value="Window(weather).Property(Today.Sunrise)"/>
-						<param name="texture" value="icons/weather/sunrise.png"/>
-						<param name="header" value="405"/>
-					</include>
-					<include content="WeatherIcon" condition="!String.IsEmpty(Weather.Plugin)">
-						<param name="label" value="Window(weather).Property(Today.Sunset)"/>
-						<param name="texture" value="icons/weather/sunset.png"/>
-						<param name="header" value="403"/>
-					</include>
+					<font>font30_title</font>
+					<label>Now Playing</label>
+				</control>
+				<control type="image">
+					<left>190</left>
+					<top>80</top>
+					<aligny>center</aligny>
+					<right>60</right>
+					<align>left</align>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="button_focus">$VAR[NowPlayingIconVar]</texture>
+				</control>
+				<control type="label">
+					<left>240</left>
+					<top>90</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<right>60</right>
+					<align>left</align>
+					<font>font30_title</font>
+					<label>$INFO[Player.Title]</label>
+				</control>
+				<control type="label">
+					<left>200</left>
+					<top>140</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<width>65%</width>
+					<align>left</align>
+					<font>font14</font>
+					<scroll>true</scroll>
+					<label>$VAR[NowPlayingSublabelVar]</label>
 				</control>
 			</control>
-			
+		</control>
 		<!-- Artes da Home Menu Default -->
 		<control type="group">
 			<visible>Control.HasFocus(10) | Control.HasFocus(13)</visible>
 			<animation effect="fade" start="0" end="100" delay="1000" reversible="false" time="300">VisibleChange</animation>
-			<bottom>90</bottom>
+			<bottom>115</bottom>
 			<height>230</height>
 			<control type="image">
 				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Artist_Description)) | !String.IsEmpty(ListItem.Property(album_description))</visible>
@@ -169,7 +208,7 @@
 				<visible/>
 			</control>
 			<!-- Logo -->
-			<control type="image">
+			<!-- <control type="image">
 				<top>100</top>
 				<right>17</right>
 				<width>400</width>
@@ -177,7 +216,7 @@
 				<texture>$INFO[ListItem.Label,resource://resource.images.xratedmodels/logos/,.png]</texture>
 				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
 				<fadetime>450</fadetime>
-			</control>
+			</control> -->
 			<control type="image" id="2816">
 				<top>100</top>
 				<right>17</right>
@@ -228,18 +267,7 @@
 				<height>155</height>
 				<label>$VAR[ShiftRightTextBoxVar]</label>
 				<align>justify</align>
-				<font>font27</font>
-				<fadetime>450</fadetime>
-				<autoscroll time="3000" repeat="3000">True</autoscroll>
-			</control>
-			<control type="textbox">
-				<top>0</top>
-				<left>720</left>
-				<width>720</width>
-				<height>155</height>
-				<label>$VAR[pichomelabel]</label>
-				<align>justify</align>
-				<font>font27</font>
+				<font>font10</font>
 				<fadetime>450</fadetime>
 				<autoscroll time="3000" repeat="3000">True</autoscroll>
 			</control>
@@ -249,15 +277,24 @@
 			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
 				<effect type="slide" delay="1000" end="0,-555" time="500" tween="sine"/>
 			</animation>
-			<include/>
 			<bottom>-500</bottom>
-			<height>450</height>
+			<height>450</height>			
 			<control type="image">
 				<top>150</top>
 				<left>0</left>
 				<width>120%</width>
 				<height>310</height>
 				<texture colordiffuse="AA000000">dialogs/dialog-bg-nobo.png</texture>
+			</control>
+			<control type="image">
+				<left>250</left>
+				<top>15</top>
+				<width>420</width>
+				<height>420</height>
+				<fadetime>400</fadetime>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture>$INFO[Player.Folderpath]discart.png</texture>
+				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
 			</control>
 			<control type="image">
 				<top>15</top>
@@ -289,7 +326,7 @@
 				<left>440</left>
 				<top>100</top>
 				<control type="label">
-					<visible>String.IsEmpty(Control.GetLabel(49953)</visible>
+					<visible>String.IsEmpty(Control.GetLabel(49953))</visible>
 					<top>-30</top>
 					<right>130</right>
 					<width>1450</width>
@@ -304,7 +341,7 @@
 				<control type="label">
 					<right>130</right>
 					<top>65</top>
-					<width>1230</width>
+					<width>1100</width>
 					<height>50</height>
 					<aligny>center</aligny>
 					<align>right</align>
@@ -316,7 +353,7 @@
 				<control type="grouplist">
 					<right>130</right>
 					<top>120</top>
-					<width>1230</width>
+					<width>1100</width>
 					<height>40</height>
 					<align>right</align>
 					<orientation>horizontal</orientation>
@@ -354,7 +391,7 @@
 				<control type="label">
 					<right>130</right>
 					<top>165</top>
-					<width>1450</width>
+					<width>1100</width>
 					<height>40</height>
 					<aligny>center</aligny>
 					<align>right</align>
@@ -366,7 +403,7 @@
 				<control type="label">
 					<right>130</right>
 					<top>210</top>
-					<width>1230</width>
+					<width>1100</width>
 					<height>40</height>
 					<aligny>center</aligny>
 					<align>right</align>
@@ -476,6 +513,7 @@
 					<onfocus>ClearProperty(listposition,home)</onfocus>
 					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
+					<animation effect="slide" end="-250,0" condition="Window.IsActive(10151)">Conditional</animation>
 					<include>Center_Menu</include>
 					<top>20</top>
 					<width>1100</width>
@@ -521,6 +559,7 @@
 							<align>center</align>
 							<font>home40</font>
 							<label>$INFO[ListItem.Label]</label>
+							<textcolor>button_focus</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
 							<visible>Control.HasFocus(9000)</visible>
 						</control>
@@ -543,7 +582,6 @@
 					<bottom>0</bottom>
 					<movement>0</movement>
 					<focusposition>0</focusposition>
-					<onright>9000</onright>
 					<onup>9000</onup>
 					<onleft condition="Player.HasMedia">600</onleft>
 					<onleft condition="!Player.HasMedia">SetFocus(2001)</onleft>
@@ -559,7 +597,7 @@
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>white</textcolor>
-							<include>fademenu</include>
+							
 						</control>
 						<control type="image">
 							<left>0</left>
@@ -568,7 +606,7 @@
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
 							<colordiffuse>FFFFFFFF</colordiffuse>
-							<include>fademenu</include>
+							
 						</control>
 					</itemlayout>
 					<focusedlayout height="90" width="220">
@@ -579,7 +617,7 @@
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
 							<colordiffuse>FFFFFFFF</colordiffuse>
-							<include>fademenu</include>
+							
 							<visible>!Control.HasFocus(9001)</visible>
 						</control>
 						<control type="label">
@@ -592,7 +630,7 @@
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>white</textcolor>
-							<include>fademenu</include>
+							
 							<visible>!Control.HasFocus(9001)</visible>
 						</control>
 						<control type="group">
@@ -621,7 +659,7 @@
 								<font>home30</font>
 								<label>$INFO[ListItem.Label]</label>
 								<shadowcolor>black</shadowcolor>
-								<textcolor>white</textcolor>
+								<textcolor>button_focus</textcolor>
 								<visible>Control.HasFocus(9001)</visible>
 							</control>
 						</control>
@@ -654,7 +692,7 @@
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>white</textcolor>
-							<include>fademenu</include>
+							
 						</control>
 						<control type="image">
 							<left>210</left>
@@ -663,7 +701,7 @@
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
 							<colordiffuse>FFFFFFFF</colordiffuse>
-							<include>fademenu</include>
+							
 							<aspectratio>scale</aspectratio>
 						</control>
 					</itemlayout>
@@ -675,7 +713,7 @@
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
 							<colordiffuse>FFFFFFFF</colordiffuse>
-							<include>fademenu</include>
+							
 							<visible>!Control.HasFocus(9002)</visible>
 							<aspectratio>scale</aspectratio>
 						</control>
@@ -689,7 +727,7 @@
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>white</textcolor>
-							<include>fademenu</include>
+							
 							<visible>!Control.HasFocus(9002)</visible>
 						</control>
 						<control type="group">
@@ -715,7 +753,7 @@
 								<font>home30</font>
 								<label>$INFO[ListItem.Label]</label>
 								<shadowcolor>black</shadowcolor>
-								<textcolor>white</textcolor>
+								<textcolor>button_focus</textcolor>
 								<visible>Control.HasFocus(9002)</visible>
 							</control>
 						</control>
@@ -951,23 +989,6 @@
 						<visible>Skin.HasSetting(hide_mediaflags) | !ControlGroup(2000).HasFocus</visible>
 						<animation effect="fade" time="300">VisibleChange</animation>
 					</control>
-				</control>
-			</control>
-			
-			<control type="group">
-				<depth>DepthBars</depth>
-				<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
-				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-				<top>30</top>
-				<left>90</left>
-				<control type="image">
-					<left>4</left>
-					<top>0</top>
-					<aspectratio>keep</aspectratio>
-					<width>192</width>
-					<height>56</height>
-					<texture>special://xbmc/media/vendor_logo.png</texture>
 				</control>
 			</control>
 		</control>

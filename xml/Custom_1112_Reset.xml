@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1112">
+	<defaultcontrol always="true">892</defaultcontrol>
+	<controls>
+	<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="60FFFFFF">D:\Kodi\Kodi Matrix\Kodi\portable_data\addons\skin.mediacenter\extras\backgrounds\sexy.jpg</texture>
+			<aspectratio>scale</aspectratio>
+		</control>
+		<control type="button" id="892">
+			<include>HiddenObject</include>
+			<onfocus>Skin.ResetSettings</onfocus>
+			<onfocus>AlarmClock(nextstep,SetFocus(900),0:02,true)</onfocus>
+		</control>
+		<control type="group">
+			<include>animation_window</include>
+			<control type="button" id="900">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				
+				<!-- Jogos -->
+				<onfocus>Skin.ToggleSetting(HomeMenuNoGamesButton)</onfocus>
+				
+				<!-- Filmes -->
+				<onfocus>Skin.SetString(MoviesWidgets.Path,library://video/movies/)</onfocus>
+				<onfocus>Skin.SetString(MoviesWidgets.Name,Biblioteca de Filmes)</onfocus>
+				<onfocus>Skin.SetString(MoviesWidgets.Target,videos)</onfocus>
+				
+				<!-- Musicas -->
+				<onfocus>Skin.SetString(MusicWidgets.Path,library://music/)</onfocus>
+				<onfocus>Skin.SetString(MusicWidgets.Name,Biblioteca de Músicas)</onfocus>
+				<onfocus>Skin.SetString(MusicWidgets.Target,music)</onfocus>
+				
+				<!-- Seriados-->
+				<onfocus>Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onfocus>
+				<onfocus>Skin.SetString(TvShowsWidgets.Name,Biblioteca de Seriados)</onfocus>
+				<onfocus>Skin.SetString(TvShowsWidgets.Target,videos)</onfocus>
+				
+				<!-- Imagens -->
+				<onfocus>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onfocus>
+				
+				<!-- Addons -->
+				<onfocus>Skin.ToggleSetting(WidgetListAddons)</onfocus>
+				
+				<!-- PVR -->
+				<onfocus>Skin.ToggleSetting(HomeMenuNoTVButton)</onfocus>
+				<onfocus>Skin.ToggleSetting(HomeMenuNoRadioButton)</onfocus>
+				
+				<!-- Outros Ajustes -->
+				<onfocus>Skin.ToggleSetting(Default_Menu)</onfocus>
+				<onfocus>Skin.ToggleSetting(WeatherResume)</onfocus>
+				<onfocus>Skin.ToggleSetting(autoscroll)</onfocus>
+				<onfocus>Skin.SetString(background_overlay,1)</onfocus>
+				
+				<onfocus>Skin.SetString(autosetting,10)</onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(901),0:02,true)</onfocus>
+			</control>	
+			
+			
+			<control type="button" id="901">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,20)</onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(902),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="902">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus></onfocus>
+				<onfocus>Skin.SetString(autosetting,30)</onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(903),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="903">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus></onfocus>
+				<onfocus>Skin.SetString(autosetting,40)</onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(904),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="904">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,50)</onfocus>
+				<onfocus></onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(905),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="905">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,60)</onfocus>
+				<onfocus></onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(906),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="906">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,70)</onfocus>
+				<onfocus></onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(907),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="907">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,80)</onfocus>
+				<onfocus></onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(908),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="908">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,90)</onfocus>
+				<onfocus></onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(909),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="909">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,100)</onfocus>
+				<onfocus></onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(910),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="910">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(autosetting,110)</onfocus>
+				<onfocus>AlarmClock(nextstep,SetFocus(911),0:02,true)</onfocus>
+			</control>
+			
+			<control type="button" id="911">
+				<include>HiddenObject</include>
+				<onclick></onclick>
+				<onfocus>Skin.SetString(defaultsettings,0)</onfocus>
+				<onfocus>ReplaceWindow(home)</onfocus>
+			</control>
+			
+			<!-- logo -->
+			<control type="image">
+				<left>622</left>
+				<top>175</top>
+				<width>675</width>
+				<height>232</height>
+				<texture>firstsettings_logo.png</texture>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			</control>
+			<control type="label">
+				<left>810</left>
+				<top>414</top>
+				<width>300</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>Media Center Skin</label>
+				<font>Font13</font>
+				<textcolor>B6FFFAF0</textcolor>
+			</control>
+			<!-- versao -->
+			<control type="label">
+				<left>1590</left>
+				<top>1016</top>
+				<width>300</width>
+				<height>40</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[skin_version]</label>
+				<font>Font13</font>
+				<textcolor>50FFFAF0</textcolor>
+			</control>
+			<!-- texto das etapas -->
+			<control type="label">
+				<left>150</left>
+				<top>595</top>
+				<width>1620</width>
+				<height>300</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<label>$VAR[settingsstep]</label>
+				<font>font_subtitle</font>
+				<textcolor>B6FFFAF0</textcolor>
+			</control>
+			<!-- grafico de progresso -->
+			<control type="group">
+				<animation effect="fade" start="0" end="100" time="300" delay="2000">WindowOpen</animation>
+				<animation effect="fade" start="0" end="100" time="300" delay="2000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
+				<visible>Integer.IsLess(skin.string(autosetting),110)</visible>
+				<!-- Porcentagem -->
+				<control type="label" id="915">
+					<left>910</left>
+					<top>775</top>
+					<width>100</width>
+					<height>46</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[skin.string(autosetting)]%</label>
+					<font>font_settings</font>
+					<textcolor>B6FFFAF0</textcolor>
+					<visible>Integer.IsLess(skin.string(autosetting),110)</visible>
+				</control>
+				<!-- Aviso nao toque -->
+				<control type="label">
+					<left>150</left>
+					<top>970</top>
+					<width>1620</width>
+					<height>100</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>Restaurando Skin</label>
+					<font>font12</font>
+					<textcolor>B6FFFAF0</textcolor>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

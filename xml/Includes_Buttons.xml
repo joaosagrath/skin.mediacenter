@@ -47,11 +47,29 @@
 	</include>
 	<include name="DefaultSettingButton">
 		<param name="height">70</param>
-		<param name="textoffsetx">40</param>
+		<param name="textoffsetx">38</param>
+
 		<definition>
 			<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
-			<top>0</top>
+			<!-- <top>0</top> -->
 			<height>$PARAM[height]</height>
+
+			<aligny>center</aligny>
+			<invalidcolor>invalid</invalidcolor>
+			<selectedcolor>selected</selectedcolor>
+			<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+			<texturenofocus />
+		</definition>
+	</include>
+	<include name="DefaultSettingButtonBottom">
+		<param name="height">70</param>
+		<param name="textoffsetx">38</param>
+		<param name="width">480</param>
+		<definition>
+			<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
+			<!-- <top>0</top> -->
+			<height>$PARAM[height]</height>
+			<width>$PARAM[width]</width>
 			<aligny>center</aligny>
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>selected</selectedcolor>

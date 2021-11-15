@@ -35,7 +35,7 @@
         <icon>icons/sidemenu/pictures.png</icon>
         <action>ActivateWindow(Pictures)</action>
     </shortcut>
-	<shortcut>
+<!-- 	<shortcut>
 		<label>$LOCALIZE[20389]</label>
 		<label2 />
 		<defaultID>musicvideos</defaultID>
@@ -48,5 +48,5 @@
 		<defaultID>empty</defaultID>
 		<icon></icon>
 		<action></action>
-	</shortcut>
+	</shortcut> -->
 </shortcuts>
