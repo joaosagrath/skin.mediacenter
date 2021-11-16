@@ -7,6 +7,23 @@
 			<include>OpenClose_Down</include>
 			<visible>Control.IsVisible(50)</visible>
 			<include>Visible_Right</include>
+			<!-- TESTE LABELS -->
+			<control type="label">
+				<visible>Window.IsActive(games)</visible>
+				<top>401</top>
+				<left>20</left>
+				
+				<!-- <label>$INFO[ListItem.Icon]</label> -->
+				<!-- <label>$VAR[viewdisc]</label> -->
+				<!-- <label>$INFO[ListItem.FolderPath,.banner.jpg]</label> -->
+				<!-- $INFO[ListItem.Path,,logo.png] -->
+				<!-- <label>$INFO[ListItem.Label]</label> -->
+				<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
+				<!-- <label>$INFO[Player.Folderpath]discart.png</label> -->
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<!-- <visible>Control.HasFocus(10)</visible> -->
+			</control>
 			<control type="group">
 				<control type="image">
 					<!-- <visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible> -->

@@ -4,22 +4,21 @@
 	<variable name="CustomHomeIcons">		
 		<!-- <value condition="Skin.HasSetting(mainmenu_custom_icons)">$INFO[skin.string(mainmenu.icons.path)]</value> -->
 		<value>icons/sidemenu/</value>
-	</variable>
-
-	
+	</variable>	
 
 	<variable name="settingsstep">
-		<value condition="String.IsEqual(skin.string(autosetting),10)">Restaurando Menus da Home</value>
-		<value condition="String.IsEqual(skin.string(autosetting),20)">Restaurando Artworks</value>
-		<value condition="String.IsEqual(skin.string(autosetting),30)">Restaurando Itens Gerais</value>
-		<value condition="String.IsEqual(skin.string(autosetting),40)">$LOCALIZE[31656][CR]$LOCALIZE[31833]</value>
-		<value condition="String.IsEqual(skin.string(autosetting),50)">$LOCALIZE[31656][CR]$LOCALIZE[31834]</value>
-		<value condition="String.IsEqual(skin.string(autosetting),60)">$LOCALIZE[31656][CR]$LOCALIZE[31836]</value>
-		<value condition="String.IsEqual(skin.string(autosetting),70)">$LOCALIZE[31656][CR]$LOCALIZE[31835]</value>
-		<value condition="String.IsEqual(skin.string(autosetting),80)">$LOCALIZE[31656][CR]$LOCALIZE[31837]</value>
-		<value condition="String.IsEqual(skin.string(autosetting),90)">$LOCALIZE[31656][CR]$LOCALIZE[31838]</value>
-		<value condition="String.IsEqual(skin.string(autosetting),100)">$LOCALIZE[31656][CR]$LOCALIZE[31839]</value>
-		<value condition="String.IsEqual(skin.string(autosetting),110)">$LOCALIZE[31657]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),0)">$LOCALIZE[31224]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),10)">$LOCALIZE[31225]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),20)">$LOCALIZE[31226]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),30)">$LOCALIZE[31227]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),40)">$LOCALIZE[31228]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),50)">$LOCALIZE[31229]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),60)">$LOCALIZE[31230]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),70)">$LOCALIZE[31231]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),80)">$LOCALIZE[31232]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),90)">$LOCALIZE[31233]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),100)">$LOCALIZE[31234]</value>
+		<value condition="String.IsEqual(skin.string(autosetting),110)">$LOCALIZE[31235]</value>
 	</variable>
 
 	<variable name="PVRTVSettingsLabel">
@@ -499,6 +498,7 @@
 		<value condition="String.IsEmpty(ListItem.Icon) + ListItem.IsCollection">overlays/set.png</value>
 		<value condition="String.IsEmpty(ListItem.Icon) + ListItem.IsFolder + !ListItem.IsParentFolder">overlays/folder.png</value>
 		<value condition="String.IsEmpty(ListItem.Icon) + !ListItem.IsParentFolder">OverlayUnwatched.png</value>
+		<!-- <value condition="String.IsEmpty(ListItem.Icon) + Window.IsActive(games)">defaultgames.png</value> -->
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	
@@ -529,6 +529,9 @@
 		<value condition="Container.Content(seasons)">$LOCALIZE[20343]</value>
 		<value condition="Container.Content(episodes)">$LOCALIZE[20343]</value>
 		<value>$LOCALIZE[3]</value>
+	</variable>
+	<variable name="BreadcrumbsMusicVar">
+		<value>$LOCALIZE[2]</value>
 	</variable>
 	<variable name="BreadcrumbsPVRChannelsVar">
 		<value condition="Window.IsActive(TVChannels)">$LOCALIZE[19020] / $LOCALIZE[19019] / $INFO[Control.GetLabel(29)]</value>

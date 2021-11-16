@@ -392,12 +392,6 @@
 				<onclick>right</onclick>
 				<onclick>Filter</onclick>
 			</control>
-			<!-- <control type="button" id="155">
-				<visible>String.IsEmpty(Container.Content(Pictures))</visible>
-				<include>MediaMenuItemsCommon</include>
-				<label>$LOCALIZE[31037]</label>
-				<onclick>ActivateWindow(1115)</onclick>
-			</control> -->
 		</definition>
 	</include>
 	<include name="MediaMenuSearchButton">

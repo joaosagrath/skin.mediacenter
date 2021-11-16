@@ -5,14 +5,15 @@
 	<views>50,53,501</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
+		<include>DefaultBackground</include>
 		<control type="image">
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<fadetime>400</fadetime>
 			<animation effect="fade" time="400">VisibleChange</animation>
-			<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(HomeGames.Fanart)]</texture>
+			<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(HomeMusic.Fanart)]</texture>
 		</control>
-		<include>DefaultBackground</include>
+		
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<animation type="Conditional" condition="Control.HasFocus(900) + Skin.HasSetting(no_slide_animations)">
@@ -90,7 +91,7 @@
 		</control>
 		<!-- Barra de Cima e de Baixo -->
 		<include content="TopBar">
-			<param name="breadcrumbs_label" value="$VAR[BreadcrumbsGameVar]"/>
+			<param name="breadcrumbs_label" value="$VAR[BreadcrumbsMusicVar]"/>
 		</include>
 		<include content="BottomBar">
 			<param name="info_visible" value="true"/>

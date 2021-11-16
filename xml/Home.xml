@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
+	<onload condition="!String.IsEqual(skin.string(SkinStarted),started)">ActivateWindow(1112)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
@@ -15,7 +16,7 @@
 			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
 			<onfocus>Control.SetFocus(10)</onfocus>
 			<onclick>noop</onclick>
-			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>\
 		</control>
 		<control type="button" id="20002">
 			<include>HiddenObject</include>

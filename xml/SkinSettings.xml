@@ -189,14 +189,6 @@
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<enable>System.HasAddon(script.skinshortcuts)</enable>
 				</control>
-				<!-- Exibir resumo de Clima -->
-				<!-- <control type="radiobutton" id="705">
-					<label>$LOCALIZE[31173]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(WeatherResume)</onclick>
-					<selected>Skin.HasSetting(WeatherResume)</selected>
-					<enable>!String.IsEmpty(Weather.Plugin)</enable>
-				</control> -->
 				<!-- Esmaecer Widgets após 3 segundo -->
 				<control type="radiobutton" id="706">
 					<label>$LOCALIZE[31174]</label>
@@ -226,14 +218,6 @@
 				<pagecontrol>60</pagecontrol>
 				<ondown>1112</ondown>
 				<visible>Container(9000).HasFocus(2)</visible>
-				<!-- ativar botao do reset -->
-				<control type="button" id="641">
-					<include>DefaultSettingButton</include>
-					<label>31220</label>
-					<!-- <onclick>ActivateWindow(1113)</onclick> -->
-
-
-				</control>
 				<!-- ativar botao do reset -->
 				<control type="radiobutton" id="642">
 					<include>DefaultSettingButton</include>

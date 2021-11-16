@@ -319,7 +319,7 @@
 						<onclick>Skin.Reset(HomeGames.Action)</onclick>
 						<onclick>Skin.Reset(HomeGames.ActionTitle)</onclick>
 						<onclick>Skin.Reset(HomeGames.Fanart)</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Name,Addons de Jogos)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Name,$LOCALIZE[31213])</onclick>
 						<onclick>Skin.SetString(GamesWidgets.Source,addon)</onclick>
 						<onclick>Skin.SetString(GamesWidgets.Path,addons://sources/game)</onclick>
 						<onclick>Skin.SetString(GamesWidgets.Target,games)</onclick>
@@ -336,7 +336,7 @@
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomeGames.Fanart)</onclick>
 						<align>center</align>
-						<visible>!String.IsEmpty(Skin.String(HomeGames.Fanart))</visible>
+						<enable>!String.IsEmpty(Skin.String(HomeGames.Fanart))</enable>
 					</control>					
 				</control>
 			</control>
@@ -404,7 +404,7 @@
 						<onclick>Skin.Reset(HomeMovies.Title)</onclick>
 						<onclick>Skin.Reset(HomeMovies.Action)</onclick>
 						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
-						<onclick>Skin.SetString(MoviesWidgets.Name,Biblioteca de Filmes)</onclick>
+						<onclick>Skin.SetString(MoviesWidgets.Name,$LOCALIZE[31027])</onclick>
 						<onclick>Skin.SetString(MoviesWidgets.Source,Library)</onclick>
 						<onclick>Skin.SetString(MoviesWidgets.Path,library://video/movies/)</onclick>
 						<onclick>Skin.SetString(MoviesWidgets.Target,videos)</onclick>
@@ -419,7 +419,7 @@
 						<include>DefaultSettingButtonBottom</include>
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
-						<visible>!String.IsEmpty(Skin.String(HomeMovies.Fanart))</visible>
+						<enable>!String.IsEmpty(Skin.String(HomeMovies.Fanart))</enable>
 						<align>center</align>
 					</control>
 					
@@ -490,7 +490,7 @@
 					<onclick>Skin.Reset(HomeTvShows.Title)</onclick>
 					<onclick>Skin.Reset(HomeTvShows.Action)</onclick>
 					<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
-					<onclick>Skin.SetString(TvShowsWidgets.Name,Biblioteca de Seriados)</onclick>
+					<onclick>Skin.SetString(TvShowsWidgets.Name,$LOCALIZE[31047])</onclick>
 					<onclick>Skin.SetString(TvShowsWidgets.Source,Library)</onclick>
 					<onclick>Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onclick>
 					<onclick>Skin.SetString(TvShowsWidgets.Target,videos)</onclick>
@@ -505,7 +505,7 @@
 					<include>DefaultSettingButtonBottom</include>
 					<label>$LOCALIZE[31189]</label>
 					<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
-					<visible>!String.IsEmpty(Skin.String(HomeTvShows.Fanart))</visible>
+					<enable>!String.IsEmpty(Skin.String(HomeTvShows.Fanart))</enable>
 					<align>center</align>
 				</control>
 				
@@ -574,7 +574,7 @@
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
 						<onclick>up</onclick>
-						<visible>!String.IsEmpty(Skin.String(HomeMusic.Fanart))</visible>
+						<enable>!String.IsEmpty(Skin.String(HomeMusic.Fanart))</enable>
 						<align>center</align>
 					</control>
 					<control type="button" id="10040">
@@ -680,7 +680,7 @@
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomePictures.Fanart)</onclick>
 						<onclick>up</onclick>
-						<visible>!String.IsEmpty(Skin.String(HomePictures.Fanart))</visible>
+						<enable>!String.IsEmpty(Skin.String(HomePictures.Fanart))</enable>
 						<align>center</align>
 					</control>
 					
@@ -1584,7 +1584,7 @@
 						<height>70</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$LOCALIZE[31221]</label>
+						<label>$LOCALIZE[31206]</label>
 					</control>
 					<control type="button" id="10131">
 						<include>DefaultSettingButton</include>
@@ -1650,7 +1650,7 @@
 						<height>70</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$LOCALIZE[31222]</label>
+						<label>$LOCALIZE[31207]</label>
 					</control>
 					<!-- <control type="button" id="10141">
 						<include>DefaultSettingButton</include>
