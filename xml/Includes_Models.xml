@@ -3,41 +3,41 @@
 	<!-- Girls Database -->
 	<variable name="picposter">
 		<!-- Modelos -->
-		<value condition="String.Contains(ListItem.Label,Asiedora)">Y:\Girls Database\Models\Asiedora.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Aliza Haze)">Y:\Girls Database\Models\Aliza Haze.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Anja Amelia)">Y:\Girls Database\Models\Anja Amelia.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Azumi Takayama)">Y:\Girls Database\Models\Azumi Takayama.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Bu Wa Wa)">Y:\Girls Database\Models\Bu Wa Wa.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Diana Eisley)">Y:\Girls Database\Models\Diana Eisley.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Elizabeth)">Y:\Girls Database\Models\Elizabeth.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Eshe Ikandi)">Y:\Girls Database\Models\Eshe Ikandi.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Hannah Hays)">Y:\Girls Database\Models\Hannah Hays.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Haruka Nanao)">Y:\Girls Database\Models\Haruka Nanao.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Ichika Ayamori)">Y:\Girls Database\Models\Ichika Ayamori.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Jasmine Vega)">Y:\Girls Database\Models\Jasmine Vega.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Jelena Jasper)">Y:\Girls Database\Models\Jelena Jasper.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Lang Yu)">Y:\Girls Database\Models\Lang Yu.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Leah Wilde)">Y:\Girls Database\Models\Leah Wilde.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Li Jiao)">Y:\Girls Database\Models\Li Jiao.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Layza)">Y:\Girls Database\Models\Layza.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Layla Rose)">Y:\Girls Database\Models\Layla Rose.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Lyra Lockhart)">Y:\Girls Database\Models\Lyra Lockhart.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Kim Velez)">Y:\Girls Database\Models\Kim Velez.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Kacey Parker)">Y:\Girls Database\Models\Kacey Parker.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Kacy Lane)">Y:\Girls Database\Models\Sanija-Kacy Lane.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Masako Natsume)">Y:\Girls Database\Models\Masako Natsume.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Meow 34JJ)">Y:\Girls Database\Models\Meow 34JJ.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Mi Ha Doan)">Y:\Girls Database\Models\Mi Ha Doan.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Natali Fiori)">Y:\Girls Database\Models\Natali Fiori.jpg</value>
-		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Girls Database\Models\PanPan.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Paula Martini)">Y:\Girls Database\Models\Paula Martini.jpg</value>		
-		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Girls Database\Models\Sanija-Kacy Lane.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Sarah Jane)">Y:\Girls Database\Models\Sarah Jane.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Tuna Kimura)">Y:\Girls Database\Models\Tuna Kimura.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Thumbelina)">Y:\Girls Database\Models\Thumbelina.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Victoria Matosa)">Y:\Girls Database\Models\Victoria Matosa.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Ying Mu)">Y:\Girls Database\Models\Ying Mu.jpg</value>
-		<value condition="String.Contains(ListItem.Label,Zhang Xiao Yu)">Y:\Girls Database\Models\Zhang Xiao Yu.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Asiedora)">Y:\Artwork\_Newsstand Paths\Models\flyers\Asiedora.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Aliza Haze)">Y:\Artwork\_Newsstand Paths\Models\flyers\Aliza Haze.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Anja Amelia)">Y:\Artwork\_Newsstand Paths\Models\flyers\Anja Amelia.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Azumi Takayama)">Y:\Artwork\_Newsstand Paths\Models\flyers\Azumi Takayama.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Bu Wa Wa)">Y:\Artwork\_Newsstand Paths\Models\flyers\Bu Wa Wa.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Diana Eisley)">Y:\Artwork\_Newsstand Paths\Models\flyers\Diana Eisley.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Elizabeth)">Y:\Artwork\_Newsstand Paths\Models\flyers\Elizabeth.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Eshe Ikandi)">Y:\Artwork\_Newsstand Paths\Models\flyers\Eshe Ikandi.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Hannah Hays)">Y:\Artwork\_Newsstand Paths\Models\flyers\Hannah Hays.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Haruka Nanao)">Y:\Artwork\_Newsstand Paths\Models\flyers\Haruka Nanao.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Ichika Ayamori)">Y:\Artwork\_Newsstand Paths\Models\flyers\Ichika Ayamori.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Jasmine Vega)">Y:\Artwork\_Newsstand Paths\Models\flyers\Jasmine Vega.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Jelena Jasper)">Y:\Artwork\_Newsstand Paths\Models\flyers\Jelena Jasper.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Lang Yu)">Y:\Artwork\_Newsstand Paths\Models\flyers\Lang Yu.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Leah Wilde)">Y:\Artwork\_Newsstand Paths\Models\flyers\Leah Wilde.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Li Jiao)">Y:\Artwork\_Newsstand Paths\Models\flyers\Li Jiao.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Layza)">Y:\Artwork\_Newsstand Paths\Models\flyers\Layza.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Layla Rose)">Y:\Artwork\_Newsstand Paths\Models\flyers\Layla Rose.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Lyra Lockhart)">Y:\Artwork\_Newsstand Paths\Models\flyers\Lyra Lockhart.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Kim Velez)">Y:\Artwork\_Newsstand Paths\Models\flyers\Kim Velez.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Kacey Parker)">Y:\Artwork\_Newsstand Paths\Models\flyers\Kacey Parker.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Kacy Lane)">Y:\Artwork\_Newsstand Paths\Models\flyers\Sanija-Kacy Lane.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Masako Natsume)">Y:\Artwork\_Newsstand Paths\Models\flyers\Masako Natsume.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Meow 34JJ)">Y:\Artwork\_Newsstand Paths\Models\flyers\Meow 34JJ.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Mi Ha Doan)">Y:\Artwork\_Newsstand Paths\Models\flyers\Mi Ha Doan.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Natali Fiore)">Y:\Artwork\_Newsstand Paths\Models\flyers\Natali Fiore.jpg</value>
+		<value condition="String.Contains(ListItem.Label,PanPan)">Y:\Artwork\_Newsstand Paths\Models\flyers\PanPan.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Paula Martini)">Y:\Artwork\_Newsstand Paths\Models\flyers\Paula Martini.jpg</value>		
+		<value condition="String.Contains(ListItem.Label,Sanija)">Y:\Artwork\_Newsstand Paths\Models\flyers\Sanija-Kacy Lane.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Sarah Jane)">Y:\Artwork\_Newsstand Paths\Models\flyers\Sarah Jane.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Tuna Kimura)">Y:\Artwork\_Newsstand Paths\Models\flyers\Tuna Kimura.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Thumbelina)">Y:\Artwork\_Newsstand Paths\Models\flyers\Thumbelina.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Victoria Matosa)">Y:\Artwork\_Newsstand Paths\Models\flyers\Victoria Matosa.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Ying Mu)">Y:\Artwork\_Newsstand Paths\Models\flyers\Ying Mu.jpg</value>
+		<value condition="String.Contains(ListItem.Label,Zhang Xiao Yu)">Y:\Artwork\_Newsstand Paths\Models\flyers\Zhang Xiao Yu.jpg</value>
 		
 		<!-- Boobs Size -->
 		<value condition="String.Contains(ListItem.Label,Flat Chest)">Y:\Girls Database\Boobs\FlatChest.jpg</value>
@@ -86,12 +86,12 @@
 		<value condition="String.Contains(ListItem.Label,Scoreland)">Y:\Girls Database\Magazines\Scoreland.jpg</value>
 		<value condition="String.Contains(ListItem.Label,XLGirls)">Y:\Girls Database\Magazines\XLGirls.jpg</value>
 		
-		<value condition="String.IsEqual(listitem.dbtype,genre) + System.AddonIsEnabled(resource.images.moviegenreicons.transparent)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
+		<!-- <value condition="String.IsEqual(listitem.dbtype,genre) + System.AddonIsEnabled(resource.images.moviegenreicons.transparent)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
 		<value condition="String.IsEqual(listitem.dbtype,studio) + System.AddonIsEnabled(resource.images.studios.white)">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(poster)) + ![Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">$INFO[Listitem.Art(poster)]</value>
 
 		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
-		<value condition="String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Icon]</value>
+		<value condition="String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Icon]</value> -->
 	</variable>
 	<variable name="pichomelogo">
 		

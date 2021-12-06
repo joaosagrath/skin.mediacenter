@@ -148,6 +148,7 @@
 					<width>400</width>
 					<height>155</height>
 					<texture>$VAR[ClearLogoVar]</texture>
+					<!-- <texture>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture> -->
 				</control>
 				<control type="group">
 					<visible>!ListItem.IsCollection</visible>

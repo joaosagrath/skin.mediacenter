@@ -28,7 +28,7 @@
 				<include>ListThumbInfoPanel</include>
 			</control>
 		</control>
-		<include content="TopBar">
+			<include content="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]" />
 			</include>
 			<include content="BottomBar">
@@ -103,7 +103,7 @@
 			<control type="group">
 				<include>MediaMenuCommon</include>
 				<control type="grouplist" id="9000">
-					<top>50</top>
+					<top>0</top>
 					
 					<include>MediaMenuListCommon</include>
 					<control type="button" id="10">

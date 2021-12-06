@@ -98,7 +98,7 @@
 	<groupings>
         
         <!-- script.skin.helper.service smart shortcuts -->
-        <shortcut label="32118" type="32010" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
+        <!-- <shortcut label="32118" type="32010" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut> -->
         
 		<node label="32029">
 			<content>common</content>

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<defaultcontrol/>
+	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<onload condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onload>
 	<controls>
+		<control type="button" id="9000">
+			<include>HiddenObject</include>
+			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+			<onclick>ActivateWindow(10120)</onclick>
+		</control>
 		<!-- Fanart -->
 		<include>DefaultBackground</include>
 		<control type="multiimage">
@@ -31,15 +36,16 @@
 			</control>
 			
 			<control type="image">
-				<left>220</left>
-				<top>-340</top>
+				<left>25</left>
+				<top>-335</top>
 				<include>Visible_Left</include>
-				<width>400</width>
-				<height>400</height>
+				<width>390</width>
+				<height>390</height>
 				<fadetime>400</fadetime>
 				<texture>$INFO[Player.Folderpath]discart.png</texture>
+				<!-- <texture>$INFO[Window(home).Property(SkinHelper.Player.Art.DiscArt)]</texture> -->
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="true" condition="!Player.Paused">Conditional</animation>
 			</control>
 			
 			<control type="image">
@@ -66,16 +72,29 @@
 					<height>155</height>
 					<fadetime>400</fadetime>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture>$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist]\logo.png</texture>
+					<!-- <texture>$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist]\clearlogo.png</texture> -->
+					<texture>$INFO[Window(home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
 					<bordersize>4</bordersize>
 				</control>
+				<!-- <control type="image" id="9001">
+					<left>-10</left>
+					<top>-90</top>
+					<include>Visible_Left</include>
+					<width>400</width>
+					<height>155</height>
+					<fadetime>400</fadetime>
+					<aspectratio alignx="left" aligny="top">keep</aspectratio>
+					<texture>$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist]\clearlogo.png</texture>
+					<bordersize>4</bordersize>
+				</control> -->
 				<control type="label">
-					<top>10</top>
+					<visible>String.IsEmpty(Control.GetLabel(9001))</visible>
+					<top>0</top>
 					<width>1450</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<label>$INFO[MusicPlayer.Artist]</label>
-					<font>font45</font>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.Artist][/COLOR]</label>
+					<font>font_MainMenu</font>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>

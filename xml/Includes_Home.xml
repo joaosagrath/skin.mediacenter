@@ -24,8 +24,8 @@
 				<itemlayout width="212" height="295">
 					<control type="group">
 						<animation effect="slide" end="212" time="100" condition="Control.HasFocus(10)">Conditional</animation>
-						<animation effect="slide" end="212" time="100" condition="Control.HasFocus(12)">Conditional</animation>
-						<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) | Control.HasFocus(12)] + [Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
+						<!-- <animation effect="slide" end="212" time="100" condition="Control.HasFocus(12)">Conditional</animation> -->
+						<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) + Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
 						<control type="image">
 							<left>10</left>
 							<top>0</top>

@@ -96,6 +96,7 @@
 		<include content="BottomBar">
 			<param name="info_visible" value="true"/>
 		</include>
+		
 		<control type="group">
 			<!-- <control type="group">
 				<visible>Control.IsVisible(51) | Control.IsVisible(53)</visible>
@@ -127,9 +128,17 @@
 			</control>
 			<include>MediaMenuMouseOverlay</include> -->
 			<control type="group">
+				<depth>DepthBars</depth>
+				<bottom>0</bottom>
+				<height>70</height>
+				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				<include condition="!Skin.HasSetting(hide_mediaflags)">MediaFlags</include>
+			</control>
+			<control type="group">
 				<include>MediaMenuCommon</include>
 				<control type="grouplist" id="9000">
-					<top>50</top>
+					<top>0</top>
 					<include>MediaMenuListCommon</include>
 					<control type="label" id="203">
 						<description>Actions</description>
@@ -137,33 +146,15 @@
 						<label>$LOCALIZE[31020]</label>
 						<!-- <visible>Control.IsVisible(621) | Control.IsVisible(624)</visible> -->
 					</control>
-					<control type="button" id="620">
+					<control type="button" id="619">
 						<description>Get more</description>
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[31056]</label>
 						<onclick>ActivateWindow(musicplaylist)</onclick>
-						<visible>Integer.IsGreater(Playlist.Length(music),0)</visible>
+						<enable>Integer.IsGreater(Playlist.Length(music),0)</enable>
 						<visible>Window.IsActive(Music)</visible>
 					</control>
-					<control type="button" id="621">
-						<description>Get more</description>
-						<include>MediaMenuItemsCommon</include>
-						<label>$LOCALIZE[21452]</label>
-						<onclick>ActivateWindow(addonbrowser,addons://more/game/,return)</onclick>
-						<visible>Container.Content(addons)</visible>
-					</control>
-					<control type="button" id="624">
-						<include>MediaMenuItemsCommon</include>
-						<label>$LOCALIZE[10140]</label>
-						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-						<visible>!String.IsEmpty(Container.PluginName)</visible>
-					</control>
-					<control type="button" id="625">
-						<include>MediaMenuItemsCommon</include>
-						<label>$LOCALIZE[31223]</label>
-						<onclick>ActivateWindow(settings)</onclick>
-					</control>
-					<control type="togglebutton" id="619">
+					<control type="togglebutton" id="620">
 						<description>Update library</description>
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[653]</label>
@@ -171,8 +162,33 @@
 						<onclick>CleanLibrary(Music)</onclick>
 						<visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
 						<altlabel>$LOCALIZE[13353]</altlabel>
-						<usealttexture>library.isscanningvideo</usealttexture>
+						<usealttexture>library.isscanningmusic</usealttexture>
 					</control>
+					<control type="togglebutton" id="621">
+						<description>Clean library</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[14247]</label>
+						<onclick>CleanLibrary(Music)</onclick>
+						<visible>!Container.Content(addons)+ String.IsEmpty(Container.PluginName)</visible>
+					</control>
+					<control type="button" id="622">
+						<description>Get more</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[21452]</label>
+						<onclick>ActivateWindow(addonbrowser,addons://more/game/,return)</onclick>
+						<visible>Container.Content(addons)</visible>
+					</control>
+					<control type="button" id="623">
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[10140]</label>
+						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+						<visible>!String.IsEmpty(Container.PluginName)</visible>
+					</control>
+					<control type="button" id="624">
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[31223]</label>
+						<onclick>ActivateWindow(settings)</onclick>
+					</control>					
 					<control type="togglebutton" id="630">
 						<description>Music Art Path</description>
 						<include>MediaMenuItemsCommon</include>
@@ -180,7 +196,16 @@
 						<onclick>Skin.SetPath(MusicArtsPath)</onclick>
 						<visible>Window.IsActive(Music)</visible>
 					</control>
-					
+					<!-- <control type="label">
+						<include>MediaMenuItemsCommon</include>
+						<label>"$INFO[Skin.String(MusicArtsPath)]</label>
+					</control> -->
+					<control type="label" id="631">
+						<description>Actions</description>
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31081]</label>
+						<visible>Player.HasAudio</visible>
+					</control>
 					<include>MediaMenuNowPlaying</include>
 				</control>
 			</control>

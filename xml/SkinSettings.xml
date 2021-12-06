@@ -18,8 +18,16 @@
 			<imagepath background="true" colordiffuse="bg_overlay">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</imagepath>
 			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
 		</control>
+		<control type="multiimage">
+			<visible>Skin.HasSetting(show_fanartbackground)</visible>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>400</fadetime>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath colordiffuse="FF878787">$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+		</control>
 		<!-- Menu Central -->
-		<control type="group" id="10000">		
+		<control type="group" id="10000">
 			<left>470</left>
 			<include>OpenClose_Right</include>
 			<!-- Geral -->
@@ -58,12 +66,12 @@
 					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
 					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
 				</control> -->
-				<!-- <control type="radiobutton" id="707">
+				<control type="radiobutton" id="707">
 					<label>$LOCALIZE[31160]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
-				</control> -->
+				</control>
 				<control type="button" id="708">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
@@ -88,6 +96,7 @@
 				<onup>600</onup>
 				<ondown>600</ondown>
 				<visible>Container(9000).HasFocus(3)</visible>
+				<!-- Choose background pattern -->
 				<control type="button" id="602">
 					<label>$LOCALIZE[31156]</label>
 					<label2>$VAR[BackgroundOverlayTypeVar]</label2>
@@ -101,17 +110,35 @@
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),1)">Skin.SetString(background_overlay,2)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),0)">Skin.SetString(background_overlay,1)</onclick>
 				</control>
-				<control type="button" id="603">
+				<!-- Select a custom background image -->
+				<!-- <control type="button" id="603">
 					<label>$LOCALIZE[31177]</label>
 					<label2>$INFO[Skin.String(CustomHomeFanart)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetFile(CustomHomeFanart,.jpg|.png,special://home/addons/skin.mediacenter/extras/backgrounds)</onclick>
+				</control> -->
+				<control type="button" id="603">
+					<label>$LOCALIZE[31177]</label>
+					<label2>$INFO[Skin.String(CustomHomeFanart)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.SetString(CustomHomeFanart,special://home/addons/skin.mediacenter/extras/backgrounds/)</onclick>
+					<onclick>Skin.SetImage(CustomHomeFanart)</onclick>
+					<!-- <onclick>Skin.SetFile(CustomHomeFanart,.jpg|.png,special://home/addons/skin.mediacenter/extras/backgrounds)</onclick> -->
 				</control>
+				<!-- Clear the custom background adjustment -->
 				<control type="button" id="604">
-					<visible>!String.IsEmpty(Skin.String(CustomHomeFanart))</visible>
+					<enable>!String.IsEmpty(Skin.String(CustomHomeFanart))</enable>
 					<label>$LOCALIZE[31178]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.Reset(CustomHomeFanart)</onclick>
+					<onclick>up</onclick>
+				</control>
+				<!-- Show Fanart background -->
+				<control type="radiobutton" id="605">
+					<label>$LOCALIZE[31002]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(show_fanartbackground)</onclick>
+					<selected>Skin.HasSetting(show_fanartbackground)</selected>
 				</control>
 				<!-- <control type="button" id="608">
 					<label>$LOCALIZE[31131]</label>
@@ -203,8 +230,6 @@
 					<onclick>Skin.ToggleSetting(showhomenowplaying)</onclick>
 					<selected>Skin.HasSetting(showhomenowplaying)</selected>
 				</control>
-
-				
 			</control>
 			<!-- Inicialização e Reinicialização -->
 			<control type="grouplist" id="640">
@@ -256,7 +281,7 @@
 			</control>
 		</control>
 		<!-- Menu da Esquerda -->
-		<control type="group">			
+		<control type="group">
 			<depth>DepthContentPanel</depth>
 			<left>0</left>
 			<include>OpenClose_Left</include>

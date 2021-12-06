@@ -129,7 +129,7 @@
 			<control type="group">
 				<include>MediaMenuCommon</include>
 				<control type="grouplist" id="9000">
-					<top>50</top>
+					<top>0</top>
 					<include>MediaMenuListCommon</include>
 					<control type="label" id="203">
 						<description>Actions</description>

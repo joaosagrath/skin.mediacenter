@@ -22,7 +22,7 @@
 			</include>
 			<include content="TopBar" condition="Window.IsActive(musicplaylist)">
 				<param name="breadcrumbs_label" value="$LOCALIZE[31066]" />
-				<param name="sublabel">$LOCALIZE[31074] - $INFO[Container.TotalTime]</param>
+				<param name="sublabel">$LOCALIZE[31074] - $INFO[Container.TotalTime,,  ∙  ]$INFO[Container.CurrentItem,,/]$INFO[Container.NumItems]</param>
 			</include>
 			<include content="BottomBar">
 				<param name="info_visible" value="true" />
@@ -84,6 +84,12 @@
 						<texturenofocus />
 						<textoffsetx>20</textoffsetx>
 						<label>$LOCALIZE[192]</label>
+					</control>
+					<control type="label" id="631">
+						<description>Actions</description>
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31081]</label>
+						<visible>Player.HasAudio</visible>
 					</control>
 					<include>MediaMenuNowPlaying</include>
 				</control>

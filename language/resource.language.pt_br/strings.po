@@ -29,7 +29,7 @@ msgstr ""
 #: /xml/SkinSettings.xml
 msgctxt "#31002"
 msgid "Show media fanart as background"
-msgstr ""
+msgstr "Exibir fanart de mídia como plano de fundo"
 
 #: /xml/DialogVideoInfo.xml
 msgctxt "#31003"
@@ -380,7 +380,10 @@ msgctxt "#31080"
 msgid "Ends at"
 msgstr ""
 
-#empty string with id 31081
+#: /xml/MyPlaylist.xml
+msgctxt "#31081"
+msgid "Player Controls"
+msgstr "Controle de Reprodução"
 
 #: /xml/Custom_1105_MusicOSDSettings.xml
 msgctxt "#31082"
@@ -737,7 +740,7 @@ msgstr ""
 #: /xml/SkinSettings.xml
 msgctxt "#31160"
 msgid "Show media flags"
-msgstr ""
+msgstr "Exibir etiquetas de mídia"
 
 #: /xml/DialogNumeric.xml
 msgctxt "#31161"

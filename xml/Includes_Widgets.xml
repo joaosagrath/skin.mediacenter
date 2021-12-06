@@ -281,6 +281,7 @@
 						</include>
 					</control>
 				</control>
+				
 				<!-- Videos ID 11000 -->
 				<control type="group">
 					<visible>String.IsEqual(Container(9001).ListItem.Property(id),video)</visible>
@@ -580,7 +581,7 @@
 		</control>
 		
 		<!-- Widgets de Fontes de Mídia -->
-		<control type="group">
+		<control type="group" id="2003">
 			<animation type="Conditional" condition="Control.HasFocus(12)" reversible="true">
 				<effect type="slide" start="0,0" end="0,-320" time="400" delay="300" tween="cubic" easing="out"/>
 			</animation>
@@ -597,7 +598,7 @@
 				<left>0</left>
 				<width>1920</width>
 				<height>210</height>
-				<onup>9000</onup>
+				<onup>10</onup>
 				<scrolltime>300</scrolltime>
 				<focusposition>2</focusposition>
 				<orientation>horizontal</orientation>

@@ -9,41 +9,112 @@
 			<include>Visible_Right</include>
 			<!-- TESTE LABELS -->
 			<control type="label">
-				<visible>Window.IsActive(games)</visible>
-				<top>401</top>
-				<left>20</left>
-				
-				<!-- <label>$INFO[ListItem.Icon]</label> -->
+				<!-- <visible>Window.IsActive(musicvideos)</visible> -->
+				<top>45</top>
+				<left>500</left>
+				<!-- <label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label> -->
 				<!-- <label>$VAR[viewdisc]</label> -->
-				<!-- <label>$INFO[ListItem.FolderPath,.banner.jpg]</label> -->
+				<label>$INFO[ListItem.DBTYPE(actor)]</label>
+				
+				
+				
 				<!-- $INFO[ListItem.Path,,logo.png] -->
-				<!-- <label>$INFO[ListItem.Label]</label> -->
+				<!-- <label>$INFO[Container(50).NumItems]</label> -->
 				<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
-				<!-- <label>$INFO[Player.Folderpath]discart.png</label> -->
+				<!-- <label>$INFO[Player.Folderpath]discart.png</label> -abel> -->
+				<!-- <label>$INFO[Skin.String(MusicArtsPath)]$INFO[ListItem.Artist]</label> -->
+				<!-- <label>$INFO[ListItem.Comment]</label> -->
 				<textcolor>white</textcolor>
-				<align>center</align>
+				<align>left</align>
+				<scroll>true</scroll>
 				<!-- <visible>Control.HasFocus(10)</visible> -->
 			</control>
+			<control type="image">
+				<left>50</left>
+				<right>53%</right>
+				<top>120</top>
+				<bottom>300</bottom>
+				<height>640</height>
+				<texture>$INFO[ListItem.Art(discart)]</texture>
+				<fadetime>450</fadetime>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
+					<effect type="slide" start="0,0" end="120,0" time="400" delay="1000" tween="cubic" easing="out"/>
+					<effect type="fade" start="0" end="100" time="1000" delay="1000" tween="cubic" easing="out"/>
+				</animation>
+				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="Player.HasMedia + !Player.Paused">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>150</left>
+				<right>53%</right>
+				<top>120</top>
+				<bottom>300</bottom>
+				<height>640</height>
+				<texture>$INFO[ListItem.FolderPath,.discart.png]</texture>
+				<fadetime>450</fadetime>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
+					<effect type="slide" start="0,0" end="120,0" time="400" delay="1000" tween="cubic" easing="out"/>
+					<effect type="fade" start="0" end="100" time="1000" delay="1000" tween="cubic" easing="out"/>
+				</animation>
+				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="Player.HasMedia + !Player.Paused">Conditional</animation>
+			</control>
 			<control type="group">
-				<control type="image">
-					<!-- <visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible> -->
+				<control type="image" id="499">
 					<left>50</left>
 					<right>53%</right>
-					<top>100</top>
-					<bottom>300</bottom>
-					<texture>$VAR[PosterVar]</texture>
+					<top>91</top>
+					<bottom>287</bottom>
+					<texture>$VAR[picposter]</texture>
+					<fadetime>450</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
-					<bottom>50</bottom>
-					<height>270</height>
+					<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
+						<effect type="slide" start="0,0" end="-120,0" time="400" delay="1000" tween="cubic" easing="out"/>
+					</animation>
+					<visible>String.IsEmpty(Control.GetLabel(499))</visible>
+					<left>50</left>
+					<right>53%</right>
+					<top>91</top>
+					<bottom>287</bottom>
+					<texture>$VAR[PosterVar]</texture>
+					<fadetime>450</fadetime>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<!-- <control type="image"> -->
+				<!-- <bottom>50</bottom> -->
+				<!-- <height>270</height> -->
+				<!-- <width>100%</width> -->
+				<!-- <texture colordiffuse="black">shadow.png</texture> -->
+				<!-- </control> -->
+				<control type="image">
+					<bottom>70</bottom>
+					<height>220</height>
 					<width>100%</width>
-					<texture colordiffuse="black">shadow.png</texture>
+					<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 				</control>
 				<control type="textbox">
+					<visible>!Container.Content(addons)</visible>
 					<right>540</right>
+					<bottom>93</bottom>
+					<left>960</left>
+					<height>180</height>
+					<label>$VAR[ShiftLeftTextBoxVar]</label>
+					<align>left</align>
+					<font>font27</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<fadetime>450</fadetime>
+					<autoscroll time="3000" repeat="3000">True</autoscroll>
+					<fadetime>450</fadetime>
+				</control>
+				<control type="textbox">
+					<visible>Container.Content(addons)</visible>
+					<right>30</right>
 					<bottom>93</bottom>
 					<left>960</left>
 					<height>180</height>
@@ -67,12 +138,23 @@
 					<autoscroll time="3000" repeat="3000">True</autoscroll>
 				</control>
 				<control type="image">
+					<visible>!String.IsEqual(Container.FolderPath,plugin://plugin.program.newsstand/?com=SHOW_COLLECTIONS)</visible>
 					<right>50</right>
-					<top>800</top>
-					<bottom>95</bottom>
+					<top>805</top>
+					<bottom>90</bottom>
 					<width>477</width>
 					<texture>$VAR[ClearLogoVar]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
+					<fadetime>450</fadetime>
+				</control>
+				<control type="image">
+					<visible>String.IsEqual(Container.FolderPath,plugin://plugin.program.newsstand/?com=SHOW_COLLECTIONS)</visible>
+					<top>800</top>
+					<bottom>150</bottom>
+					<height>200</height>
+					<width>1920</width>
+					<texture>$VAR[ClearLogoVar]</texture>
+					<aspectratio>keep</aspectratio>
 					<fadetime>450</fadetime>
 				</control>
 			</control>
@@ -109,7 +191,7 @@
 			<control type="list" id="$PARAM[list_id]">
 				<left>$PARAM[left]</left>
 				<right>$PARAM[right]</right>
-				<top>100</top>
+				<top>110</top>
 				<bottom>300</bottom>
 				<movement>5</movement>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -119,38 +201,17 @@
 				<onright condition="Control.IsVisible(80)">80</onright>
 				<onright condition="!Control.IsVisible(80)">900</onright>
 				<viewtype label="$PARAM[viewtype_label]">list</viewtype>
-				<itemlayout height="list_item_height">
+				
+				<itemlayout height="83" condition="!Container.Content(addons)">
 					<control type="label">
 						<left>100</left>
-						<right>70</right>
+						<!-- <right>70</right> -->
 						<bottom>0</bottom>
 						<aligny>center</aligny>
 						<font>font27</font>
 						<label>$INFO[ListItem.Property(name),] $INFO[ListItem.Label]</label>
-						<shadowcolor>text_shadow</shadowcolor>						
-					</control>
-					<!-- <control type="label">
-						<visible>String.IsEmpty(ListItem.Label)</visible>
-						<left>100</left>
-						<right>70</right>
-						<bottom>0</bottom>
-						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$INFO[ListItem.Property(name)]</label>
 						<shadowcolor>text_shadow</shadowcolor>
-					</control>
-					<control type="label">
-						<visible>!String.IsEmpty(ListItem.Label)</visible>
-						<left>20</left>
-						<right>60</right>
-						<top>0</top>
-						<bottom>0</bottom>
-						<align>right</align>
-						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$INFO[ListItem.Property(name)]</label>
-						<shadowcolor>text_shadow</shadowcolor>
-					</control> -->
+					</control>					
 					<control type="image">
 						<left>21</left>
 						<centertop>50%</centertop>
@@ -169,7 +230,7 @@
 						<texture colordiffuse="grey">$INFO[ListItem.Overlay]</texture>
 					</control>
 				</itemlayout>
-				<focusedlayout height="list_item_height">
+				<focusedlayout height="83" condition="!Container.Content(addons)">
 					<control type="image">
 						<left>0</left>
 						<right>0</right>
@@ -188,28 +249,6 @@
 						<shadowcolor>text_shadow</shadowcolor>
 						<scroll>true</scroll>
 					</control>
-					<!-- <control type="label">
-						<visible>String.IsEmpty(ListItem.Label)</visible>
-						<left>100</left>
-						<right>70</right>
-						<bottom>0</bottom>
-						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$INFO[ListItem.Property(name)]</label>
-						<shadowcolor>text_shadow</shadowcolor>
-					</control>
-					<control type="label">
-						<visible>!String.IsEmpty(ListItem.Label)</visible>
-						<left>20</left>
-						<right>60</right>
-						<top>0</top>
-						<bottom>0</bottom>
-						<align>right</align>
-						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$INFO[ListItem.Property(name)]</label>
-						<shadowcolor>text_shadow</shadowcolor>
-					</control> -->
 					<control type="image">
 						<left>21</left>
 						<centertop>50%</centertop>
@@ -228,7 +267,96 @@
 						<texture colordiffuse="grey">$INFO[ListItem.Overlay]</texture>
 					</control>
 				</focusedlayout>
+				
+				<itemlayout height="83" condition="Container.Content(addons)">
+					<control type="label">
+						<left>100</left>
+						<right>70</right>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$INFO[ListItem.Property(name),] $INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>60</width>
+						<height>60</height>
+						<texture colordiffuse="grey">$VAR[BasicListWatchedIconVar]</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<!-- <control type="label">
+						<right>80</right>
+						<right>90</right>
+						<height>80</height>
+						<width>600</width>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$VAR[AddonsLabel2Var]</label>
+						<scroll>true</scroll>
+					</control> -->
+					<control type="image">
+						<right>40</right>
+						<top>25</top>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[AddonsOriginVar]</texture>
+						<!-- <visible>!ListItem.IsFolder</visible> -->
+					</control>
+				</itemlayout>
+				<focusedlayout height="83" condition="Container.Content(addons)">
+					<control type="image">
+						<left>0</left>
+						<right>0</right>
+						<top>0</top>
+						<bottom>0</bottom>
+						<texture colordiffuse="button_focus">lists/focus.png</texture>
+						<visible>Control.HasFocus($PARAM[list_id])</visible>
+					</control>
+					<control type="label">
+						<left>100</left>
+						<right>70</right>
+						<bottom>0</bottom>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$INFO[ListItem.Property(name),] $INFO[ListItem.Label]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<centertop>50%</centertop>
+						<width>60</width>
+						<height>60</height>
+						<texture colordiffuse="grey">$VAR[BasicListWatchedIconVar]</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<!-- <control type="label">
+						<right>80</right>
+						<right>90</right>
+						<height>80</height>
+						<width>600</width>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font27</font>
+						<label>$VAR[AddonsLabel2Var]</label>
+						<scroll>true</scroll>
+					</control> -->
+					<control type="image">
+						<right>40</right>
+						<top>25</top>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[AddonsOriginVar]</texture>
+						<!-- <visible>!ListItem.IsFolder</visible> -->
+					</control>
+				</focusedlayout>
+				
 			</control>
 		</definition>
+		
 	</include>
+	
 </includes>

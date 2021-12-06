@@ -16,11 +16,11 @@
 	<include name="Center_Menu">
 		<animation effect="slide" start="0,0" end="0,120" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">Conditional</animation>
 		<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) + Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
-		<animation effect="slide" start="0" end="850" condition="Integer.IsEqual(Container(9000).NumItems,1)">Conditional</animation>
-		<animation effect="slide" start="0" end="740" condition="Integer.IsEqual(Container(9000).NumItems,2)">Conditional</animation>
-		<animation effect="slide" start="0" end="630" condition="Integer.IsEqual(Container(9000).NumItems,3)">Conditional</animation>
-		<animation effect="slide" start="0" end="520" condition="Integer.IsEqual(Container(9000).NumItems,4)">Conditional</animation>
-		<animation effect="slide" start="0" end="410" condition="Integer.IsGreaterOrEqual(Container(9000).NumItems,5)">Conditional</animation>
+		<animation effect="slide" start="0" end="820" condition="Integer.IsEqual(Container(9000).NumItems,1)">Conditional</animation>
+		<animation effect="slide" start="0" end="680" condition="Integer.IsEqual(Container(9000).NumItems,2)">Conditional</animation>
+		<animation effect="slide" start="0" end="540" condition="Integer.IsEqual(Container(9000).NumItems,3)">Conditional</animation>
+		<animation effect="slide" start="0" end="400" condition="Integer.IsEqual(Container(9000).NumItems,4)">Conditional</animation>
+		<animation effect="slide" start="0" end="260" condition="Integer.IsGreaterOrEqual(Container(9000).NumItems,5)">Conditional</animation>
 	</include>
 	<include name="Visible_Fade_Reverse">
 		<animation type="Conditional" condition="Control.HasFocus(12)">

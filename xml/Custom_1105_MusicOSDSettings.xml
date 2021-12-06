@@ -38,7 +38,6 @@
 						<selected>Skin.HasSetting(animate_background_fanart)</selected>
 					</control> -->
 					<control type="radiobutton" id="601">
-						<!-- <label>$LOCALIZE[31002]</label> -->
 						<label>$LOCALIZE[31163]</label>
 						<include>DefaultSettingButton</include>
 						<onclick>Skin.ToggleSetting(no_fanart)</onclick>

@@ -2,13 +2,10 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<onload condition="!String.IsEqual(skin.string(SkinStarted),started)">ActivateWindow(1112)</onload>
+	<onload condition="!String.IsEqual(skin.string(SkinStarted),started)">ReplaceWindow(1112)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onload>
-	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onload>
-	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
-	<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
-	<onload>Control.SetFocus(9000,2)</onload>
+	<!-- <onload>Control.SetFocus(9000,2)</onload> -->
 	<controls>
 		<!-- Botões -->
 		<control type="button" id="20001">
@@ -53,7 +50,7 @@
 			<visible>!Player.HasMedia</visible>
 		</control>
 		<control type="multiimage">
-			<visible>!Skin.HasSetting(no_fanart)</visible>
+			<visible>Skin.HasSetting(show_fanartbackground)</visible>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<fadetime>400</fadetime>
@@ -67,9 +64,10 @@
 			<!-- <label>$VAR[viewdisc]</label> -->
 			<!-- <label>$INFO[ListItem.FolderPath,.banner.jpg]</label> -->
 			<!-- $INFO[ListItem.Path,,logo.png] -->
-			<!-- <label>$INFO[ListItem.Label]</label> -->
+			<!-- <label>$INFO[Container(9000).ListItem.Label]</label> -->
 			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
 			<!-- <label>$INFO[Player.Folderpath]discart.png</label> -->
+			<!-- <label>$INFO[ListItem.Label]</label> -->
 			<textcolor>white</textcolor>
 			<align>center</align>
 			<!-- <visible>Control.HasFocus(10)</visible> -->
@@ -84,7 +82,8 @@
 		</control>
 		<!-- Status Home -->
 		<control type="group">
-			<animation effect="slide" start="0,0" end="0,-220" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">Conditional</animation>
+			<!-- <animation effect="slide" start="0,0" end="0,-220" time="100" easing="inout" condition="!Player.HasMedia + [Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation> -->
+			<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,220" time="100" easing="inout" condition="Control.HasFocus(10)">Conditional</animation>
 			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
 				<effect type="slide" end="0,540" time="500" tween="sine"/>
@@ -99,25 +98,28 @@
 				<texture border="21">dialogs/dialog-bg.png</texture>
 			</control>
 			<control type="group">
-				<control type="label">
-					<left>840</left>
-					<top>40</top>
-					<aligny>center</aligny>
-					<height>24</height>
-					<right>60</right>
-					<align>right</align>
-					<font>font30_title</font>
-					<label>$INFO[Weather.Location]</label>
-				</control>
-				<control type="label">
-					<left>840</left>
-					<top>90</top>
-					<aligny>center</aligny>
-					<height>24</height>
-					<right>60</right>
-					<align>right</align>
-					<font>font14</font>
-					<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
+				<control type="group">
+				<animation effect="fade" start="100" end="0" reversible="false" time="300" condition="Window.IsActive(10151)">Conditional</animation>	
+					<control type="label">
+						<left>840</left>
+						<top>40</top>
+						<aligny>center</aligny>
+						<height>24</height>
+						<right>60</right>
+						<align>right</align>
+						<font>font30_title</font>
+						<label>$INFO[Weather.Location]</label>
+					</control>
+					<control type="label">
+						<left>840</left>
+						<top>90</top>
+						<aligny>center</aligny>
+						<height>24</height>
+						<right>60</right>
+						<align>right</align>
+						<font>font14</font>
+						<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
+					</control>
 				</control>
 				<control type="label">
 					<left>840</left>
@@ -140,7 +142,6 @@
 				<visible>!Player.HasMedia</visible>
 			</control>
 			<control type="group">
-				<!-- <animation effect="slide" start="0,0" end="0,200" time="200" tween="sine" condition="Integer.IsGreater(MusicPlayer.Time,20)">Conditional</animation> -->
 				<visible>Player.HasMedia</visible>
 				<control type="image">
 					<top>40</top>
@@ -196,7 +197,7 @@
 		<!-- Artes da Home Menu Default -->
 		<control type="group">
 			<visible>Control.HasFocus(10) | Control.HasFocus(13)</visible>
-			<animation effect="fade" start="0" end="100" delay="1000" reversible="false" time="300">VisibleChange</animation>
+			<animation effect="fade" start="0" end="100" reversible="false" time="300">VisibleChange</animation>
 			<bottom>115</bottom>
 			<height>230</height>
 			<control type="image">
@@ -209,15 +210,6 @@
 				<visible/>
 			</control>
 			<!-- Logo -->
-			<!-- <control type="image">
-				<top>100</top>
-				<right>17</right>
-				<width>400</width>
-				<height>155</height>
-				<texture>$INFO[ListItem.Label,resource://resource.images.xratedmodels/logos/,.png]</texture>
-				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
-				<fadetime>450</fadetime>
-			</control> -->
 			<control type="image" id="2816">
 				<top>100</top>
 				<right>17</right>
@@ -246,7 +238,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font37</font>
-				<fadetime>450</fadetime>
+				<fadetime>300</fadetime>
 			</control>
 			<!-- Detalhes de Mídia -->
 			<control type="textbox">
@@ -278,6 +270,7 @@
 			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
 				<effect type="slide" delay="1000" end="0,-555" time="500" tween="sine"/>
 			</animation>
+			
 			<bottom>-500</bottom>
 			<height>450</height>			
 			<control type="image">
@@ -310,7 +303,7 @@
 				<right>115</right>
 				<width>400</width>
 				<height>155</height>
-				<texture>$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist]\logo.png</texture>
+				<texture>$INFO[Window(home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
 			</control>
 			<control type="grouplist">
 				<orientation>horizontal</orientation>
@@ -514,24 +507,23 @@
 					<onfocus>ClearProperty(listposition,home)</onfocus>
 					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
-					<animation effect="slide" end="-250,0" condition="Window.IsActive(10151)">Conditional</animation>
+					<!-- <animation effect="slide" end="-400,0" condition="Window.IsActive(10151)">Conditional</animation> -->
 					<include>Center_Menu</include>
 					<top>20</top>
-					<width>1100</width>
+					<width>1400</width>
 					<onright>9001</onright>
 					<onleft>9002</onleft>
 					<ondown condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)">600</ondown>
-					<ondown>2000</ondown>
-					<ondown condition="String.IsEmpty(2000)">20001</ondown>
+					<ondown>10</ondown>					
 					<onup>700</onup>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<itemlayout height="70" width="220">
+					<itemlayout height="70" width="280">
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
 							<height>70</height>
-							<width>220</width>
+							<width>240</width>
 							<align>center</align>
 							<font>Home40</font>
 							<label>$INFO[ListItem.Label]</label>
@@ -539,12 +531,12 @@
 							<animation effect="fade" end="50" condition="true">Conditional</animation>
 						</control>
 					</itemlayout>
-					<focusedlayout height="70" width="220">
+					<focusedlayout height="70" width="280">
 						<control type="label">
 							<left>0</left>
 							<top>0</top>
 							<height>70</height>
-							<width>220</width>
+							<width>240</width>
 							<align>center</align>
 							<font>home40</font>
 							<label>$INFO[ListItem.Label]</label>
@@ -556,7 +548,7 @@
 							<left>0</left>
 							<top>0</top>
 							<height>70</height>
-							<width>220</width>
+							<width>240</width>
 							<align>center</align>
 							<font>home40</font>
 							<label>$INFO[ListItem.Label]</label>
@@ -597,8 +589,7 @@
 							<align>left</align>
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>white</textcolor>
-							
+							<textcolor>white</textcolor>							
 						</control>
 						<control type="image">
 							<left>0</left>
@@ -606,8 +597,7 @@
 							<width>90</width>
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
-							<colordiffuse>FFFFFFFF</colordiffuse>
-							
+							<colordiffuse>FFFFFFFF</colordiffuse>							
 						</control>
 					</itemlayout>
 					<focusedlayout height="90" width="220">
@@ -617,8 +607,7 @@
 							<width>90</width>
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
-							<colordiffuse>FFFFFFFF</colordiffuse>
-							
+							<colordiffuse>FFFFFFFF</colordiffuse>							
 							<visible>!Control.HasFocus(9001)</visible>
 						</control>
 						<control type="label">
@@ -630,8 +619,7 @@
 							<align>left</align>
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>white</textcolor>
-							
+							<textcolor>white</textcolor>							
 							<visible>!Control.HasFocus(9001)</visible>
 						</control>
 						<control type="group">
@@ -774,7 +762,7 @@
 					<width>1100</width>
 					<height>110</height>
 					<top>-100</top>
-					<onup>SetFocus(20000)</onup>
+					<onup>noop</onup>
 					<ondown>SetFocus(9000)</ondown>
 					<onback>9000</onback>
 					<onleft>700</onleft>
@@ -822,8 +810,8 @@
 				</control>
 			</control>
 			<!-- System Info -->
-			<control type="group">
-				<visible>!Player.HasMedia</visible>
+			<control type="group">				
+				<animation effect="fade" start="100" end="0" condition=" Player.HasMedia + Skin.HasSetting(showhomenowplaying)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-250" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation>
 				<control type="group">
 					<bottom>-250</bottom>
