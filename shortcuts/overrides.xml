@@ -159,7 +159,7 @@
 			<node label="32009">
 				<shortcut label="10001" type="32021" icon="DefaultAddonProgram.png">ActivateWindow(Programs,Addons,return)</shortcut>
 				<shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" condition="System.Platform.Android">ActivateWindow(Programs,androidapp://sources/apps,return)</shortcut>
-				<content>addon-program</content>
+				<content icon="DefaultAddonProgram.png">addon-program</content>
 			</node>
 			<node label="32010">
 				<shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
@@ -184,6 +184,8 @@
 			<content>commands</content>
 		</node>
 	</groupings>
+
+
 
 	<widget-groupings>	
         <content>widgets</content>

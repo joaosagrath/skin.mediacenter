@@ -19,7 +19,7 @@ msgstr ""
 #: /xml/Home.xml /xml/DialogSeekBar.xml
 msgctxt "#31000"
 msgid "Now playing"
-msgstr ""
+msgstr "Tocando Agora"
 
 #: /xml/Home.xml
 msgctxt "#31001"
@@ -264,14 +264,20 @@ msgctxt "#31048"
 msgid "Available"
 msgstr ""
 
-#empty string with id 31049
+#: /xml/SkinSettings.xml
+msgctxt "#31049"
+msgid "Select skin studios logo pack"
+msgstr "Selecione o pacote de logotipo de estúdios da skin"
 
 #: /xml/Variables.xml
 msgctxt "#31050"
 msgid "Press [B]OK[/B] to stop"
 msgstr ""
 
-#empty string with id 31051
+#: /xml/DialogExtendedProgressBar.xml
+msgctxt "#31051"
+msgid "Updating"
+msgstr "Atualizando"
 
 #: /xml/Includes.xml
 msgctxt "#31052"
@@ -496,7 +502,15 @@ msgctxt "#31107"
 msgid "WideList"
 msgstr ""
 
-#empty strings from id 31108 to 31109
+#: /xml/DialogExtendedProgressBar.xml
+msgctxt "#31108"
+msgid "Video Collection"
+msgstr "Coleção de Videos"
+
+#: /xml/DialogExtendedProgressBar.xml
+msgctxt "#31109"
+msgid "Music Collection"
+msgstr "Coleção de Músicas"
 
 #: /xml/Home.xml
 msgctxt "#31110"
@@ -605,8 +619,8 @@ msgstr "Ajustes do menu principal: Configure a tela inicial ao seu gosto."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31131"
-msgid "Choose skin fanart pack"
-msgstr ""
+msgid "Show media tags and studio logo on skin"
+msgstr "Exibir etiquetas de midia e logotipo de estúdios na skin"
 
 #: /xml/Custom_1101_SettingsList.xml
 msgctxt "#31132"
@@ -783,8 +797,8 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31168"
-msgid "Edit main menu"
-msgstr "Editar menu principal"
+msgid "Main menu"
+msgstr "Menu principal"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31169"

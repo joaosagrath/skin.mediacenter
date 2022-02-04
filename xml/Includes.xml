@@ -448,19 +448,11 @@
 				<width>1900</width>
 				<usecontrolcoords>true</usecontrolcoords>
 				<include content="MediaColorFlag">
-					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.coloured/,.png]"/>
+					<param name="texture" value="$INFO[Skin.String(studioicons.path)]$INFO[ListItem.Studio]$INFO[Skin.String(studioicons.ext)]"/>
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)"/>
 				</include>
 				<control type="group">
-					<width>150</width>
-					<visible>!System.HasAddon(resource.images.studios.coloured)</visible>
-					<include content="MediaFlag">
-						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]"/>
-						<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Studio)"/>
-					</include>
-				</control>
-				<control type="group">
-					<top>10</top>
+					<top>15</top>
 					<width>200</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)</visible>
 					<include content="InfoFlag">
@@ -469,6 +461,7 @@
 					</include>
 				</control>
 				<control type="group">
+					<top>05</top>
 					<width>115</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration)</visible>
 					<control type="label">
@@ -485,6 +478,7 @@
 				</control>
 				<!-- Games Flags -->
 				<control type="group">
+					<top>5</top>
 					<width>115</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(nplayers))</visible>
 					<control type="label">

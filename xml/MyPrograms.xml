@@ -41,11 +41,12 @@
 						<label>$LOCALIZE[31020]</label>
 						<visible>Control.IsVisible(621)</visible>
 					</control>
-					<control type="button" id="623">
+					<control type="radiobutton" id="623">
+						<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)></visible>
 						<include>MediaMenuItemsCommon</include>
-						<label>BUCETAS</label>
-						<onclick>xbmc.executebuiltin('RunScript(D:\Kodi\Kodi Matrix\Kodi\portable_data\addons\plugin.program.newsstand\resources\scan_issues.py)')</onclick>
-						<visible>!String.IsEmpty(Container.PluginName)</visible>
+						<label>Mostrar ìcones</label>
+						<onclick>Skin.ToggleSetting(Show_Icons)</onclick>
+						<selected>Skin.HasSetting(Show_Icons)</selected>
 					</control>
 					<control type="button" id="624">
 						<include>MediaMenuItemsCommon</include>

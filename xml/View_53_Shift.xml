@@ -64,6 +64,7 @@
 					<viewtype label="31100">icon</viewtype>
 					<itemlayout width="370">
 						<control type="image">
+							<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
 							<depth>DepthContentPopout</depth>
 							<left>0</left>
 							<top>90</top>
@@ -71,9 +72,54 @@
 							<height>480</height>
 							<aspectratio aligny="center">keep</aspectratio>
 							<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
-							<texture fallback="DefaultVideo.png">$VAR[PosterVar]</texture>
+							<texture>$VAR[PosterVar]</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
+						</control>
+						<control type="group">
+							<visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
+								<control type="group">
+									<visible>Skin.HasSetting(Show_Icons)</visible>
+									<control type="image">
+
+										<depth>DepthContentPopout</depth>
+										<left>0</left>
+										<top>90</top>
+										<width>370</width>
+										<height>480</height>
+										<aspectratio aligny="center">stretch</aspectratio>
+										<texture>dialogs/dialog-bg-nobo.png</texture>
+										<bordertexture border="21">overlays/shadow.png</bordertexture>
+										<bordersize>20</bordersize>
+									</control>
+									<control type="image">
+										
+										<depth>DepthContentPopout</depth>
+										<left>0</left>
+										<top>29</top>
+										<width>370</width>
+										<height>480</height>
+										<aspectratio aligny="center">keep</aspectratio>
+										<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
+										<texture>$INFO[ListItem.Icon]</texture>
+										<bordertexture border="21">overlays/shadow.png</bordertexture>
+										<bordersize>20</bordersize>
+									</control>
+								</control>
+								<control type="image">
+									<visible>!Skin.HasSetting(Show_Icons)</visible>
+									<depth>DepthContentPopout</depth>
+									<left>0</left>
+									<top>90</top>
+									<width>370</width>
+									<height>480</height>
+									<aspectratio aligny="center">keep</aspectratio>
+									<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
+									<texture>$VAR[PosterVar]</texture>
+									<bordertexture border="21">overlays/shadow.png</bordertexture>
+									<bordersize>20</bordersize>
+								</control>
+
 						</control>
 						<control type="textbox">
 							<left>20</left>
@@ -83,7 +129,7 @@
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-						</control>
+						</control> 
 						<control type="image">
 							<left>169</left>
 							<top>560</top>
@@ -94,6 +140,7 @@
 					</itemlayout>
 					<focusedlayout width="370">
 						<control type="image">
+							<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
 							<depth>DepthContentPopout</depth>
 							<left>0</left>
 							<top>90</top>
@@ -101,9 +148,54 @@
 							<height>480</height>
 							<aspectratio aligny="center">keep</aspectratio>
 							<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
-							<texture fallback="DefaultVideo.png">$VAR[PosterVar]</texture>
+							<texture>$VAR[PosterVar]</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
+						</control>
+						<control type="group">
+							<visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
+								<control type="group">
+									<visible>Skin.HasSetting(Show_Icons)</visible>
+									<control type="image">
+
+										<depth>DepthContentPopout</depth>
+										<left>0</left>
+										<top>90</top>
+										<width>370</width>
+										<height>480</height>
+										<aspectratio aligny="center">stretch</aspectratio>
+										<texture>dialogs/dialog-bg-nobo.png</texture>
+										<bordertexture border="21">overlays/shadow.png</bordertexture>
+										<bordersize>20</bordersize>
+									</control>
+									<control type="image">
+										
+										<depth>DepthContentPopout</depth>
+										<left>0</left>
+										<top>29</top>
+										<width>370</width>
+										<height>480</height>
+										<aspectratio aligny="center">keep</aspectratio>
+										<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
+										<texture>$INFO[ListItem.Icon]</texture>
+										<bordertexture border="21">overlays/shadow.png</bordertexture>
+										<bordersize>20</bordersize>
+									</control>
+								</control>
+								<control type="image">
+									<visible>!Skin.HasSetting(Show_Icons)</visible>
+									<depth>DepthContentPopout</depth>
+									<left>0</left>
+									<top>90</top>
+									<width>370</width>
+									<height>480</height>
+									<aspectratio aligny="center">keep</aspectratio>
+									<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
+									<texture>$VAR[PosterVar]</texture>
+									<bordertexture border="21">overlays/shadow.png</bordertexture>
+									<bordersize>20</bordersize>
+								</control>
+
 						</control>
 						<control type="textbox">
 							<left>20</left>
@@ -127,12 +219,13 @@
 			</control>
 			<!-- TESTE LABELS -->
 				<control type="label">
-					<top>-50</top>
+					<!-- <visible>String.StartsWith(Container.FolderPath,plugim://plugim.program.newsstand/)</visible> -->
+					<top>-20</top>
 					<left>20</left>
 					<!-- <label>$VAR[viewdisc]</label> -->
 					<!-- <label>.format(num_roms)</label> -->
 					<!-- $INFO[ListItem.Path,,logo.png] -->
-					<label>$INFO[ListItem.Property(buceta)]</label>
+					<label>$INFO[Container.Content]</label>
 					<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
 					<textcolor>white</textcolor>
 					<align>center</align>

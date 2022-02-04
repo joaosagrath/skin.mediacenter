@@ -9,8 +9,6 @@
 			<right>20</right>
 			<width>80</width>
 			<top>0</top>
-			<animation effect="slide" end="-50,885" condition="Window.IsActive(Home)">conditional</animation>
-			<animation effect="fade" start="100" end="0" time="100" condition="Player.HasMedia">Conditional</animation>
 			<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 			<animation effect="slide" end="0,-80" time="150" condition="Window.IsVisible(FullscreenVideo) | Window.IsVisible(FullscreenGame)">conditional</animation>
 			<control type="image">
@@ -48,9 +46,17 @@
 				<align>right</align>
 				<orientation>horizontal</orientation>
 				<control type="label" id="30">
+					<visible>!Window.IsActive(Home)</visible>
 					<width min="0" max="680">auto</width>
 					<height>120</height>
 					<font>font12</font>
+				</control>
+				<control type="label">
+					<visible>Window.IsActive(Home)</visible>
+					<width min="0" max="680">auto</width>
+					<height>120</height>
+					<font>font12</font>
+					<label>$LOCALIZE[31051]</label>
 				</control>
 				<control type="label">
 					<width min="0" max="120">auto</width>
@@ -61,6 +67,7 @@
 			</control>
 			<control type="label" id="31">
 				<description>Title label</description>
+				<visible>!Window.IsActive(Home)</visible>
 				<left>-750</left>
 				<top>33</top>
 				<width>750</width>
@@ -68,6 +75,46 @@
 				<font>font12</font>
 				<textcolor>80FFFFFF</textcolor>
 				<align>right</align>
+			</control>
+			
+			
+			<control type="label">
+				<description>Title label</description>
+				<visible>Window.IsActive(Home)</visible>
+				<left>-750</left>
+				<top>33</top>
+				<width>750</width>
+				<height>120</height>
+				<font>font10</font>
+				<textcolor>80FFFFFF</textcolor>
+				<align>right</align>
+				<label>$INFO[ListItem.Property(addon.status)]</label>			
+			</control>
+			
+			
+			<control type="label">
+				<description>Title label</description>
+				<visible>Window.IsActive(Home) + library.isscanningmusic</visible>
+				<left>-750</left>
+				<top>33</top>
+				<width>750</width>
+				<height>120</height>
+				<font>font10</font>
+				<textcolor>80FFFFFF</textcolor>
+				<align>right</align>
+				<label>$LOCALIZE[31109]</label>
+			</control>
+			<control type="label">
+				<description>Title label</description>
+				<visible>Window.IsActive(Home) + Library.IsScanningVideo</visible>
+				<left>-750</left>
+				<top>33</top>
+				<width>750</width>
+				<height>120</height>
+				<font>font10</font>
+				<textcolor>80FFFFFF</textcolor>
+				<align>right</align>
+				<label>$LOCALIZE[31108]</label>
 			</control>
 			<control type="progress" id="32">
 				<left>3000</left>

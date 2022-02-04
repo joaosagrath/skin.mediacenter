@@ -97,18 +97,18 @@
 			<param name="info_visible" value="true"/>
 		</include>
 		<control type="group">
-			<!-- <control type="group">
-				<visible>Control.IsVisible(51) | Control.IsVisible(53)</visible>
+			<control type="group">
+				<visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(53)</visible>
 				<depth>DepthBars</depth>
-				<bottom>20</bottom>
+				<bottom>00</bottom>
 				<height>70</height>
 				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-				<include condition="!Skin.HasSetting(hide_mediaflags)" content="MediaFlags">
+				<include condition="Skin.HasSetting(show_studioicons)" content="MediaFlags">
 					<param name="infolabel_prefix" value="Container."/>
 					<param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]"/>
 				</include>
-				<control type="rss">
+				<!-- <control type="rss">
 					<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 					<left>0</left>
 					<bottom>0</bottom>
@@ -123,9 +123,9 @@
 					<headlinecolor>FFC0C0C0</headlinecolor>
 					<visible>Skin.HasSetting(hide_mediaflags) | !ControlGroup(2000).HasFocus</visible>
 					<animation effect="fade" time="300">VisibleChange</animation>
-				</control>
+				</control> -->
 			</control>
-			<include>MediaMenuMouseOverlay</include> -->
+			<include>MediaMenuMouseOverlay</include>
 			<control type="group">
 				<include>MediaMenuCommon</include>
 				<control type="grouplist" id="9000">

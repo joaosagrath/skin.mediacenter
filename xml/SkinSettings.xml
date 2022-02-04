@@ -66,12 +66,12 @@
 					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
 					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
 				</control> -->
-				<control type="radiobutton" id="707">
+				<!-- <control type="radiobutton" id="707">
 					<label>$LOCALIZE[31160]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
-				</control>
+				</control> -->
 				<control type="button" id="708">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
@@ -111,19 +111,12 @@
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),0)">Skin.SetString(background_overlay,1)</onclick>
 				</control>
 				<!-- Select a custom background image -->
-				<!-- <control type="button" id="603">
-					<label>$LOCALIZE[31177]</label>
-					<label2>$INFO[Skin.String(CustomHomeFanart)]</label2>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.SetFile(CustomHomeFanart,.jpg|.png,special://home/addons/skin.mediacenter/extras/backgrounds)</onclick>
-				</control> -->
 				<control type="button" id="603">
 					<label>$LOCALIZE[31177]</label>
 					<label2>$INFO[Skin.String(CustomHomeFanart)]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SetString(CustomHomeFanart,special://home/addons/skin.mediacenter/extras/backgrounds/)</onclick>
 					<onclick>Skin.SetImage(CustomHomeFanart)</onclick>
-					<!-- <onclick>Skin.SetFile(CustomHomeFanart,.jpg|.png,special://home/addons/skin.mediacenter/extras/backgrounds)</onclick> -->
 				</control>
 				<!-- Clear the custom background adjustment -->
 				<control type="button" id="604">
@@ -140,15 +133,36 @@
 					<onclick>Skin.ToggleSetting(show_fanartbackground)</onclick>
 					<selected>Skin.HasSetting(show_fanartbackground)</selected>
 				</control>
-				<!-- <control type="button" id="608">
+				<control type="radiobutton" id="606">
 					<label>$LOCALIZE[31131]</label>
-					<label2>$INFO[Skin.String(HomeFanart.name)]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=HomeFanart&amp;type=resource.images.skinbackgrounds)</onclick>
+					<onclick>Skin.ToggleSetting(show_studioicons)</onclick>
+					<selected>Skin.HasSetting(show_studioicons)</selected>
+				</control>
+				<control type="button" id="607">
+					<label>$LOCALIZE[31049]</label>
+					<label2>$INFO[Skin.String(studioicons.name)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=studioicons&amp;type=resource.images.studios)</onclick>
 					<onclick condition="System.HasAddon(script.image.resource.select) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
 					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
-					<enable>!Skin.HasSetting(no_fanart)</enable>
-				</control> -->
+					<enable>Skin.HasSetting(show_studioicons)</enable>
+				</control>
+				<control type="radiobutton" id="608">
+					<label>Exibir ícones de gêneros Musicais na skin</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(show_genreicons)</onclick>
+					<selected>Skin.HasSetting(show_genreicons)</selected>
+				</control>
+				<control type="button" id="609">
+					<label>Selecione o pacote de ícones de gêneros musicais</label>
+					<label2>$INFO[Skin.String(musicgenres.name)]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=musicgenres&amp;type=resource.images.musicgenreicons)</onclick>
+					<onclick condition="System.HasAddon(script.image.resource.select) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
+					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
+					<enable>Skin.HasSetting(show_genreicons)</enable>
+				</control>
 				<!-- <control type="button" id="609">
 					<label>$LOCALIZE[31062]</label>
 					<label2>$INFO[Skin.String(WeatherFanart.name)]</label2>
@@ -187,22 +201,22 @@
 				<ondown>630</ondown>
 				<visible>Container(9000).HasFocus(4)</visible>
 				<!-- Ajustes do Menu Padrão -->
-				<control type="radiobutton" id="631">
+				<!-- <control type="radiobutton" id="631">
 					<label>$LOCALIZE[31169]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(Default_Menu)</onclick>
 					<selected>Skin.HasSetting(Default_Menu)</selected>
 					<onclick>Skin.Reset(SkinShortcuts_Menu)</onclick>
-				</control>
+				</control> -->
 				<!-- Menu Skin-Shortcuts -->
-				<control type="radiobutton" id="632">
+				<!-- <control type="radiobutton" id="632">
 					<label>$LOCALIZE[31170]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(SkinShortcuts_Menu)</onclick>
 					<selected>Skin.HasSetting(SkinShortcuts_Menu)</selected>
 					<onclick>Skin.Reset(Default_Menu)</onclick>
 					<enable>System.HasAddon(script.skinshortcuts)</enable>
-				</control>
+				</control> -->
 				<!-- Defina itens do menu Padrão -->
 				<control type="button" id="633">
 					<label>$LOCALIZE[31171]</label>
@@ -210,12 +224,12 @@
 					<onclick>ActivateWindow(1111)</onclick>
 				</control>
 				<!-- Defina itens do Skin-Shortcuts -->
-				<control type="button" id="634">
+				<!-- <control type="button" id="634">
 					<label>$LOCALIZE[31172]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<enable>System.HasAddon(script.skinshortcuts)</enable>
-				</control>
+				</control> -->
 				<!-- Esmaecer Widgets após 3 segundo -->
 				<control type="radiobutton" id="706">
 					<label>$LOCALIZE[31174]</label>

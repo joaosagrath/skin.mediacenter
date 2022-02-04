@@ -4,8 +4,8 @@
 	<backgroundcolor>background</backgroundcolor>
 	<onload condition="!String.IsEqual(skin.string(SkinStarted),started)">ReplaceWindow(1112)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
-	<onload condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onload>
-	<!-- <onload>Control.SetFocus(9000,2)</onload> -->
+	<onload condition="!System.HasAddon(script.skin.helper.service) + String.IsEqual(skin.string(SkinStarted),started)">InstallAddon(script.skin.helper.service)</onload>
+	<onload>Control.SetFocus(9000,2)</onload>
 	<controls>
 		<!-- Botões -->
 		<control type="button" id="20001">
@@ -13,7 +13,7 @@
 			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
 			<onfocus>Control.SetFocus(10)</onfocus>
 			<onclick>noop</onclick>
-			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>\
+			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
 		</control>
 		<control type="button" id="20002">
 			<include>HiddenObject</include>
@@ -64,14 +64,21 @@
 			<!-- <label>$VAR[viewdisc]</label> -->
 			<!-- <label>$INFO[ListItem.FolderPath,.banner.jpg]</label> -->
 			<!-- $INFO[ListItem.Path,,logo.png] -->
-			<!-- <label>$INFO[Container(9000).ListItem.Label]</label> -->
+			<!-- <label>$INFO[Container().NumItems]</label> -->
 			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
 			<!-- <label>$INFO[Player.Folderpath]discart.png</label> -->
-			<!-- <label>$INFO[ListItem.Label]</label> -->
+			<!-- <label>$INFO[Skin.String(studioicons.path)]$INFO[ListItem.Studio]$INFO[Skin.String(studioicons.ext)]</label> -->
+			<!-- <label>$INFO[Container.FolderPath]</label> -->
 			<textcolor>white</textcolor>
 			<align>center</align>
 			<!-- <visible>Control.HasFocus(10)</visible> -->
 		</control>
+		
+		
+		<setting id="studioicons.name" type="string">Studio Icons - Coloured</setting>
+		<setting id="studioicons.path" type="string">resource://resource.images.studios.coloured/</setting>
+		<setting id="studioicons.ext" type="string">.png</setting>
+		
 		<control type="image">
 			<bottom>20</bottom>
 			<left>20</left>
@@ -82,7 +89,6 @@
 		</control>
 		<!-- Status Home -->
 		<control type="group">
-			<!-- <animation effect="slide" start="0,0" end="0,-220" time="100" easing="inout" condition="!Player.HasMedia + [Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation> -->
 			<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,220" time="100" easing="inout" condition="Control.HasFocus(10)">Conditional</animation>
 			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
@@ -98,28 +104,25 @@
 				<texture border="21">dialogs/dialog-bg.png</texture>
 			</control>
 			<control type="group">
-				<control type="group">
-				<animation effect="fade" start="100" end="0" reversible="false" time="300" condition="Window.IsActive(10151)">Conditional</animation>	
-					<control type="label">
-						<left>840</left>
-						<top>40</top>
-						<aligny>center</aligny>
-						<height>24</height>
-						<right>60</right>
-						<align>right</align>
-						<font>font30_title</font>
-						<label>$INFO[Weather.Location]</label>
-					</control>
-					<control type="label">
-						<left>840</left>
-						<top>90</top>
-						<aligny>center</aligny>
-						<height>24</height>
-						<right>60</right>
-						<align>right</align>
-						<font>font14</font>
-						<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
-					</control>
+				<control type="label">
+					<left>840</left>
+					<top>40</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<right>60</right>
+					<align>right</align>
+					<font>font30_title</font>
+					<label>$INFO[Weather.Location]</label>
+				</control>
+				<control type="label">
+					<left>840</left>
+					<top>90</top>
+					<aligny>center</aligny>
+					<height>24</height>
+					<right>60</right>
+					<align>right</align>
+					<font>font14</font>
+					<label>$INFO[Weather.Conditions,, ∙ ]$INFO[Weather.Temperature]</label>
 				</control>
 				<control type="label">
 					<left>840</left>
@@ -158,7 +161,7 @@
 					<right>60</right>
 					<align>left</align>
 					<font>font30_title</font>
-					<label>Now Playing</label>
+					<label>$LOCALIZE[31000]</label>
 				</control>
 				<control type="image">
 					<left>190</left>
@@ -186,7 +189,7 @@
 					<top>140</top>
 					<aligny>center</aligny>
 					<height>24</height>
-					<width>65%</width>
+					<width>50%</width>
 					<align>left</align>
 					<font>font14</font>
 					<scroll>true</scroll>
@@ -202,12 +205,10 @@
 			<height>230</height>
 			<control type="image">
 				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Artist_Description)) | !String.IsEmpty(ListItem.Property(album_description))</visible>
-				<top>50</top>
-				<left>0</left>
-				<width>1920</width>
-				<height>230</height>
-				<texture colordiffuse="black">shadow.png</texture>
-				<visible/>
+				<bottom>-40</bottom>
+				<height>175</height>
+				<width>100%</width>
+				<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 			</control>
 			<!-- Logo -->
 			<control type="image" id="2816">
@@ -270,9 +271,8 @@
 			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
 				<effect type="slide" delay="1000" end="0,-555" time="500" tween="sine"/>
 			</animation>
-			
 			<bottom>-500</bottom>
-			<height>450</height>			
+			<height>450</height>
 			<control type="image">
 				<top>150</top>
 				<left>0</left>
@@ -514,7 +514,7 @@
 					<onright>9001</onright>
 					<onleft>9002</onleft>
 					<ondown condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)">600</ondown>
-					<ondown>10</ondown>					
+					<ondown>10</ondown>
 					<onup>700</onup>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -589,7 +589,7 @@
 							<align>left</align>
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>white</textcolor>							
+							<textcolor>white</textcolor>
 						</control>
 						<control type="image">
 							<left>0</left>
@@ -597,7 +597,7 @@
 							<width>90</width>
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
-							<colordiffuse>FFFFFFFF</colordiffuse>							
+							<colordiffuse>FFFFFFFF</colordiffuse>
 						</control>
 					</itemlayout>
 					<focusedlayout height="90" width="220">
@@ -607,7 +607,7 @@
 							<width>90</width>
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
-							<colordiffuse>FFFFFFFF</colordiffuse>							
+							<colordiffuse>FFFFFFFF</colordiffuse>
 							<visible>!Control.HasFocus(9001)</visible>
 						</control>
 						<control type="label">
@@ -619,7 +619,7 @@
 							<align>left</align>
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
-							<textcolor>white</textcolor>							
+							<textcolor>white</textcolor>
 							<visible>!Control.HasFocus(9001)</visible>
 						</control>
 						<control type="group">
@@ -681,7 +681,6 @@
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>white</textcolor>
-							
 						</control>
 						<control type="image">
 							<left>210</left>
@@ -690,7 +689,6 @@
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
 							<colordiffuse>FFFFFFFF</colordiffuse>
-							
 							<aspectratio>scale</aspectratio>
 						</control>
 					</itemlayout>
@@ -702,7 +700,6 @@
 							<height>90</height>
 							<texture aligny="center">$INFO[ListItem.Art(thumb)]</texture>
 							<colordiffuse>FFFFFFFF</colordiffuse>
-							
 							<visible>!Control.HasFocus(9002)</visible>
 							<aspectratio>scale</aspectratio>
 						</control>
@@ -716,7 +713,6 @@
 							<font>home30</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>white</textcolor>
-							
 							<visible>!Control.HasFocus(9002)</visible>
 						</control>
 						<control type="group">
@@ -810,7 +806,7 @@
 				</control>
 			</control>
 			<!-- System Info -->
-			<control type="group">				
+			<control type="group">
 				<animation effect="fade" start="100" end="0" condition=" Player.HasMedia + Skin.HasSetting(showhomenowplaying)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-250" time="100" easing="inout" condition="[Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806)]">Conditional</animation>
 				<control type="group">
@@ -958,11 +954,11 @@
 					<height>70</height>
 					<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-					<include condition="!Skin.HasSetting(hide_mediaflags)" content="MediaFlags">
+					<include condition="Skin.HasSetting(show_studioicons)" content="MediaFlags">
 						<param name="infolabel_prefix" value="Container."/>
 						<param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]"/>
 					</include>
-					<control type="rss">
+					<!-- <control type="rss">
 						<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 						<left>0</left>
 						<bottom>0</bottom>
@@ -977,7 +973,7 @@
 						<headlinecolor>FFC0C0C0</headlinecolor>
 						<visible>Skin.HasSetting(hide_mediaflags) | !ControlGroup(2000).HasFocus</visible>
 						<animation effect="fade" time="300">VisibleChange</animation>
-					</control>
+					</control> -->
 				</control>
 			</control>
 		</control>

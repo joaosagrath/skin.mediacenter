@@ -145,6 +145,7 @@
 		</item>
 		<!-- Favoritos ID 14000 -->
 		<item>
+
 			<label>$LOCALIZE[10134]</label>
 			<onclick>ActivateWindow(favourites)</onclick>
 			<property name="menu_id">$NUMBER[14000]</property>

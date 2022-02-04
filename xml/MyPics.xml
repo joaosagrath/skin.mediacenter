@@ -16,21 +16,19 @@
 				<effect type="slide" start="0,0" end="0,500" time="400" delay="300" tween="cubic" easing="out"/>
 			</animation>
 			<control type="image">
-				<width>100%</width>
-				<height>100%</height>
-				<colordiffuse>60FFFFFF</colordiffuse>
-				<texture>$INFO[ListItem.FolderPath]</texture>
-				<aspectratio aligny="center" alignx="center">scale</aspectratio>
-				<fadetime>500</fadetime>
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<fadetime>400</fadetime>
+				<animation effect="fade" time="400">VisibleChange</animation>
+				<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(PicsArtsPath)]$INFO[Container.FolderName]\fanarts\$INFO[ListItem.Label,,.jpg]</texture>
 			</control>
-			<!-- <control type="label">
-				<left>50</left>
-				<right>50</right>
-				<top>800</top>
-				<label>$INFO[ListItem.FolderPath]</label>
-			</control> -->
-			
-			
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<fadetime>400</fadetime>
+				<animation effect="fade" time="400">VisibleChange</animation>
+				<texture background="true" colordiffuse="FF878787">$INFO[ListItem.FolderPath]</texture>
+			</control>
 			<include>View_505_ListPics</include>
 			<include>ViewBasic</include>
 			<include>CommonScrollbars</include>
@@ -59,6 +57,13 @@
 					<include>MediaMenuLabelCommon</include>
 					<label>$LOCALIZE[31020]</label>
 				</control>
+				<control type="button" id="5">
+					<label>Ícones $VAR[PicIconSizeVar]</label>
+					<include>MediaMenuItemsCommon</include>
+					<onclick condition="String.IsEqual(Skin.String(PicIcon),M)">Skin.SetString(PicIcon,G)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(PicIcon),G)">Skin.SetString(PicIcon,P)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(PicIcon),P)">Skin.SetString(PicIcon,M)</onclick>					
+				</control>
 				<control type="button" id="6">
 					<label>$LOCALIZE[13317]</label>
 					<include>MediaMenuItemsCommon</include>
@@ -71,13 +76,7 @@
 					<label>$LOCALIZE[13319]</label>
 					<include>MediaMenuItemsCommon</include>
 				</control>
-				<control type="button" id="622">
-					<include>MediaMenuItemsCommon</include>
-					<label>$LOCALIZE[31124]</label>
-					<onclick condition="System.HasAddon(script.maps.browser)">RunScript(script.maps.browser,folder=$INFO[Container.FolderPath])</onclick>
-					<onclick condition="!System.HasAddon(script.maps.browser)">InstallAddon(script.maps.browser)</onclick>
-					<visible>Container.Content(images) + String.IsEmpty(Container.PluginName)</visible>
-				</control>
+
 				<control type="button" id="624">
 					<include>MediaMenuItemsCommon</include>
 					<label>$LOCALIZE[10140]</label>
@@ -91,6 +90,12 @@
 					<onclick>ActivateWindow(addonbrowser,addons://more/image/,return)</onclick>
 					<visible>Container.Content(addons)</visible>
 				</control>
+				<control type="togglebutton" id="630">
+						<description>PicsArts</description>
+						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[31179]</label>
+						<onclick>Skin.SetPath(PicsArtsPath)</onclick>
+					</control>
 				<control type="button" id="625">
 					<include>MediaMenuItemsCommon</include>
 					<label>$LOCALIZE[31223]</label>

@@ -9,15 +9,12 @@
 			<include>Visible_Right</include>
 			<!-- TESTE LABELS -->
 			<control type="label">
-				<!-- <visible>Window.IsActive(musicvideos)</visible> -->
+				<visible>String.IsEqual(ListItem.DBTYPE,genre)</visible>
 				<top>45</top>
 				<left>500</left>
 				<!-- <label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label> -->
 				<!-- <label>$VAR[viewdisc]</label> -->
-				<label>$INFO[ListItem.DBTYPE(actor)]</label>
-				
-				
-				
+				<label>$INFO[Skin.String(musicgenres.path)]default.jpg</label>
 				<!-- $INFO[ListItem.Path,,logo.png] -->
 				<!-- <label>$INFO[Container(50).NumItems]</label> -->
 				<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
@@ -29,69 +26,71 @@
 				<scroll>true</scroll>
 				<!-- <visible>Control.HasFocus(10)</visible> -->
 			</control>
-			<control type="image">
-				<left>50</left>
-				<right>53%</right>
-				<top>120</top>
-				<bottom>300</bottom>
-				<height>640</height>
-				<texture>$INFO[ListItem.Art(discart)]</texture>
-				<fadetime>450</fadetime>
-				<aspectratio align="center" aligny="center">keep</aspectratio>
-				<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
-					<effect type="slide" start="0,0" end="120,0" time="400" delay="1000" tween="cubic" easing="out"/>
-					<effect type="fade" start="0" end="100" time="1000" delay="1000" tween="cubic" easing="out"/>
-				</animation>
-				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="Player.HasMedia + !Player.Paused">Conditional</animation>
-			</control>
-			<control type="image">
+			<!-- Discart -->
+			<control type="group">
 				<left>150</left>
 				<right>53%</right>
 				<top>120</top>
 				<bottom>300</bottom>
 				<height>640</height>
-				<texture>$INFO[ListItem.FolderPath,.discart.png]</texture>
-				<fadetime>450</fadetime>
-				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
 					<effect type="slide" start="0,0" end="120,0" time="400" delay="1000" tween="cubic" easing="out"/>
 					<effect type="fade" start="0" end="100" time="1000" delay="1000" tween="cubic" easing="out"/>
 				</animation>
 				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="Player.HasMedia + !Player.Paused">Conditional</animation>
-			</control>
-			<control type="group">
-				<control type="image" id="499">
-					<left>50</left>
-					<right>53%</right>
-					<top>91</top>
-					<bottom>287</bottom>
-					<texture>$VAR[picposter]</texture>
+				<control type="image">
+					<texture>$INFO[ListItem.Art(discart)]</texture>
 					<fadetime>450</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
-					<bordersize>20</bordersize>
 				</control>
 				<control type="image">
+					<texture>$INFO[ListItem.FolderPath,.discart.png]</texture>
+					<fadetime>450</fadetime>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+			</control>
+			<!-- Poster & Icons -->
+			<control type="group">
+				<control type="group">
 					<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
 						<effect type="slide" start="0,0" end="-120,0" time="400" delay="1000" tween="cubic" easing="out"/>
 					</animation>
-					<visible>String.IsEmpty(Control.GetLabel(499))</visible>
-					<left>50</left>
-					<right>53%</right>
-					<top>91</top>
-					<bottom>287</bottom>
-					<texture>$VAR[PosterVar]</texture>
-					<fadetime>450</fadetime>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
-					<bordersize>20</bordersize>
+					<control type="image" id="499">
+						<left>50</left>
+						<right>53%</right>
+						<top>91</top>
+						<bottom>287</bottom>
+						<texture>$VAR[picposter]</texture>
+						<fadetime>450</fadetime>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<bordertexture border="21">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image">					
+						<visible>String.IsEmpty(Control.GetLabel(499))</visible>
+						<left>50</left>
+						<right>53%</right>
+						<top>91</top>
+						<bottom>287</bottom>
+						<texture>$VAR[PosterVar]</texture>
+						<fadetime>450</fadetime>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<bordertexture border="21">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image">				
+						<visible>String.IsEqual(ListItem.dbtype,genre)</visible>
+						<left>50</left>
+						<right>53%</right>
+						<top>91</top>
+						<bottom>287</bottom>
+						<texture>$INFO[Skin.String(musicgenres.path)]$INFO[ListItem.Genre,,.jpg]</texture>
+						<fadetime>450</fadetime>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<bordertexture border="21">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
 				</control>
-				<!-- <control type="image"> -->
-				<!-- <bottom>50</bottom> -->
-				<!-- <height>270</height> -->
-				<!-- <width>100%</width> -->
-				<!-- <texture colordiffuse="black">shadow.png</texture> -->
-				<!-- </control> -->
 				<control type="image">
 					<bottom>70</bottom>
 					<height>220</height>
@@ -201,7 +200,6 @@
 				<onright condition="Control.IsVisible(80)">80</onright>
 				<onright condition="!Control.IsVisible(80)">900</onright>
 				<viewtype label="$PARAM[viewtype_label]">list</viewtype>
-				
 				<itemlayout height="83" condition="!Container.Content(addons)">
 					<control type="label">
 						<left>100</left>
@@ -209,9 +207,9 @@
 						<bottom>0</bottom>
 						<aligny>center</aligny>
 						<font>font27</font>
-						<label>$INFO[ListItem.Property(name),] $INFO[ListItem.Label]</label>
+						<label>$INFO[ListItem.Property(name)] $INFO[ListItem.Label]</label>
 						<shadowcolor>text_shadow</shadowcolor>
-					</control>					
+					</control>
 					<control type="image">
 						<left>21</left>
 						<centertop>50%</centertop>
@@ -267,7 +265,6 @@
 						<texture colordiffuse="grey">$INFO[ListItem.Overlay]</texture>
 					</control>
 				</focusedlayout>
-				
 				<itemlayout height="83" condition="Container.Content(addons)">
 					<control type="label">
 						<left>100</left>
@@ -353,10 +350,7 @@
 						<!-- <visible>!ListItem.IsFolder</visible> -->
 					</control>
 				</focusedlayout>
-				
 			</control>
 		</definition>
-		
 	</include>
-	
 </includes>
