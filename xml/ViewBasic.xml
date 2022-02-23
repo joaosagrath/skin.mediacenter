@@ -9,18 +9,20 @@
 			<include>Visible_Right</include>
 			<!-- TESTE LABELS -->
 			<control type="label">
-				<visible>String.IsEqual(ListItem.DBTYPE,genre)</visible>
+				<!-- <visible>String.IsEqual(ListItem.DBTYPE,genre)</visible> -->
 				<top>45</top>
 				<left>500</left>
 				<!-- <label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label> -->
 				<!-- <label>$VAR[viewdisc]</label> -->
-				<label>$INFO[Skin.String(musicgenres.path)]default.jpg</label>
+				<!-- <label>$INFO[Skin.String(musicgenres.path)]default.jpg</label> -->
 				<!-- $INFO[ListItem.Path,,logo.png] -->
 				<!-- <label>$INFO[Container(50).NumItems]</label> -->
 				<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
 				<!-- <label>$INFO[Player.Folderpath]discart.png</label> -abel> -->
 				<!-- <label>$INFO[Skin.String(MusicArtsPath)]$INFO[ListItem.Artist]</label> -->
-				<!-- <label>$INFO[ListItem.Comment]</label> -->
+				<!-- <label>$INFO[ListItem.Property(name)]</label> -->
+				<!-- <label>$INFO[Skin.String(ModelsArtsPath)]flyers\$INFO[ListItem.Label].jpg</label> -->
+				<!-- <label>$INFO[Container.Content]</label> -->
 				<textcolor>white</textcolor>
 				<align>left</align>
 				<scroll>true</scroll>
@@ -33,7 +35,8 @@
 				<top>120</top>
 				<bottom>300</bottom>
 				<height>640</height>
-				<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
+				<visible>Window.IsActive(Videos) | Window.IsActive(Music)</visible>
+				<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart))">
 					<effect type="slide" start="0,0" end="120,0" time="400" delay="1000" tween="cubic" easing="out"/>
 					<effect type="fade" start="0" end="100" time="1000" delay="1000" tween="cubic" easing="out"/>
 				</animation>
@@ -52,7 +55,7 @@
 			<!-- Poster & Icons -->
 			<control type="group">
 				<control type="group">
-					<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart)">
+					<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart))">
 						<effect type="slide" start="0,0" end="-120,0" time="400" delay="1000" tween="cubic" easing="out"/>
 					</animation>
 					<control type="image" id="499">
@@ -60,7 +63,7 @@
 						<right>53%</right>
 						<top>91</top>
 						<bottom>287</bottom>
-						<texture>$VAR[picposter]</texture>
+						<texture>$INFO[Skin.String(ModelsArtsPath)]flyers\$INFO[ListItem.Label].jpg</texture>
 						<fadetime>450</fadetime>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -136,24 +139,13 @@
 					<fadetime>450</fadetime>
 					<autoscroll time="3000" repeat="3000">True</autoscroll>
 				</control>
-				<control type="image">
-					<visible>!String.IsEqual(Container.FolderPath,plugin://plugin.program.newsstand/?com=SHOW_COLLECTIONS)</visible>
+			<control type="image">
 					<right>50</right>
 					<top>805</top>
 					<bottom>90</bottom>
 					<width>477</width>
 					<texture>$VAR[ClearLogoVar]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<fadetime>450</fadetime>
-				</control>
-				<control type="image">
-					<visible>String.IsEqual(Container.FolderPath,plugin://plugin.program.newsstand/?com=SHOW_COLLECTIONS)</visible>
-					<top>800</top>
-					<bottom>150</bottom>
-					<height>200</height>
-					<width>1920</width>
-					<texture>$VAR[ClearLogoVar]</texture>
-					<aspectratio>keep</aspectratio>
 					<fadetime>450</fadetime>
 				</control>
 			</control>

@@ -5,7 +5,7 @@
 	<onload condition="!String.IsEqual(skin.string(SkinStarted),started)">ReplaceWindow(1112)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload condition="!System.HasAddon(script.skin.helper.service) + String.IsEqual(skin.string(SkinStarted),started)">InstallAddon(script.skin.helper.service)</onload>
-	<onload>Control.SetFocus(9000,2)</onload>
+	<!-- <onload>Control.SetFocus(9000,2)</onload> -->
 	<controls>
 		<!-- Botões -->
 		<control type="button" id="20001">
@@ -228,19 +228,6 @@
 				<texture>$VAR[ClearLogoVar]</texture>
 				<fadetime>450</fadetime>
 			</control>
-			<control type="textbox">
-				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
-				<visible>String.IsEmpty(Control.GetLabel(2816))</visible>
-				<top>100</top>
-				<right>17</right>
-				<width>400</width>
-				<height>155</height>
-				<label>$INFO[ListItem.Label]</label>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>font37</font>
-				<fadetime>300</fadetime>
-			</control>
 			<!-- Detalhes de Mídia -->
 			<control type="textbox">
 				<top>100</top>
@@ -253,8 +240,24 @@
 				<fadetime>450</fadetime>
 				<autoscroll time="3000" repeat="3000">True</autoscroll>
 			</control>
-			<!-- Descrição de Mídia -->
+			<!-- Descrição de Mídia Sem logo-->
 			<control type="textbox">
+				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
+				<visible>String.IsEmpty(Control.GetLabel(2816))</visible>
+				<top>100</top>
+				<left>870</left>
+				<width>1000</width>
+				<height>155</height>
+				<label>$VAR[ShiftRightTextBoxVar]</label>
+				<align>justify</align>
+				<font>font10</font>
+				<fadetime>450</fadetime>
+				<autoscroll time="3000" repeat="3000">True</autoscroll>
+			</control>
+			<!-- Descrição de Mídia Com logo-->
+			<control type="textbox">
+				<visible>!String.IsEmpty(Control.GetLabel(2815))</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(2816))</visible>
 				<top>100</top>
 				<left>870</left>
 				<width>600</width>

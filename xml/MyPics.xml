@@ -37,7 +37,7 @@
 				<include>OpenClose_Left</include>
 				<visible>Control.Isvisible(54)</visible>
 				<include>Visible_Left</include>
-				<include>ListThumbInfoPanel</include>
+				<!-- <include>ListThumbInfoPanel</include> -->
 			</control>
 		</control>
 		<include content="TopBar">

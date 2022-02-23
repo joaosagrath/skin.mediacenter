@@ -26,6 +26,24 @@
 			<textcolor>yellow</textcolor>
 			<shadowcolor>black</shadowcolor>
 		</control>
+		<control type="label">
+				<top>45</top>
+				<left>500</left>
+				<!-- <label>Y:\Artwork\Nubiles\clearlogos\$INFO[ListItem.FolderName,,.png]</label> -->
+				<!-- <label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label> -->
+				<!-- <label>$VAR[viewdisc]</label> -->
+				<!-- <label>$INFO[Skin.String(musicgenres.path)]default.jpg</label> -->
+				<!-- $INFO[ListItem.Path,,logo.png] -->
+				<!-- <label>$INFO[Container(50).NumItems]</label> -->
+				<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
+				<!-- <label>$INFO[Player.Folderpath]discart.png</label> -abel> -->
+				<!-- <label>$INFO[Skin.String(MusicArtsPath)]$INFO[ListItem.Artist]</label> -->
+				<!-- <label>$INFO[ListItem.Property(name)]</label> -->
+				<label>$INFO[ListItem.FolderPath]</label>
+				<textcolor>white</textcolor>
+				<align>left</align>
+				<scroll>true</scroll>
+			</control>
 		<!-- <control type="label">
 			<left>50</left>
 			<bottom>50</bottom>

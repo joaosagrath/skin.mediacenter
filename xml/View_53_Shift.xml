@@ -225,7 +225,7 @@
 					<!-- <label>$VAR[viewdisc]</label> -->
 					<!-- <label>.format(num_roms)</label> -->
 					<!-- $INFO[ListItem.Path,,logo.png] -->
-					<label>$INFO[Container.Content]</label>
+					<!-- <label>$INFO[Container.Content]</label> -->
 					<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
 					<textcolor>white</textcolor>
 					<align>center</align>

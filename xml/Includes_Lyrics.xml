@@ -4,17 +4,19 @@
 		<control type="group">
 			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="3000">WindowOpen</animation>
 			<animation effect="slide" start="0,-500" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation>
-			
+			<animation type="Conditional" condition="Window.IsActive(musicosd)">
+				<effect type="slide" start="0,0" end="0,-120" time="200" tween="cubic" easing="inout"/>
+			</animation>
 			<!-- Scraper -->
 				<control type="label" id="200">
 					<visible>false</visible>
 				</control>
 			<!-- ** Required ** Do not change <id> or <type> -->
 			<control type="list" id="110">
-				<right>30</right>
+				<right>115</right>
 				<top>0</top>
 				<width>1920</width>
-				<height>680</height>
+				<height>580</height>
 				<onleft condition="![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(1158)</onleft>
 				<onright>ActivateWindow(120)</onright>
 				<onleft>ActivateWindow(120)</onleft>

@@ -6,7 +6,7 @@
 	<include file="Includes_Home.xml"/>
 	<include file="Includes_HomeItens.xml"/>
 	<include file="Includes_Animations.xml"/>
-	<include file="Includes_Models.xml"/>
+	<!-- <include file="Includes_Models.xml"/> -->
 	<include file="Includes_MediaMenu.xml"/>
 	<include file="Includes_Buttons.xml"/>
 	<include file="Includes_DialogSelect.xml"/>
@@ -16,12 +16,12 @@
 	<include file="Includes_Lyrics.xml"/>
 	<include file="ViewBasic.xml"/>
 	<include file="View_51_Poster.xml"/>
-	<include file="View_52_IconWall.xml"/>
+	<!-- <include file="View_52_IconWall.xml"/> -->
 	<include file="View_53_Shift.xml"/>
-	<include file="View_503_NowPlaying.xml"/>
-	<include file="View_500_Wall.xml"/>
+	<!-- <include file="View_503_NowPlaying.xml"/> -->
+	<!-- <include file="View_500_Wall.xml"/> -->
 	<include file="View_501_Banner.xml"/>
-	<include file="View_502_FanArt.xml"/>
+	<!-- <include file="View_502_FanArt.xml"/> -->
 	<include file="View_504_SteamBanner.xml"/>
 	<include file="View_505_ListPics.xml"/>
 	<include file="Variables.xml"/>

@@ -32,7 +32,7 @@
 				<include>OpenClose_Left</include>
 				<visible>Control.IsVisible(55)</visible>
 				<include>Visible_Left</include>
-				<include>ListThumbInfoPanel</include>
+				<!-- <include>ListThumbInfoPanel</include> -->
 			</control>
 			<!-- <control type="group">
 				<depth>DepthContentPanel</depth>
@@ -90,7 +90,7 @@
 			</control> -->
 		</control>
 		<!-- Barra de Cima e de Baixo -->
-		<include content="TopBar">
+			<include content="TopBar">
 			<param name="breadcrumbs_label" value="$VAR[BreadcrumbsGameVar]"/>
 		</include>
 		<include content="BottomBar">

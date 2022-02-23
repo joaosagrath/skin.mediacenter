@@ -22,7 +22,7 @@
 			<!-- <label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label> -->
 			<!-- <label>$VAR[viewdisc]</label> -->
 			<!-- <label>$INFO[Container.FolderName]</label> -->
-			<label>$INFO[Skin.String(PicsArtsPath)]$INFO[Container.FolderName]\fanarts\$INFO[ListItem.Label,,.jpg]</label>
+			<!-- <label>$INFO[Skin.String(PicsArtsPath)]$INFO[Container.FolderName]\fanarts\$INFO[ListItem.Label,,.jpg]</label> -->
 			<!-- $INFO[ListItem.Path,,logo.png] -->
 			<!-- <label>$INFO[Container(50).NumItems]</label> -->
 			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->

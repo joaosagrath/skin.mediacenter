@@ -18,9 +18,9 @@
 				<visible>Control.IsVisible(55)</visible>
 				<visible>Container.Content(addons) | Container.Content()</visible>
 				<include>Visible_Left</include>
-				<include content="ListThumbInfoPanel">
+				<!-- <include content="ListThumbInfoPanel">
 					<param name="fallback_image" value="DefaultAddon.png" />
-				</include>
+				</include> -->
 				<control type="group">
 					<visible>String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</visible>
 					<control type="image">

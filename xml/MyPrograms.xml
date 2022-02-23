@@ -39,10 +39,10 @@
 						<description>Actions</description>
 						<include>MediaMenuLabelCommon</include>
 						<label>$LOCALIZE[31020]</label>
-						<visible>Control.IsVisible(621)</visible>
+						<!-- <visible>Control.IsVisible(621)</visible> -->
 					</control>
 					<control type="radiobutton" id="623">
-						<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)></visible>
+						<visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
 						<include>MediaMenuItemsCommon</include>
 						<label>Mostrar ìcones</label>
 						<onclick>Skin.ToggleSetting(Show_Icons)</onclick>
@@ -50,10 +50,29 @@
 					</control>
 					<control type="button" id="624">
 						<include>MediaMenuItemsCommon</include>
+						<label>$LOCALIZE[31223]</label>
+						<onclick>ActivateWindow(settings)</onclick>
+					</control>
+					<control type="button" id="625">
+						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[10140]</label>
 						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
 						<visible>!String.IsEmpty(Container.PluginName)</visible>
 					</control>
+					<control type="label" id="627">
+						<description>Actions</description>
+						<include>MediaMenuLabelCommon</include>
+						<label>Selecione Pasta de Artes</label>
+						<scroll>true</scroll>
+						<visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
+					</control>
+					<control type="button" id="626">
+						<include>MediaMenuItemsCommon</include>
+						<label>$INFO[Skin.String(ModelsArtsPath)]</label>
+						<onclick>Skin.SetPath(ModelsArtsPath)</onclick>
+						<visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
+					</control>
+					
 					<control type="button" id="621">
 						<description>Get more</description>
 						<include>MediaMenuItemsCommon</include>
@@ -61,13 +80,15 @@
 						<onclick>ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick>
 						<visible>Container.Content(addons)</visible>
 					</control>
-					<control type="button" id="625">
-						<include>MediaMenuItemsCommon</include>
-						<label>$LOCALIZE[31223]</label>
-						<onclick>ActivateWindow(settings)</onclick>
+					<control type="label" id="632">
+						<description>Actions</description>
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31081]</label>
+						<visible>Player.HasAudio</visible>
 					</control>
+					<include>MediaMenuNowPlaying</include>
 				</control>
-				<include>MediaMenuNowPlaying</include>
+				
 			</control>
 			<!-- Esconde Elementos da Tela -->
 			<control type="button" id="900">

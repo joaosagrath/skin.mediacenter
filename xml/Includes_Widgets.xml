@@ -35,7 +35,7 @@
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(GamesWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(GamesWidgets.Target)]"/>
-							<param name="sortby" value="ascending"/>
+							<param name="sortby" value="title"/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultgames.png"/>
 							<param name="aligny" value="bottom"/>
@@ -86,7 +86,7 @@
 							<param name="content_path" value="$INFO[Skin.String(TvShowsWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(TvShowsWidgets.Target)]"/>
 							<param name="sortby" value="title"/>
-							<param name="sortorder" value="ascending"/>
+							<param name="sortorder" value="title"/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaulttvshows.png"/>
 							<param name="aligny" value="bottom"/>
@@ -112,7 +112,7 @@
 							<param name="content_path" value="$INFO[Skin.String(MusicWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MusicWidgets.Target)]"/>
 							<param name="sortby" value="title"/>
-							<param name="sortorder" value="ascending"/>
+							<param name="sortorder" value="title"/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultmusic.png"/>
 							<param name="aligny" value="bottom"/>
@@ -139,7 +139,7 @@
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(PicturesWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(PicturesWidgets.Target)]"/>
-							<param name="sortby" value="ascending"/>
+							<param name="sortby" value="title"/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultpicture.png"/>
 							<param name="aligny" value="bottom"/>
@@ -215,7 +215,7 @@
 						<onup>9001</onup>
 						<ondown>13</ondown>
 						<include content="WidgetListChannels" condition="System.HasPVRAddon">
-							<param name="content_path" value="$INFO[Skin.String(PVRTVWidgets.Path]"/>
+							<param name="content_path" value="$INFO[Skin.String(PVRTVWidgets.Path)]"/>
 							<param name="widget_target" value="pvr"/>
 							<param name="sortby" value="name"/>
 							<param name="sortorder" value="Ascending"/>											

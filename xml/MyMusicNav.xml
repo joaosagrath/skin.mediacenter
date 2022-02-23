@@ -188,19 +188,21 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[31223]</label>
 						<onclick>ActivateWindow(settings)</onclick>
-					</control>					
+					</control>	
+					<control type="label" id="631">
+						<description>Actions</description>
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31179]</label>
+						<visible>Window.IsActive(Music)</visible>
+					</control>
 					<control type="togglebutton" id="630">
 						<description>Music Art Path</description>
 						<include>MediaMenuItemsCommon</include>
-						<label>$LOCALIZE[31179]</label>
+						<label>$INFO[Skin.String(MusicArtsPath)]</label>
 						<onclick>Skin.SetPath(MusicArtsPath)</onclick>
 						<visible>Window.IsActive(Music)</visible>
 					</control>
-					<!-- <control type="label">
-						<include>MediaMenuItemsCommon</include>
-						<label>"$INFO[Skin.String(MusicArtsPath)]</label>
-					</control> -->
-					<control type="label" id="631">
+					<control type="label" id="632">
 						<description>Actions</description>
 						<include>MediaMenuLabelCommon</include>
 						<label>$LOCALIZE[31081]</label>

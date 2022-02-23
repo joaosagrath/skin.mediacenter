@@ -14,7 +14,7 @@
 			<control type="group">
 				<include>OpenClose_Left</include>
 				<include>Visible_Left</include>
-				<include>ListThumbInfoPanel</include>
+				<!-- <include>ListThumbInfoPanel</include> -->
 			</control>
 			<include content="TopBar" condition="Window.IsActive(videoplaylist)">
 				<param name="breadcrumbs_label" value="$LOCALIZE[31065]" />

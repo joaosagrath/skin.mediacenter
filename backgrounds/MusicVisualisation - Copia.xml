@@ -19,96 +19,104 @@
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<imagepath colordiffuse="FF878787">$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
 		</control>
-		
+		<include>LyricsDefault</include>
 		<control type="group">
-			<animation type="Conditional" condition="Window.IsActive(musicosd)">
-				<effect type="slide" start="0,0" end="0,-120" time="200" tween="cubic" easing="inout"/>
+			<animation type="Conditional" condition="[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)">
+				<effect type="slide" start="0,120" end="0,0" time="200" easing="inout"/>
 			</animation>
-			<include>LyricsDefault</include>
-			<include>OpenClose_Down</include>
+			<height>430</height>
+			<include>OpenClose_Left</include>
 			<include>Visible_Left</include>
-			<bottom>25</bottom>
-			<height>450</height>
+			<bottom>-30</bottom>
 			<control type="image">
-				<top>150</top>
 				<left>0</left>
 				<width>120%</width>
-				<height>450</height>
+				<height>280</height>
 				<texture colordiffuse="AA000000">dialogs/dialog-bg-nobo.png</texture>
 			</control>
+			
 			<control type="image">
-				<left>250</left>
-				<top>15</top>
-				<width>420</width>
-				<height>420</height>
+				<left>25</left>
+				<top>-300</top>
+				<include>Visible_Left</include>
+				<width>390</width>
+				<height>390</height>
+				<fadetime>400</fadetime>
+				<texture>$INFO[Player.Folderpath]discart.png</texture>
+				<!-- <texture>$INFO[Window(home).Property(SkinHelper.Player.Art.DiscArt)]</texture> -->
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="true" condition="!Player.Paused">Conditional</animation>
+			</control>
+			
+			<control type="image">
+				<left>20</left>
+				<top>-140</top>
+				<include>Visible_Left</include>
+				<width>400</width>
+				<height>400</height>
 				<fadetime>400</fadetime>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture>$INFO[Player.Folderpath]discart.png</texture>
-				<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-			</control>
-			<control type="image">
-				<top>15</top>
-				<left>115</left>
-				<width>420</width>
-				<height>420</height>
-				<texture>$INFO[MusicPlayer.Cover]</texture>
-			</control>
-			<control type="image" id="49953">
-				<visible>String.IsEmpty(Control.GetLabel(49954))</visible>
-				<visible/>
-				<top>-5</top>
-				<right>115</right>
-				<width>400</width>
-				<height>155</height>
-				<texture>$INFO[Window(home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
-			</control>
-			<control type="image" id="49954">
-				<visible/>
-				<top>-5</top>
-				<right>115</right>
-				<width>400</width>
-				<height>155</height>
-				<texture>$INFO[Skin.String(MusicArtsPath)]$INFO[MusicPlayer.Artist]\clearlogo.png</texture>
+				<texture fallback="DefaultAlbumCover.png" border="2">$INFO[MusicPlayer.Cover]</texture>
+				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+				<bordersize>4</bordersize>
 			</control>
 			<control type="group">
+				<include>Visible_Left</include>
 				<left>440</left>
-				<top>100</top>
+				<top>10</top>
+				<!-- <control type="image" id="9001">
+					<right>20</right>
+					<top>-10</top>
+					<include>Visible_Left</include>
+					<width>400</width>
+					<height>155</height>
+					<fadetime>400</fadetime>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
+					<bordersize>4</bordersize>
+				</control> -->
+				<control type="image" id="355">
+					<left>-10</left>
+					<top>-90</top>
+					<include>Visible_Left</include>
+					<width>400</width>
+					<height>155</height>
+					<fadetime>400</fadetime>
+					<aspectratio alignx="left" aligny="top">keep</aspectratio>
+					<!-- <texture>$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist]\clearlogo.png</texture> -->
+					<texture>$INFO[Window(home).Property(SkinHelper.Player.Art.ClearLogo)]</texture>
+					<bordersize>4</bordersize>
+				</control>
 				<control type="label">
-					<visible>String.IsEmpty(Control.GetLabel(49953))</visible>
-					<visible>String.IsEmpty(Control.GetLabel(49954))</visible>
-					<top>-30</top>
-					<right>115</right>
+					<visible>String.IsEmpty(Control.GetLabel(355))</visible>
+					<top>0</top>
 					<width>1450</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<align>right</align>
-					<label>$INFO[MusicPlayer.Artist]</label>
-					<font>font45</font>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.Artist][/COLOR]</label>
+					<font>font_MainMenu</font>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
-					<right>115</right>
 					<top>65</top>
-					<width>1100</width>
+					<width>1450</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<align>right</align>
 					<label>[B]$INFO[MusicPlayer.TrackNumber,,. ]$INFO[Player.Title][/B]</label>
 					<font>font45</font>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
 				<control type="grouplist">
-					<right>115</right>
 					<top>120</top>
-					<width>1100</width>
-					<height>50</height>
-					<align>right</align>
+					<width>1450</width>
+					<height>40</height>
+					<align>left</align>
 					<orientation>horizontal</orientation>
 					<itemgap>20</itemgap>
 					<control type="label">
-						<width>100</width>
+						<width>90</width>
 						<height>40</height>
 						<label>$INFO[MusicPlayer.Year]</label>
 						<font>font37</font>
@@ -120,13 +128,13 @@
 					<control type="label">
 						<width min="0" max="1130">auto</width>
 						<height>40</height>
-						<label>$INFO[MusicPlayer.Album]$VAR[MultiDiscVar]</label>
+						<label>$INFO[MusicPlayer.Genre]</label>
 						<font>font37</font>
 						<shadowcolor>black</shadowcolor>
 						<aligny>center</aligny>
 						<align>left</align>
 						<scroll>true</scroll>
-						<visible>!String.IsEmpty(MusicPlayer.Album)</visible>
+						<visible>!String.IsEmpty(MusicPlayer.Genre)</visible>
 					</control>
 					<control type="image">
 						<width>190</width>
@@ -138,49 +146,24 @@
 					</control>
 				</control>
 				<control type="label">
-					<right>115</right>
 					<top>165</top>
-					<width>1100</width>
+					<width>1450</width>
 					<height>40</height>
 					<aligny>center</aligny>
-					<align>right</align>
-					<label>$INFO[MusicPlayer.Genre]</label>
+					<label>$INFO[MusicPlayer.Album]$VAR[MultiDiscVar]</label>
 					<font>font37</font>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
-				
 				<control type="label">
-					<right>115</right>
+					<visible>!Window.IsActive(musicosd)</visible>
 					<top>210</top>
-					<width>1100</width>
+					<width>1450</width>
 					<height>40</height>
 					<aligny>center</aligny>
-					<align>right</align>
 					<label>$VAR[OSDNextLabelVar]</label>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
-					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
-				</control>
-			</control>
-			<control type="group">
-				<control type="progress">
-					<left>0</left>
-					<bottom>-25</bottom>
-					<width>100%</width>
-					<height>16</height>
-					<info>Player.ProgressCache</info>
-					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
-					<midtexture>colors/white50.png</midtexture>
-				</control>
-				<control type="progress">
-					<left>0</left>
-					<bottom>-25</bottom>
-					<width>100%</width>
-					<height>16</height>
-					<info>Player.Progress</info>
-					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
-					<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
 				</control>
 			</control>
 		</control>

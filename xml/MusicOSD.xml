@@ -29,7 +29,7 @@
 				<effect type="slide" start="0,0" end="0,200" time="300" tween="cubic" easing="out" />
 			</animation>
 			<control type="grouplist" id="201">
-				<left>20</left>
+				<left>115</left>
 				<top>30</top>
 				<width>100%</width>
 				<height>135</height>
@@ -65,7 +65,7 @@
 				</control>
 			</control>
 			<control type="grouplist" id="202">
-				<right>20</right>
+				<right>115</right>
 				<top>30</top>
 				<width>1850</width>
 				<height>135</height>
@@ -183,33 +183,27 @@
 			</control>
 			<control type="label">
 				
-				<right>20</right>
+				<right>115</right>
 				<top>-65</top>
 				<aligny>center</aligny>
 				<align>right</align>
-				<width>1200</width>
+				<width>100%</width>
 				<height>50</height>
 				<label>$VAR[OSDHelpTextVar]</label>
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
 		<control type="group">
-			<bottom>0</bottom>
+			<bottom>20</bottom>
 			<height>120</height>
-			<animation type="WindowOpen" condition="!Player.ShowInfo" reversible="False">
-				<effect type="fade" start="0" end="100" time="300"/>
-				<effect type="slide" start="0,200" end="0,0" time="300" tween="cubic" easing="out" />
-			</animation>
-			<animation type="WindowClose" condition="!Player.ShowInfo" reversible="False">
-				<effect type="fade" start="100" end="0" time="300"/>
-				<effect type="slide" start="0,0" end="0,200" time="300" tween="cubic" easing="out" />
-			</animation>
-			<animation type="WindowOpen" condition="Player.ShowInfo" reversible="False">
-				<effect type="fade" start="0" end="100" time="300"/>
-			</animation>
-			<animation type="WindowClose" condition="Player.ShowInfo" reversible="False">
-				<effect type="fade" start="100" end="0" time="300"/>
-			</animation>
+			<animation type="WindowOpen" reversible="False">
+			<effect type="fade" start="0" end="100" time="200"/>
+			<effect type="slide" start="0,120" end="0,0" time="200" tween="cubic" easing="inout"/>
+		</animation>
+		<animation type="WindowClose" reversible="False">
+			<effect type="fade" start="100" end="0" time="200"/>
+			<effect type="slide" start="0,0" end="0,120" time="200" tween="cubic" easing="inout"/>
+		</animation>
 			<control type="button" id="87">
 				<include>HiddenObject</include>
 				<onup>200</onup>
@@ -217,9 +211,20 @@
 				<onleft>StepBack</onleft>
 				<onright>StepForward</onright>
 			</control>
+			<control type="label">
+				<left>0</left>
+				<top>50</top>
+				<width>100%</width>
+				<height>60</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<label>$VAR[SeekTimeLabelVar]</label>
+				<font>font45</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
 			<control type="slider">
 				<left>0</left>
-				<top>-5</top>
+				<top>0</top>
 				<width>100%</width>
 				<height>26</height>
 				<onup>8010</onup>
@@ -235,7 +240,7 @@
 			</control>
 			<control type="slider">
 				<left>0</left>
-				<top>-5</top>
+				<top>0</top>
 				<width>100%</width>
 				<height>26</height>
 				<onup>8010</onup>
@@ -251,7 +256,7 @@
 			</control>
 			<control type="slider">
 				<left>0</left>
-				<top>-5</top>
+				<top>0</top>
 				<width>100%</width>
 				<height>26</height>
 				<onup>8010</onup>
@@ -267,7 +272,7 @@
 			</control>
 			<control type="slider">
 				<left>0</left>
-				<top>-5</top>
+				<top>0</top>
 				<width>100%</width>
 				<height>26</height>
 				<onup>8010</onup>
