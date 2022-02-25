@@ -959,38 +959,38 @@ msgstr "Customização do Meu Menu 5"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31201"
+msgid "My Menu 6 Customization"
+msgstr "Customização do Meu Menu 6"
+
+#: /xml/Custom_1111_CustomSkinSettings.xml
+msgctxt "#31202"
+msgid "My Menu 7 Customization"
+msgstr "Customização do Meu Menu 7"
+
+#: /xml/Custom_1111_CustomSkinSettings.xml
+msgctxt "#31203"
+msgid "My Menu 8 Customization"
+msgstr "Customização do Meu Menu 8"
+
+#: /xml/Custom_1111_CustomSkinSettings.xml
+msgctxt "#31204"
+msgid "My Menu 9 Customization"
+msgstr "Customização do Meu Menu 9"
+
+#: /xml/Custom_1111_CustomSkinSettings.xml
+msgctxt "#31205"
+msgid "My Menu 10 Customization"
+msgstr "Customização do Meu Menu 10"
+
+#: /xml/Custom_1111_CustomSkinSettings.xml
+msgctxt "#31206"
 msgid "Change icon"
 msgstr "Mudar ícone"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
-msgctxt "#31202"
+msgctxt "#31207"
 msgid "Restore icon"
 msgstr "Restaurar ícone"
-
-#: /xml/Custom_1111_CustomSkinSettings.xml
-msgctxt "#31203"
-msgid "Weather Menu Customization"
-msgstr "Customização do Menu de Clima"
-
-#: /xml/Custom_1111_CustomSkinSettings.xml
-msgctxt "#31204"
-msgid "Add-ons Menu Customization"
-msgstr "Customização do Menu de Addons"
-
-#: /xml/Custom_1111_CustomSkinSettings.xml
-msgctxt "#31205"
-msgid "TV Menu Customization"
-msgstr "Customização do Menu de TV"
-
-#: /xml/Custom_1111_CustomSkinSettings.xml
-msgctxt "#31206"
-msgid "Radio Menu Customization"
-msgstr "Customização do Menu de Rádio"
-
-#: /xml/Custom_1111_CustomSkinSettings.xml
-msgctxt "#31207"
-msgid "Favourites Menu Customization"
-msgstr "Customização do Menu Favoritos"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31208"

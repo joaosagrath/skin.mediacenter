@@ -24,24 +24,12 @@
 					<onup>5000</onup>
 					<ondown>5000</ondown>
 					<orientation>vertical</orientation>
-					<!-- <control type="radiobutton" id="5001">
-						<width>600</width>
-						<include>DialogSettingButton</include>
-						<label>$LOCALIZE[31163]</label>
-						<onclick>Skin.ToggleSetting(hide_background_fanart)</onclick>
-						<selected>!Skin.HasSetting(hide_background_fanart)</selected>
-					</control>
-					<control type="radiobutton" id="5002">
-						<label>$LOCALIZE[31167]</label>
-						<include>DialogSettingButton</include>
-						<onclick>Skin.ToggleSetting(animate_background_fanart)</onclick>
-						<selected>Skin.HasSetting(animate_background_fanart)</selected>
-					</control> -->
 					<control type="radiobutton" id="601">
 						<label>$LOCALIZE[31163]</label>
-						<include>DefaultSettingButton</include>
+						<include>DialogSettingButton</include>
 						<onclick>Skin.ToggleSetting(no_fanart)</onclick>
 						<selected>!Skin.HasSetting(no_fanart)</selected>
+						<enable>!String.IsEmpty(Skin.String(MusicArtsPath))</enable>
 					</control>
 					<control type="button" id="5004">
 						<width>600</width>
@@ -56,6 +44,7 @@
 						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31084]</label>
 						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+						<visible>Visualisation.HasPresets</visible>
 					</control>
 					<control type="button" id="5006">
 						<width>600</width>
@@ -65,6 +54,7 @@
 						<visible>Visualisation.HasPresets</visible>
 					</control>
 					<control type="button" id="5007">
+
 						<width>600</width>
 						<include>DialogSettingButton</include>
 						<label>$LOCALIZE[31082]</label>
@@ -77,6 +67,17 @@
 						<label>$LOCALIZE[31083]</label>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 						<visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
+					</control>
+					<control type="label" id="5009">
+						<width>600</width>
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31179]</label>
+					</control>
+					<control type="button" id="5010">
+						<width>600</width>
+						<include>DialogSettingButton</include>
+						<label>$INFO[Skin.String(MusicArtsPath)]</label>
+						<onclick>Skin.SetPath(MusicArtsPath)</onclick>
 					</control>
 				</control>
 			</control>

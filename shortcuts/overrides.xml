@@ -212,7 +212,7 @@
 		
 		<node label="Magazines" condition="System.HasAddon(plugin.program.newsstand)">
 			
-				<shortcut label="Collections" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_VLAUNCHER_ROMS</shortcut>
+				<shortcut label="Addon Root" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/</shortcut>
 				
 				<shortcut label="All Categories" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_ALL_CATEGORIES</shortcut>
 				

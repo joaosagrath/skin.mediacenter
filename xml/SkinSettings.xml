@@ -101,6 +101,7 @@
 					<label>$LOCALIZE[31156]</label>
 					<label2>$VAR[BackgroundOverlayTypeVar]</label2>
 					<include>DefaultSettingButton</include>
+					<onclick>Skin.Reset(CustomHomeFanart)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),7)">Skin.SetString(background_overlay,0)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),6)">Skin.SetString(background_overlay,7)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),5)">Skin.SetString(background_overlay,6)</onclick>
@@ -115,6 +116,7 @@
 					<label>$LOCALIZE[31177]</label>
 					<label2>$INFO[Skin.String(CustomHomeFanart)]</label2>
 					<include>DefaultSettingButton</include>
+					<onclick>Skin.SetString(background_overlay,0)</onclick>
 					<onclick>Skin.SetString(CustomHomeFanart,special://home/addons/skin.mediacenter/extras/backgrounds/)</onclick>
 					<onclick>Skin.SetImage(CustomHomeFanart)</onclick>
 				</control>

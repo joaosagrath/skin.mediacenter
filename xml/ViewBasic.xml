@@ -2,6 +2,7 @@
 <includes>
 	<!-- VISTA BASICA - ID 50 -->
 	<include name="ViewBasic">
+		
 		<!-- GRUPO DE LISTA -->
 		<control type="group">
 			<include>OpenClose_Down</include>

@@ -961,37 +961,37 @@ msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31201"
-msgid "Change icon"
+msgid "My Menu 6 Customization"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31202"
-msgid "Restore icon"
+msgid "My Menu 7 Customization"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31203"
-msgid "Weather Menu Customization"
+msgid "My Menu 8 Customization"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31204"
-msgid "Add-ons Menu Customization"
+msgid "My Menu 9 Customization"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31205"
-msgid "TV Menu Customization"
+msgid "My Menu 10 Customization"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31206"
-msgid "Radio Menu Customization"
+msgid "Change icon"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31207"
-msgid "Favourites Menu Customization"
+msgid "Restore icon"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml

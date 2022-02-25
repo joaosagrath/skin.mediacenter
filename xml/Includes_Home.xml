@@ -217,7 +217,7 @@
 	<include name="WidgetListHomeAndroidApps">
 		<content>androidapp://sources/apps/</content>
 	</include>
-	<include name="PVRSubMenuContent">
+	<!-- <include name="PVRSubMenuContent">
 		<content>
 			<item>
 				<label>$LOCALIZE[19019]</label>
@@ -250,7 +250,7 @@
 				<thumb>icons/pvr/search.png</thumb>
 			</item>
 		</content>
-	</include>
+	</include> -->
 	<include name="CustomAddonsWidgets">
 		<content>$INFO[Skin.String(AddonsWidgets.Path)]</content>
 	</include>

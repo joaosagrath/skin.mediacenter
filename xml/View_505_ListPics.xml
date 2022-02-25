@@ -64,17 +64,23 @@
 					<bordersize>5</bordersize>
 					<aspectratio aligny="center" alignx="center">keep</aspectratio>
 				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>270</width>
+					<label>$INFO[ListItem.Label]</label>				
+				</control>
 			</itemlayout>
 			<focusedlayout height="375" width="270" condition="String.IsEqual(Skin.String(PicIcon),P)">
 				<control type="image">
 					<left>-3</left>
-					<centertop>50%</centertop>
-					<width>275</width>
-					<height>290</height>
+					<top>0</top>
+					<width>270</width>
+					<height>330</height>
 					<texture colordiffuse="button_focus">colors/white.png</texture>
 					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
 					<!-- <bordersize>5</bordersize> -->
-					<aspectratio aligny="center" alignx="center">keep</aspectratio>
+					<aspectratio aligny="center" align="top">stretch</aspectratio>
 					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 				</control>
 				<control type="image">
@@ -87,7 +93,12 @@
 					<aspectratio aligny="center" alignx="center">keep</aspectratio>
 					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 				</control>
-				
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>270</width>
+					<label>$INFO[ListItem.Label]</label>				
+				</control>
 			</focusedlayout>
 			<!-- Icones Medios -->
 			<itemlayout height="375" width="270" condition="String.IsEqual(Skin.String(PicIcon),M)">

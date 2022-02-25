@@ -60,6 +60,7 @@
 				<control type="button" id="5">
 					<label>Ícones $VAR[PicIconSizeVar]</label>
 					<include>MediaMenuItemsCommon</include>
+					<onclick condition="String.IsEmpty(Skin.String(PicIcon))">Skin.SetString(PicIcon,P)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(PicIcon),M)">Skin.SetString(PicIcon,G)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(PicIcon),G)">Skin.SetString(PicIcon,P)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(PicIcon),P)">Skin.SetString(PicIcon,M)</onclick>					

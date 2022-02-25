@@ -45,7 +45,7 @@
 	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
 	<!-- Sagrath -->
 	<include name="Widget_Display_Top">
-		<visible>[Control.HasFocus(9000) | ControlGroup(2000).HasFocus | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(12)] + ![Control.HasFocus(9001) | Control.HasFocus(9002)]</visible>
+		<visible>[Control.HasFocus(9000) | ControlGroup(2000).HasFocus | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809) | Control.HasFocus(12)] + ![Control.HasFocus(9001) | Control.HasFocus(9002)]</visible>
 	</include>
 	<include name="Widget_Display_Right">
 		<visible>[Control.HasFocus(9001) | ControlGroup(2001).HasFocus]</visible>
@@ -461,7 +461,7 @@
 					</include>
 				</control>
 				<control type="group">
-					<top>05</top>
+					<top>00</top>
 					<width>115</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration)</visible>
 					<control type="label">
@@ -1636,7 +1636,7 @@
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="60FFFFFF">$INFO[Skin.String(CustomHomeFanart)]</texture>
+						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(CustomHomeFanart)]</texture>
 						<visible>[Window.IsVisible(home) | Window.IsVisible(SkinSettings)]</visible>
 					</control>
 					<control type="image">
@@ -1724,40 +1724,40 @@
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(HomeWeather.Fanart)]</texture>
-						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),weather) | String.IsEqual(Container(9001).ListItem.Property(defaultID),weather)]</visible>
+						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(MyMenu6.Fanart)]</texture>
+						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),MyMenu6) | String.IsEqual(Container(9001).ListItem.Property(defaultID),MyMenu6)]</visible>
 					</control>
 					<control type="image">
 						<include>FullScreenDimensions</include>
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(HomeAddons.Fanart)]</texture>
-						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),addons) | String.IsEqual(Container(9001).ListItem.Property(defaultID),addons)]</visible>
+						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(MyMenu7.Fanart)]</texture>
+						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),MyMenu7) | String.IsEqual(Container(9001).ListItem.Property(defaultID),MyMenu7)]</visible>
 					</control>
 					<control type="image">
 						<include>FullScreenDimensions</include>
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(PVRTV.Fanart)]</texture>
-						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),livetv) | String.IsEqual(Container(9001).ListItem.Property(defaultID),livetv)]</visible>
+						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(MyMenu8.Fanart)]</texture>
+						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),MyMenu8) | String.IsEqual(Container(9001).ListItem.Property(defaultID),MyMenu8)]</visible>
 					</control>
 					<control type="image">
 						<include>FullScreenDimensions</include>
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(PVRRadio.Fanart)]</texture>
-						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),radio) | String.IsEqual(Container(9001).ListItem.Property(defaultID),radio)]</visible>
+						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(MyMenu9.Fanart)]</texture>
+						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),MyMenu9) | String.IsEqual(Container(9001).ListItem.Property(defaultID),MyMenu9)]</visible>
 					</control>
 					<control type="image">
 						<include>FullScreenDimensions</include>
 						<aspectratio>scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(Favourites.Fanart)]</texture>
-						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),favourites) | String.IsEqual(Container(9001).ListItem.Property(defaultID),favourites)]</visible>
+						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(MyMenu10.Fanart)]</texture>
+						<visible>Control.HasFocus(9001) + [String.IsEqual(Container(9001).ListItem.Property(id),MyMenu10) | String.IsEqual(Container(9001).ListItem.Property(defaultID),MyMenu10)]</visible>
 					</control>
 					<control type="image" id="32111">
 						<include>FullScreenDimensions</include>
