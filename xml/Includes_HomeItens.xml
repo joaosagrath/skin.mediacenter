@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Menu do Topo -->
-	<include name="Top_Menu">		
+	<include name="Top_Menu">
 		<!-- Seriados ID 6000 -->
 		<item>
 			<label>$LOCALIZE[20343]</label>
@@ -24,7 +24,6 @@
 			<property name="id">tvshows</property>
 			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + !String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
 		</item>
-		
 		<!-- Filmes ID 5000 -->
 		<item>
 			<label>$LOCALIZE[342]</label>
@@ -47,7 +46,6 @@
 			<property name="id">movies</property>
 			<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + !String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
 		</item>
-		
 		<!-- Jogos ID 8000-->
 		<item>
 			<label>$LOCALIZE[15016]</label>
@@ -61,12 +59,11 @@
 			<label>$INFO[Skin.String(HomeGames.Title)]</label>
 			<property name="menu_id">$NUMBER[8000]</property>
 			<onclick condition="!String.IsEmpty(Skin.String(HomeGames.Action))">$INFO[Skin.String(HomeGames.Action)]</onclick>
-			<onclick condition="String.IsEmpty(Skin.String(HomeGames.Action))">ActivateWindow(Games)</onclick>			
+			<onclick condition="String.IsEmpty(Skin.String(HomeGames.Action))">ActivateWindow(Games)</onclick>
 			<thumb>icons/sidemenu/games.png</thumb>
 			<property name="id">games</property>
 			<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton) + !String.IsEmpty(Skin.String(HomeGames.Title))</visible>
 		</item>
-		
 		<!-- Musicas ID 7000 -->
 		<item>
 			<label>$LOCALIZE[2]</label>
@@ -85,7 +82,6 @@
 			<property name="id">music</property>
 			<visible>!Skin.HasSetting(HomeMenuNoMusicButton) + !String.IsEmpty(Skin.String(HomeMusic.Title))</visible>
 		</item>
-		
 		<!-- Imagens ID 4000 -->
 		<item>
 			<label>$LOCALIZE[1]</label>
@@ -93,7 +89,8 @@
 			<property name="menu_id">$NUMBER[4000]</property>
 			<thumb>icons/sidemenu/pictures.png</thumb>
 			<property name="id">pictures</property>
-			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton) + String.IsEmpty(Skin.String(HomePictures.Title))</visible>>
+			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton) + String.IsEmpty(Skin.String(HomePictures.Title))</visible>
+			>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(HomePictures.Title)]</label>
@@ -103,10 +100,10 @@
 			<thumb>icons/sidemenu/pictures.png</thumb>
 			<property name="id">pictures</property>
 			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton) + !String.IsEmpty(Skin.String(HomePictures.Title))</visible>
-		</item>	
+		</item>
 	</include>
 	<!-- Menu da Esquerda -->
-	<include name="Left_Menu">		
+	<include name="Left_Menu">
 		<!-- Meu Menu 1 -->
 		<item>
 			<label>$INFO[Skin.String(MyMenu1.Title)]</label>
@@ -159,6 +156,7 @@
 		<item>
 			<label>$INFO[Skin.String(MyMenu6.Title)]</label>
 			<onclick>$INFO[Skin.String(MyMenu6.Action)]</onclick>
+			<onleft>$INFO[Skin.String(MyMenu6.Action)]</onleft>
 			<property name="menu_id">$NUMBER[4000]</property>
 			<thumb>$VAR[HomeMyMenu6CustomIcon]</thumb>
 			<property name="id">MyMenu6</property>
@@ -200,5 +198,77 @@
 			<property name="id">MyMenu10</property>
 			<visible>!Skin.HasSetting(HomeMenuNoMyMenu10Button) + !String.IsEmpty(Skin.String(MyMenu10.Title))</visible>
 		</item>
+	</include>
+	<include name="System_Menu">
+		<include content="IconButton">
+			<param name="control_id" value="801"/>
+			<param name="onclick" value="ActivateWindow(shutdownmenu)"/>
+			<param name="onup" value="ActivateWindow(shutdownmenu)"/>
+			<param name="icon" value="icons/power.png"/>
+		</include>
+		<include content="IconButton">
+			<param name="control_id" value="802"/>
+			<param name="onclick" value="ActivateWindow(settings)"/>
+			<param name="onup" value="ActivateWindow(settings)"/>
+			<param name="icon" value="icons/settings.png"/>
+		</include>
+		<include content="IconButton">
+			<param name="control_id" value="803"/>
+			<param name="onclick" value="Fullscreen"/>
+			<param name="onup" value="Fullscreen"/>
+			<param name="icon" value="icons/now-playing/fullscreen.png"/>
+			<param name="label" value="$LOCALIZE[31000]"/>
+			<param name="visible" value="Player.HasMedia"/>
+		</include>
+		<include content="IconButton">
+			<param name="control_id" value="804"/>
+			<param name="onclick" value="PlayDisc"/>
+			<param name="onup" value="PlayDisc"/>
+			<param name="icon" value="icons/disc.png"/>
+			<param name="label" value="$LOCALIZE[427]"/>
+			<param name="visible" value="System.HasMediaDVD"/>
+		</include>
+		<include content="IconButton">
+			<param name="control_id" value="805"/>
+			<param name="onclick" value="ActivateWindow(1107)"/>
+			<param name="onup" value="ActivateWindow(1107)"/>
+			<param name="icon" value="icons/search.png"/>
+		</include>
+		<include content="IconButton">
+			<param name="control_id" value="806"/>
+			<param name="onclick" value="ActivateWindow(10035)"/>
+			<param name="onup" value="ActivateWindow(10035)"/>
+			<param name="icon" value="icons/infodialogs/image.png"/>
+		</include>
+		<include content="IconButton">
+			<param name="control_id" value="807"/>
+			<param name="onup" value="ActivateWindow(1100)"/>
+			<param name="onclick" value="ActivateWindow(1100)"/>
+			<param name="icon" value="icons/addons.png"/>
+		</include>
+		<control type="radiobutton" id="808">
+			<width>120</width>
+			<height>120</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+			<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
+			<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
+			<texturenofocus/>
+			<radioposx>37</radioposx>
+			<radioposy>0</radioposy>
+			<radiowidth>50</radiowidth>
+			<radioheight>50</radioheight>
+			<textureradioonfocus>icons/weather.png</textureradioonfocus>
+			<textureradioonnofocus colordiffuse="grey">icons/weather.png</textureradioonnofocus>
+			<textureradioofffocus>icons/weather.png</textureradioofffocus>
+			<textureradiooffnofocus colordiffuse="grey">icons/weather.png</textureradiooffnofocus>
+		</control>
+		<include content="IconButton">
+			<param name="control_id" value="809"/>
+			<param name="onclick" value="ActivateWindow(favourites)"/>
+			<param name="onup" value="ActivateWindow(favourites)"/>
+			<param name="icon" value="icons/favourites.png"/>
+		</include>
 	</include>
 </includes>

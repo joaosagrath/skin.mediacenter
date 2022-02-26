@@ -44,11 +44,11 @@
 				<onfocus>Skin.Reset(HomeGames.Action)</onfocus>
 				<onfocus>Skin.Reset(HomeGames.ActionTitle)</onfocus>
 				<onfocus>Skin.Reset(HomeGames.Fanart)</onfocus>
-				<onfocus>Skin.SetString(GamesWidgets.Name,Addons de Jogos)</onfocus>
-				<onfocus>Skin.SetString(GamesWidgets.Source,addon)</onfocus>
-				<onfocus>Skin.SetString(GamesWidgets.Path,addons://sources/game)</onfocus>
-				<onfocus>Skin.SetString(GamesWidgets.Target,games)</onfocus>
-				<onfocus>Skin.SetString(GamesWidgets.Id,games)</onfocus>
+				<onfocus>Skin.Reset(GamesWidgets.Name)</onfocus>
+				<onfocus>Skin.Reset(GamesWidgets.Source)</onfocus>
+				<onfocus>Skin.SetString(GamesWidgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(GamesWidgets.Target)</onfocus>
+				<onfocus>Skin.Reset(GamesWidgets.Id)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(903),0:01,true)</onfocus>
 			</control>
 			<!-- 40% Definição de Menu Filmes -->
@@ -59,10 +59,10 @@
 				<onfocus>Skin.Reset(HomeMovies.Title)</onfocus>
 				<onfocus>Skin.Reset(HomeMovies.Action)</onfocus>
 				<onfocus>Skin.Reset(HomeMovies.Fanart)</onfocus>
-				<onfocus>Skin.SetString(MoviesWidgets.Name,Biblioteca de Filmes)</onfocus>
-				<onfocus>Skin.SetString(MoviesWidgets.Source,Library)</onfocus>
-				<onfocus>Skin.SetString(MoviesWidgets.Path,library://video/movies/)</onfocus>
-				<onfocus>Skin.SetString(MoviesWidgets.Target,videos)</onfocus>
+				<onfocus>Skin.Reset(MoviesWidgets.Name)</onfocus>
+				<onfocus>Skin.Reset(MoviesWidgets.Source)</onfocus>
+				<onfocus>Skin.SetString(MoviesWidgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(MoviesWidgets.Target)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(904),0:01,true)</onfocus>
 			</control>
 			<!-- 50% Definição de Menu Seriados -->
@@ -73,10 +73,10 @@
 				<onfocus>Skin.Reset(HomeTvShows.Title)</onfocus>
 				<onfocus>Skin.Reset(HomeTvShows.Action)</onfocus>
 				<onfocus>Skin.Reset(HomeTvShows.Fanart)</onfocus>
-				<onfocus>Skin.SetString(TvShowsWidgets.Name,Biblioteca de Seriados)</onfocus>
-				<onfocus>Skin.SetString(TvShowsWidgets.Source,Library)</onfocus>
-				<onfocus>Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onfocus>
-				<onfocus>Skin.SetString(TvShowsWidgets.Target,videos)</onfocus>
+				<onfocus>Skin.Reset(TvShowsWidgets.Name)</onfocus>
+				<onfocus>Skin.Reset(TvShowsWidgets.Source)</onfocus>
+				<onfocus>Skin.SetString(TvShowsWidgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(TvShowsWidgets.Target)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(905),0:01,true)</onfocus>
 			</control>
 			<!-- 60% Definição de Menu Musicas -->
@@ -87,10 +87,10 @@
 				<onfocus>Skin.Reset(HomeMusic.Title)</onfocus>
 				<onfocus>Skin.Reset(HomeMusic.Action)</onfocus>
 				<onfocus>Skin.Reset(HomeMusic.Fanart)</onfocus>
-				<onfocus>Skin.SetString(MusicWidgets.Name,Biblioteca de Musicas)</onfocus>
-				<onfocus>Skin.SetString(MusicWidgets.Source,Library)</onfocus>
-				<onfocus>Skin.SetString(MusicWidgets.Path,library://music/)</onfocus>
-				<onfocus>Skin.SetString(MusicWidgets.Target,Music)</onfocus>
+				<onfocus>Skin.Reset(MusicWidgets.Name)</onfocus>
+				<onfocus>Skin.Reset(MusicWidgets.Source)</onfocus>
+				<onfocus>Skin.SetString(MusicWidgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(MusicWidgets.Target)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(906),0:01,true)</onfocus>
 			</control>
 			<!-- 70% Definição de menu Imagens -->
@@ -102,35 +102,22 @@
 				<onfocus>Skin.Reset(HomePictures.Action)</onfocus>
 				<onfocus>Skin.Reset(HomePictures.ActionTitle)</onfocus>
 				<onfocus>Skin.Reset(HomePictures.Fanart)</onfocus>
-				<onfocus>Skin.SetString(PicturesWidgets.Name,Addons de Imagens)</onfocus>
-				<onfocus>Skin.SetString(PicturesWidgets.Source,addon)</onfocus>
-				<onfocus>Skin.SetString(PicturesWidgets.Path,addons://sources/image)</onfocus>
-				<onfocus>Skin.SetString(PicturesWidgets.Target,pictures)</onfocus>
+				<onfocus>Skin.Reset(PicturesWidgets.Name)</onfocus>
+				<onfocus>Skin.Reset(PicturesWidgets.Source)</onfocus>
+				<onfocus>Skin.Reset(PicturesWidgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(PicturesWidgets.Target)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(907),0:01,true)</onfocus>
 			</control>
 			<!-- 80% Definição de Menu de PVR -->
 			<control type="button" id="907">
 				<include>HiddenObject</include>
-				<!-- PVR TV -->
 				<onfocus>Skin.SetString(autosetting,80)</onfocus>
-				<onfocus>Skin.Reset(PVRTV.Fanart)</onfocus>
-				<onfocus condition="!System.HasPVRAddon">Skin.ToggleSetting(HomeMenuNoTVButton)</onfocus>
-				<onfocus condition="System.HasPVRAddon">Skin.SetString(PVRTVWidgets.Path,pvr://channels/tv/*?)</onfocus>
-				<onfocus condition="System.HasPVRAddon">Skin.SetString(PVRTV.Action,ActivateWindow(TVChannels))</onfocus>
-				<!-- PVR Radio -->
-				<onfocus>Skin.Reset(PVRRadio.Fanart)</onfocus>
-				<onfocus condition="!System.HasPVRAddon">Skin.ToggleSetting(HomeMenuNoRadioButton)</onfocus>
-				<onfocus condition="System.HasPVRAddon">Skin.SetString(PVRRadioWidgets.Path,pvr://channels/Radio/*?)</onfocus>
-				<onfocus condition="System.HasPVRAddon">Skin.SetString(PVRRadio.Action,ActivateWindow(RadioChannels))</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(908),0:01,true)</onfocus>
 			</control>
 			<!-- 90% Definição de Menu de Addons -->
 			<control type="button" id="908">
 				<include>HiddenObject</include>
-				<!-- Addons -->
 				<onfocus>Skin.SetString(autosetting,90)</onfocus>
-				<onfocus>Skin.ToggleSetting(WidgetListAddons)</onfocus>
-				<onfocus>Skin.Reset(HomeAddons.Fanart)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(909),0:01,true)</onfocus>
 			</control>
 			<!-- 100% Outros Ajustes -->
@@ -184,6 +171,51 @@
 				<onfocus>Skin.SetString(MyMenu5Widgets.Path,-)</onfocus>
 				<onfocus>Skin.Reset(MyMenu5Widgets.Target)</onfocus>
 				<onfocus>Skin.Reset(HomeMyMenu5.icon)</onfocus>
+				<!-- Definição de MyMenu6 -->
+				<onfocus>Skin.Reset(MyMenu6.Title)</onfocus>
+				<onfocus>Skin.Reset(MyMenu6.Action)</onfocus>
+				<onfocus>Skin.Reset(MyMenu6.Fanart)</onfocus>
+				<onfocus>Skin.Reset(MyMenu6Widgets.Name)</onfocus>
+				<onfocus>Skin.Reset(MyMenu6.Source)</onfocus>
+				<onfocus>Skin.SetString(MyMenu6Widgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(MyMenu6Widgets.Target)</onfocus>
+				<onfocus>Skin.Reset(HomeMyMenu6.icon)</onfocus>
+				<!-- Definição de MyMenu7 -->
+				<onfocus>Skin.Reset(MyMenu7.Title)</onfocus>
+				<onfocus>Skin.Reset(MyMenu7.Action)</onfocus>
+				<onfocus>Skin.Reset(MyMenu7.Fanart)</onfocus>
+				<onfocus>Skin.Reset(MyMenu7Widgets.Name)</onfocus>
+				<onfocus>Skin.Reset(MyMenu7.Source)</onfocus>
+				<onfocus>Skin.SetString(MyMenu7Widgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(MyMenu7Widgets.Target)</onfocus>
+				<onfocus>Skin.Reset(HomeMyMenu7.icon)</onfocus>
+				<!-- Definição de MyMenu8 -->
+				<onfocus>Skin.Reset(MyMenu8.Title)</onfocus>
+				<onfocus>Skin.Reset(MyMenu8.Action)</onfocus>
+				<onfocus>Skin.Reset(MyMenu8.Fanart)</onfocus>
+				<onfocus>Skin.Reset(MyMenu8Widgets.Name)</onfocus>
+				<onfocus>Skin.Reset(MyMenu8.Source)</onfocus>
+				<onfocus>Skin.SetString(MyMenu8Widgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(MyMenu8Widgets.Target)</onfocus>
+				<onfocus>Skin.Reset(HomeMyMenu8.icon)</onfocus>
+				<!-- Definição de MyMenu9 -->
+				<onfocus>Skin.Reset(MyMenu9.Title)</onfocus>
+				<onfocus>Skin.Reset(MyMenu9.Action)</onfocus>
+				<onfocus>Skin.Reset(MyMenu9.Fanart)</onfocus>
+				<onfocus>Skin.Reset(MyMenu9Widgets.Name)</onfocus>
+				<onfocus>Skin.Reset(MyMenu9.Source)</onfocus>
+				<onfocus>Skin.SetString(MyMenu9Widgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(MyMenu9Widgets.Target)</onfocus>
+				<onfocus>Skin.Reset(HomeMyMenu9.icon)</onfocus>
+				<!-- Definição de MyMenu10 -->
+				<onfocus>Skin.Reset(MyMenu10.Title)</onfocus>
+				<onfocus>Skin.Reset(MyMenu10.Action)</onfocus>
+				<onfocus>Skin.Reset(MyMenu10.Fanart)</onfocus>
+				<onfocus>Skin.Reset(MyMenu10Widgets.Name)</onfocus>
+				<onfocus>Skin.Reset(MyMenu10.Source)</onfocus>
+				<onfocus>Skin.SetString(MyMenu10Widgets.Path,-)</onfocus>
+				<onfocus>Skin.Reset(MyMenu10Widgets.Target)</onfocus>
+				<onfocus>Skin.Reset(HomeMyMenu10.icon)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(910),0:02,true)</onfocus>
 			</control>
 			<!-- Finalizando Ajustes -->

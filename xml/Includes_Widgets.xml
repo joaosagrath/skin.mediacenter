@@ -18,7 +18,6 @@
 				<effect type="slide" end="0,20" time="180" tween="sine" delay="80"/>
 			</animation>
 			<include>OpenClose_Down</include>
-			
 			<!-- Widgets do Topo Default -->
 			<control type="group" id="2000">
 				<include>Widget_Display_Top</include>
@@ -30,6 +29,7 @@
 						<param name="id" value="games"/>
 					</include>
 					<control type="grouplist" id="8000">
+						<visible>!String.IsEmpty(Skin.String(GamesWidgets.Target))</visible>
 						<onup>9000</onup>
 						<ondown>12</ondown>
 						<include content="WidgetListHomePoster">
@@ -40,6 +40,20 @@
 							<param name="fallback_icon" value="defaultgames.png"/>
 							<param name="aligny" value="bottom"/>
 							<param name="aspect" value="keep"/>
+						</include>
+					</control>
+					<control type="group" id="8000">
+						<visible>String.IsEmpty(Skin.String(GamesWidgets.Target))</visible>
+						<left>210</left>
+						<ondown>12</ondown>
+						<include content="NoAddons">
+							<param name="NoAddonsText">$LOCALIZE[31162]</param>
+							<param name="ButtomAddAddon">$LOCALIZE[31213]</param>
+							<param name="ButtomAddAddonClick">addons://sources/game/</param>
+							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
+							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoGamesButton)</param>
+							<param name="ButtomAddSource">$LOCALIZE[31197]</param>
+							<param name="ButtomAddSourceClick">ActivateWindow(Games)</param>
 						</include>
 					</control>
 					<control type="label">
@@ -54,8 +68,9 @@
 						<param name="id" value="movies"/>
 					</include>
 					<control type="grouplist" id="5000">
+						<visible>!String.IsEmpty(Skin.String(MoviesWidgets.Target))</visible>
 						<onup>9000</onup>
-						<ondown>12</ondown>
+						<ondown>17</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MoviesWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MoviesWidgets.Target)]"/>
@@ -65,6 +80,20 @@
 							<param name="fallback_icon" value="defaultmovies.png"/>
 							<param name="aligny" value="bottom"/>
 							<param name="aspect" value="keep"/>
+						</include>
+					</control>
+					<control type="group" id="5000">
+						<visible>String.IsEmpty(Skin.String(MoviesWidgets.Target))</visible>
+						<left>210</left>
+						<ondown>12</ondown>
+						<include content="NoAddons">
+							<param name="NoAddonsText">$LOCALIZE[31105]</param>
+							<param name="ButtomAddAddon">$LOCALIZE[31211]</param>
+							<param name="ButtomAddAddonClick">addons://sources/game/</param>
+							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
+							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoMovieButton)</param>
+							<param name="ButtomAddSource">$LOCALIZE[31135]</param>
+							<param name="ButtomAddSourceClick">ActivateWindow(Games)</param>
 						</include>
 					</control>
 					<control type="label">
@@ -79,6 +108,7 @@
 						<param name="id" value="tvshows"/>
 					</include>
 					<control type="grouplist" id="6000">
+						<visible>!String.IsEmpty(Skin.String(TvShowsWidgets.Target))</visible>
 						<top>0</top>
 						<onup>9000</onup>
 						<ondown>12</ondown>
@@ -93,6 +123,20 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="group" id="6000">
+						<visible>String.IsEmpty(Skin.String(TvShowsWidgets.Target))</visible>
+						<left>210</left>
+						<ondown>12</ondown>
+						<include content="NoAddons">
+							<param name="NoAddonsText">$LOCALIZE[31105]</param>
+							<param name="ButtomAddAddon">$LOCALIZE[31211]</param>
+							<param name="ButtomAddAddonClick">addons://sources/game/</param>
+							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
+							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoTvShowButton)</param>
+							<param name="ButtomAddSource">$LOCALIZE[31135]</param>
+							<param name="ButtomAddSourceClick">ActivateWindow(Games)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
 						<label>$INFO[Skin.String(TvShowsWidgets.Name)]</label>
@@ -105,6 +149,7 @@
 						<param name="id" value="music"/>
 					</include>
 					<control type="grouplist" id="7000">
+						<visible>!String.IsEmpty(Skin.String(MusicWidgets.Target))</visible>
 						<top>0</top>
 						<onup>9000</onup>
 						<ondown>12</ondown>
@@ -117,6 +162,20 @@
 							<param name="fallback_icon" value="defaultmusic.png"/>
 							<param name="aligny" value="bottom"/>
 							<param name="aspect" value="keep"/>
+						</include>
+					</control>
+					<control type="group" id="7000">
+						<visible>String.IsEmpty(Skin.String(MusicWidgets.Target))</visible>
+						<left>210</left>
+						<ondown>12</ondown>
+						<include content="NoAddons">
+							<param name="NoAddonsText">$LOCALIZE[31221]</param>
+							<param name="ButtomAddAddon">$LOCALIZE[31212]</param>
+							<param name="ButtomAddAddonClick">addons://sources/game/</param>
+							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
+							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoMusicButton)</param>
+							<param name="ButtomAddSource">$LOCALIZE[31146]</param>
+							<param name="ButtomAddSourceClick">ActivateWindow(Games)</param>
 						</include>
 					</control>
 					<control type="label">
@@ -132,6 +191,7 @@
 						<param name="id" value="pictures"/>
 					</include>
 					<control type="grouplist" id="4000">
+						<visible>!String.IsEmpty(Skin.String(PicturesWidgets.Target))</visible>
 						<top>0</top>
 						<onup>9000</onup>
 						<ondown>12</ondown>
@@ -147,6 +207,20 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="group" id="4000">
+						<visible>String.IsEmpty(Skin.String(PicturesWidgets.Target))</visible>
+						<left>210</left>
+						<ondown>12</ondown>
+						<include content="NoAddons">
+							<param name="NoAddonsText">$LOCALIZE[31111]</param>
+							<param name="ButtomAddAddon">$LOCALIZE[31214]</param>
+							<param name="ButtomAddAddonClick">addons://sources/game/</param>
+							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
+							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoPicturesButton)</param>
+							<param name="ButtomAddSource">$LOCALIZE[31147]</param>
+							<param name="ButtomAddSourceClick">ActivateWindow(Games)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
 						<label>$INFO[Skin.String(PicturesWidgets.Name)]</label>
@@ -155,7 +229,7 @@
 			</control>
 			<!-- Widgets da Esquerda -->
 			<control type="group" id="2002">
-				<include>Widget_Display_Left</include>				
+				<include>Widget_Display_Left</include>
 				<!-- Meu Menu 1 -->
 				<control type="group">
 					<visible>String.IsEqual(Container(9002).ListItem.Property(id),MyMenu1)</visible>
@@ -359,7 +433,7 @@
 						<include>WidgetLabel</include>
 						<label>$INFO[Skin.String(MyMenu8Widgets.Name)]</label>
 					</control>
-				</control>				
+				</control>
 				<!-- Meu Menu 9 -->
 				<control type="group">
 					<visible>String.IsEqual(Container(9001).ListItem.Property(id),MyMenu9)</visible>
@@ -409,8 +483,8 @@
 						<include>WidgetLabel</include>
 						<label>$INFO[Skin.String(MyMenu10Widgets.Name)]</label>
 					</control>
-				</control>				
-			</control>	
+				</control>
+			</control>
 			<!-- -->
 			<!-- -->
 			<!-- -->
@@ -556,116 +630,115 @@
 				</control>
 			</control>
 		</control>
-		
 		<!-- Widgets de Fontes de Mídia -->
-		<control type="group" id="2003">
-			<animation type="Conditional" condition="Control.HasFocus(12)" reversible="true">
-				<effect type="slide" start="0,0" end="0,-320" time="400" delay="300" tween="cubic" easing="out"/>
-			</animation>
-			<include>SourceWidgetsAnimations</include>			
-			<control type="image">
-				<bottom>-320</bottom>
-				<width>100%</width>
-				<height>230</height>
-				<texture colordiffuse="black">colors/black.png</texture>
-			</control>
-			<control type="list" id="12">
-				<animation/>
-				<bottom>-320</bottom>
+		<!-- <control type="group" id="2003">
+	<animation type="Conditional" condition="Control.HasFocus(12)" reversible="true">
+		<effect type="slide" start="0,0" end="0,-320" time="400" delay="300" tween="cubic" easing="out"/>
+	</animation>
+	<include>SourceWidgetsAnimations</include>
+	<control type="image">
+		<bottom>-320</bottom>
+		<width>100%</width>
+		<height>230</height>
+		<texture colordiffuse="black">colors/black.png</texture>
+	</control>
+	<control type="list" id="12">
+		<animation/>
+		<bottom>-320</bottom>
+		<left>0</left>
+		<width>1920</width>
+		<height>210</height>
+		<onup>10</onup>
+		<scrolltime>300</scrolltime>
+		<focusposition>2</focusposition>
+		<orientation>horizontal</orientation>
+		<itemlayout width="384" height="149">
+			<control type="image" id="20">
 				<left>0</left>
-				<width>1920</width>
-				<height>210</height>
-				<onup>10</onup>
-				<scrolltime>300</scrolltime>
-				<focusposition>2</focusposition>
-				<orientation>horizontal</orientation>
-				<itemlayout width="384" height="149">
-					<control type="image" id="20">
-						<left>0</left>
-						<top>0</top>
-						<width>384</width>
-						<height>149</height>
-						<texture fallback="$PARAM[fallback_icon]">$VAR[PosterThumbVar]</texture>
-						<aspectratio align="center" aligny="$PARAM[aligny]">keep</aspectratio>
-						<bordersize>20</bordersize>
-						<bordertexture border="50">overlays/shadow.png</bordertexture>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>140</top>
-						<width>384</width>
-						<height>20</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font10</font>
-						<align>center</align>
-					</control>
-				</itemlayout>
-				<focusedlayout width="384" height="149">
-					<control type="group">
-						<animation type="Focus">
-							<effect type="zoom" start="100" end="120" time="300" tween="sine" easing="inout" center="200,70"/>
-						</animation>
-						<animation type="Unfocus">
-							<effect type="zoom" start="120" end="100" time="300" tween="sine" easing="inout" center="200,70"/>
-						</animation>
-						<control type="image">
-							<visible>COntrol.HasFocus(12)</visible>
-							<left>50</left>
-							<top>18</top>
-							<width>285</width>
-							<height>112</height>
-							<texture>colors/white.png</texture>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<width>384</width>
-							<height>149</height>
-							<texture fallback="$PARAM[fallback_icon]">$VAR[PosterThumbVar]</texture>
-							<aspectratio align="center" aligny="$PARAM[aligny]">keep</aspectratio>
-							<bordersize>20</bordersize>
-							<bordertexture border="50">overlays/shadow.png</bordertexture>
-						</control>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<top>140</top>
-						<width>384</width>
-						<height>20</height>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font10</font>
-						<align>center</align>
-					</control>
-				</focusedlayout>
-				<content>
-					<item>
-						<label>Fontes de Video</label>
-						<onclick>ActivateWindow(Videos,sources://video/)</onclick>
-						<thumb>videosource.png</thumb>
-					</item>
-					<item>
-						<label>Fontes de Jogos</label>
-						<onclick>ActivateWindow(Games,sources://game/)</onclick>
-						<thumb>gamesource.png</thumb>
-					</item>
-					<item>
-						<label>Fontes de Musicas</label>
-						<onclick>ActivateWindow(Music,sources://music/)</onclick>
-						<thumb>musicsource.png</thumb>
-					</item>
-					<item>
-						<label>Fontes de Imagens</label>
-						<onclick>ActivateWindow(pictures,sources://image/)</onclick>
-						<thumb>imagesource.png</thumb>
-					</item>
-					<item>
-						<label>Gestor de Arquivos</label>
-						<onclick>ActivateWindow(10003)</onclick>
-						<thumb>filessource.png</thumb>
-					</item>
-				</content>
+				<top>0</top>
+				<width>384</width>
+				<height>149</height>
+				<texture fallback="$PARAM[fallback_icon]">$VAR[PosterThumbVar]</texture>
+				<aspectratio align="center" aligny="$PARAM[aligny]">keep</aspectratio>
+				<bordersize>20</bordersize>
+				<bordertexture border="50">overlays/shadow.png</bordertexture>
 			</control>
-		</control>
+			<control type="label">
+				<left>0</left>
+				<top>140</top>
+				<width>384</width>
+				<height>20</height>
+				<label>$INFO[ListItem.Label]</label>
+				<font>font10</font>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<focusedlayout width="384" height="149">
+			<control type="group">
+				<animation type="Focus">
+					<effect type="zoom" start="100" end="120" time="300" tween="sine" easing="inout" center="200,70"/>
+				</animation>
+				<animation type="Unfocus">
+					<effect type="zoom" start="120" end="100" time="300" tween="sine" easing="inout" center="200,70"/>
+				</animation>
+				<control type="image">
+					<visible>Control.HasFocus(12)</visible>
+					<left>50</left>
+					<top>18</top>
+					<width>285</width>
+					<height>112</height>
+					<texture>colors/white.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>384</width>
+					<height>149</height>
+					<texture fallback="$PARAM[fallback_icon]">$VAR[PosterThumbVar]</texture>
+					<aspectratio align="center" aligny="$PARAM[aligny]">keep</aspectratio>
+					<bordersize>20</bordersize>
+					<bordertexture border="50">overlays/shadow.png</bordertexture>
+				</control>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>140</top>
+				<width>384</width>
+				<height>20</height>
+				<label>$INFO[ListItem.Label]</label>
+				<font>font10</font>
+				<align>center</align>
+			</control>
+		</focusedlayout>
+		<content>
+			<item>
+				<label>Fontes de Video</label>
+				<onclick>ActivateWindow(Videos,sources://video/)</onclick>
+				<thumb>videosource.png</thumb>
+			</item>
+			<item>
+				<label>Fontes de Jogos</label>
+				<onclick>ActivateWindow(Games,sources://game/)</onclick>
+				<thumb>gamesource.png</thumb>
+			</item>
+			<item>
+				<label>Fontes de Musicas</label>
+				<onclick>ActivateWindow(Music,sources://music/)</onclick>
+				<thumb>musicsource.png</thumb>
+			</item>
+			<item>
+				<label>Fontes de Imagens</label>
+				<onclick>ActivateWindow(pictures,sources://image/)</onclick>
+				<thumb>imagesource.png</thumb>
+			</item>
+			<item>
+				<label>Gestor de Arquivos</label>
+				<onclick>ActivateWindow(10003)</onclick>
+				<thumb>filessource.png</thumb>
+			</item>
+		</content>
+	</control>
+</control> -->
 		<!-- Widgets de Fonte de TV/Radio -->
 		<!-- <control type="group">
 			<animation type="Conditional" condition="Control.HasFocus(13)">

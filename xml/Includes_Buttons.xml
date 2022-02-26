@@ -179,6 +179,7 @@
 				<aligny>center</aligny>
 				<onclick>$PARAM[onclick]</onclick>
 				<onclick>$PARAM[onclick_2]</onclick>
+				<onup>$PARAM[onup]</onup>
 				<font></font>
 				<label>$PARAM[label]</label>
 				<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>

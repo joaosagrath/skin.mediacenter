@@ -279,7 +279,6 @@ msgctxt "#31051"
 msgid "Updating"
 msgstr ""
 
-
 #: /xml/Includes.xml
 msgctxt "#31052"
 msgid "filtered"
@@ -521,7 +520,7 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31111"
-msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgid "View your personal pictures and image collections or download one of the many image add-ons from the official repository."
 msgstr ""
 
 #: /xml/VideoOSD.xml
@@ -544,9 +543,9 @@ msgctxt "#31115"
 msgid "Search TheMovieDB"
 msgstr ""
 
-#: /xml/Includes_Home.xml
+#: /xml/Includes_Widgets.xml
 msgctxt "#31116"
-msgid "Remove this main menu item"
+msgid "Hide this menu"
 msgstr ""
 
 #: /xml/MyVideoNav.xml
@@ -639,7 +638,10 @@ msgctxt "#31134"
 msgid "Remaining"
 msgstr ""
 
-#empty string with id 31135
+#: /xml/Includes_Widgets.xml
+msgctxt "#31135"
+msgid "Add Video source"
+msgstr ""
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31136"
@@ -691,7 +693,15 @@ msgctxt "#31145"
 msgid "Search add-ons"
 msgstr ""
 
-#empty strings from id 31146 to 31147
+#: /xml/Includes_Widgets.xml
+msgctxt "#31146"
+msgid "Add Music source"
+msgstr ""
+
+#: /xml/Includes_Widgets.xml
+msgctxt "#31147"
+msgid "Add Image source"
+msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31148"
@@ -765,7 +775,7 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31162"
-msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgid "Play your favourites games or download one of the many game add-ons from the official repository."
 msgstr ""
 
 #: /xml/Custom_1105_MusicOSDSettings.xml
@@ -942,7 +952,10 @@ msgctxt "#31196"
 msgid "My Menu 2 Customization"
 msgstr ""
 
-#empty string with id 31197
+#: /xml/Includes_Widgets.xml
+msgctxt "#31197"
+msgid "Add Games source"
+msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31198"
@@ -1046,8 +1059,8 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31218"
-msgid "Reset skin"
-msgstr "Reiniciar Skin"
+msgid "Reset skin (CAUTION! This process is irreversible!)"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31219"
@@ -1059,7 +1072,10 @@ msgctxt "#31220"
 msgid "Start initial skin setup"
 msgstr ""
 
-#empty string with id 31221
+#: /xml/Includes_Widgets.xml
+msgctxt "#31221"
+msgid "Browse and listen to your music collection or download one of the many audio add-ons from the official repository."
+msgstr ""
 
 #empty string with id 31222
 
@@ -1115,7 +1131,7 @@ msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31233"
-msgid "Addons Menu Settings"
+msgid "Add-ons Menu Settings"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml

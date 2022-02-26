@@ -45,7 +45,7 @@
 	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Control.HasFocus(6131)</expression>
 	<!-- Sagrath -->
 	<include name="Widget_Display_Top">
-		<visible>[Control.HasFocus(9000) | ControlGroup(2000).HasFocus | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809) | Control.HasFocus(12)] + ![Control.HasFocus(9001) | Control.HasFocus(9002)]</visible>
+		<visible>[Control.HasFocus(9000) | ControlGroup(2000).HasFocus | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809) | Control.HasFocus(701)] + ![Control.HasFocus(9001) | Control.HasFocus(9002)]</visible>
 	</include>
 	<include name="Widget_Display_Right">
 		<visible>[Control.HasFocus(9001) | ControlGroup(2001).HasFocus]</visible>

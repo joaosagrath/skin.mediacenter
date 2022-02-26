@@ -3,7 +3,6 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|rightmenu|leftmenu)</onload>
-	<onload condition="String.IsEmpty(Skin.String(background_overlay))">Skin.SetString(background_overlay,1)</onload>
 	<controls>
 		<include>DefaultBackground</include>
 		<control type="multiimage">
@@ -314,6 +313,7 @@
 				<onright>10000</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
+				
 				<itemlayout height="85" width="470">
 					<control type="label">
 						<textoffsetx>30</textoffsetx>
@@ -343,19 +343,19 @@
 				<content>
 					<item id="4">
 						<label>$LOCALIZE[31168]</label>
-						<onclick>noop</onclick>
+						<onclick>right</onclick>
 					</item>
 					<item id="3">
 						<label>$LOCALIZE[31159]</label>
-						<onclick>noop</onclick>
+						<onclick>right</onclick>
 					</item>
 					<item id="1">
 						<label>$LOCALIZE[128]</label>
-						<onclick>noop</onclick>
+						<onclick>right</onclick>
 					</item>
 					<item id="2">
 						<label>$LOCALIZE[31219]</label>
-						<onclick>noop</onclick>
+						<onclick>right</onclick>
 					</item>
 				</content>
 			</control>

@@ -489,7 +489,7 @@ msgstr ""
 #: /xml/Home.xml
 msgctxt "#31105"
 msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
-msgstr ""
+msgstr "Adicione fontes de vídeo e defina o tipo de conteúdo apropriado para preencher suas bibliotecas de vídeo."
 
 #: /xml/Variables.xml
 msgctxt "#31106"
@@ -519,8 +519,8 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31111"
-msgid "View your personal pictures or download one of the many image add-ons from the official repository."
-msgstr ""
+msgid "View your personal pictures and image collections or download one of the many image add-ons from the official repository."
+msgstr "Veja suas fotos e coleções de imagens pessoais ou baixe um dos muitos add-ons de imagem do repositório official."
 
 #: /xml/VideoOSD.xml
 msgctxt "#31112"
@@ -542,10 +542,10 @@ msgctxt "#31115"
 msgid "Search TheMovieDB"
 msgstr ""
 
-#: /xml/Includes_Home.xml
+#: /xml/Includes_Widgets.xml
 msgctxt "#31116"
-msgid "Remove this main menu item"
-msgstr ""
+msgid "Hide this menu"
+msgstr "Ocultar este menu"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31117"
@@ -637,7 +637,10 @@ msgctxt "#31134"
 msgid "Remaining"
 msgstr ""
 
-#empty string with id 31135
+#: /xml/Includes_Widgets.xml
+msgctxt "31135"
+msgid "Add Video source"
+msgstr "Adicionar Fontes de videos"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31136"
@@ -689,7 +692,15 @@ msgctxt "#31145"
 msgid "Search add-ons"
 msgstr ""
 
-#empty strings from id 31146 to 31147
+#: /xml/Includes_Widgets.xml
+msgctxt "#31146"
+msgid "Add Music source"
+msgstr "Adicionar fonte de Música"
+
+#: /xml/Includes_Widgets.xml
+msgctxt "#31147"
+msgid "Add Image source"
+msgstr "Adicionar fonte de Imagens"
 
 #: /xml/Home.xml
 msgctxt "#31148"
@@ -763,8 +774,8 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31162"
-msgid "Play your personal games or download one of the many game add-ons from the official repository."
-msgstr ""
+msgid "Play your favourites games or download one of the many game add-ons from the official repository."
+msgstr "Jogue seus jogos favoritos ou baixe um dos vários add-ons do repositório oficial"
 
 #: /xml/Custom_1105_MusicOSDSettings.xml
 msgctxt "#31163"
@@ -813,7 +824,7 @@ msgstr "Exibir menu Skin-Shortcuts"
 #: /xml/SkinSettings.xml
 msgctxt "#31171"
 msgid "Edit default menu items"
-msgstr "Editar itens do menu padrão"
+msgstr "Editar itens padrão do menu"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31172"
@@ -940,7 +951,10 @@ msgctxt "#31196"
 msgid "My Menu 2 Customization"
 msgstr "Customização do Meu Menu 2"
 
-#empty string with id 31197
+#: /xml/Includes_Widgets.xml
+msgctxt "#31197"
+msgid "Add Games source"
+msgstr "Adicione fontes de Jogos"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31198"
@@ -1044,8 +1058,8 @@ msgstr "Habilitar botão para redefinição total da skin (temporário)"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31218"
-msgid "Reset skin"
-msgstr "Reiniciar skin"
+msgid "Reset skin (CAUTION! This process is irreversible!)"
+msgstr "Reiniciar skin (CUIDADO! Este processo é irreversível)"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31219"
@@ -1057,7 +1071,10 @@ msgctxt "#31220"
 msgid "Start initial skin setup"
 msgstr "Iniciar configuração inicial da skin"
 
-#empty string with id 31221
+#: /xml/Includes_Widgets.xml
+msgctxt "#31221"
+msgid "Browse and listen to your music collection or download one of the many audio add-ons from the official repository."
+msgstr "Navegue e escute sua coleção de música ou baixe um dos muitos add-ons de audio do repositório oficial."
 
 #empty string with id 31222
 
@@ -1113,8 +1130,8 @@ msgstr "Ajustes de Menu de PVR"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31233"
-msgid "Addons Menu Settings"
-msgstr "Ajustes de Menu de Addons"
+msgid "Add-ons Menu Settings"
+msgstr "Ajustes de Menu de Add-ons"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31234"

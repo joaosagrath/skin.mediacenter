@@ -336,7 +336,7 @@
 						<onclick>Skin.Reset(HomeGames.Fanart)</onclick>
 						<align>center</align>
 						<enable>!String.IsEmpty(Skin.String(HomeGames.Fanart))</enable>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Filmes -->
@@ -421,7 +421,6 @@
 						<enable>!String.IsEmpty(Skin.String(HomeMovies.Fanart))</enable>
 						<align>center</align>
 					</control>
-					
 				</control>
 			</control>
 			<!-- Seriados -->
@@ -478,36 +477,35 @@
 				</control>
 				<!-- Botões de Redefinição -->
 				<control type="group" id="11000">
-				<control type="button" id="10028">
-					<onright>10030</onright>
-					<onleft>10030</onleft>
-					<onup>10024</onup>
-					<left>500</left>
-					<bottom>155</bottom>
-					<include>DefaultSettingButtonBottom</include>
-					<label>$LOCALIZE[31190]</label>
-					<onclick>Skin.Reset(HomeTvShows.Title)</onclick>
-					<onclick>Skin.Reset(HomeTvShows.Action)</onclick>
-					<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
-					<onclick>Skin.SetString(TvShowsWidgets.Name,$LOCALIZE[31047])</onclick>
-					<onclick>Skin.SetString(TvShowsWidgets.Source,Library)</onclick>
-					<onclick>Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onclick>
-					<onclick>Skin.SetString(TvShowsWidgets.Target,videos)</onclick>
-					<align>center</align>
-				</control>
-				<control type="button" id="10030">
-					<onright>10028</onright>
-					<onleft>10028</onleft>
-					<onup>10024</onup>
-					<left>1000</left>
-					<bottom>155</bottom>
-					<include>DefaultSettingButtonBottom</include>
-					<label>$LOCALIZE[31189]</label>
-					<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
-					<enable>!String.IsEmpty(Skin.String(HomeTvShows.Fanart))</enable>
-					<align>center</align>
-				</control>
-				
+					<control type="button" id="10028">
+						<onright>10030</onright>
+						<onleft>10030</onleft>
+						<onup>10024</onup>
+						<left>500</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Skin.Reset(HomeTvShows.Title)</onclick>
+						<onclick>Skin.Reset(HomeTvShows.Action)</onclick>
+						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Name,$LOCALIZE[31047])</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Source,Library)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Target,videos)</onclick>
+						<align>center</align>
+					</control>
+					<control type="button" id="10030">
+						<onright>10028</onright>
+						<onleft>10028</onleft>
+						<onup>10024</onup>
+						<left>1000</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
+						<enable>!String.IsEmpty(Skin.String(HomeTvShows.Fanart))</enable>
+						<align>center</align>
+					</control>
 				</control>
 			</control>
 			<!-- Musicas -->
@@ -622,21 +620,18 @@
 						<label2>$INFO[Skin.String(HomePictures.Title)]</label2>
 						<onclick>Skin.SetString(HomePictures.Title)</onclick>
 					</control>
-					
 					<control type="button" id="10042">
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31186]</label>
 						<label2>$INFO[Skin.String(HomePictures.Action)]</label2>
 						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomePictures.Title&amp;skinAction=HomePictures.Action)</onclick>
 					</control>
-					
 					<control type="button" id="10043">
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31187]</label>
 						<label2>$INFO[Skin.String(PicturesWidgets.Name)]</label2>
 						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=PicturesWidgets.Source&amp;skinWidgetName=PicturesWidgets.Name&amp;skinWidgetTarget=PicturesWidgets.Target&amp;skinWidgetPath=PicturesWidgets.Path)</onclick>
 					</control>
-					
 					<control type="button" id="10044">
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31188]</label>
@@ -682,7 +677,6 @@
 						<enable>!String.IsEmpty(Skin.String(HomePictures.Fanart))</enable>
 						<align>center</align>
 					</control>
-					
 				</control>
 			</control>
 			<!-- Meu Menu 1 -->
@@ -796,7 +790,6 @@
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu1.icon))</enable>
 						<align>center</align>
 					</control>
-					
 				</control>
 			</control>
 			<!-- Meu Menu 2 -->
@@ -910,7 +903,7 @@
 						<onclick>Skin.Reset(HomeMyMenu2.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu2.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 3 -->
@@ -1023,7 +1016,7 @@
 						<onclick>Skin.Reset(HomeMyMenu3.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu3.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 4 -->
@@ -1136,7 +1129,7 @@
 						<onclick>Skin.Reset(HomeMyMenu4.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu4.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 5 -->
@@ -1249,7 +1242,7 @@
 						<onclick>Skin.Reset(HomeMyMenu5.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu5.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 6 -->
@@ -1304,7 +1297,7 @@
 					</control>
 				</control>
 				<!-- Widget Preview -->
-				<control type="list">
+				<control type="list" id="10">
 					<include>WidgetListHomePosterPreview</include>
 					<content>$INFO[Skin.String(MyMenu6Widgets.Path)]</content>
 				</control>
@@ -1333,9 +1326,10 @@
 						<onclick>Skin.Reset(MyMenu6.Fanart)</onclick>
 						<onclick>Skin.Reset(MyMenu6Widgets.Name)</onclick>
 						<onclick>Skin.Reset(MyMenu6.Source)</onclick>
-						<onclick>Skin.SetString(MyMenu6Widgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MyMenu6Widgets.Path)</onclick>
 						<onclick>Skin.Reset(MyMenu6Widgets.Target)</onclick>
 						<onclick>Skin.Reset(HomeMyMenu6.icon)</onclick>
+						<onclick>Container.Refresh(10)</onclick>
 						<align>center</align>
 					</control>
 					<control type="button" id="10109">
@@ -1362,7 +1356,7 @@
 						<onclick>Skin.Reset(HomeMyMenu6.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu6.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 7 -->
@@ -1475,7 +1469,7 @@
 						<onclick>Skin.Reset(HomeMyMenu7.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu7.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 8 -->
@@ -1588,7 +1582,7 @@
 						<onclick>Skin.Reset(HomeMyMenu8.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu8.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 9 -->
@@ -1701,7 +1695,7 @@
 						<onclick>Skin.Reset(HomeMyMenu9.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu9.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<!-- Meu Menu 10 -->
@@ -1814,7 +1808,7 @@
 						<onclick>Skin.Reset(HomeMyMenu10.icon)</onclick>
 						<enable>!String.IsEmpty(Skin.String(HomeMyMenu10.icon))</enable>
 						<align>center</align>
-					</control>					
+					</control>
 				</control>
 			</control>
 			<control type="image">
