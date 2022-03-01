@@ -190,6 +190,7 @@
 	<widget-groupings>	
         <content>widgets</content>
 		
+		<!-- Widgets de Jogos -->
 		<node label="10821">
 			
 			<shortcut label="$INFO[System.AddonTitle(plugin.program.iagl)]" type="32123" icon="DefaultAddonGame.png" condition="System.HasAddon(plugin.program.iagl)">||BROWSE||plugin.program.iagl</shortcut>
@@ -209,7 +210,7 @@
 			<shortcut label="Show Favourites" type="32123" icon="DefaultAddonGame.png" widget="addon" widgetType="addon" widgetTarget="games" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">plugin://plugin.program.advanced.emulator.launcher/?com=SHOW_FAVOURITES</shortcut>
 			
 		</node>
-		
+		<!-- Widgets de Magazines -->
 		<node label="Magazines" condition="System.HasAddon(plugin.program.newsstand)">
 			
 				<shortcut label="Addon Root" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/</shortcut>
@@ -279,9 +280,14 @@
 		<node label="32020">
 			<content>picturesources</content>		
 		</node>
+		<!-- Widgets de PVR -->
+		<node label="PVR" condition="System.HasPVRAddon">
+			<shortcut label="Live Tv" type="32020" icon="icons\sidemenu\livetv.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="PVR.HasTVChannels">pvr://tv/</shortcut>		
+			<shortcut label="Radio" type="32020" icon="icons\sidemenu\radio.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="PVR.HasRadioChannels">pvr://radio/</shortcut>		
+		</node>
 		
 		
-		
+PVR.HasTVChannels
 	
 	</widget-groupings>
 </overrides>

@@ -48,7 +48,6 @@
 				<onfocus>Skin.Reset(GamesWidgets.Source)</onfocus>
 				<onfocus>Skin.SetString(GamesWidgets.Path,-)</onfocus>
 				<onfocus>Skin.Reset(GamesWidgets.Target)</onfocus>
-				<onfocus>Skin.Reset(GamesWidgets.Id)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(903),0:01,true)</onfocus>
 			</control>
 			<!-- 40% Definição de Menu Filmes -->
@@ -232,14 +231,14 @@
 			</control>
 			<!-- logo -->
 			<control type="image">
-				<left>622</left>
+				<left>0</left>
 				<top>175</top>
-				<width>675</width>
-				<height>232</height>
-				<texture>firstsettings_logo.png</texture>
+				<width>1920</width>
+				<height>400</height>
+				<texture>mediacenter.png</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 			</control>
-			<control type="label">
+			<!-- <control type="label">
 				<left>810</left>
 				<top>414</top>
 				<width>300</width>
@@ -249,7 +248,7 @@
 				<label>Media Center Skin</label>
 				<font>Font13</font>
 				<textcolor>B6FFFAF0</textcolor>
-			</control>
+			</control> -->
 			<!-- versao -->
 			<control type="label">
 				<left>1590</left>
@@ -326,7 +325,7 @@
 					<height>100</height>
 					<align>center</align>
 					<aligny>top</aligny>
-					<label>Restaurando Skin</label>
+					<label>Definindo Ajustes da Skin</label>
 					<font>font12</font>
 					<textcolor>B6FFFAF0</textcolor>
 				</control>

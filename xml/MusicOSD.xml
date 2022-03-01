@@ -181,7 +181,7 @@
 					<onclick>ActivateWindow(1105)</onclick>
 				</control>
 			</control>
-			<control type="label">
+			<!-- <control type="label">
 				
 				<right>115</right>
 				<top>-65</top>
@@ -191,7 +191,7 @@
 				<height>50</height>
 				<label>$VAR[OSDHelpTextVar]</label>
 				<shadowcolor>black</shadowcolor>
-			</control>
+			</control> -->
 		</control>
 		<control type="group">
 			<bottom>20</bottom>
@@ -206,7 +206,7 @@
 		</animation>
 			<control type="button" id="87">
 				<include>HiddenObject</include>
-				<onup>200</onup>
+				<onup>Action(Close)</onup>
 				<ondown>200</ondown>
 				<onleft>StepBack</onleft>
 				<onright>StepForward</onright>

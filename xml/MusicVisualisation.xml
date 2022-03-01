@@ -162,6 +162,71 @@
 					<scroll>true</scroll>
 					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
 				</control>
+				<control type="grouplist">
+				<right>120</right>
+				<bottom>15</bottom>
+				<width>800</width>
+				<height>50</height>
+				<align>right</align>
+				<orientation>horizontal</orientation>
+				<itemgap>10</itemgap>
+				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+				<include content="MediaFlag">
+					<param name="texture" value="flags/rds/rds.png"/>
+					<param name="visible" value="RDS.HasRDS"/>
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[MusicPlayer.Codec,flags/audiocodec/,.png]"/>
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[MusicPlayer.Channels,flags/audiochannel/,.png]"/>
+				</include>
+				<control type="group">
+					<visible>!String.IsEmpty(MusicPlayer.SampleRate)</visible>
+					<width>115</width>
+					<control type="label">
+						<width>115</width>
+						<height>60</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[MusicPlayer.SampleRate, ,kHz]</label>
+						<font>font_flag</font>
+					</control>
+					<include content="MediaFlag">
+						<param name="texture" value="flags/flag.png"/>
+					</include>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(MusicPlayer.BitRate)</visible>
+					<width>115</width>
+					<control type="label">
+						<width>115</width>
+						<height>60</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[MusicPlayer.BitRate, ,kbps ]</label>
+						<font>font_flag</font>
+					</control>
+					<include content="MediaFlag">
+						<param name="texture" value="flags/flag.png"/>
+					</include>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(MusicPlayer.BitsPerSample)</visible>
+					<width>115</width>
+					<control type="label">
+						<width>115</width>
+						<height>60</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[MusicPlayer.BitsPerSample, ,bit]</label>
+						<font>font_flag</font>
+					</control>
+					<include content="MediaFlag">
+						<param name="texture" value="flags/flag.png"/>
+					</include>
+				</control>
+			</control>
 			</control>
 			<control type="group">
 				<control type="progress">

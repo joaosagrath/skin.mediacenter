@@ -290,7 +290,6 @@
 						<label>$LOCALIZE[31187]</label>
 						<label2>$INFO[Skin.String(GamesWidgets.Name)]</label2>
 						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=GamesWidgets.Source&amp;skinWidgetType=games&amp;skinWidgetName=GamesWidgets.Name&amp;skinWidgetTarget=GamesWidgets.Target&amp;skinWidgetPath=GamesWidgets.Path)</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Id,games)</onclick>
 					</control>
 					<control type="button" id="10004">
 						<include>DefaultSettingButton</include>
@@ -318,11 +317,10 @@
 						<onclick>Skin.Reset(HomeGames.Action)</onclick>
 						<onclick>Skin.Reset(HomeGames.ActionTitle)</onclick>
 						<onclick>Skin.Reset(HomeGames.Fanart)</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Name,$LOCALIZE[31213])</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Source,addon)</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Path,addons://sources/game)</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Target,games)</onclick>
-						<onclick>Skin.SetString(GamesWidgets.Id,games)</onclick>
+						<onclick>Skin.Reset(GamesWidgets.Name)</onclick>
+						<onclick>Skin.Reset(GamesWidgets.Source)</onclick>
+						<onclick>Skin.SetString(GamesWidgets.Path,-)</onclick>
+						<onclick>Skin.Reset(GamesWidgets.Target)</onclick>
 						<align>center</align>
 					</control>
 					<control type="button" id="10010">
@@ -369,7 +367,7 @@
 					<control type="button" id="10012">
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31186]</label>
-						<label2>$INFO[Skin.String(HomeMovies.ActionTitle)]</label2>
+						<label2>$INFO[Skin.String(HomeMovies.Action)]</label2>
 						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeMovies.Title&amp;skinAction=HomeMovies.Action)</onclick>
 					</control>
 					<control type="button" id="10013">
@@ -403,10 +401,10 @@
 						<onclick>Skin.Reset(HomeMovies.Title)</onclick>
 						<onclick>Skin.Reset(HomeMovies.Action)</onclick>
 						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
-						<onclick>Skin.SetString(MoviesWidgets.Name,$LOCALIZE[31027])</onclick>
-						<onclick>Skin.SetString(MoviesWidgets.Source,Library)</onclick>
-						<onclick>Skin.SetString(MoviesWidgets.Path,library://video/movies/)</onclick>
-						<onclick>Skin.SetString(MoviesWidgets.Target,videos)</onclick>
+						<onclick>Skin.Reset(MoviesWidgets.Name)</onclick>
+						<onclick>Skin.Reset(MoviesWidgets.Source)</onclick>
+						<onclick>Skin.SetString(MoviesWidgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MoviesWidgets.Target)</onclick>
 						<align>center</align>
 					</control>
 					<control type="button" id="10020">
@@ -454,7 +452,7 @@
 					<control type="button" id="10022">
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31186]</label>
-						<label2>$INFO[Skin.String(HomeTvShows.ActionTitle)]</label2>
+						<label2>$INFO[Skin.String(HomeTvShows.Action)]</label2>
 						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeTvShows.Title&amp;skinAction=HomeTvShows.Action)</onclick>
 					</control>
 					<control type="button" id="10023">
@@ -488,10 +486,10 @@
 						<onclick>Skin.Reset(HomeTvShows.Title)</onclick>
 						<onclick>Skin.Reset(HomeTvShows.Action)</onclick>
 						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
-						<onclick>Skin.SetString(TvShowsWidgets.Name,$LOCALIZE[31047])</onclick>
-						<onclick>Skin.SetString(TvShowsWidgets.Source,Library)</onclick>
-						<onclick>Skin.SetString(TvShowsWidgets.Path,library://video/tvshows/)</onclick>
-						<onclick>Skin.SetString(TvShowsWidgets.Target,videos)</onclick>
+						<onclick>Skin.Reset(TvShowsWidgets.Name)</onclick>
+						<onclick>Skin.Reset(TvShowsWidgets.Source)</onclick>
+						<onclick>Skin.SetString(TvShowsWidgets.Path,-)</onclick>
+						<onclick>Skin.Reset(TvShowsWidgets.Target)</onclick>
 						<align>center</align>
 					</control>
 					<control type="button" id="10030">
@@ -538,7 +536,7 @@
 					<control type="button" id="10032">
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31186]</label>
-						<label2>$INFO[Skin.String(HomeMusic.ActionTitle)]</label2>
+						<label2>$INFO[Skin.String(HomeMusic.Action)]</label2>
 						<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;skinLabel=HomeMusic.Title&amp;skinAction=HomeMusic.Action)</onclick>
 					</control>
 					<control type="button" id="10033">
@@ -585,10 +583,10 @@
 						<onclick>Skin.Reset(HomeMusic.Title)</onclick>
 						<onclick>Skin.Reset(HomeMusic.Action)</onclick>
 						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
-						<onclick>Skin.SetString(MusicWidgets.Name,Biblioteca de Musicas)</onclick>
-						<onclick>Skin.SetString(MusicWidgets.Source,Library)</onclick>
-						<onclick>Skin.SetString(MusicWidgets.Path,library://music/)</onclick>
-						<onclick>Skin.SetString(MusicWidgets.Target,Music)</onclick>
+						<onclick>Skin.Reset(MusicWidgets.Name)</onclick>
+						<onclick>Skin.Reset(MusicWidgets.Source)</onclick>
+						<onclick>Skin.SetString(MusicWidgets.Path,-)</onclick>
+						<onclick>Skin.Reset(MusicWidgets.Target)</onclick>
 						<align>center</align>
 					</control>
 				</control>
@@ -658,10 +656,10 @@
 						<onclick>Skin.Reset(HomePictures.Action)</onclick>
 						<onclick>Skin.Reset(HomePictures.ActionTitle)</onclick>
 						<onclick>Skin.Reset(HomePictures.Fanart)</onclick>
-						<onclick>Skin.SetString(PicturesWidgets.Name,Addons de Imagens)</onclick>
-						<onclick>Skin.SetString(PicturesWidgets.Source,addon)</onclick>
-						<onclick>Skin.SetString(PicturesWidgets.Path,addons://sources/image)</onclick>
-						<onclick>Skin.SetString(PicturesWidgets.Target,pictures)</onclick>
+						<onclick>Skin.Reset(PicturesWidgets.Name)</onclick>
+						<onclick>Skin.Reset(PicturesWidgets.Source)</onclick>
+						<onclick>Skin.SetString(PicturesWidgets.Path,-)</onclick>
+						<onclick>Skin.Reset(PicturesWidgets.Target)</onclick>
 						<align>center</align>
 					</control>
 					<control type="button" id="10048">
@@ -1326,7 +1324,7 @@
 						<onclick>Skin.Reset(MyMenu6.Fanart)</onclick>
 						<onclick>Skin.Reset(MyMenu6Widgets.Name)</onclick>
 						<onclick>Skin.Reset(MyMenu6.Source)</onclick>
-						<onclick>Skin.Reset(MyMenu6Widgets.Path)</onclick>
+						<onclick>Skin.SetString(MyMenu6Widgets.Path,-)</onclick>
 						<onclick>Skin.Reset(MyMenu6Widgets.Target)</onclick>
 						<onclick>Skin.Reset(HomeMyMenu6.icon)</onclick>
 						<onclick>Container.Refresh(10)</onclick>

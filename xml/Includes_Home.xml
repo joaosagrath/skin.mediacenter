@@ -36,7 +36,7 @@
 						<onup>9000</onup>
 						<align>center</align>
 						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-						<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
 					</control>
 					<control type="button" id="12">
 						<width>500</width>
@@ -46,9 +46,10 @@
 						<onclick>$PARAM[ButtomHideMenuClick]</onclick>
 						<onclick>Control.SetFocus(20001)</onclick>
 						<onup>9000</onup>
+						<onclick>up</onclick>
 						<align>center</align>
 						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-						<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
 					</control>
 					<control type="button" id="102">
 						<width>500</width>
@@ -60,7 +61,7 @@
 						<onup>9000</onup>
 						<align>center</align>
 						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
-						<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
 					</control>
 				</control>
 			</control>
@@ -72,6 +73,7 @@
 				<param name="label">$PARAM[widget_header]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 				<param name="visible" value="$PARAM[visible]"/>
+				<param name="onup" value="$PARAM[onup]"/>
 			</include>
 			<control type="fixedlist" id="$PARAM[list_id]">
 				<left>0</left>
@@ -81,16 +83,16 @@
 				<onleft>$PARAM[list_id]</onleft>
 				<onright>$PARAM[list_id]</onright>
 				<onup>$PARAM[onup]</onup>
-				<ondown>$PARAM[onup]</ondown>
+				<ondown>$PARAM[ondown]</ondown>
 				<scrolltime>300</scrolltime>
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
 				<itemlayout width="212" height="295">
 					<control type="group">
-						<animation effect="slide" end="212" time="100" condition="Control.HasFocus(10)">Conditional</animation>
+						<animation effect="slide" end="212" time="100" condition="Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12) | Window.IsActive(10106)">Conditional</animation>
 						<!-- <animation effect="slide" end="212" time="100" condition="Control.HasFocus(12)">Conditional</animation> -->
-						<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) + Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) + Control.HasFocus(11) + Control.HasFocus(12)] + [Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
 						<control type="image">
 							<left>10</left>
 							<top>0</top>

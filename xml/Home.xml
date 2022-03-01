@@ -52,24 +52,16 @@
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>!Player.HasMedia</visible>
 		</control>
-		<control type="multiimage">
-			<visible>Skin.HasSetting(show_fanartbackground)</visible>
-			<include>FullScreenDimensions</include>
-			<aspectratio>scale</aspectratio>
-			<fadetime>400</fadetime>
-			<animation effect="fade" time="400">VisibleChange</animation>
-			<imagepath colordiffuse="FF878787">$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-		</control>
 		<!-- TESTE LABELS -->
 		<control type="label">
-			<visible>Integer.IsGreater(Container(9000).NumItems,0)</visible>
+			<visible>Skin.HasSetting(HomeMenuNoGamesButton) + Skin.HasSetting(HomeMenuNoMovieButton) + Skin.HasSetting(HomeMenuNoTvShowButton) + Skin.HasSetting(HomeMenuNoMusicButton) + Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
 			<top>401</top>
 			<left>20</left>
-			<label>$INFO[Container(10).NumItems] BUCETAS</label>
+			<!-- <label>$INFO[Container(10).NumItems]</label> -->
 			<!-- <label>$VAR[viewdisc]</label> -->
 			<!-- <label>$INFO[ListItem.FolderPath,.banner.jpg]</label> -->
 			<!-- $INFO[ListItem.Path,,logo.png] -->
-			<!-- <label>$INFO[Container().NumItems]</label> -->
+			<label>BU</label>
 			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
 			<!-- <label>$INFO[Player.Folderpath]discart.png</label> -->
 			<!-- <label>$INFO[Skin.String(studioicons.path)]$INFO[ListItem.Studio]$INFO[Skin.String(studioicons.ext)]</label> -->
@@ -78,9 +70,6 @@
 			<align>center</align>
 			<!-- <visible>Control.HasFocus(10)</visible> -->
 		</control>
-		<setting id="studioicons.name" type="string">Studio Icons - Coloured</setting>
-		<setting id="studioicons.path" type="string">resource://resource.images.studios.coloured/</setting>
-		<setting id="studioicons.ext" type="string">.png</setting>
 		<control type="image">
 			<bottom>20</bottom>
 			<left>20</left>
@@ -92,7 +81,7 @@
 		<!-- Status Home -->
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,220" time="100" easing="inout" condition="Control.HasFocus(10)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,220" time="100" easing="inout" condition="Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)">Conditional</animation>
 			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
 				<effect type="slide" end="0,540" time="500" tween="sine"/>
 			</animation>
@@ -203,7 +192,7 @@
 		</control>
 		<!-- Artes da Home Menu Default -->
 		<control type="group">
-			<visible>Control.HasFocus(10)</visible>
+			<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>
 			<animation effect="fade" start="0" end="100" reversible="false" time="300">VisibleChange</animation>
 			<bottom>115</bottom>
 			<height>230</height>
@@ -510,10 +499,9 @@
 				<depth>DepthContentPanel</depth>
 				<!-- Menu Do Topo -->
 				<control type="list" id="9000">
-					<onfocus>ClearProperty(listposition,home)</onfocus>
+					<!-- <onfocus>ClearProperty(listposition,home)</onfocus> -->
 					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
-					<!-- <animation effect="slide" end="-400,0" condition="Window.IsActive(10151)">Conditional</animation> -->
 					<include>Center_Menu</include>
 					<top>20</top>
 					<width>1400</width>
@@ -521,7 +509,7 @@
 					<onright condition="Integer.IsEqual(Container(9001).NumItems,0)">noop</onright>
 					<onleft condition="Integer.IsGreater(Container(9002).NumItems,0)">9002</onleft>
 					<onleft condition="Integer.IsEqual(Container(9002).NumItems,0)">noop</onleft>
-					<ondown condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)">600</ondown>
+					<ondown condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)">602</ondown>
 					<ondown>10</ondown>
 					<onup>700</onup>
 					<orientation>horizontal</orientation>
@@ -566,9 +554,10 @@
 						</control>
 					</focusedlayout>
 					<content>
-						<include condition="Skin.HasSetting(Default_Menu)">Top_Menu</include>
+						<include>Top_Menu</include>
+						<!-- <include condition="Skin.HasSetting(Default_Menu)">Top_Menu</include>
 						<include condition="Skin.HasSetting(SkinShortcuts_Menu)">skinshortcuts-mainmenu</include>
-						<include condition="!Skin.HasSetting(Default_Menu) + !Skin.HasSetting(SkinShortcuts_Menu)">Top_Menu</include>
+						<include condition="!Skin.HasSetting(Default_Menu) + !Skin.HasSetting(SkinShortcuts_Menu)">Top_Menu</include> -->
 					</content>
 				</control>
 				<!-- Menu Lateral Direito -->
@@ -585,9 +574,8 @@
 					<focusposition>0</focusposition>
 					<onup>9000</onup>
 					<onleft condition="Player.HasMedia">600</onleft>
-					<onleft condition="!Player.HasMedia">10</onleft>
-					<onright condition="Player.HasMedia">600</onright>
-					<onright condition="!Player.HasMedia">10</onright>
+					<onleft condition="!Player.HasMedia">11</onleft>
+					<onright>noop</onright>
 					<orientation>vertical</orientation>
 					<itemlayout height="90" width="220">
 						<control type="label">
@@ -675,11 +663,10 @@
 					<top>100</top>
 					<left>-300</left>
 					<height>540</height>
-					<onright condition="Player.HasMedia">600</onright>
-					<onright condition="!Player.HasMedia">10</onright>
-					<onleft condition="Player.HasMedia">600</onleft>
-					<onleft condition="!Player.HasMedia">10</onleft>
 					<onup>9000</onup>
+					<onright condition="Player.HasMedia">600</onright>
+					<onright condition="!Player.HasMedia">12</onright>
+					<onleft>noop</onleft>
 					<orientation>vertical</orientation>
 					<focusposition>1</focusposition>
 					<itemlayout height="90" width="220">

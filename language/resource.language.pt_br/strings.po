@@ -638,9 +638,9 @@ msgid "Remaining"
 msgstr ""
 
 #: /xml/Includes_Widgets.xml
-msgctxt "31135"
+msgctxt "#31135"
 msgid "Add Video source"
-msgstr "Adicionar Fontes de videos"
+msgstr "Adicionar Fonte de videos"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31136"

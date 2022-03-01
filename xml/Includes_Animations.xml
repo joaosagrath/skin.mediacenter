@@ -64,16 +64,16 @@
 		<animation type="Conditional" condition="Control.HasFocus() | [Integer.IsEqual(Container(9000).NumItems,5) + Container(9000).Position(4) |  Integer.IsEqual(Container(9000).NumItems,4) + Container(9000).Position(3) |  Integer.IsEqual(Container(9000).NumItems,3) + Container(9000).Position(2) |  Integer.IsEqual(Container(9000).NumItems,2) + Container(9000).Position(1) |  Integer.IsEqual(Container(9000).NumItems,1) + Container(9000).Position(0)] Integer.IsEqual(Container(9000).NumItems,0)">
 			<effect type="slide" start="0,0" end="-100,0" time="400" delay="300" tween="cubic" easing="inout"/>
 		</animation>
-		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(9002)">
-			<effect type="slide" start="0,0" end="100,0" time="400" delay="300" tween="cubic" easing="inout"/>
+		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(9002)">
+			<effect type="slide" start="0,0" end="100,0" time="400" delay="100" tween="cubic" easing="inout"/>
 		</animation>
 	</include>
 	<include name="Left_Menu_Hidden">
 		<animation type="Conditional" condition="Integer.IsEqual(Container(9000).Position(pos),0) | Integer.IsEqual(Container(9000).NumItems,0)">
 			<effect type="slide" start="0,0" end="100,0" time="400" delay="300" tween="cubic" easing="inout"/>
 		</animation>
-		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809) | Control.HasFocus(9001)">
-			<effect type="slide" start="0,0" end="-100,0" time="400" delay="300" tween="cubic" easing="inout"/>
+		<animation type="Conditional" condition="Control.HasFocus(10) | Control.HasFocus(12) | Control.HasFocus(120) | Control.HasFocus(121) | Control.HasFocus(122) | Control.HasFocus(123) | Control.HasFocus(124) | Control.HasFocus(125) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809) | Control.HasFocus(9001)">
+			<effect type="slide" start="0,0" end="-100,0" time="400" delay="100" tween="cubic" easing="inout"/>
 		</animation>
 	</include>
 	<include name="Animation_FocusTextureFade">

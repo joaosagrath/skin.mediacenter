@@ -105,7 +105,8 @@
 				<texturenofocus/>
 				<onleft>601</onleft>
 				<onright>603</onright>
-				<onup>87</onup>
+				<onup condition="Window.IsVisible(Home)">9000</onup>
+				<onup condition="Window.IsVisible(MusicOSD)">87</onup>
 				<ondown>noop</ondown>
 				<onclick>PlayerControl(Play)</onclick>
 			</control>
@@ -191,7 +192,7 @@
 					<top>0</top>
 					<bottom>0</bottom>
 					<width>13</width>
-					<onleft condition="![Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]">50</onleft>
+					<onleft condition="![ | Window.IsVisible(videoplaylist)]">50</onleft>
 					<onleft condition="Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)">55</onleft>
 					<onright condition="![Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]">50</onright>
 					<onright condition="Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)">55</onright>
@@ -767,7 +768,7 @@
 				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 			</control>
 		</definition>
-</include>
+	</include>
 	<include name="InfoWallEpisodeLayout">
 		<param name="main_label">$INFO[ListItem.Title]</param>
 		<param name="sub_label">$INFO[ListItem.TVShowTitle]</param>
@@ -877,7 +878,7 @@
 				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 			</control>
 		</definition>
-</include>
+	</include>
 	<include name="InfoWallMovieLayout">
 		<param name="focused">false</param>
 		<definition>
@@ -1539,7 +1540,7 @@
 			</control>
 			<include condition="Skin.HasSetting(touchmode) + !Window.IsActive(home)">TouchBackButton</include>
 		</definition>
-</include>
+	</include>
 	<include name="TopBarLabels">
 		<left>35</left>
 		<description>Left side of top bar</description>
@@ -1597,6 +1598,20 @@
 			<aspectratio>scale</aspectratio>
 			<texture colordiffuse="secondary_background" fallback="special://skin/extras/backgrounds/pattern0.jpg">$INFO[Skin.String(background_overlay),special://skin/extras/backgrounds/pattern,.jpg]</texture>
 		</control>
+		<control type="image">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(CustomHomeFanart)]</texture>
+		</control>
+		<control type="multiimage">
+			<visible>Player.HasMedia + Skin.HasSetting(show_fanartbackground)</visible>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>400</fadetime>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath colordiffuse="FF878787">$INFO[skin.string(MusicArtsPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
+		</control>
 	</include>
 	<include name="FullScreenDimensions">
 		<left>0</left>
@@ -1631,14 +1646,6 @@
 					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 					<animation effect="fade" time="400">VisibleChange</animation>
-					<control type="image">
-						<include>FullScreenDimensions</include>
-						<aspectratio>scale</aspectratio>
-						<fadetime>400</fadetime>
-						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(CustomHomeFanart)]</texture>
-						<visible>[Window.IsVisible(home) | Window.IsVisible(SkinSettings)]</visible>
-					</control>
 					<control type="image">
 						<include>FullScreenDimensions</include>
 						<aspectratio>scale</aspectratio>
@@ -1853,7 +1860,7 @@
 				<include>TouchButtons</include>
 			</control>
 		</definition>
-</include>
+	</include>
 	<include name="BottomBarTwoListInfo">
 		<control type="group">
 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
@@ -2085,7 +2092,7 @@
 			<textureradiooffnofocus colordiffuse="grey">icons/back.png</textureradiooffnofocus>
 			<include>Animation_TopSlide</include>
 		</control>
-</include>
+	</include>
 	<include name="TouchBackSlideshowButton">
 		<control type="radiobutton" id="13">
 			<left>-10</left>
