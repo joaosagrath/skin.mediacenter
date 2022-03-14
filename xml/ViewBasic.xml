@@ -2,33 +2,32 @@
 <includes>
 	<!-- VISTA BASICA - ID 50 -->
 	<include name="ViewBasic">
-		
 		<!-- GRUPO DE LISTA -->
 		<control type="group">
 			<include>OpenClose_Down</include>
 			<visible>Control.IsVisible(50)</visible>
 			<include>Visible_Right</include>
 			<!-- TESTE LABELS -->
-			<control type="label">
-				<!-- <visible>String.IsEqual(ListItem.DBTYPE,genre)</visible> -->
+			<!-- <control type="label">
+				<visible>String.IsEqual(ListItem.DBTYPE,genre)</visible>
 				<top>45</top>
 				<left>500</left>
-				<!-- <label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label> -->
-				<!-- <label>$VAR[viewdisc]</label> -->
-				<!-- <label>$INFO[Skin.String(musicgenres.path)]default.jpg</label> -->
-				<!-- $INFO[ListItem.Path,,logo.png] -->
-				<!-- <label>$INFO[Container(50).NumItems]</label> -->
-				<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
-				<!-- <label>$INFO[Player.Folderpath]discart.png</label> -abel> -->
-				<!-- <label>$INFO[Skin.String(MusicArtsPath)]$INFO[ListItem.Artist]</label> -->
-				<!-- <label>$INFO[ListItem.Property(name)]</label> -->
-				<!-- <label>$INFO[Skin.String(ModelsArtsPath)]flyers\$INFO[ListItem.Label].jpg</label> -->
-				<!-- <label>$INFO[Container.Content]</label> -->
+				<label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label>
+				<label>$VAR[viewdisc]</label>
+				<label>$INFO[Skin.String(musicgenres.path)]default.jpg</label>
+				$INFO[ListItem.Path,,logo.png]
+				<label>$INFO[Container(50).NumItems]</label>
+				<label>$INFO[Container(9000).Position(pos)]</label>
+				<label>$INFO[Player.Folderpath]discart.png</label> -abel>
+				<label>$INFO[Skin.String(MusicArtsPath)]$INFO[ListItem.Artist]</label>
+				<label>$INFO[ListItem.Property(name)]</label>
+				<label>$INFO[Skin.String(ModelsArtsPath)]flyers\$INFO[ListItem.Label].jpg</label>
+				<label>$INFO[Container.Content]</label>
 				<textcolor>white</textcolor>
 				<align>left</align>
 				<scroll>true</scroll>
-				<!-- <visible>Control.HasFocus(10)</visible> -->
-			</control>
+				<visible>Control.HasFocus(10)</visible>
+			</control> -->
 			<!-- Discart -->
 			<control type="group">
 				<left>150</left>
@@ -59,18 +58,7 @@
 					<animation type="Conditional" condition="!String.IsEmpty(ListItem.Art(discart))">
 						<effect type="slide" start="0,0" end="-120,0" time="400" delay="1000" tween="cubic" easing="out"/>
 					</animation>
-					<control type="image" id="499">
-						<left>50</left>
-						<right>53%</right>
-						<top>91</top>
-						<bottom>287</bottom>
-						<texture>$INFO[Skin.String(ModelsArtsPath)]flyers\$INFO[ListItem.Label].jpg</texture>
-						<fadetime>450</fadetime>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<bordertexture border="21">overlays/shadow.png</bordertexture>
-						<bordersize>20</bordersize>
-					</control>
-					<control type="image">					
+					<control type="image">
 						<visible>String.IsEmpty(Control.GetLabel(499))</visible>
 						<left>50</left>
 						<right>53%</right>
@@ -82,7 +70,7 @@
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
 						<bordersize>20</bordersize>
 					</control>
-					<control type="image">				
+					<control type="image">
 						<visible>String.IsEqual(ListItem.dbtype,genre)</visible>
 						<left>50</left>
 						<right>53%</right>
@@ -106,7 +94,7 @@
 					<right>540</right>
 					<bottom>93</bottom>
 					<left>960</left>
-					<height>180</height>
+					<height>185</height>
 					<label>$VAR[ShiftLeftTextBoxVar]</label>
 					<align>left</align>
 					<font>font27</font>
@@ -140,7 +128,7 @@
 					<fadetime>450</fadetime>
 					<autoscroll time="3000" repeat="3000">True</autoscroll>
 				</control>
-			<control type="image">
+				<control type="image">
 					<right>50</right>
 					<top>805</top>
 					<bottom>90</bottom>
@@ -276,24 +264,12 @@
 						<texture colordiffuse="grey">$VAR[BasicListWatchedIconVar]</texture>
 						<aspectratio>scale</aspectratio>
 					</control>
-					<!-- <control type="label">
-						<right>80</right>
-						<right>90</right>
-						<height>80</height>
-						<width>600</width>
-						<align>right</align>
-						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$VAR[AddonsLabel2Var]</label>
-						<scroll>true</scroll>
-					</control> -->
 					<control type="image">
 						<right>40</right>
 						<top>25</top>
 						<width>32</width>
 						<height>32</height>
 						<texture>$VAR[AddonsOriginVar]</texture>
-						<!-- <visible>!ListItem.IsFolder</visible> -->
 					</control>
 				</itemlayout>
 				<focusedlayout height="83" condition="Container.Content(addons)">
@@ -323,24 +299,12 @@
 						<texture colordiffuse="grey">$VAR[BasicListWatchedIconVar]</texture>
 						<aspectratio>scale</aspectratio>
 					</control>
-					<!-- <control type="label">
-						<right>80</right>
-						<right>90</right>
-						<height>80</height>
-						<width>600</width>
-						<align>right</align>
-						<aligny>center</aligny>
-						<font>font27</font>
-						<label>$VAR[AddonsLabel2Var]</label>
-						<scroll>true</scroll>
-					</control> -->
 					<control type="image">
 						<right>40</right>
 						<top>25</top>
 						<width>32</width>
 						<height>32</height>
 						<texture>$VAR[AddonsOriginVar]</texture>
-						<!-- <visible>!ListItem.IsFolder</visible> -->
 					</control>
 				</focusedlayout>
 			</control>

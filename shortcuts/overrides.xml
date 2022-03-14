@@ -213,19 +213,19 @@
 		<!-- Widgets de Magazines -->
 		<node label="Magazines" condition="System.HasAddon(plugin.program.newsstand)">
 			
-				<shortcut label="Addon Root" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/</shortcut>
+				<shortcut label="$INFO[System.AddonTitle(plugin.program.newsstand)]" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs">||BROWSE||plugin.program.newsstand/</shortcut>
 				
-				<shortcut label="All Categories" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_ALL_CATEGORIES</shortcut>
+				<shortcut label="All Categories" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs">plugin://plugin.program.newsstand/?com=SHOW_ALL_CATEGORIES</shortcut>
 				
-				<shortcut label="All Magazines" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_ALL_MAGAZINES</shortcut>
+				<shortcut label="All Magazines" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs">plugin://plugin.program.newsstand/?com=SHOW_ALL_MAGAZINES</shortcut>
 				
-				<shortcut label="All Issues" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_ALL_ISSUES</shortcut>
+				<shortcut label="All Issues" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs">plugin://plugin.program.newsstand/?com=SHOW_ALL_ISSUES</shortcut>
 				
-				<shortcut label="Last Viewed" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_LAST_VIEWED</shortcut>
+				<shortcut label="Last Viewed" type="32123" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs">plugin://plugin.program.newsstand/?com=SHOW_LAST_VIEWED</shortcut>
 				
-				<shortcut label="Most Viewed" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_MOST_VIEWED</shortcut>
+				<shortcut label="Most Viewed" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs">plugin://plugin.program.newsstand/?com=SHOW_MOST_VIEWED</shortcut>
 				
-				<shortcut label="Favourites" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs" condition="System.HasAddon(plugin.program.newsstand)">plugin://plugin.program.newsstand/?com=SHOW_FAVOURITES</shortcut>
+				<shortcut label="Favourites" type="32020" icon="defaultaddonimages.png" widget="addon" widgetType="addon" widgetTarget="programs">plugin://plugin.program.newsstand/?com=SHOW_FAVOURITES</shortcut>
 			
 			</node>
 		

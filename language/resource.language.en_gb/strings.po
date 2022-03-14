@@ -294,7 +294,10 @@ msgctxt "#31054"
 msgid "Press [B]Left[/B] to rewind, or [B]Right[/B] to fast-forward"
 msgstr ""
 
-#empty string with id 31055
+#: /xml/SkinSettings.xml
+msgctxt "#31055"
+msgid "Not Installed"
+msgstr ""
 
 #: /xml/MyMusicNav.xml /xml/MyVideoNav.xml
 msgctxt "#31056"
@@ -311,7 +314,15 @@ msgctxt "#31058"
 msgid "Automatic Login on startup"
 msgstr ""
 
-#empty strings from id 31059 to 31060
+#: /xml/SettingsProfile.xml
+msgctxt "#31059"
+msgid "Installed version:"
+msgstr ""
+
+#: /xml/SettingsProfile.xml
+msgctxt "#31060"
+msgid "Skin Reset"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31061"
@@ -328,7 +339,10 @@ msgctxt "#31063"
 msgid "Sections"
 msgstr ""
 
-#empty string with id 31064
+#: /xml/SkinSettings.xml
+msgctxt "#31064"
+msgid "Skin add-ons"
+msgstr ""
 
 #: /xml/MyVideoPlaylist.xml
 msgctxt "#31065"
@@ -640,7 +654,7 @@ msgstr ""
 
 #: /xml/Includes_Widgets.xml
 msgctxt "#31135"
-msgid "Add Video source"
+msgid "This is a customizable menu. Here you can add new menus and features to the skin."
 msgstr ""
 
 #: /xml/DialogAddonInfo.xml
@@ -695,13 +709,10 @@ msgstr ""
 
 #: /xml/Includes_Widgets.xml
 msgctxt "#31146"
-msgid "Add Music source"
+msgid "Sort by: Studio"
 msgstr ""
 
-#: /xml/Includes_Widgets.xml
-msgctxt "#31147"
-msgid "Add Image source"
-msgstr ""
+#empty string with id 31222
 
 #: /xml/Home.xml
 msgctxt "#31148"
@@ -954,7 +965,7 @@ msgstr ""
 
 #: /xml/Includes_Widgets.xml
 msgctxt "#31197"
-msgid "Add Games source"
+msgid "Sort by: Genre"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
@@ -1029,17 +1040,17 @@ msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31212"
-msgid "Audio Add-ons"
+msgid "Sort by: Year"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31213"
-msgid "Games Add-ons"
+msgid "Sort By: Title"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31214"
-msgid "Image Add-ons"
+msgid "Sorted By: Default"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml

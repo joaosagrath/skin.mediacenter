@@ -1,64 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Sagrath -->
-	<include name="NoAddons">
-		<param name="NoAddonsText"/>
-		<param name="ButtomHideMenu"/>
-		<param name="ButtomHideMenuClick"/>
-		<param name="ButtomAddAddon"/>
-		<param name="ButtomAddAddonClick"/>
-		<param name="ButtomAddSource"/>
-		<param name="ButtomAddSourceClick"/>
+	<include name="Sort_Widgets">
 		<definition>
 			<control type="grouplist">
-				<width>1500</width>
 				<top>100</top>
+				<itemgap>100</itemgap>
+				<height>350</height>
 				<orientation>vertical</orientation>
-				<control type="textbox">
-					<width>1500</width>
-					<height>100</height>
-					<label>$PARAM[NoAddonsText]</label>
-					<align>center</align>
-				</control>
+				<animation effect="slide" start="0,0" end="0,220" time="100" easing="inout" condition="Control.HasFocus(9000) | Control.HasFocus(9001) | Control.HasFocus(9002) | Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12) | Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809)">Conditional</animation>
 				<control type="grouplist" id="8001">
-					<width>1500</width>
 					<orientation>horizontal</orientation>
-					<align>center</align>
-					<onleft/>
-					<onright/>
+					<align>left</align>
 					<control type="button" id="100">
-						<width>500</width>
+						<width>380</width>
 						<height>110</height>
-						<label>$PARAM[ButtomAddAddon]</label>
+						<label>$PARAM[SortByTitleLabel]</label>
 						<textoffsetx>40</textoffsetx>
-						<onclick>$PARAM[ButtomAddAddonClick]</onclick>
-						<onclick>up</onclick>
-						<onup>9000</onup>
+						<onclick>$PARAM[SortByTitleClick]</onclick>
+						<ondown>105</ondown>
 						<align>center</align>
 						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
 					</control>
-					<control type="button" id="12">
-						<width>500</width>
+					<control type="button" id="101">
+						<width>380</width>
 						<height>110</height>
-						<label>$PARAM[ButtomHideMenu]</label>
+						<label>$PARAM[SortByYearLabel]</label>
 						<textoffsetx>40</textoffsetx>
-						<onclick>$PARAM[ButtomHideMenuClick]</onclick>
-						<onclick>Control.SetFocus(20001)</onclick>
-						<onup>9000</onup>
-						<onclick>up</onclick>
+						<onclick>$PARAM[SortByYearClick]</onclick>
+						<ondown>106</ondown>
 						<align>center</align>
 						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
 					</control>
 					<control type="button" id="102">
-						<width>500</width>
+						<width>380</width>
 						<height>110</height>
-						<label>$PARAM[ButtomAddSource]</label>
+						<label>$PARAM[SortByGenreLabel]</label>
 						<textoffsetx>40</textoffsetx>
-						<onclick>$PARAM[ButtomAddSourceClick]</onclick>
-						<onclick>up</onclick>
-						<onup>9000</onup>
+						<onclick>$PARAM[SortByGenreClick]</onclick>
+						<ondown>107</ondown>
+						<align>center</align>
+						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
+					</control>
+					<control type="button" id="103">
+						<width>380</width>
+						<height>110</height>
+						<label>$PARAM[SortByStudioLabel]</label>
+						<textoffsetx>40</textoffsetx>
+						<onclick>$PARAM[SortByStudioClick]</onclick>
+						<ondown>108</ondown>
+						<align>center</align>
+						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
+					</control>
+					<control type="button" id="104">
+						<width>380</width>
+						<height>110</height>
+						<label>$PARAM[SortByDefaultLabel]</label>
+						<textoffsetx>40</textoffsetx>
+						<onclick>$PARAM[SortByDefaultClick]</onclick>
+						<ondown>109</ondown>
+						<align>center</align>
+						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
+					</control>
+				</control>
+				<control type="grouplist" id="8002">
+					<visible>$PARAM[Visible]</visible>
+					<orientation>horizontal</orientation>
+					<align>left</align>
+					<control type="button" id="105">
+						<width>380</width>
+						<height>110</height>
+						<label>$PARAM[SortByTitleLabel]</label>
+						<textoffsetx>40</textoffsetx>
+						<onclick>$PARAM[SortByTitleClick]</onclick>
+						<onup>100</onup>
+						<align>center</align>
+						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
+					</control>
+					<control type="button" id="106">
+						<width>380</width>
+						<height>110</height>
+						<label>$PARAM[SortByYearLabel]</label>
+						<textoffsetx>40</textoffsetx>
+						<onclick>$PARAM[SortByYearClick]</onclick>
+						<onup>101</onup>
+						<align>center</align>
+						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
+					</control>
+					<control type="button" id="107">
+						<width>380</width>
+						<height>110</height>
+						<label>$PARAM[SortByGenreLabel]</label>
+						<textoffsetx>40</textoffsetx>
+						<onclick>$PARAM[SortByGenreClick]</onclick>
+						<onup>102</onup>
+						<align>center</align>
+						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
+					</control>
+					<control type="button" id="108">
+						<width>380</width>
+						<height>110</height>
+						<label>$PARAM[EditWidgetsLabel]</label>
+						<textoffsetx>40</textoffsetx>
+						<onclick>$PARAM[EditWidgetsClick]</onclick>
+						<onup>103</onup>
+						<align>center</align>
+						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
+						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
+					</control>
+					<control type="button" id="109">
+						<width>380</width>
+						<height>110</height>
+						<label>$PARAM[HideThisMenuLabel]</label>
+						<textoffsetx>40</textoffsetx>
+						<onclick>$PARAM[HideThisMenuClick]</onclick>
+						<onclick>Control.SetFocus(20004)</onclick>
+						<onup>104</onup>
 						<align>center</align>
 						<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 						<texturenofocus border="40">dialogs/dialog-bg.png</texturenofocus>
@@ -91,8 +156,7 @@
 				<itemlayout width="212" height="295">
 					<control type="group">
 						<animation effect="slide" end="212" time="100" condition="Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12) | Window.IsActive(10106)">Conditional</animation>
-						<!-- <animation effect="slide" end="212" time="100" condition="Control.HasFocus(12)">Conditional</animation> -->
-						<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) + Control.HasFocus(11) + Control.HasFocus(12)] + [Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="300" condition="[Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)] + [Skin.HasSetting(FadeWidgetIdle) + System.IdleTime(3)]">Conditional</animation>
 						<control type="image">
 							<left>10</left>
 							<top>0</top>
@@ -229,7 +293,7 @@
 				<include condition="Skin.HasSetting(WidgetListHomeAndroidApps)">WidgetListHomeAndroidApps</include>
 			</control>
 		</definition>
-</include>
+	</include>
 	<include name="WidgetListAddons">
 		<content>
 			<item>
@@ -1073,7 +1137,7 @@
 				<include>$PARAM[content_include]</include>
 			</control>
 		</definition>
-</include>
+	</include>
 	<include name="WeatherWindow">
 		<param name="width">266</param>
 		<definition>
@@ -1198,7 +1262,7 @@
 				<include>$PARAM[content_include]</include>
 			</control>
 		</definition>
-</include>
+	</include>
 	<include name="HourlyItems">
 		<content>
 			<item>
@@ -1425,14 +1489,14 @@
 	<include name="WidgetListCommon">
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
-		<onleft>up</onleft>
+		<!-- <onleft>up</onleft>
 		<onleft>9001</onleft>
 		<onright>up</onright>
-		<onright>9001</onright>
-		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
+		<onright>9001</onright> -->
+		<!-- <onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
 		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 		<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
-		<onback>SetFocus($PARAM[list_id],0,absolute)</onback>
+		<onback>SetFocus($PARAM[list_id],0,absolute)</onback> -->
 		<preloaditems>2</preloaditems>
 	</include>
 	<include name="BusyListSpinner">

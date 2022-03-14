@@ -29,36 +29,55 @@
 						<param name="id" value="games"/>
 					</include>
 					<control type="grouplist" id="8000">
-						<visible>!String.IsEmpty(Skin.String(GamesWidgets.Target))</visible>
-						<ondown>9000</ondown>
 						<onup>9000</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(GamesWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(GamesWidgets.Target)]"/>
-							<param name="sortby" value="title"/>
-							<param name="list_id" value="10"/>		
+							<param name="sortby" value="$INFO[Skin.String(GamesWidgets.Sort)]"/>
+							<param name="sortorder" value="ascending"/>
+							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultgames.png"/>
 							<param name="aligny" value="bottom"/>
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
-					<control type="group" id="8000">
+					<control type="textbox">
 						<visible>String.IsEmpty(Skin.String(GamesWidgets.Target))</visible>
+						<top>300</top>
 						<left>210</left>
-						<ondown>12</ondown>
-						<include content="NoAddons">
-							<param name="NoAddonsText">$LOCALIZE[31162]</param>
-							<param name="ButtomAddAddon">$LOCALIZE[31213]</param>
-							<param name="ButtomAddAddonClick">ActivateWindow(games,addons://sources/game/,return)</param>
-							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
-							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoGamesButton)</param>
-							<param name="ButtomAddSource">$LOCALIZE[31197]</param>
-							<param name="ButtomAddSourceClick">ActivateWindow(Games)</param>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31162]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(GamesWidgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>10</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(GamesWidgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(GamesWidgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(GamesWidgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(GamesWidgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(GamesWidgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=GamesWidgets.Source&amp;skinWidgetType=games&amp;skinWidgetName=GamesWidgets.Name&amp;skinWidgetTarget=GamesWidgets.Target&amp;skinWidgetPath=GamesWidgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoGamesButton)</param>
 						</include>
 					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(GamesWidgets.Name)]</label>
+						<label>$INFO[Skin.String(GamesWidgets.Name)] Sorted by: $INFO[Skin.String(GamesWidgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Filmes ID 5000 -->
@@ -68,13 +87,12 @@
 						<param name="id" value="movies"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<visible>!String.IsEmpty(Skin.String(MoviesWidgets.Target))</visible>
-						<!-- <onup>9000</onup> -->
-						<ondown>17</ondown>
+						<onup>9000</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MoviesWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MoviesWidgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MoviesWidgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultmovies.png"/>
@@ -82,23 +100,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
-					<control type="group" id="5000">
+					<control type="textbox">
 						<visible>String.IsEmpty(Skin.String(MoviesWidgets.Target))</visible>
+						<top>300</top>
 						<left>210</left>
-						<ondown>12</ondown>
-						<include content="NoAddons">
-							<param name="NoAddonsText">$LOCALIZE[31105]</param>
-							<param name="ButtomAddAddon">$LOCALIZE[31211]</param>
-							<param name="ButtomAddAddonClick">ActivateWindow(videos,addons://sources/video/,return)</param>
-							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
-							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoMovieButton)</param>
-							<param name="ButtomAddSource">$LOCALIZE[31135]</param>
-							<param name="ButtomAddSourceClick">ActivateWindow(Videos,Return)</param>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31105]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MoviesWidgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>10</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MoviesWidgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MoviesWidgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MoviesWidgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MoviesWidgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MoviesWidgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MoviesWidgets.Source&amp;skinWidgetName=MoviesWidgets.Name&amp;skinWidgetTarget=MoviesWidgets.Target&amp;skinWidgetPath=MoviesWidgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMovieButton)</param>
 						</include>
 					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MoviesWidgets.Name)]</label>
+						<label>$INFO[Skin.String(MoviesWidgets.Name)] Sorted by: $INFO[Skin.String(MoviesWidgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Seriados ID 6000 -->
@@ -108,14 +145,12 @@
 						<param name="id" value="tvshows"/>
 					</include>
 					<control type="grouplist" id="6000">
-						<visible>!String.IsEmpty(Skin.String(TvShowsWidgets.Target))</visible>
-						<top>0</top>
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9000</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(TvShowsWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(TvShowsWidgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(TvShowsWidgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaulttvshows.png"/>
@@ -123,23 +158,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
-					<control type="group" id="6000">
+					<control type="textbox">
 						<visible>String.IsEmpty(Skin.String(TvShowsWidgets.Target))</visible>
+						<top>300</top>
 						<left>210</left>
-						<ondown>12</ondown>
-						<include content="NoAddons">
-							<param name="NoAddonsText">$LOCALIZE[31105]</param>
-							<param name="ButtomAddAddon">$LOCALIZE[31211]</param>
-							<param name="ButtomAddAddonClick">ActivateWindow(videos,addons://sources/video/,return)</param>
-							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
-							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoTvShowButton)</param>
-							<param name="ButtomAddSource">$LOCALIZE[31135]</param>
-							<param name="ButtomAddSourceClick">ActivateWindow(Videos,return)</param>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31105]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(TvShowsWidgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>10</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(TvShowsWidgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(TvShowsWidgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(TvShowsWidgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(TvShowsWidgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(TvShowsWidgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=TvShowsWidgets.Source&amp;skinWidgetName=TvShowsWidgets.Name&amp;skinWidgetTarget=TvShowsWidgets.Target&amp;skinWidgetPath=TvShowsWidgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoTvShowButton)</param>
 						</include>
 					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(TvShowsWidgets.Name)]</label>
+						<label>$INFO[Skin.String(TvShowsWidgets.Name)] Sorted by: $INFO[Skin.String(TvShowsWidgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Musicas ID 7000 -->
@@ -149,13 +203,12 @@
 						<param name="id" value="music"/>
 					</include>
 					<control type="grouplist" id="7000">
-						<visible>!String.IsEmpty(Skin.String(MusicWidgets.Target))</visible>
-						<top>0</top>
-						<ondown>9000</ondown>
+						<onup>9000</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MusicWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MusicWidgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MusicWidgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultmusic.png"/>
@@ -163,23 +216,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
-					<control type="group" id="7000">
+					<control type="textbox">
 						<visible>String.IsEmpty(Skin.String(MusicWidgets.Target))</visible>
+						<top>300</top>
 						<left>210</left>
-						<ondown>12</ondown>
-						<include content="NoAddons">
-							<param name="NoAddonsText">$LOCALIZE[31221]</param>
-							<param name="ButtomAddAddon">$LOCALIZE[31212]</param>
-							<param name="ButtomAddAddonClick">ActivateWindow(music,addons://sources/audio/,return)</param>
-							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
-							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoMusicButton)</param>
-							<param name="ButtomAddSource">$LOCALIZE[31146]</param>
-							<param name="ButtomAddSourceClick">ActivateWindow(Music,return)</param>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31221]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MusicWidgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>10</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MusicWidgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MusicWidgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MusicWidgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MusicWidgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MusicWidgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MusicWidgets.Source&amp;skinWidgetName=MusicWidgets.Name&amp;skinWidgetTarget=MusicWidgets.Target&amp;skinWidgetPath=MusicWidgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMusicButton)</param>
 						</include>
 					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MusicWidgets.Name)]</label>
+						<label>$INFO[Skin.String(MusicWidgets.Name)] Sorted By: $INFO[Skin.String(MusicWidgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Imagens ID 4000 -->
@@ -190,15 +262,13 @@
 						<param name="id" value="pictures"/>
 					</include>
 					<control type="grouplist" id="4000">
-						<visible>!String.IsEmpty(Skin.String(PicturesWidgets.Target))</visible>
-						<top>0</top>
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9000</onup>
+						<ondown>100</ondown>
 						<pagecontrol>4010</pagecontrol>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(PicturesWidgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(PicturesWidgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(PicturesWidgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="10"/>
 							<param name="fallback_icon" value="defaultpicture.png"/>
@@ -206,23 +276,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
-					<control type="group" id="4000">
+					<control type="textbox">
 						<visible>String.IsEmpty(Skin.String(PicturesWidgets.Target))</visible>
+						<top>300</top>
 						<left>210</left>
-						<ondown>12</ondown>
-						<include content="NoAddons">
-							<param name="NoAddonsText">$LOCALIZE[31111]</param>
-							<param name="ButtomAddAddon">$LOCALIZE[31214]</param>
-							<param name="ButtomAddAddonClick">ActivateWindow(pictures,addons://sources/image/,return)</param>
-							<param name="ButtomHideMenu">$LOCALIZE[31116]</param>
-							<param name="ButtomHideMenuClick">Skin.ToggleSetting(HomeMenuNoPicturesButton)</param>
-							<param name="ButtomAddSource">$LOCALIZE[31147]</param>
-							<param name="ButtomAddSourceClick">ActivateWindow(Pictures,return)</param>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31111]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(PicturesWidgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>10</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(PicturesWidgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(PicturesWidgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(PicturesWidgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(PicturesWidgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(PicturesWidgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=PicturesWidgets.Source&amp;skinWidgetName=PicturesWidgets.Name&amp;skinWidgetTarget=PicturesWidgets.Target&amp;skinWidgetPath=PicturesWidgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoPicturesButton)</param>
 						</include>
 					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(PicturesWidgets.Name)]</label>
+						<label>$INFO[Skin.String(PicturesWidgets.Name)] Sorted by: $INFO[Skin.String(PicturesWidgets.Sort)]</label>
 					</control>
 				</control>
 			</control>
@@ -237,10 +326,11 @@
 					</include>
 					<control type="grouplist">
 						<onup>9002</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu1Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu1Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu1Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="12"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -248,9 +338,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu1Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu1Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>12</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu1Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu1Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu1Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu1Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu1Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu1Widgets.Source&amp;skinWidgetName=MyMenu1Widgets.Name&amp;skinWidgetTarget=MyMenu1Widgets.Target&amp;skinWidgetPath=MyMenu1Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu1Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu1Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu1Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu1Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Meu Menu 2 -->
@@ -260,12 +383,11 @@
 						<param name="id" value="MyMenu2"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9002</onup>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu2Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu2Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu2Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="12"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -273,9 +395,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu2Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu2Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>12</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu2Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu2Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu2Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu2Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu2Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu2Widgets.Source&amp;skinWidgetName=MyMenu2Widgets.Name&amp;skinWidgetTarget=MyMenu2Widgets.Target&amp;skinWidgetPath=MyMenu2Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu2Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu2Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu2Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu2Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Meu Menu 3 -->
@@ -285,12 +440,12 @@
 						<param name="id" value="MyMenu3"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9002</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu3Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu3Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu3Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="12"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -298,9 +453,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu3Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu3Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>12</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu3Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu3Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu3Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu3Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu3Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu3Widgets.Source&amp;skinWidgetName=MyMenu3Widgets.Name&amp;skinWidgetTarget=MyMenu3Widgets.Target&amp;skinWidgetPath=MyMenu3Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu3Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu3Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu3Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu3Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Meu Menu 4 -->
@@ -310,12 +498,12 @@
 						<param name="id" value="MyMenu4"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9002</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu4Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu4Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu4Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="12"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -323,9 +511,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu4Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu4Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>12</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu4Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu4Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu4Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu4Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu4Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu4Widgets.Source&amp;skinWidgetName=MyMenu4Widgets.Name&amp;skinWidgetTarget=MyMenu4Widgets.Target&amp;skinWidgetPath=MyMenu4Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu4Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu4Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu4Widgets.Name)] Sorted By: $INFO[Skin.String(MyMenu4Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- My Menu 5 -->
@@ -335,12 +556,12 @@
 						<param name="id" value="MyMenu5"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9002</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu5Widgets.Path)]"/>
-							<param name="widget_target" value="$INFO[Skin.String(MyMenu5.Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="widget_target" value="$INFO[Skin.String(MyMenu5Widgets.Target)]"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu5Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="12"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -348,9 +569,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu5Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu5Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>12</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu5Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu5Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu5Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu5Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu5Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu5Widgets.Source&amp;skinWidgetName=MyMenu5Widgets.Name&amp;skinWidgetTarget=MyMenu5Widgets.Target&amp;skinWidgetPath=MyMenu5Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu5Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu5Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu5Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu5Widgets.Sort)]</label>
 					</control>
 				</control>
 			</control>
@@ -364,12 +618,12 @@
 						<param name="id" value="MyMenu6"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<onup>9001</onup>
-						<ondown>12</ondown>
+						<onup>11</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu6Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu6Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu6Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="11"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -377,9 +631,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu6Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu6Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>11</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu6Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu6Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu6Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu6Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu6Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu6Widgets.Source&amp;skinWidgetName=MyMenu6Widgets.Name&amp;skinWidgetTarget=MyMenu6Widgets.Target&amp;skinWidgetPath=MyMenu6Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu6Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu6Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu6Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu6Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Meu Menu 7 -->
@@ -389,12 +676,12 @@
 						<param name="id" value="MyMenu7"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9001</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu7Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu7Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu7Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="11"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -402,9 +689,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu7Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu7Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>11</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu7Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu7Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu7Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu7Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu7Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu7Widgets.Source&amp;skinWidgetName=MyMenu7Widgets.Name&amp;skinWidgetTarget=MyMenu7Widgets.Target&amp;skinWidgetPath=MyMenu7Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu7Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu7Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu7Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu7Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Meu Menu 8 -->
@@ -414,12 +734,12 @@
 						<param name="id" value="MyMenu8"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9001</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu8Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu8Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu8Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="11"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -427,9 +747,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu8Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu8Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>11</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu8Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu8Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu8Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu8Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu8Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu8Widgets.Source&amp;skinWidgetName=MyMenu8Widgets.Name&amp;skinWidgetTarget=MyMenu8Widgets.Target&amp;skinWidgetPath=MyMenu8Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu8Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu8Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu8Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu8Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Meu Menu 9 -->
@@ -439,12 +792,12 @@
 						<param name="id" value="MyMenu9"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9001</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu9Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu9Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu9Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="11"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -452,9 +805,41 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu9Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu9Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<onup>11</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu9Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu9Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu9Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu9Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu9Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu9Widgets.Source&amp;skinWidgetName=MyMenu9Widgets.Name&amp;skinWidgetTarget=MyMenu9Widgets.Target&amp;skinWidgetPath=MyMenu9Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu9Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu9Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu9Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu9Widgets.Sort)]</label>
 					</control>
 				</control>
 				<!-- Meu Menu 10 -->
@@ -464,12 +849,12 @@
 						<param name="id" value="MyMenu10"/>
 					</include>
 					<control type="grouplist" id="5000">
-						<!-- <onup>9000</onup> -->
-						<ondown>12</ondown>
+						<onup>9001</onup>
+						<ondown>100</ondown>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[Skin.String(MyMenu10Widgets.Path)]"/>
 							<param name="widget_target" value="$INFO[Skin.String(MyMenu10Widgets.Target)]"/>
-							<param name="sortby" value="title"/>
+							<param name="sortby" value="$INFO[Skin.String(MyMenu10Widgets.Sort)]"/>
 							<param name="sortorder" value=""/>
 							<param name="list_id" value="11"/>
 							<param name="fallback_icon" value="defaultfile.png"/>
@@ -477,9 +862,42 @@
 							<param name="aspect" value="keep"/>
 						</include>
 					</control>
+					<control type="textbox">
+						<visible>String.IsEmpty(Skin.String(MyMenu10Widgets.Target))</visible>
+						<top>300</top>
+						<left>210</left>
+						<width>1500</width>
+						<height>100</height>
+						<label>$LOCALIZE[31135]</label>
+						<align>center</align>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(Skin.String(MyMenu10Widgets.Target))</visible>
+						<top>390</top>
+						<left>12</left>
+						<height>350</height>
+						<onup>11</onup>
+						<ondown>10</ondown>
+						<include content="Sort_Widgets">
+							<param name="SortByTitleLabel">$LOCALIZE[31213]</param>
+							<param name="SortByTitleClick">Skin.SetString(MyMenu10Widgets.Sort, title)</param>
+							<param name="SortByYearLabel">$LOCALIZE[31212]</param>
+							<param name="SortByYearClick">Skin.SetString(MyMenu10Widgets.Sort, year)</param>
+							<param name="SortByGenreLabel">$LOCALIZE[31197]</param>
+							<param name="SortByGenreClick">Skin.SetString(MyMenu10Widgets.Sort, genre)</param>
+							<param name="SortByStudioLabel">$LOCALIZE[31146]</param>
+							<param name="SortByStudioClick">Skin.SetString(MyMenu10Widgets.Sort, studio)</param>
+							<param name="SortByDefaultLabel">$LOCALIZE[31214]</param>
+							<param name="SortByDefaultClick">Skin.SetString(MyMenu10Widgets.Sort, default)</param>
+							<param name="EditWidgetsLabel">$LOCALIZE[31187]</param>
+							<param name="EditWidgetsClick">RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MyMenu10Widgets.Source&amp;skinWidgetName=MyMenu10Widgets.Name&amp;skinWidgetTarget=MyMenu10Widgets.Target&amp;skinWidgetPath=MyMenu10Widgets.Path)</param>
+							<param name="HideThisMenuLabel">$LOCALIZE[31116]</param>
+							<param name="HideThisMenuClick">Skin.ToggleSetting(HomeMenuNoMyMenu10Button)</param>
+						</include>
+					</control>
 					<control type="label">
 						<include>WidgetLabel</include>
-						<label>$INFO[Skin.String(MyMenu10Widgets.Name)]</label>
+						<label>$INFO[Skin.String(MyMenu10Widgets.Name)] Sorted by: $INFO[Skin.String(MyMenu10Widgets.Sort)]</label>
 					</control>
 				</control>
 			</control>
@@ -528,7 +946,7 @@
 							<param name="id" value="movies"/>
 						</include>
 						<control type="grouplist" id="2">
-							<ondown></ondown>
+							<ondown/>
 							<pagecontrol>4010</pagecontrol>
 							<include content="WidgetListHomePoster">
 								<param name="content_path" value="$INFO[ListItem.Property(widgetPath)]"/>
@@ -570,7 +988,7 @@
 					</include>
 					<control type="grouplist" id="7000">
 						<!-- <onup>9000</onup> -->
-						<ondown></ondown>
+						<ondown/>
 						<pagecontrol>4010</pagecontrol>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[ListItem.Property(widgetPath)]"/>
@@ -591,7 +1009,7 @@
 						<param name="id" value="pictures"/>
 					</include>
 					<control type="grouplist" id="4000">
-						<ondown></ondown>
+						<ondown/>
 						<pagecontrol>4010</pagecontrol>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[ListItem.Property(widgetPath)]"/>
@@ -611,7 +1029,7 @@
 					</include>
 					<control type="grouplist" id="5000">
 						<top>0</top>
-						<ondown></ondown>
+						<ondown/>
 						<pagecontrol>4010</pagecontrol>
 						<include content="WidgetListHomePoster">
 							<param name="content_path" value="$INFO[ListItem.Property(widgetPath)]"/>

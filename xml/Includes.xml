@@ -175,7 +175,7 @@
 		<top>575</top>
 		<heigth>30</heigth>
 		<left>30</left>
-		<visible>Control.HasFocus(10)</visible>
+		<visible>Control.HasFocus(10) | Control.HasFocus(11)| Control.HasFocus(12) | Control.HasFocus(100) | Control.HasFocus(101) | Control.HasFocus(102) | Control.HasFocus(103) | Control.HasFocus(104) | Control.HasFocus(105) | Control.HasFocus(106) | Control.HasFocus(107) | Control.HasFocus(108) | Control.HasFocus(109)</visible>
 	</include>
 	<include name="CommonScrollbars">
 		<control type="group">

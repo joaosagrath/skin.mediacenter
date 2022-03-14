@@ -53,7 +53,6 @@
 			<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
 			<!-- <top>0</top> -->
 			<height>$PARAM[height]</height>
-
 			<aligny>center</aligny>
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>selected</selectedcolor>

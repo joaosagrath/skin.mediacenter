@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
-	<variable name="CustomHomeIcons">		
+	<variable name="girlslogo">
+		<value condition="String.Contains(ListItem.Property(name),ListItem.Property(name))">$INFO[ListItem.Property(name)]</value>
+	</variable>
+	<variable name="NewsStandAddonVar">
+		<value condition="!System.HasAddon(plugin.program.newsstand)">$LOCALIZE[31055]</value>
+		<value condition="System.HasAddon(plugin.program.newsstand)">$LOCALIZE[31059] $INFO[System.AddonVersion(plugin.program.newsstand)]</value>
+	</variable>
+	<variable name="AelAddonVar">
+		<value condition="!System.HasAddon(plugin.program.advanced.emulator.launcher)">$LOCALIZE[31055]</value>
+		<value condition="System.HasAddon(plugin.program.advanced.emulator.launcher)">$LOCALIZE[31059] $INFO[System.AddonVersion(plugin.program.advanced.emulator.launcher)]</value>
+	</variable>
+	<variable name="SkinShortcutsAddonVar">
+		<value condition="!System.HasAddon(script.skinshortcuts)">$LOCALIZE[31055]</value>
+		<value condition="System.HasAddon(script.skinshortcuts)">$LOCALIZE[31059] $INFO[System.AddonVersion(script.skinshortcuts)]</value>
+	</variable>
+	<variable name="SkinHelperServiceAddonVar">
+		<value condition="!System.HasAddon(script.skin.helper.service)">$LOCALIZE[31055]</value>
+		<value condition="System.HasAddon(script.skin.helper.service)">$LOCALIZE[31059] $INFO[System.AddonVersion(script.skin.helper.service)]</value>
+	</variable>
+	<variable name="CustomHomeIcons">
 		<!-- <value condition="Skin.HasSetting(mainmenu_custom_icons)">$INFO[skin.string(mainmenu.icons.path)]</value> -->
 		<value>icons/sidemenu/</value>
-	</variable>	
-
+	</variable>
 	<variable name="settingsstep">
 		<value condition="String.IsEqual(skin.string(autosetting),0)">$LOCALIZE[31224]</value>
 		<value condition="String.IsEqual(skin.string(autosetting),10)">$LOCALIZE[31225]</value>
@@ -20,7 +37,6 @@
 		<value condition="String.IsEqual(skin.string(autosetting),100)">$LOCALIZE[31234]</value>
 		<value condition="String.IsEqual(skin.string(autosetting),110)">$LOCALIZE[31235]</value>
 	</variable>
-
 	<variable name="PVRTVSettingsLabel">
 		<value condition="String.IsEqual(Skin.String(PVRTV.Action),ActivateWindow(TVChannels))">$LOCALIZE[19019]</value>
 		<value condition="String.IsEqual(Skin.String(PVRTV.Action),ActivateWindow(TVGuide))">$LOCALIZE[19069]</value>
@@ -161,7 +177,7 @@
 	</variable>
 	<variable name="ShiftThumbVar">
 		<value condition="!String.IsEmpty(Listitem.Art(poster)) + Skin.HasSetting(NoPoster)">$INFO[Listitem.Icon]</value>
-		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>		
+		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>
 		<value condition="ListItem.IsParentFolder">DefaultFolderBackSquare.png</value>
 		<value condition="String.IsEmpty(Listitem.Thumb) + [String.IsEqual(listitem.dbtype,album) | String.IsEqual(listitem.dbtype,artist)]">DefaultAudio.png</value>
 		<value condition="ListItem.IsFolder + String.IsEmpty(ListItem.Thumb)">DefaultFolderSquare.png</value>
@@ -188,11 +204,6 @@
 		<value condition="Window.IsActive(Pictures) + String.IsEmpty(ListItem.Icon)">defaultpicture.png</value>
 		<!-- <value condition="Window.IsActive(Pictures) + !String.IsEmpty(ListItem.Icon) + Skin.HasSetting(ShowThumb)">$INFO[ListItem.Art(controller)]</value> -->
 		<value condition="Window.IsActive(Pictures) + !String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
-		
-	
-	
-	
-		
 	</variable>
 	<variable name="IconWallThumbVar">
 		<value condition="String.IsEqual(listitem.dbtype,genre) + System.AddonIsEnabled(resource.images.moviegenreicons.transparent)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
@@ -200,7 +211,6 @@
 		<value condition="!String.IsEmpty(Listitem.Art(poster)) + ![Container.Content(musicvideos) + !Skin.HasSetting(show_musicvideoposter)]">$INFO[Listitem.Art(poster)]</value>
 		<value condition="!String.isempty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
 		<value>$INFO[ListItem.Icon]</value>
-		
 	</variable>
 	<variable name="ListLabelVar">
 		<value condition="String.IsEqual(ListItem.DbType,episode) + Window.IsActive(videoplaylist)">$INFO[ListItem.TVShowtitle,,: ]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
@@ -221,22 +231,15 @@
 	</variable>
 	<variable name="ShiftLeftTextBoxVar">
 		<!-- <value condition="Window.IsActive(pictures)">$INFO[ListItem.Property(description),,[CR]]$INFO[ListItem.PictureDatetime,[COLOR button_focus]$LOCALIZE[552]:  [/COLOR],[CR]]$INFO[ListItem.PictureResolution,[COLOR button_focus]$LOCALIZE[169]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamMake,[COLOR button_focus]$LOCALIZE[31041]:  [/COLOR],[CR]]$INFO[ListItem.PictureCamModel,[COLOR button_focus]$LOCALIZE[21823]:  [/COLOR],[CR]]</value> -->
-		
 		<!-- Addons -->
 		<value condition="Container.Content(addons)">$INFO[ListItem.AddonCreator,[COLOR button_focus]Creator: [/COLOR], [CR]]$INFO[ListItem.AddonVersion,[COLOR button_focus]Version: [/COLOR],][CR]$INFO[ListItem.AddonOrigin,[COLOR button_focus]Origin: [/COLOR],][CR]$INFO[ListItem.Property(addon.status),[COLOR button_focus]Status: [/COLOR]]</value>
-		
 		<!-- NewsStand -->
-		<value condition="Window.IsActive(programs)">$INFO[ListItem.Property(name),[COLOR button_focus]Model Name: [/COLOR],[CR]]$INFO[ListItem.Property(Style),[COLOR button_focus]Style: [/COLOR],[CR]]$INFO[ListItem.Studio,[COLOR button_focus]Magazine: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR],[CR]]$INFO[ListItem.Rating,[COLOR button_focus]Rating: [/COLOR],[CR]]$INFO[ListItem.Property(desc),[COLOR button_focus]Rating: [/COLOR]]</value>
-		
+		<value condition="Window.IsActive(programs)">$INFO[ListItem.Property(name),[COLOR button_focus]Model Name: [/COLOR],[CR]]$INFO[ListItem.Property(Style),[COLOR button_focus]Style: [/COLOR],[CR]]$INFO[ListItem.Property(type),[COLOR button_focus]Tipo: [/COLOR],[CR]]$INFO[ListItem.Studio,[COLOR button_focus]Magazine: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR],[CR]]$INFO[ListItem.Rating,[COLOR button_focus]Rating: [/COLOR],[CR]]$INFO[ListItem.Property(desc),[COLOR button_focus]Rating: [/COLOR]]</value>
 		<!-- Musicas -->
 		<value condition="String.IsEqual(listitem.DBType,musicvideo)">$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR],[CR]]</value>
-		
 		<value condition="String.IsEqual(listitem.DBType,artist)">$INFO[ListItem.Label,[COLOR button_focus]$LOCALIZE[557]: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Property(Artist_YearsActive),[COLOR button_focus]$LOCALIZE[21898]: [/COLOR],[CR]]$INFO[ListItem.Property(Artist_Style),[COLOR button_focus]$LOCALIZE[736]: [/COLOR],[CR]]</value>
-		
 		<value condition="String.IsEqual(listitem.DBType,album)">$INFO[ListItem.Artist,[COLOR button_focus]$LOCALIZE[557] BUCETA: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]$LOCALIZE[345]: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Property(album_label),[COLOR button_focus]$LOCALIZE[21899]: [/COLOR],[CR]]$INFO[ListItem.Property(album_style),[COLOR button_focus]$LOCALIZE[736]: [/COLOR],[CR]]</value>
-		
 		<value condition="String.IsEqual(Listitem.DBType,season) | String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Premiered,[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]]</value>
-		
 		<!-- Music Videos -->
 		<!-- GERAL -->
 		<value>$INFO[ListItem.Label,[COLOR button_focus]Title: [/COLOR],[CR]]$INFO[ListItem.Studio,[COLOR button_focus]Studio: [/COLOR],[CR]]$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]$INFO[ListItem.Property(nplayers),[COLOR button_focus]N. of Players: [/COLOR],[CR]]$INFO[ListItem.Property(platform),[COLOR button_focus]Plataforma: [/COLOR],[CR]]$INFO[ListItem.Year,[COLOR button_focus]Ano: [/COLOR],[CR]]$INFO[ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR],[CR]]$INFO[ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR],[CR]]$INFO[ListItem.Premiered,[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]]</value>
@@ -272,7 +275,7 @@
 		<value condition="!String.isempty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>$INFO[ListItem.FolderPath,,banner.jpg]</value>
 		<value>dialogs/dialog-bg-nobo.png</value>
-		<value></value>
+		<value/>
 	</variable>
 	<variable name="FanartImageVar">
 		<value condition="ListItem.IsParentFolder">special://skin/extras/home-images/movie.jpg</value>
@@ -545,18 +548,14 @@
 		<value condition="!String.IsEmpty(Window(weather).Property(current.fanartcode)) + !String.IsEmpty(Skin.String(weatherfanart.path))">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
 		<value condition="!String.IsEmpty(Skin.String(HomeFanart.path))">$INFO[Skin.String(HomeFanart.path)]weather$INFO[Skin.String(HomeFanart.ext)]</value>
 	</variable>
-	
-	<variable name="BasicListWatchedIconVar">	
-		
+	<variable name="BasicListWatchedIconVar">
 		<value condition="String.IsEmpty(ListItem.Icon) + ListItem.IsCollection">overlays/set.png</value>
 		<value condition="String.IsEmpty(ListItem.Icon) + ListItem.IsFolder + !ListItem.IsParentFolder">overlays/folder.png</value>
 		<value condition="String.IsEmpty(ListItem.Icon) + !ListItem.IsParentFolder">OverlayUnwatched.png</value>
 		<!-- <value condition="String.IsEmpty(ListItem.Icon) + Window.IsActive(games)">defaultgames.png</value> -->
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-	
-	
-	<variable name="ListWatchedIconVar">	
+	<variable name="ListWatchedIconVar">
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
 		<value condition="ListItem.IsPlaying">overlays/watched/OverlayPlaying-List.png</value>
 		<value condition="ListItem.IsResumable">overlays/watched/resume.png</value>
@@ -573,7 +572,6 @@
 		<value condition="ListItem.HasArchive">windows/pvr/archive.png</value>
 		<value condition="Integer.IsGreater(ListItem.Playcount,0)">$INFO[ListItem.Overlay]</value>
 	</variable>
-
 	<!-- Breadcrumbs -->
 	<variable name="BreadcrumbsVideoVar">
 		<value condition="Container.Content(movies) | String.StartsWith(container.folderpath,library://video/movies/) | String.StartsWith(container.folderpath,videodb://movies)">$LOCALIZE[20342]</value>
@@ -735,7 +733,7 @@
 	<variable name="PicIconSizeVar">
 		<value condition="String.IsEqual(Skin.String(PicIcon),P)">Pequenos</value>
 		<value condition="String.IsEqual(Skin.String(PicIcon),M)">Médios</value>
-		<value condition="String.IsEqual(Skin.String(PicIcon),G)">Grandes</value>	
+		<value condition="String.IsEqual(Skin.String(PicIcon),G)">Grandes</value>
 	</variable>
 	<variable name="MasterModeLabel">
 		<value condition="!System.IsMaster">$LOCALIZE[20045]</value>

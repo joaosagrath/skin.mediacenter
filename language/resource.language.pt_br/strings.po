@@ -294,7 +294,10 @@ msgctxt "#31054"
 msgid "Press [B]Left[/B] to rewind, or [B]Right[/B] to fast-forward"
 msgstr ""
 
-#empty string with id 31055
+#: /xml/SkinSettings.xml
+msgctxt "#31055"
+msgid "Not Installed"
+msgstr "Não Instalado"
 
 #: /xml/MyMusicNav.xml /xml/MyVideoNav.xml
 msgctxt "#31056"
@@ -311,7 +314,15 @@ msgctxt "#31058"
 msgid "Automatic Login on startup"
 msgstr ""
 
-#empty strings from id 31059 to 31060
+#: /xml/SkinSettings.xml
+msgctxt "#31059"
+msgid "Installed version:"
+msgstr "Versão instalada:"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31060"
+msgid "Skin Reset"
+msgstr "Redefinição da Skin"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31061"
@@ -328,7 +339,10 @@ msgctxt "#31063"
 msgid "Sections"
 msgstr ""
 
-#empty string with id 31064
+#: /xml/SkinSettings.xml
+msgctxt "#31064"
+msgid "Skin add-ons"
+msgstr "Complementos da skin"
 
 #: /xml/MyVideoPlaylist.xml
 msgctxt "#31065"
@@ -639,8 +653,8 @@ msgstr ""
 
 #: /xml/Includes_Widgets.xml
 msgctxt "#31135"
-msgid "Add Video source"
-msgstr "Adicionar Fonte de videos"
+msgid "This is a customizable menu. Here you can add new menus and features to the skin."
+msgstr "Este é um menu customizável. Aqui você poderá adiconar novos menus e funcionalidades na skin."
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31136"
@@ -694,13 +708,10 @@ msgstr ""
 
 #: /xml/Includes_Widgets.xml
 msgctxt "#31146"
-msgid "Add Music source"
-msgstr "Adicionar fonte de Música"
+msgid "Sort by: Studio"
+msgstr "Sortear por: estudio"
 
-#: /xml/Includes_Widgets.xml
-msgctxt "#31147"
-msgid "Add Image source"
-msgstr "Adicionar fonte de Imagens"
+#empty string with id 31222
 
 #: /xml/Home.xml
 msgctxt "#31148"
@@ -953,8 +964,8 @@ msgstr "Customização do Meu Menu 2"
 
 #: /xml/Includes_Widgets.xml
 msgctxt "#31197"
-msgid "Add Games source"
-msgstr "Adicione fontes de Jogos"
+msgid "Sort by: Genre"
+msgstr "Sortear por: Gênero"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31198"
@@ -1023,8 +1034,8 @@ msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31211"
-msgid "Video Add-ons"
-msgstr "Add-ons de Video"
+msgid "Sort by: Year"
+msgstr "Sortear por: Ano"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31212"
@@ -1033,13 +1044,13 @@ msgstr "Add-ons de Audio"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31213"
-msgid "Games Add-ons"
-msgstr "Add-ons de Jogos"
+msgid "Sort By: Title"
+msgstr "Sortear por: Título"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31214"
-msgid "Image Add-ons"
-msgstr "Add-ons de Imagens"
+msgid "Sorted By: Default"
+msgstr "Sortear por: Padrão"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31215"

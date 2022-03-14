@@ -2,27 +2,23 @@
 <includes>
 	<!-- Menu do Topo -->
 	<include name="Top_Menu">
-		<!-- Seriados ID 6000 -->
+		<!-- Jogos ID 8000-->
 		<item>
-			<label>$LOCALIZE[20343]</label>
-			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
-			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
-			<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
-			<property name="menu_id">$NUMBER[6000]</property>
-			<thumb>icons/sidemenu/tv.png</thumb>
-			<property name="id">tvshows</property>
-			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
+			<label>$LOCALIZE[15016]</label>
+			<property name="menu_id">$NUMBER[8000]</property>
+			<onclick>ActivateWindow(Games)</onclick>
+			<thumb>icons/sidemenu/games.png</thumb>
+			<property name="id">games</property>
+			<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton) + String.IsEmpty(Skin.String(HomeGames.Title))</visible>
 		</item>
 		<item>
-			<label>$INFO[Skin.String(HomeTvShows.Title)]</label>
-			<onclick condition="!String.IsEmpty(Skin.String(HomeTvShows.Action))">$INFO[Skin.String(HomeTvShows.Action)]</onclick>
-			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
-			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
-			<onclick condition="!Library.HasContent(tvshows) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,sources://video/,return)</onclick>
-			<property name="menu_id">$NUMBER[6000]</property>
-			<thumb>icons/sidemenu/tv.png</thumb>
-			<property name="id">tvshows</property>
-			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + !String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
+			<label>$INFO[Skin.String(HomeGames.Title)]</label>
+			<property name="menu_id">$NUMBER[8000]</property>
+			<onclick condition="!String.IsEmpty(Skin.String(HomeGames.Action))">$INFO[Skin.String(HomeGames.Action)]</onclick>
+			<onclick condition="String.IsEmpty(Skin.String(HomeGames.Action))">ActivateWindow(Games)</onclick>
+			<thumb>icons/sidemenu/games.png</thumb>
+			<property name="id">games</property>
+			<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton) + !String.IsEmpty(Skin.String(HomeGames.Title))</visible>
 		</item>
 		<!-- Filmes ID 5000 -->
 		<item>
@@ -46,24 +42,30 @@
 			<property name="id">movies</property>
 			<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + !String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
 		</item>
-		<!-- Jogos ID 8000-->
+		<!-- Seriados ID 6000 -->
 		<item>
-			<label>$LOCALIZE[15016]</label>
-			<property name="menu_id">$NUMBER[8000]</property>
-			<onclick>ActivateWindow(Games)</onclick>
-			<thumb>icons/sidemenu/games.png</thumb>
-			<property name="id">games</property>
-			<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton) + String.IsEmpty(Skin.String(HomeGames.Title))</visible>
+			<label>$LOCALIZE[20343]</label>
+			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
+			<property name="menu_id">$NUMBER[6000]</property>
+			<thumb>icons/sidemenu/tv.png</thumb>
+			<property name="id">tvshows</property>
+			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
 		</item>
 		<item>
-			<label>$INFO[Skin.String(HomeGames.Title)]</label>
-			<property name="menu_id">$NUMBER[8000]</property>
-			<onclick condition="!String.IsEmpty(Skin.String(HomeGames.Action))">$INFO[Skin.String(HomeGames.Action)]</onclick>
-			<onclick condition="String.IsEmpty(Skin.String(HomeGames.Action))">ActivateWindow(Games)</onclick>
-			<thumb>icons/sidemenu/games.png</thumb>
-			<property name="id">games</property>
-			<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton) + !String.IsEmpty(Skin.String(HomeGames.Title))</visible>
+			<label>$INFO[Skin.String(HomeTvShows.Title)]</label>
+			<onclick condition="!String.IsEmpty(Skin.String(HomeTvShows.Action))">$INFO[Skin.String(HomeTvShows.Action)]</onclick>
+			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="!Library.HasContent(tvshows) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,sources://video/,return)</onclick>
+			<property name="menu_id">$NUMBER[6000]</property>
+			<thumb>icons/sidemenu/tv.png</thumb>
+			<property name="id">tvshows</property>
+			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + !String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
 		</item>
+		
+		
 		<!-- Musicas ID 7000 -->
 		<item>
 			<label>$LOCALIZE[2]</label>
@@ -90,7 +92,6 @@
 			<thumb>icons/sidemenu/pictures.png</thumb>
 			<property name="id">pictures</property>
 			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton) + String.IsEmpty(Skin.String(HomePictures.Title))</visible>
-			>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(HomePictures.Title)]</label>

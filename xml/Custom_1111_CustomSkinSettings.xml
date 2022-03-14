@@ -306,9 +306,9 @@
 				<!-- Botões de Redefinição -->
 				<control type="group" id="11000">
 					<control type="button" id="10008">
-						<onleft>10010</onleft>
 						<onright>10010</onright>
 						<onup>10004</onup>
+						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
@@ -392,8 +392,8 @@
 				<control type="group" id="11000">
 					<control type="button" id="10018">
 						<onright>10018</onright>
-						<onleft>10018</onleft>
 						<onup>10014</onup>
+						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
@@ -477,8 +477,8 @@
 				<control type="group" id="11000">
 					<control type="button" id="10028">
 						<onright>10030</onright>
-						<onleft>10030</onleft>
 						<onup>10024</onup>
+						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
@@ -561,21 +561,8 @@
 				<control type="group" id="11000">
 					<control type="button" id="10038">
 						<onright>10040</onright>
-						<onleft>10040</onleft>
 						<onup>10034</onup>
-						<left>1000</left>
-						<bottom>155</bottom>
-						<include>DefaultSettingButtonBottom</include>
-						<label>$LOCALIZE[31189]</label>
-						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
-						<onclick>up</onclick>
-						<enable>!String.IsEmpty(Skin.String(HomeMusic.Fanart))</enable>
-						<align>center</align>
-					</control>
-					<control type="button" id="10040">
-						<onright>10038</onright>
-						<onleft>10038</onleft>
-						<onup>10034</onup>
+						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
@@ -587,6 +574,22 @@
 						<onclick>Skin.Reset(MusicWidgets.Source)</onclick>
 						<onclick>Skin.SetString(MusicWidgets.Path,-)</onclick>
 						<onclick>Skin.Reset(MusicWidgets.Target)</onclick>
+						<align>center</align>
+					
+					
+						
+					</control>
+					<control type="button" id="10040">
+						<onright>10038</onright>
+						<onleft>10038</onleft>
+						<onup>10034</onup>
+						<left>1000</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
+						<onclick>up</onclick>
+						<enable>!String.IsEmpty(Skin.String(HomeMusic.Fanart))</enable>
 						<align>center</align>
 					</control>
 				</control>
@@ -646,8 +649,8 @@
 				<control type="group" id="11000">
 					<control type="button" id="10050">
 						<onright>10048</onright>
-						<onleft>10048</onleft>
 						<onup>10044</onup>
+						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
@@ -1327,7 +1330,6 @@
 						<onclick>Skin.SetString(MyMenu6Widgets.Path,-)</onclick>
 						<onclick>Skin.Reset(MyMenu6Widgets.Target)</onclick>
 						<onclick>Skin.Reset(HomeMyMenu6.icon)</onclick>
-						<onclick>Container.Refresh(10)</onclick>
 						<align>center</align>
 					</control>
 					<control type="button" id="10109">

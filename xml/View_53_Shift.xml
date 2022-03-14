@@ -47,7 +47,7 @@
 					<animation effect="slide" start="0,0" end="364,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,4)">Conditional</animation>
 				</control>
 				<control type="fixedlist" id="53">
-					<visible>Container.HasFolders</visible>
+					<!-- <visible>Container.HasFolders</visible> -->
 					<left>-335</left>
 					<top>0</top>
 					<width>120%</width>
