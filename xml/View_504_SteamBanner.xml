@@ -22,6 +22,7 @@
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<itemlayout height="300" width="900">
 					<control type="group">
+						<!-- <animation effect="fade" start="100" end="0" time="300" condition="System.IdleTime(3)">Conditional</animation> -->
 						<top>100</top>
 						<control type="image">
 							<left>0</left>
@@ -33,32 +34,55 @@
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
+						<control type="image">
+							<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
+							<left>0</left>
+							<top>0</top>
+							<width>910</width>
+							<height>320</height>
+							<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+							<aspectratio aligny="center">keep</aspectratio>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="label">
+							<top>15</top>
+							<left>30</left>
+							<width>910</width>
+							<height>147</height>
+							<label>$VAR[ViewSteamBannerNames]</label>
+							<font>Addon_Logo_50</font>
+							<shadowcolor>black</shadowcolor>
+						</control>
 						<control type="textbox">
 							<left>20</left>
 							<top>30</top>
 							<width>800</width>
 							<height>220</height>
-							<label>$INFO[ListItem.Label]</label>
-							<font>font52_title</font>
+							<label>$INFO[ListItem.Title]</label>
+							<font>Addon_Logo_60</font>
 							<shadowcolor>black</shadowcolor>
 							<aligny>center</aligny>
 							<align>center</align>
 							<visible>String.IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
+							<visible>String.IsEmpty(ListItem.Art(Fanart))</visible>
 						</control>
+						
 						<control type="group">
 							<left>405</left>
 							<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
 						</control>
+
 					</control>
+					
 				</itemlayout>
 				<focusedlayout height="300" width="900">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<animation type="Focus">
-							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="450,250" />
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="450,250"/>
 						</animation>
 						<animation type="Unfocus">
-							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="450,250" />
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="450,250"/>
 						</animation>
 						<top>100</top>
 						<control type="image">
@@ -71,17 +95,38 @@
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
+						<control type="image">
+						<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
+							<left>0</left>
+							<top>0</top>
+							<width>910</width>
+							<height>320</height>
+							<texture>$INFO[ListItem.Art(clearlogo)]</texture>
+							<aspectratio aligny="center">keep</aspectratio>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="label">
+							<top>15</top>
+							<left>30</left>
+							<width>910</width>
+							<height>147</height>
+							<label>$VAR[ViewSteamBannerNames]</label>
+							<font>Addon_Logo_50</font>
+							<shadowcolor>black</shadowcolor>
+
+						</control>
 						<control type="textbox">
 							<left>20</left>
 							<top>30</top>
 							<width>800</width>
 							<height>220</height>
 							<label>$INFO[ListItem.Label]</label>
-							<font>font52_title</font>
+							<font>Addon_Logo_60</font>
 							<shadowcolor>black</shadowcolor>
 							<aligny>center</aligny>
 							<align>center</align>
 							<visible>String.IsEmpty(ListItem.Art(banner)) + !Listitem.IsParentFolder</visible>
+							<visible>String.IsEmpty(ListItem.Art(Fanart))</visible>
 						</control>
 						<control type="group">
 							<include>Animation_FocusTextureFade</include>
@@ -109,7 +154,7 @@
 								<texture>$VAR[ListWatchedIconVar]</texture>
 							</control>
 							<control type="image">
-								<right>220</right>
+								<right>35</right>
 								<top>265</top>
 								<width>22</width>
 								<height>22</height>
@@ -117,7 +162,7 @@
 								<visible>!String.IsEmpty(ListItem.Rating)</visible>
 							</control>
 							<control type="label">
-								<right>258</right>
+								<right>70</right>
 								<top>265</top>
 								<width>800</width>
 								<height>20</height>
@@ -127,14 +172,6 @@
 								<label>$INFO[ListItem.Rating]</label>
 								<visible>!String.IsEmpty(ListItem.Rating)</visible>
 							</control>
-							<control type="image">
-								<right>73</right>
-								<top>215</top>
-								<width>22</width>
-								<height>22</height>
-								<texture>lists/played-total.png</texture>
-								<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
-							</control>
 							<control type="label">
 								<left>80</left>
 								<top>265</top>
@@ -142,9 +179,19 @@
 								<height>20</height>
 								<font>font12</font>
 								<aligny>center</aligny>
-								<label>$INFO[ListItem.Label]</label>
+								<label>$VAR[ViewSteamBannerTitle]</label>
+								<shadowcolor>black</shadowcolor>
 								<visible>!Listitem.IsParentFolder</visible>
-							</control>							
+							</control>
+							<control type="image">
+								<right>11</right>
+								<top>20</top>
+								<width>70</width>
+								<height>480</height>
+								<texture>$INFO[ListItem.Art(fav_icon)]</texture>
+								<fadetime>450</fadetime>
+								<aspectratio align="center" aligny="top">keep</aspectratio>
+							</control>
 						</control>
 						<control type="group">
 							<left>405</left>
@@ -154,5 +201,5 @@
 				</focusedlayout>
 			</control>
 		</control>
-	</include>
+</include>
 </includes>

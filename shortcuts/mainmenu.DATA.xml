@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
-	<shortcut>
+<!-- 	<shortcut>
         <label>$LOCALIZE[15016]</label>
         <label2 />
         <defaultID>games</defaultID>
@@ -35,18 +35,18 @@
         <icon>icons/sidemenu/pictures.png</icon>
         <action>ActivateWindow(Pictures)</action>
     </shortcut>
-<!-- 	<shortcut>
+	<shortcut>
 		<label>$LOCALIZE[20389]</label>
 		<label2 />
 		<defaultID>musicvideos</defaultID>
 		<icon></icon>
 		<action>ActivateWindow(Videos,musicvideos,return)</action>
-	</shortcut>
+	</shortcut> -->
 	<shortcut>
 		<label>Empty</label>
 		<label2 />
 		<defaultID>empty</defaultID>
 		<icon></icon>
 		<action></action>
-	</shortcut> -->
+	</shortcut>
 </shortcuts>

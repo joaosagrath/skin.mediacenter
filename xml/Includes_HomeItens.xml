@@ -23,8 +23,8 @@
 		<!-- Filmes ID 5000 -->
 		<item>
 			<label>$LOCALIZE[342]</label>
-			<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
-			<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+			<onclick condition="Library.HasContent(movies)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
+			<onclick condition="Library.HasContent(movies)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
 			<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
 			<property name="menu_id">$NUMBER[5000]</property>
 			<thumb>icons/sidemenu/movies.png</thumb>
@@ -34,8 +34,8 @@
 		<item>
 			<label>$INFO[Skin.String(HomeMovies.Title)]</label>
 			<onclick condition="!String.IsEmpty(Skin.String(HomeMovies.Action))">$INFO[Skin.String(HomeMovies.Action)]</onclick>
-			<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeMovies.Action))">ActivateWindow(Videos,videodb://movies/,return)</onclick>
-			<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeMovies.Action))">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+			<onclick condition="Library.HasContent(movies) + String.IsEmpty(Skin.String(HomeMovies.Action))">ActivateWindow(Videos,videodb://movies/,return)</onclick>
+			<onclick condition="Library.HasContent(movies) + String.IsEmpty(Skin.String(HomeMovies.Action))">ActivateWindow(Videos,videodb://movies/,return)</onclick>
 			<onclick condition="!Library.HasContent(movies)  + String.IsEmpty(Skin.String(HomeMovies.Action))">ActivateWindow(Videos,sources://video/,return)</onclick>
 			<property name="menu_id">$NUMBER[5000]</property>
 			<thumb>icons/sidemenu/movies.png</thumb>
@@ -45,8 +45,8 @@
 		<!-- Seriados ID 6000 -->
 		<item>
 			<label>$LOCALIZE[20343]</label>
-			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
-			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
 			<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
 			<property name="menu_id">$NUMBER[6000]</property>
 			<thumb>icons/sidemenu/tv.png</thumb>
@@ -56,16 +56,14 @@
 		<item>
 			<label>$INFO[Skin.String(HomeTvShows.Title)]</label>
 			<onclick condition="!String.IsEmpty(Skin.String(HomeTvShows.Action))">$INFO[Skin.String(HomeTvShows.Action)]</onclick>
-			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
-			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
 			<onclick condition="!Library.HasContent(tvshows) + String.IsEmpty(Skin.String(HomeTvShows.Action))">ActivateWindow(Videos,sources://video/,return)</onclick>
 			<property name="menu_id">$NUMBER[6000]</property>
 			<thumb>icons/sidemenu/tv.png</thumb>
 			<property name="id">tvshows</property>
 			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + !String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
 		</item>
-		
-		
 		<!-- Musicas ID 7000 -->
 		<item>
 			<label>$LOCALIZE[2]</label>
@@ -271,5 +269,99 @@
 			<param name="onup" value="ActivateWindow(favourites)"/>
 			<param name="icon" value="icons/favourites.png"/>
 		</include>
+	</include>
+	<include name="Sub_Menu">
+		<content>
+			<item>
+				<label>$INFO[Skin.String(SubMenu1.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu1.Action))">$INFO[Skin.String(SubMenu1.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu1.Action))">ActivateWindow(1113)</onclick>
+				<icon>$INFO[Skin.String(SubMenu1.Icon)]</icon>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu2.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu2.Action))">$INFO[Skin.String(SubMenu2.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu2.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu2.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu3.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu3.Action))">$INFO[Skin.String(SubMenu3.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu3.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu3.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu4.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu4.Action))">$INFO[Skin.String(SubMenu4.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu4.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu4.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu5.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu5.Action))">$INFO[Skin.String(SubMenu5.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu5.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu5.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu6.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu6.Action))">$INFO[Skin.String(SubMenu6.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu6.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu6.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu7.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu7.Action))">$INFO[Skin.String(SubMenu7.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu7.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu7.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu8.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu8.Action))">$INFO[Skin.String(SubMenu8.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu8.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu8.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu9.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu9.Action))">$INFO[Skin.String(SubMenu9.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu9.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu9.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu10.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu10.Action))">$INFO[Skin.String(SubMenu10.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu10.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu10.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu11.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu11.Action))">$INFO[Skin.String(SubMenu11.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu11.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu11.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu12.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu12.Action))">$INFO[Skin.String(SubMenu12.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu12.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu12.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu13.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu13.Action))">$INFO[Skin.String(SubMenu13.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu13.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu13.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu14.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu14.Action))">$INFO[Skin.String(SubMenu14.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu14.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu14.Icon)]</thumb>
+			</item>
+			<item>
+				<label>$INFO[Skin.String(SubMenu15.Title)]</label>
+				<onclick condition="!String.IsEmpty(Skin.String(SubMenu15.Action))">$INFO[Skin.String(SubMenu15.Action)]</onclick>
+				<onclick condition="String.IsEmpty(Skin.String(SubMenu15.Action))">ActivateWindow(1113)</onclick>
+				<thumb>$INFO[Skin.String(SubMenu15.Icon)]</thumb>
+			</item>
+		</content>
 	</include>
 </includes>

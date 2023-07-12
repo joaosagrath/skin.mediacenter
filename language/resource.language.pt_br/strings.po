@@ -21,10 +21,10 @@ msgctxt "#31000"
 msgid "Now playing"
 msgstr "Tocando Agora"
 
-#: /xml/Home.xml
+#: /xml/Variables.xml
 msgctxt "#31001"
-msgid "Search..."
-msgstr ""
+msgid "Type"
+msgstr "Tipo"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31002"
@@ -381,7 +381,15 @@ msgctxt "#31072"
 msgid "Power Options"
 msgstr ""
 
-#empty strings from id 31073 to 31074
+#: /xml/Variables.xml
+msgctxt "#31073"
+msgid "Year"
+msgstr "Ano"
+
+#: /xml/Variables.xml
+msgctxt "#31074"
+msgid "Release"
+msgstr "Lançamento"
 
 #: /xml/Home.xml
 msgctxt "#31075"
@@ -709,7 +717,7 @@ msgstr ""
 #: /xml/Includes_Widgets.xml
 msgctxt "#31146"
 msgid "Sort by: Studio"
-msgstr "Sortear por: estudio"
+msgstr "Sortear por: Estudio"
 
 #empty string with id 31222
 
@@ -1034,8 +1042,8 @@ msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31211"
-msgid "Sort by: Year"
-msgstr "Sortear por: Ano"
+msgid "Video Add-ons"
+msgstr "Add-ons de Video"
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31212"
@@ -1153,3 +1161,27 @@ msgstr "Ajustes de Menu de Menus Extras e Favoritos"
 msgctxt "#31235"
 msgid "Finishing Settings"
 msgstr "Finalizando Ajustes"
+
+msgctxt "#31236"
+msgid "Sorted by"
+msgstr "Sorteado por"
+
+msgctxt "#31237"
+msgid "Genre"
+msgstr "Gênero"
+
+msgctxt "#31238"
+msgid "Title"
+msgstr "Título"
+
+msgctxt "#31239"
+msgid "Studio"
+msgstr "Estúdio"
+
+msgctxt "#31240"
+msgid "Default"
+msgstr "Padrão"
+
+msgctxt "#31241"
+msgid "Sorted By: Year"
+msgstr "Sortear por: Ano"

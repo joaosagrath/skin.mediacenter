@@ -13,7 +13,7 @@
 				</control>
 			<!-- ** Required ** Do not change <id> or <type> -->
 			<control type="list" id="110">
-				<right>115</right>
+				<left>115</left>
 				<top>0</top>
 				<width>1920</width>
 				<height>580</height>
@@ -33,7 +33,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font32_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -44,7 +44,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font32_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -55,7 +55,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font32_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -66,7 +66,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font32_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -75,7 +75,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font32_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>FFE9F2F3</textcolor>
 					</control>
@@ -88,7 +88,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font45_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -99,7 +99,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font45_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -110,7 +110,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font45_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -121,7 +121,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font45_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>black</textcolor>
 					</control>
@@ -132,7 +132,7 @@
 						<height>33</height>
 						<info>ListItem.Label</info>
 						<font>font45_title</font>
-						<align>right</align>
+						<align>left</align>
 						<aligny>top</aligny>
 						<textcolor>button_focus</textcolor>
 					</control>

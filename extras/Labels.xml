@@ -1,0 +1,74 @@
+$INFO[ListItem.Property(Issue_Number),[COLOR button_focus]Issue Number: [/COLOR],[CR]]
+$INFO[ListItem.Property(name),[COLOR button_focus]Name: [/COLOR],[CR]]
+$INFO[ListItem.Property(Issue_Title),[COLOR button_focus]Issue Title: [/COLOR],[CR]]
+$INFO[ListItem.Property(magazine_name),[COLOR button_focus]Magazine Name: [/COLOR],[CR]]
+$INFO[ListItem.Premiered,[COLOR button_focus]$LOCALIZE[31074]: [/COLOR],[CR]]
+$INFO[ListItem.Property(Issue_Style),[COLOR button_focus]Issue Style: [/COLOR],[CR]]
+$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]
+$INFO[ListItem.Studio,[COLOR button_focus]Publisher: [/COLOR],[CR]]
+$INFO[ListItem.Rating,[COLOR button_focus]Rating: [/COLOR],[CR]]
+
+$INFO[ListItem.Property(Issue_Number),[COLOR button_focus]Issue Number: [/COLOR],[CR]]
+$INFO[ListItem.Property(name),[COLOR button_focus]Name: [/COLOR],[CR]]
+$INFO[ListItem.Property(Issue_Title),[COLOR button_focus]Issue Title: [/COLOR],[CR]]
+$INFO[ListItem.Property(magazine_name),[COLOR button_focus]Magazine Name: [/COLOR],[CR]]
+$INFO[ListItem.Year,[COLOR button_focus]$LOCALIZE[31073]: [/COLOR],[CR]]
+$INFO[ListItem.Property(Issue_Style),[COLOR button_focus]Issue Style: [/COLOR],[CR]]
+$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]: [/COLOR],[CR]]
+$INFO[ListItem.Studio,[COLOR button_focus]Publisher: [/COLOR],[CR]]
+$INFO[ListItem.Rating,[COLOR button_focus]Rating: [/COLOR],[CR]]
+
+<!-- Character Property -->
+$INFO[ListItem.Property(char_real_name),[COLOR button_focus]Real Name: [/COLOR],[CR]]
+$INFO[ListItem.Property(char_birth_date),[COLOR button_focus]Date of Birth: [/COLOR],[CR]]
+$INFO[ListItem.Property(char_birth_place),[COLOR button_focus]Birth Place: [/COLOR],[CR]]
+$INFO[ListItem.Property(char_first_app),[COLOR button_focus]First Appearance: [/COLOR],[CR]]
+$INFO[ListItem.Property(char_gender),[COLOR button_focus]Gender: [/COLOR],[CR]]
+$INFO[ListItem.Property(char_bio),[COLOR button_focus]Biografy: [/COLOR],[CR]]
+
+<!-- Publisher property -->
+$INFO[ListItem.Property(publisher_country),[COLOR button_focus]Country: [/COLOR],[CR]]
+$INFO[ListItem.Premiered,[COLOR button_focus]Release Date: [/COLOR],[CR]]
+$INFO[ListItem.Property(publisher_type),[COLOR button_focus]Type: [/COLOR],[CR]]
+$INFO[ListItem.Property(publisher_desc),[COLOR button_focus]Description: [/COLOR],[CR]]
+
+<!-- Magazine Property -->
+$INFO[ListItem.Property(magazine_country),[COLOR button_focus]Country: [/COLOR],[CR]]
+$INFO[ListItem.Premiered,[COLOR button_focus]Release Date: [/COLOR]]
+$INFO[ListItem.Property(magazine_type),[COLOR button_focus]Magazine Type: [/COLOR],[CR]]
+$INFO[ListItem.Property(magazine_desc),[COLOR button_focus]Description: [/COLOR]]
+
+<!-- Genre Property -->
+$INFO[ListItem.Property(desc),[COLOR button_focus]Description: [/COLOR][CR]]
+
+<!-- Descriptions -->
+$INFO[ListItem.Property(char_bio),[COLOR button_focus]Biografy: [/COLOR],[CR]]
+$INFO[ListItem.Property(magazine_desc),[COLOR button_focus]Description: [/COLOR]]
+$INFO[ListItem.Property(publisher_desc),[COLOR button_focus]Description: [/COLOR],[CR]]
+$INFO[ListItem.Property(desc),[COLOR button_focus]Description: [/COLOR][CR]]
+
+ 
+ 
+ 
+ 
+ dialog = 
+ 
+        d = dialog.numeric(1, 'Enter date of birth')
+        
+        kodi_dialog_OK(d)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -27,11 +27,23 @@
 			<style>lighten</style>
 		</font>
 		<font>
+			<name>font20</name>
+			<filename>NotoSans-Regular.ttf</filename>
+			<size>20</size>
+			<style>lighten</style>
+		</font>
+		<font>
 			<name>font23_narrow</name>
 			<filename>NotoSans-Regular.ttf</filename>
 			<size>23</size>
 			<style>lighten</style>
 			<linespacing>0.8</linespacing>
+		</font>
+		<font>
+			<name>font25</name>
+			<filename>NotoSans-Regular.ttf</filename>
+			<size>25</size>
+			<style>lighten</style>
 		</font>
 		<font>
 			<name>font25_narrow</name>
@@ -81,6 +93,12 @@
 			<name>font60</name>
 			<filename>home.ttf</filename>
 			<size>60</size>
+			<style>uppercase</style>
+		</font>
+		<font>
+			<name>font80</name>
+			<filename>home.ttf</filename>
+			<size>80</size>
 			<style>uppercase</style>
 		</font>
 		<font>
@@ -155,7 +173,22 @@
 			<filename>NotoMono-Regular.ttf</filename>
 			<size>26</size>
 		</font>
+		<font>
+			<name>Addon_Logo_50</name>
+			<filename>Gotham_Ultra_Italic.ttf</filename>
+			<style>uppercase</style>
+			<linespacing>0.70</linespacing>
+			<size>50</size>
+		</font>
+		<font>
+			<name>Addon_Logo_60</name>
+			<filename>Gotham_Ultra_Italic.ttf</filename>
+			<style>uppercase</style>
+			<linespacing>0.70</linespacing>
+			<size>60</size>
+		</font>
 	</fontset>
+	
 	<fontset id="Arial" idloc="31053">
 		<!-- Arial Font better for non English -->
 		<font>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_506_3-Column">
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,1100" time="500" tween="sine" easing="inout" condition="Control.HasFocus(901)">Conditional</animation>
+			<include>OpenClose_Right</include>
+			<left>0</left>
+			<visible>Control.IsVisible(506)</visible>
+			<include>Visible_Right</include>
+			<include content="ListContainer506">
+				<param name="list_id" value="506"/>
+				<param name="right" value="594"/>
+				<param name="viewtype_label" value="3 Column"/>
+			</include>
+		</control>
+	</include>
+	<!-- TESTE LABELS -->
+	<include name="ListContainer506">
+		
+		<control type="label">
+			<top>45</top>
+			<left>500</left>
+			<!-- <label>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</label> -->
+			<!-- <label>$VAR[viewdisc]</label> -->
+			<!-- <label>$INFO[Container.FolderName]</label> -->
+			<!-- <label>$INFO[Skin.String(PicsArtsPath)]$INFO[Container.FolderName]\fanarts\$INFO[ListItem.Label,,.jpg]</label> -->
+			<!-- $INFO[ListItem.Path,,logo.png] -->
+			<!-- <label>$INFO[Container(50).NumItems]</label> -->
+			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
+			<!-- <label>$INFO[Player.Folderpath]discart.png</label> -abel> -->
+			<!-- <label>$INFO[Skin.String(MusicArtsPath)]$INFO[ListItem.Artist]</label> -->
+			<!-- <label>$INFO[ListItem.Comment]</label> -->
+			<textcolor>white</textcolor>
+			<align>left</align>
+			<scroll>true</scroll>
+			<!-- <visible>Control.HasFocus(10)</visible> -->
+		</control>
+		<control type="group">
+			<!-- <control type="group">
+				<left>635</left>
+				<top>480</top>
+				<height>245</height>
+				<visible>ListItem.IsCollection + String.IsEmpty(ListItem.Plot)</visible>
+				<include content="InfoList">
+					<param name="bottom" value="0"/>
+					<param name="sortby" value="year"/>
+					<param name="sortorder" value="ascending"/>
+					<param name="font" value="font13"/>
+				</include>
+			</control> -->
+			<control type="image">
+				<left>855</left>
+				<top>115</top>
+				<width>32</width>
+				<height>32</height>
+				<texture>$VAR[ListWatchedIconVar]</texture>
+			</control>
+			
+			<control type="label">
+				<left>900</left>
+				<top>100</top>
+				<right>50</right>
+				<height>40</height>
+				<label>$VAR[ViewPosterTitle]</label>
+				<font>font45_title</font>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+			</control>
+			
+			<control type="textbox" id="9999">
+				<left>860</left>
+				<top>180</top>
+				<width>495</width>
+				<label>$VAR[ShiftLeftTextBoxVar]</label>
+				<shadowcolor>black</shadowcolor>
+				<fadetime>450</fadetime>
+				<autoscroll time="3000" repeat="3000">True</autoscroll>
+			</control>
+			<control type="textbox">
+				<visible>!String.IsEmpty(Control.GetLabel(9999))</visible>
+				<left>1375</left>
+				<top>180</top>				
+				<right>50</right>
+				<bottom>112</bottom>				
+				<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>
+				<align>justify</align>
+				<shadowcolor>black</shadowcolor>
+				<visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
+			</control>
+			<control type="textbox">
+				<visible>String.IsEmpty(Control.GetLabel(9999))</visible>
+				<left>860</left>
+				<top>180</top>				
+				<right>50</right>
+				<bottom>112</bottom>				
+				<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>
+				<align>justify</align>
+				<shadowcolor>black</shadowcolor>
+				<visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
+			</control>
+			
+			
+		</control>
+		<control type="panel" id="506">
+			<left>30</left>
+			<right>50</right>
+			<width>43%</width>
+			<height>100%</height>
+			<top>100</top>
+			<movement>5</movement>
+			<focusposition>6</focusposition>
+			<scrolltime tween="cubic" easing="out">500</scrolltime>
+			<orientation>vertical</orientation>
+			<pagecontrol>80</pagecontrol>
+			<onleft>9000</onleft>
+			<onright>80</onright>
+			<onup>$PARAM[list_id]</onup>
+			<ondown>$PARAM[list_id]</ondown>
+			<viewtype label="$PARAM[viewtype_label]">list</viewtype>
+			<!-- Icones Pequenos -->
+			<itemlayout height="380" width="270">
+				<control type="image">
+					<left>0</left>
+					<top>2</top>
+					<width>233</width>
+					<height>350</height>
+					<texture>$VAR[PosterVar]</texture>
+					<bordertexture border="5"/>
+					<bordersize>5</bordersize>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout height="380" width="270">
+				<control type="image">
+					<top>2</top>
+					<width>233</width>
+					<height>350</height>
+					<texture>$VAR[PosterVar]</texture>
+					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
+					<bordersize>5</bordersize>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
+					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="scrollbar" id="80">
+			<left>43%</left>
+			<top>105</top>
+			<width>12</width>
+			<bottom>80</bottom>
+			<onleft>506</onleft>
+			<onright>900</onright>
+			<orientation>vertical</orientation>
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(80)">conditional</animation>
+		</control>
+	</include>
+	
+</includes>

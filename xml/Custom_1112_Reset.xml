@@ -23,7 +23,7 @@
 				<onfocus>Skin.SetString(autosetting,10)</onfocus>
 				<onfocus condition="!Skin.HasSetting(Default_Menu)">Skin.ToggleSetting(Default_Menu)</onfocus>
 				<onfocus condition="!Skin.HasSetting(WeatherResume)">Skin.ToggleSetting(WeatherResume)</onfocus>
-				<onfocus condition="!Skin.HasSetting(autoscPreparando ajustesroll)">Skin.ToggleSetting(autoscroll)</onfocus>
+				<onfocus condition="!Skin.HasSetting(autoscroll)">Skin.ToggleSetting(autoscroll)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(901),0:01,true)</onfocus>
 			</control>
 			<!-- 20% Definição de Artworks -->
@@ -220,6 +220,36 @@
 			<!-- Finalizando Ajustes -->
 			<control type="button" id="910">
 				<include>HiddenObject</include>
+				<onfocus>Skin.SetString(SubMenu1.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu1.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu2.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu2.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu3.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu3.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu4.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu4.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu5.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu5.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu6.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu6.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu7.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu7.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu8.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu8.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu9.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu9.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu10.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu10.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu11.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu11.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu12.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu12.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu13.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu13.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu14.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu14.Title,Click To Edit)</onfocus>
+				<onfocus>Skin.SetString(SubMenu15.Icon,special://skin/extras/home-icons/noicon.png)</onfocus>
+				<onfocus>Skin.SetString(SubMenu15.Title,Click To Edit)</onfocus>
 				<onfocus>Skin.SetString(autosetting,110)</onfocus>
 				<onfocus>Skin.SetString(SkinStarted,started)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(911),0:01,true)</onfocus>

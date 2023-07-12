@@ -2,6 +2,7 @@
 <window type="dialog" id="1111">
 	<defaultcontrol>9000</defaultcontrol>
 	<onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
+	<onload>Control.SetFocus(9000)</onload>
 	<controls>
 		<control type="image">
 			<left>0</left>
@@ -11,14 +12,15 @@
 			<texture colordiffuse="background">colors/black.png</texture>
 		</control>
 		<include>DefaultBackground</include>
+		<depth>DepthContentPanel</depth>
+		<left>0</left>
+		<include content="ContentPanel">
+			<param name="width" value="530"/>
+		</include>
 		<!-- Lista da Esquerda -->
 		<control type="group">
-			<depth>DepthContentPanel</depth>
-			<left>0</left>
 			<include>OpenClose_Left</include>
-			<include content="ContentPanel">
-				<param name="width" value="530"/>
-			</include>
+			<include>CustomSubmenuEditsReverse</include>
 			<!-- Itens do Menu principal -->
 			<control type="grouplist" id="9000">
 				<top>133</top>
@@ -63,7 +65,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
 					<visible>String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
-					<onright>10000</onright>
+					<onright>12000</onright>
 				</control>
 				<control type="radiobutton" id="614">
 					<label>$INFO[Skin.String(HomeMovies.Title)]</label>
@@ -71,7 +73,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
 					<visible>!String.IsEmpty(Skin.String(HomeMovies.Title))</visible>
-					<onright>10000</onright>
+					<onright>12000</onright>
 				</control>
 				<!-- Seriados -->
 				<control type="radiobutton" id="615">
@@ -80,7 +82,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
 					<visible>String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
-					<onright>10000</onright>
+					<onright>13000</onright>
 				</control>
 				<control type="radiobutton" id="616">
 					<label>$INFO[Skin.String(HomeTvShows.Title)]</label>
@@ -88,7 +90,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
 					<visible>!String.IsEmpty(Skin.String(HomeTvShows.Title))</visible>
-					<onright>10000</onright>
+					<onright>13000</onright>
 				</control>
 				<!-- Musicas -->
 				<control type="radiobutton" id="617">
@@ -97,7 +99,8 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMusicButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
 					<visible>String.IsEmpty(Skin.String(HomeMusic.Title))</visible>
-					<onright>10000</onright>
+					<onright>14000</onright>
+
 				</control>
 				<control type="radiobutton" id="618">
 					<label>$INFO[Skin.String(HomeMusic.Title)]</label>
@@ -105,7 +108,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMusicButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
 					<visible>!String.IsEmpty(Skin.String(HomeMusic.Title))</visible>
-					<onright>10000</onright>
+					<onright>14000</onright>
 				</control>
 				<!-- Imagens -->
 				<control type="radiobutton" id="619">
@@ -114,7 +117,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
 					<visible>String.IsEmpty(Skin.String(HomePictures.Title))</visible>
-					<onright>10000</onright>
+					<onright>15000</onright>
 				</control>
 				<control type="radiobutton" id="620">
 					<label>$INFO[Skin.String(HomePictures.Title)]</label>
@@ -122,7 +125,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
 					<visible>!String.IsEmpty(Skin.String(HomePictures.Title))</visible>
-					<onright>10000</onright>
+					<onright>15000</onright>
 				</control>
 				<!-- Menu da Esquerda -->
 				<control type="image" id="32">
@@ -143,6 +146,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu1Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu1Button)</onclick>
 					<onright>10000</onright>
+					<onleft>17000</onleft>
 				</control>
 				<!-- Meu Menu 2 -->
 				<control type="radiobutton" id="622">
@@ -151,6 +155,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu2Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu2Button)</onclick>
 					<onright>10000</onright>
+					<onleft>18000</onleft>
 				</control>
 				<!-- Meu Menu 3 -->
 				<control type="radiobutton" id="623">
@@ -159,6 +164,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu3Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu3Button)</onclick>
 					<onright>10000</onright>
+					<onleft>19000</onleft>
 				</control>
 				<!-- Meu Menu 4 -->
 				<control type="radiobutton" id="624">
@@ -167,6 +173,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu4Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu4Button)</onclick>
 					<onright>10000</onright>
+					<onleft>20000</onleft>
 				</control>
 				<!-- Meu Menu 5 -->
 				<control type="radiobutton" id="625">
@@ -175,6 +182,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu5Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu5Button)</onclick>
 					<onright>10000</onright>
+					<onleft>21000</onleft>
 				</control>
 				<!-- Menu da Direita -->
 				<control type="image" id="34">
@@ -197,6 +205,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu6Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu6Button)</onclick>
 					<onright>10000</onright>
+					<onleft>22000</onleft>
 				</control>
 				<!-- Meu Menu 7 -->
 				<control type="radiobutton" id="627">
@@ -205,6 +214,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu7Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu7Button)</onclick>
 					<onright>10000</onright>
+					<onleft>23000</onleft>
 				</control>
 				<!-- Meu Menu 8 -->
 				<control type="radiobutton" id="628">
@@ -213,6 +223,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu8Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu8Button)</onclick>
 					<onright>10000</onright>
+					<onleft>24000</onleft>
 				</control>
 				<!-- Meu Menu 9 -->
 				<control type="radiobutton" id="629">
@@ -221,6 +232,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu9Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu9Button)</onclick>
 					<onright>10000</onright>
+					<onleft>25000</onleft>
 				</control>
 				<!-- Meu Menu 10 -->
 				<control type="radiobutton" id="630">
@@ -229,6 +241,7 @@
 					<selected>!Skin.HasSetting(HomeMenuNoMyMenu10Button)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoMyMenu10Button)</onclick>
 					<onright>10000</onright>
+					<onleft>26000</onleft>
 				</control>
 			</control>
 		</control>
@@ -255,14 +268,6 @@
 			<!-- Jogos -->
 			<control type="group">
 				<visible>Control.HasFocus(611) | Control.HasFocus(612) | Control.HasFocus(10001) | Control.HasFocus(10002) | Control.HasFocus(10003) | Control.HasFocus(10004) | Control.HasFocus(10005) | Control.HasFocus(10006) | Control.HasFocus(10007) | Control.HasFocus(10008) | Control.HasFocus(10009) | Control.HasFocus(10010)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeGames.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -297,17 +302,31 @@
 						<label2>$INFO[Skin.String(HomeGames.Fanart)]</label2>
 						<onclick>Skin.SetImage(HomeGames.Fanart)</onclick>
 					</control>
+					<control type="button" id="10005">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31206]</label>
+						<onclick>Skin.SetImage(HomeGames.icon,special://skin\extras\home-icons)</onclick>
+					</control>
 				</control>
 				<!-- Widget Preview -->
 				<control type="list">
 					<include>WidgetListHomePosterPreview</include>
 					<content>$INFO[Skin.String(GamesWidgets.Path)]</content>
 				</control>
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeGamesCustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
 				<!-- Botões de Redefinição -->
 				<control type="group" id="11000">
-					<control type="button" id="10008">
-						<onright>10010</onright>
-						<onup>10004</onup>
+					<control type="button" id="10006">
+						<onright>10007</onright>
+						<onup>10005</onup>
 						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -321,12 +340,13 @@
 						<onclick>Skin.Reset(GamesWidgets.Source)</onclick>
 						<onclick>Skin.SetString(GamesWidgets.Path,-)</onclick>
 						<onclick>Skin.Reset(GamesWidgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeGames.icon)</onclick>
 						<align>center</align>
 					</control>
-					<control type="button" id="10010">
+					<control type="button" id="10007">
 						<onright>10008</onright>
-						<onleft>10008</onleft>
-						<onup>10004</onup>
+						<onleft>10006</onleft>
+						<onup>10005</onup>
 						<left>1000</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
@@ -335,20 +355,24 @@
 						<align>center</align>
 						<enable>!String.IsEmpty(Skin.String(HomeGames.Fanart))</enable>
 					</control>
+					<control type="button" id="10008">
+						<onright>10006</onright>
+						<onleft>10007</onleft>
+						<onup>10005</onup>
+						<left>1500</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31207]</label>
+						<onclick>Skin.Reset(HomeGames.icon)</onclick>
+						<enable>!String.IsEmpty(Skin.String(HomeGames.icon))</enable>
+						<align>center</align>
+					</control>
 				</control>
 			</control>
 			<!-- Filmes -->
 			<control type="group">
 				<visible>Control.HasFocus(613) | Control.HasFocus(614) | Control.HasFocus(10011) | Control.HasFocus(10012) | Control.HasFocus(10013) | Control.HasFocus(10014) | Control.HasFocus(10015) | Control.HasFocus(10016) | Control.HasFocus(10017) | Control.HasFocus(10018) | Control.HasFocus(10019) | Control.HasFocus(10020)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeMovies.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
-				<control type="grouplist" id="10000">
+				<control type="grouplist" id="12000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
 						<left>0</left>
@@ -374,7 +398,7 @@
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31187]</label>
 						<label2>$INFO[Skin.String(MoviesWidgets.Name)]</label2>
-						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MoviesWidgets.Source&amp;skinWidgetName=MoviesWidgets.Name&amp;skinWidgetTarget=MoviesWidgets.Target&amp;skinWidgetPath=MoviesWidgets.Path)</onclick>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MoviesWidgets.Source&amp;skinWidgetType=Movies&amp;skinWidgetName=MoviesWidgets.Name&amp;skinWidgetTarget=MoviesWidgets.Target&amp;skinWidgetPath=MoviesWidgets.Path)</onclick>
 					</control>
 					<control type="button" id="10014">
 						<include>DefaultSettingButton</include>
@@ -382,17 +406,31 @@
 						<label2>$INFO[Skin.String(HomeMovies.Fanart)]</label2>
 						<onclick>Skin.SetImage(HomeMovies.Fanart)</onclick>
 					</control>
+					<control type="button" id="10015">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31206]</label>
+						<onclick>Skin.SetImage(HomeMovies.icon,special://skin\extras\home-icons)</onclick>
+					</control>
 				</control>
 				<!-- Widget Preview -->
 				<control type="list">
 					<include>WidgetListHomePosterPreview</include>
 					<content>$INFO[Skin.String(MoviesWidgets.Path)]</content>
 				</control>
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeMoviesCustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
 				<!-- Botões de Redefinição -->
 				<control type="group" id="11000">
-					<control type="button" id="10018">
-						<onright>10018</onright>
-						<onup>10014</onup>
+					<control type="button" id="10016">
+						<onright>10017</onright>
+						<onup>10015</onup>
 						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -400,23 +438,37 @@
 						<label>$LOCALIZE[31190]</label>
 						<onclick>Skin.Reset(HomeMovies.Title)</onclick>
 						<onclick>Skin.Reset(HomeMovies.Action)</onclick>
+						<onclick>Skin.Reset(HomeMovies.ActionTitle)</onclick>
 						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
 						<onclick>Skin.Reset(MoviesWidgets.Name)</onclick>
 						<onclick>Skin.Reset(MoviesWidgets.Source)</onclick>
 						<onclick>Skin.SetString(MoviesWidgets.Path,-)</onclick>
 						<onclick>Skin.Reset(MoviesWidgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMovies.icon)</onclick>
 						<align>center</align>
 					</control>
-					<control type="button" id="10020">
-						<onright>10020</onright>
-						<onleft>10020</onleft>
-						<onup>10014</onup>
+					<control type="button" id="10017">
+						<onright>10018</onright>
+						<onleft>10016</onleft>
+						<onup>10015</onup>
 						<left>1000</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomeMovies.Fanart)</onclick>
+						<align>center</align>
 						<enable>!String.IsEmpty(Skin.String(HomeMovies.Fanart))</enable>
+					</control>
+					<control type="button" id="10018">
+						<onright>10016</onright>
+						<onleft>10017</onleft>
+						<onup>10015</onup>
+						<left>1500</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31207]</label>
+						<onclick>Skin.Reset(HomeMovies.icon)</onclick>
+						<enable>!String.IsEmpty(Skin.String(HomeMovies.icon))</enable>
 						<align>center</align>
 					</control>
 				</control>
@@ -424,17 +476,8 @@
 			<!-- Seriados -->
 			<control type="group">
 				<visible>Control.HasFocus(615) | Control.HasFocus(616) | Control.HasFocus(10021) | Control.HasFocus(10022) | Control.HasFocus(10023) | Control.HasFocus(10024) | Control.HasFocus(10025) | Control.HasFocus(10026) | Control.HasFocus(10027) | Control.HasFocus(10028) | Control.HasFocus(10029) | Control.HasFocus(10030)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeTvShows.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
-				<control type="grouplist" id="10000">
+				<control type="grouplist" id="13000">
 					<include>CustomSkinSettingsPosition</include>
-					<ondown>10028</ondown>
 					<control type="label" id="0">
 						<left>0</left>
 						<width>1450</width>
@@ -459,7 +502,7 @@
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31187]</label>
 						<label2>$INFO[Skin.String(TvShowsWidgets.Name)]</label2>
-						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=TvShowsWidgets.Source&amp;skinWidgetName=TvShowsWidgets.Name&amp;skinWidgetTarget=TvShowsWidgets.Target&amp;skinWidgetPath=TvShowsWidgets.Path)</onclick>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=TvShowsWidgets.Source&amp;skinWidgetType=TvShows&amp;skinWidgetName=TvShowsWidgets.Name&amp;skinWidgetTarget=TvShowsWidgets.Target&amp;skinWidgetPath=TvShowsWidgets.Path)</onclick>
 					</control>
 					<control type="button" id="10024">
 						<include>DefaultSettingButton</include>
@@ -467,17 +510,31 @@
 						<label2>$INFO[Skin.String(HomeTvShows.Fanart)]</label2>
 						<onclick>Skin.SetImage(HomeTvShows.Fanart)</onclick>
 					</control>
+					<control type="button" id="10025">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31206]</label>
+						<onclick>Skin.SetImage(HomeTvShows.icon,special://skin\extras\home-icons)</onclick>
+					</control>
 				</control>
 				<!-- Widget Preview -->
 				<control type="list">
 					<include>WidgetListHomePosterPreview</include>
 					<content>$INFO[Skin.String(TvShowsWidgets.Path)]</content>
 				</control>
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeTvShowsCustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
 				<!-- Botões de Redefinição -->
 				<control type="group" id="11000">
-					<control type="button" id="10028">
-						<onright>10030</onright>
-						<onup>10024</onup>
+					<control type="button" id="10026">
+						<onright>10027</onright>
+						<onup>10025</onup>
 						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -485,23 +542,37 @@
 						<label>$LOCALIZE[31190]</label>
 						<onclick>Skin.Reset(HomeTvShows.Title)</onclick>
 						<onclick>Skin.Reset(HomeTvShows.Action)</onclick>
+						<onclick>Skin.Reset(HomeTvShows.ActionTitle)</onclick>
 						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
 						<onclick>Skin.Reset(TvShowsWidgets.Name)</onclick>
 						<onclick>Skin.Reset(TvShowsWidgets.Source)</onclick>
 						<onclick>Skin.SetString(TvShowsWidgets.Path,-)</onclick>
 						<onclick>Skin.Reset(TvShowsWidgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeTvShows.icon)</onclick>
 						<align>center</align>
 					</control>
-					<control type="button" id="10030">
+					<control type="button" id="10027">
 						<onright>10028</onright>
-						<onleft>10028</onleft>
-						<onup>10024</onup>
+						<onleft>10026</onleft>
+						<onup>10025</onup>
 						<left>1000</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomeTvShows.Fanart)</onclick>
+						<align>center</align>
 						<enable>!String.IsEmpty(Skin.String(HomeTvShows.Fanart))</enable>
+					</control>
+					<control type="button" id="10028">
+						<onright>10026</onright>
+						<onleft>10027</onleft>
+						<onup>10025</onup>
+						<left>1500</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31207]</label>
+						<onclick>Skin.Reset(HomeTvShows.icon)</onclick>
+						<enable>!String.IsEmpty(Skin.String(HomeTvShows.icon))</enable>
 						<align>center</align>
 					</control>
 				</control>
@@ -509,15 +580,7 @@
 			<!-- Musicas -->
 			<control type="group">
 				<visible>Control.HasFocus(617) | Control.HasFocus(618) | Control.HasFocus(10031) | Control.HasFocus(10032) | Control.HasFocus(10033) | Control.HasFocus(10034) | Control.HasFocus(10035) | Control.HasFocus(10036) | Control.HasFocus(10037) | Control.HasFocus(10038) | Control.HasFocus(10039) | Control.HasFocus(10040)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomeMusic.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
-				<control type="grouplist" id="10000">
+				<control type="grouplist" id="14000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
 						<left>0</left>
@@ -543,7 +606,7 @@
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31187]</label>
 						<label2>$INFO[Skin.String(MusicWidgets.Name)]</label2>
-						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MusicWidgets.Source&amp;skinWidgetName=MusicWidgets.Name&amp;skinWidgetTarget=MusicWidgets.Target&amp;skinWidgetPath=MusicWidgets.Path)</onclick>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=MusicWidgets.Source&amp;skinWidgetType=Music&amp;skinWidgetName=MusicWidgets.Name&amp;skinWidgetTarget=MusicWidgets.Target&amp;skinWidgetPath=MusicWidgets.Path)</onclick>
 					</control>
 					<control type="button" id="10034">
 						<include>DefaultSettingButton</include>
@@ -551,17 +614,31 @@
 						<label2>$INFO[Skin.String(HomeMusic.Fanart)]</label2>
 						<onclick>Skin.SetImage(HomeMusic.Fanart)</onclick>
 					</control>
+					<control type="button" id="10035">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31206]</label>
+						<onclick>Skin.SetImage(HomeMusic.icon,special://skin\extras\home-icons)</onclick>
+					</control>
 				</control>
 				<!-- Widget Preview -->
 				<control type="list">
 					<include>WidgetListHomePosterPreview</include>
 					<content>$INFO[Skin.String(MusicWidgets.Path)]</content>
 				</control>
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomeMusicCustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
 				<!-- Botões de Redefinição -->
 				<control type="group" id="11000">
-					<control type="button" id="10038">
-						<onright>10040</onright>
-						<onup>10034</onup>
+					<control type="button" id="10036">
+						<onright>10037</onright>
+						<onup>10035</onup>
 						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -569,27 +646,37 @@
 						<label>$LOCALIZE[31190]</label>
 						<onclick>Skin.Reset(HomeMusic.Title)</onclick>
 						<onclick>Skin.Reset(HomeMusic.Action)</onclick>
+						<onclick>Skin.Reset(HomeMusic.ActionTitle)</onclick>
 						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
 						<onclick>Skin.Reset(MusicWidgets.Name)</onclick>
 						<onclick>Skin.Reset(MusicWidgets.Source)</onclick>
 						<onclick>Skin.SetString(MusicWidgets.Path,-)</onclick>
 						<onclick>Skin.Reset(MusicWidgets.Target)</onclick>
+						<onclick>Skin.Reset(HomeMusic.icon)</onclick>
 						<align>center</align>
-					
-					
-						
 					</control>
-					<control type="button" id="10040">
+					<control type="button" id="10037">
 						<onright>10038</onright>
-						<onleft>10038</onleft>
-						<onup>10034</onup>
+						<onleft>10036</onleft>
+						<onup>1003</onup>
 						<left>1000</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomeMusic.Fanart)</onclick>
-						<onclick>up</onclick>
+						<align>center</align>
 						<enable>!String.IsEmpty(Skin.String(HomeMusic.Fanart))</enable>
+					</control>
+					<control type="button" id="10038">
+						<onright>10036</onright>
+						<onleft>10037</onleft>
+						<onup>10035</onup>
+						<left>1500</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31207]</label>
+						<onclick>Skin.Reset(HomeMusic.icon)</onclick>
+						<enable>!String.IsEmpty(Skin.String(HomeMusic.icon))</enable>
 						<align>center</align>
 					</control>
 				</control>
@@ -597,15 +684,7 @@
 			<!-- Imagens -->
 			<control type="group">
 				<visible>Control.HasFocus(619) | Control.HasFocus(620) | Control.HasFocus(10041) | Control.HasFocus(10042) | Control.HasFocus(10043) | Control.HasFocus(10044) | Control.HasFocus(10045) | Control.HasFocus(10046) | Control.HasFocus(10047) | Control.HasFocus(10048) | Control.HasFocus(10049) | Control.HasFocus(10050)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(HomePictures.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
-				<control type="grouplist" id="10000">
+				<control type="grouplist" id="15000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
 						<left>0</left>
@@ -631,7 +710,7 @@
 						<include>DefaultSettingButton</include>
 						<label>$LOCALIZE[31187]</label>
 						<label2>$INFO[Skin.String(PicturesWidgets.Name)]</label2>
-						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=PicturesWidgets.Source&amp;skinWidgetName=PicturesWidgets.Name&amp;skinWidgetTarget=PicturesWidgets.Target&amp;skinWidgetPath=PicturesWidgets.Path)</onclick>
+						<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidget=PicturesWidgets.Source&amp;skinWidgetType=Pictures&amp;skinWidgetName=PicturesWidgets.Name&amp;skinWidgetTarget=PicturesWidgets.Target&amp;skinWidgetPath=PicturesWidgets.Path)</onclick>
 					</control>
 					<control type="button" id="10044">
 						<include>DefaultSettingButton</include>
@@ -639,17 +718,31 @@
 						<label2>$INFO[Skin.String(HomePictures.Fanart)]</label2>
 						<onclick>Skin.SetImage(HomePictures.Fanart)</onclick>
 					</control>
+					<control type="button" id="10045">
+						<include>DefaultSettingButton</include>
+						<label>$LOCALIZE[31206]</label>
+						<onclick>Skin.SetImage(HomePictures.icon,special://skin\extras\home-icons)</onclick>
+					</control>
 				</control>
 				<!-- Widget Preview -->
 				<control type="list">
 					<include>WidgetListHomePosterPreview</include>
 					<content>$INFO[Skin.String(PicturesWidgets.Path)]</content>
 				</control>
+				<control type="image">
+					<right>40</right>
+					<top>480</top>
+					<width>70</width>
+					<height>70</height>
+					<texture>$VAR[HomePicturesCustomIcon]</texture>
+					<aspectratio>scale</aspectratio>
+					<fadetime>500</fadetime>
+				</control>
 				<!-- Botões de Redefinição -->
 				<control type="group" id="11000">
-					<control type="button" id="10050">
-						<onright>10048</onright>
-						<onup>10044</onup>
+					<control type="button" id="10046">
+						<onright>10047</onright>
+						<onup>10045</onup>
 						<onleft>SetFocus(9000)</onleft>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -663,19 +756,31 @@
 						<onclick>Skin.Reset(PicturesWidgets.Source)</onclick>
 						<onclick>Skin.SetString(PicturesWidgets.Path,-)</onclick>
 						<onclick>Skin.Reset(PicturesWidgets.Target)</onclick>
+						<onclick>Skin.Reset(HomePictures.icon)</onclick>
 						<align>center</align>
 					</control>
-					<control type="button" id="10048">
-						<onright>10050</onright>
-						<onleft>10050</onleft>
-						<onup>10044</onup>
-						<left>1000</left>
+					<control type="button" id="10047">
+						<onright>10048</onright>
+						<onleft>10046</onleft>
+						<onup>10045</onup>
+						<left>1004</left>
 						<bottom>155</bottom>
 						<include>DefaultSettingButtonBottom</include>
 						<label>$LOCALIZE[31189]</label>
 						<onclick>Skin.Reset(HomePictures.Fanart)</onclick>
-						<onclick>up</onclick>
+						<align>center</align>
 						<enable>!String.IsEmpty(Skin.String(HomePictures.Fanart))</enable>
+					</control>
+					<control type="button" id="10048">
+						<onright>10046</onright>
+						<onleft>10047</onleft>
+						<onup>10045</onup>
+						<left>1500</left>
+						<bottom>155</bottom>
+						<include>DefaultSettingButtonBottom</include>
+						<label>$LOCALIZE[31207]</label>
+						<onclick>Skin.Reset(HomePictures.icon)</onclick>
+						<enable>!String.IsEmpty(Skin.String(HomePictures.icon))</enable>
 						<align>center</align>
 					</control>
 				</control>
@@ -683,14 +788,7 @@
 			<!-- Meu Menu 1 -->
 			<control type="group">
 				<visible>Control.HasFocus(621) | Control.HasFocus(10051) | Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10055) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058) | Control.HasFocus(10059) | Control.HasFocus(10060)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu1.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -750,7 +848,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10058">
 						<onright>10059</onright>
-						<onleft>10060</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10055</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -796,14 +894,7 @@
 			<!-- Meu Menu 2 -->
 			<control type="group">
 				<visible>Control.HasFocus(622) | Control.HasFocus(10061) | Control.HasFocus(10062) | Control.HasFocus(10063) | Control.HasFocus(10064) | Control.HasFocus(10065) | Control.HasFocus(10066) | Control.HasFocus(10067) | Control.HasFocus(10068) | Control.HasFocus(10069) | Control.HasFocus(10070)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu2.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -864,7 +955,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10068">
 						<onright>10069</onright>
-						<onleft>10070</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10065</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -910,14 +1001,7 @@
 			<!-- Meu Menu 3 -->
 			<control type="group">
 				<visible>Control.HasFocus(623) | Control.HasFocus(10071) | Control.HasFocus(10072) | Control.HasFocus(10073) | Control.HasFocus(10074) | Control.HasFocus(10075) | Control.HasFocus(10076) | Control.HasFocus(10077) | Control.HasFocus(10078) | Control.HasFocus(10079) | Control.HasFocus(10080)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu3.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -977,7 +1061,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10078">
 						<onright>10079</onright>
-						<onleft>10070</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10075</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -1023,14 +1107,7 @@
 			<!-- Meu Menu 4 -->
 			<control type="group">
 				<visible>Control.HasFocus(624) | Control.HasFocus(10081) | Control.HasFocus(10082) | Control.HasFocus(10083) | Control.HasFocus(10084) | Control.HasFocus(10085) | Control.HasFocus(10086) | Control.HasFocus(10087) | Control.HasFocus(10088) | Control.HasFocus(10089) | Control.HasFocus(10090)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu4.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -1090,7 +1167,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10088">
 						<onright>10089</onright>
-						<onleft>10080</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10085</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -1136,14 +1213,7 @@
 			<!-- Meu Menu 5 -->
 			<control type="group">
 				<visible>Control.HasFocus(625) | Control.HasFocus(10091) | Control.HasFocus(10092) | Control.HasFocus(10093) | Control.HasFocus(10094) | Control.HasFocus(10095) | Control.HasFocus(10096) | Control.HasFocus(10097) | Control.HasFocus(10098) | Control.HasFocus(10099) | Control.HasFocus(10100)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu5.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -1203,7 +1273,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10098">
 						<onright>10099</onright>
-						<onleft>10090</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10095</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -1249,14 +1319,7 @@
 			<!-- Meu Menu 6 -->
 			<control type="group">
 				<visible>Control.HasFocus(626) | Control.HasFocus(10101) | Control.HasFocus(10102) | Control.HasFocus(10103) | Control.HasFocus(10104) | Control.HasFocus(10105) | Control.HasFocus(10106) | Control.HasFocus(10107) | Control.HasFocus(10108) | Control.HasFocus(10109) | Control.HasFocus(10110)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu6.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+				
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -1316,7 +1379,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10108">
 						<onright>10099</onright>
-						<onleft>10090</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10105</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -1362,14 +1425,7 @@
 			<!-- Meu Menu 7 -->
 			<control type="group">
 				<visible>Control.HasFocus(627) | Control.HasFocus(10111) | Control.HasFocus(10112) | Control.HasFocus(10113) | Control.HasFocus(10114) | Control.HasFocus(10115) | Control.HasFocus(10116) | Control.HasFocus(10117) | Control.HasFocus(10118) | Control.HasFocus(10119) | Control.HasFocus(10120)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu7.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -1429,7 +1485,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10118">
 						<onright>10099</onright>
-						<onleft>10090</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10115</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -1475,14 +1531,7 @@
 			<!-- Meu Menu 8 -->
 			<control type="group">
 				<visible>Control.HasFocus(628) | Control.HasFocus(10121) | Control.HasFocus(10122) | Control.HasFocus(10123) | Control.HasFocus(10124) | Control.HasFocus(10125) | Control.HasFocus(10126) | Control.HasFocus(10127) | Control.HasFocus(10128) | Control.HasFocus(10129) | Control.HasFocus(10130)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu8.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -1542,7 +1591,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10128">
 						<onright>10099</onright>
-						<onleft>10090</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10125</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -1588,14 +1637,7 @@
 			<!-- Meu Menu 9 -->
 			<control type="group">
 				<visible>Control.HasFocus(629) | Control.HasFocus(10131) | Control.HasFocus(10132) | Control.HasFocus(10133) | Control.HasFocus(10134) | Control.HasFocus(10135) | Control.HasFocus(10136) | Control.HasFocus(10137) | Control.HasFocus(10138) | Control.HasFocus(10139) | Control.HasFocus(10140)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu9.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -1655,7 +1697,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10138">
 						<onright>10099</onright>
-						<onleft>10090</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10135</onup>
 						<left>500</left>
 						<bottom>155</bottom>
@@ -1701,14 +1743,7 @@
 			<!-- Meu Menu 10 -->
 			<control type="group">
 				<visible>Control.HasFocus(630) | Control.HasFocus(10141) | Control.HasFocus(10142) | Control.HasFocus(10143) | Control.HasFocus(10144) | Control.HasFocus(10145) | Control.HasFocus(10146) | Control.HasFocus(10147) | Control.HasFocus(10148) | Control.HasFocus(10149) | Control.HasFocus(10150)</visible>
-				<control type="image">
-					<left>470</left>
-					<top>135</top>
-					<bottom>134</bottom>
-					<texture colordiffuse="60FFFFFF">$INFO[Skin.String(MyMenu10.Fanart)]</texture>
-					<aspectratio align="center" aligny="center">scale</aspectratio>
-					<fadetime>500</fadetime>
-				</control>
+
 				<control type="grouplist" id="10000">
 					<include>CustomSkinSettingsPosition</include>
 					<control type="label" id="0">
@@ -1768,7 +1803,7 @@
 				<control type="group" id="11000">
 					<control type="button" id="10148">
 						<onright>10149</onright>
-						<onleft>9000</onleft>
+						<onleft>SetFocus(9000)</onleft>
 						<onup>10145</onup>
 						<left>500</left>
 						<bottom>155</bottom>

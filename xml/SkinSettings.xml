@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|rightmenu|leftmenu)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=701&amp;group=mainmenu)</onload>
 	<controls>
 		<include>DefaultBackground</include>
 		<control type="multiimage">
@@ -238,8 +238,14 @@
 					<onclick>Skin.ToggleSetting(FadeWidgetIdle)</onclick>
 					<selected>Skin.HasSetting(FadeWidgetIdle)</selected>
 				</control>
-				<!-- Exibir Tocando agora na Home -->
 				<control type="radiobutton" id="707">
+					<label>Ativar rolagem automatica para Widgets na tela inicial</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(WidgetAutoScroll)</onclick>
+					<selected>Skin.HasSetting(WidgetAutoScroll)</selected>
+				</control>
+				<!-- Exibir Tocando agora na Home -->
+				<control type="radiobutton" id="708">
 					<label>$LOCALIZE[31175]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(showhomenowplaying)</onclick>
@@ -264,8 +270,7 @@
 					<height>70</height>
 					<align>center</align>
 					<!-- <haspath>true</haspath> -->
-					<label>$LOCALIZE[31064]</label>
-					
+					<label>$LOCALIZE[31064]</label>					
 				</control>
 				<control type="button" id="642">
 					<label>plugin.program.newsstand</label>

@@ -68,17 +68,25 @@
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 						<visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
 					</control>
-					<control type="label" id="5009">
+					<control type="button" id="5009">
+						<width>600</width>
+						<include>DialogSettingButton</include>
+						<label>Somg Auto Rating</label>
+						<onclick>Addon.OpenSettings(script.song.autorating)</onclick>
+						<visible>System.HasAddon(script.song.autorating)</visible>
+					</control>
+					<control type="label" id="5010">
 						<width>600</width>
 						<include>MediaMenuLabelCommon</include>
 						<label>$LOCALIZE[31179]</label>
 					</control>
-					<control type="button" id="5010">
+					<control type="button" id="5011">
 						<width>600</width>
 						<include>DialogSettingButton</include>
 						<label>$INFO[Skin.String(MusicArtsPath)]</label>
 						<onclick>Skin.SetPath(MusicArtsPath)</onclick>
 					</control>
+					
 				</control>
 			</control>
 		</control>

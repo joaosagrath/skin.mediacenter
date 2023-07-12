@@ -3,9 +3,10 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<onload condition="!String.IsEqual(skin.string(SkinStarted),started)">ReplaceWindow(1112)</onload>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=701&amp;group=mainmenu)</onload>
 	<onload condition="!System.HasAddon(script.skin.helper.service) + String.IsEqual(skin.string(SkinStarted),started)">InstallAddon(script.skin.helper.service)</onload>
-	<!-- <onload>Container.Refresh</onload> -->
+	<onload condition="System.HasAddon(script.skin.helper.service) + String.IsEqual(skin.string(SkinStarted),started)">Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
+	<onload condition="System.HasAddon(script.skin.helper.service) + String.IsEqual(skin.string(SkinStarted),started)">Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
 	<onload condition="Skin.HasSetting(HomeMenuNoGamesButton) + Skin.HasSetting(HomeMenuNoMovieButton) + Skin.HasSetting(HomeMenuNoTvShowButton) + Skin.HasSetting(HomeMenuNoMusicButton) + Skin.HasSetting(HomeMenuNoPicturesButton)">SetFocus(806)</onload>
 	<controls>
 		<!-- Botões -->
@@ -39,6 +40,15 @@
 			<onclick>noop</onclick>
 			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
 		</control>
+		<control type="button" id="20005">
+			<visible/>
+			<include>HiddenObject</include>
+			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+			<onfocus>ActivateWindow(1111))</onfocus>
+			<ondown>9000</ondown>
+			<onclick>noop</onclick>
+			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+		</control>
 		<!-- Fanart -->
 		<include>DefaultBackground</include>
 		<control type="multiimage">
@@ -53,20 +63,20 @@
 			<visible>!Player.HasMedia</visible>
 		</control>
 		<!-- TESTE LABELS -->
-
 		<control type="label">
-			<!-- <visible>Skin.HasSetting(HomeMenuNoGamesButton) + Skin.HasSetting(HomeMenuNoMovieButton) + Skin.HasSetting(HomeMenuNoTvShowButton) + Skin.HasSetting(HomeMenuNoMusicButton) + Skin.HasSetting(HomeMenuNoPicturesButton)</visible> -->
+			<visible/>
 			<top>401</top>
 			<left>20</left>
 			<!-- <label>$INFO[Container(10).NumItems]</label> -->
 			<!-- <label>$VAR[viewdisc]</label> -->
+			<!-- <label>$INFO[ListItem.Label]</label> -->
 			<!-- <label>$INFO[ListItem.FolderPath,.banner.jpg]</label> -->
 			<!-- $INFO[ListItem.Path,,logo.png] -->
 			<!-- <label>Y:\Girls\_Newsstand\$VAR[girlslogo].png</label> -->
-			<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
-			<!-- <label>$INFO[Player.Folderpath]discart.png</label> -->
+			<!-- <label>$INFO[Container(9000).ListItem.Label]</label> -->
+			<!-- <label>$INFO[ListItem.Property(id)]</label> -->
+			<!-- <label>$VAR[SortTagVar]</label> -->
 			<!-- <label>$INFO[Skin.String(studioicons.path)]$INFO[ListItem.Studio]$INFO[Skin.String(studioicons.ext)]</label> -->
-			<!-- <label>$INFO[Container.FolderPath]</label> -->
 			<textcolor>white</textcolor>
 			<align>center</align>
 			<!-- <visible>Control.HasFocus(10)</visible> -->
@@ -80,10 +90,12 @@
 			<!-- <texture>Y:\Girls\Scoreland\icon.jpg</texture> -->
 			<!-- <texture>$INFO[ListItem.Art(discart)]</texture> -->
 		</control>
+		<!-- Barra -->
+		<include>BottomBar</include>
 		<!-- Status Home -->
 		<control type="group">
-			<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,220" time="100" easing="inout" condition="Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12) | Control.HasFocus(100) | Control.HasFocus(101) | Control.HasFocus(102) | Control.HasFocus(103) | Control.HasFocus(104) | Control.HasFocus(105) | Control.HasFocus(106) | Control.HasFocus(107) | Control.HasFocus(108) | Control.HasFocus(109)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="300" condition="ControlGroup(700).HasFocus() | Control.HasFocus(800) | ControlGroup(99).HasFocus()">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,230" time="100" easing="inout" condition="Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)">Conditional</animation>
 			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
 				<effect type="slide" end="0,540" time="500" tween="sine"/>
 			</animation>
@@ -98,6 +110,7 @@
 			</control>
 			<control type="group">
 				<visible>!Control.HasFocus(701)</visible>
+				<visible>!Control.HasFocus(800)</visible>
 				<control type="label">
 					<left>840</left>
 					<top>40</top>
@@ -131,6 +144,7 @@
 			</control>
 			<control type="image">
 				<visible>!Control.HasFocus(701)</visible>
+				<visible>!Control.HasFocus(800)</visible>
 				<left>60</left>
 				<top>75</top>
 				<aspectratio>keep</aspectratio>
@@ -194,7 +208,10 @@
 		</control>
 		<!-- Artes da Home Menu Default -->
 		<control type="group">
-			<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>
+			<animation type="Conditional" condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)" reversible="true">
+				<effect type="slide" end="0,540" time="500" tween="sine"/>
+			</animation>
+			<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12) | ControlGroup(99).HasFocus() | Control.HasFocus(800)</visible>
 			<animation effect="fade" start="0" end="100" reversible="false" time="300">VisibleChange</animation>
 			<bottom>115</bottom>
 			<height>230</height>
@@ -206,6 +223,7 @@
 			</control>
 			<!-- Logo -->
 			<control type="image" id="2816">
+				<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>
 				<top>100</top>
 				<right>17</right>
 				<width>400</width>
@@ -215,6 +233,7 @@
 				<fadetime>450</fadetime>
 			</control>
 			<control type="image" id="2815">
+				<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>
 				<top>100</top>
 				<right>17</right>
 				<width>400</width>
@@ -224,6 +243,7 @@
 			</control>
 			<!-- Detalhes de Mídia -->
 			<control type="textbox">
+				<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>
 				<top>100</top>
 				<left>450</left>
 				<width>390</width>
@@ -236,6 +256,7 @@
 			</control>
 			<!-- Descrição de Mídia Sem logo-->
 			<control type="textbox">
+				<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>
 				<visible>String.IsEmpty(Control.GetLabel(2815))</visible>
 				<visible>String.IsEmpty(Control.GetLabel(2816))</visible>
 				<top>100</top>
@@ -250,6 +271,7 @@
 			</control>
 			<!-- Descrição de Mídia Com logo-->
 			<control type="textbox">
+				<visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>
 				<visible>!String.IsEmpty(Control.GetLabel(2815))</visible>
 				<visible>!String.IsEmpty(Control.GetLabel(2816))</visible>
 				<top>100</top>
@@ -490,15 +512,13 @@
 				</control>
 			</control>
 		</control>
-		<!-- Barra -->
-		<include>BottomBar</include>
 		<!-- Menus Principais -->
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<include>Home_Widgets</include>
 			<!-- Grupo do Menu Principal -->
 			<control type="group">
-				<depth>DepthContentPanel</depth>
+				<!-- <depth>DepthContentPanel</depth> -->
 				<!-- Menu Do Topo -->
 				<control type="list" id="9000">
 					<!-- <onfocus>ClearProperty(listposition,home)</onfocus> -->
@@ -513,6 +533,7 @@
 					<onleft condition="Integer.IsEqual(Container(9002).NumItems,0)">noop</onleft>
 					<ondown condition="Player.HasMedia + Skin.HasSetting(showhomenowplaying)">602</ondown>
 					<ondown>10</ondown>
+					<ondown>100</ondown>
 					<onup>700</onup>
 					<orientation>horizontal</orientation>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -752,7 +773,7 @@
 				<control type="grouplist" id="700">
 					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
 					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_TopSlide</include>
-					<animation effect="slide" start="0,0" end="0,100" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,100" time="100" easing="inout" condition="ControlGroup(700).HasFocus()">Conditional</animation>
 					<animation effect="slide" start="0,0" end="0,100" time="100" easing="inout" condition="[Skin.HasSetting(HomeMenuNoGamesButton) + Skin.HasSetting(HomeMenuNoMovieButton) + Skin.HasSetting(HomeMenuNoTvShowButton) + Skin.HasSetting(HomeMenuNoMusicButton) + Skin.HasSetting(HomeMenuNoPicturesButton)] + [Control.HasFocus(9001) | Control.HasFocus(9002)]">Conditional</animation>
 					<orientation>horizontal</orientation>
 					<itemgap>0</itemgap>
@@ -769,11 +790,73 @@
 					<align>justify</align>
 					<include>System_Menu</include>
 				</control>
+				<!-- SubMneu -->
+				<control type="list" id="800">
+					<include condition="Skin.HasSetting(no_slide_animations)">OpenClose_Fade</include>
+					<include condition="!Skin.HasSetting(no_slide_animations)">Animation_BottomSlide</include>
+					<animation effect="slide" start="0,0" end="0,-240" time="100" easing="inout" condition="Control.HasFocus(800)">Conditional</animation>
+					<orientation>horizontal</orientation>
+					<top>1100</top>
+					<width>1920</width>
+					<height>1080</height>
+					<onup>10</onup>
+					<ondown>ActivateWindow(1113)</ondown>
+					<scrolltime>200</scrolltime>
+					<itemlayout height="120" width="128">
+						<control type="image">
+							<height>120</height>
+							<width>120</width>
+							<texture>empty.png</texture>
+							<aspectratio>keep</aspectratio>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<height>120</height>
+							<width>120</width>
+							<texture>$VAR[InfoWallThumbVar]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>20</bordersize>
+						</control>
+					</itemlayout>
+					<focusedlayout height="120" width="128">
+					<control type="image">
+							<top>-30</top>
+							<left>-30</left>
+							<height>180</height>							
+							<width>180</width>
+							<texture colordiffuse="button_focus">buttons/button-fo.png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+					<control type="image">
+							<height>120</height>
+							<width>120</width>
+							<texture>empty.png</texture>
+							<aspectratio>keep</aspectratio>
+							<bordertexture border="21">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						
+						<control type="image">
+							<height>120</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<width>120</width>
+							<aspectratio>keep</aspectratio>
+							<bordersize>20</bordersize>
+						</control>
+					</focusedlayout>
+					<include>Sub_Menu</include>
+				</control>
+			</control>
+			<control type="label">
+				<visible>Control.HasFocus(800)</visible>
+				<include>SubMenuLabel</include>
+				<label>$INFO[ListItem.Label]</label>
 			</control>
 			<!-- System Info -->
 			<control type="group">
 				<animation effect="fade" start="100" end="0" condition=" Player.HasMedia + Skin.HasSetting(showhomenowplaying)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-250" time="100" easing="inout" condition="Control.HasFocus(801) | Control.HasFocus(802) | Control.HasFocus(803) | Control.HasFocus(804) | Control.HasFocus(805) | Control.HasFocus(806) | Control.HasFocus(807) | Control.HasFocus(808) | Control.HasFocus(809)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-250" time="100" easing="inout" condition="ControlGroup(700).HasFocus">Conditional</animation>
 				<control type="group">
 					<bottom>-250</bottom>
 					<left>40</left>

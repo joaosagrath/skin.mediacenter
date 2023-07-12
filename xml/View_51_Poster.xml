@@ -101,18 +101,31 @@
 						<top>400</top>
 						<right>50</right>
 						<height>40</height>
-						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
+						<!-- <label>$VAR[NewsStandListVar]$VAR[ListSubLabelVar]</label> -->
+						<label>$VAR[ViewPosterTitle]</label>
 						<font>font45_title</font>
-						<shadowcolor>text_shadow</shadowcolor>
+						<shadowcolor>black</shadowcolor>
+						<scroll>true</scroll>
 					</control>
 					<control type="textbox">
 						<left>645</left>
 						<top>480</top>
 						<height>250</height>
-						<right>115</right>
+						<right>800</right>
+						<label>$VAR[ShiftLeftTextBoxVar]</label>
+						<shadowcolor>black</shadowcolor>
+						<fadetime>450</fadetime>
+						<autoscroll time="3000" repeat="3000">True</autoscroll>
+					</control>
+					<control type="textbox">
+						<left>1150</left>
+						<top>480</top>
+						<height>250</height>
+						<right>50</right>
 						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
 						<label>$INFO[ListItem.Plot]</label>
-						<shadowcolor>text_shadow</shadowcolor>
+						<align>justify</align>
+						<shadowcolor>black</shadowcolor>
 						<visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
 					</control>
 				</control>
@@ -145,6 +158,26 @@
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>0</bordersize>
+			</control>
+			<control type="image">
+				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+				<left>405</left>
+				<top>4</top>
+				<width>70</width>
+				<height>480</height>
+				<texture>$INFO[ListItem.Art(fav_icon)]</texture>
+				<fadetime>450</fadetime>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+			</control>
+			<control type="image">
+				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+				<left>409</left>
+				<top>4</top>
+				<width>70</width>
+				<height>480</height>
+				<texture>$INFO[ListItem.Art(fav_icon)]</texture>
+				<fadetime>450</fadetime>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
 			</control>
 			<control type="group">
 				<visible>String.IsEqual(ListItem.DBtype,tvshow)</visible>

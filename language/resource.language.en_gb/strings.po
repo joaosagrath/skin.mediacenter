@@ -21,9 +21,9 @@ msgctxt "#31000"
 msgid "Now playing"
 msgstr ""
 
-#: /xml/Home.xml
+#: /xml/Variables.xml
 msgctxt "#31001"
-msgid "Search..."
+msgid "Type"
 msgstr ""
 
 #: /xml/SkinSettings.xml
@@ -381,7 +381,15 @@ msgctxt "#31072"
 msgid "Power Options"
 msgstr ""
 
-#empty strings from id 31073 to 31074
+#: /xml/Variables.xml
+msgctxt "#31073"
+msgid "Year"
+msgstr "Ano"
+
+#: /xml/Variables.xml
+msgctxt "#31074"
+msgid "Release"
+msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31075"
@@ -1040,7 +1048,7 @@ msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31212"
-msgid "Sort by: Year"
+msgid "Audio Add-ons"
 msgstr ""
 
 #: /xml/Custom_1111_CustomSkinSettings.xml
@@ -1153,4 +1161,28 @@ msgstr ""
 #: /xml/Custom_1111_CustomSkinSettings.xml
 msgctxt "#31235"
 msgid "Finishing Settings"
+msgstr ""
+
+msgctxt "#31236"
+msgid "Sorted by"
+msgstr ""
+
+msgctxt "#31237"
+msgid "Genre"
+msgstr ""
+
+msgctxt "#31238"
+msgid "Title"
+msgstr ""
+
+msgctxt "#31239"
+msgid "Studio"
+msgstr ""
+
+msgctxt "#31240"
+msgid "Default"
+msgstr ""
+
+msgctxt "#31241"
+msgid "Sorted By: Year"
 msgstr ""

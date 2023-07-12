@@ -2,10 +2,9 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<views>50,53,501</views>
+	<views>50,53,501,506</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
-		<include>DefaultBackground</include>
 		<control type="image">
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
@@ -13,7 +12,7 @@
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(HomeMusic.Fanart)]</texture>
 		</control>
-		
+		<include>DefaultBackground</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<animation type="Conditional" condition="Control.HasFocus(900) + Skin.HasSetting(no_slide_animations)">
@@ -26,6 +25,7 @@
 			<include>ViewBasic</include>
 			<include>View_53_Shift</include>
 			<include>View_501_Banner</include>
+			<include>View_506_3-Column</include>
 			<include>CommonScrollbars</include>
 			<!-- <control type="group">
 				<depth>DepthContentPanel</depth>
@@ -96,7 +96,6 @@
 		<include content="BottomBar">
 			<param name="info_visible" value="true"/>
 		</include>
-		
 		<control type="group">
 			<!-- <control type="group">
 				<visible>Control.IsVisible(51) | Control.IsVisible(53)</visible>
@@ -188,8 +187,8 @@
 						<include>MediaMenuItemsCommon</include>
 						<label>$LOCALIZE[31223]</label>
 						<onclick>ActivateWindow(settings)</onclick>
-					</control>	
-					<control type="label" id="631">
+					</control>
+					<control type="label" id="629">
 						<include>MediaMenuLabelCommon</include>
 						<label>$LOCALIZE[31179]</label>
 						<visible>Window.IsActive(Music)</visible>
@@ -201,13 +200,48 @@
 						<onclick>Skin.SetPath(MusicArtsPath)</onclick>
 						<visible>Window.IsActive(Music)</visible>
 					</control>
-					<control type="label" id="632">
+					<control type="grouplist" id="625">
+						<orientation>horizontal</orientation>
+						<itemgap>-38</itemgap>
+						<include>MediaMenuPlayControls</include>
+						<width>450</width>
+						<visible>Player.HasMedia</visible>
+						<include content="IconButton">
+							<param name="control_id" value="14101"/>
+							<param name="onclick" value="PlayerControl(Previous)"/>
+							<param name="icon" value="icons/now-playing/previous.png"/>
+							<param name="onup" value="625"/>
+						</include>
+						<include content="BottomMainMenuToggleItem">
+							<param name="control_id" value="14102"/>
+							<param name="onclick" value="PlayerControl(Play)"/>
+							<param name="icon_on" value="icons/now-playing/play.png"/>
+							<param name="icon_off" value="icons/now-playing/pause.png"/>
+							<param name="selected" value="Player.Paused"/>
+						</include>
+						<include content="IconButton">
+							<param name="control_id" value="14103"/>
+							<param name="onclick" value="Stop"/>
+							<param name="onclick_2" value="SetFocus(50)"/>
+							<param name="icon" value="icons/now-playing/stop.png"/>
+						</include>
+						<include content="IconButton">
+							<param name="control_id" value="14104"/>
+							<param name="onclick" value="PlayerControl(Next)"/>
+							<param name="icon" value="icons/now-playing/next.png"/>
+						</include>
+						<include content="IconButton">
+							<param name="control_id" value="14105"/>
+							<param name="onclick" value="Fullscreen"/>
+							<param name="icon" value="icons/now-playing/fullscreen.png"/>
+						</include>
+					</control>
+					<!-- <control type="label" id="632">
 						<description>Actions</description>
 						<include>MediaMenuLabelCommon</include>
 						<label>$LOCALIZE[31081]</label>
 						<visible>Player.HasAudio</visible>
-					</control>
-					<include>MediaMenuNowPlaying</include>
+					</control> -->
 				</control>
 			</control>
 			<!-- Esconde Elementos da Tela -->

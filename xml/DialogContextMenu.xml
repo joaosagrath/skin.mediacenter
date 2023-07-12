@@ -22,8 +22,8 @@
 			<top>-1080</top>
 			<width>5760</width>
 			<height>3240</height>
-			<texturefocus />
-			<texturenofocus />
+			<texturefocus/>
+			<texturenofocus/>
 			<onclick>Action(close)</onclick>
 		</control>
 		<control type="group">
@@ -32,34 +32,89 @@
 				<description>background image</description>
 				<left>0</left>
 				<top>0</top>
-				<width>450</width>
+				<width>500</width>
 				<height>780</height>
 				<texture colordiffuse="dialog_tint">colors/white.png</texture>
 			</control>
+			<include content="UpDownArrows">
+				<param name="container_id" value="996"/>
+				<param name="posx" value="201"/>
+				<param name="up_posy" value="-40"/>
+				<param name="down_posy" value="798"/>
+			</include>
 			<control type="grouplist" id="996">
 				<description>grouplist for context buttons</description>
 				<left>0</left>
 				<top>0</top>
-				<width>450</width>
+				<width>500</width>
 				<height max="780">auto</height>
 				<usecontrolcoords>true</usecontrolcoords>
+				
+				<control type="button" id="1000">
+					<description>button template</description>
+					<height>65</height>
+					<align>center</align>
+					<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+					<texturenofocus/>
+				</control>
+				
+				<!-- <control type="button" id="1032">
+					<visible>Container.Content(images) + System.HasAddon(plugin.program.newsstand) + Container.HasFiles + !Container.HasFolders</visible>
+					<include>DialogSettingButton</include>
+					<onclick>RunScript(special://home/addons/skin.mediacenter/extras/scripts/make_issue.py, issue_file, $INFO[ListItem.Path], $INFO[ListItem.FolderName], $INFO[ListItem.Label])</onclick>
+					<label>Make this folder an issue</label>
+					<align>center</align>
+				</control>
+				
+				<control type="button" id="1033">
+					<visible>Container.Content(images) + System.HasAddon(plugin.program.newsstand) + Container.HasFolders</visible>
+					<include>DialogSettingButton</include>
+					<onclick>RunScript(special://home/addons/skin.mediacenter/extras/scripts/make_issue.py, issue_folder, $INFO[ListItem.Path], $INFO[ListItem.FolderName], $INFO[ListItem.Label])</onclick>
+					<label>Make this folder an issue</label>
+					<align>center</align>
+				</control> -->
+				
+				<control type="button" id="1034">
+					<visible>Container.Content(images) + System.HasAddon(plugin.program.newsstand) + Container.HasFolders</visible>
+					<include>DialogSettingButton</include>
+					<onclick>RunScript(special://home/addons/skin.mediacenter/extras/scripts/make_issue.py, all_folder, $INFO[ListItem.Path], $INFO[ListItem.FolderName], $INFO[ListItem.Label])</onclick>
+					<label>Make all folder as issues</label>
+					<align>center</align>
+				</control>
+				
+				<control type="button" id="1035">
+					<visible>Container.Content(images) + System.HasAddon(plugin.program.newsstand) + Container.HasFiles + !ListItem.IsFolder</visible>
+					<include>DialogSettingButton</include>
+					<onclick>RunScript(special://home/addons/skin.mediacenter/extras/scripts/make_issue.py, make_folder_cover, $INFO[ListItem.FileNameAndPath], $INFO[ListItem.Path], EMPTY)</onclick>
+					<label>Set this image as folder cover</label>
+					<align>center</align>
+				</control>
+				
+				<control type="button" id="1036">
+					<visible>Container.Content(images) + System.HasAddon(plugin.program.newsstand) + Container.HasFiles + !ListItem.IsFolder</visible>
+					<include>DialogSettingButton</include>
+					<onclick>RunScript(special://home/addons/skin.mediacenter/extras/scripts/make_arts.py, make_folder_cover, $INFO[ListItem.FileNameAndPath], $INFO[ListItem.Path], EMPTY)</onclick>
+					<label>NewsStand Set Art</label>
+					<align>center</align>
+				</control>
+				
+				<control type="button" id="1037">
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+					<include>DialogSettingButton</include>
+					<onclick condition="!System.HasAddon(script.trakt)">InstallAddon(script.trakt)</onclick>
+					<onclick condition="System.HasAddon(script.trakt)">RunScript(script.trakt,action=contextmenu)</onclick>
+					<label>Sincronize with Trakt</label>
+					<align>center</align>
+				</control>
+				<!-- <control type="button" id="1037">
+					<visible>Container.Content(songs) | Container.Content(albuns) | Container.Content(artists)</visible>
+					<include>DialogSettingButton</include>
+					<onclick condition="!System.HasAddon(script.song.autorating)">InstallAddon(script.song.autorating)</onclick>
+					<onclick condition="System.HasAddon(script.song.autorating)">Addon.OpenSettings(script.song.autorating)</onclick>
+					<label>Song Auto Rating Settings</label>
+					<align>center</align>
+				</control> -->
 			</control>
-			<include content="UpDownArrows">
-				<param name="container_id" value="996" />
-				<param name="posx" value="201" />
-				<param name="up_posy" value="-40" />
-				<param name="down_posy" value="798" />
-			</include>
-		</control>
-		<control type="button" id="1000">
-			<description>button template</description>
-			<left>0</left>
-			<top></top>
-			<width>450</width>
-			<height>65</height>
-			<align>center</align>
-			<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
-			<texturenofocus />
 		</control>
 	</controls>
 </window>

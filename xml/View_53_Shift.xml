@@ -9,7 +9,6 @@
 			<height>880</height>
 			<control type="group">
 				<visible>Control.IsVisible(53)</visible>
-				
 				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 				<animation effect="fade" time="200">VisibleChange</animation>
@@ -65,7 +64,6 @@
 					<viewtype label="31100">icon</viewtype>
 					<itemlayout width="370">
 						<control type="image">
-							<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
 							<depth>DepthContentPopout</depth>
 							<left>0</left>
 							<top>90</top>
@@ -77,51 +75,6 @@
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
-						<control type="group">
-							<visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
-								<control type="group">
-									<visible>Skin.HasSetting(Show_Icons)</visible>
-									<control type="image">
-
-										<depth>DepthContentPopout</depth>
-										<left>0</left>
-										<top>90</top>
-										<width>370</width>
-										<height>480</height>
-										<aspectratio aligny="center">stretch</aspectratio>
-										<texture>dialogs/dialog-bg-nobo.png</texture>
-										<bordertexture border="21">overlays/shadow.png</bordertexture>
-										<bordersize>20</bordersize>
-									</control>
-									<control type="image">
-										
-										<depth>DepthContentPopout</depth>
-										<left>0</left>
-										<top>29</top>
-										<width>370</width>
-										<height>480</height>
-										<aspectratio aligny="center">keep</aspectratio>
-										<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
-										<texture>$INFO[ListItem.Icon]</texture>
-										<bordertexture border="21">overlays/shadow.png</bordertexture>
-										<bordersize>20</bordersize>
-									</control>
-								</control>
-								<control type="image">
-									<visible>!Skin.HasSetting(Show_Icons)</visible>
-									<depth>DepthContentPopout</depth>
-									<left>0</left>
-									<top>90</top>
-									<width>370</width>
-									<height>480</height>
-									<aspectratio aligny="center">keep</aspectratio>
-									<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
-									<texture>$VAR[PosterVar]</texture>
-									<bordertexture border="21">overlays/shadow.png</bordertexture>
-									<bordersize>20</bordersize>
-								</control>
-
-						</control>
 						<control type="textbox">
 							<left>20</left>
 							<top>603</top>
@@ -129,74 +82,48 @@
 							<height>105</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
-						</control> 
+							<label>$VAR[ViewShiftTitle]</label>
+							<shadowcolor>black</shadowcolor>
+						</control>
 						<control type="image">
 							<left>169</left>
 							<top>560</top>
 							<width>32</width>
 							<height>32</height>
 							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+						<control type="image">
+							<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+							<left>261</left>
+							<top>110</top>
+							<width>70</width>
+							<height>480</height>
+							<texture>$INFO[ListItem.Art(fav_icon)]</texture>
+							<fadetime>450</fadetime>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+						</control>
+						<control type="image">
+							<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+							<left>261</left>
+							<top>110</top>
+							<width>70</width>
+							<height>480</height>
+							<texture>$INFO[ListItem.Art(fav_icon)]</texture>
+							<fadetime>450</fadetime>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
 						</control>
 					</itemlayout>
 					<focusedlayout width="370">
 						<control type="image">
-							<visible>!String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
 							<depth>DepthContentPopout</depth>
 							<left>0</left>
 							<top>90</top>
 							<width>370</width>
 							<height>480</height>
 							<aspectratio aligny="center">keep</aspectratio>
-							<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
 							<texture>$VAR[PosterVar]</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
-						</control>
-						<control type="group">
-							<visible>String.Contains(Container.FolderPath,plugin://plugin.program.newsstand)</visible>
-								<control type="group">
-									<visible>Skin.HasSetting(Show_Icons)</visible>
-									<control type="image">
-
-										<depth>DepthContentPopout</depth>
-										<left>0</left>
-										<top>90</top>
-										<width>370</width>
-										<height>480</height>
-										<aspectratio aligny="center">stretch</aspectratio>
-										<texture>dialogs/dialog-bg-nobo.png</texture>
-										<bordertexture border="21">overlays/shadow.png</bordertexture>
-										<bordersize>20</bordersize>
-									</control>
-									<control type="image">
-										
-										<depth>DepthContentPopout</depth>
-										<left>0</left>
-										<top>29</top>
-										<width>370</width>
-										<height>480</height>
-										<aspectratio aligny="center">keep</aspectratio>
-										<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
-										<texture>$INFO[ListItem.Icon]</texture>
-										<bordertexture border="21">overlays/shadow.png</bordertexture>
-										<bordersize>20</bordersize>
-									</control>
-								</control>
-								<control type="image">
-									<visible>!Skin.HasSetting(Show_Icons)</visible>
-									<depth>DepthContentPopout</depth>
-									<left>0</left>
-									<top>90</top>
-									<width>370</width>
-									<height>480</height>
-									<aspectratio aligny="center">keep</aspectratio>
-									<!-- <texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture> -->
-									<texture>$VAR[PosterVar]</texture>
-									<bordertexture border="21">overlays/shadow.png</bordertexture>
-									<bordersize>20</bordersize>
-								</control>
-
 						</control>
 						<control type="textbox">
 							<left>20</left>
@@ -205,8 +132,9 @@
 							<height>105</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ViewShiftTitle]</label>
 							<autoscroll time="3000" delay="3000" repeat="3000">True</autoscroll>
+							<shadowcolor>black</shadowcolor>
 						</control>
 						<control type="image">
 							<left>169</left>
@@ -214,29 +142,49 @@
 							<width>32</width>
 							<height>32</height>
 							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+						<control type="image">
+							<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+							<left>261</left>
+							<top>110</top>
+							<width>70</width>
+							<height>480</height>
+							<texture>$INFO[ListItem.Art(fav_icon)]</texture>
+							<fadetime>450</fadetime>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+						</control>
+						<control type="image">
+							<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+							<left>261</left>
+							<top>110</top>
+							<width>70</width>
+							<height>480</height>
+							<texture>$INFO[ListItem.Art(fav_icon)]</texture>
+							<fadetime>450</fadetime>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
 						</control>
 					</focusedlayout>
 				</control>
 			</control>
 			<!-- TESTE LABELS -->
-				<control type="label">
-					<!-- <visible>String.StartsWith(Container.FolderPath,plugim://plugim.program.newsstand/)</visible> -->
-					<top>-20</top>
-					<left>20</left>
-					<!-- <label>$VAR[viewdisc]</label> -->
-					<!-- <label>.format(num_roms)</label> -->
-					<!-- $INFO[ListItem.Path,,logo.png] -->
-					<!-- <label>$INFO[Container.Content]</label> -->
-					<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
-					<textcolor>white</textcolor>
-					<align>center</align>
-					<!-- <visible>Control.HasFocus(10)</visible> -->
-				</control>
+			<control type="label">
+				<!-- <visible>String.StartsWith(Container.FolderPath,plugim://plugim.program.newsstand/)</visible> -->
+				<top>-20</top>
+				<left>20</left>
+				<!-- <label>$VAR[viewdisc]</label> -->
+				<!-- <label>.format(num_roms)</label> -->
+				<!-- $INFO[ListItem.Path,,logo.png] -->
+				<!-- <label>$INFO[Container.Content]</label> -->
+				<!-- <label>$INFO[Container(9000).Position(pos)]</label> -->
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<!-- <visible>Control.HasFocus(10)</visible> -->
+			</control>
 			<control type="group">
 				<visible>Control.IsVisible(53)</visible>
 				<include>Visible_Right</include>
 				<include>OpenClose_Right</include>
-				<control type="image">
+				<control type="image" id="501">
 					<left>30</left>
 					<top>50</top>
 					<width>400</width>
@@ -244,13 +192,25 @@
 					<texture>$VAR[ClearLogoVar]</texture>
 					<!-- <texture>$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture> -->
 				</control>
+				<control type="textbox">
+					<visible>String.IsEmpty(Control.GetLabel(501))</visible>
+					<left>30</left>
+					<top>50</top>
+					<width>400</width>
+					<height>155</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$VAR[NewsStandLogoVar]</label>
+					<font>Addon_Logo_50</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
 				<control type="group">
 					<visible>!ListItem.IsCollection</visible>
 					<left>440</left>
 					<width>30%</width>
 					<include content="ShiftTextbox">
-						<param name="textbox_id" value="53200" />
-						<param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]" />
+						<param name="textbox_id" value="53200"/>
+						<param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]"/>
 					</include>
 				</control>
 				<control type="group">
@@ -258,8 +218,8 @@
 					<left>50%</left>
 					<width>50%</width>
 					<include content="ShiftTextbox">
-						<param name="textbox_id" value="53300" />
-						<param name="textbox_content" value="$VAR[ShiftRightTextBoxVar]" />
+						<param name="textbox_id" value="53300"/>
+						<param name="textbox_content" value="$VAR[ShiftRightTextBoxVar]"/>
 					</include>
 				</control>
 				<control type="group">
@@ -267,8 +227,8 @@
 					<left>63%</left>
 					<width>33%</width>
 					<include content="ShiftTextbox">
-						<param name="textbox_id" value="53300" />
-						<param name="textbox_content" value="$VAR[CollectionTextBoxVar]" />
+						<param name="textbox_id" value="53300"/>
+						<param name="textbox_content" value="$VAR[CollectionTextBoxVar]"/>
 					</include>
 				</control>
 				<control type="list">
@@ -287,7 +247,7 @@
 							<height>40</height>
 							<width>100%</width>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Year,[COLOR button_focus],[/COLOR]  -  ]$INFO[ListItem.Title]</label>
+							<label>$INFO[ListItem.Year,[COLOR button_focus],[/COLOR] - ]$INFO[ListItem.Title]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 					</focusedlayout>
@@ -297,7 +257,7 @@
 							<height>40</height>
 							<width>100%</width>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Year,[COLOR button_focus],[/COLOR]  -  ]$INFO[ListItem.Title]</label>
+							<label>$INFO[ListItem.Year,[COLOR button_focus],[/COLOR] - ]$INFO[ListItem.Title]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 					</itemlayout>
@@ -306,7 +266,6 @@
 			</control>
 		</control>
 	</include>
-	
 	<include name="ShiftTextbox">
 		<control type="group">
 			<animation effect="fade" time="200" start="0" end="100" condition="!String.IsEmpty(Control.GetLabel($PARAM[textbox_id]))">Conditional</animation>

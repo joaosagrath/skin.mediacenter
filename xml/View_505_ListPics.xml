@@ -46,104 +46,156 @@
 			<focusposition>6</focusposition>
 			<scrolltime tween="cubic" easing="out">500</scrolltime>
 			<orientation>vertical</orientation>
-			<pagecontrol>50600</pagecontrol>
+			<pagecontrol>80</pagecontrol>
 			<onleft>9000</onleft>
-			<onright>50600</onright>
+			<onright>80</onright>
 			<onup>$PARAM[list_id]</onup>
 			<ondown>$PARAM[list_id]</ondown>
 			<viewtype label="$PARAM[viewtype_label]">list</viewtype>
 			<!-- Icones Pequenos -->
-			<itemlayout height="375" width="270" condition="String.IsEqual(Skin.String(PicIcon),P)">
+			<itemlayout height="400" width="270" condition="String.IsEqual(Skin.String(PicIcon),P)">
 				<control type="image">
 					<left>0</left>
-					<centertop>50%</centertop>
-					<width>270</width>
-					<height>285</height>
+					<centertop>44%</centertop>
+					<width>233</width>
+					<height>350</height>
 					<texture>$VAR[PosterVar]</texture>
 					<bordertexture border="5"/>
 					<bordersize>5</bordersize>
-					<aspectratio aligny="center" alignx="center">keep</aspectratio>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
 				</control>
-				<control type="label">
-					<left>0</left>
-					<top>0</top>
-					<width>270</width>
-					<label>$INFO[ListItem.Label]</label>				
+				<control type="textbox">
+					<left>5</left>
+					<top>355</top>
+					<width>220</width>
+					<height>35</height>
+					<font>font25_narrow</font>
+					<align>center</align>
+					<scrolltime>200</scrolltime>
+					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</itemlayout>
-			<focusedlayout height="375" width="270" condition="String.IsEqual(Skin.String(PicIcon),P)">
-				<control type="image">
-					<left>-3</left>
-					<top>0</top>
-					<width>270</width>
-					<height>330</height>
-					<texture colordiffuse="button_focus">colors/white.png</texture>
-					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
-					<!-- <bordersize>5</bordersize> -->
-					<aspectratio aligny="center" align="top">stretch</aspectratio>
-					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
-				</control>
+			<focusedlayout height="400" width="270" condition="String.IsEqual(Skin.String(PicIcon),P)">
 				<control type="image">
 					<centertop>50%</centertop>
-					<width>270</width>
-					<height>285</height>
+					<width>233</width>
+					<height>400</height>
+					<texture colordiffuse="button_focus">colors/white.png</texture>
+					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
+					<aspectratio aligny="center" alignx="center">stretch</aspectratio>
+					<!-- <animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation> -->
+				</control>
+				<control type="image">
+					<centertop>44%</centertop>
+					<width>233</width>
+					<height>350</height>
 					<texture>$VAR[PosterVar]</texture>
-					<!-- <bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture> -->
+					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
 					<bordersize>5</bordersize>
-					<aspectratio aligny="center" alignx="center">keep</aspectratio>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
 					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 				</control>
-				<control type="label">
-					<left>0</left>
-					<top>0</top>
-					<width>270</width>
-					<label>$INFO[ListItem.Label]</label>				
+				<control type="textbox">
+					<left>5</left>
+					<top>355</top>
+					<width>220</width>
+					<height>35</height>
+					<font>font25_narrow</font>
+					<align>center</align>
+					<scrolltime>200</scrolltime>
+					<scroll>true</scroll>
+					<label>$INFO[ListItem.Label]</label>
+					<autoscroll delay="3000" time="1000" repeat="1000">true</autoscroll>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</focusedlayout>
 			<!-- Icones Medios -->
-			<itemlayout height="375" width="270" condition="String.IsEqual(Skin.String(PicIcon),M)">
+			<itemlayout height="600" width="368" condition="String.IsEqual(Skin.String(PicIcon),M)">				
 				<control type="image">
 					<left>0</left>
-					<centertop>50%</centertop>
-					<width>233</width>
-					<height>350</height>
+					<centertop>46%</centertop>
+					<width>368</width>
+					<height>552</height>
 					<texture>$VAR[PosterVar]</texture>
 					<bordertexture border="5"/>
 					<bordersize>5</bordersize>
 					<aspectratio aligny="center" alignx="center">scale</aspectratio>
 				</control>
+				<control type="textbox">
+					<left>0</left>
+					<top>553</top>
+					<width>368</width>
+					<height>35</height>
+					<font>font25_narrow</font>
+					<align>center</align>
+					<scrolltime>200</scrolltime>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>black</shadowcolor>
+				</control>
 			</itemlayout>
-			<focusedlayout height="375" width="270" condition="String.IsEqual(Skin.String(PicIcon),M)">
+			<focusedlayout height="600" width="368" condition="String.IsEqual(Skin.String(PicIcon),M)">
 				<control type="image">
+					<left>0</left>
 					<centertop>50%</centertop>
-					<width>233</width>
-					<height>350</height>
+					<width>368</width>
+					<height>600</height>
+					<texture colordiffuse="button_focus">colors/white.png</texture>
+					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
+					<aspectratio aligny="center" alignx="center">stretch</aspectratio>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<centertop>46%</centertop>
+					<width>368</width>
+					<height>552</height>
 					<texture>$VAR[PosterVar]</texture>
 					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
 					<bordersize>5</bordersize>
 					<aspectratio aligny="center" alignx="center">scale</aspectratio>
 					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
 				</control>
+				<control type="textbox">
+					<left>0</left>
+					<top>553</top>
+					<width>368</width>
+					<height>35</height>
+					<font>font25_narrow</font>
+					<align>center</align>
+					<scrolltime>200</scrolltime>
+					<autoscroll delay="3000" time="1000" repeat="1000">true</autoscroll>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>black</shadowcolor>
+				</control>
 			</focusedlayout>
 			<!-- Icones Grandes -->
-			<itemlayout height="960" width="620" condition="String.IsEqual(Skin.String(PicIcon),G)">
+			<itemlayout height="750" width="460" condition="String.IsEqual(Skin.String(PicIcon),G)">
 				<control type="image">
 					<left>20</left>
-					<centertop>50%</centertop>
-					<width>580</width>
-					<height>870</height>
+					<centertop>46%</centertop>
+					<width>460</width>
+					<height>690</height>
 					<texture>$VAR[PosterVar]</texture>
 					<bordertexture border="5"/>
 					<bordersize>5</bordersize>
-					<aspectratio aligny="center" alignx="center">keep</aspectratio>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
+				</control>
+				<control type="textbox">
+					<left>22</left>
+					<top>680</top>
+					<width>450</width>
+					<height>70</height>
+					<font>font25_narrow</font>
+					<align>center</align>
+					<scrolltime>200</scrolltime>
+					<label>$INFO[ListItem.Label]</label>				
 				</control>
 			</itemlayout>
-			<focusedlayout height="960" width="620" condition="String.IsEqual(Skin.String(PicIcon),G)">
+			<focusedlayout height="750" width="460" condition="String.IsEqual(Skin.String(PicIcon),G)">
 				<control type="image">
 					<left>20</left>
 					<centertop>50%</centertop>
-					<width>580</width>
-					<height>870</height>
+					<width>460</width>
+					<height>750</height>
 					<texture colordiffuse="button_focus">colors/white.png</texture>
 					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
 					<aspectratio aligny="center" alignx="center">stretch</aspectratio>
@@ -151,17 +203,38 @@
 				</control>
 				<control type="image">
 					<left>20</left>
-					<centertop>50%</centertop>
-					<width>580</width>
-					<height>870</height>
+					<centertop>46%</centertop>
+					<width>460</width>
+					<height>690</height>
 					<texture>$VAR[PosterVar]</texture>
 					<bordertexture border="5" colordiffuse="button_focus">colors/white.png</bordertexture>
 					<bordersize>5</bordersize>
-					<aspectratio aligny="center" alignx="center">keep</aspectratio>
+					<aspectratio aligny="center" alignx="center">scale</aspectratio>
 					<animation effect="fade" start="30" end="100" time="300" reversible="false">Focus</animation>
+				</control>
+				<control type="textbox">
+					<left>22</left>
+					<top>680</top>
+					<width>450</width>
+					<height>70</height>
+					<font>font25_narrow</font>
+					<align>center</align>
+					<scrolltime>200</scrolltime>
+					<autoscroll delay="3000" time="1000" repeat="10000">true</autoscroll>
+					<label>$INFO[ListItem.Label]</label>
+					<shadowcolor>black</shadowcolor>
 				</control>
 			</focusedlayout>
 		</control>
-
+		<control type="scrollbar" id="80">
+				<right>0</right>
+				<top>100</top>
+				<width>12</width>
+				<bottom>80</bottom>
+				<onleft>505</onleft>
+				<onright>505</onright>
+				<orientation>vertical</orientation>
+				<animation effect="slide" end="12" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(80)">conditional</animation>
+			</control>
 	</include>
 </includes>

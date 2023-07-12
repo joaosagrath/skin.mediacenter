@@ -5,6 +5,7 @@
 	<color name="secondary_background">FF646464</color>
 	<color name="dialog_tint">FF222A2A</color>
 	<color name="button_focus">FF009688</color>
+	<color name="orange">FFFF9800</color>
 	<color name="selected">FFC67F03</color>
 	<color name="background">FF000000</color>
 	<color name="bg_image">FF909090</color>

@@ -2,10 +2,17 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<views>505,50</views>
+	<views>505,506,50</views>
 	<menucontrol>9000</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
+		<control type="image">
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<fadetime>400</fadetime>
+				<animation effect="fade" time="400">VisibleChange</animation>
+				<texture background="true" colordiffuse="FF878787">$INFO[ListItem.FolderPath]</texture>
+			</control>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<animation type="Conditional" condition="Control.HasFocus(900) + Skin.HasSetting(no_slide_animations)">
@@ -22,16 +29,11 @@
 				<animation effect="fade" time="400">VisibleChange</animation>
 				<texture background="true" colordiffuse="FF878787">$INFO[Skin.String(PicsArtsPath)]$INFO[Container.FolderName]\fanarts\$INFO[ListItem.Label,,.jpg]</texture>
 			</control>
-			<control type="image">
-				<include>FullScreenDimensions</include>
-				<aspectratio>scale</aspectratio>
-				<fadetime>400</fadetime>
-				<animation effect="fade" time="400">VisibleChange</animation>
-				<texture background="true" colordiffuse="FF878787">$INFO[ListItem.FolderPath]</texture>
-			</control>
+			
 			<include>View_505_ListPics</include>
+			<include>View_506_3-Column</include>
 			<include>ViewBasic</include>
-			<include>CommonScrollbars</include>
+			<!-- <include>CommonScrollbars</include> -->
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
@@ -91,11 +93,11 @@
 					<onclick>ActivateWindow(addonbrowser,addons://more/image/,return)</onclick>
 					<visible>Container.Content(addons)</visible>
 				</control>
-				<control type="togglebutton" id="630">
-						<description>PicsArts</description>
+				<control type="button" id="630">
+						<description>Open NewsStand Addon</description>
 						<include>MediaMenuItemsCommon</include>
-						<label>$LOCALIZE[31179]</label>
-						<onclick>Skin.SetPath(PicsArtsPath)</onclick>
+						<label>Open NewsStand</label>
+						<onclick>RunAddon(plugin.program.newsstand)</onclick>
 					</control>
 				<control type="button" id="625">
 					<include>MediaMenuItemsCommon</include>
