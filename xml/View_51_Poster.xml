@@ -41,7 +41,7 @@
 					<orientation>horizontal</orientation>
 					<onleft>51</onleft>
 					<onup>9000</onup>
-					<ondown>5199</ondown>
+					<ondown>702</ondown>
 					<onright>51</onright>
 					<hitrect x="100" y="0" w="800" h="400"/>
 					<visible>Container.Content() | Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
@@ -101,7 +101,6 @@
 						<top>400</top>
 						<right>50</right>
 						<height>40</height>
-						<!-- <label>$VAR[NewsStandListVar]$VAR[ListSubLabelVar]</label> -->
 						<label>$VAR[ViewPosterTitle]</label>
 						<font>font45_title</font>
 						<shadowcolor>black</shadowcolor>
@@ -215,6 +214,51 @@
 					<param name="animation" value="True"/>
 				</include>
 			</control>
+		</control>
+		<control type="list" id="702">
+			<left>60</left>
+			<width>100%</width>
+			<top>950</top>
+			<onup>51</onup>
+			<ondown>5199</ondown>
+			<orientation>horizontal</orientation>
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(702)">conditional</animation>
+			<itemlayout height="42" width="66">
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<font>font27</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<font>font27</font>
+					<textcolor>orange</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout height="42" width="66">
+				<control type="label">
+					<width>100%</width>
+					<height>100%</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<font>font27</font>
+					<textcolor>button_focus</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+			</focusedlayout>
+			<content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
 		</control>
 	</include>
 </includes>

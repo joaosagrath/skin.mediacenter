@@ -167,17 +167,6 @@
 					<fadetime>450</fadetime>
 				</control>
 			</control>
-			<!-- SCROLLBAR -->
-			<control type="scrollbar" id="80">
-				<right>0</right>
-				<top>110</top>
-				<bottom>305</bottom>
-				<width>12</width>
-				<onleft>50</onleft>
-				<onright>900</onright>
-				<orientation>vertical</orientation>
-				<animation effect="slide" end="12" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(80)">conditional</animation>
-			</control>
 			<control type="button" id="900">
 				<onup>50</onup>
 				<ondown>50</ondown>
@@ -198,6 +187,7 @@
 		<param name="left">960</param>
 		<definition>
 			<control type="list" id="$PARAM[list_id]">
+				<animation effect="slide" start="-55" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(700)">conditional</animation>
 				<left>$PARAM[left]</left>
 				<right>$PARAM[right]</right>
 				<top>110</top>
@@ -207,8 +197,7 @@
 				<orientation>vertical</orientation>
 				<pagecontrol>80</pagecontrol>
 				<onleft>9000</onleft>
-				<onright condition="Control.IsVisible(80)">80</onright>
-				<onright condition="!Control.IsVisible(80)">900</onright>
+				<onright>700</onright>
 				<viewtype label="$PARAM[viewtype_label]">list</viewtype>
 				<itemlayout height="83">
 					<control type="label">
@@ -321,6 +310,52 @@
 						<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
 					</control>
 				</focusedlayout>
+			</control>
+			<control type="list" id="700">
+				<width>40</width>
+				<top>110</top>
+				<bottom>290</bottom>
+				<right>-50</right>
+				<onleft>50</onleft>
+				<onright condition="Control.IsVisible(80)">80</onright>
+				<onright condition="!Control.IsVisible(80)">900</onright>
+				<orientation>vertical</orientation>
+				<animation effect="slide" start="-55" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(700)">conditional</animation>
+				<itemlayout height="42" width="40">
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<font>font27</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<font>font27</font>
+						<textcolor>orange</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="42" width="40">
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<font>font27</font>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+				</focusedlayout>
+				<content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
+			</control>
+			<!-- SCROLLBAR -->
+			<control type="scrollbar" id="80">
+				<right>0</right>
+				<top>110</top>
+				<bottom>305</bottom>
+				<width>12</width>
+				<onleft>50</onleft>
+				<onright>900</onright>
+				<orientation>vertical</orientation>
+				<animation effect="slide" end="12" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(80)">conditional</animation>
 			</control>
 		</definition>
 	</include>
